@@ -1,0 +1,316 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": "2026-03-15T07:50:00Z",
+    "local_filename": "lawn-doctor_2025_wi_auto.pdf",
+    "sha256": "166b21cec41e10ecb70c65908db42514ee2835ca4769008f33a5d76a59a753b9",
+    "page_count": 281,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms Lawn Doctor, Inc. 2025 FDD. PDF title metadata confirms 'Lawn Doctor _ 2025 Franchise Disclosure Document'. Holiday Lighting Heroes is a secondary service line offered by some Lawn Doctor franchisees; Item 19 excludes HLH revenues."
+  },
+
+  "brand": {
+    "brand_name": "Lawn Doctor",
+    "brand_slug": "lawn-doctor",
+    "legal_entity": "Lawn Doctor, Inc.",
+    "parent_company": "LD Parent, Inc. / CNL Strategic Capital, LLC",
+    "year_founded": 1967,
+    "year_first_franchised": 1967,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 127000,
+        "currency": "USD",
+        "range_low": 123950,
+        "range_high": 127000,
+        "field_status": "extracted",
+        "notes": "Comprised of 4 components: (1) $50,000 initial license fee, (2) $70,600 initial training/supply/support fee, (3) $3,350 Turf Tamer Stand-On Applicator Lease deposit (nonrefundable), (4) $3,050 Turf Tamer Power Seeder Lease deposit (nonrefundable). Low end ($123,950) applies where agronomic conditions preclude seeding — Power Seeder removed. Due in full at signing, nonrefundable. VetFran/MinorityFran/GreenFran/First Responder: 10% off the $50,000 license fee portion (not combinable). Additional territory for existing compliant franchisees: $25,000 reduced fee. 5-year employee discount: $10,000 off. Fees received in 2024 ranged from $114,450 to $122,000.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [13, 14], "item_reference": "Item 5", "exact_text": "a nonrefundable initial franchise fee of $127,000" }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": 10.0,
+        "basis": "Net Revenues",
+        "field_status": "extracted",
+        "notes": "10% of Net Revenues, payable weekly. 'Net Revenues' = actual gross revenues collected from customers (cash or credit) plus all other revenues, excluding taxes collected and refunds/adjustments. Additional 15% Out-of-Territory Royalty on Net Revenues earned outside Strategic-Partner's Territory (paid on top of 10%).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 6, Royalty and Service Fee row", "exact_text": "10% of Net Revenues" }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "Complex multi-layer marketing structure. Local advertising requirement: must spend the greater of $30,000 or 10% of Net Revenues annually. National Marketing Fund: 2% of Net Revenues (if prior year under $175K) or ~$106/week ($5,500/year) (if prior year over $175K), capped at 5% total with regional. Regional Marketing Funds: up to 5% of Net Revenues in 15 metro areas. New franchisees exempt from national fund for first partial + first full calendar year.",
+        "components": [
+          { "name": "Local Advertising Requirement", "value": 10.0, "basis": "Net Revenues", "minimum_dollar": 30000, "frequency": "annual", "notes": "Must spend the greater of $30,000 or 10% of Net Revenues annually. Unspent amount due to LDI within 60 days after calendar year end." },
+          { "name": "National Marketing Fund", "value": null, "basis": "Net Revenues", "minimum_dollar": 5500, "frequency": "weekly", "notes": "2% of Net Revenues if prior year under $175K; ~$106/week ($5,500/year) if prior year over $175K. New franchisees exempt first partial + first full calendar year. Capped so total (national + regional) does not exceed 5% of Net Revenues." },
+          { "name": "Regional Marketing Fund", "value": 5.0, "basis": "Net Revenues", "minimum_dollar": null, "frequency": "weekly", "notes": "If Business is in a regional fund area (15 regions as of issuance). Adjusted so total (national + regional) does not exceed 5% of Net Revenues." },
+          { "name": "Local Marketing Fund", "value": null, "basis": "Net Revenues", "minimum_dollar": null, "frequency": "as determined", "notes": "Up to 5% of Net Revenues, amount set by majority vote of local franchisees. Credited against local advertising requirement. No local funds currently in existence." },
+          { "name": "Centrally Managed Media Boost Program", "value": null, "basis": null, "minimum_dollar": 5000, "frequency": "one-time", "notes": "Optional. Only for franchisees who begin after optimal season start and elect supplemental corporate-directed media." },
+          { "name": "Holiday Lighting Heroes Advertising", "value": 5.0, "basis": "Net Revenues from HLH services", "minimum_dollar": 6000, "frequency": "annual (split Nov/Dec)", "notes": "Greater of $6,000 or 5% of prior year HLH Net Revenues. Drives media-based leads for holiday lighting services." }
+        ],
+        "notes": "Lawn Doctor's marketing structure is unusual in requiring a minimum of the GREATER of $30,000 or 10% of Net Revenues for local advertising alone, on top of national/regional fund contributions. This creates a high marketing floor for low-revenue franchisees. Cannot be expressed as a single rate due to the $30K minimum and tiered national fund structure.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [15, 16, 19, 20], "item_reference": "Item 6 and footnotes 1-3", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 150,
+        "frequency": "monthly",
+        "field_status": "extracted",
+        "notes": "$150/month until cumulative Net Revenues reach $1,000,000, then increases to $250/month. LDI may increase up to $500/month at its discretion. First payment not due until Business commences operations.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 15, "item_reference": "Item 6, Technology Fee row", "exact_text": "Currently starts at $150 with a scheduled increase to $250" }
+      },
+      "transfer_fee": {
+        "value": null,
+        "formula": "75% of then-current initial license fee component ($50,000 as of 2025 = $37,500). 10% due at declaration of intent to sell (nonrefundable); remainder due before transfer completion.",
+        "field_status": "extracted",
+        "notes": "Broker Fee of $25,000 additional if LDI engages a third-party broker to assist in selling the Business.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Transfer Fee row", "exact_text": "75% of the then-current initial license fee component of the initial franchise fee" }
+      },
+      "other_fees": [
+        { "fee_name": "Out-of-Territory Royalty", "value": 15.0, "frequency": "weekly (same as royalty)", "field_status": "extracted", "notes": "15% of Net Revenues earned outside Territory, paid IN ADDITION to the 10% Royalty and Service Fee (total 25% on out-of-territory revenue).", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 15, "item_reference": "Item 6, Out-of-Territory Royalty Fee row", "exact_text": "15% of Net Revenues earned outside of Strategic-Partner's Territory" } },
+        { "fee_name": "Call Center Fees", "value": 750, "frequency": "monthly (after year 1)", "field_status": "extracted", "notes": "First year included in initial franchise fee. May increase, not expected to exceed $1,000/month.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Call Center Fees row", "exact_text": "Currently $750 per month" } },
+        { "fee_name": "Turf Tamer Stand-On Applicator Lease", "value": 335.40, "frequency": "monthly (84-month term)", "field_status": "extracted", "notes": "Payable to LDI. Lump sum option: $22,350. Plus sales tax.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Turf Tamer Stand-On Applicator Lease row", "exact_text": null } },
+        { "fee_name": "Turf Tamer Power Seeder Lease", "value": 305.96, "frequency": "monthly (72-month term)", "field_status": "extracted", "notes": "Payable to LDI. Lump sum option: $18,700. Plus sales tax. Not applicable in areas where agronomic conditions preclude seeding.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Turf Tamer Power Seeder Lease row", "exact_text": null } },
+        { "fee_name": "Convention / Conference Fee", "value": 2000, "frequency": "annual (maximum)", "field_status": "extracted", "notes": "Up to $2,000 annually, plus actual out-of-pocket attendance costs. Must attend at LDI's request; fee due even if not attending.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Convention / Conference Fee row", "exact_text": null } },
+        { "fee_name": "Broker Fee", "value": 25000, "frequency": "one-time", "field_status": "extracted", "notes": "Due if LDI engages a third-party broker or consultant on franchisee's behalf to assist in selling the Business.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Broker Fee row", "exact_text": null } },
+        { "fee_name": "Interest on Late Payments", "value": null, "frequency": "as incurred", "field_status": "extracted", "notes": "Highest legal rate for open account business credit, not to exceed 1.5% per month. Current policy: 1% per month. Also: 1% of total amount due per month for late royalty reports; $20 per rejected EFT.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Interest on Late Payments row", "exact_text": null } },
+        { "fee_name": "Fine for Failure to Provide Materials for Inspection", "value": 500, "frequency": "per day", "field_status": "extracted", "notes": "$500/day plus LDI's reasonable expenses for delay.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Fine for Use of Unauthorized Advertising", "value": 250, "frequency": "per item per occurrence", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 6", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee (Total)", "low": 123950, "high": 127000, "method_of_payment": "Cash or financed (Item 10)", "when_due": "At signing", "to_whom_paid": "LDI", "notes": "Includes: Initial License Fee $50,000; Training/Supply/Support $70,600; Stand-On Applicator Lease Deposit $3,350; Power Seeder Lease Deposit $0-$3,050.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Service Vehicle", "low": 1800, "high": 2400, "method_of_payment": "As agreed", "when_due": "Monthly lease payments", "to_whom_paid": "Supplier", "notes": "Assumes lease from LDI-approved supplier. Covers first month of typical 72-month lease.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Shipping of Turf Tamer Power Seeder", "low": 0, "high": 500, "method_of_payment": "Cash", "when_due": "Upon shipment", "to_whom_paid": "LDI", "notes": "Cost depends on distance from LDI manufacturing facility. $0 if Power Seeder not applicable.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Computer Software", "low": 225, "high": 500, "method_of_payment": "Cash", "when_due": "Initial and monthly payments", "to_whom_paid": "Supplier", "notes": "Lawn care software ~$225/month; Holiday Home Concepts ~$130/month; Serviceminder ~$54-$189/month.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Computers", "low": 0, "high": 2000, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": "Hardware per LDI specs including QuickBooks Online ($85/month ongoing).", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Opening Inventory for lawn care products/materials", "low": 500, "high": 500, "method_of_payment": "Cash", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Rental Space", "low": 0, "high": 3000, "method_of_payment": "As agreed", "when_due": "Monthly lease payments", "to_whom_paid": "Landlord", "notes": "Many franchisees operate from home initially. Approximately 12'x20' space if needed.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Bookkeeper", "low": 325, "high": 400, "method_of_payment": "As agreed", "when_due": "Monthly", "to_whom_paid": "Supplier", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Training Expenses (per attendee)", "low": 2500, "high": 4000, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Utility/Security Deposit", "low": 200, "high": 200, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance", "low": 800, "high": 1000, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Opening Holiday Lighting Inventory", "low": 6000, "high": 14000, "method_of_payment": "Cash", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Start-Up Equipment Package for holiday lighting", "low": 2400, "high": 2800, "method_of_payment": "Cash", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": "Tools, ladders, safety equipment.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Uniforms", "low": 250, "high": 500, "method_of_payment": "Cash", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Utility/Security Deposit (Holiday Lighting)", "low": 200, "high": 200, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 10920, "high": 18052, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Various", "notes": "Covers operating expenses, labor, vehicle lease months 2-3, software fees, rental space, Technology Fees, miscellaneous. Not a break-even estimate.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 150070,
+      "total_high": 177052,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table, Total row", "exact_text": "TOTAL ESTIMATED INITIAL INVESTMENT FOR LAWN DOCTOR BUSINESS $150,070 to $177,052" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Table A",
+          "description": "2024 Net Revenues for Strategic-Partners operating 2+ full years, categorized by number of territories operated",
+          "period": "calendar year 2024",
+          "population": "205 Strategic-Partners operating Lawn Doctor Businesses for 2+ full years as of December 31, 2024. Of 653 total Businesses operated by 229 Strategic-Partners. Item 19 excludes Holiday Lighting Heroes revenues.",
+          "data": {
+            "by_territory_count": [
+              { "territories": "1-3", "count": 146, "average_net_revenues": 682287, "median_net_revenues": 380456, "lowest_net_revenues": 34736, "highest_net_revenues": 3650118, "at_or_above_average": 47, "pct_at_or_above_average": 32 },
+              { "territories": "4-6", "count": 41, "average_net_revenues": 1614120, "median_net_revenues": 1131544, "lowest_net_revenues": 84503, "highest_net_revenues": 11372439, "at_or_above_average": 12, "pct_at_or_above_average": 29 },
+              { "territories": "7+", "count": 18, "average_net_revenues": 3664164, "median_net_revenues": 3009092, "lowest_net_revenues": 408912, "highest_net_revenues": 9200248, "at_or_above_average": 6, "pct_at_or_above_average": 33 }
+            ],
+            "all_territories_combined": { "count": 205, "average_net_revenues": 1130477, "median_net_revenues": 659073, "lowest_net_revenues": 34736, "highest_net_revenues": 11372439, "at_or_above_average": 60, "pct_at_or_above_average": 29 }
+          },
+          "notes": "Net Revenues are per Strategic-Partner (all territories combined), not per outlet. 29% at or above average across all categories indicates right-skewed distribution (high performers pulling up the average). LDI compiled from weekly reports; does not verify figures. POSSIBLE TYPO: 4-6 territories lowest shows '$84.503' in PDF — likely $84,503 (period vs comma formatting).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 53, "item_reference": "Item 19, Table A", "exact_text": null }
+        },
+        {
+          "table_label": "Table B",
+          "description": "Strategic-Partner Customer Data during 2024",
+          "period": "calendar year 2024",
+          "population": "205 Strategic-Partners operating 2+ years with available data as of December 31, 2024",
+          "data": {
+            "customer_program_value": { "average": 860.37, "median": 647.89, "lowest": 100.17, "highest": 63671.10, "at_or_above_average": 85, "pct_at_or_above_average": 41 },
+            "customer_tenure_years": { "average": 6.15, "median": 4.21, "lowest": 0.00, "highest": 51.19, "at_or_above_average": 85, "pct_at_or_above_average": 41 },
+            "annual_customer_revenue": { "average": 765.36, "median": 576.00, "lowest": 100.05, "highest": 62144.69, "at_or_above_average": 81, "pct_at_or_above_average": 40 }
+          },
+          "notes": "Customer Program Value = total annual value of all programs/services purchased by a customer (active + cancelled, minimum $100 cumulative). Customer Tenure uses creation date with nearest-neighbor imputation for missing dates; excludes pre-1970 and post-2024-01-01. Customer Revenue = payments received in 2024, minimum $100 cumulative. Average customer tenure of 6.15 years is a strong retention signal.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [53, 54], "item_reference": "Item 19, Table B", "exact_text": null }
+        },
+        {
+          "table_label": "Table C",
+          "description": "2023 Gross Profit Margin Results as a Percentage of Net Revenues",
+          "period": "calendar year 2023",
+          "population": "130 of 205 Strategic-Partners operating 1+ full year as of December 31, 2023. 75 Strategic-Partners excluded due to insufficient information; LDI does not know if inclusion would materially affect results.",
+          "data": {
+            "count": 130,
+            "average_gross_profit_margin": 85.4,
+            "median_gross_profit_margin": 84.5,
+            "at_or_above_average": 54,
+            "pct_at_or_above_average": 41.5
+          },
+          "notes": "Gross Profit Margin = Net Revenues minus Material Costs (treatment products only). Does NOT include royalty (10%) or marketing expenditures (10%+ of Net Revenues). Some franchisees use cash basis, others accrual basis; some follow GAAP, others do not. Effective margin after royalty and marketing is significantly lower. 37% of eligible Strategic-Partners excluded from this table.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [54, 55], "item_reference": "Item 19, Table C", "exact_text": null }
+        },
+        {
+          "table_label": "Table D",
+          "description": "Historical Net Revenues 2009-2024 for Strategic-Partners operating 2+ full years",
+          "period": "2009 through 2024",
+          "population": "Strategic-Partners operating 2+ full years as of December 31 of each respective year. Population varies from 155 (2013) to 214 (2009).",
+          "data": [
+            { "year": 2009, "count": 214, "average_net_revenues": 367108, "median_net_revenues": 206592, "highest_net_revenues": 2947850, "lowest_net_revenues": 4366, "at_or_above_average": 63, "pct_at_or_above_average": 29 },
+            { "year": 2010, "count": 204, "average_net_revenues": 393829, "median_net_revenues": 228819, "highest_net_revenues": 3246320, "lowest_net_revenues": 1939, "at_or_above_average": 62, "pct_at_or_above_average": 30 },
+            { "year": 2011, "count": 196, "average_net_revenues": 430376, "median_net_revenues": 238049, "highest_net_revenues": 3548984, "lowest_net_revenues": 616, "at_or_above_average": 65, "pct_at_or_above_average": 33 },
+            { "year": 2012, "count": 173, "average_net_revenues": 478130, "median_net_revenues": 261770, "highest_net_revenues": 3589439, "lowest_net_revenues": 4989, "at_or_above_average": 58, "pct_at_or_above_average": 34 },
+            { "year": 2013, "count": 155, "average_net_revenues": 534341, "median_net_revenues": 349166, "highest_net_revenues": 3794198, "lowest_net_revenues": 251, "at_or_above_average": 52, "pct_at_or_above_average": 34 },
+            { "year": 2014, "count": 163, "average_net_revenues": 598806, "median_net_revenues": 375736, "highest_net_revenues": 4391138, "lowest_net_revenues": 2374, "at_or_above_average": 54, "pct_at_or_above_average": 33 },
+            { "year": 2015, "count": 160, "average_net_revenues": 630462, "median_net_revenues": 400065, "highest_net_revenues": 4756989, "lowest_net_revenues": 15523, "at_or_above_average": 56, "pct_at_or_above_average": 35 },
+            { "year": 2016, "count": 173, "average_net_revenues": 634278, "median_net_revenues": 397221, "highest_net_revenues": 4879391, "lowest_net_revenues": 4101, "at_or_above_average": 62, "pct_at_or_above_average": 35 },
+            { "year": 2017, "count": 177, "average_net_revenues": 671848, "median_net_revenues": 407456, "highest_net_revenues": 5256201, "lowest_net_revenues": 135, "at_or_above_average": 64, "pct_at_or_above_average": 36 },
+            { "year": 2018, "count": 178, "average_net_revenues": 715399, "median_net_revenues": 421253, "highest_net_revenues": 5580914, "lowest_net_revenues": 11801, "at_or_above_average": 60, "pct_at_or_above_average": 34 },
+            { "year": 2019, "count": 184, "average_net_revenues": 768910, "median_net_revenues": 442415, "highest_net_revenues": 6005754, "lowest_net_revenues": 27980, "at_or_above_average": 62, "pct_at_or_above_average": 34 },
+            { "year": 2020, "count": 184, "average_net_revenues": 816756, "median_net_revenues": 473181, "highest_net_revenues": 6532589, "lowest_net_revenues": 20652, "at_or_above_average": 57, "pct_at_or_above_average": 31 },
+            { "year": 2021, "count": 191, "average_net_revenues": 922043, "median_net_revenues": 529499, "highest_net_revenues": 8085392, "lowest_net_revenues": 24645, "at_or_above_average": 56, "pct_at_or_above_average": 29 },
+            { "year": 2022, "count": 196, "average_net_revenues": 1010244, "median_net_revenues": 545004, "highest_net_revenues": 9619076, "lowest_net_revenues": 20484, "at_or_above_average": 58, "pct_at_or_above_average": 30 },
+            { "year": 2023, "count": 192, "average_net_revenues": 1114402, "median_net_revenues": 655952, "highest_net_revenues": 10204658, "lowest_net_revenues": 29420, "at_or_above_average": 58, "pct_at_or_above_average": 30 },
+            { "year": 2024, "count": 205, "average_net_revenues": 1130477, "median_net_revenues": 659073, "highest_net_revenues": 11372439, "lowest_net_revenues": 34736, "at_or_above_average": 60, "pct_at_or_above_average": 29 }
+          ],
+          "notes": "16-year historical trend showing consistent average net revenue growth from $367K (2009) to $1.13M (2024) — a 3.08x increase. Median grew from $207K to $659K (3.18x). System contracted from 214 to 155 Strategic-Partners (2009-2013) before recovering to 205 by 2024. YoY average growth slowed to 1.4% in 2024 (vs 10.3% in 2023). Top performer grew from $2.9M to $11.4M over the period.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 55, "item_reference": "Item 19, Table D", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 disclosed with 4 tables. Strongest Item 19 disclosure depth in the lawn cohort so far: includes revenue by territory count, customer metrics, gross margin, and 16-year historical trend. All data excludes Holiday Lighting Heroes revenues. Revenue figures are per Strategic-Partner (all territories combined), not per outlet — a multi-territory franchisee's combined revenue is reported as one line. LDI does not verify franchisee-reported weekly revenue figures.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [51, 56], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 613,
+          "total_outlets_end": 624,
+          "opened": 24,
+          "closed": 13,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 28,
+          "ceased_operations_other": 0,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "All outlets are franchised. No company-owned outlets. Net growth +11.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [56, 58, 63], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 624,
+          "total_outlets_end": 630,
+          "opened": 15,
+          "closed": 9,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 22,
+          "ceased_operations_other": 0,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "All outlets are franchised. Net growth +6.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [56, 58, 63], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 630,
+          "total_outlets_end": 653,
+          "opened": 24,
+          "closed": 1,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 9,
+          "ceased_operations_other": 0,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "All outlets are franchised. Net growth +23. Terminations dropped to 1 (from 13 in 2022 and 9 in 2023). Transfers also declined to 9 (from 28 in 2022). Projected 18 new outlets in 2025 across 11 states (Table 5).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [56, 58, 63, 64], "item_reference": "Item 20, Tables 1, 2, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": false,
+      "action_count": 0,
+      "action_types": [],
+      "notes": "No litigation required to be disclosed in this Item. No bankruptcy either (Item 4).",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 3", "exact_text": "No litigation is required to be disclosed in this Item." }
+    },
+
+    "system_info": {
+      "year_company_founded": 1967,
+      "year_first_franchised": 1967,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [8, 9], "item_reference": "Item 1", "exact_text": "LDI was incorporated in 1967 under the name 'Auto-Lawn of America, Inc.'" }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 163561,
+    "net_unit_growth": [
+      { "year": 2022, "value": 11, "source_fields": ["Table 1 franchised net: 624-613=+11"] },
+      { "year": 2023, "value": 6, "source_fields": ["Table 1 franchised net: 630-624=+6"] },
+      { "year": 2024, "value": 23, "source_fields": ["Table 1 franchised net: 653-630=+23"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 6.69, "source_fields": ["(13+0+0+28)/613 = 41/613"] },
+      { "year": 2023, "value": 4.97, "source_fields": ["(9+0+0+22)/624 = 31/624"] },
+      { "year": 2024, "value": 1.59, "source_fields": ["(1+0+0+9)/630 = 10/630"] }
+    ],
+    "system_age_years": 58,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T18:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 13, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 22, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 22, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].opened", "page_verified": 63, "match": true },
+        { "field": "raw.item_19_financial_performance.tables[0].data.all_territories_combined.average_net_revenues", "page_verified": 53, "match": true }
+      ],
+      "checked_by": "pdfplumber extraction with page-level verification",
+      "checked_at": "2026-03-15T18:00:00Z"
+    },
+    "warnings": [
+      "Lawn Doctor is affiliated with Mosquito Hunters (same parent LD Parent, Inc.). Both are in this dataset but in different wedges.",
+      "Marketing obligation cannot be expressed as a single rate: local advertising alone requires the greater of $30,000 or 10% of Net Revenues, plus national fund (2% or $5,500/yr), plus regional fund (5%) if applicable. total_ongoing_fee_rate set to null.",
+      "Technology fee is tiered by cumulative revenue ($150 below $1M, $250 above, max $500). Recorded as $150 (initial rate).",
+      "Item 19 Table A reports per Strategic-Partner (all territories combined), not per outlet. A multi-territory franchisee's combined revenue appears as one entry. This inflates apparent per-brand averages compared to per-outlet reporting.",
+      "Item 19 Table C (Gross Profit Margin) excludes 37% of eligible Strategic-Partners due to insufficient data. LDI states it does not know if inclusion would materially affect results.",
+      "Item 19 Table A possible typo: 4-6 territories 'Lowest Net Revenues' shows '$84.503' in PDF — likely $84,503. Recorded as 84503.",
+      "Transfer fee is formula-based (75% of then-current initial license fee component). As of 2025, this equals $37,500 based on $50,000 license fee.",
+      "Out-of-Territory Royalty of 15% is IN ADDITION to the 10% base royalty (total 25% on out-of-territory revenue). This is unusually high and structurally discourages out-of-territory work.",
+      "Holiday Lighting Heroes is a secondary service line (14 franchisees as of end 2024). All Item 19 data explicitly excludes HLH revenues.",
+      "System has been franchising since 1967 — one of the oldest franchise systems in the U.S. 58-year track record."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "Complex multi-layer structure: local $30K or 10% minimum + national fund (2% or $5,500) + regional (5%). Cannot express as single rate.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.transfer_fee.value", "reason": "Formula-based: 75% of then-current initial license fee component.", "field_status": "extracted" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Marketing component is ambiguous (multi-layer with dollar minimums).", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

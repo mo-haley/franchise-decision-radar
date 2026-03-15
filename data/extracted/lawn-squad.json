@@ -1,0 +1,294 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": "2026-03-15T07:50:00Z",
+    "local_filename": "lawn-squad_2025_wi_auto.pdf",
+    "sha256": "55aec46fdc5fef9d89a1798c9f799a141072af8a1248f3e6f2bb025e84ac4d99",
+    "page_count": 247,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms Lawn Squad Franchising LLC 2025 FDD. Issued April 23, 2025. Authority Brands / Apax Partners portfolio brand. Sister brand to Mosquito Squad. Affiliate Weed Pro, Ltd. has operated substantially similar business in Ohio since 2001."
+  },
+
+  "brand": {
+    "brand_name": "Lawn Squad",
+    "brand_slug": "lawn-squad",
+    "legal_entity": "Lawn Squad Franchising LLC",
+    "parent_company": "Lawn Squad HoldCo Inc. / Authority Brands, Inc. / Apax Partners LLP",
+    "year_founded": 2001,
+    "year_first_franchised": 2023,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 45000,
+        "currency": "USD",
+        "range_low": 5000,
+        "range_high": 45000,
+        "field_status": "extracted",
+        "notes": "$45,000 for territory up to 100,000 SFDUs. Additional $0.45/SFDU over 100,000 (max 150,000). Actual fees collected in FY2024: $5,000-$40,000. Discounts: 2nd territory $35,000, 3rd $24,500; existing franchisee 30% off; existing Authority Brands franchisee first 2 at $15,000 each; Veterans/Active Duty 30% off (first franchise); Diversity $5,000 off; First Responder/Local Hero $5,000 off. Initial Call Center Setup Fee: $6,000 (non-refundable, at signing).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [14, 15, 16], "item_reference": "Item 5", "exact_text": null }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": 7.0,
+        "basis": "Gross Revenue",
+        "field_status": "extracted",
+        "notes": "7% of Gross Revenue, payable semi-monthly. Annual Minimum Royalty kicks in at month 7 of operations.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Royalty Fee row", "exact_text": null }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "Brand Fund 2% of Gross Revenue (national) + Local Marketing $42,000/year (years 1-5), then greater of 8% of prior year revenue or $42,000 (year 6+). Prorated for first year. Total marketing: at minimum 2% + $42K/year.",
+        "components": [
+          { "name": "Brand Fund", "value": 2.0, "basis": "Gross Revenue", "minimum_dollar": null, "frequency": "semi-monthly", "notes": "Maximum 2% of Gross Revenue." },
+          { "name": "Local Marketing", "value": null, "basis": null, "minimum_dollar": 42000, "frequency": "annual", "notes": "$42,000/year (years 1-5). Year 6+: greater of 8% of prior year revenue or $42,000. Prorated in first year." }
+        ],
+        "notes": "Cannot be expressed as single rate due to $42K local marketing floor. Combined with 5% call center fee and 7% royalty, Lawn Squad has the highest total franchisor fee burden in the lawn cohort at 14% of Gross Revenue plus $42K/year local + technology fees.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [17, 18], "item_reference": "Item 6, Brand Fund and Local Marketing rows", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 450,
+        "frequency": "monthly",
+        "field_status": "extracted",
+        "notes": "$450/month Technology Fee (Microsoft 365, HubSpot, FranConnect, Qvinci, Ops Dashboard). PLUS Business Management Software (ServiceMinder): $370/month paid to vendor. PLUS Website Fee: $350/month (can increase 10% on 30 days notice). Total monthly technology costs: $1,170.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [17, 18], "item_reference": "Item 6, Technology Fee, Business Management Software, and Website Fee rows", "exact_text": null }
+      },
+      "transfer_fee": {
+        "value": 10000,
+        "formula": "$10,000 base. If franchisor finds buyer: additional fee of greater of $15,000, 3% of price, or actual costs.",
+        "field_status": "extracted",
+        "notes": null,
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Transfer Fee row", "exact_text": null }
+      },
+      "other_fees": [
+        { "fee_name": "Call Center Fee", "value": 5.0, "frequency": "semi-monthly (% of Gross Revenue)", "field_status": "extracted", "notes": "5% of Gross Revenue. This is unusually high — effectively a second royalty. Combined with 7% royalty = 12% of Gross Revenue before marketing.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Call Center Fee row", "exact_text": null } },
+        { "fee_name": "Initial Call Center Setup Fee", "value": 6000, "frequency": "one-time", "field_status": "extracted", "notes": "Non-refundable, due at signing.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 5", "exact_text": null } },
+        { "fee_name": "Business Management Software (ServiceMinder)", "value": 370, "frequency": "monthly", "field_status": "extracted", "notes": "Paid to vendor directly.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Website Fee", "value": 350, "frequency": "monthly", "field_status": "extracted", "notes": "Can increase 10% on 30 days notice.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Website Fee row", "exact_text": null } },
+        { "fee_name": "Renewal Fee", "value": 5000, "frequency": "one-time", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Renewal Fee row", "exact_text": null } },
+        { "fee_name": "Conference Non-Attendance", "value": 500, "frequency": "first miss; $2,000 each consecutive", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Liquidated Damages (on default termination)", "value": 50000, "frequency": "one-time", "field_status": "extracted", "notes": "Greater of 2 years royalty or $50,000. Unusual clause.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Liquidated Damages row", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Franchise Fee", "low": 45000, "high": 45000, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Call Center Setup Fee", "low": 6000, "high": 6000, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Vehicle, Outfitting and Wrap", "low": 5750, "high": 18075, "method_of_payment": "As arranged", "when_due": "As arranged", "to_whom_paid": "Suppliers", "notes": "~$80,500 outfitted/wrapped van (financed). Low: no down payment + 3 months payments + delivery. High: 15% down + delivery + 3 months payments.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [27, 28], "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Equipment", "low": 380, "high": 1140, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Inventory", "low": 6300, "high": 6300, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Start-up Supplies", "low": 1350, "high": 1350, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Travel Expenses for Initial Training", "low": 800, "high": 4000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Software", "low": 820, "high": 820, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Computer and Technology Systems", "low": 0, "high": 2000, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Telephone Services", "low": 450, "high": 600, "method_of_payment": "Monthly", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Internet Services", "low": 300, "high": 500, "method_of_payment": "Monthly", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Rent/Lease of Real Estate", "low": 0, "high": 4800, "method_of_payment": "Monthly", "when_due": "As arranged", "to_whom_paid": "Lessor", "notes": "Home office permitted ($0).", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Leasehold Improvements", "low": 0, "high": 5000, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Utility Deposits", "low": 0, "high": 500, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance", "low": 700, "high": 4000, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Professional Fees and Licensing", "low": 1500, "high": 3000, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 10000, "high": 15000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 79350,
+      "total_high": 118085,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 27, "item_reference": "Item 7 table, Total row", "exact_text": "TOTALS $79,350 to $118,085" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Tables 1-A and 1-B",
+          "description": "Company-Owned Outlet P&L: Cleveland and Columbus OH (2024)",
+          "period": "calendar year 2024",
+          "population": "2 company-owned outlets (affiliate Weed Pro, Ltd.) in Ohio. Cleveland: 5 territories, operating since 2001. Columbus: 4 territories, operating since 2005. 3 franchisees (5 territories) opened in 2024 excluded for operating less than 12 months.",
+          "data": {
+            "cleveland": {
+              "territories": 5,
+              "gross_revenue": 5622276,
+              "per_territory_revenue": 399528,
+              "cogs_pct": 64,
+              "gross_profit": 1997639,
+              "gross_profit_pct": 36,
+              "operating_expenses": 1107631,
+              "operating_expenses_pct": 20,
+              "net_ordinary_income": 890008,
+              "ebitda_pct": 16,
+              "per_territory_net_income": 178002,
+              "imputed_franchisor_fees_included": true,
+              "technician_personnel_pct": 24,
+              "product_costs_pct": 15,
+              "program_costs_pct": 7,
+              "marketing_pct": 3,
+              "admin_personnel_pct": 12
+            },
+            "columbus": {
+              "territories": 4,
+              "gross_revenue": 2779818,
+              "per_territory_revenue": 192254,
+              "cogs_pct": 72,
+              "gross_profit": 773016,
+              "gross_profit_pct": 28,
+              "operating_expenses": 257089,
+              "operating_expenses_pct": 9,
+              "net_ordinary_income": 515927,
+              "ebitda_pct": 19,
+              "per_territory_net_income": 128982,
+              "imputed_franchisor_fees_included": true
+            }
+          },
+          "notes": "MOST DETAILED Item 19 in the lawn cohort — includes full P&L through EBITDA with imputed franchisor fees. Cleveland COGS include imputed royalty (7%), call center (6%), brand fund (1%), technology (2%). Columbus has higher COGS% (72% vs 64%) but higher EBITDA% (19% vs 16%) due to lower operating expenses. Both are mature multi-territory operations not representative of single-territory franchise start-ups.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [68, 72], "item_reference": "Item 19, Tables 1-A and 1-B", "exact_text": null }
+        },
+        {
+          "table_label": "Table 2",
+          "description": "Company-Owned Outlet Performance Metrics (2024)",
+          "period": "calendar year 2024",
+          "population": "Same 2 company-owned outlets.",
+          "data": {
+            "cleveland": { "revenue_per_vehicle": 336112, "avg_application_price": 124, "service_call_rate_pct": 2, "revenue_per_hour": 175, "prepayment_pct": 24, "autopayment_pct": 41, "avg_customer_value": 810, "lifetime_customer_value": 4051, "retention_rate_pct": 80, "call_answer_rate_pct": 95, "sales_conversion_pct": 71, "upsell_revenue_pct": 36 },
+            "columbus": { "revenue_per_vehicle": 297000, "avg_application_price": 111, "service_call_rate_pct": 4, "revenue_per_hour": 167, "prepayment_pct": 26, "autopayment_pct": 45, "avg_customer_value": 696, "lifetime_customer_value": 3478, "retention_rate_pct": 80, "call_answer_rate_pct": 95, "sales_conversion_pct": 66, "upsell_revenue_pct": 35 }
+          },
+          "notes": "Lifetime customer value ($4,051/$3,478) assumes 80% annual retention. Average customer value ($810/$696) aligns with Lawn Doctor and NaturaLawn ranges. 71%/66% sales conversion rates are high.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [72, 74], "item_reference": "Item 19, Table 2", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Most detailed P&L disclosure in the lawn cohort — includes actual COGS breakdown, operating expenses, and EBITDA with imputed franchisor fees. However, data is from company-owned (affiliate) outlets only, not franchised. Both outlets are mature multi-territory operations. 3 franchisees (5 territories) opened in 2024 but excluded for operating less than 12 months.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [68, 74], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 10,
+          "total_outlets_end": 10,
+          "opened": 0,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 10,
+          "company_owned_end": 10,
+          "notes": "Pre-franchise era. All 10 outlets are company-owned (affiliate Weed Pro territories in Ohio). Counts are territories not physical locations.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [75, 78], "item_reference": "Item 20, Tables 1, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 10,
+          "total_outlets_end": 10,
+          "opened": 0,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 10,
+          "company_owned_end": 10,
+          "notes": "Franchise program launched Sept 2023 but no franchised outlets opened before Dec 31, 2023.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [75, 78], "item_reference": "Item 20, Tables 1, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 10,
+          "total_outlets_end": 16,
+          "opened": 7,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 10,
+          "company_owned_end": 9,
+          "notes": "First year with franchised outlets: 0→7 franchised (GA 1, IL 1, KY 1, MA 3, OH 1). Company-owned: 10→9 (1 territory closed due to remapping, not actual closure). 4 franchisees operating 7 territories. 10 franchise agreements signed but not yet opened. Projected 16 new franchised in 2025.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [75, 76, 78, 79], "item_reference": "Item 20, Tables 1, 2, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": false,
+      "action_count": 0,
+      "action_types": [],
+      "notes": "No litigation required to be disclosed. No bankruptcy either (Item 4).",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 3", "exact_text": "No litigation is required to be disclosed in this Item." }
+    },
+
+    "system_info": {
+      "year_company_founded": 2001,
+      "year_first_franchised": 2023,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [6, 7], "item_reference": "Item 1", "exact_text": null }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 98717.5,
+    "net_unit_growth": [
+      { "year": 2022, "value": 0, "source_fields": ["Table 1 total: 10-10=0"] },
+      { "year": 2023, "value": 0, "source_fields": ["Table 1 total: 10-10=0"] },
+      { "year": 2024, "value": 6, "source_fields": ["Table 1 total: 16-10=+6 (7 franchised opened, 1 company-owned remapped)"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 0.00, "source_fields": ["(0+0+0+0)/10 = 0/10"] },
+      { "year": 2023, "value": 0.00, "source_fields": ["(0+0+0+0)/10 = 0/10"] },
+      { "year": 2024, "value": 0.00, "source_fields": ["(0+0+0+0)/10 = 0/10"] }
+    ],
+    "system_age_years": 2,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T20:30:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 14, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 27, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 27, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].opened", "page_verified": 75, "match": true }
+      ],
+      "checked_by": "pdfplumber extraction with page-level verification",
+      "checked_at": "2026-03-15T20:30:00Z"
+    },
+    "warnings": [
+      "NEWEST FRANCHISE IN COHORT (tied with Lawn Pride): Started franchising September 2023. Only 7 franchised territories open as of Dec 31, 2024.",
+      "HIGHEST ONGOING FEE BURDEN: 7% royalty + 2% brand fund + 5% call center = 14% of Gross Revenue before any marketing spend. Plus $42K/year local marketing + $1,170/month technology/software/website.",
+      "Sister brand to Mosquito Squad (both under Authority Brands / Apax Partners). Cross-wedge parent overlap.",
+      "Item 19 is the most detailed P&L disclosure in the lawn cohort — includes EBITDA with imputed franchisor fees. But data is company-owned only.",
+      "5% call center fee (percentage of Gross Revenue) is unusually high — effectively a second royalty. Most other brands charge flat monthly call center fees.",
+      "Marketing obligation cannot be expressed as single rate: 2% brand fund + $42K/year local. total_ongoing_fee_rate set to null.",
+      "Liquidated damages clause: greater of 2 years royalty or $50,000 on default termination. Unusual and potentially burdensome.",
+      "Affiliate Weed Pro operated as 'Weed Pro' until January 2024, then converted to 'Lawn Squad' brand — brand is very new even though underlying business dates to 2001.",
+      "AB Inc. (Authority Brands) guarantees franchisor's obligations under franchise agreements.",
+      "Actual franchise fees collected in FY2024 ($5,000-$40,000) were substantially below standard $45,000 — heavy discounting in launch phase."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "Complex: 2% brand fund + $42K/year local marketing.", "field_status": "ambiguous" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Marketing is ambiguous. Also, 5% call center fee is a significant additional franchisor charge not captured in the standard royalty+marketing sum.", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

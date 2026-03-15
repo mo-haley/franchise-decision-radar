@@ -1,0 +1,38 @@
+{
+  "cohorts": [
+    {
+      "id": "mosquito",
+      "display_name": "Mosquito Pest Control",
+      "short_name": "Mosquito",
+      "description": "Residential mosquito and outdoor pest treatment franchises competing for the same buyer pool with similar services but sharply different economics.",
+      "url_prefix": "",
+      "brands": [
+        "mosquito-authority",
+        "mosquito-hunters",
+        "mosquito-joe",
+        "mosquito-shield",
+        "mosquito-squad"
+      ],
+      "has_fee_model": true,
+      "fee_model_file": "fee_burden_model_output.json",
+      "comparison_pages": ["fee-burden", "system-health", "cost-to-enter"]
+    },
+    {
+      "id": "lawn",
+      "display_name": "Lawn Care",
+      "short_name": "Lawn",
+      "description": "Residential lawn care, fertilization, and turf treatment franchises.",
+      "url_prefix": "lawn-",
+      "brands": [
+        "lawn-doctor",
+        "weed-man",
+        "spring-green",
+        "naturalawn",
+        "lawn-pride",
+        "lawn-squad"
+      ],
+      "has_fee_model": false,
+      "comparison_pages": ["system-health", "cost-to-enter"]
+    }
+  ]
+}

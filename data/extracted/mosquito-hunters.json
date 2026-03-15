@@ -1,0 +1,333 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": "2026-03-14T13:54:00Z",
+    "local_filename": "mosquito-hunters_2025_wi.pdf",
+    "sha256": "2226332c1fc1ea66d75e56dfc717f6536ba3193867c48696e6955695dd36f931",
+    "page_count": 255,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms Mosquito Hunters, LLC 2025 FDD. Footer on every page reads 'HUNTERS-HUMBUG FDD (2025)'. Now a combination franchise: Pest Hunters / Mosquito Hunters / Humbug Holiday Lighting."
+  },
+
+  "brand": {
+    "brand_name": "Mosquito Hunters",
+    "brand_slug": "mosquito-hunters",
+    "legal_entity": "Mosquito Hunters, LLC",
+    "parent_company": "LD Parent, Inc. / CNL Strategic Capital, LLC",
+    "year_founded": 2013,
+    "year_first_franchised": 2015,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 107000,
+        "currency": "USD",
+        "range_low": null,
+        "range_high": null,
+        "field_status": "extracted",
+        "notes": "Two components: initial license fee $50,000 + initial training/supply/support fee $57,000. Nonrefundable, due at signing. VetFran/MinorityFran/First Responder 10% discount on license fee portion. Additional territory fee $25,000. Fee range collected in 2024: $102,000-$107,000.",
+        "provenance": {
+          "source_year": 2025,
+          "source_state": "WI",
+          "page_number": [14, 15],
+          "item_reference": "Item 5",
+          "exact_text": null
+        }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": 10.0,
+        "basis": "Net Revenues",
+        "field_status": "extracted",
+        "notes": "10% of Net Revenues, payable weekly. Additional 15% royalty on Net Revenues earned outside territory (total 25% on out-of-territory revenue). Net Revenues = actual gross revenues collected (cash or credit) plus all other revenues, excluding taxes and refunds.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 15, "item_reference": "Item 6, Royalty and Service Fee row", "exact_text": "10% of Net Revenues" }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "Marketing and Promotion Requirement is the greater of $37,500 or 10% of Net Revenues per calendar year, split across three mandatory components. Cannot be reduced to a single percentage rate.",
+        "components": [
+          { "name": "Local Advertising Obligation", "value": 2.0, "basis": "Net Revenues", "minimum_dollar": 8000, "frequency": "annual", "notes": "Greater of $8,000 or 2% of Net Revenues." },
+          { "name": "Centrally Managed Media Fund", "value": 7.0, "basis": "Net Revenues", "minimum_dollar": 26500, "frequency": "annual (6 installments: 4 pest Mar-Jun, 2 holiday Nov-Dec)", "notes": "Greater of $26,500 or 7% of Net Revenues. MH-managed, drives leads in territory." },
+          { "name": "Centrally Managed Tools and Programs Fund", "value": 1.0, "basis": "Net Revenues", "minimum_dollar": 3000, "frequency": "annual (52 weekly installments)", "notes": "Greater of $3,000 or 1% of Net Revenues." }
+        ],
+        "notes": "Combined cap: greater of $37,500 or 10% of Net Revenues. Optional Centrally Managed Media Boost Program ($5,000 one-time) if starting after optimal season. Total marketing floor is high — flagged as 'Special Risk' on page 4.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [15, 16, 19, 20], "item_reference": "Item 6, Marketing rows and Footnote 1", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 150,
+        "frequency": "monthly",
+        "field_status": "extracted",
+        "notes": "Starts at $150/month, increases to $250/month when cumulative Net Revenues reach $1,000,000. MH may increase up to $500/month. First payment not due until Business commences.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 15, "item_reference": "Item 6, Technology Fee row", "exact_text": null }
+      },
+      "transfer_fee": {
+        "value": null,
+        "formula": "50% of then-current initial license fee ($50,000 as of 2025 FDD)",
+        "field_status": "ambiguous",
+        "notes": "10% nonrefundable deposit at declaration of intent; remainder before completion. Applies to transfer of Business or controlling ownership interest.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Transfer Fee row", "exact_text": null }
+      },
+      "other_fees": [
+        { "fee_name": "Call Center Fees", "value": 750, "frequency": "monthly", "field_status": "extracted", "notes": "First year included in franchise fee. May increase, not expected to exceed $1,000/month.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Convention/Conference Fee", "value": 2000, "frequency": "annual maximum", "field_status": "extracted", "notes": "Up to $2,000 annually. Must pay even if not attending. Excludes travel/lodging.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Out-of-Territory Royalty Fee", "value": 15.0, "frequency": "weekly", "field_status": "extracted", "notes": "15% of Net Revenues outside territory, in addition to 10% royalty.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 15, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Broker Fee", "value": 25000, "frequency": "as incurred", "field_status": "extracted", "notes": "If MH engages broker to help sell franchisee's Business.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Unauthorized Advertising Fine", "value": 250, "frequency": "per item per occurrence", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Failure to Provide Materials Fine", "value": 500, "frequency": "per day", "field_status": "extracted", "notes": "Plus MH's reasonable expenses.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial License Fee", "low": 50000, "high": 50000, "method_of_payment": "Cash", "when_due": "Upon signing", "to_whom_paid": "MH", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Marketing Program, Training, Supply and Support Fee", "low": 57000, "high": 57000, "method_of_payment": "Cash", "when_due": "Upon signing", "to_whom_paid": "MH", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Service Vehicle deposit", "low": 8350, "high": 16700, "method_of_payment": "Cash", "when_due": "As agreed", "to_whom_paid": "Supplier", "notes": "60- or 72-month lease, 10-20% down.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Service Vehicle lease payment", "low": 1200, "high": 1525, "method_of_payment": "As agreed", "when_due": "Initial monthly", "to_whom_paid": "Supplier", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Computer Software", "low": 415, "high": 656, "method_of_payment": "Cash", "when_due": "Initial + monthly", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Computers", "low": 0, "high": 2000, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Opening Mosquito Control Inventory", "low": 500, "high": 1000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Holiday Lighting Start-Up Inventory Package", "low": 6000, "high": 14000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Supplier", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Holiday Lighting Start-Up Equipment Package", "low": 2400, "high": 2800, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Uniforms", "low": 250, "high": 500, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Rental Space", "low": 0, "high": 3000, "method_of_payment": "As agreed", "when_due": "Monthly", "to_whom_paid": "Landlord", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Bookkeeper", "low": 400, "high": 600, "method_of_payment": "As agreed", "when_due": "Monthly", "to_whom_paid": "Supplier", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Training Expenses", "low": 1900, "high": 4400, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Utility/Security Deposit", "low": 200, "high": 200, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance", "low": 800, "high": 1000, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 11880, "high": 15362, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Various", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 141295,
+      "total_high": 170743,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table, Total row", "exact_text": "TOTAL ESTIMATED INITIAL INVESTMENT $141,295 – $170,743" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Table A.1",
+          "description": "Customers Per Strategic Partner Per Quartile During 2024",
+          "period": "calendar year 2024",
+          "population": "63 Strategic-Partners owning 100 franchised territories operating Full Season 2024. Excludes 22 SPs (35 territories): 9 not Full Season, 8 failed to invest in MH marketing, 5 did not operate full season. Also excludes 6 affiliate-owned territories.",
+          "data": {
+            "Q1": { "sps": 15, "total_customers": 6692, "average": 444, "median": 439, "high": 611, "low": 357, "exceed_avg": 7, "pct_exceed": 46.67 },
+            "Q2": { "sps": 16, "total_customers": 4531, "average": 283, "median": 287, "high": 354, "low": 213, "exceed_avg": 9, "pct_exceed": 56.25 },
+            "Q3": { "sps": 16, "total_customers": 2674, "average": 167, "median": 163, "high": 203, "low": 147, "exceed_avg": 4, "pct_exceed": 25.0 },
+            "Q4": { "sps": 16, "total_customers": 1621, "average": 101, "median": 100, "high": 146, "low": 30, "exceed_avg": 8, "pct_exceed": 50.0 }
+          },
+          "notes": "26% of SPs excluded from Item 19 tables, including 8 for failing to invest in MH marketing programs. This exclusion may skew reported performance upward.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 55, "item_reference": "Item 19, Table A.1", "exact_text": null }
+        },
+        {
+          "table_label": "Table A.2",
+          "description": "Mosquito-Only Service Prices Per Region During 2024",
+          "period": "calendar year 2024",
+          "population": "Same as A.1, by region",
+          "data": {
+            "Region 1": { "states": "AK, MA, MI, NH, NY, WI", "businesses": 11, "avg_price": 88.24, "median_price": 84.99, "high": 1650.00, "low": 1.00, "total_treatments": 14772, "pct_exceed": 48.00 },
+            "Region 2": { "states": "CO, IL, IN, IA, KY, MD, MO, NE, NJ, OH, PA, UT, VA", "businesses": 21, "avg_price": 78.14, "median_price": 79.00, "high": 1012.00, "low": 9.00, "total_treatments": 28624, "pct_exceed": 51.75 },
+            "Region 3": { "states": "AR, GA, MS, NC, OK, SC, TN", "businesses": 12, "avg_price": 72.48, "median_price": 74.00, "high": 415.80, "low": 4.99, "total_treatments": 20916, "pct_exceed": 50.11 },
+            "Region 4": { "states": "FL, LA, TX", "businesses": 19, "avg_price": 84.67, "median_price": 79.00, "high": 3330.00, "low": 0.81, "total_treatments": 34559, "pct_exceed": 44.18 }
+          },
+          "notes": null,
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 56, "item_reference": "Item 19, Table A.2", "exact_text": null }
+        },
+        {
+          "table_label": "Table A.3",
+          "description": "Non-Mosquito Pest Control Service Prices Per Region During 2024",
+          "period": "calendar year 2024",
+          "population": "Same as A.1, by region",
+          "data": {
+            "Region 1": { "avg_price": 84.27, "median_price": 74.00, "high": 845.00, "low": 1.00, "total_treatments": 1618, "pct_exceed": 49.88 },
+            "Region 2": { "avg_price": 60.69, "median_price": 52.13, "high": 394.00, "low": 0.29, "total_treatments": 4870, "pct_exceed": 50.00 },
+            "Region 3": { "avg_price": 61.11, "median_price": 59.00, "high": 288.00, "low": 10.00, "total_treatments": 1057, "pct_exceed": 47.11 },
+            "Region 4": { "avg_price": 87.96, "median_price": 79.00, "high": 800.00, "low": 0.69, "total_treatments": 4102, "pct_exceed": 45.90 }
+          },
+          "notes": null,
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 56, "item_reference": "Item 19, Table A.3", "exact_text": null }
+        },
+        {
+          "table_label": "Table A.4",
+          "description": "Quantity and Value of Mosquito-Only Treatments During 2024",
+          "period": "calendar year 2024",
+          "population": "Active recurring customers by region",
+          "data": {
+            "Region 1": { "potential_treatments": 8.38, "avg_treatments": 6.22, "median_treatments": 6, "avg_customer_value": 751.22, "median_customer_value": 719.92, "high_value": 9698.00, "low_value": 84.00, "total_customers_qty": 2275, "total_customers_val": 2257 },
+            "Region 2": { "potential_treatments": 9.27, "avg_treatments": 6.75, "median_treatments": 7, "avg_customer_value": 726.21, "median_customer_value": 711.00, "high_value": 2850.00, "low_value": 18.00, "total_customers_qty": 3403, "total_customers_val": 3403 },
+            "Region 3": { "potential_treatments": 11.79, "avg_treatments": 8.06, "median_treatments": 9, "avg_customer_value": 839.94, "median_customer_value": 828.00, "high_value": 4287.58, "low_value": 15.00, "total_customers_qty": 2675, "total_customers_val": 2269 },
+            "Region 4": { "potential_treatments": 14.04, "avg_treatments": 9.11, "median_treatments": 9, "avg_customer_value": 1232.04, "median_customer_value": 1156.00, "high_value": 34000.00, "low_value": 15.00, "total_customers_qty": 3808, "total_customers_val": 3829 }
+          },
+          "notes": "Customer count totals differ between quantity and value columns in some regions (e.g., R1: 2,275 qty vs 2,257 val; R3: 2,675 vs 2,269; R4: 3,808 vs 3,829). Likely reflects some customers with treatments but no calculable program value, or vice versa.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 58, "item_reference": "Item 19, Table A.4", "exact_text": null }
+        },
+        {
+          "table_label": "Table A.5",
+          "description": "Quantity and Value of Non-Mosquito Treatments During 2024",
+          "period": "calendar year 2024",
+          "population": "Active recurring customers by region",
+          "data": {
+            "Region 1": { "potential_treatments": 4.62, "avg_treatments": 3.17, "avg_customer_value": 397.30, "median_customer_value": 269.97, "total_customers_qty": 482, "total_customers_val": 489 },
+            "Region 2": { "potential_treatments": 6.66, "avg_treatments": 4.44, "avg_customer_value": 399.20, "median_customer_value": 268.50, "total_customers_qty": 2400, "total_customers_val": 992 },
+            "Region 3": { "potential_treatments": 6.15, "avg_treatments": 3.41, "avg_customer_value": 366.62, "median_customer_value": 315.50, "total_customers_qty": 274, "total_customers_val": 316 },
+            "Region 4": { "potential_treatments": 7.03, "avg_treatments": 4.07, "avg_customer_value": 577.76, "median_customer_value": 476.00, "total_customers_qty": 1753, "total_customers_val": 882 }
+          },
+          "notes": null,
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 59, "item_reference": "Item 19, Table A.5", "exact_text": null }
+        },
+        {
+          "table_label": "Table A.6",
+          "description": "Smart Repellent Systems Installation Service Pricing 2024",
+          "period": "calendar year 2024",
+          "population": "42 installations (expanded from 2023 pilot)",
+          "data": { "average": 1466.35, "median": 1204.82, "high": 4585.00, "low": 539.40, "pct_exceed_avg": 38 },
+          "notes": null,
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 61, "item_reference": "Item 19, Table A.6", "exact_text": null }
+        },
+        {
+          "table_label": "Table A.7",
+          "description": "HUMBUG HOLIDAY LIGHTING Installations During 2024",
+          "period": "calendar year 2024 holiday season",
+          "population": "26 Strategic-Partners who fully participated",
+          "data": {
+            "customer_count": { "average": 42, "median": 32, "high": 125, "low": 5 },
+            "revenue_per_customer": { "average": 1544.26, "median": 1232.46, "high": 14670.00, "low": 78.08 },
+            "revenue_per_franchisee": { "average": 64727.10, "median": 53700.79, "high": 305527.77, "low": 2898.50 }
+          },
+          "notes": "26 participating SPs (vs 3 in 2023 pilot). Significant scale-up of holiday lighting program.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 61, "item_reference": "Item 19, Table A.7", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 disclosed with 7 tables. Data is for 2024 (vs 2023 in prior FDD). Population: 63 SPs / 100 territories. 22 SPs (26%) excluded. Item 19 does not disclose total revenue or profit per franchise unit. Holiday lighting data now from 26 SPs (vs 3 pilot SPs in 2024 FDD).",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [52, 61], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 133,
+          "total_outlets_end": 129,
+          "opened": 13,
+          "closed": 17,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 10,
+          "ceased_operations_other": 0,
+          "company_owned_start": 6,
+          "company_owned_end": 6,
+          "notes": "Franchised: 127 start, 123 end. All closures coded as terminations.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [62, 64, 67], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 129,
+          "total_outlets_end": 128,
+          "opened": 10,
+          "closed": 11,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 8,
+          "ceased_operations_other": 0,
+          "company_owned_start": 6,
+          "company_owned_end": 6,
+          "notes": "Franchised: 123 start, 122 end. All closures coded as terminations.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [62, 64, 67], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 128,
+          "total_outlets_end": 141,
+          "opened": 13,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 5,
+          "ceased_operations_other": 0,
+          "company_owned_start": 6,
+          "company_owned_end": 6,
+          "notes": "Franchised: 122 start, 135 end. ZERO terminations in 2024 (down from 17 in 2022, 11 in 2023). Significant reversal. Projected 21 new franchised outlets next year.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [62, 64, 67, 68], "item_reference": "Item 20, Tables 1, 2, 3, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": false,
+      "action_count": 0,
+      "action_types": [],
+      "notes": "No litigation required to be disclosed.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 3", "exact_text": "No litigation is required to be disclosed in this Item." }
+    },
+
+    "system_info": {
+      "year_company_founded": 2013,
+      "year_first_franchised": 2015,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 9, "item_reference": "Item 1", "exact_text": null }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 156019,
+    "net_unit_growth": [
+      { "year": 2022, "value": -4, "source_fields": ["Table 1 franchised net: 123-127=-4"] },
+      { "year": 2023, "value": -1, "source_fields": ["Table 1 franchised net: 122-123=-1"] },
+      { "year": 2024, "value": 13, "source_fields": ["Table 1 franchised net: 135-122=+13"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 20.30, "source_fields": ["(17+0+0+0+10)/133 = 27/133"] },
+      { "year": 2023, "value": 14.73, "source_fields": ["(11+0+0+0+8)/129 = 19/129"] },
+      { "year": 2024, "value": 3.91, "source_fields": ["(0+0+0+0+5)/128 = 5/128"] }
+    ],
+    "system_age_years": 10,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-14T15:30:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 14, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 21, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].total_outlets_end", "page_verified": 62, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-14T15:30:00Z"
+    },
+    "warnings": [
+      "Advertising/marketing obligation recorded with field_status 'ambiguous': 3-component structure with both dollar minimums and percentage thresholds.",
+      "Transfer fee recorded with field_status 'ambiguous': defined as 50% of variable amount.",
+      "Item 19 excludes 26% of Strategic-Partners (22 of 85), including 8 for not investing in MH marketing. This exclusion rate may bias performance data upward.",
+      "All franchise closures across all 3 years coded exclusively as 'Terminations' — zero Non-Renewals, zero Ceased Operations. Classification methodology is the franchisor's.",
+      "Table A.4 customer count totals differ between quantity and value columns in some regions.",
+      "Brand is now a combination franchise (Pest Hunters / Mosquito Hunters / Humbug Holiday Lighting) as of 2024-2025. Title is 'PEST HUNTERS-MOSQUITO HUNTERS-HUMBUG HOLIDAY LIGHTING.'",
+      "year_company_founded set to 2013 (predecessor founded original concept); year_first_franchised set to 2015 (predecessor began franchising). Current entity began May 2018."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "3-component structure cannot be reduced to single percentage.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.transfer_fee.value", "reason": "Formula-based: 50% of then-current initial license fee.", "field_status": "ambiguous" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Cannot compute due to ambiguous marketing component.", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

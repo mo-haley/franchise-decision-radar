@@ -1,0 +1,486 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FDD Extraction Schema v2",
+  "description": "Schema for structured data extracted from Franchise Disclosure Documents. Four top-level blocks: source_document, brand, raw (three-layer: raw extraction, derived metrics, metadata). Provenance at each important extracted field; parent-level provenance allowed for grouped sections where all values share the same source page range.",
+  "version": "2.0.0",
+  "type": "object",
+  "required": ["source_document", "brand", "filing_year", "raw", "derived", "metadata"],
+  "properties": {
+
+    "source_document": {
+      "type": "object",
+      "description": "Audit trail for the physical PDF used in extraction. Fields may be null if the regulator-source PDF has not yet been manually downloaded.",
+      "required": ["download_origin", "local_filename"],
+      "properties": {
+        "download_origin": {
+          "type": "string",
+          "enum": ["WI_DFI", "CA_DFPI", "NASAA_EFD", "third_party"],
+          "description": "Where the PDF was obtained. Use 'third_party' for any non-regulator, non-NASAA source."
+        },
+        "download_url": {
+          "type": ["string", "null"],
+          "description": "The URL from which the PDF was downloaded. Null if downloaded via browser without a stable URL."
+        },
+        "downloaded_at": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "Timestamp of download. Null if not recorded."
+        },
+        "local_filename": {
+          "type": "string",
+          "description": "Filename as saved in data/raw/"
+        },
+        "sha256": {
+          "type": ["string", "null"],
+          "description": "SHA-256 hash of the downloaded PDF file. Null if not yet computed."
+        },
+        "page_count": {
+          "type": ["integer", "null"]
+        },
+        "ocr_used": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether OCR was required to extract text from this PDF."
+        },
+        "document_identity_notes": {
+          "type": ["string", "null"],
+          "description": "Any notes about document provenance, e.g. 'Content appears to be WI-filed FDD but obtained from third-party host. Filing year determined from cover page, not filename.'"
+        }
+      }
+    },
+
+    "brand": {
+      "type": "object",
+      "required": ["brand_name", "brand_slug", "legal_entity"],
+      "properties": {
+        "brand_name": { "type": "string", "description": "Consumer-facing brand name" },
+        "brand_slug": { "type": "string", "description": "URL-safe identifier (e.g., 'mosquito-joe')" },
+        "legal_entity": { "type": "string", "description": "Legal entity name as stated in the FDD cover page" },
+        "parent_company": { "type": ["string", "null"] },
+        "year_founded": { "type": ["integer", "null"], "description": "Year the company was founded (from Item 1)" },
+        "year_first_franchised": { "type": ["integer", "null"], "description": "Year franchise operations began (from Item 1)" },
+        "ownership_structure": {
+          "type": ["string", "null"],
+          "enum": ["public", "private", "private_equity_backed", null],
+          "description": "Public, private, or PE-backed. Set null if not determinable from FDD."
+        }
+      }
+    },
+
+    "filing_year": {
+      "type": "integer",
+      "description": "The FDD filing/issuance year as stated on the cover page or effective date. Must not be inferred from filename."
+    },
+
+    "raw": {
+      "type": "object",
+      "description": "LAYER 1: Values extracted directly from the FDD with no calculation or interpretation.",
+      "required": ["item_5_initial_fees", "item_6_other_fees", "item_7_initial_investment", "item_19_financial_performance", "item_20_outlet_summary", "item_3_litigation", "system_info"],
+      "properties": {
+
+        "item_5_initial_fees": {
+          "type": "object",
+          "description": "Item 5 — Initial franchise fee(s). Only fees disclosed in Item 5.",
+          "required": ["initial_franchise_fee"],
+          "properties": {
+            "initial_franchise_fee": {
+              "type": "object",
+              "required": ["value", "field_status", "provenance"],
+              "properties": {
+                "value": { "type": ["number", "null"], "description": "Single fee amount in USD, or null if variable/complex" },
+                "currency": { "type": "string", "default": "USD" },
+                "range_low": { "type": ["number", "null"], "description": "Low end if fee varies" },
+                "range_high": { "type": ["number", "null"], "description": "High end if fee varies" },
+                "field_status": { "$ref": "#/$defs/field_status" },
+                "notes": { "type": ["string", "null"] },
+                "provenance": { "$ref": "#/$defs/provenance" }
+              }
+            }
+          }
+        },
+
+        "item_6_other_fees": {
+          "type": "object",
+          "description": "Item 6 — Other fees (royalty, advertising, technology, transfer, etc.). All ongoing/conditional fees from the Item 6 table.",
+          "required": ["royalty_rate", "advertising_and_marketing", "technology_fee", "transfer_fee"],
+          "properties": {
+            "royalty_rate": {
+              "type": "object",
+              "required": ["value", "field_status", "provenance"],
+              "properties": {
+                "value": { "type": ["number", "null"], "description": "Percentage (e.g., 7.0 for 7%). Null if non-percentage or variable." },
+                "basis": { "type": ["string", "null"], "description": "E.g., 'gross revenue', 'Net Revenues'" },
+                "tiers": {
+                  "type": ["array", "null"],
+                  "description": "Marginal rate tiers for tiered royalty structures. Ordered by threshold ascending. When present, value should be null and field_status should be 'ambiguous'. Each tier's rate applies to revenue within that tier's band.",
+                  "items": {
+                    "type": "object",
+                    "required": ["threshold_up_to", "rate"],
+                    "properties": {
+                      "threshold_up_to": { "type": ["number", "null"], "description": "Upper bound of this tier in USD (annual gross revenue). Null for the final uncapped tier." },
+                      "rate": { "type": "number", "description": "Percentage rate for this tier (e.g., 10.0 for 10%)" }
+                    }
+                  }
+                },
+                "field_status": { "$ref": "#/$defs/field_status" },
+                "notes": { "type": ["string", "null"] },
+                "provenance": { "$ref": "#/$defs/provenance" }
+              }
+            },
+            "advertising_and_marketing": {
+              "type": "object",
+              "description": "Ad fund / marketing obligation. Use field_status 'ambiguous' if structure is too complex for a single rate.",
+              "required": ["field_status", "provenance"],
+              "properties": {
+                "value": { "type": ["number", "null"], "description": "Single percentage rate if applicable. Null if complex." },
+                "basis": { "type": ["string", "null"] },
+                "structure_description": { "type": ["string", "null"], "description": "Free-text description of the full marketing obligation structure when it cannot be reduced to a single rate." },
+                "components": {
+                  "type": ["array", "null"],
+                  "description": "Breakdown of marketing/ad obligations if multi-part",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": { "type": "string" },
+                      "value": { "type": ["number", "null"] },
+                      "basis": { "type": ["string", "null"] },
+                      "minimum_dollar": { "type": ["number", "null"] },
+                      "frequency": { "type": ["string", "null"] },
+                      "notes": { "type": ["string", "null"] }
+                    }
+                  }
+                },
+                "field_status": { "$ref": "#/$defs/field_status" },
+                "notes": { "type": ["string", "null"] },
+                "provenance": { "$ref": "#/$defs/provenance" }
+              }
+            },
+            "technology_fee": {
+              "type": "object",
+              "required": ["field_status", "provenance"],
+              "properties": {
+                "value": { "type": ["number", "null"] },
+                "frequency": { "type": ["string", "null"] },
+                "field_status": { "$ref": "#/$defs/field_status" },
+                "notes": { "type": ["string", "null"] },
+                "provenance": { "$ref": "#/$defs/provenance" }
+              }
+            },
+            "transfer_fee": {
+              "type": "object",
+              "description": "Transfer fee. Use field_status 'ambiguous' if defined as percentage of a variable amount.",
+              "required": ["field_status", "provenance"],
+              "properties": {
+                "value": { "type": ["number", "null"] },
+                "formula": { "type": ["string", "null"], "description": "E.g., '50% of then-current initial license fee'" },
+                "field_status": { "$ref": "#/$defs/field_status" },
+                "notes": { "type": ["string", "null"] },
+                "provenance": { "$ref": "#/$defs/provenance" }
+              }
+            },
+            "other_fees": {
+              "type": "array",
+              "description": "All other fees from Item 6 table not captured above",
+              "items": {
+                "type": "object",
+                "required": ["fee_name", "field_status", "provenance"],
+                "properties": {
+                  "fee_name": { "type": "string" },
+                  "value": { "type": ["number", "null"] },
+                  "frequency": { "type": ["string", "null"] },
+                  "field_status": { "$ref": "#/$defs/field_status" },
+                  "notes": { "type": ["string", "null"] },
+                  "provenance": { "$ref": "#/$defs/provenance" }
+                }
+              }
+            }
+          }
+        },
+
+        "item_7_initial_investment": {
+          "type": "object",
+          "description": "Item 7 — Estimated initial investment table",
+          "required": ["line_items", "total_low", "total_high", "total_provenance"],
+          "properties": {
+            "line_items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["category", "low", "high", "provenance"],
+                "properties": {
+                  "category": { "type": "string" },
+                  "low": { "type": ["number", "null"] },
+                  "high": { "type": ["number", "null"] },
+                  "method_of_payment": { "type": ["string", "null"] },
+                  "when_due": { "type": ["string", "null"] },
+                  "to_whom_paid": { "type": ["string", "null"] },
+                  "notes": { "type": ["string", "null"] },
+                  "provenance": { "$ref": "#/$defs/provenance" }
+                }
+              }
+            },
+            "total_low": { "type": ["number", "null"] },
+            "total_high": { "type": ["number", "null"] },
+            "total_provenance": { "$ref": "#/$defs/provenance" }
+          }
+        },
+
+        "item_19_financial_performance": {
+          "type": "object",
+          "description": "Item 19 — Financial Performance Representations. Raw faithful capture only. Structure varies significantly across brands; do not normalize across brands at this layer.",
+          "required": ["disclosed", "provenance"],
+          "properties": {
+            "disclosed": {
+              "type": "boolean",
+              "description": "Whether the franchisor makes an Item 19 disclosure"
+            },
+            "representation_type": {
+              "type": ["string", "null"],
+              "description": "E.g., 'historic', 'projected', 'subset'. As described by the franchisor."
+            },
+            "tables": {
+              "type": ["array", "null"],
+              "description": "Each table or data set presented in Item 19, preserved faithfully. Structure is brand-specific.",
+              "items": {
+                "type": "object",
+                "required": ["table_label", "provenance"],
+                "properties": {
+                  "table_label": { "type": "string", "description": "Label as used in the FDD (e.g., 'Table A.1', 'Table 1')" },
+                  "description": { "type": ["string", "null"], "description": "What this table reports, in the franchisor's framing" },
+                  "period": { "type": ["string", "null"] },
+                  "population": { "type": ["string", "null"], "description": "Which units/customers are included and excluded" },
+                  "data": {
+                    "type": ["object", "array", "null"],
+                    "description": "The table data in whatever structure best preserves the original. May be an array of rows, a summary object, etc."
+                  },
+                  "notes": { "type": ["string", "null"] },
+                  "provenance": { "$ref": "#/$defs/provenance" }
+                }
+              }
+            },
+            "normalized_metrics": {
+              "type": ["null"],
+              "description": "DEFERRED. Placeholder for future cross-brand normalization layer. Do not populate until normalization schema is designed and validated across multiple brands."
+            },
+            "notes": { "type": ["string", "null"] },
+            "provenance": { "$ref": "#/$defs/provenance" }
+          }
+        },
+
+        "item_20_outlet_summary": {
+          "type": "object",
+          "description": "Item 20 — System-wide outlet counts from Tables 1-5",
+          "required": ["years_reported"],
+          "properties": {
+            "years_reported": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["year", "total_outlets_start", "total_outlets_end", "opened", "closed", "transferred", "ceased_operations_other", "provenance"],
+                "properties": {
+                  "year": { "type": "integer" },
+                  "total_outlets_start": { "type": ["integer", "null"] },
+                  "total_outlets_end": { "type": ["integer", "null"] },
+                  "opened": { "type": ["integer", "null"] },
+                  "closed": { "type": ["integer", "null"], "description": "Terminations from Table 3" },
+                  "non_renewals": { "type": ["integer", "null"] },
+                  "reacquired_by_franchisor": { "type": ["integer", "null"] },
+                  "transferred": { "type": ["integer", "null"], "description": "From Table 2" },
+                  "ceased_operations_other": { "type": ["integer", "null"] },
+                  "company_owned_start": { "type": ["integer", "null"] },
+                  "company_owned_end": { "type": ["integer", "null"] },
+                  "notes": { "type": ["string", "null"] },
+                  "provenance": { "$ref": "#/$defs/provenance" }
+                }
+              }
+            }
+          }
+        },
+
+        "item_3_litigation": {
+          "type": "object",
+          "description": "Item 3 — Litigation summary",
+          "required": ["has_litigation", "provenance"],
+          "properties": {
+            "has_litigation": { "type": ["boolean", "null"] },
+            "action_count": { "type": ["integer", "null"] },
+            "action_types": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": { "type": "string" },
+                  "count": { "type": ["integer", "null"] },
+                  "notes": { "type": ["string", "null"] }
+                }
+              }
+            },
+            "notes": { "type": ["string", "null"] },
+            "provenance": { "$ref": "#/$defs/provenance" }
+          }
+        },
+
+        "system_info": {
+          "type": "object",
+          "description": "General system information from Item 1 / front matter",
+          "required": ["provenance"],
+          "properties": {
+            "year_company_founded": { "type": ["integer", "null"] },
+            "year_first_franchised": { "type": ["integer", "null"] },
+            "states_registered": {
+              "type": ["array", "null"],
+              "items": { "type": "string" },
+              "description": "List of states where FDD is registered, if extracted"
+            },
+            "states_registered_status": { "$ref": "#/$defs/field_status" },
+            "provenance": { "$ref": "#/$defs/provenance" }
+          }
+        },
+
+        "item_12_territory": {
+          "type": ["object", "null"],
+          "description": "DEFERRED. Item 12 — Territory. Reserved for future extraction. Do not populate from inference.",
+          "properties": {
+            "_status": { "type": "string", "const": "deferred" }
+          }
+        },
+
+        "item_17_contract_terms": {
+          "type": ["object", "null"],
+          "description": "DEFERRED. Item 17 — Renewal, Termination, Transfer, and Dispute Resolution. Reserved for future extraction. Do not populate from inference.",
+          "properties": {
+            "_status": { "type": "string", "const": "deferred" }
+          }
+        },
+
+        "item_21_financial_statements_summary": {
+          "type": ["object", "null"],
+          "description": "DEFERRED. Item 21 — Financial Statements summary. Reserved for future extraction. Do not populate from inference.",
+          "properties": {
+            "_status": { "type": "string", "const": "deferred" }
+          }
+        }
+      }
+    },
+
+    "derived": {
+      "type": "object",
+      "description": "LAYER 2: Calculated values derived from raw fields. Each field documents its source fields and formula.",
+      "properties": {
+        "initial_investment_midpoint": {
+          "type": ["number", "null"],
+          "description": "(total_low + total_high) / 2",
+          "source_fields": ["raw.item_7_initial_investment.total_low", "raw.item_7_initial_investment.total_high"]
+        },
+        "net_unit_growth": {
+          "type": "array",
+          "description": "opened - closed per year (franchised outlets only)",
+          "items": {
+            "type": "object",
+            "required": ["year", "value", "source_fields"],
+            "properties": {
+              "year": { "type": "integer" },
+              "value": { "type": ["integer", "null"] },
+              "source_fields": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "turnover_rate": {
+          "type": "array",
+          "description": "(closed + transferred + ceased) / total_outlets_start * 100 per year",
+          "items": {
+            "type": "object",
+            "required": ["year", "value", "source_fields"],
+            "properties": {
+              "year": { "type": "integer" },
+              "value": { "type": ["number", "null"], "description": "Percentage" },
+              "source_fields": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "system_age_years": {
+          "type": ["integer", "null"],
+          "description": "filing_year - year_first_franchised",
+          "source_fields": ["filing_year", "raw.system_info.year_first_franchised"]
+        },
+        "total_ongoing_fee_rate": {
+          "type": ["number", "null"],
+          "description": "Sum of royalty + advertising/marketing percentage rates. Null if any component cannot be expressed as a single percentage.",
+          "field_status": { "$ref": "#/$defs/field_status" },
+          "source_fields": ["raw.item_6_other_fees.royalty_rate.value", "raw.item_6_other_fees.advertising_and_marketing.value"]
+        }
+      }
+    },
+
+    "metadata": {
+      "type": "object",
+      "description": "LAYER 3: Extraction process details, confidence, warnings",
+      "required": ["extraction_timestamp", "extraction_method", "extraction_confidence"],
+      "properties": {
+        "extraction_timestamp": { "type": "string", "format": "date-time" },
+        "extraction_method": { "type": "string", "description": "E.g., 'pdfplumber', 'pdfplumber + manual review'" },
+        "extraction_confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"],
+          "description": "Overall confidence. 'high' requires spot-check of at least 3 values against source PDF page references."
+        },
+        "spot_check": {
+          "type": ["object", "null"],
+          "description": "Record of spot-check validation",
+          "properties": {
+            "checked_fields": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "field": { "type": "string" },
+                  "page_verified": { "type": "integer" },
+                  "match": { "type": "boolean" }
+                }
+              }
+            },
+            "checked_by": { "type": ["string", "null"] },
+            "checked_at": { "type": ["string", "null"], "format": "date-time" }
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "null_fields": {
+          "type": "array",
+          "description": "Fields set to null with reasons and statuses",
+          "items": {
+            "type": "object",
+            "required": ["field", "reason", "field_status"],
+            "properties": {
+              "field": { "type": "string" },
+              "reason": { "type": "string" },
+              "field_status": { "$ref": "#/$defs/field_status" }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "description": "Source tracing for extracted values",
+      "required": ["source_year", "source_state"],
+      "properties": {
+        "source_year": { "type": "integer", "description": "FDD filing year" },
+        "source_state": { "type": "string", "description": "State code (e.g., 'WI')" },
+        "page_number": { "type": ["integer", "array", "null"], "description": "Page(s) in the PDF where value was found" },
+        "item_reference": { "type": ["string", "null"], "description": "FDD item/table reference (e.g., 'Item 5', 'Item 6 table row 3')" },
+        "exact_text": { "type": ["string", "null"], "description": "Verbatim text from the document, if useful for verification" }
+      }
+    },
+    "field_status": {
+      "type": "string",
+      "enum": ["extracted", "not_found", "ambiguous", "not_applicable", "deferred"],
+      "description": "Status of field extraction. 'extracted': value present and clear. 'not_found': looked for but not present in FDD. 'ambiguous': present but cannot be cleanly represented as a single value. 'not_applicable': field does not apply to this brand/FDD. 'deferred': extraction postponed to a later phase."
+    }
+  }
+}

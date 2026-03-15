@@ -1,0 +1,276 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": "2026-03-15T07:50:00Z",
+    "local_filename": "lawn-pride_2025_wi_auto.pdf",
+    "sha256": "e563a5497e8a298324c3faec0efc8bfdd84008c5614569abe713d4ee3af659be",
+    "page_count": 381,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms Lawn Pride SPV LLC 2025 FDD. Neighborly/KKR portfolio brand — same parent structure as Mosquito Joe. Brand started franchising in January 2023; predecessor Lawn Pride, Inc. operated since 1993."
+  },
+
+  "brand": {
+    "brand_name": "Lawn Pride",
+    "brand_slug": "lawn-pride",
+    "legal_entity": "Lawn Pride SPV LLC",
+    "parent_company": "Neighborly Assetco LLC / Dwyer Franchising LLC d/b/a Neighborly / KKR",
+    "year_founded": 1993,
+    "year_first_franchised": 2023,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": null,
+        "currency": "USD",
+        "range_low": 40050,
+        "range_high": 62300,
+        "field_status": "extracted",
+        "notes": "$0.89 per Targeted Household. Typical territory 45,000-70,000 TH = $40,050-$62,300. Minimum IFF $40,050. Average paid in 2024: ~$48,515 (range $14,507-$61,031). Extensive discount programs: Community Heroes ($2,500 off), VetFran (20% off minimum IFF), Roll-In (5%-45% based on existing business revenue), Multi-Unit (5%-20% based on years as franchisee), Additional Concept (10% for existing Neighborly franchisees), HIRE (10%-25% for franchisee employees). Software Set-Up Fee of $1,920 also due. Nonrefundable upon receipt.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [23, 24, 25, 26], "item_reference": "Item 5", "exact_text": "The initial franchisee fee you must pay to us is $0.89 per Targeted Household" }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": 8.0,
+        "basis": "Gross Sales",
+        "field_status": "extracted",
+        "notes": "Standard 8% of weekly Gross Sales. Roll-In franchisees get reduced rates: Small Roll-in 4%/6%/8%/8% over 4 periods; Medium 4%/4%/8%/8%; Large 4%/4%/4%/6%. Minimum License Fees apply Mar-Nov: None in years 1-2, $975/month in year 3, $1,300 in year 4, $1,755 in years 5-10. 15% on out-of-territory revenue (TAFS or Preferred Lead Program). Payable weekly on Friday for preceding week.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [26, 34, 35], "item_reference": "Item 6, License Fee row and Fees Chart", "exact_text": "up to 8% of Gross Sales" }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "Complex multi-layer: MAP Fee 2% of Gross Sales (national fund) + Local Marketing Spend Requirement ($80,000 year 1, $52,500 year 2, then $20,000 or 10% of Gross Sales whichever is greater above $525K) + potential LMG up to 3% additional. Total mandatory marketing in year 1 is at least $82,000+ (2% MAP on any revenue + $80K local).",
+        "components": [
+          { "name": "MAP Fee (national fund)", "value": 2.0, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "weekly", "notes": "Deposited into Marketing, Advertising and Promotion Fund." },
+          { "name": "Local Marketing Spend Requirement", "value": null, "basis": null, "minimum_dollar": 80000, "frequency": "annual (year 1)", "notes": "Year 1: $80,000. Year 2: $52,500. Year 3+: $20,000 or 10% of Gross Sales (whichever greater, once >$525K). Shortfall collected by franchisor. In addition to MAP fee." },
+          { "name": "Local Marketing Groups (LMG)", "value": null, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "weekly", "notes": "Up to 3% of Gross Sales. Not currently established. Counts toward Local Marketing Spend Requirement but not limited by it." }
+        ],
+        "notes": "Lawn Pride has the highest mandatory first-year marketing spend in the lawn cohort ($80,000 local + 2% MAP). This is a Neighborly-standard structure similar to Mosquito Joe. Cannot be expressed as a single rate due to the dollar minimums.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [26, 33], "item_reference": "Item 6, MAP Fee row, LMG row, and Note 3", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 115,
+        "frequency": "monthly",
+        "field_status": "extracted",
+        "notes": "$115/month for Technology Package (Qvinci, FranConnect, Broadly, Office365 E3, Exchange email, RingCentral phone line). Additional: email accounts $4.50-$24/month, RingCentral lines $29/month, QuickBooks via ZorWare $30-$200/month. Real Green business management software licensed separately from Workwave LLC; support via ZorWare at $125/hour. Fees may increase up to 30% annually.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [27, 28], "item_reference": "Item 6, Technology Package Fees row", "exact_text": "Currently $115 per month" }
+      },
+      "transfer_fee": {
+        "value": null,
+        "formula": "Greater of $7,500 or 5% of the gross sales price of the Business (including all assets). May be discounted/waived for transfers to controlled entities or immediate family.",
+        "field_status": "extracted",
+        "notes": null,
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 31, "item_reference": "Item 6, Transfer Fee row", "exact_text": "The greater of (i) $7,500 or (ii) 5% of the sales price" }
+      },
+      "other_fees": [
+        { "fee_name": "Call Center Program Fees", "value": null, "frequency": "monthly", "field_status": "extracted", "notes": "$349.99-$449.99/month + $25/booked appointment. Mandatory. Paid to Neighborly Service Solutions SPV LLC.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 6, Call Center Program Fees row", "exact_text": null } },
+        { "fee_name": "HelpDesk/HelpDesk Plus Fee", "value": null, "frequency": "monthly", "field_status": "extracted", "notes": "HelpDesk: minimum $200/month (3 hours); HelpDesk Plus: minimum $400/month (6 hours). Additional hours $75/hour. Mandatory first 12 months. Paid to affiliate BackOffice.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 6, HelpDesk row", "exact_text": null } },
+        { "fee_name": "Software Set-Up Fee", "value": 1920, "frequency": "one-time", "field_status": "extracted", "notes": "Due 30 days before scheduled opening.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 26, "item_reference": "Item 5, Software Set-Up Fee", "exact_text": null } },
+        { "fee_name": "Renewal Fee", "value": 7500, "frequency": "one-time", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 31, "item_reference": "Item 6, Renewal Fee row", "exact_text": null } },
+        { "fee_name": "Annual Convention", "value": 1000, "frequency": "annual (maximum)", "field_status": "extracted", "notes": "Up to $1,000 plus travel expenses. $2,000 penalty for non-attendance.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [29, 30], "item_reference": "Item 6, Regional Meetings row", "exact_text": null } },
+        { "fee_name": "Audit Noncompliance Fee", "value": 500, "frequency": "per document (up to $2,500/audit)", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 30, "item_reference": "Item 6, Audit Noncompliance Fee row", "exact_text": null } },
+        { "fee_name": "Amendment Fee", "value": 300, "frequency": "per amendment", "field_status": "extracted", "notes": "For modifications at franchisee's request. May require general release.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 31, "item_reference": "Item 6, Amendment Fee row", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 40050, "high": 62300, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": "$0.89 per TH. Typical 45,000-70,000 TH.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 35, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Software Set-Up Fee", "low": 1920, "high": 1920, "method_of_payment": "Lump sum", "when_due": "30 days before opening", "to_whom_paid": "Franchisor or affiliate", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 35, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Marketing Spend", "low": 10000, "high": 15000, "method_of_payment": "As arranged", "when_due": "As arranged", "to_whom_paid": "Brand approved vendors", "notes": "Portion of $80,000 year 1 Local Marketing Spend Requirement for pre-opening/opening marketing.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 35, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Real Property Lease", "low": 0, "high": 2000, "method_of_payment": "Monthly", "when_due": "As arranged", "to_whom_paid": "Lessor", "notes": "May operate from garage/storage initially. 200-1,000 sq ft needed.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 35, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Furnishings, Signage & Fixtures", "low": 0, "high": 1500, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 35, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Vehicle", "low": 2920, "high": 3020, "method_of_payment": "As arranged", "when_due": "As arranged", "to_whom_paid": "Suppliers", "notes": "Lease ~$2,300/month (60 months) or finance ~$2,400/month. Includes wrap and upfit. Purchase outright: ~$115,000 (vehicle + upfit + wrap). Also Ride-on-Spreader lease ~$620/month.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [35, 37], "item_reference": "Item 7 table and Note 5", "exact_text": null } },
+        { "category": "Tools, Equipment, Products, Uniforms & Supplies", "low": 1950, "high": 2600, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": "Aerators, spreaders, sprayers, blowers.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 35, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Training", "low": 100, "high": 2000, "method_of_payment": "As arranged", "when_due": "As arranged", "to_whom_paid": "Suppliers", "notes": "May be conducted remotely/virtually.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 36, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Inventory", "low": 500, "high": 1000, "method_of_payment": "As arranged", "when_due": "As arranged", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 36, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance", "low": 1050, "high": 2250, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 36, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Business and Professional Advisors", "low": 0, "high": 1000, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 36, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Deposits, Permits and Licenses", "low": 100, "high": 500, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Government", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 36, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Computer, Internet Devices, Phones, Tablet, Software Setup", "low": 925, "high": 2500, "method_of_payment": "As arranged", "when_due": "Before opening", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 36, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 81700, "high": 146120, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": "Includes remainder of $80K year 1 Local Marketing Spend Requirement, vehicle lease payments, operating expenses, HelpDesk fees, call center fees, MAP fees, license fees. By far the largest line item.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 36, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 141215,
+      "total_high": 243710,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 36, "item_reference": "Item 7 table, Total row", "exact_text": "TOTALS $141,215 - $243,710" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Tables I.A and I.B",
+          "description": "Affiliate-Operated Location: Gross Sales Per Customer (Residential and Commercial), 2021-2024",
+          "period": "calendar years 2021-2024",
+          "population": "1 affiliate-operated Lawn Pride business in Indianapolis, IN. Operating since 1993. Territory ~661,075 TH (13-22x larger than typical franchised territory). Excluded: snow removal, flying insect, disease control services not offered by franchise system.",
+          "data": {
+            "residential_per_customer": [
+              { "year": 2021, "average": 1341, "median": 545, "highest": 7109, "lowest": 26, "program_pct": 52, "upsell_pct": 48 },
+              { "year": 2022, "average": 1203, "median": 583, "highest": 7690, "lowest": 25, "program_pct": 53, "upsell_pct": 47 },
+              { "year": 2023, "average": 1005, "median": 591, "highest": 11829, "lowest": 25, "program_pct": 56, "upsell_pct": 44 },
+              { "year": 2024, "average": 838, "median": 569, "highest": 11076, "lowest": 28, "program_pct": 57, "upsell_pct": 43 }
+            ],
+            "commercial_per_customer": [
+              { "year": 2021, "average": 2657, "median": 743, "highest": 40953, "lowest": 60, "program_pct": 48, "upsell_pct": 52 },
+              { "year": 2022, "average": 2414, "median": 910, "highest": 45803, "lowest": 75, "program_pct": 56, "upsell_pct": 44 },
+              { "year": 2023, "average": 2192, "median": 867, "highest": 46056, "lowest": 66, "program_pct": 62, "upsell_pct": 38 },
+              { "year": 2024, "average": 1899, "median": 816, "highest": 45965, "lowest": 148, "program_pct": 65, "upsell_pct": 35 }
+            ]
+          },
+          "notes": "Affiliate location has declining average per-customer revenue ($1,341→$838 residential, $2,657→$1,899 commercial over 4 years) while program services % is increasing and upsell % decreasing. Territory is 13-22x typical franchise territory — not representative of franchised unit economics. Minimum service fee $25.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [72, 73], "item_reference": "Item 19, Tables I.A and I.B", "exact_text": null }
+        },
+        {
+          "table_label": "Tables II.A and II.B",
+          "description": "Franchised Businesses: Gross Sales Per Customer (Residential and Commercial), 2024",
+          "period": "calendar year 2024",
+          "population": "35 franchised businesses. 5 opened in 2023, 30 opened during 2024 (less than 1 year of operation). No franchised businesses closed during period.",
+          "data": {
+            "residential_per_customer": { "average": 980, "median": 450, "highest": 5914, "lowest": 29, "program_pct": 55, "upsell_pct": 45, "at_or_above_average": 14, "pct_at_or_above_average": 40 },
+            "commercial_per_customer": { "average": 2628, "median": 756, "highest": 38186, "lowest": 63, "program_pct": 90, "upsell_pct": 10, "at_or_above_average": 2, "pct_at_or_above_average": 25, "note": "Only 8 reporting businesses had commercial customers" }
+          },
+          "notes": "CRITICAL CONTEXT: 30 of 35 franchised businesses opened during 2024 and operated for less than a full year. Per-customer data does not reflect full-year performance. No total revenue/gross sales data disclosed — only per-customer averages. This is the most limited Item 19 disclosure in the lawn cohort.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [73, 74, 75], "item_reference": "Item 19, Tables II.A and II.B", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 discloses only per-customer revenue data, not total revenue or gross sales per unit. All 35 franchised businesses are extremely new (5 from 2023, 30 from 2024). The affiliate-operated location (since 1993, 661K+ TH territory) is not representative of franchised unit economics. No gross profit margin data. Most limited Item 19 in the lawn cohort.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [71, 75], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 1,
+          "total_outlets_end": 1,
+          "opened": 0,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 1,
+          "company_owned_end": 1,
+          "notes": "Pre-franchise era. Only 1 affiliate-operated outlet (Indianapolis). No franchised units yet. Lawn Pride SPV LLC organized Dec 1, 2022.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [75, 78], "item_reference": "Item 20, Tables 1, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 1,
+          "total_outlets_end": 6,
+          "opened": 5,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 1,
+          "company_owned_end": 1,
+          "notes": "First year of franchising. 5 franchised outlets opened (AL 2, NC 1, SC 1, TX 1). Company-owned: 1→1.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [75, 77, 78], "item_reference": "Item 20, Tables 1, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 6,
+          "total_outlets_end": 36,
+          "opened": 30,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 1,
+          "company_owned_end": 1,
+          "notes": "EXPLOSIVE GROWTH: 30 new franchised outlets in one year (6x system size). Texas alone: 14 new outlets. 12 additional franchise agreements signed but not yet opened. Projected 12 more new outlets in 2025. Zero terminations, zero transfers. Company-owned: 1→1.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [75, 77, 78, 79], "item_reference": "Item 20, Tables 1, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": true,
+      "action_count": 2,
+      "action_types": [
+        { "type": "regulatory/affiliate", "count": 2, "notes": "Both involve Neighborly affiliates, not Lawn Pride directly. (1) CA Commissioner v. For Franchising LLC (Window Genie): advertising violation consent order 2017, resolved. (2) State of Kansas v. Molly Maid Inc.: consumer protection consent judgment 2010, $25K penalty + $25K costs, satisfied 2011." }
+      ],
+      "notes": "No litigation involving Lawn Pride SPV LLC directly. Two disclosed actions involve predecessor/affiliate brands in the Neighborly portfolio. Multiple KKR portfolio company bankruptcies disclosed in Item 4 but none involve Lawn Pride or Neighborly.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [21, 22], "item_reference": "Item 3", "exact_text": null }
+    },
+
+    "system_info": {
+      "year_company_founded": 1993,
+      "year_first_franchised": 2023,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 10, "item_reference": "Item 1", "exact_text": "We started franchising in January 2023... Our predecessor and affiliate is Lawn Pride, Inc., which was organized as an Indiana corporation on March 18, 1993" }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 192462.5,
+    "net_unit_growth": [
+      { "year": 2022, "value": 0, "source_fields": ["Table 1 total: 1-1=0"] },
+      { "year": 2023, "value": 5, "source_fields": ["Table 1 total: 6-1=+5"] },
+      { "year": 2024, "value": 30, "source_fields": ["Table 1 total: 36-6=+30"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 0.00, "source_fields": ["(0+0+0+0)/1 = 0/1"] },
+      { "year": 2023, "value": 0.00, "source_fields": ["(0+0+0+0)/1 = 0/1"] },
+      { "year": 2024, "value": 0.00, "source_fields": ["(0+0+0+0)/6 = 0/6"] }
+    ],
+    "system_age_years": 2,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T20:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.range_low", "page_verified": 23, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 36, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 36, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].opened", "page_verified": 77, "match": true }
+      ],
+      "checked_by": "pdfplumber extraction with page-level verification",
+      "checked_at": "2026-03-15T20:00:00Z"
+    },
+    "warnings": [
+      "NEWEST FRANCHISE IN COHORT: Started franchising January 2023. Only 2 years of franchise history. 35 franchised units as of Dec 31, 2024 — all very new.",
+      "Same Neighborly/KKR/SPV structure as Mosquito Joe. Cross-wedge parent overlap.",
+      "Item 19 discloses only per-customer revenue, not total revenue or gross sales per unit. Most limited disclosure in the lawn cohort.",
+      "30 of 35 franchised units opened during 2024 — less than 1 year of operation at time of reporting.",
+      "Additional Funds (3 months) of $81,700-$146,120 is the highest in the lawn cohort, driven by mandatory $80K year 1 Local Marketing Spend.",
+      "Marketing obligation cannot be expressed as single rate: 2% MAP + $80K local (year 1). total_ongoing_fee_rate set to null.",
+      "Affiliate-operated location in Indianapolis has 661,075 TH territory (13-22x typical franchise) — not representative of franchise economics.",
+      "Affiliate per-customer revenue declining YoY (residential: $1,341→$838 over 4 years) while program % increasing — suggests mix shift away from upsell services.",
+      "Zero terminations, zero transfers across all reported years — expected for a system this new.",
+      "12 franchise agreements signed but not yet opened as of Dec 31, 2024 — significant pipeline.",
+      "Franchise explicitly excludes mosquito/flying pest, tick and flea control — complementary to Mosquito Joe under same parent."
+    ],
+    "null_fields": [
+      { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "reason": "Variable: $0.89 per Targeted Household, typical range $40,050-$62,300.", "field_status": "extracted" },
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "Complex: 2% MAP + $80K local (year 1) + up to 3% LMG.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.transfer_fee.value", "reason": "Formula: greater of $7,500 or 5% of sales price.", "field_status": "extracted" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Marketing is ambiguous (2% MAP + dollar minimums).", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

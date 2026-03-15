@@ -1,0 +1,622 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/details.aspx?id=639085",
+    "downloaded_at": "2026-03-14T13:50:00Z",
+    "local_filename": "mosquito-authority_2025_wi.pdf",
+    "sha256": "b3c79bd51cd531ec6e5c34297acd7118ba47d8a9418c1d5fec18c150fd4ab980",
+    "page_count": 232,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF downloaded from Wisconsin DFI. Filing ID 639085. Trade name 'Mosquito Authority' confirmed on detail page. Cover page confirms Main Line Brands LLC / Mosquito Authority 2025 FDD. Document dated May 2, 2025."
+  },
+
+  "brand": {
+    "brand_name": "Mosquito Authority",
+    "brand_slug": "mosquito-authority",
+    "legal_entity": "Main Line Brands LLC",
+    "parent_company": "Main Line Brands Holdings LLC / Susquehanna Private Capital Fund II, LLP",
+    "year_founded": 2009,
+    "year_first_franchised": 2009,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": null,
+        "currency": "USD",
+        "range_low": 25000,
+        "range_high": 45000,
+        "field_status": "extracted",
+        "notes": "Fee varies by franchise type: Full-Size Franchise $45,000 (approx. 35,000 single-family dwellings territory), Hometown Franchise $25,000 (smaller territory). 30% discount on 2nd+ concurrent agreement. Veterans discount 15%. Nonrefundable once paid. Franchisor may defer up to 50% of fee (36-month promissory note at 8% annual interest). During 2024 fiscal year, some franchises sold at reduced fees of $31,500 and $35,000.",
+        "provenance": {
+          "source_year": 2025,
+          "source_state": "WI",
+          "page_number": 13,
+          "item_reference": "Item 5",
+          "exact_text": "The Initial Franchise Fee for a Full-Size Franchise is $45,000...The Initial Franchise Fee for a Hometown Franchise is $25,000."
+        }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": 10.0,
+        "basis": "Gross Revenues",
+        "field_status": "extracted",
+        "notes": "10% of Gross Revenues or minimum monthly fee (whichever greater). Minimum starts at $0 in year 1, $200 in year 2, increasing by $100/year to $700 in year 7+. Payable by ACH/EFT on 1st of each month. Gross Revenues = all revenue from sales including cash, check, credit card. Excludes sales/use/service taxes.",
+        "provenance": {
+          "source_year": 2025,
+          "source_state": "WI",
+          "page_number": [15, 18],
+          "item_reference": "Item 6, Monthly Fee row and Note 1",
+          "exact_text": "10% of Gross Revenues, or a minimum monthly fees starting in year two of $200 and then increasing by $100 each year of operations up to $700, whichever is greater"
+        }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "No single ad fund rate. National Marketing Fee not yet implemented (reserved at up to 3% of Gross Revenues). Minimum Individual Local Advertising Expense is greater of $5,500 or 5% of Gross Sales annually. Special Campaigns may require additional contributions credited against local ad minimum.",
+        "components": [
+          {
+            "name": "National Marketing Fee",
+            "value": null,
+            "basis": "Gross Revenues",
+            "minimum_dollar": null,
+            "frequency": "monthly (if implemented)",
+            "notes": "Not yet implemented as of 2025 FDD. If implemented, up to 3% of Gross Revenues with minimum monthly fee ranging $150-$200. Franchisor reserves right to implement on written notice."
+          },
+          {
+            "name": "Minimum Individual Local Advertising Expense",
+            "value": 5.0,
+            "basis": "Gross Sales",
+            "minimum_dollar": 5500,
+            "frequency": "annual",
+            "notes": "Greater of $5,500 or 5% of Gross Sales annually. Must be spent with approved marketing vendors or franchisor. All marketing must be approved before use. Includes pay per click and social media advertising."
+          },
+          {
+            "name": "Special Campaigns Participation Fees",
+            "value": null,
+            "basis": null,
+            "minimum_dollar": null,
+            "frequency": "as instituted",
+            "notes": "Amount set by franchisor based on campaign nature. Credited toward Minimum Individual Local Advertising Expense."
+          }
+        ],
+        "notes": "National Marketing Fee not yet implemented but reserved. Local ad minimum is the only currently active marketing obligation.",
+        "provenance": {
+          "source_year": 2025,
+          "source_state": "WI",
+          "page_number": [15, 17, 19, 20],
+          "item_reference": "Item 6, National Marketing Fee row, Minimum Individual Local Advertising row, Special Campaigns row, Notes 4 and 13",
+          "exact_text": null
+        }
+      },
+      "technology_fee": {
+        "value": null,
+        "frequency": "monthly",
+        "field_status": "ambiguous",
+        "notes": "Monthly fee ranges from $100 to $1,200 depending on Gross Revenues in prior 12-month period. Tiered: $0-$50K=$100, $50K-$150K=$200, $150K-$250K=$300, $250K-$350K=$400, $350K-$450K=$500, $450K-$550K=$600, $550K-$650K=$700, $650K-$750K=$800, $750K-$850K=$900, $850K-$950K=$1,000, $950K-$1.05M=$1,100, $1.05M+=$1,200. Includes required Dispatch Plus and/or Field Routes Software.",
+        "provenance": {
+          "source_year": 2025,
+          "source_state": "WI",
+          "page_number": [16, 21],
+          "item_reference": "Item 6, Technology and Software Systems Fee row, Note 10",
+          "exact_text": "A monthly fee ranging from $100 to $1,200 depending on your Gross Revenues"
+        }
+      },
+      "transfer_fee": {
+        "value": 7500,
+        "formula": null,
+        "field_status": "extracted",
+        "notes": "$7,500 if transferee has no existing relationship with franchisor (for Mosquito Authority, Pest Authority, or FMT). $2,500 if transferee has existing relationship. Due upon signing then-current successor Franchise Agreement.",
+        "provenance": {
+          "source_year": 2025,
+          "source_state": "WI",
+          "page_number": 18,
+          "item_reference": "Item 6, Transfer Fee row",
+          "exact_text": "$7,500 U.S. if the transferee does not have any existing relationship with us...or $2,500 U.S. if the transferee has an existing relationship with us"
+        }
+      },
+      "other_fees": [
+        {
+          "fee_name": "Local Website/Digital Footprint",
+          "value": 250,
+          "frequency": "monthly",
+          "field_status": "extracted",
+          "notes": "Currently $250/month. May increase. Includes local website pages, SEO, social media reputation management, local search web form, organic leads, review generation tools.",
+          "provenance": {
+            "source_year": 2025,
+            "source_state": "WI",
+            "page_number": 15,
+            "item_reference": "Item 6, Local Website pages row",
+            "exact_text": "Currently $250 per month"
+          }
+        },
+        {
+          "fee_name": "Social Media Management",
+          "value": null,
+          "frequency": "monthly (if implemented)",
+          "field_status": "not_found",
+          "notes": "Currently none. Franchisor may implement and increase upon notice. Would cover social media posts and review response for Google, Facebook, Yelp.",
+          "provenance": {
+            "source_year": 2025,
+            "source_state": "WI",
+            "page_number": [15, 16],
+            "item_reference": "Item 6, Social media pages row",
+            "exact_text": "Currently none"
+          }
+        },
+        {
+          "fee_name": "Additional Assistance",
+          "value": null,
+          "frequency": "as incurred",
+          "field_status": "extracted",
+          "notes": "$750-$1,250 per day plus travel expenses, lodging and meals. Payable 30 days after billing.",
+          "provenance": {
+            "source_year": 2025,
+            "source_state": "WI",
+            "page_number": 16,
+            "item_reference": "Item 6, Additional Assistance row",
+            "exact_text": "$750 - $1,250 per day plus travel expenses, lodging and meals"
+          }
+        },
+        {
+          "fee_name": "Training/Seminars/Conventions",
+          "value": null,
+          "frequency": "as incurred",
+          "field_status": "extracted",
+          "notes": "$500-$5,000 plus expenses estimated at $50. If you fail to attend conference, charged greater of $699 or that year's cost to attend. Mandatory meetings at franchisor's discretion.",
+          "provenance": {
+            "source_year": 2025,
+            "source_state": "WI",
+            "page_number": 16,
+            "item_reference": "Item 6, Training row",
+            "exact_text": "$500 - $5,000, plus expenses estimated at $50"
+          }
+        },
+        {
+          "fee_name": "Late Fees",
+          "value": 100,
+          "frequency": "per late payment",
+          "field_status": "extracted",
+          "notes": "Applies to all overdue fees, reports, documents, records or statements.",
+          "provenance": {
+            "source_year": 2025,
+            "source_state": "WI",
+            "page_number": 16,
+            "item_reference": "Item 6, Late Fees row",
+            "exact_text": "$100"
+          }
+        },
+        {
+          "fee_name": "Successor Franchise Fee",
+          "value": 3500,
+          "frequency": "one-time (on renewal)",
+          "field_status": "extracted",
+          "notes": "Due upon signing then-current successor Franchise Agreement.",
+          "provenance": {
+            "source_year": 2025,
+            "source_state": "WI",
+            "page_number": 17,
+            "item_reference": "Item 6, Successor Franchise Fee row",
+            "exact_text": "$3,500"
+          }
+        }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        {
+          "category": "Initial Franchise Fee",
+          "low": 25000,
+          "high": 45000,
+          "method_of_payment": "Lump sum",
+          "when_due": "Upon signing Franchise Agreement",
+          "to_whom_paid": "Us",
+          "notes": "$25,000 Hometown, $45,000 Full-Size",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null }
+        },
+        {
+          "category": "Pre-Opening and First Year Marketing Package",
+          "low": 15000,
+          "high": 25000,
+          "method_of_payment": "As Incurred",
+          "when_due": "On receipt of invoice",
+          "to_whom_paid": "Us",
+          "notes": "Branded items, marketing materials, pre-opening marketing, continuing assistance during first year. May be reduced if existing franchises near market.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null }
+        },
+        {
+          "category": "Transportation Expenses During Initial Training",
+          "low": 1000,
+          "high": 1500,
+          "method_of_payment": "As incurred",
+          "when_due": "During training",
+          "to_whom_paid": "Transportation and lodging suppliers",
+          "notes": "Training at Charlotte, NC or designated location. Initial training included in franchise fee for up to 5 people.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null }
+        },
+        {
+          "category": "Computer Hardware and Technology Fees",
+          "low": 1000,
+          "high": 2000,
+          "method_of_payment": "Lump Sum",
+          "when_due": "On receipt of invoice",
+          "to_whom_paid": "Us",
+          "notes": null,
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null }
+        },
+        {
+          "category": "Opening Inventory",
+          "low": 2500,
+          "high": 5000,
+          "method_of_payment": "Lump Sum",
+          "when_due": "On receipt of invoice",
+          "to_whom_paid": "Us",
+          "notes": "Includes minimal pesticide, apparel, equipment",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null }
+        },
+        {
+          "category": "Storage Facility for inventory and equipment",
+          "low": 0,
+          "high": 200,
+          "method_of_payment": "Monthly or Annually",
+          "when_due": "As incurred",
+          "to_whom_paid": "Lessor",
+          "notes": "Zero if own adequate storage. Local law may require commercial location.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null }
+        },
+        {
+          "category": "Vehicle",
+          "low": 0,
+          "high": 30000,
+          "method_of_payment": "Monthly fee or lump sum",
+          "when_due": "Varied terms",
+          "to_whom_paid": "Auto Dealer",
+          "notes": "Must be late model, mechanically sound, white, full-size pickup truck. Zero if already own qualifying vehicle. Lease approx $500 deposit + monthly payments. Purchase $12,500-$30,000.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null }
+        },
+        {
+          "category": "Customer Service Vehicle Outfitting Package",
+          "low": 4000,
+          "high": 5000,
+          "method_of_payment": "Lump Sum",
+          "when_due": "Earlier of 120 days after signing or within 30 days after initial training",
+          "to_whom_paid": "Us",
+          "notes": "Magnetic signage initially, then full vehicle outfitting after 90 days in service.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 23, "item_reference": "Item 7 table", "exact_text": null }
+        },
+        {
+          "category": "Insurance (annual premium)",
+          "low": 2500,
+          "high": 4000,
+          "method_of_payment": "As agreed to with insurance agent",
+          "when_due": "Before beginning operations",
+          "to_whom_paid": "Insurance agent",
+          "notes": "Costs vary by size of business, prior claims, and state.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 23, "item_reference": "Item 7 table", "exact_text": null }
+        },
+        {
+          "category": "Additional Funds for first three months of operation",
+          "low": 3000,
+          "high": 10000,
+          "method_of_payment": "As incurred",
+          "when_due": "As incurred",
+          "to_whom_paid": "Suppliers, utilities",
+          "notes": "Operating expenses estimate for first 3 months, not including revenue. Does not include owner salary/draw or taxes.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 23, "item_reference": "Item 7 table", "exact_text": null }
+        }
+      ],
+      "total_low": 54000,
+      "total_high": 127700,
+      "total_provenance": {
+        "source_year": 2025,
+        "source_state": "WI",
+        "page_number": 23,
+        "item_reference": "Item 7 table, Total row",
+        "exact_text": "Total (11) $54,000 to $127,700"
+      }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Part 1 - Company-Owned P&L",
+          "description": "Full profit & loss statement for company-owned single territory in Hickory, NC (in operation since 2009)",
+          "period": "calendar years 2023 and 2024",
+          "population": "1 company-owned territory in Hickory, NC",
+          "data": {
+            "2023": {
+              "total_income": 374420.19,
+              "total_cogs": 86034.02,
+              "gross_profit": 288386.17,
+              "total_expense": 216694.70,
+              "ebitda": 71691.47,
+              "depreciation": 18543.69,
+              "amortization": 60000.00,
+              "net_income": -6852.22,
+              "income_breakdown": {
+                "barrier_spray_service": 374420.19,
+                "pest_service": 0.00
+              },
+              "cogs_breakdown": {
+                "chemicals": 12696.16,
+                "technician_labor": 55924.78,
+                "technician_bonus": 10400.00,
+                "equipment": 5954.08,
+                "customer_refunds": 1059.00
+              }
+            },
+            "2024": {
+              "total_income": 384191.98,
+              "total_cogs": 87091.94,
+              "gross_profit": 297100.04,
+              "total_expense": 244522.12,
+              "ebitda": 52577.92,
+              "depreciation": 22988.82,
+              "amortization": 60000.00,
+              "net_income": -30410.90,
+              "income_breakdown": {
+                "barrier_spray_service": 357326.25,
+                "pest_service": 26865.73
+              },
+              "cogs_breakdown": {
+                "chemicals": 17646.49,
+                "technician_labor": 63540.56,
+                "technician_bonus": 4375.00,
+                "equipment": 703.05,
+                "customer_refunds": 826.84
+              }
+            }
+          },
+          "notes": "Single company-owned location. Royalty fees at 10%. Advertising ~10% of gross revenue. Technology fee $7,000/year. Call center fees of $13,919.75 based on beta program (2024). Manager salary $48,000/year. Net income is negative both years after depreciation and $60K annual amortization. Excludes second company-owned location in West Chester, PA (acquired 2023, sold 2024).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [51, 52], "item_reference": "Item 19, Part 1", "exact_text": null }
+        },
+        {
+          "table_label": "Part 2 - Gross Revenue by Franchisee",
+          "description": "Franchised Business Gross Revenue distribution by revenue bracket for 2024",
+          "period": "fiscal year 2024",
+          "population": "128 franchisees operating 506 franchised Businesses in continual operation for entire 2023 and 2024 calendar years (out of 154 franchisees owning 546 total Businesses as of Dec 31, 2024)",
+          "data": {
+            "average_gross_revenue_all": 464599.95,
+            "revenue_brackets": [
+              { "bracket": "$2,000,001 and up", "franchisees": 3, "pct_franchisees": 2, "territories": 48, "pct_territories": 9 },
+              { "bracket": "$1,000,001-$2,000,000", "franchisees": 11, "pct_franchisees": 9, "territories": 109, "pct_territories": 21 },
+              { "bracket": "$500,001-$1,000,000", "franchisees": 20, "pct_franchisees": 16, "territories": 90, "pct_territories": 18 },
+              { "bracket": "$250,001-$500,000", "franchisees": 24, "pct_franchisees": 19, "territories": 92, "pct_territories": 18 },
+              { "bracket": "$100,001-$250,000", "franchisees": 45, "pct_franchisees": 35, "territories": 119, "pct_territories": 23 },
+              { "bracket": "$50,001-$100,000", "franchisees": 16, "pct_franchisees": 12, "territories": 32, "pct_territories": 6 },
+              { "bracket": "Less than $50,000", "franchisees": 10, "pct_franchisees": 8, "territories": 18, "pct_territories": 4 }
+            ],
+            "total_franchisees_in_table": 129,
+            "total_territories_in_table": 508,
+            "note": "Table totals show 129/508 which differs slightly from stated population of 128/506. Reproduced as printed in FDD."
+          },
+          "notes": "Average Gross Revenue of $464,599.95 for the 128 qualifying franchisees. 27% of franchisees (34) exceeded $500K. 46% of territories (247) are held by franchisees earning $500K+.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 53, "item_reference": "Item 19, Part 2, Gross Revenue by Franchisee", "exact_text": "The average Gross Revenue of the 128 franchisees that operated 506 franchised Businesses during the 2024 fiscal year was $464,599.95." }
+        },
+        {
+          "table_label": "Part 2 - Gross Revenue by Territories Owned",
+          "description": "Revenue distribution by number of territories owned per franchisee",
+          "period": "fiscal year 2024",
+          "population": "Same as Part 2 main table",
+          "data": {
+            "$2,000,001_and_up": { "low_territories": 4, "median_territories": 9, "high_territories": 35, "avg_territories": 16, "exceed_avg": 1 },
+            "$1,000,001_2,000,000": { "low_territories": 2, "median_territories": 10, "high_territories": 22, "avg_territories": 10, "exceed_avg": 4 },
+            "$500,001_1,000,000": { "low_territories": 1, "median_territories": 5, "high_territories": 9, "avg_territories": 5, "exceed_avg": 6 },
+            "$250,001_500,000": { "low_territories": 1, "median_territories": 4, "high_territories": 10, "avg_territories": 4, "exceed_avg": 9 },
+            "$100,001_250,000": { "low_territories": 1, "median_territories": 4, "high_territories": 10, "avg_territories": 3, "exceed_avg": 10 },
+            "$50,001_100,000": { "low_territories": 1, "median_territories": 2, "high_territories": 7, "avg_territories": 2, "exceed_avg": 3 },
+            "less_than_50,000": { "low_territories": 1, "median_territories": 2, "high_territories": 7, "avg_territories": 2, "exceed_avg": 1 }
+          },
+          "notes": null,
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 54, "item_reference": "Item 19, Part 2, Gross Revenue by Number of Territories", "exact_text": null }
+        },
+        {
+          "table_label": "Part 2 - Gross Revenue by Length of Ownership",
+          "description": "Revenue distribution by years franchisee has owned franchise",
+          "period": "fiscal year 2024",
+          "population": "Same as Part 2 main table",
+          "data": {
+            "$2,000,001_and_up": { "min_years": 13.6, "median_years": 13.7, "max_years": 14.1, "avg_years": 13.8, "exceed_avg": 1 },
+            "$1,000,001_2,000,000": { "min_years": 4.9, "median_years": 12.4, "max_years": 14.7, "avg_years": 11.0, "exceed_avg": 7 },
+            "$500,001_1,000,000": { "min_years": 8.7, "median_years": 11.8, "max_years": 14.8, "avg_years": 12.1, "exceed_avg": 10 },
+            "$250,001_500,000": { "min_years": 2.9, "median_years": 8.0, "max_years": 13.7, "avg_years": 8.5, "exceed_avg": 11 },
+            "$100,001_250,000": { "min_years": 2.0, "median_years": 7.8, "max_years": 13.8, "avg_years": 8.0, "exceed_avg": 22 },
+            "$50,001_100,000": { "min_years": 1.8, "median_years": 4.3, "max_years": 15.1, "avg_years": 6.3, "exceed_avg": 6 },
+            "less_than_50,000": { "min_years": 0.0, "median_years": 3.4, "max_years": 8.6, "avg_years": 3.8, "exceed_avg": 4 }
+          },
+          "notes": null,
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 54, "item_reference": "Item 19, Part 2, Gross Revenue by Length of Time", "exact_text": null }
+        },
+        {
+          "table_label": "Part 2 - Gross Revenue by Years Active",
+          "description": "Revenue statistics by number of full seasons active",
+          "period": "fiscal year 2024",
+          "population": "Same as Part 2 main table",
+          "data": [
+            { "cohort": "At Least 2 Full Seasons", "low": 26763.40, "high": 362518.42, "average": 149469.79, "median": 97460.00, "franchisees": 11, "outlets": 26, "exceed_avg": 3 },
+            { "cohort": "At Least 3 Full Seasons", "low": 1410.00, "high": 445945.70, "average": 152335.17, "median": 100254.50, "franchisees": 17, "outlets": 48, "exceed_avg": 7 },
+            { "cohort": "At Least 4 Full Seasons", "low": 21772.81, "high": 1018897.91, "average": 192574.33, "median": 193897.02, "franchisees": 14, "outlets": 56, "exceed_avg": 4 },
+            { "cohort": "At Least 5 Full Seasons", "low": 62197.93, "high": 1224326.99, "average": 416935.26, "median": 240902.91, "franchisees": 6, "outlets": 41, "exceed_avg": 2 },
+            { "cohort": "At Least 6 Full Seasons", "low": 333921.13, "high": 333921.13, "average": 333921.13, "median": 333921.13, "franchisees": 1, "outlets": 3, "exceed_avg": 1 },
+            { "cohort": "At Least 7 Full Seasons", "low": 71255.23, "high": 339354.55, "average": 178341.38, "median": 243162.78, "franchisees": 8, "outlets": 11, "exceed_avg": 3 },
+            { "cohort": "At Least 8 Full Seasons", "low": 33046.38, "high": 516439.65, "average": 273735.46, "median": 278374.27, "franchisees": 6, "outlets": 34, "exceed_avg": 3 },
+            { "cohort": "At Least 9 Full Seasons", "low": 96151.75, "high": 630484.86, "average": 330098.86, "median": 263302.64, "franchisees": 6, "outlets": 14, "exceed_avg": 3 },
+            { "cohort": "At Least 10+ Full Seasons", "low": 63252.40, "high": 6329113.54, "average": null, "median": 450721.68, "franchisees": 60, "outlets": 275, "exceed_avg": 20 }
+          ],
+          "notes": "10+ Full Seasons average shows '#REF!' in the FDD — appears to be a spreadsheet formula error in the source document. Recorded as null. This is a data quality issue in the filed document itself.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 55, "item_reference": "Item 19, Part 2, Gross Revenues by Number of Years Active", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 disclosed in two parts: Part 1 is a full P&L for 1 company-owned location (Hickory, NC, since 2009). Part 2 is franchised business gross revenue distributions for 128 qualifying franchisees (506 territories) in continual operation for full 2023 and 2024. Part 2 includes revenue brackets, territory counts, ownership length, and years-active cohorts. Notable: Part 1 shows negative net income for the company-owned location in both 2023 and 2024 (after $60K annual amortization). Part 2 shows average gross revenue of $464,600 across qualifying franchisees. A '#REF!' spreadsheet error appears in the 10+ Full Seasons average cell.",
+      "provenance": {
+        "source_year": 2025,
+        "source_state": "WI",
+        "page_number": [50, 55],
+        "item_reference": "Item 19",
+        "exact_text": null
+      }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 524,
+          "total_outlets_end": 530,
+          "opened": 7,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 37,
+          "ceased_operations_other": 2,
+          "company_owned_start": 0,
+          "company_owned_end": 1,
+          "notes": "Franchised: 524 start, 529 end. 7 opened, 0 terminated, 0 non-renewals, 0 reacquired, 2 ceased. Company-owned: 0 start, 1 end (acquired Hickory NC location Feb 2022). Each Territory counted as one Outlet. 62 Hometown Franchises as of end of 2024 fiscal year.",
+          "provenance": {
+            "source_year": 2025,
+            "source_state": "WI",
+            "page_number": [56, 59, 63, 64],
+            "item_reference": "Item 20, Tables 1, 2, 3, and 4",
+            "exact_text": null
+          }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 530,
+          "total_outlets_end": 541,
+          "opened": 14,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 3,
+          "transferred": 29,
+          "ceased_operations_other": 7,
+          "company_owned_start": 1,
+          "company_owned_end": 2,
+          "notes": "Franchised: 529 start, 539 end. 14 opened, 0 terminated, 0 non-renewals, 3 reacquired, 7 ceased. Company-owned: 1 start, 2 end (added West Chester PA). Reacquired territories may be unrealized or largely inactive territories from multi-territory franchisees.",
+          "provenance": {
+            "source_year": 2025,
+            "source_state": "WI",
+            "page_number": [56, 58, 63, 64],
+            "item_reference": "Item 20, Tables 1, 2, 3, and 4",
+            "exact_text": null
+          }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 541,
+          "total_outlets_end": 547,
+          "opened": 18,
+          "closed": 0,
+          "non_renewals": 3,
+          "reacquired_by_franchisor": 1,
+          "transferred": 37,
+          "ceased_operations_other": 7,
+          "company_owned_start": 2,
+          "company_owned_end": 1,
+          "notes": "Franchised: 539 start, 546 end. 18 opened, 0 terminated, 3 non-renewals, 1 reacquired, 7 ceased. Company-owned: 2 start, 1 end (sold West Chester PA back to franchisee). First non-renewals in the 3-year period.",
+          "provenance": {
+            "source_year": 2025,
+            "source_state": "WI",
+            "page_number": [56, 58, 63, 64],
+            "item_reference": "Item 20, Tables 1, 2, 3, and 4",
+            "exact_text": null
+          }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": false,
+      "action_count": 0,
+      "action_types": [],
+      "notes": "No pending litigation. 5 concluded actions disclosed, all involving predecessor entity TMA Franchise Systems, Inc. (not current franchisor Main Line Brands LLC). Actions were state regulatory matters: Maryland (2013, Consent Order for selling without registration), Rhode Island (2013, Consent Agreement for selling without registration, $5,000 penalty), Virginia (2015, Settlement Order for selling without registration, $20,000 penalty), Wisconsin (2016, Consent Order for selling without registration, $10,000 penalty), Washington (2020, Assurance of Discontinuance regarding Soccer Shots compliance, inherited via corporate relationship). All actions related to pre-2020 predecessor operations under TMA.",
+      "provenance": {
+        "source_year": 2025,
+        "source_state": "WI",
+        "page_number": [11, 13],
+        "item_reference": "Item 3",
+        "exact_text": "Other than these 5 actions, no litigation is required to be disclosed in this Item."
+      }
+    },
+
+    "system_info": {
+      "year_company_founded": 2009,
+      "year_first_franchised": 2009,
+      "states_registered": ["California", "Hawaii", "Illinois", "Indiana", "Maryland", "Minnesota", "New York", "North Dakota", "Rhode Island", "South Dakota", "Virginia", "Washington", "Wisconsin"],
+      "states_registered_status": "extracted",
+      "provenance": {
+        "source_year": 2025,
+        "source_state": "WI",
+        "page_number": [6, 8],
+        "item_reference": "Item 1 and WI DFI filing detail page (States Also Filed In field)",
+        "exact_text": "We began offering franchises for Mosquito, Tick, Fly and Spotted Lantern Fly Control Specialty Businesses in October 2020."
+      }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 90850,
+    "net_unit_growth": [
+      { "year": 2022, "value": 5, "source_fields": ["raw.item_20_outlet_summary.years_reported[0] — franchised net from Table 1: 529-524=+5"] },
+      { "year": 2023, "value": 10, "source_fields": ["raw.item_20_outlet_summary.years_reported[1] — franchised net from Table 1: 539-529=+10"] },
+      { "year": 2024, "value": 7, "source_fields": ["raw.item_20_outlet_summary.years_reported[2] — franchised net from Table 1: 546-539=+7"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 7.44, "source_fields": ["formula: (closed+non_renewals+reacquired+ceased+transferred)/total_start = (0+0+0+2+37)/524 = 39/524"] },
+      { "year": 2023, "value": 7.36, "source_fields": ["formula: (0+0+3+7+29)/530 = 39/530"] },
+      { "year": 2024, "value": 8.87, "source_fields": ["formula: (0+3+1+7+37)/541 = 48/541"] }
+    ],
+    "system_age_years": 16,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-14T14:30:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.range_high", "page_verified": 13, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 23, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].total_outlets_end", "page_verified": 56, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-14T14:30:00Z"
+    },
+    "warnings": [
+      "Initial franchise fee varies by franchise type (Full-Size $45,000 vs Hometown $25,000). Recorded as range, not single value.",
+      "Advertising/marketing recorded with field_status 'ambiguous': National Marketing Fee not yet implemented (reserved up to 3%), local ad minimum is greater of $5,500 or 5%. No single rate possible.",
+      "Technology fee recorded with field_status 'ambiguous': tiered from $100 to $1,200/month based on trailing 12-month Gross Revenue.",
+      "Total ongoing fee rate is null because advertising/marketing and technology fee cannot be expressed as single percentages.",
+      "Item 19 Part 2, 'At Least 10+ Full Seasons' row shows '#REF!' for average revenue — appears to be a spreadsheet formula error in the filed FDD. Recorded as null.",
+      "Item 19 Part 2 table totals (129 franchisees / 508 territories) differ slightly from stated population (128 / 506). Reproduced as printed.",
+      "Item 3: No pending litigation against current franchisor. 5 concluded actions all involve predecessor TMA (pre-2020). Classified as has_litigation=false because no actions involve current entity.",
+      "year_company_founded and year_first_franchised set to 2009 based on predecessor original TMA offering franchises from October 2009. Current entity (Main Line Brands LLC) formed September 2020. Both dates sourced from Item 1.",
+      "States registered list includes Wisconsin (filing state) plus 12 states from WI DFI detail page 'States Also Filed In' field. California is listed there but CA DFPI registration has not been independently verified via the CA search portal.",
+      "Net unit growth uses Table 1 franchised net change directly (+5, +10, +7) rather than computing from Table 3 columns, because Table 3 totals do not perfectly reconcile with Table 1. The FDD notes that reacquired territories from multi-territory franchisees may be reassigned without appearing as new openings in Table 3.",
+      "Turnover rate includes terminations + non_renewals + reacquired + ceased + transfers in numerator. Transfers represent ownership changes (outlet stays open) but are included as a churn signal."
+    ],
+    "null_fields": [
+      { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "reason": "Fee varies by franchise type: $25,000 (Hometown) or $45,000 (Full-Size). Recorded as range.", "field_status": "extracted" },
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "National Marketing Fee not yet implemented. Local ad minimum is $5,500 or 5%. No single percentage rate.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.technology_fee.value", "reason": "Tiered from $100 to $1,200/month based on trailing 12-month Gross Revenue. No single value.", "field_status": "ambiguous" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Cannot compute because advertising/marketing and technology fee are ambiguous.", "field_status": "ambiguous" },
+      { "field": "raw.item_12_territory", "reason": "Deferred to future phase.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred to future phase.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred to future phase.", "field_status": "deferred" }
+    ]
+  }
+}

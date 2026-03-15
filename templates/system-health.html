@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% block title %}{{ cohort_short_name }} Franchise System Health Comparison | Growth, Closures &amp; Transfers{% endblock %}
+{% block meta_description %}<meta name="description" content="Compare {{ cohort_short_name | lower }} franchise system health using outlet growth, closures, transfers, and other signals that may indicate brand stability or buyer risk.">{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_base_url }}system-health.html">{% endblock %}
+
+{% block content %}
+<h1>{{ cohort_short_name }} franchise system health: growth, closures, transfers, and brand stability</h1>
+<p class="subhead">
+  Growth, attrition, and churn over {{ reporting_years | length }} years ({{ reporting_years[0] }}&ndash;{{ reporting_years[-1] }}).
+  <span class="tag tag-extracted">Extracted</span> from Item 20 (outlet counts) of each 2025 FDD.
+</p>
+
+{% if cohort_id == "mosquito" %}
+<div class="callout callout-insight">
+  <div class="callout-title">Key finding</div>
+  The two fastest-growing brands by net unit count (Shield +140, Joe +43)
+  are also the two with the most concerning churn. Growth quality matters
+  more than growth quantity.
+</div>
+{% endif %}
+
+<h2>System Size <span class="tag tag-extracted">Extracted</span></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th class="num">Franchised</th>
+      <th class="num">Co.-Owned</th>
+      <th class="num">Total</th>
+      <th class="num">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in brands_by_size %}
+    <tr>
+      <td class="brand-name"><a href="{{ brand_slug_map[b.brand_name] }}.html" style="color:inherit">{{ b.brand_name }}</a>{% if loop.index == 1 %}<span class="signal signal-best">Largest</span>{% endif %}</td>
+      <td class="num">{{ b.franchised_end }}</td>
+      <td class="num">{{ b.company_owned_end }}</td>
+      <td class="num"><strong>{{ b.total_end }}</strong></td>
+      <td class="num">{{ b.system_age }} yrs</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Net Unit Growth (Franchised) <span class="tag tag-extracted">Extracted</span></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      {% for yr in reporting_years %}
+      <th class="num">{{ yr }}</th>
+      {% endfor %}
+      <th class="num">{{ reporting_years | length }}-Year Net</th>
+      <th>Trajectory</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in brands_by_growth %}
+    <tr>
+      <td class="brand-name"><a href="{{ brand_slug_map[b.brand_name] }}.html" style="color:inherit">{{ b.brand_name }}</a></td>
+      {% for g in b.growth_by_year %}
+      <td class="num">{{ "%+d"|format(g.value) }}</td>
+      {% endfor %}
+      <td class="num"><strong>{{ "%+d"|format(b.growth_total) }}</strong></td>
+      <td><span class="badge badge-{{ b.trajectory_class }}">{{ b.trajectory }}</span></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if cohort_id == "mosquito" %}
+<div class="callout callout-context">
+  <div class="callout-title">Growth quality differs</div>
+  Shield&rsquo;s +140 required 267 openings against 128 losses.
+  Authority&rsquo;s +22 came from 39 openings against 17 losses &mdash;
+  far fewer units entering and leaving the system.
+</div>
+{% endif %}
+
+<h2>Openings &amp; Closures (3-Year Totals) <span class="tag tag-extracted">Extracted</span></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th class="num">Opened</th>
+      <th class="num">Terminated</th>
+      <th class="num">Ceased / Non-Renewed</th>
+      <th class="num">Transferred</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in brands_by_size %}
+    <tr>
+      <td class="brand-name"><a href="{{ brand_slug_map[b.brand_name] }}.html" style="color:inherit">{{ b.brand_name }}</a>{% if b.terminated_3yr > 50 %}<span class="signal signal-high">High churn</span>{% endif %}</td>
+      <td class="num">{{ b.opened_3yr }}</td>
+      <td class="num">{{ b.terminated_3yr }}</td>
+      <td class="num">{{ b.ceased_nonrenewed_3yr }}</td>
+      <td class="num">{{ b.transferred_3yr }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if cohort_id == "mosquito" %}
+<div class="callout callout-caveat">
+  <div class="callout-title">Closure classification varies across brands</div>
+  Mosquito Hunters codes <em>all</em> closures as &ldquo;Terminations&rdquo; &mdash; zero
+  non-renewals, zero ceased operations across 3 years. Other brands distribute closures
+  across categories. The attrition table below combines all closure types for fair comparison.
+</div>
+{% endif %}
+
+<h2>Total Attrition ({{ last_year }}) <span class="tag tag-extracted">Extracted</span></h2>
+<p class="small">
+  Terminations + non-renewals + ceased operations as % of start-of-year outlets.
+  Excludes transfers (ownership changes &mdash; outlet stays open).
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th class="num">Terminations</th>
+      <th class="num">Non-Renewals</th>
+      <th class="num">Ceased Ops</th>
+      <th class="num">Total</th>
+      <th class="num">% of Start</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in attrition_last_year %}
+    <tr{% if b.pct > 5 %} class="highlight"{% endif %}>
+      <td class="brand-name"><a href="{{ brand_slug_map[b.brand_name] }}.html" style="color:inherit">{{ b.brand_name }}</a>{% if b.pct > 10 %}<span class="signal signal-high">High</span>{% endif %}</td>
+      <td class="num">{{ b.terminated }}</td>
+      <td class="num">{{ b.non_renewals }}</td>
+      <td class="num">{{ b.ceased }}</td>
+      <td class="num"><strong>{{ b.total }}</strong></td>
+      <td class="num"><strong>{{ b.pct }}%</strong></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if cohort_id == "mosquito" %}
+<h2>Red Flags <span class="tag tag-editorial">Editorial</span></h2>
+
+<div class="callout callout-warning">
+  <div class="callout-title">Mosquito Shield &mdash; Growth masking churn</div>
+  65 terminations in 2023, 44 in 2024 &mdash; highest absolute numbers in the cohort.
+  Net growth looks positive only because openings (103, 73) outpace losses. The system
+  churned at 11&ndash;25% per year. In 2023, 1 in 4 outlets experienced some form of churn.
+</div>
+
+<div class="callout callout-warning">
+  <div class="callout-title">Mosquito Joe &mdash; 2024 termination spike</div>
+  24 terminations in 2024, up from 5 in 2023 (nearly 5&times;). Alabama went from
+  9 outlets to 1. System contracted for the first time (&minus;1 net). Unexplained in FDD.
+</div>
+
+<div class="callout callout-caveat">
+  <div class="callout-title">Mosquito Hunters &mdash; Classification methodology</div>
+  Zero terminations in 2024 (down from 17 in 2022) is a genuinely positive turnaround signal.
+  However, <em>all</em> closures across all 3 years are coded as &ldquo;Terminations&rdquo; with
+  zero in any other category &mdash; statistically unusual and likely reflects the franchisor&rsquo;s
+  classification choice rather than operational reality.
+</div>
+{% endif %}
+
+<div class="cta-secondary">
+  <p>Want the full system health narrative for a specific brand?</p>
+  <a href="report.html" class="cta-button">Get a Decision Report &mdash; $99 &rarr;</a>
+</div>
+{% endblock %}

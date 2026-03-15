@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}{{ cohort_display_name }} Franchise Decision Reports | Brand-by-Brand Analysis{% endblock %}
+{% block meta_description %}<meta name="description" content="Buy brand-specific {{ cohort_display_name | lower }} franchise decision reports with Item 19 translation, fee modeling, key risks, and discovery-day questions for serious buyers.">{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_base_url }}{% if cohort_id != 'mosquito' %}{{ cohort_id }}-{% endif %}report.html">{% endblock %}
+
+{% block content %}
+<div class="report-hero">
+  <h1>Decision reports for {{ cohort_display_name | lower }} franchise buyers</h1>
+  <p class="subhead">
+    You&rsquo;ve compared the category. Now you&rsquo;re evaluating one brand &mdash;
+    ready for a discovery day, franchisee calls, or capital commitment. This is the
+    analysis that lives inside the 250-page disclosure document but doesn&rsquo;t surface in a comparison table.
+  </p>
+</div>
+
+<div class="tier-grid">
+  <div class="tier-card tier-card-free">
+    <div class="tier-label">Free Comparison Site</div>
+    <div class="tier-price">$0 <span>/ {{ cohort_brand_count }} brands</span></div>
+    <ul class="tier-list">
+      <li><span class="tier-check">&#x2713;</span> Fee burden at 4 revenue levels</li>
+      <li><span class="tier-check">&#x2713;</span> Net growth &amp; attrition rates</li>
+      <li><span class="tier-check">&#x2713;</span> Investment ranges &amp; midpoints</li>
+      <li><span class="tier-check">&#x2713;</span> Royalty &amp; marketing structure</li>
+      <li><span class="tier-check">&#x2713;</span> Disclosure quality ratings</li>
+      <li><span class="tier-check">&#x2713;</span> Key watchout flags</li>
+    </ul>
+    <p class="small muted" style="margin:1rem 0 0">
+      You&rsquo;re using it now.
+      Shows <em>what</em> differs.
+    </p>
+  </div>
+  <div class="tier-card tier-card-paid">
+    <div class="tier-label">Decision Report <span class="tier-recommended">Recommended</span></div>
+    <div class="tier-price">$99 <span>/ single brand</span></div>
+    <ul class="tier-list">
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Full component fee modeling</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Item 19 (financial performance) translation</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Investment line-by-line breakdown</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Closure &amp; churn pattern analysis</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Litigation &amp; risk flag detail</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Discovery day questions</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Full peer positioning narrative</span></li>
+    </ul>
+    <div class="tier-cta">
+      <a href="#available" class="cta-button" style="font-size:0.82rem; padding:0.55rem 1.25rem;">Choose a brand report &darr;</a>
+      <span class="small muted" style="margin-left:0.5rem">One-time purchase</span>
+    </div>
+  </div>
+</div>
+
+<p class="small muted" style="margin-top:-0.5rem">
+  Free pages show <em>what</em> differs. The report explains <em>so what</em> and <em>what to ask about it</em>.
+</p>
+
+<h2>What&rsquo;s in a Decision Report</h2>
+
+<div class="report-sections">
+  <div class="report-section-item">
+    <span class="report-section-num">1</span>
+    <div>
+      <div class="report-section-title">Fee Burden Deep Dive</div>
+      <div class="report-section-desc">
+        Total ongoing cost modeled at 4 revenue levels with full component breakdown.
+        The actual dollar math including marketing minimums, technology fee tiers,
+        mandatory vendor costs, and year-by-year escalation triggers.
+      </div>
+    </div>
+  </div>
+  <div class="report-section-item">
+    <span class="report-section-num">2</span>
+    <div>
+      <div class="report-section-title">Item 19 Translation</div>
+      <div class="report-section-desc">
+        What the financial performance data actually tells you about likely revenue &mdash;
+        and what it conspicuously omits. Exclusion rates, population definitions, and what
+        the reported averages really mean for a new single-territory operator.
+      </div>
+    </div>
+  </div>
+  <div class="report-section-item">
+    <span class="report-section-num">3</span>
+    <div>
+      <div class="report-section-title">Investment Breakdown</div>
+      <div class="report-section-desc">
+        Where the initial investment actually goes. What&rsquo;s negotiable vs. fixed. What
+        the FDD buries in footnotes about working capital, mandatory vendor programs, and
+        pre-opening marketing obligations.
+      </div>
+    </div>
+  </div>
+  <div class="report-section-item">
+    <span class="report-section-num">4</span>
+    <div>
+      <div class="report-section-title">System Health Narrative</div>
+      <div class="report-section-desc">
+        Unit growth trends in context. Is the turnover rate normal for this category or a
+        red flag? What do closures and transfers suggest about franchisee satisfaction?
+      </div>
+    </div>
+  </div>
+  <div class="report-section-item">
+    <span class="report-section-num">5</span>
+    <div>
+      <div class="report-section-title">Risk Flags &amp; Litigation</div>
+      <div class="report-section-desc">
+        Regulatory history, entity structure changes, ownership transitions, franchise dispute
+        outcomes &mdash; plus the cross-brand context a single-brand attorney review wouldn&rsquo;t have.
+      </div>
+    </div>
+  </div>
+  <div class="report-section-item">
+    <span class="report-section-num">6</span>
+    <div>
+      <div class="report-section-title">Discovery Day Questions</div>
+      <div class="report-section-desc">
+        Specific, data-informed questions to ask the franchisor. Not generic checklists &mdash;
+        questions derived from this brand&rsquo;s actual FDD.
+      </div>
+    </div>
+  </div>
+  <div class="report-section-item">
+    <span class="report-section-num">7</span>
+    <div>
+      <div class="report-section-title">Peer Positioning</div>
+      <div class="report-section-desc">
+        How this brand compares across the full category with narrative context that makes
+        the single-brand analysis actionable.
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Who this is for</h2>
+<p>
+  You&rsquo;ve narrowed to one or two brands. You&rsquo;re past browsing and into evaluating.
+  You want to understand what the disclosure document actually says before you commit
+  &mdash; without reading 250 pages or paying $4,000 for an attorney who reviews one
+  brand without peer context.
+</p>
+
+<p class="small" style="color:#94a3b8">
+  Not legal advice. Not a franchise valuation. Not a recommendation to buy or avoid.
+  The report gives you structured, data-driven analysis so you can make the decision
+  with your eyes open.
+</p>
+
+<hr>
+
+<h2 id="available">Available Reports</h2>
+
+<div style="max-width: 540px;">
+  {% for b in brands %}
+  <div class="report-purchase-card">
+    <div class="report-purchase-info">
+      <h3>{{ b.brand_name }}{% if b.differentiator %}<span class="report-differentiator">{{ b.differentiator }}</span>{% endif %}</h3>
+      <p class="small muted">{{ b.system_size }} outlets &middot; Franchising since {{ b.year_first_franchised }}</p>
+    </div>
+    <a href="{{ b.stripe_payment_link if b.stripe_payment_link else b.slug + '.html' }}" class="cta-button" style="font-size:0.82rem; padding:0.5rem 1.15rem; white-space:nowrap;">{% if b.stripe_payment_link %}Get report &mdash; $99{% else %}View {{ b.brand_name.replace("Mosquito ", "") }} review &rarr;{% endif %}</a>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="methodology-compact" style="margin-top:2rem">
+  <p><strong>Source:</strong> 2025 Franchise Disclosure Documents filed with the Wisconsin
+  Department of Financial Institutions. Regulator-source PDFs, not third-party summaries.</p>
+  <p><strong>Method:</strong> Structured extraction with field-level provenance. Modeled values
+  use explicitly documented assumptions. Every claim is traceable to a specific page in the FDD.</p>
+</div>
+{% endblock %}

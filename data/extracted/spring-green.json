@@ -1,0 +1,284 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": "2026-03-15T07:50:00Z",
+    "local_filename": "spring-green_2025_wi_auto.pdf",
+    "sha256": "a3b30d7521fe546489e6dd90b28030ff81f242c9db9743b693c5296cc8638f97",
+    "page_count": 263,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms Spring-Green Lawn Care Corp. 2025 FDD. Issuance date: March 31, 2025. Franchise also offers pest control services."
+  },
+
+  "brand": {
+    "brand_name": "Spring-Green",
+    "brand_slug": "spring-green",
+    "legal_entity": "Spring-Green Lawn Care Corp.",
+    "parent_company": "Spring-Green Enterprises, Inc.",
+    "year_founded": 1977,
+    "year_first_franchised": 1977,
+    "ownership_structure": "private"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 45000,
+        "currency": "USD",
+        "range_low": 27000,
+        "range_high": 45000,
+        "field_status": "extracted",
+        "notes": "$45,000 for territory up to 60,000 SFDUs. Industry Associate Program: reduced to $27,000. Additional SFDUs over 60,000: $0.50 each. $30,000 due at signing, $15,000 due before training ($15,000 may be financed over 5 years). VetFran: up to $5,000 credit toward start-up expenses. Additionally, initial marketing campaign fee of $35,000 and initial property data fee up to $16,500 ($0.55/SFDU, minimum 50% of territory measured) are required separate initial payments.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [14, 15, 16], "item_reference": "Item 5", "exact_text": "you must pay an initial franchise fee of $45,000 for a geographic territory containing up to 60,000 single family dwelling units" }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": null,
+        "basis": "Gross Sales",
+        "field_status": "ambiguous",
+        "notes": "Tiered by annual cumulative Gross Sales: First Tier (up to $250K): 10%; Second Tier ($250K-$500K): 9%; Third Tier (over $500K): 8%. Industry Associate Program first lawn care season: 5%/4%/3%. Multi-territory franchisees may aggregate Gross Sales across territories. Renewals may have different rates. Payable weekly, 28 days from end of reporting week.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [16, 20], "item_reference": "Item 6, Royalty row and Note 3", "exact_text": "Sliding scale of 10% to 8% of Gross Sales of the Franchised Business" }
+      },
+      "advertising_and_marketing": {
+        "value": 2.0,
+        "basis": "Gross Sales",
+        "field_status": "extracted",
+        "structure_description": "National Advertising Fund: 2% of Gross Sales. Regional Advertising: up to 2% additional (not currently collected). Local Marketing minimum required but shortfall paid to franchisor if not met.",
+        "components": [
+          { "name": "Advertising Fund Contributions", "value": 2.0, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "weekly (28 days from reporting week)", "notes": "National advertising fund." },
+          { "name": "Regional Advertising Fee", "value": null, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "weekly", "notes": "Up to 2% of Gross Sales. Not currently collected." },
+          { "name": "Local Marketing Shortfall", "value": null, "basis": null, "minimum_dollar": null, "frequency": "annually", "notes": "If local marketing expenditures are less than minimum required amount, franchisee must pay shortfall to franchisor for contribution to the Fund." }
+        ],
+        "notes": "Effective rate is 2% nationally. Regional fee (up to 2% additional) is authorized but not currently imposed.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Advertising Fund and Regional Advertising rows", "exact_text": "2% of Gross Sales of the Franchised Business" }
+      },
+      "technology_fee": {
+        "value": 235,
+        "frequency": "monthly",
+        "field_status": "extracted",
+        "notes": "$235/month plus individual license costs: Office Online License $16/user/month or Full Office License $29/user/month (minimum 1 Full Office License required). Subject to Fee Adjustment (up to 100% increase annually).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [18, 21], "item_reference": "Item 6, Technology Fee row and Note 8", "exact_text": "$235 per month plus individual license cost." }
+      },
+      "transfer_fee": {
+        "value": null,
+        "formula": "2.5% of Gross Sales of the Franchised Business in the 12 months preceding the transfer, minimum $7,500, maximum $17,500.",
+        "field_status": "extracted",
+        "notes": "Payable before or at closing of approved transfer.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Transfer Fee row", "exact_text": "2½% of Gross Sales of the Franchised Business within the 12 months immediately preceding the effective date, but no less than $7,500 and no more than $17,500" }
+      },
+      "other_fees": [
+        { "fee_name": "Call Center Services", "value": null, "frequency": "monthly", "field_status": "extracted", "notes": "$200-$1,950/month. Mandatory for first 2 years, case-by-case after that. Cost depends on number of customers.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [19, 22], "item_reference": "Item 6, Call Center Services row and Note 14", "exact_text": null } },
+        { "fee_name": "Equipment Lease", "value": null, "frequency": "monthly", "field_status": "extracted", "notes": "$497-$692/month depending on equipment chosen. Not required to lease from franchisor. Purchase option: ~$27,596 for lawn care equipment.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Lease of Equipment row", "exact_text": null } },
+        { "fee_name": "National or Regional Meeting Fee", "value": 650, "frequency": "as incurred", "field_status": "extracted", "notes": "$650 plus expenses for national meeting. Attendance mandatory. Lodging/meals may be covered for regional meetings. Subject to Fee Adjustment.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, National or Regional Meeting Fee row", "exact_text": null } },
+        { "fee_name": "Education Fee", "value": 210, "frequency": "annual", "field_status": "extracted", "notes": "For Online Learning Center access. May include NALP membership. Subject to Fee Adjustment.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Education Fee row", "exact_text": null } },
+        { "fee_name": "National Advisory Council Assessment", "value": 20, "frequency": "monthly (Apr-Nov)", "field_status": "extracted", "notes": "$20/month for 8 months. Subject to Fee Adjustment.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, National Advisory Council Assessment Fee row", "exact_text": null } },
+        { "fee_name": "Property Data Fee (ongoing)", "value": null, "frequency": "as required", "field_status": "extracted", "notes": "Currently $0.55 per SFDU for additional/updated property data collection.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Property Data Fee row", "exact_text": null } },
+        { "fee_name": "Insufficient Funds Fee", "value": 100, "frequency": "per incident", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Insufficient Funds row", "exact_text": null } },
+        { "fee_name": "Failure to Report Gross Sales", "value": 25, "frequency": "per incident", "field_status": "extracted", "notes": "Franchisor may debit 120% of 4-week average if sales not reported.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 45000, "high": 45000, "method_of_payment": "See Item 5", "when_due": "See Item 5", "to_whom_paid": "Franchisor", "notes": "$27,000 for Industry Associate Program. $15,000 may be financed over 5 years.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Production Vehicles, Equipment and Fixtures", "low": 5519, "high": 5519, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Franchisor or suppliers", "notes": "Includes 20% down payment on leased equipment. Vehicle ~$53,998, typically $0 down financed over 5 years. Lawn care equipment purchase option: ~$27,596.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [22, 23], "item_reference": "Item 7 table and Note 3", "exact_text": null } },
+        { "category": "Technology Equipment and Software", "low": 3450, "high": 3850, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Outside suppliers", "notes": "Smartphone ~$750, tablet ~$500, computer/printer $2,200-$2,600.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [22, 23], "item_reference": "Item 7 table and Note 4", "exact_text": null } },
+        { "category": "Opening Inventory and Supplies", "low": 2543, "high": 2543, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Franchisor, affiliate, or suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Marketing Campaign Fee", "low": 35000, "high": 35000, "method_of_payment": "As agreed", "when_due": "See Item 5", "to_whom_paid": "Franchisor or affiliate", "notes": "Used entirely for marketing/advertising in territory. Includes prospect database, direct response, media advertising.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Property Data Fee", "low": 16500, "high": 16500, "method_of_payment": "Lump sum", "when_due": "At training", "to_whom_paid": "Franchisor or affiliate", "notes": "$0.55/SFDU, minimum 50% of territory measured. May be financed over 5 years.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [22, 23], "item_reference": "Item 7 table and Note 5", "exact_text": null } },
+        { "category": "Training Expenses", "low": 0, "high": 1835, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Outside suppliers", "notes": "$0 if virtual training. $1,365-$1,835 for in-person travel/living costs.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [22, 24], "item_reference": "Item 7 table and Note 6", "exact_text": null } },
+        { "category": "Miscellaneous Opening Costs", "low": 1550, "high": 13168, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Third parties", "notes": "Includes licenses, insurance, professional services, prepaid expenses. Lower end assumes Industry Associate with existing licenses.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [22, 24], "item_reference": "Item 7 table and Note 8", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 7981, "high": 10927, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Third parties", "notes": "Payroll (excluding owner), supplies, insurance, vehicle costs, software fees, royalties, advertising, lease payments. New businesses usually generate negative cash flow.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [22, 24], "item_reference": "Item 7 table and Note 9", "exact_text": null } }
+      ],
+      "total_low": 117543,
+      "total_high": 134342,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 22, "item_reference": "Item 7 table, Total row", "exact_text": "TOTAL ESTIMATED INITIAL INVESTMENT $117,543 - $134,342" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Table A",
+          "description": "Gross Profit Margin Results as a Percentage of Gross Sales for Franchised Businesses in operation 1+ full year",
+          "period": "calendar year 2024",
+          "population": "62 of 71 Franchised Businesses operating 1+ full year as of Dec 31, 2024, under same ownership. These 62 operated 113 of 126 franchised territories. 5 Franchised Businesses excluded due to insufficient data; 4 not yet 1 full year.",
+          "data": {
+            "material_costs": { "average": 12.8, "median": 12.6, "at_or_above_average": 32, "pct_at_or_above_average": 52, "note": "Lower is better for expense categories" },
+            "direct_labor_costs": { "average": 19.1, "median": 18.2, "at_or_above_average": 35, "pct_at_or_above_average": 56, "note": "Lower is better" },
+            "cost_of_sales": { "average": 31.9, "median": 30.8, "at_or_above_average": 33, "pct_at_or_above_average": 53, "note": "Material + Direct Labor" },
+            "gross_profit_margin": { "average": 68.1, "median": 69.2, "at_or_above_average": 33, "pct_at_or_above_average": 53 }
+          },
+          "notes": "Gross Profit Margin = 100% - Cost of Sales. Includes direct labor costs (unlike Lawn Doctor's Table C which only deducts materials). This makes Spring-Green's 68.1% not directly comparable to Lawn Doctor's 85.4% — Spring-Green includes labor in COGS. Accounting method varies (cash vs accrual). Some franchisees may misallocate admin employees to direct labor.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [53, 54], "item_reference": "Item 19, Table A", "exact_text": null }
+        },
+        {
+          "table_label": "Table B",
+          "description": "Annual Gross Sales Results for Franchised Businesses in operation 1+ full year",
+          "period": "calendar year 2024",
+          "population": "71 Franchised Businesses operating 1+ full year as of Dec 31, 2024. These 71 operated 386 full-time production vehicles.",
+          "data": {
+            "all_franchised_businesses": { "count": 71, "average_gross_sales": 1093544, "median_gross_sales": 886680, "lowest": 167570, "highest": 4979139, "at_or_above_average": 28, "pct_at_or_above_average": 39 },
+            "single_territory": { "count": 36, "average_gross_sales": 743598, "median_gross_sales": 614679, "lowest": 167570, "highest": 1925473, "at_or_above_average": 14, "pct_at_or_above_average": 39 },
+            "multiple_territories": { "count": 32, "average_gross_sales": 1554728, "median_gross_sales": 1321291, "lowest": 295606, "highest": 4979139, "at_or_above_average": 12, "pct_at_or_above_average": 38 },
+            "revenue_per_customer": { "average": 556, "median": 549, "lowest": 393, "highest": 957, "at_or_above_average": 35, "pct_at_or_above_average": 49 },
+            "revenue_per_ft_production_vehicle": { "average": 201144, "median": 203395, "at_or_above_average": 173, "pct_at_or_above_average": 45 }
+          },
+          "notes": "Gross Sales reported per Franchised Business (may include multiple territories). Single-territory subset (60,000 or fewer SFDUs): 5 businesses, average $587,457, median $569,577. Revenue per customer tightly distributed ($393-$957). Note 3 missing from extracted tables — count of 32 multi-territory + 36 single = 68, not 71; 3 businesses likely fell between categories.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [55, 56, 57], "item_reference": "Item 19, Table B", "exact_text": null }
+        },
+        {
+          "table_label": "Table C",
+          "description": "Marketing Investment, New Services Revenue, and Customer Retention during 2024",
+          "period": "calendar year 2024",
+          "population": "66 of 71 Franchised Businesses operating 1+ full year and participating in approved marketing campaign. Also broken out for 36 single-territory businesses.",
+          "data": {
+            "all_businesses": {
+              "marketing_investment_pct": { "average": 7.4, "median": 7.9, "range": "2.0% to 20.6%", "at_or_above_average": 29, "pct_at_or_above_average": 44, "note": "Lower is better" },
+              "new_services_revenue": { "average": 221485, "median": 174013, "range": "$39,474 to $934,797", "at_or_above_average": 25, "pct_at_or_above_average": 38 },
+              "marketing_roi": { "average": 2.62, "median": 2.48, "range": "$1.07 to $9.14", "at_or_above_average": 31, "pct_at_or_above_average": 47 },
+              "customer_retention": { "average": 81.3, "median": 81.3, "range": "72.5% to 90.1%", "at_or_above_average": 34, "pct_at_or_above_average": 52 }
+            },
+            "single_territory": {
+              "marketing_investment_pct": { "average": 7.5, "median": 8.3, "range": "2.0% to 20.6%" },
+              "new_services_revenue": { "average": 143964, "median": 123212, "range": "$39,474 to $463,666" },
+              "marketing_roi": { "average": 2.54, "median": 2.61, "range": "$1.07 to $7.41" },
+              "customer_retention": { "average": 81.9, "median": 81.9, "range": "72.5% to 89.8%" }
+            }
+          },
+          "notes": "Customer retention of 81.3% is comparable to Lawn Doctor. Marketing ROI of $2.62 per $1 invested is a useful efficiency metric. 5 businesses excluded due to insufficient data.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [58, 59, 60], "item_reference": "Item 19, Table C", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 disclosed with 3 tables covering cost structure, revenue, and marketing effectiveness. Gross Profit Margin includes direct labor (unlike Lawn Doctor which only deducts materials) — not directly comparable across brands without adjustment. Revenue per customer ($556 avg) and customer retention (81.3%) are useful cross-brand metrics. All data based on franchisee-submitted financial information also used for royalty calculation.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [53, 61], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 152,
+          "total_outlets_end": 154,
+          "opened": 2,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 3,
+          "ceased_operations_other": 0,
+          "company_owned_start": 26,
+          "company_owned_end": 26,
+          "notes": "Item 20 counts territories, not physical locations. 126 franchised territories operated by fewer than 126 businesses. 26 affiliate-owned territories (Superior Lawns) operated from 6 locations. Franchised: 126→128 (+2).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [61, 62, 65, 66], "item_reference": "Item 20, Tables 1, 2, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 154,
+          "total_outlets_end": 152,
+          "opened": 2,
+          "closed": 2,
+          "non_renewals": 2,
+          "reacquired_by_franchisor": 2,
+          "transferred": 2,
+          "ceased_operations_other": 0,
+          "company_owned_start": 26,
+          "company_owned_end": 28,
+          "notes": "Franchised: 128→124 (-4). 2 terminations (LA, MI), 2 non-renewals (LA), 2 reacquired (WI). Affiliate Superior Lawns reacquired 2 territories from franchisees (WI). Louisiana exited entirely: 3 territories → 0.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [61, 62, 65, 66], "item_reference": "Item 20, Tables 1, 2, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 152,
+          "total_outlets_end": 156,
+          "opened": 4,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 2,
+          "transferred": 5,
+          "ceased_operations_other": 0,
+          "company_owned_start": 28,
+          "company_owned_end": 30,
+          "notes": "Franchised: 124→126 (+2). Affiliate Superior Lawns reacquired 2 more territories (WI). 72 Franchised Businesses operated 126 territories. Projected 4 new franchised territories in 2025 (KY, OH, OK, PA). Some franchisees signed confidentiality clauses restricting them from speaking openly about their experience.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [61, 62, 65, 66, 67], "item_reference": "Item 20, Tables 1, 2, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": false,
+      "action_count": 0,
+      "action_types": [],
+      "notes": "No litigation required to be disclosed. No bankruptcy either (Item 4).",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 3", "exact_text": "No litigation is required to be disclosed in this Item." }
+    },
+
+    "system_info": {
+      "year_company_founded": 1977,
+      "year_first_franchised": 1977,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 9, "item_reference": "Item 1", "exact_text": "We are a Delaware corporation organized in January 1977... We have offered franchises similar to the franchise described in this Disclosure Document since 1977." }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 125942.5,
+    "net_unit_growth": [
+      { "year": 2022, "value": 2, "source_fields": ["Table 1 total: 154-152=+2"] },
+      { "year": 2023, "value": -2, "source_fields": ["Table 1 total: 152-154=-2"] },
+      { "year": 2024, "value": 4, "source_fields": ["Table 1 total: 156-152=+4"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 1.97, "source_fields": ["(0+0+0+3)/152 = 3/152 (franchised only)"] },
+      { "year": 2023, "value": 5.19, "source_fields": ["(2+2+0+2)/154 = 8/154 (includes reacquired, total system)"] },
+      { "year": 2024, "value": 4.61, "source_fields": ["(0+0+0+5+2)/152 = 7/152 (includes reacquired)"] }
+    ],
+    "system_age_years": 48,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T19:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 14, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 22, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 22, "match": true },
+        { "field": "raw.item_19_financial_performance.tables[1].data.all_franchised_businesses.average_gross_sales", "page_verified": 55, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].opened", "page_verified": 65, "match": true }
+      ],
+      "checked_by": "pdfplumber extraction with page-level verification",
+      "checked_at": "2026-03-15T19:00:00Z"
+    },
+    "warnings": [
+      "Royalty is tiered (10%/9%/8%) — recorded with field_status 'ambiguous'.",
+      "Item 20 counts territories, not physical locations or businesses. 72 Franchised Businesses operated 126 territories as of Dec 31, 2024.",
+      "Affiliate Superior Lawns (30 territories, 6 locations) is counted separately in Table 4 but included in total outlet count. This is not company-owned in the traditional sense — it's an affiliate operating under a franchise agreement.",
+      "Item 19 Table A Gross Profit Margin (68.1%) includes direct labor costs unlike Lawn Doctor's similar table which only deducts materials (85.4%). These are NOT comparable without adjustment.",
+      "Some franchisees signed confidentiality clauses restricting them from speaking openly about their experience — a notable disclosure.",
+      "Fee Adjustment clause allows up to 100% annual increase on several fees (technology, education, meeting, reporting).",
+      "Initial Property Data Fee ($16,500) is unusual — charged for SGE to measure and collect property data in territory. Not seen in other brands.",
+      "Transfer fee is revenue-based (2.5% of prior 12 months, floor $7,500, cap $17,500) — recorded as extracted with formula."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.royalty_rate.value", "reason": "Tiered: 10% up to $250K, 9% $250K-$500K, 8% above $500K.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.transfer_fee.value", "reason": "Formula-based: 2.5% of trailing 12-month Gross Sales, min $7,500, max $17,500.", "field_status": "extracted" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Royalty is tiered (ambiguous).", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

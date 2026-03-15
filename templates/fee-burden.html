@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% block title %}{{ cohort_display_name }} Franchise Fees Comparison | Royalty, Marketing &amp; Total Fee Burden{% endblock %}
+{% block meta_description %}<meta name="description" content="Compare {{ cohort_display_name | lower }} franchise fee burden across major brands, including royalty structure, marketing fees, and estimated annual franchisor take at real revenue levels.">{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_base_url }}{% if cohort_id != 'mosquito' %}{{ cohort_id }}-{% endif %}fee-burden.html">{% endblock %}
+
+{% block content %}
+<h1>{{ cohort_short_name }} franchise fees compared: royalty, marketing, and total fee burden</h1>
+<p class="subhead">
+  Estimated annual ongoing fees at standard revenue levels.
+  <span class="tag tag-modeled">Modeled</span> from 2025 FDD (Franchise Disclosure Document) terms &mdash;
+  Year 5, single territory.
+</p>
+
+<div class="callout callout-insight">
+  <div class="callout-title">Key finding</div>
+  Marketing burden &mdash; not royalty rate &mdash; drives the fee spread.
+  At $300K revenue, the royalty spread across brands is $6,000.
+  The marketing spread is <strong>$41,000</strong>.
+</div>
+
+<h2>Annual Fee Burden by Revenue Level</h2>
+<div class="revenue-selector">
+  {% for level in revenue_levels %}
+  <button data-revenue="{{ level }}" {% if level == 300000 %}class="active"{% endif %}>
+    ${{ "{:,}".format(level) }}
+  </button>
+  {% endfor %}
+</div>
+
+{% for level in revenue_levels %}
+<div class="fee-table" data-revenue="{{ level }}" {% if level != 300000 %}style="display:none"{% endif %}>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Brand</th>
+      <th class="num">Royalty</th>
+      <th class="num">Marketing</th>
+      <th class="num">Tech + Other</th>
+      <th class="num">Total</th>
+      <th class="num">% of Rev</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in fee_data[level] %}
+    <tr{% if loop.index == 1 %} class="highlight"{% endif %}>
+      <td class="num muted">{{ loop.index }}</td>
+      <td class="brand-name"><a href="{{ brand_slug_map[row.brand] }}.html" style="color:inherit">{{ row.brand }}</a>{% if loop.index == 1 %}<span class="signal signal-low">Lowest</span>{% endif %}{% if loop.last %}<span class="signal signal-high">Highest</span>{% endif %}</td>
+      <td class="num">${{ "{:,.0f}".format(row.royalty) }}</td>
+      <td class="num">${{ "{:,.0f}".format(row.marketing) }}</td>
+      <td class="num">${{ "{:,.0f}".format(row.tech_other) }}</td>
+      <td class="num"><strong>${{ "{:,.0f}".format(row.total) }}</strong></td>
+      <td class="num"><strong>{{ row.pct_of_revenue }}%</strong></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% set spread = fee_data[level][-1].total - fee_data[level][0].total %}
+<p class="small muted" style="margin-top:-0.5rem">
+  Spread: <strong>${{ "{:,.0f}".format(spread) }}</strong> between {{ fee_data[level][0].brand }} and {{ fee_data[level][-1].brand }}.
+</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-swatch" style="background:#6366f1"></div> Royalty</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#f59e0b"></div> Marketing</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#94a3b8"></div> Tech + Other</div>
+</div>
+
+{% set max_total = fee_data[level][-1].total %}
+{% for row in fee_data[level] %}
+<div class="fee-bar-container">
+  <span class="fee-bar-label" style="width:130px">{{ row.brand.replace("Mosquito ", "M. ") }}</span>
+  <div class="fee-bar fee-bar-royalty" style="width:{{ (row.royalty / max_total * 300)|int }}px" title="Royalty: ${{ '{:,.0f}'.format(row.royalty) }}"></div>
+  <div class="fee-bar fee-bar-marketing" style="width:{{ (row.marketing / max_total * 300)|int }}px" title="Marketing: ${{ '{:,.0f}'.format(row.marketing) }}"></div>
+  <div class="fee-bar fee-bar-other" style="width:{{ (row.tech_other / max_total * 300)|int }}px" title="Tech+Other: ${{ '{:,.0f}'.format(row.tech_other) }}"></div>
+  <span class="fee-bar-label">${{ "{:,.0f}".format(row.total) }}</span>
+</div>
+{% endfor %}
+
+{% if level == 200000 %}
+<div class="callout callout-caveat" style="margin-top:1.5rem">
+  <div class="callout-title">Mosquito Shield &mdash; shortfall risk at $200K</div>
+  Shield falls below its Year 5 Minimum Gross Sales threshold ($283,500).
+  Franchisor may collect ~$3,845 additional. Discretionary &mdash; not included above.
+</div>
+{% endif %}
+
+{% if level == 500000 %}
+<div class="callout callout-insight" style="margin-top:1.5rem">
+  <div class="callout-title">Rank order shifts at $500K</div>
+  Joe drops to 2nd cheapest (DMP discount: $37K &rarr; $26K above $450K prior-year revenue).
+  Hunters becomes most expensive (10% marketing scales without a cap).
+</div>
+{% endif %}
+
+</div>
+{% endfor %}
+
+<h2>10-Year Cumulative Burden</h2>
+<p class="small">
+  At $300K/year revenue, ongoing fees total 4&times;&ndash;6&times; the initial investment
+  over a 10-year term. The fee structure is a far more consequential decision than the franchise fee.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th class="num">Initial Investment</th>
+      <th class="num">10-Year Fees</th>
+      <th class="num">Ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in ten_year_data %}
+    <tr>
+      <td class="brand-name"><a href="{{ brand_slug_map[row.brand] }}.html" style="color:inherit">{{ row.brand }}</a></td>
+      <td class="num">${{ "{:,.0f}".format(row.investment_midpoint) }}</td>
+      <td class="num"><strong>${{ "{:,.0f}".format(row.ten_year_burden) }}</strong></td>
+      <td class="num">{{ row.ratio }}x</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Brand-Specific Caveats</h2>
+
+<div class="callout callout-caveat">
+  <div class="callout-title">Mosquito Authority &mdash; Latent risk</div>
+  Reserves right to implement national marketing fee (up to 3%). If activated at $300K:
+  burden rises from $52,800 to ~$61,800. Still lowest, but gap narrows.
+</div>
+
+<div class="callout callout-caveat">
+  <div class="callout-title">Mosquito Shield &mdash; Range uncertainty</div>
+  Bookkeeping ($200&ndash;$500/mo) and sales center ($300&ndash;$750/mo) modeled at low end.
+  High-end adds $9,000/year.
+</div>
+
+<div class="callout callout-caveat">
+  <div class="callout-title">Mosquito Joe &mdash; Possible undercount</div>
+  May have an ongoing local marketing minimum beyond Year 1 (FDD references &ldquo;Minimum Local
+  Marketing Spending&rdquo; but amount unclear). If so, burden is higher than modeled.
+</div>
+
+<div class="callout callout-context">
+  <div class="callout-title">Mosquito Squad &mdash; Year 9+ escalation</div>
+  Minimum royalty reaches $3,000/month at Year 9+. At $200K revenue, this exceeds the
+  percentage-based royalty. Long-term risk for lower-revenue operators.
+</div>
+
+<h2 id="methodology">Methodology</h2>
+<div class="methodology-compact">
+  <p><strong>Included:</strong> Mandatory recurring fees &mdash; royalty, marketing/ad fund, technology,
+  call center, convention, website, mandatory bookkeeping/sales center.</p>
+  <p><strong>Excluded:</strong> One-time fees, optional programs, business operating costs,
+  variable per-sale charges.</p>
+  <p><strong>Assumptions:</strong> Year 5 &middot; Single territory &middot; 1 owner + 1 technician &middot;
+  Even revenue distribution &middot; All mandatory fees enforced.</p>
+</div>
+
+<div class="cta-secondary">
+  <p>Ready to go deeper on one brand?</p>
+  <a href="report.html" class="cta-button">Get a Decision Report &mdash; $99 &rarr;</a>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var buttons = document.querySelectorAll(".revenue-selector button");
+  var tables = document.querySelectorAll(".fee-table");
+  buttons.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      var rev = this.getAttribute("data-revenue");
+      buttons.forEach(function(b) { b.classList.remove("active"); });
+      this.classList.add("active");
+      tables.forEach(function(t) {
+        t.style.display = t.getAttribute("data-revenue") === rev ? "block" : "none";
+      });
+    });
+  });
+});
+</script>
+{% endblock %}

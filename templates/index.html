@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}Franchise Decision Radar | Compare Franchise Fees, Cost &amp; Risk{% endblock %}
+{% block meta_description %}<meta name="description" content="Compare franchise brands using regulator-source data. Review fee burden, startup cost, system health, and brand-specific watchouts before you buy a franchise.">{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_base_url }}index.html">{% endblock %}
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Franchise Decision Radar",
+  "description": "Franchise comparison and analysis built from regulator-filed disclosure documents.",
+  "url": "{{ site_base_url }}"
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <h1>Compare franchise fees, startup cost, and brand risk before you commit</h1>
+  <p class="subhead">
+    Fee structures, growth trajectories, and disclosure quality across
+    {{ cohorts | sum(attribute='brand_count') }} franchise brands in {{ cohorts | length }} categories &mdash;
+    extracted from regulator-filed FDDs (Franchise Disclosure Documents),
+    not franchisor marketing materials.
+  </p>
+  <div class="hero-actions">
+    <a href="#cohorts" class="cta-button">Start comparing &rarr;</a>
+    <a href="report.html" class="cta-button-outline">Decision Reports <span class="btn-price">&mdash; $99/brand</span></a>
+  </div>
+  <div class="trust-badge"><span class="trust-badge-icon"></span> Built from public filings &middot; No franchisor affiliation</div>
+</div>
+
+<div class="steps-grid">
+  <div class="step">
+    <div class="step-header">
+      <span class="step-num">Step 1</span>
+      <span class="step-price step-price-free">Free</span>
+    </div>
+    <h3>Compare the category</h3>
+    <p>
+      See how brands differ on fees, system health, and cost to enter.
+      Narrow the field with data, not marketing.
+    </p>
+    <a href="#cohorts">Pick a category &rarr;</a>
+  </div>
+  <span class="step-connector"></span>
+  <div class="step">
+    <div class="step-header">
+      <span class="step-num">Step 2</span>
+      <span class="step-price step-price-paid">$99 / brand</span>
+    </div>
+    <h3>Go deeper on one brand</h3>
+    <p>
+      Full fee modeling, Item 19 (financial performance) translation, risk flags, and
+      discovery day questions for the brand you&rsquo;re evaluating.
+    </p>
+    <a href="report.html">See Decision Reports &rarr;</a>
+  </div>
+</div>
+
+<h2 id="cohorts">Categories Covered</h2>
+
+{% for cohort in cohorts %}
+<h3 style="margin-top:2rem">{{ cohort.display_name }} &mdash; {{ cohort.brand_count }} brands</h3>
+<p>{{ cohort.description }}</p>
+
+<div class="card-grid">
+  {% for page in cohort.comparison_pages %}
+  <div class="card">
+    <h3>{{ page.label }}</h3>
+    <p>
+      {% if page.label == "Fee Burden" %}Ongoing fees at $200K&ndash;$500K revenue. Marketing burden drives the biggest cost differences.
+      {% elif page.label == "System Health" %}Growth, attrition, and churn over 3 years. Fast growth can mask high churn.
+      {% elif page.label == "Cost to Enter" %}Franchise fees and investment ranges. Low upfront cost does not mean lower long-term burden.
+      {% endif %}
+    </p>
+    <a href="{{ page.url }}">Compare {{ cohort.brand_count }} brands &rarr;</a>
+  </div>
+  {% endfor %}
+  <div class="card">
+    <h3>Decision Reports</h3>
+    <p>Brand-specific analysis with Item 19 translation, risk flags, and discovery day questions.</p>
+    <a href="{{ cohort.report_url }}">View reports &rarr;</a>
+  </div>
+</div>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th class="num">Outlets</th>
+      <th class="num">Investment</th>
+      {% if cohort.has_fee_model %}
+      <th class="num">Annual Fees at $300K</th>
+      {% endif %}
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for slug in cohort.brand_slugs %}
+    {% set d = cohort.brands_data[slug] %}
+    {% set name = d.brand.brand_name %}
+    <tr>
+      <td class="brand-name"><a href="{{ slug }}.html" style="color:inherit">{{ name }}</a></td>
+      <td class="num">{{ d.raw.item_20_outlet_summary.years_reported[-1].total_outlets_end - (d.raw.item_20_outlet_summary.years_reported[-1].company_owned_end or 0) }}</td>
+      <td class="num">${{ (d.raw.item_7_initial_investment.total_low / 1000)|int }}K&ndash;${{ (d.raw.item_7_initial_investment.total_high / 1000)|int }}K</td>
+      {% if cohort.has_fee_model %}
+      {% set fee_300k = cohort.fee_model.results | selectattr("gross_revenue", "equalto", 300000) | selectattr("brand", "equalto", name) | first %}
+      {% if fee_300k %}
+      <td class="num">${{ "{:,.0f}".format(fee_300k.total) }}<span class="muted small"> ({{ fee_300k.pct_of_revenue }}%)</span></td>
+      {% else %}
+      <td class="num muted">&mdash;</td>
+      {% endif %}
+      {% endif %}
+      <td><a href="{{ slug }}.html" class="small">View brand &rarr;</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% if cohort.has_fee_model %}
+<p class="small muted" style="margin-top:-0.5rem">
+  Annual fees <span class="tag tag-modeled">Modeled</span> at $300K gross revenue, Year 5, single territory.
+</p>
+{% endif %}
+
+{% if not loop.last %}
+<hr>
+{% endif %}
+{% endfor %}
+
+<div class="inline-cta">
+  <span>Narrowed to one or two brands?</span>
+  <a href="report.html">Get a Decision Report &mdash; $99/brand &rarr;</a>
+</div>
+
+<h2>How This Works</h2>
+<div class="notation-legend">
+  <span><span class="tag tag-extracted">Extracted</span> Directly from the disclosure document</span>
+  <span><span class="tag tag-modeled">Modeled</span> Computed from FDD terms with stated assumptions</span>
+  <span><span class="tag tag-editorial">Editorial</span> Evidence-based assessment</span>
+</div>
+<p class="small">
+  Where data is not cleanly comparable, we say so inline. Caveats appear next to the
+  data they qualify, not buried in footnotes.
+  This is not investment advice or a franchise ranking.
+</p>
+{% endblock %}

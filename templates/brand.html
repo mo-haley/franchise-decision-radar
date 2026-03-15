@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+{% block title %}{{ brand_name }} Franchise Review | Fees, Cost, Risks &amp; FDD Takeaways{% endblock %}
+{% block meta_description %}<meta name="description" content="{{ meta_description }}">{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_base_url }}{{ slug }}.html">{% endblock %}
+
+{% block content %}
+<div class="brand-header">
+  <h1>{{ brand_name }} franchise review</h1>
+</div>
+<div class="brand-meta">
+  <span><strong>Entity:</strong> {{ legal_entity }}</span>
+  <span><strong>Parent:</strong> {{ parent_short }}</span>
+  <span><strong>Ownership:</strong> {{ ownership }}</span>
+  <span><strong>Franchising since:</strong> {{ year_first_franchised }}</span>
+</div>
+
+<div class="metrics-grid">
+  <div class="metric-item">
+    <div class="metric-value">{{ system_size }}</div>
+    <div class="metric-label">System Size</div>
+    <div class="metric-context">franchised outlets, end {{ yearly_health[-1].year if yearly_health else "2024" }}</div>
+  </div>
+  <div class="metric-item">
+    <div class="metric-value">{{ investment_range }}</div>
+    <div class="metric-label">Initial Investment</div>
+    <div class="metric-context">{{ investment_note }}</div>
+  </div>
+  {% if has_fee_model and fee_burden_300k %}
+  <div class="metric-item">
+    <div class="metric-value">{{ fee_burden_300k }}</div>
+    <div class="metric-label">Annual Fees at $300K</div>
+    <div class="metric-context">{{ fee_rank_300k }} of {{ cohort_brand_count }} in cohort</div>
+  </div>
+  {% endif %}
+  <div class="metric-item">
+    <div class="metric-value">{{ net_growth_3yr }}</div>
+    <div class="metric-label">3-Year Net Growth</div>
+    <div class="metric-context">{{ trajectory }}</div>
+  </div>
+</div>
+
+<h2>Where {{ brand_short }} Stands vs. Peers</h2>
+
+<div style="margin:0.75rem 0 1.5rem">
+  {% if has_fee_model and fee_burden_300k %}
+  <div class="peer-row">
+    <span class="peer-label">Fee burden (at $300K)</span>
+    <span class="peer-value">{{ fee_burden_300k }}/yr</span>
+    <span class="peer-rank">{{ fee_rank_300k }} of {{ cohort_brand_count }}</span>
+  </div>
+  {% endif %}
+  <div class="peer-row">
+    <span class="peer-label">Royalty rate</span>
+    <span class="peer-value">{{ royalty_display }}</span>
+    <span class="peer-rank">{{ royalty_context }}</span>
+  </div>
+  {% if marketing_floor %}
+  <div class="peer-row">
+    <span class="peer-label">Marketing floor</span>
+    <span class="peer-value">{{ marketing_floor }}</span>
+    <span class="peer-rank">{{ marketing_context }}</span>
+  </div>
+  {% endif %}
+  <div class="peer-row">
+    <span class="peer-label">{{ yearly_health[-1].year if yearly_health else "2024" }} attrition</span>
+    <span class="peer-value">{{ attrition_last_year_pct }}</span>
+    <span class="peer-rank">{{ attrition_context }}</span>
+  </div>
+  {% if disclosure_quality %}
+  <div class="peer-row">
+    <span class="peer-label">Disclosure quality</span>
+    <span class="peer-value">{{ disclosure_quality }}</span>
+    <span class="peer-rank">{{ disclosure_rank }}</span>
+  </div>
+  {% endif %}
+</div>
+
+<p class="small muted">
+  Peer comparisons from
+  {% for page in nav_pages %}
+  <a href="{{ page.url }}">{{ page.label | lower }}</a>{% if not loop.last %}, {% endif %}
+  {% endfor %}
+  analysis.
+</p>
+
+{% if stripe_payment_link or has_editorial %}
+<div class="inline-cta">
+  <span>Want the full {{ brand_short }} analysis &mdash; Item 19 translation, risk flags, discovery day questions?</span>
+  <a href="{{ stripe_payment_link if stripe_payment_link else 'report.html?brand=' + slug }}">Decision Report &mdash; $99 &rarr;</a>
+</div>
+{% endif %}
+
+{% if watchouts %}
+<h2>Biggest Watchouts <span class="tag tag-editorial">Editorial</span></h2>
+<ul class="signal-list">
+  {% for w in watchouts %}
+  <li><span class="signal-icon">&#x25B3;</span> {{ w }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if positives %}
+<h2>Strongest Positives <span class="tag tag-editorial">Editorial</span></h2>
+<ul class="signal-list">
+  {% for p in positives %}
+  <li><span class="signal-icon">&#x2713;</span> {{ p }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if has_fee_model and fee_by_level %}
+<h2>Fee Burden Position <span class="tag tag-modeled">Modeled</span></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Revenue Level</th>
+      <th class="num">Annual Fees</th>
+      <th class="num">% of Revenue</th>
+      <th class="num">Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in fee_by_level %}
+    <tr>
+      <td>${{ "{:,}".format(row.revenue) }}</td>
+      <td class="num"><strong>${{ "{:,.0f}".format(row.total) }}</strong></td>
+      <td class="num">{{ row.pct }}%</td>
+      <td class="num">{{ row.rank }} of {{ cohort_brand_count }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<p class="small muted">
+  Year 5 assumptions, single territory. See <a href="fee-burden.html">full methodology</a>.
+</p>
+{% endif %}
+
+{% if fee_caveats %}
+{% for caveat in fee_caveats %}
+<div class="callout callout-caveat">
+  <div class="callout-title">{{ caveat.title }}</div>
+  {{ caveat.text }}
+</div>
+{% endfor %}
+{% endif %}
+
+<h2>System Health <span class="tag tag-extracted">Extracted</span></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num">Opened</th>
+      <th class="num">Closed</th>
+      <th class="num">Net Change</th>
+      <th class="num">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for yr in yearly_health %}
+    <tr{% if yr.flag %} class="highlight"{% endif %}>
+      <td><strong>{{ yr.year }}</strong></td>
+      <td class="num">{{ yr.opened }}</td>
+      <td class="num">{{ yr.closed }}</td>
+      <td class="num">{{ "%+d"|format(yr.net) }}</td>
+      <td class="num">{{ yr.end_count }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if health_flag %}
+<div class="callout callout-warning">
+  <div class="callout-title">{{ health_flag.title }}</div>
+  {{ health_flag.text }}
+</div>
+{% endif %}
+
+{% if disclosure_narrative %}
+<h2>Disclosure Quality <span class="tag tag-editorial">Editorial</span></h2>
+<p>{{ disclosure_narrative }}</p>
+{% endif %}
+
+{% if has_editorial %}
+<div class="cta-block">
+  <h3>Get the {{ brand_name }} Decision Report</h3>
+  <p>
+    Full fee burden modeling, Item 19 translation, risk flags, investment breakdown
+    analysis, and specific discovery day questions &mdash; the analysis that takes
+    this brand from &ldquo;interesting&rdquo; to &ldquo;ready to evaluate.&rdquo;
+  </p>
+  <div style="margin-top:1rem">
+    <a href="{{ stripe_payment_link if stripe_payment_link else 'report.html?brand=' + slug }}" class="cta-button">Get the Decision Report &mdash; $99</a>
+  </div>
+  <p class="small muted" style="margin:0.6rem 0 0">One-time purchase &middot; Single brand &middot; Instant delivery</p>
+</div>
+
+<h3>What&rsquo;s in the report</h3>
+<div class="report-sections">
+  <div class="report-section-item"><span class="report-section-num">1</span><div><div class="report-section-title">Fee Burden Deep Dive</div><div class="report-section-desc">Dollar-level modeling at 4 revenue levels with component breakdown, minimum triggers, and year-by-year escalation</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">2</span><div><div class="report-section-title">Item 19 Translation</div><div class="report-section-desc">What the financial performance data actually says &mdash; and what it conspicuously omits</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">3</span><div><div class="report-section-title">Investment Breakdown</div><div class="report-section-desc">Where the initial investment goes, what&rsquo;s negotiable vs. fixed, what the FDD footnotes bury</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">4</span><div><div class="report-section-title">System Health Narrative</div><div class="report-section-desc">Churn context, closure patterns, transfer trends &mdash; what the Item 20 numbers actually mean</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">5</span><div><div class="report-section-title">Risk Flags &amp; Litigation</div><div class="report-section-desc">Regulatory history, entity changes, franchise dispute outcomes, and what they signal</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">6</span><div><div class="report-section-title">Discovery Day Questions</div><div class="report-section-desc">Specific, data-informed questions to ask the franchisor &mdash; derived from this brand&rsquo;s FDD</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">7</span><div><div class="report-section-title">Peer Positioning</div><div class="report-section-desc">How this brand compares across the full {{ cohort_display_name | lower }} category with narrative context</div></div></div>
+</div>
+{% endif %}
+
+<h2>Compare Other Brands</h2>
+<p class="small muted">See how {{ brand_short }} compares to other {{ cohort_display_name | lower }} franchise brands in the cohort.</p>
+<div style="display:flex; flex-wrap:wrap; gap:0.75rem; margin:0.75rem 0 1.5rem">
+{% for peer in peer_brands %}
+  <a href="{{ peer.slug }}.html" style="font-size:0.85rem; font-weight:600">{{ peer.name }} review &rarr;</a>
+{% endfor %}
+</div>
+{% endblock %}

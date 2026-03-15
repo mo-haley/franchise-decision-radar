@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block title %}{{ cohort_display_name }} Franchise Startup Cost Comparison | Initial Investment by Brand{% endblock %}
+{% block meta_description %}<meta name="description" content="Compare {{ cohort_display_name | lower }} franchise startup cost and initial investment ranges across brands, using disclosure-document data to see which systems cost more to enter.">{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_base_url }}{% if cohort_id != 'mosquito' %}{{ cohort_id }}-{% endif %}cost-to-enter.html">{% endblock %}
+
+{% block content %}
+<h1>{{ cohort_short_name }} franchise startup cost compared across {{ cohort_brand_count }} brands</h1>
+<p class="subhead">
+  Franchise fees and initial investment ranges.
+  <span class="tag tag-extracted">Extracted</span> from Items 5 (fees) and 7 (investment) of each 2025 FDD.
+</p>
+
+{% if cohort_id == "mosquito" %}
+<div class="callout callout-insight">
+  <div class="callout-title">Key finding</div>
+  Upfront and ongoing costs do not correlate. The lowest entry cost (Authority, $54K low)
+  also has the lowest ongoing burden. The highest ongoing burden at low revenue (Shield)
+  has a mid-range entry cost. Shop on fee structure, not franchise fee.
+</div>
+{% endif %}
+
+<h2>Initial Franchise Fee <span class="tag tag-extracted">Extracted</span></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th class="num">Fee</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in brands_by_fee %}
+    <tr>
+      <td class="brand-name"><a href="{{ brand_slug_map[b.brand_name] }}.html" style="color:inherit">{{ b.brand_name }}</a>{% if loop.index == 1 %}<span class="signal signal-low">Lowest</span>{% endif %}{% if loop.last %}<span class="signal signal-high">Highest</span>{% endif %}</td>
+      <td class="num"><strong>{{ b.fee_display }}</strong></td>
+      <td class="small">{{ b.fee_notes }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Total Initial Investment <span class="tag tag-extracted">Extracted</span></h2>
+<p class="small">
+  Includes franchise fee, equipment, marketing, training, and working capital reserves.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th class="num">Low</th>
+      <th class="num">High</th>
+      <th class="num">Midpoint</th>
+      <th class="num">Reserves</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in brands_by_investment %}
+    <tr{% if b.caveat %} class="row-caveat"{% endif %}>
+      <td class="brand-name"><a href="{{ brand_slug_map[b.brand_name] }}.html" style="color:inherit">{{ b.brand_name }}</a>{% if b.caveat %}<span class="signal signal-note">12-mo reserves</span>{% endif %}{% if loop.index == 1 and not b.caveat %}<span class="signal signal-low">Lowest</span>{% endif %}</td>
+      <td class="num">${{ "{:,.0f}".format(b.total_low) }}</td>
+      <td class="num">${{ "{:,.0f}".format(b.total_high) }}</td>
+      <td class="num"><strong>${{ "{:,.0f}".format(b.midpoint) }}</strong></td>
+      <td class="num">{{ b.reserves_period }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if cohort_id == "mosquito" %}
+<div class="callout callout-caveat">
+  <div class="callout-title">Mosquito Squad &mdash; 12-month reserves</div>
+  Squad includes 12 months of working capital ($84K&ndash;$117K) vs 3 months for all others.
+  On an apples-to-apples basis, Squad&rsquo;s range is ~$105K&ndash;$135K, mid-cohort.
+  The higher Item 7 total reflects more conservative planning, not higher franchise costs.
+</div>
+{% endif %}
+
+{% if investment_details %}
+<h2>What&rsquo;s in the Investment</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Notable Inclusions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for d in investment_details %}
+    <tr>
+      <td class="brand-name">{{ d.brand_name }}</td>
+      <td class="small">{{ d.detail }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+<h2>Royalty Structure <span class="tag tag-extracted">Extracted</span></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th class="num">Rate</th>
+      <th>Structure</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in royalty_data %}
+    <tr>
+      <td class="brand-name"><a href="{{ brand_slug_map[b.brand_name] }}.html" style="color:inherit">{{ b.brand_name }}</a></td>
+      <td class="num"><strong>{{ b.rate_display }}</strong></td>
+      <td class="small">{{ b.structure }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if cohort_id == "mosquito" %}
+<div class="callout callout-caveat">
+  <div class="callout-title">Royalty rate is not total ongoing cost</div>
+  At $300K revenue, total ongoing burden ranges from $52,800 (Authority) to $86,000 (Shield)
+  &mdash; a $33,200 spread driven primarily by marketing, not royalty.
+  <a href="fee-burden.html">See fee burden comparison &rarr;</a>
+</div>
+
+<h2>Low Entry Cost &ne; Low Total Cost</h2>
+<p class="small">
+  Over 10 years at $300K/year, ongoing fees are 4&ndash;6&times; the initial investment.
+  A buyer shopping on franchise fee alone is optimizing for ~15% of total franchisor cost.
+  <a href="fee-burden.html">See the full fee picture &rarr;</a>
+</p>
+{% endif %}
+
+<div class="cta-secondary">
+  <p>Considering a specific brand? Get the full investment breakdown.</p>
+  <a href="report.html" class="cta-button">Get a Decision Report &mdash; $99 &rarr;</a>
+</div>
+{% endblock %}

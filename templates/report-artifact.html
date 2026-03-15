@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ brand_name }} — Franchise Decision Report</title>
+<style>
+@media print {
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a; background: #fff; line-height: 1.7;
+  max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem;
+}
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0 0 0.25rem; letter-spacing: -0.02em; font-family: -apple-system, sans-serif; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid #ccc; font-family: -apple-system, sans-serif; }
+h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.4rem; font-family: -apple-system, sans-serif; }
+p { margin: 0 0 0.9rem; }
+strong { font-weight: 700; }
+a { color: #1a1a1a; }
+
+.report-header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 1.75rem; }
+.report-meta { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; line-height: 1.5; margin-top: 0.5rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; font-family: -apple-system, sans-serif; }
+thead th { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 2px solid #333; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #555; }
+thead th.num { text-align: right; }
+tbody td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; }
+tbody td.num { text-align: right; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; }
+tbody td.label { font-weight: 600; white-space: nowrap; }
+
+.callout { padding: 0.75rem 1rem; margin: 0.75rem 0 1.25rem; border-left: 3px solid #d97706; background: #fffbeb; font-size: 0.88rem; }
+.callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
+
+.question-list { list-style: none; padding: 0; counter-reset: q; }
+.question-list li { padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; counter-increment: q; }
+.question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+.question-list li:last-child { border-bottom: none; }
+.question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+
+.methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
+.methodology p { margin: 0 0 0.5rem; }
+
+.exec-summary { font-size: 1.02rem; line-height: 1.75; }
+.peer-table td.this-brand { background: #f5f7fa; }
+
+.implication {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem;
+  color: #1e40af; margin: 0.5rem 0 1rem; line-height: 1.5;
+  padding-left: 0.75rem; border-left: 2px solid #93c5fd;
+}
+.implication strong { color: #1e40af; }
+ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
+ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>{{ brand_name }}</h1>
+  <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
+  <div class="report-meta">
+    Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: {{ filing_year }}<br>
+    Legal entity: {{ legal_entity }}<br>
+    Report generated: {{ report_date }} &middot; Franchise Decision Radar
+  </div>
+</div>
+
+<h2>Executive Summary</h2>
+<div class="exec-summary">
+{{ executive_summary }}
+</div>
+
+<h2>Fee Burden Analysis</h2>
+{{ fee_burden_narrative }}
+
+<table>
+  <thead>
+    <tr>
+      <th>At Revenue</th>
+      <th class="num">Royalty</th>
+      <th class="num">Marketing</th>
+      <th class="num">Tech / Other</th>
+      <th class="num">Total</th>
+      <th class="num">% of Rev</th>
+      <th class="num">Cohort Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in fee_table %}
+    <tr>
+      <td class="label">${{ "{:,}".format(row.revenue) }}</td>
+      <td class="num">${{ "{:,.0f}".format(row.royalty) }}</td>
+      <td class="num">${{ "{:,.0f}".format(row.marketing) }}</td>
+      <td class="num">${{ "{:,.0f}".format(row.tech_other) }}</td>
+      <td class="num"><strong>${{ "{:,.0f}".format(row.total) }}</strong></td>
+      <td class="num">{{ row.pct }}%</td>
+      <td class="num">{{ row.rank }}/5</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{{ fee_burden_detail }}
+
+<h2>Item 19 Interpretation</h2>
+{{ item19_narrative }}
+
+<h2>Investment Breakdown</h2>
+{{ investment_narrative }}
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th class="num">Low</th>
+      <th class="num">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in investment_table %}
+    <tr>
+      <td>{{ item.category }}</td>
+      <td class="num">${{ "{:,.0f}".format(item.low) }}</td>
+      <td class="num">${{ "{:,.0f}".format(item.high) }}</td>
+    </tr>
+    {% endfor %}
+    <tr style="border-top:2px solid #333">
+      <td class="label">Total</td>
+      <td class="num"><strong>${{ "{:,.0f}".format(investment_total_low) }}</strong></td>
+      <td class="num"><strong>${{ "{:,.0f}".format(investment_total_high) }}</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+{{ investment_detail }}
+
+<h2>System Health</h2>
+{{ system_health_narrative }}
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num">Opened</th>
+      <th class="num">Closed</th>
+      <th class="num">Net</th>
+      <th class="num">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for yr in health_table %}
+    <tr>
+      <td class="label">{{ yr.year }}</td>
+      <td class="num">{{ yr.opened }}</td>
+      <td class="num">{{ yr.closed }}</td>
+      <td class="num">{{ "%+d"|format(yr.net) }}</td>
+      <td class="num">{{ yr.end_count }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{{ system_health_detail }}
+
+<h2>Risk Signals</h2>
+{{ risk_narrative }}
+
+<h2>Peer Context</h2>
+{{ peer_narrative }}
+
+<table class="peer-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      {% for b in peer_brands %}
+      <th class="num">{{ b }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in peer_table %}
+    <tr>
+      <td class="label">{{ row.metric }}</td>
+      {% for val in row.cells %}
+      <td class="num{% if loop.index == this_brand_index %} this-brand{% endif %}">{{ val }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Questions for Discovery Day</h2>
+<p>These questions are derived from specific findings in the {{ brand_name }} 2025 FDD.
+They are designed to surface information the FDD does not fully explain.</p>
+
+<ol class="question-list">
+  {% for q in discovery_questions %}
+  <li>{{ q.question }}
+    <span class="question-context">{{ q.context }}</span>
+  </li>
+  {% endfor %}
+</ol>
+
+<div class="methodology">
+  <h2 style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <p><strong>Source document:</strong> {{ brand_name }} 2025 Franchise Disclosure Document,
+  filed with the Wisconsin Department of Financial Institutions. {{ page_count }}-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">{{ sha256 }}</code></p>
+  <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
+  review. Field-level provenance recorded (source year, state, page number, item reference).
+  Extraction confidence: high (3+ fields spot-checked against source).</p>
+  <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
+  fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Peer comparison:</strong> Same methodology applied to all 5 brands in cohort
+  (Mosquito Authority, Mosquito Hunters, Mosquito Joe, Mosquito Shield, Mosquito Squad).
+  All from 2025 FDDs filed with Wisconsin DFI.</p>
+  <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
+  recommendation to buy or avoid this franchise. It is a structured analysis of publicly
+  available regulatory filings. The buyer should read the actual FDD, consult a franchise
+  attorney, and conduct their own due diligence before making any investment decision.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,390 @@
+{
+  "model_version": "1.1",
+  "methodology": "docs/fee_modeling_framework.md",
+  "assumptions": {
+    "year_of_operation": 5,
+    "territories": 1,
+    "employees": "1 owner + 1 technician",
+    "revenue_basis": "Gross Sales/Revenue (treated as equivalent)"
+  },
+  "revenue_levels": [
+    200000,
+    300000,
+    400000,
+    500000
+  ],
+  "results": [
+    {
+      "brand": "Mosquito Authority",
+      "gross_revenue": 200000,
+      "royalty": 20000.0,
+      "marketing": 10000.0,
+      "technology": 3600,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 3000,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 36600.0,
+      "pct_of_revenue": 18.3,
+      "notes": [
+        "National Marketing Fee (up to 3%) reserved but NOT implemented \u2014 excluded"
+      ]
+    },
+    {
+      "brand": "Mosquito Hunters",
+      "gross_revenue": 200000,
+      "royalty": 20000.0,
+      "marketing": 37500,
+      "technology": 1800,
+      "call_center": 9000,
+      "convention": 2000,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 70300.0,
+      "pct_of_revenue": 35.1,
+      "notes": [
+        "'Net Revenues' excludes taxes/refunds; modeled as Gross Revenue (slight overestimate)",
+        "At $200,000, marketing floor ($37,500) exceeds 10% ($20,000). Dollar floor is regressive \u2014 costs more as % of revenue for smaller operators."
+      ]
+    },
+    {
+      "brand": "Mosquito Joe",
+      "gross_revenue": 200000,
+      "royalty": 20000.0,
+      "marketing": 44900.0,
+      "technology": 4452,
+      "call_center": 2399.88,
+      "convention": 1000,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 72751.88,
+      "pct_of_revenue": 36.4,
+      "notes": [
+        "Excludes LMG (2%, conditional) and Local Performance Marketing ($35K, first year only)",
+        "Excludes per-closed-sale call center fee ($25/sale)"
+      ]
+    },
+    {
+      "brand": "Mosquito Shield",
+      "gross_revenue": 200000,
+      "royalty": 16000.0,
+      "marketing": 54000.0,
+      "technology": 0.0,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 2400,
+      "sales_center": 3600,
+      "total": 76000.0,
+      "pct_of_revenue": 38.0,
+      "notes": [
+        "Bookkeeping/Sales Center modeled at low end ($200/$300 per mo). High end ($500/$750) would add $9,000/yr.",
+        "\u26a0 MINIMUM GROSS SALES SHORTFALL: At $200,000, franchisor may collect $3,845 additional (7% of $283,500 threshold minus actual royalty). This is NOT included in the total \u2014 it is discretionary."
+      ]
+    },
+    {
+      "brand": "Mosquito Squad",
+      "gross_revenue": 200000,
+      "royalty": 20000.0,
+      "marketing": 39200,
+      "technology": 720,
+      "call_center": 0.0,
+      "convention": 600,
+      "website_digital": 4200,
+      "software_vendor": 3660,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 68380.0,
+      "pct_of_revenue": 34.2,
+      "notes": [
+        "Brand Fund is flat fee ($350/mo at Y5), not percentage-based \u2014 does not scale with revenue",
+        "Local marketing capped at $50,000/yr \u2014 cost ceiling that other brands lack"
+      ]
+    },
+    {
+      "brand": "Mosquito Authority",
+      "gross_revenue": 300000,
+      "royalty": 30000.0,
+      "marketing": 15000.0,
+      "technology": 4800,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 3000,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 52800.0,
+      "pct_of_revenue": 17.6,
+      "notes": [
+        "National Marketing Fee (up to 3%) reserved but NOT implemented \u2014 excluded"
+      ]
+    },
+    {
+      "brand": "Mosquito Hunters",
+      "gross_revenue": 300000,
+      "royalty": 30000.0,
+      "marketing": 37500,
+      "technology": 1800,
+      "call_center": 9000,
+      "convention": 2000,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 80300.0,
+      "pct_of_revenue": 26.8,
+      "notes": [
+        "'Net Revenues' excludes taxes/refunds; modeled as Gross Revenue (slight overestimate)",
+        "At $300,000, marketing floor ($37,500) exceeds 10% ($30,000). Dollar floor is regressive \u2014 costs more as % of revenue for smaller operators."
+      ]
+    },
+    {
+      "brand": "Mosquito Joe",
+      "gross_revenue": 300000,
+      "royalty": 30000.0,
+      "marketing": 46900.0,
+      "technology": 4452,
+      "call_center": 2399.88,
+      "convention": 1000,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 84751.88,
+      "pct_of_revenue": 28.3,
+      "notes": [
+        "Excludes LMG (2%, conditional) and Local Performance Marketing ($35K, first year only)",
+        "Excludes per-closed-sale call center fee ($25/sale)"
+      ]
+    },
+    {
+      "brand": "Mosquito Shield",
+      "gross_revenue": 300000,
+      "royalty": 24000.0,
+      "marketing": 56000.0,
+      "technology": 0.0,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 2400,
+      "sales_center": 3600,
+      "total": 86000.0,
+      "pct_of_revenue": 28.7,
+      "notes": [
+        "Bookkeeping/Sales Center modeled at low end ($200/$300 per mo). High end ($500/$750) would add $9,000/yr."
+      ]
+    },
+    {
+      "brand": "Mosquito Squad",
+      "gross_revenue": 300000,
+      "royalty": 29500.0,
+      "marketing": 39200,
+      "technology": 720,
+      "call_center": 0.0,
+      "convention": 600,
+      "website_digital": 4200,
+      "software_vendor": 3660,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 77880.0,
+      "pct_of_revenue": 26.0,
+      "notes": [
+        "Brand Fund is flat fee ($350/mo at Y5), not percentage-based \u2014 does not scale with revenue",
+        "Local marketing capped at $50,000/yr \u2014 cost ceiling that other brands lack"
+      ]
+    },
+    {
+      "brand": "Mosquito Authority",
+      "gross_revenue": 400000,
+      "royalty": 40000.0,
+      "marketing": 20000.0,
+      "technology": 6000,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 3000,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 69000.0,
+      "pct_of_revenue": 17.2,
+      "notes": [
+        "National Marketing Fee (up to 3%) reserved but NOT implemented \u2014 excluded"
+      ]
+    },
+    {
+      "brand": "Mosquito Hunters",
+      "gross_revenue": 400000,
+      "royalty": 40000.0,
+      "marketing": 40000.0,
+      "technology": 1800,
+      "call_center": 9000,
+      "convention": 2000,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 92800.0,
+      "pct_of_revenue": 23.2,
+      "notes": [
+        "'Net Revenues' excludes taxes/refunds; modeled as Gross Revenue (slight overestimate)"
+      ]
+    },
+    {
+      "brand": "Mosquito Joe",
+      "gross_revenue": 400000,
+      "royalty": 40000.0,
+      "marketing": 48900.0,
+      "technology": 4452,
+      "call_center": 2399.88,
+      "convention": 1000,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 96751.88,
+      "pct_of_revenue": 24.2,
+      "notes": [
+        "Excludes LMG (2%, conditional) and Local Performance Marketing ($35K, first year only)",
+        "Excludes per-closed-sale call center fee ($25/sale)"
+      ]
+    },
+    {
+      "brand": "Mosquito Shield",
+      "gross_revenue": 400000,
+      "royalty": 32000.0,
+      "marketing": 58000.0,
+      "technology": 0.0,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 2400,
+      "sales_center": 3600,
+      "total": 96000.0,
+      "pct_of_revenue": 24.0,
+      "notes": [
+        "Bookkeeping/Sales Center modeled at low end ($200/$300 per mo). High end ($500/$750) would add $9,000/yr."
+      ]
+    },
+    {
+      "brand": "Mosquito Squad",
+      "gross_revenue": 400000,
+      "royalty": 38500.0,
+      "marketing": 44200.0,
+      "technology": 720,
+      "call_center": 0.0,
+      "convention": 600,
+      "website_digital": 4200,
+      "software_vendor": 3660,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 91880.0,
+      "pct_of_revenue": 23.0,
+      "notes": [
+        "Brand Fund is flat fee ($350/mo at Y5), not percentage-based \u2014 does not scale with revenue",
+        "Local marketing capped at $50,000/yr \u2014 cost ceiling that other brands lack"
+      ]
+    },
+    {
+      "brand": "Mosquito Authority",
+      "gross_revenue": 500000,
+      "royalty": 50000.0,
+      "marketing": 25000.0,
+      "technology": 7200,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 3000,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 85200.0,
+      "pct_of_revenue": 17.0,
+      "notes": [
+        "National Marketing Fee (up to 3%) reserved but NOT implemented \u2014 excluded"
+      ]
+    },
+    {
+      "brand": "Mosquito Hunters",
+      "gross_revenue": 500000,
+      "royalty": 50000.0,
+      "marketing": 50000.0,
+      "technology": 1800,
+      "call_center": 9000,
+      "convention": 2000,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 112800.0,
+      "pct_of_revenue": 22.6,
+      "notes": [
+        "'Net Revenues' excludes taxes/refunds; modeled as Gross Revenue (slight overestimate)"
+      ]
+    },
+    {
+      "brand": "Mosquito Joe",
+      "gross_revenue": 500000,
+      "royalty": 50000.0,
+      "marketing": 39900.0,
+      "technology": 4452,
+      "call_center": 2399.88,
+      "convention": 1000,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 97751.88,
+      "pct_of_revenue": 19.6,
+      "notes": [
+        "DMP reduced to $26,000 (prior year GS >= $450K discount)",
+        "Excludes LMG (2%, conditional) and Local Performance Marketing ($35K, first year only)",
+        "Excludes per-closed-sale call center fee ($25/sale)"
+      ]
+    },
+    {
+      "brand": "Mosquito Shield",
+      "gross_revenue": 500000,
+      "royalty": 40000.0,
+      "marketing": 60000.0,
+      "technology": 0.0,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 2400,
+      "sales_center": 3600,
+      "total": 106000.0,
+      "pct_of_revenue": 21.2,
+      "notes": [
+        "Bookkeeping/Sales Center modeled at low end ($200/$300 per mo). High end ($500/$750) would add $9,000/yr."
+      ]
+    },
+    {
+      "brand": "Mosquito Squad",
+      "gross_revenue": 500000,
+      "royalty": 47500.0,
+      "marketing": 54200.0,
+      "technology": 720,
+      "call_center": 0.0,
+      "convention": 600,
+      "website_digital": 4200,
+      "software_vendor": 3660,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 110880.0,
+      "pct_of_revenue": 22.2,
+      "notes": [
+        "Brand Fund is flat fee ($350/mo at Y5), not percentage-based \u2014 does not scale with revenue",
+        "Local marketing capped at $50,000/yr \u2014 cost ceiling that other brands lack"
+      ]
+    }
+  ]
+}

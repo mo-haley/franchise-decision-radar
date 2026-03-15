@@ -1,0 +1,229 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": "2026-03-15T07:50:00Z",
+    "local_filename": "weed-man_2025_wi_auto.pdf",
+    "sha256": "e8e96efe9b166b2309dfa67f2d73dd859629defc2a1f2807305ec0ff5af3e6d4",
+    "page_count": 174,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms Turf Holdings Inc. 2025 FDD for WEED MAN franchise. Issuance date: March 17, 2025. Weed Man also offers mosquito control and perimeter pest services (added 2019) but is classified in the lawn_turf_treatment wedge based on primary service line."
+  },
+
+  "brand": {
+    "brand_name": "Weed Man",
+    "brand_slug": "weed-man",
+    "legal_entity": "Turf Holdings Inc.",
+    "parent_company": "#1051080 Ontario Inc. / TH Canada Inc. (master licensor)",
+    "year_founded": 1970,
+    "year_first_franchised": 1995,
+    "ownership_structure": "private"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": null,
+        "currency": "USD",
+        "range_low": 30000,
+        "range_high": 50000,
+        "field_status": "extracted",
+        "notes": "Fee varies by territory population: $30,000 for up to 150,000 people (1 Unit Territory); $50,000 for 150,001-300,000 people (2 Unit Territories). Most new grants are for 2 Unit Territories. Additional Unit Territories: $30,000 each. Nonrefundable upon payment (except if government license cannot be obtained, refund less greater of $2,500 or actual costs). Seasonal discounts: 10% off if paid in full by July 31; 7% by Sept 30; 5% by Nov 30. Minimum $12,000 deposit reserves territory for 30 days. Training fee of $4,600 is separate (see Item 7). WEMMS.net software $4,635 first year is also separate.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [13, 14], "item_reference": "Item 5", "exact_text": "You must pay an Initial Franchise Fee of $30,000 to $50,000 when you sign the Franchise Agreement." }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": null,
+        "basis": "Net Sales",
+        "field_status": "ambiguous",
+        "notes": "Tiered: 6.5% on annual cumulative Net Sales up to $1,000,000; 5.5% on annual cumulative Net Sales above $1,000,000. Minimum annual royalty: $7,192.46 per Unit Territory (2025), adjusted annually for CPI inflation from Nov 1, 2023 base. If multi-territory, minimum is multiplied by number of Unit Territories. New royalty structure introduced 2023; ~95% of system converted Jan 1, 2024. 'Net Sales' = actual gross sales of all services invoiced plus all other revenues, excluding taxes and bartered fair market value.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [15, 17, 18], "item_reference": "Item 6, Royalty Fee row and Notes 1-2", "exact_text": "6.5% of Net Sales... 5.5% on any calendar year Net Sales in excess of $1,000,000" }
+      },
+      "advertising_and_marketing": {
+        "value": 1.2,
+        "basis": "Net Sales",
+        "field_status": "extracted",
+        "structure_description": "Single advertising fund contribution of 1.2% of Net Sales. May increase to up to 3% after December 31, 2033. Franchisor matches 50% of franchisee contributions until December 31, 2033.",
+        "components": [
+          { "name": "Advertising Fund Contribution", "value": 1.2, "basis": "Net Sales", "minimum_dollar": null, "frequency": "monthly (with royalty)", "notes": "Payable at same time as monthly Royalty Fee via ACH. May increase to up to 3% after Dec 31, 2033. Franchisor contributes 50% match until Dec 31, 2033." }
+        ],
+        "notes": "Unusually simple and low marketing obligation compared to other brands in both wedges. 1.2% is the lowest advertising fund rate in the lawn cohort. Franchisor's 50% match is a notable franchisee-friendly provision.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [15, 32], "item_reference": "Item 6, Advertising Fund Contributions row", "exact_text": "Each month you will contribute 1.2% of Net Sales." }
+      },
+      "technology_fee": {
+        "value": null,
+        "frequency": "monthly (variable)",
+        "field_status": "ambiguous",
+        "notes": "WEMMS.net software: $4,635 first year (includes software + first year support). Subsequent years: 0.65% of previous year's gross sales, minimum $1,200/year. Example: $1M sales → $6,500/year ($541.67/month). Paid to third-party provider chosen by franchisor. Also QuickBooks ~$115 and computer hardware ~$1,500.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [14, 21], "item_reference": "Item 5 and Item 7 Note 6", "exact_text": "the cost of support for this computer software will be calculated at 0.65% of the previous year's gross sales with a minimum cost of $1200/year" }
+      },
+      "transfer_fee": {
+        "value": 10000,
+        "formula": "$10,000 plus legal costs and expenses, including administrative costs, legal fees, and training costs.",
+        "field_status": "extracted",
+        "notes": null,
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 15, "item_reference": "Item 6, Assignment row", "exact_text": "Transfer fee of $10,000 plus legal costs and expenses" }
+      },
+      "other_fees": [
+        { "fee_name": "Renewal Fee", "value": null, "frequency": "one-time", "field_status": "extracted", "notes": "50% of the then-current initial franchise fee.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Renewal row", "exact_text": null } },
+        { "fee_name": "Convention Fee", "value": null, "frequency": "annual", "field_status": "extracted", "notes": "$450-$550 seminar fee plus all travel and living expenses.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Convention row", "exact_text": null } },
+        { "fee_name": "Special Assistance", "value": 200, "frequency": "per hour + travel expenses", "field_status": "extracted", "notes": "If franchisee requires additional advice or guidance beyond standard support.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Special Assistance row", "exact_text": null } },
+        { "fee_name": "Management Fee", "value": null, "frequency": "as agreed", "field_status": "extracted", "notes": "Reasonable fee plus expenses, upon death or incapacity, or if no competent manager available.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Management Fee row", "exact_text": null } },
+        { "fee_name": "Audit Fee", "value": null, "frequency": "as incurred", "field_status": "extracted", "notes": "$100-$1,000. Travel and personal expenses of auditor if reports not submitted or royalties understated by more than 3%.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 15, "item_reference": "Item 6, Audit row", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 30000, "high": 50000, "method_of_payment": "As agreed", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": "Varies by territory population.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Training Expenses", "low": 4600, "high": 4600, "method_of_payment": "As agreed", "when_due": "Before training", "to_whom_paid": "Franchisor or suppliers", "notes": "Online or in-person in Orono, Ontario. Includes materials, instructors, up to 12 hours software training.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Travel & Living Expenses for Initial Training", "low": 2000, "high": 3000, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Outside vendors", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Equipment and Fixtures", "low": 7700, "high": 7700, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Outside vendors", "notes": "Office equipment, safety equipment, uniforms, fertilizer spreader, measuring wheel, pest control mister sprayer (~$1,000), hand sprayer ($150-$250).", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Truck & Spray Package Lease (first month)", "low": 1000, "high": 1500, "method_of_payment": "As agreed", "when_due": "As agreed", "to_whom_paid": "Outside suppliers", "notes": "360-gallon spray tank + truck (10,000 lb GVWR). Monthly lease ~$1,000-$1,500. Spray package can be purchased separately for $12,000-$14,000 if franchisee owns conforming truck.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Computer Hardware and Software", "low": 6250, "high": 6250, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Franchisor or suppliers", "notes": "WEMMS.net software $4,635 (first year), QuickBooks ~$115, computer hardware ~$1,500.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance", "low": 3000, "high": 4000, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Insurer", "notes": "First 3 months estimate. Annual premiums typically $4,000-$8,000.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Miscellaneous Opening Costs", "low": 1600, "high": 2350, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Third parties", "notes": "Utility deposits, business licenses, security deposits, incorporation fees. Does not include insurance.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 25000, "high": 30000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Third parties", "notes": "Includes payroll (not owner salary), lease payments (not debt service). Not a break-even estimate.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 81150,
+      "total_high": 109400,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table, Total row", "exact_text": "TOTAL ESTIMATED INITIAL INVESTMENT $81,150 to $109,400" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": false,
+      "representation_type": null,
+      "tables": null,
+      "normalized_metrics": null,
+      "notes": "Item 19 explicitly states: 'We do not make any representations about a franchisee's future financial performance or the past financial performance of company-owned or franchised units.' No tables, no financial data disclosed.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 43, "item_reference": "Item 19", "exact_text": "We do not make any representations about a franchisee's future financial performance or the past financial performance of company-owned or franchised units." }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 232,
+          "total_outlets_end": 241,
+          "opened": 10,
+          "closed": 1,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 11,
+          "ceased_operations_other": 0,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "All outlets are franchised. No company-owned outlets. Net growth +9. Item 20 counts franchise agreements, not physical locations.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [44, 46, 50], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 241,
+          "total_outlets_end": 255,
+          "opened": 17,
+          "closed": 1,
+          "non_renewals": 1,
+          "reacquired_by_franchisor": 0,
+          "transferred": 12,
+          "ceased_operations_other": 1,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "All outlets are franchised. Net growth +14. 1 termination (FL), 1 non-renewal (TX), 1 ceased operations (PA).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [44, 46, 50], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 117,
+          "total_outlets_end": 121,
+          "opened": 4,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 7,
+          "ceased_operations_other": 0,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "CRITICAL CONTEXT: 2024 start count (117) reflects massive contract merging effective January 1, 2024, NOT actual system contraction. In 2023, ~95% of franchisees converted to new franchise agreements and many multi-area contracts were merged. As of Dec 31, 2024: 154 physical franchisee locations, 121 franchise agreements ('Areas'), 274 franchise areas, and 759 Unit Territories. The Supplemental Table is the authoritative system-size metric for 2024. Net change of -134 in Table 1 is an artifact of contract consolidation, not loss of franchisees or territories.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [44, 50, 52], "item_reference": "Item 20, Tables 1, 2, 3 and Supplemental Table", "exact_text": "These figures were affected by the merging of many franchise agreements with existing franchisees that became effective on January 1, 2024." }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": false,
+      "action_count": 0,
+      "action_types": [],
+      "notes": "No litigation required to be disclosed. No bankruptcy either (Item 4).",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 3", "exact_text": "No litigation is required to be disclosed in this Item." }
+    },
+
+    "system_info": {
+      "year_company_founded": 1970,
+      "year_first_franchised": 1995,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [10, 11], "item_reference": "Item 1", "exact_text": "We are a Delaware corporation incorporated in July 1995... TH Canada and its predecessor have conducted a business of the type franchised since 1970." }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 95275,
+    "net_unit_growth": [
+      { "year": 2022, "value": 9, "source_fields": ["Table 1: 241-232=+9"] },
+      { "year": 2023, "value": 14, "source_fields": ["Table 1: 255-241=+14"] },
+      { "year": 2024, "value": 4, "source_fields": ["Table 1: 121-117=+4 (contract-level, post-merging)"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 5.17, "source_fields": ["(1+0+0+11)/232 = 12/232"] },
+      { "year": 2023, "value": 6.22, "source_fields": ["(1+1+1+12)/241 = 15/241"] },
+      { "year": 2024, "value": 5.98, "source_fields": ["(0+0+0+7)/117 = 7/117 (note: base affected by contract merging)"] }
+    ],
+    "system_age_years": 30,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T18:30:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.range_low", "page_verified": 13, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 19, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 19, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[0].opened", "page_verified": 50, "match": true },
+        { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "page_verified": 15, "match": true }
+      ],
+      "checked_by": "pdfplumber extraction with page-level verification",
+      "checked_at": "2026-03-15T18:30:00Z"
+    },
+    "warnings": [
+      "Royalty is tiered (6.5% up to $1M, 5.5% above) — recorded with field_status 'ambiguous'. New royalty structure introduced 2023; ~95% of system converted Jan 1, 2024.",
+      "Item 19: NO financial performance representations made. This is the only lawn brand so far to decline Item 19 disclosure.",
+      "Item 20 2024 data is heavily affected by contract merging. Table 1 shows -134 net change but this is an artifact of consolidation, not system contraction. Supplemental Table shows 154 physical locations, 759 territories.",
+      "Technology fee is revenue-based (0.65% of prior year gross sales, min $1,200/year after first year). Cannot be expressed as a fixed monthly amount.",
+      "Canadian-origin system (1970/1976). US franchisor entity (Turf Holdings Inc.) incorporated 1995. System age calculated from US franchising start (1995).",
+      "Weed Man also offers mosquito control and perimeter pest services (added 2019) — cross-wedge service overlap, but classified in lawn_turf_treatment based on primary service.",
+      "Franchisor merged with many sub-franchisors effective January 1, 2025. Now 82.6% owned by parent #1051080 Ontario Inc.",
+      "Real estate costs excluded from Item 7 total because financing method is too variable to estimate.",
+      "Advertising fund rate (1.2%) is the lowest in the lawn cohort. Franchisor's 50% match through 2033 is a notable pro-franchisee provision."
+    ],
+    "null_fields": [
+      { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "reason": "Fee varies by territory population ($30K for ≤150K pop, $50K for >150K pop).", "field_status": "extracted" },
+      { "field": "raw.item_6_other_fees.royalty_rate.value", "reason": "Tiered: 6.5% up to $1M, 5.5% above $1M.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.technology_fee.value", "reason": "Revenue-based: 0.65% of prior year gross sales, minimum $1,200/year. Not a fixed amount.", "field_status": "ambiguous" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Royalty is tiered (ambiguous).", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /reports/
+Disallow: /thank-you-mosquito-authority.html
+Disallow: /thank-you-mosquito-hunters.html
+Disallow: /thank-you-mosquito-joe.html
+Disallow: /thank-you-mosquito-shield.html
+Disallow: /thank-you-mosquito-squad.html
+Disallow: /thank-you-lawn-doctor.html
+Disallow: /thank-you-weed-man.html
+Disallow: /thank-you-spring-green.html
+Disallow: /thank-you-naturalawn.html
+Disallow: /thank-you-lawn-pride.html
+Disallow: /thank-you-lawn-squad.html
+
+Sitemap: https://franchisedecisionradar.com/sitemap.xml

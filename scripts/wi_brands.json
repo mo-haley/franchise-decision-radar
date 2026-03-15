@@ -1,0 +1,80 @@
+[
+  {
+    "brand_slug": "mosquito-joe",
+    "search_term": "Mosquito Joe",
+    "expected_entity": "Mosquito Joe",
+    "wedge": "mosquito_outdoor_pest"
+  },
+  {
+    "brand_slug": "mosquito-authority",
+    "search_term": "Main Line Brands",
+    "expected_entity": "Mosquito Authority",
+    "wedge": "mosquito_outdoor_pest"
+  },
+  {
+    "brand_slug": "mosquito-hunters",
+    "search_term": "Mosquito Hunters",
+    "expected_entity": "Mosquito Hunters",
+    "wedge": "mosquito_outdoor_pest"
+  },
+  {
+    "brand_slug": "mosquito-squad",
+    "search_term": "Mosquito Squad",
+    "expected_entity": "Mosquito Squad",
+    "wedge": "mosquito_outdoor_pest"
+  },
+  {
+    "brand_slug": "mosquito-shield",
+    "search_term": "Mosquito Shield",
+    "expected_entity": "Mosquito Shield",
+    "wedge": "mosquito_outdoor_pest"
+  },
+  {
+    "brand_slug": "mosquito-sheriff",
+    "search_term": "Mosquito Sheriff",
+    "expected_entity": "Mosquito Sheriff",
+    "wedge": "mosquito_outdoor_pest"
+  },
+  {
+    "brand_slug": "mosquitonix",
+    "search_term": "MosquitoNix",
+    "expected_entity": "MosquitoNix",
+    "wedge": "mosquito_outdoor_pest"
+  },
+  {
+    "brand_slug": "lawn-doctor",
+    "search_term": "Lawn Doctor",
+    "expected_entity": "Lawn Doctor",
+    "wedge": "lawn_turf_treatment"
+  },
+  {
+    "brand_slug": "weed-man",
+    "search_term": "Weed Man",
+    "expected_entity": "Weed Man",
+    "wedge": "lawn_turf_treatment"
+  },
+  {
+    "brand_slug": "spring-green",
+    "search_term": "Spring Green",
+    "expected_entity": "Spring Green",
+    "wedge": "lawn_turf_treatment"
+  },
+  {
+    "brand_slug": "naturalawn",
+    "search_term": "NaturaLawn",
+    "expected_entity": "NaturaLawn",
+    "wedge": "lawn_turf_treatment"
+  },
+  {
+    "brand_slug": "lawn-pride",
+    "search_term": "Lawn Pride",
+    "expected_entity": "Lawn Pride",
+    "wedge": "lawn_turf_treatment"
+  },
+  {
+    "brand_slug": "lawn-squad",
+    "search_term": "Lawn Squad",
+    "expected_entity": "Lawn Squad",
+    "wedge": "lawn_turf_treatment"
+  }
+]

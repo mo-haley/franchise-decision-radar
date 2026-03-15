@@ -1,0 +1,259 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": "2026-03-15T07:50:00Z",
+    "local_filename": "naturalawn_2025_wi_auto.pdf",
+    "sha256": "3a412ecdef46487a43bc1d9fc5fb6b24ae95819fe9130a8990b6b60f8fc65b89",
+    "page_count": 147,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms NaturaLawn of America Inc. 2025 FDD. Issuance date: March 28, 2025. Organic-based lawn care specialist."
+  },
+
+  "brand": {
+    "brand_name": "NaturaLawn",
+    "brand_slug": "naturalawn",
+    "legal_entity": "NaturaLawn of America Inc.",
+    "parent_company": null,
+    "year_founded": 1987,
+    "year_first_franchised": 1989,
+    "ownership_structure": "private"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 39500,
+        "currency": "USD",
+        "range_low": 19500,
+        "range_high": 39500,
+        "field_status": "extracted",
+        "notes": "$39,500 standard for territory with at least 40,000 SFDUs (>$55K median household income). May be reduced for existing lawn care businesses: discounts from $2,500 (at $25K-$50K revenue) to $20,000 (at $350K+ revenue). Additional $0.55/SFDU over 40,000 for larger territories. $10,000 reservation fee (applied to license fee if franchise signed 6+ weeks before training; forfeited otherwise). Nonrefundable under any circumstances.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 11, "item_reference": "Item 5", "exact_text": "the minimum initial license fee is $39,500 for a standard Licensed Territory" }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": 9.0,
+        "basis": "Gross Sales",
+        "field_status": "extracted",
+        "notes": "9% of Gross Sales (collected payments including prepayments, excluding taxes and refunds). Reduces to 7% upon renewal if Gross Sales ≥ $500,000 in last full calendar year before renewal AND maintained at ≥ $500K and not declining >10% in any year after renewal; reverts to 9% if conditions not met. 15% on out-of-territory revenue (requires written consent). Payable weekly by electronic transfer.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [12, 13], "item_reference": "Item 6, Service Fee row and Note 1", "exact_text": "9% of Gross Sales; after renewal, 7% or 9% of Gross Sales" }
+      },
+      "advertising_and_marketing": {
+        "value": 1.0,
+        "basis": "Gross Sales",
+        "field_status": "extracted",
+        "structure_description": "Single advertising fee of 1% of Gross Sales, payable weekly with service fee.",
+        "components": [
+          { "name": "Advertising Fee", "value": 1.0, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "weekly", "notes": "1% of all Gross Sales of the franchised business." }
+        ],
+        "notes": "1% advertising fee is the lowest in the lawn cohort (tied with Weed Man's 1.2% as simplest structures). However, NaturaLawn requires $60,000-$80,000 annual marketing spend listed in Item 7 as a separate initial investment line, which is far higher than the 1% fund alone.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 12, "item_reference": "Item 6, Advertising Fee row", "exact_text": "1% Advertising fee based on Gross Sales" }
+      },
+      "technology_fee": {
+        "value": null,
+        "frequency": "monthly (per user)",
+        "field_status": "ambiguous",
+        "notes": "Real Green Service Assistant 5 (cloud-based, required): First user $132/month, users 2-5 $74/month, users 6-9 $69/month, users 10+ $58/month. Computer provided as part of initial license fee. Additional hardware: bar code scanner ~$200, HP LaserJet ~$500, antivirus ~$30/year, antimalware ~$30/year.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 15, "item_reference": "Item 7 Note 5", "exact_text": "the first user cost is $132, users 2-5 are $74, users 6-9 are $69, and users 10+ are $58 per user" }
+      },
+      "transfer_fee": {
+        "value": 10000,
+        "formula": null,
+        "field_status": "extracted",
+        "notes": "No fee for transfers to entities formed by franchisee or immediate family transfers resulting from death/incapacity. May be adjusted annually for CPI at franchisor's option.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 6, Transfer row", "exact_text": null }
+      },
+      "other_fees": [
+        { "fee_name": "Delinquent Service Fee", "value": 100, "frequency": "per week overdue", "field_status": "extracted", "notes": "$100/week for every week service fee is past due (>7 days after prior week's end).", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 12, "item_reference": "Item 6, Delinquent Service Fee row", "exact_text": null } },
+        { "fee_name": "Non-Attendance at Mandatory Meeting", "value": 1500, "frequency": "first year penalty", "field_status": "extracted", "notes": "$1,500 first year, increased service fees after third non-attendance. Service fees may increase to 9% for remainder of license term.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 12, "item_reference": "Item 6, Non-Attendance row", "exact_text": null } },
+        { "fee_name": "Extra Training/Support at Your Location", "value": null, "frequency": "as incurred", "field_status": "extracted", "notes": "Actual reasonable travel & living expenses for franchisor employees. Optional/not mandatory.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 12, "item_reference": "Item 6, Extra Training row", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial License Fee", "low": 19500, "high": 39500, "method_of_payment": "Lump sum", "when_due": "At execution", "to_whom_paid": "Franchisor", "notes": "Low end for existing lawn care operators. Nonrefundable.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Opening Inventory", "low": 0, "high": 5000, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers and franchisor", "notes": "Additional supplies (uniforms, promotional materials, forms) beyond what's included in license fee.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Lawn Care Equipment Purchases", "low": 1500, "high": 4000, "method_of_payment": "Varies", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Vehicle (purchase or lease, 6 months)", "low": 0, "high": 3000, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Office Furniture & Equipment", "low": 0, "high": 5000, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Training Expenses", "low": 0, "high": 1150, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": "1 week at home office + 2 weeks at company location. Lodging ~$200/day, food ~$50/day.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Computer & Technology Expenses", "low": 0, "high": 1000, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers and franchisor", "notes": "Computer provided with license fee. Additional hardware/software per specs.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Annual Advertising and Marketing", "low": 60000, "high": 80000, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": "This is the dominant cost line. Franchisor helps develop budget and marketing plan. Based on 3+ decades of experience growing similar franchise operations.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [14, 15], "item_reference": "Item 7 table and Note 6", "exact_text": "You should anticipate spending between $60,000 and $80,000 a year on approved marketing and advertising" } },
+        { "category": "Licenses", "low": 250, "high": 500, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "State", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Professional Fees", "low": 1250, "high": 2000, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Lawyers and accountants", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Lease Deposits", "low": 2000, "high": 3500, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Suppliers", "notes": "Rent, utilities, etc.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance Deposit", "low": 1500, "high": 3500, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Insurers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds (6 months or more)", "low": 1500, "high": 4500, "method_of_payment": "Varies", "when_due": "Varies", "to_whom_paid": "Varies", "notes": "Covers 6+ months. Some expenses may be less for existing lawn care operators.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [14, 15], "item_reference": "Item 7 table and Note 7", "exact_text": null } }
+      ],
+      "total_low": 77500,
+      "total_high": 152650,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 7 table, Total row", "exact_text": "$77,500 - $152,650, plus access to a $150,000 - $250,000 line of credit (does not include real estate costs or increase in initial license fee for larger territory)" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Tables 1-4",
+          "description": "Company-Owned Locations: Gross Profit Margin, Revenue, Customers, Revenue Per Customer (2024)",
+          "period": "calendar year 2024",
+          "population": "6 company-owned locations in operation 5+ years. Located in Damascus MD, Virginia Beach VA, Newport News VA, Richmond VA, Manassas VA, Greenville SC. Franchised data excluded from margin analysis due to insufficient information.",
+          "data": {
+            "gross_profit_margin_range": { "low": 60.7, "high": 65.2 },
+            "annual_gross_revenue": { "average": 1729467, "average_per_month": 144122, "median": 1522530, "high": 3317541, "low": 527722, "at_or_above_average": 3, "pct_at_or_above_average": 50 },
+            "customers": { "average": 2304, "median": 1971, "high": 4265, "low": 820, "at_or_above_average": 3, "pct_at_or_above_average": 50 },
+            "revenue_per_customer": { "average": 740, "median": 740, "high": 789, "low": 644, "at_or_above_average": 4, "pct_at_or_above_average": 67 }
+          },
+          "notes": "Company-owned data only for this section. Gross profit margin includes direct labor costs (excluding payroll taxes and fringe benefits). Margin range 60.7%-65.2% is tighter than franchise variation, likely due to more consistent management of company locations.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [35, 36, 37], "item_reference": "Item 19, Tables 1-4", "exact_text": null }
+        },
+        {
+          "table_label": "Tables 5-7",
+          "description": "Franchised Locations: Revenue, Customers, Revenue Per Customer (2024)",
+          "period": "calendar year 2024",
+          "population": "40 franchised locations in operation 5+ years. As of Dec 31, 2024: 44 franchised locations total, 40 operating 5+ years, 7 operating less than 5 years (note: 40+7=47 does not match the 44 stated; possible overlap with multi-license franchisees).",
+          "data": {
+            "annual_gross_revenue": { "average": 2192129, "average_per_month": 182677, "median": 1097125, "high": 9730236, "low": 252062, "at_or_above_average": 20, "pct_at_or_above_average": 50 },
+            "customers": { "average": 2707, "median": 1716, "high": 10647, "low": 253, "at_or_above_average": 20, "pct_at_or_above_average": 50 },
+            "revenue_per_customer": { "average": 810, "median": 696, "high": 1386, "low": 361, "at_or_above_average": 20, "pct_at_or_above_average": 50 }
+          },
+          "notes": "Franchised average revenue ($2.19M) exceeds company-owned ($1.73M), but with much wider range ($252K-$9.7M vs $528K-$3.3M). Revenue per customer ($810 franchise avg vs $740 company) suggests franchisees may price higher. 7 franchised locations under 5 years excluded. 3 additional locations were under 5 years and excluded.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 37, "item_reference": "Item 19, Tables 5-7", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 provides separate company-owned and franchise data. Gross profit margin data only available for company-owned (60.7%-65.2%). Includes direct labor in COGS — same definition as Spring-Green, lower than Spring-Green's 68.1%. Revenue per customer ($810 franchised avg) is the highest in the lawn cohort so far, reflecting NaturaLawn's premium organic-based positioning. Population count discrepancy: Item 19 says '44 franchised locations' but '40 had been operating for 5 years or more, and 7 had been operating for less than 5 years' (40+7=47).",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [34, 38], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 92,
+          "total_outlets_end": 96,
+          "opened": 3,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 11,
+          "company_owned_end": 12,
+          "notes": "Franchised: 81→84 (+3). Company-owned: 11→12 (+1, Virginia opened 1). Zero transfers in 2022 or any year reported.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [38, 40], "item_reference": "Item 20, Tables 1, 2, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 96,
+          "total_outlets_end": 100,
+          "opened": 6,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 12,
+          "company_owned_end": 10,
+          "notes": "Franchised: 84→90 (+6). Company-owned: 12→10 (-2, NJ outlets sold to franchisee). NJ opening (3 in NJ, 2023) was largest single-state growth.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [38, 40], "item_reference": "Item 20, Tables 1, 2, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 100,
+          "total_outlets_end": 98,
+          "opened": 0,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 2,
+          "company_owned_start": 10,
+          "company_owned_end": 10,
+          "notes": "Franchised: 90→88 (-2). Company-owned: 10→10 (0). Total row shows 0 opened, 2 ceased operations-other. DATA QUALITY FLAG: State-level rows show MI opened 1/ceased 1 and SC opened 1/ceased 1 and PA opened 1, which doesn't reconcile with totals showing 0 opened. Using franchisor-certified total row. Zero transfers across all 3 reported years — unique in the lawn cohort. Projected 7 new franchised outlets in 2025.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [38, 40, 41], "item_reference": "Item 20, Tables 1, 2, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": true,
+      "action_count": 1,
+      "action_types": [
+        { "type": "consumer/TCPA", "count": 1, "notes": "Venisha Ford v. NaturaLawn of America, Inc., Civil Action No. 8:24-cv-00354-PJM (U.S. District Court, District of Maryland). Alleges violation of Telephone Consumer Protection Act. NaturaLawn filed answer denying liability with affirmative defenses. No class certified. Potential damages not reasonably estimatable. Management believes potential material liability is possible but not probable." }
+      ],
+      "notes": "Item 3 heading states 'No litigation is required to be disclosed' but then immediately discloses the Ford TCPA case. This is a contradictory disclosure — the case is disclosed despite the introductory disclaimer. No bankruptcy (Item 4).",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 10, "item_reference": "Item 3", "exact_text": "A civil action was filed in the United States District Court for the District of Maryland against NaturaLawn of America, Inc. seeking damages for alleged violation of the Telephone Consumer Protection Act." }
+    },
+
+    "system_info": {
+      "year_company_founded": 1987,
+      "year_first_franchised": 1989,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [7, 8], "item_reference": "Item 1", "exact_text": "NaturaLawn, Inc. ('NLI'), a Maryland corporation, was organized in 1987... In July 1989, NLI began offering franchises" }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 115075,
+    "net_unit_growth": [
+      { "year": 2022, "value": 4, "source_fields": ["Table 1 total: 96-92=+4"] },
+      { "year": 2023, "value": 4, "source_fields": ["Table 1 total: 100-96=+4"] },
+      { "year": 2024, "value": -2, "source_fields": ["Table 1 total: 98-100=-2"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 0.00, "source_fields": ["(0+0+0+0)/92 = 0/92"] },
+      { "year": 2023, "value": 0.00, "source_fields": ["(0+0+0+0)/96 = 0/96 (NJ company-owned sold to franchisee counted in Table 4, not Table 3)"] },
+      { "year": 2024, "value": 2.00, "source_fields": ["(0+0+2+0)/100 = 2/100"] }
+    ],
+    "system_age_years": 36,
+    "total_ongoing_fee_rate": 10.0
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T19:30:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 11, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 14, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 14, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[0].total_outlets_start", "page_verified": 38, "match": true },
+        { "field": "raw.item_19_financial_performance.tables[1].data.annual_gross_revenue.average", "page_verified": 37, "match": true }
+      ],
+      "checked_by": "pdfplumber extraction with page-level verification",
+      "checked_at": "2026-03-15T19:30:00Z"
+    },
+    "warnings": [
+      "Item 3 contains contradictory disclosure: heading says 'No litigation required to be disclosed' but then discloses an active TCPA lawsuit (Ford v. NaturaLawn).",
+      "Item 7 requires $150,000-$250,000 line of credit IN ADDITION to the $77,500-$152,650 cash investment. This is the only brand in either wedge requiring a credit line.",
+      "Initial Annual Advertising/Marketing ($60K-$80K) is the single largest line item in Item 7, far exceeding the 1% advertising fund fee. NaturaLawn effectively requires massive upfront marketing spend rather than ongoing percentage-based contributions.",
+      "Zero transfers across all 3 reported years — unique in the lawn cohort. Either franchise agreements restrict transfers, or the founder-operator culture discourages them.",
+      "Founder Philip Catron operates 7 company-owned locations through personal corporations (NLI, SCV, JTV, BETHEL, NNV, GSC). This founder-heavy company-owned presence is unusual.",
+      "Item 20 Table 3 state-level data does not reconcile with totals row for 2024 (states show 3 opened but total shows 0). Used total row as authoritative.",
+      "Item 19 population count discrepancy: states '44 franchised locations' but '40 operating 5+ years and 7 operating <5 years' (40+7=47). Possible multi-license counting.",
+      "Technology fee is per-user tiered ($132 first user, $74 users 2-5, etc.) — cannot be expressed as single monthly amount.",
+      "Royalty reduces to 7% upon renewal if Gross Sales ≥ $500K — meaningful incentive for growth. 15% on out-of-territory revenue (same surcharge structure as Lawn Doctor).",
+      "NaturaLawn positions as organic-based lawn care — differentiated positioning in the cohort that may explain higher revenue per customer ($810 avg franchised)."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.technology_fee.value", "reason": "Per-user tiered pricing: $132/$74/$69/$58 per user per month.", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

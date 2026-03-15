@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Your {{ brand_name }} Decision Report — Franchise Decision Radar{% endblock %}
+
+{% block head %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+{% block content %}
+<div style="max-width: 580px; margin: 1.5rem 0 0;">
+
+  <h1 style="font-size: 1.75rem;">Your {{ brand_name }} Decision Report is ready.</h1>
+  <p class="subhead">
+    You now have the full buyer-facing analysis, including fee structure, system health,
+    disclosed risks, and the issues most likely to matter before signing.
+  </p>
+
+  <div style="margin: 2rem 0;">
+    <a href="reports/{{ slug }}-decision-report.pdf" class="cta-button" style="font-size: 1rem; padding: 0.85rem 2rem;">
+      Download Report (PDF)
+    </a>
+  </div>
+
+  <div class="methodology-compact" style="margin: 2.5rem 0 1.5rem;">
+    <p><strong>Backup</strong></p>
+    <p>
+      Stripe also sent a receipt to your email. If you need the report link again,
+      reply to that email or contact us below.
+    </p>
+  </div>
+
+  <h2 style="font-size: 1.1rem;">What you just received</h2>
+  <p>
+    This report is designed to help you pressure-test the {{ brand_name }} opportunity
+    before you commit capital. It focuses on the economics, disclosed constraints, system
+    stability, and the specific issues a buyer should pay close attention to in the FDD.
+  </p>
+
+  <div class="report-sections" style="margin-bottom: 2rem;">
+    <div class="report-section-item">
+      <span class="report-section-num">1</span>
+      <div><div class="report-section-title">Fee Burden Deep Dive</div></div>
+    </div>
+    <div class="report-section-item">
+      <span class="report-section-num">2</span>
+      <div><div class="report-section-title">Item 19 Revenue Translation</div></div>
+    </div>
+    <div class="report-section-item">
+      <span class="report-section-num">3</span>
+      <div><div class="report-section-title">Investment Breakdown</div></div>
+    </div>
+    <div class="report-section-item">
+      <span class="report-section-num">4</span>
+      <div><div class="report-section-title">System Health Narrative</div></div>
+    </div>
+    <div class="report-section-item">
+      <span class="report-section-num">5</span>
+      <div><div class="report-section-title">Risk Flags &amp; Litigation</div></div>
+    </div>
+    <div class="report-section-item">
+      <span class="report-section-num">6</span>
+      <div><div class="report-section-title">Discovery Day Questions</div></div>
+    </div>
+    <div class="report-section-item">
+      <span class="report-section-num">7</span>
+      <div><div class="report-section-title">Peer Positioning</div></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3 style="font-size: 0.95rem;">Support</h3>
+  <p style="font-size: 0.88rem; color: #64748b;">
+    Questions about your report? Email
+    <a href="mailto:reports@franchisedecisionradar.com">reports@franchisedecisionradar.com</a>
+    &mdash; we respond within one business day.
+  </p>
+  <p style="font-size: 0.88rem; color: #64748b;">
+    If your download did not work or you need the report sent to a different email,
+    reply to your Stripe receipt or email us directly.
+  </p>
+
+  <hr>
+
+  <p class="small" style="color: #94a3b8;">
+    This report is for informational and educational purposes only. It is not legal,
+    financial, tax, or investment advice. You should review the Franchise Disclosure
+    Document with qualified professional advisors before making any franchise investment
+    decision.
+  </p>
+
+</div>
+{% endblock %}

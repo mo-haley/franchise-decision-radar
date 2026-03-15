@@ -1,0 +1,510 @@
+{
+  "inventory_date": "2026-03-15",
+  "cohort_note": "Source inventory for the Franchise Decision Radar. Brands are organized by wedge — each wedge is a narrow vertical enabling direct comparison among direct competitors. Wedges are never mixed in comparison views.",
+  "phase_2_scope": "Extract the most recent available filing year only per brand, unless otherwise specified.",
+
+  "wedges": {
+    "mosquito_outdoor_pest": {
+      "display_name": "Mosquito & Outdoor Pest Control",
+      "description": "Residential mosquito and biting-pest outdoor treatment franchises.",
+      "brand_count": 7,
+      "extraction_status": "5 of 7 brands extracted (Phase 1-2 complete). Mosquito Sheriff and MosquitoNix sourced but not yet extracted."
+    },
+    "lawn_turf_treatment": {
+      "display_name": "Lawn Care & Turf Treatment",
+      "description": "Residential lawn care, fertilization, and weed/pest turf treatment franchises.",
+      "brand_count": 6,
+      "extraction_status": "6 of 6 brands extracted. All 6 PDFs sourced from Wisconsin DFI (2025 filings)."
+    }
+  },
+
+  "source_trust_tiers": {
+    "regulator": "PDF obtained directly from a state regulator portal (WI DFI, CA DFPI). Highest trust.",
+    "public_filing_system": "PDF obtained from NASAA EFD or equivalent multi-state public filing depository.",
+    "third_party": "PDF obtained from a non-regulator, non-NASAA source (FDD Exchange, FranchiseIndx, FranChimp, etc.). Not approved for extraction unless explicitly promoted after review."
+  },
+
+  "source_status_vocabulary": {
+    "confirmed_registered": "Brand confirmed as actively registered in this source system. FDD believed to be downloadable.",
+    "manual_access_required": "Registration confirmed or believed likely, but download requires manual browser interaction.",
+    "not_yet_searched": "This source system has not been searched for this brand.",
+    "searched_not_found": "Searched this source and did not find a matching registration.",
+    "access_blocked": "Source system access is blocked (CAPTCHA, login wall, etc.).",
+    "third_party_only": "FDD available only from third-party sources for this brand."
+  },
+
+  "brands": [
+    {
+      "brand_name": "Mosquito Joe",
+      "brand_slug": "mosquito-joe",
+      "wedge": "mosquito_outdoor_pest",
+      "entity_aliases": {
+        "current_legal_entity": "Mosquito Joe SPV LLC",
+        "historical_entities": ["Mosquito Joe Franchising, LLC"],
+        "trade_names": ["Mosquito Joe"],
+        "known_filing_aliases": ["Mosquito Joe SPV LLC", "Mosquito Joe Franchising, LLC"],
+        "parent_company": "Dwyer Franchising LLC d/b/a Neighborly"
+      },
+      "entity_type": "Special Purpose Vehicle LLC",
+      "state_of_formation": null,
+      "state_of_formation_notes": "Original entity formed in Virginia. SPV entity state of formation not confirmed from regulator source.",
+      "principal_address": "2829 Guardian Lane, Suite 100, Virginia Beach, VA 23452",
+      "franchising_since": 2012,
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "registration_expires": "2026-04-04",
+          "search_terms": ["Mosquito Joe", "Mosquito Joe SPV"],
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx",
+          "filing_years_confirmed": null,
+          "filing_years_notes": "Active registrations page shows only expiration date, not filing year history. Must check detail page.",
+          "notes": "WI filing is under SPV entity, not historical 'Mosquito Joe Franchising, LLC'."
+        },
+        "california_dfpi": {
+          "status": "not_yet_searched",
+          "search_terms": ["Mosquito Joe SPV", "Mosquito Joe Franchising"],
+          "access_method": "manual_browser",
+          "search_url": "https://dfpi.ca.gov/regulated-industries/franchises/",
+          "notes": "JS-rendered search prevents automated verification. Manual browser search required."
+        },
+        "nasaa_efd": {
+          "status": "not_yet_searched",
+          "search_url": "https://www.nasaaefd.org/Franchise/Search"
+        }
+      },
+      "known_fdd_urls": [
+        {
+          "year": 2013,
+          "source_name": "FDD Exchange",
+          "source_trust_tier": "third_party",
+          "url": "https://fddexchange.com/wp-content/uploads/2014/09/Mosquito-Joe-FDD-2013.pdf",
+          "access_verified": false,
+          "approved_for_extraction": false
+        }
+      ],
+      "ambiguity_flags": [
+        "Legal entity in WI ('Mosquito Joe SPV LLC') differs from historical entity ('Mosquito Joe Franchising, LLC'). The relationship between these entities has not been confirmed from a regulator source."
+      ]
+    },
+    {
+      "brand_name": "Mosquito Authority",
+      "brand_slug": "mosquito-authority",
+      "wedge": "mosquito_outdoor_pest",
+      "entity_aliases": {
+        "current_legal_entity": "Main Line Brands LLC",
+        "historical_entities": [
+          "Authority Franchising, LLC",
+          "TMAFS, LLC",
+          "TMA Franchise Systems, Inc."
+        ],
+        "trade_names": ["Mosquito Authority", "The Mosquito Authority"],
+        "known_filing_aliases": ["Main Line Brands LLC", "TMAFS, LLC", "TMA Franchise Systems, Inc.", "Authority Franchising, LLC"],
+        "parent_company": "Main Line Brands LLC"
+      },
+      "entity_type": "Delaware LLC",
+      "state_of_formation": "Delaware",
+      "principal_address": "2359 Perimeter Pointe Parkway, Suite 250, Charlotte, NC 28208",
+      "franchising_since": 2012,
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "registration_expires": "2026-05-08",
+          "search_terms": ["Main Line Brands"],
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx",
+          "filing_years_confirmed": null,
+          "notes": "Appears 3 times on active registrations list. Main Line Brands LLC also covers Pest Authority and Fitness Machine Technicians. Must check detail pages to identify the specific Mosquito Authority FDD."
+        },
+        "california_dfpi": {
+          "status": "not_yet_searched",
+          "search_terms": ["Main Line Brands", "TMAFS", "TMA Franchise Systems", "Authority Franchising"],
+          "access_method": "manual_browser",
+          "search_url": "https://dfpi.ca.gov/regulated-industries/franchises/",
+          "notes": "Entity changed names 4 times. Must search all historical names. JS-rendered search requires manual verification."
+        },
+        "nasaa_efd": {
+          "status": "not_yet_searched",
+          "search_url": "https://www.nasaaefd.org/Franchise/Search"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": [
+        "Legal entity 'Main Line Brands LLC' bears no resemblance to brand name 'Mosquito Authority'.",
+        "Entity has changed names 4 times since founding.",
+        "3 WI registrations under same entity — which maps to Mosquito Authority FDD specifically must be confirmed from detail pages."
+      ]
+    },
+    {
+      "brand_name": "Mosquito Hunters",
+      "brand_slug": "mosquito-hunters",
+      "wedge": "mosquito_outdoor_pest",
+      "entity_aliases": {
+        "current_legal_entity": "Mosquito Hunters, LLC",
+        "historical_entities": ["MH Franchising, LLC"],
+        "trade_names": ["Mosquito Hunters", "Humbug Holiday Lighting"],
+        "known_filing_aliases": ["Mosquito Hunters, LLC", "Mosquito Hunters"],
+        "parent_company": "LD Parent, Inc. / CNL Strategic Capital, LLC"
+      },
+      "entity_type": "Delaware LLC",
+      "state_of_formation": "Delaware",
+      "principal_address": "142 State Route 34, Holmdel, NJ 07733",
+      "franchising_since": 2018,
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "registration_expires": "2026-05-08",
+          "search_terms": ["Mosquito Hunters"],
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx",
+          "filing_years_confirmed": null,
+          "notes": "Entity name matches brand name."
+        },
+        "california_dfpi": {
+          "status": "not_yet_searched",
+          "search_terms": ["Mosquito Hunters", "MH Franchising"],
+          "access_method": "manual_browser",
+          "search_url": "https://dfpi.ca.gov/regulated-industries/franchises/",
+          "notes": "CA listed as franchise registration state in the 2024 FDD (per extracted data). JS-rendered search requires manual verification."
+        },
+        "nasaa_efd": {
+          "status": "confirmed_registered",
+          "search_url": "https://www.nasaaefd.org/Franchise/Search",
+          "notes": "2022 FDD confirmed downloadable via direct URL."
+        }
+      },
+      "known_fdd_urls": [
+        {
+          "year": 2022,
+          "source_name": "NASAA EFD",
+          "source_trust_tier": "public_filing_system",
+          "url": "https://www.nasaaefd.org/Franchise/Actions/DownloadFile.ashx?DocId=30056&isRegistered=true",
+          "access_verified": false,
+          "approved_for_extraction": true
+        },
+        {
+          "year": 2024,
+          "source_name": "Google Cloud Storage (FranchiseIndx)",
+          "source_trust_tier": "third_party",
+          "url": "https://storage.googleapis.com/franchiseindx_fdds/Home-Services/Mosquito%20Hunters_2024_rb12ox58",
+          "access_verified": true,
+          "access_verified_date": "2026-03-14",
+          "approved_for_extraction": false,
+          "approved_for_extraction_notes": "Third-party source. Used for proof-of-extraction sample only. Should be replaced with regulator-source PDF for Phase 2."
+        }
+      ],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "Mosquito Squad",
+      "brand_slug": "mosquito-squad",
+      "wedge": "mosquito_outdoor_pest",
+      "entity_aliases": {
+        "current_legal_entity": "Mosquito Squad Franchising SPE LLC",
+        "historical_entities": [
+          "Mosquito Squad Franchising, LLC",
+          "Mosquito Squad Franchising Corporation"
+        ],
+        "trade_names": ["Mosquito Squad"],
+        "known_filing_aliases": ["Mosquito Squad Franchising SPE LLC", "Mosquito Squad Franchising, LLC", "Mosquito Squad Franchising Corporation"],
+        "parent_company": "AB Assetco LLC / Authority Brands, Inc."
+      },
+      "entity_type": "Delaware LLC (SPE)",
+      "state_of_formation": "Delaware",
+      "principal_address": "Richmond, Virginia",
+      "principal_address_notes": "Full street address not confirmed from regulator source.",
+      "franchising_since": 2009,
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "registration_expires": "2026-04-17",
+          "search_terms": ["Mosquito Squad"],
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx",
+          "filing_years_confirmed": null,
+          "notes": "Filed under SPE entity name."
+        },
+        "california_dfpi": {
+          "status": "not_yet_searched",
+          "search_terms": ["Mosquito Squad Franchising SPE", "Mosquito Squad Franchising"],
+          "access_method": "manual_browser",
+          "search_url": "https://dfpi.ca.gov/regulated-industries/franchises/",
+          "notes": "Entity changed names 3 times. Must try all variants. JS-rendered search requires manual verification."
+        },
+        "nasaa_efd": {
+          "status": "not_yet_searched",
+          "search_url": "https://www.nasaaefd.org/Franchise/Search"
+        }
+      },
+      "known_fdd_urls": [
+        {
+          "year": 2012,
+          "source_name": "FDD Exchange",
+          "source_trust_tier": "third_party",
+          "url": "https://fddexchange.com/wp-content/uploads/2014/03/Mosquito-Squad-Franchise-Disclosure-Document-FDD-April-10-2012.pdf",
+          "access_verified": false,
+          "approved_for_extraction": false
+        },
+        {
+          "year": 2013,
+          "source_name": "FDD Exchange",
+          "source_trust_tier": "third_party",
+          "url": "https://fddexchange.com/wp-content/uploads/2014/11/Mosquito-Squad-FDD-2013.pdf",
+          "access_verified": false,
+          "approved_for_extraction": false
+        }
+      ],
+      "ambiguity_flags": [
+        "WI filing is under SPE entity name which differs from historical entity names."
+      ]
+    },
+    {
+      "brand_name": "Mosquito Shield",
+      "brand_slug": "mosquito-shield",
+      "wedge": "mosquito_outdoor_pest",
+      "entity_aliases": {
+        "current_legal_entity": "Mosquito Shield Franchise, LLC",
+        "historical_entities": ["Mosquito Shield Franchise Corporation"],
+        "trade_names": ["Mosquito Shield"],
+        "known_filing_aliases": ["Mosquito Shield Franchise Corporation"],
+        "parent_company": "Five Star Franchising"
+      },
+      "entity_type": "Delaware Corporation",
+      "state_of_formation": "Delaware",
+      "principal_address": "500 E. Washington Street #24, North Attleboro, MA 02760",
+      "franchising_since": 2013,
+      "company_founded": 2001,
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "registration_expires": "2026-05-13",
+          "search_terms": ["Mosquito Shield"],
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx",
+          "filing_years_confirmed": null,
+          "notes": "Entity name closely matches brand name."
+        },
+        "california_dfpi": {
+          "status": "not_yet_searched",
+          "search_terms": ["Mosquito Shield Franchise Corporation"],
+          "access_method": "manual_browser",
+          "search_url": "https://dfpi.ca.gov/regulated-industries/franchises/",
+          "notes": "JS-rendered search requires manual verification."
+        },
+        "nasaa_efd": {
+          "status": "not_yet_searched",
+          "search_url": "https://www.nasaaefd.org/Franchise/Search"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "Mosquito Sheriff",
+      "brand_slug": "mosquito-sheriff",
+      "wedge": "mosquito_outdoor_pest",
+      "extraction_status": "pending",
+      "entity_aliases": {
+        "current_legal_entity": null,
+        "current_legal_entity_notes": "Not yet confirmed. Must extract from FDD cover page.",
+        "trade_names": ["Mosquito Sheriff"]
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "mosquito-sheriff_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "MosquitoNix",
+      "brand_slug": "mosquitonix",
+      "wedge": "mosquito_outdoor_pest",
+      "extraction_status": "pending",
+      "entity_aliases": {
+        "current_legal_entity": null,
+        "current_legal_entity_notes": "Not yet confirmed. Must extract from FDD cover page.",
+        "trade_names": ["MosquitoNix"]
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "mosquitonix_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "Lawn Doctor",
+      "brand_slug": "lawn-doctor",
+      "wedge": "lawn_turf_treatment",
+      "extraction_status": "extracted",
+      "entity_aliases": {
+        "current_legal_entity": "Lawn Doctor, Inc.",
+        "trade_names": ["Lawn Doctor", "Holiday Lighting Heroes"],
+        "parent_company": "LD Parent, Inc. / CNL Strategic Capital, LLC"
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "lawn-doctor_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "Weed Man",
+      "brand_slug": "weed-man",
+      "wedge": "lawn_turf_treatment",
+      "extraction_status": "extracted",
+      "entity_aliases": {
+        "current_legal_entity": "Turf Holdings Inc.",
+        "trade_names": ["Weed Man"],
+        "parent_company": "#1051080 Ontario Inc. / TH Canada Inc."
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "weed-man_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "Spring-Green",
+      "brand_slug": "spring-green",
+      "wedge": "lawn_turf_treatment",
+      "extraction_status": "extracted",
+      "entity_aliases": {
+        "current_legal_entity": "Spring-Green Lawn Care Corp.",
+        "trade_names": ["Spring-Green", "Spring Green"],
+        "parent_company": "Spring-Green Enterprises, Inc."
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "spring-green_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "NaturaLawn",
+      "brand_slug": "naturalawn",
+      "wedge": "lawn_turf_treatment",
+      "extraction_status": "extracted",
+      "entity_aliases": {
+        "current_legal_entity": "NaturaLawn of America Inc.",
+        "trade_names": ["NaturaLawn", "NaturaLawn of America"],
+        "parent_company": null
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "naturalawn_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "Lawn Pride",
+      "brand_slug": "lawn-pride",
+      "wedge": "lawn_turf_treatment",
+      "extraction_status": "extracted",
+      "entity_aliases": {
+        "current_legal_entity": "Lawn Pride SPV LLC",
+        "trade_names": ["Lawn Pride"],
+        "parent_company": "Neighborly Assetco LLC / Dwyer Franchising LLC d/b/a Neighborly / KKR"
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "lawn-pride_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "Lawn Squad",
+      "brand_slug": "lawn-squad",
+      "wedge": "lawn_turf_treatment",
+      "extraction_status": "extracted",
+      "entity_aliases": {
+        "current_legal_entity": "Lawn Squad Franchising LLC",
+        "trade_names": ["Lawn Squad"],
+        "parent_company": "Lawn Squad HoldCo Inc. / Authority Brands, Inc. / Apax Partners LLP"
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "lawn-squad_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "manual_browser",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    }
+  ],
+
+  "source_systems": {
+    "wisconsin_dfi": {
+      "name": "Wisconsin Department of Financial Institutions (DFI)",
+      "url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx",
+      "trust_tier": "regulator",
+      "access_method": "manual_browser",
+      "notes": "All 13 brands (7 mosquito, 6 lawn) confirmed registered. ASP.NET WebForms with session tokens prevents programmatic access. No CAPTCHA."
+    },
+    "california_dfpi": {
+      "name": "California Department of Financial Protection and Innovation (DFPI)",
+      "url": "https://dfpi.ca.gov/regulated-industries/franchises/",
+      "trust_tier": "regulator",
+      "access_method": "manual_browser",
+      "notes": "JS-rendered search. None of the 5 brands have been verified in this system yet."
+    },
+    "nasaa_efd": {
+      "name": "NASAA Electronic Filing Depository",
+      "url": "https://www.nasaaefd.org/Franchise/Search",
+      "trust_tier": "public_filing_system",
+      "notes": "Free public access. Mosquito Hunters confirmed present."
+    }
+  }
+}

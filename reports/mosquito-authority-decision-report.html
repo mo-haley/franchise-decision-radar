@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mosquito Authority — Franchise Decision Report</title>
+<style>
+@media print {
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a; background: #fff; line-height: 1.7;
+  max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem;
+}
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0 0 0.25rem; letter-spacing: -0.02em; font-family: -apple-system, sans-serif; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid #ccc; font-family: -apple-system, sans-serif; }
+h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.4rem; font-family: -apple-system, sans-serif; }
+p { margin: 0 0 0.9rem; }
+strong { font-weight: 700; }
+a { color: #1a1a1a; }
+
+.report-header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 1.75rem; }
+.report-meta { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; line-height: 1.5; margin-top: 0.5rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; font-family: -apple-system, sans-serif; }
+thead th { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 2px solid #333; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #555; }
+thead th.num { text-align: right; }
+tbody td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; }
+tbody td.num { text-align: right; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; }
+tbody td.label { font-weight: 600; white-space: nowrap; }
+
+.callout { padding: 0.75rem 1rem; margin: 0.75rem 0 1.25rem; border-left: 3px solid #d97706; background: #fffbeb; font-size: 0.88rem; }
+.callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
+
+.question-list { list-style: none; padding: 0; counter-reset: q; }
+.question-list li { padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; counter-increment: q; }
+.question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+.question-list li:last-child { border-bottom: none; }
+.question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+
+.methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
+.methodology p { margin: 0 0 0.5rem; }
+
+.exec-summary { font-size: 1.02rem; line-height: 1.75; }
+.peer-table td.this-brand { background: #f5f7fa; }
+
+.implication {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem;
+  color: #1e40af; margin: 0.5rem 0 1rem; line-height: 1.5;
+  padding-left: 0.75rem; border-left: 2px solid #93c5fd;
+}
+.implication strong { color: #1e40af; }
+ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
+ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>Mosquito Authority</h1>
+  <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
+  <div class="report-meta">
+    Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
+    Legal entity: Main Line Brands LLC<br>
+    Report generated: 2026-03-14 &middot; Franchise Decision Radar
+  </div>
+</div>
+
+<h2>Executive Summary</h2>
+<div class="exec-summary">
+
+<p>Mosquito Authority is the lowest-cost franchise in the mosquito pest control cohort
+by a significant margin — both to enter and to operate. At $300K gross revenue, annual
+franchisor fees total $52,800 (17.6% of revenue), roughly $25,000–$33,000 less than any
+competitor. The system is the largest in the cohort (546 franchised outlets) with zero
+terminations across the 2022–2024 reporting window — the cleanest system health profile
+of any brand reviewed.</p>
+
+<p>The biggest risk is latent, not current: the franchisor reserves the right to implement
+a national marketing fee of up to 3% of Gross Revenues at any time, which would add
+$6,000–$15,000/year. The predecessor entity's regulatory history (5 state actions for
+selling without registration) is real but pre-dates current ownership. Disclosure quality
+is strong, with a rich Item 19 — though a <code>#REF!</code> spreadsheet error and minor
+population mismatches are quality blemishes worth noting.</p>
+
+</div>
+
+<h2>Fee Burden Analysis</h2>
+
+<p>Mosquito Authority has the lightest ongoing fee burden at every modeled revenue level.
+The primary driver is marketing: Authority's local ad minimum ($5,500 or 5%) is 4–7× lower
+than competitors' mandatory marketing floors ($37,500–$75,000+).</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>At Revenue</th>
+      <th class="num">Royalty</th>
+      <th class="num">Marketing</th>
+      <th class="num">Tech / Other</th>
+      <th class="num">Total</th>
+      <th class="num">% of Rev</th>
+      <th class="num">Cohort Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">$200,000</td>
+      <td class="num">$20,000</td>
+      <td class="num">$10,000</td>
+      <td class="num">$6,600</td>
+      <td class="num"><strong>$36,600</strong></td>
+      <td class="num">18.3%</td>
+      <td class="num">1/5</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$300,000</td>
+      <td class="num">$30,000</td>
+      <td class="num">$15,000</td>
+      <td class="num">$7,800</td>
+      <td class="num"><strong>$52,800</strong></td>
+      <td class="num">17.6%</td>
+      <td class="num">1/5</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$400,000</td>
+      <td class="num">$40,000</td>
+      <td class="num">$20,000</td>
+      <td class="num">$9,000</td>
+      <td class="num"><strong>$69,000</strong></td>
+      <td class="num">17.2%</td>
+      <td class="num">1/5</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$500,000</td>
+      <td class="num">$50,000</td>
+      <td class="num">$25,000</td>
+      <td class="num">$10,200</td>
+      <td class="num"><strong>$85,200</strong></td>
+      <td class="num">17.0%</td>
+      <td class="num">1/5</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Component breakdown</h3>
+<ul class="compact">
+<li><strong>Royalty (10% flat):</strong> Mid-cohort rate. Minimum monthly fee ($700/mo by Year 7+)
+never exceeds the percentage at modeled revenue levels. (p. 15)</li>
+<li><strong>Marketing ($5,500 or 5%):</strong> Proportional to revenue with a low floor.
+No active national fund. This is why Authority's total burden is so much lower — competitors
+pay $37K–$75K in fixed marketing obligations that hit hardest at low revenue. (pp. 15, 19–20)</li>
+<li><strong>Technology ($100–$1,200/mo, tiered):</strong> Jumps in $100/mo steps per $50K revenue
+bracket. At $300K: $400/mo ($4,800/yr). At $500K: $600/mo ($7,200/yr). The escalation is
+predictable but not obvious from the headline rate. (pp. 16, 21)</li>
+<li><strong>Website/digital ($250/mo):</strong> Fixed. Covers local site, SEO, review tools. (p. 15)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> At $300K revenue, you keep ~$247K after franchisor fees.
+The next cheapest brand (Mosquito Squad) leaves you ~$222K. That $25,000/year gap compounds
+over a 10-year franchise term into a quarter-million dollars of difference in retained earnings.
+</div>
+
+<div class="callout">
+<div class="callout-title">Latent risk — unimplemented national marketing fee</div>
+The FDD reserves the right to implement a national marketing fee of up to 3% at any time,
+adding $6K–$15K/year. No timeline or conditions are specified. If activated, Authority's
+burden rises to 20–21% of revenue — still lowest in cohort, but the gap narrows significantly.
+(p. 15, Note 4)
+</div>
+
+
+<h2>Item 19 Interpretation</h2>
+
+<p>Authority's Item 19 is the second-richest in the cohort, providing both a company-owned
+P&L and detailed franchised revenue distributions. This is more than most competitors
+offer — but it requires careful interpretation.</p>
+
+<h3>Company-owned P&L (Part 1)</h3>
+<p>One company-owned territory in Hickory, NC, operating since 2009. Full P&L for 2023 and
+2024:</p>
+<ul>
+<li>Revenue: $374,420 (2023), $384,192 (2024)</li>
+<li>EBITDA: $71,691 (2023), $52,578 (2024)</li>
+<li><strong>Net income: −$6,852 (2023), −$30,411 (2024)</strong></li>
+</ul>
+<p>The negative net income is driven by $60,000/year in amortization. Before amortization
+and depreciation, the location is profitable. But the EBITDA decline from $72K to $53K is
+a real signal — expenses grew faster than revenue.</p>
+
+<p><strong>What to be careful about:</strong> This is a single location that has operated for
+15+ years. It pays 10% royalty and ~10% in advertising (matching franchisee obligations). It
+is not representative of a new operator's first years. The manager salary ($48K/year) is
+included in expenses — if you operate the business yourself, that cost becomes your draw,
+changing the economics significantly.</p>
+
+<h3>Franchised revenue (Part 2)</h3>
+<p>Average gross revenue of $464,600 across 128 qualifying franchisees (506 territories).
+But this is <strong>per franchisee, not per territory</strong>. The average qualifying
+franchisee owns approximately 4 territories. A single-territory operator should not assume
+$465K revenue.</p>
+
+<p>The revenue-by-years-active breakdown is more useful: franchisees with "at least 2 full
+seasons" average $149,470 (median $97,460). Those with 4+ seasons average $192,574. Revenue
+grows meaningfully with tenure, but the early years are significantly lower than the
+headline average suggests.</p>
+
+<h3>What's missing</h3>
+<p>No franchised cost data or profitability. No per-territory revenue. The <code>#REF!</code>
+error in the 10+ Full Seasons cell (p. 55) means the most experienced cohort's average
+is missing from the filed document.</p>
+
+<div class="implication">
+<strong>What this means:</strong> You can estimate likely gross revenue from the years-active
+data ($100K–$190K in early years, growing with tenure), but you cannot estimate profitability
+from this FDD alone. The company-owned P&L gives cost ratios but from a 15-year mature location
+that is not representative of a new operation. You will need to build your own expense model
+or talk to current franchisees.
+</div>
+
+
+<h2>Investment Breakdown</h2>
+
+<p>Lowest in the cohort: $54,000–$127,700. The range is wide because two variables swing it:
+franchise type (Hometown $25K vs Full-Size $45K) and vehicle ($0 if you own a qualifying
+truck, $30K if not).</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th class="num">Low</th>
+      <th class="num">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>Initial Franchise Fee</td>
+      <td class="num">$25,000</td>
+      <td class="num">$45,000</td>
+    </tr>
+    
+    <tr>
+      <td>Pre-Opening and First Year Marketing Package</td>
+      <td class="num">$15,000</td>
+      <td class="num">$25,000</td>
+    </tr>
+    
+    <tr>
+      <td>Transportation Expenses During Initial Training</td>
+      <td class="num">$1,000</td>
+      <td class="num">$1,500</td>
+    </tr>
+    
+    <tr>
+      <td>Computer Hardware and Technology Fees</td>
+      <td class="num">$1,000</td>
+      <td class="num">$2,000</td>
+    </tr>
+    
+    <tr>
+      <td>Opening Inventory</td>
+      <td class="num">$2,500</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Storage Facility for inventory and equipment</td>
+      <td class="num">$0</td>
+      <td class="num">$200</td>
+    </tr>
+    
+    <tr>
+      <td>Vehicle</td>
+      <td class="num">$0</td>
+      <td class="num">$30,000</td>
+    </tr>
+    
+    <tr>
+      <td>Customer Service Vehicle Outfitting Package</td>
+      <td class="num">$4,000</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Insurance (annual premium)</td>
+      <td class="num">$2,500</td>
+      <td class="num">$4,000</td>
+    </tr>
+    
+    <tr>
+      <td>Additional Funds for first three months of operation</td>
+      <td class="num">$3,000</td>
+      <td class="num">$10,000</td>
+    </tr>
+    
+    <tr style="border-top:2px solid #333">
+      <td class="label">Total</td>
+      <td class="num"><strong>$54,000</strong></td>
+      <td class="num"><strong>$127,700</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>What to know about the major line items</h3>
+<ul class="compact">
+<li><strong>Franchise fee ($25K–$45K):</strong> Franchisor will defer up to 50% at 8% over
+36 months — unusual flexibility. Some 2024 sales at $31.5K–$35K suggest room to negotiate. (p. 13)</li>
+<li><strong>Pre-opening marketing ($15K–$25K):</strong> Mandatory branded package. May be
+reduced if existing franchisees operate nearby. At the low end, this is nearly 28% of total
+investment. (p. 22)</li>
+<li><strong>Vehicle ($0–$30K):</strong> Late model white full-size pickup. Own one already and
+this entire line disappears — it's the single biggest swing factor in the range. (p. 22)</li>
+<li><strong>Working capital ($3K–$10K):</strong> Only 3 months, which is conservative for a
+seasonal business with near-zero winter revenue. Plan for personal reserves beyond this. (p. 23)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> A buyer with a qualifying vehicle and the Hometown tier can
+realistically enter for ~$54K cash (or ~$41K with the fee deferral). A Full-Size buyer
+needing a vehicle is closer to $100K+. The investment range is real — your actual number
+depends on decisions you control.
+</div>
+
+
+<h2>System Health</h2>
+
+<p>Most stable system in the cohort. Modest growth every year (+5, +10, +7) with no
+rapid-open/rapid-close churn. For context: Mosquito Shield grew +140 in the same
+period but lost 128 outlets to terminations and closures. Authority grew +22 and
+lost 17. Different kind of growth.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num">Opened</th>
+      <th class="num">Closed</th>
+      <th class="num">Net</th>
+      <th class="num">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">2022</td>
+      <td class="num">7</td>
+      <td class="num">2</td>
+      <td class="num">+5</td>
+      <td class="num">529</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2023</td>
+      <td class="num">14</td>
+      <td class="num">7</td>
+      <td class="num">+10</td>
+      <td class="num">539</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2024</td>
+      <td class="num">18</td>
+      <td class="num">10</td>
+      <td class="num">+7</td>
+      <td class="num">546</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Zero terminations</h3>
+<p>No franchisee was terminated across the entire 3-year window — unique in this cohort.
+Closures are limited to ceased operations (2, 7, 7) and 3 non-renewals in 2024 (the first
+in the reporting period). Small numbers against 530+ outlets.</p>
+
+<div class="implication">
+<strong>What this means:</strong> The franchisor is not aggressively culling underperformers,
+and franchisees are not walking away. In a cohort where one competitor terminated 65
+outlets in a single year, this stability is a meaningful differentiator.
+</div>
+
+<h3>Active resale market</h3>
+<p>37, 29, 37 transfers per year (~7% of system). In a system with zero terminations,
+transfers mean ownership changes with the outlet staying open. People are buying these
+franchises from existing owners — a signal that the business has resale value.</p>
+
+<h3>Minimal company-owned footprint</h3>
+<p>One location (Hickory, NC). A second (West Chester, PA) was briefly company-owned in
+2023–2024, then sold back. The franchisor is not competing with its franchisees.</p>
+
+
+<h2>Risk Signals</h2>
+
+<h3>Predecessor regulatory history</h3>
+<p>Five concluded actions — all against predecessor TMA Franchise Systems, Inc., not the
+current entity (Main Line Brands LLC, formed 2020):</p>
+<ul class="compact">
+<li>Maryland (2013): selling without registration</li>
+<li>Rhode Island (2013): selling without registration, $5K penalty</li>
+<li>Virginia (2015): selling without registration, $20K penalty</li>
+<li>Wisconsin (2016): selling without registration, $10K penalty</li>
+<li>Washington (2020): Assurance of Discontinuance (inherited)</li>
+</ul>
+<p>Same violation, five states, seven years. This was systemic, not accidental. Under current
+ownership (since 2020): zero regulatory actions.</p>
+
+<div class="implication">
+<strong>What this means:</strong> The predecessor had a genuine compliance problem. The current
+entity appears clean, but the brand's regulatory history is disclosed in every FDD and will
+surface in any attorney review. Ask the franchisor directly what changed operationally —
+not just whether new management was installed.
+</div>
+
+<h3>Document quality</h3>
+<p>A <code>#REF!</code> spreadsheet error in Item 19 (p. 55) and minor population mismatches
+(129/508 vs stated 128/506). Quality blemishes in the filing, not fabrication signals — but
+worth noting in a document underlying a six-figure decision.</p>
+
+<h3>Entity and ownership</h3>
+<p>PE-backed (Susquehanna Private Capital). Straightforward entity structure relative to
+competitors — notably simpler than Mosquito Joe's 6-layer SPV chain. All five brands in
+this cohort are PE-backed; this is industry-standard.</p>
+
+
+<h2>Peer Context</h2>
+
+<p>Authority is the only brand in this cohort where you can enter for under $60K, operate
+with fees under 18% of revenue, and look at a system with zero terminations. It is not
+the most transparent (Squad's Item 19 is richer) or the fastest-growing (Shield added +140
+units). But it is the lowest-risk, lowest-cost option by a clear margin.</p>
+
+<p><strong>Closest comparison: Mosquito Squad.</strong> Similar age, both PE-backed, both with
+solid disclosure. Squad has better unit economics data ($484K/territory) and the best
+company-owned P&L ($20.8M, 25.9% margin) — but costs 2× more to enter and $25K/year more
+to operate at $300K revenue.</p>
+
+<p><strong>Sharpest contrast: Mosquito Shield.</strong> Opposite profiles. Shield has the
+fastest growth (+140) but highest churn (65 terminations in 2023). Lowest royalty (8%) but
+highest local ad floor ($50K). Authority has higher royalty (10%) but the lowest total
+burden by far.</p>
+
+
+<table class="peer-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      
+      <th class="num">Mosquito Authority</th>
+      
+      <th class="num">Mosquito Hunters</th>
+      
+      <th class="num">Mosquito Joe</th>
+      
+      <th class="num">Mosquito Shield</th>
+      
+      <th class="num">Mosquito Squad</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">System size</td>
+      
+      <td class="num this-brand">546</td>
+      
+      <td class="num">135</td>
+      
+      <td class="num">415</td>
+      
+      <td class="num">435</td>
+      
+      <td class="num">226</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Investment range</td>
+      
+      <td class="num this-brand">$54K–$127K</td>
+      
+      <td class="num">$141K–$170K</td>
+      
+      <td class="num">$150K–$192K</td>
+      
+      <td class="num">$120K–$157K</td>
+      
+      <td class="num">$162K–$220K</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Fee burden at $300K</td>
+      
+      <td class="num this-brand">$52,800</td>
+      
+      <td class="num">$80,300</td>
+      
+      <td class="num">$84,752</td>
+      
+      <td class="num">$86,000</td>
+      
+      <td class="num">$77,880</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">% of revenue</td>
+      
+      <td class="num this-brand">17.6%</td>
+      
+      <td class="num">26.8%</td>
+      
+      <td class="num">28.3%</td>
+      
+      <td class="num">28.7%</td>
+      
+      <td class="num">26.0%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">3-year net growth</td>
+      
+      <td class="num this-brand">+22</td>
+      
+      <td class="num">+8</td>
+      
+      <td class="num">+43</td>
+      
+      <td class="num">+140</td>
+      
+      <td class="num">+3</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">2024 attrition</td>
+      
+      <td class="num this-brand">1.8%</td>
+      
+      <td class="num">0.0%</td>
+      
+      <td class="num">5.7%</td>
+      
+      <td class="num">11.1%</td>
+      
+      <td class="num">4.3%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Royalty rate</td>
+      
+      <td class="num this-brand">10%</td>
+      
+      <td class="num">10%</td>
+      
+      <td class="num">10/7%</td>
+      
+      <td class="num">8%</td>
+      
+      <td class="num">10/9/8%</td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+
+<h2>Questions for Discovery Day</h2>
+<p>These questions are derived from specific findings in the Mosquito Authority 2025 FDD.
+They are designed to surface information the FDD does not fully explain.</p>
+
+<ol class="question-list">
+  
+  <li>The FDD reserves a national marketing fee of up to 3%. Under what conditions would you implement it, and what timeline are you considering?
+    <span class="question-context">FDD p. 15, Note 4. Not yet active but could add $6K–$15K/year.</span>
+  </li>
+  
+  <li>The company-owned location in Hickory showed declining EBITDA ($72K to $53K) and negative net income both years. What's driving that trend?
+    <span class="question-context">Item 19 Part 1, pp. 51–52. Net income −$6.8K (2023), −$30.4K (2024).</span>
+  </li>
+  
+  <li>The Item 19 average gross revenue ($464,600) is per franchisee, not per territory. What is the average revenue for a single-territory operator?
+    <span class="question-context">Item 19 Part 2, p. 53. Average franchisee owns ~4 territories.</span>
+  </li>
+  
+  <li>There are 3 non-renewals in 2024 — the first in the 3-year reporting period. What happened?
+    <span class="question-context">Item 20, Table 3, p. 56. Zero non-renewals in 2022–2023.</span>
+  </li>
+  
+  <li>The predecessor entity (TMA) had regulatory actions in 5 states for selling without registration. What specifically changed in the compliance process under Main Line Brands?
+    <span class="question-context">Item 3, pp. 11–13. Actions in MD, RI, VA, WI, WA (2013–2020).</span>
+  </li>
+  
+  <li>The technology fee tiers go up to $1,200/month at $1.05M+ revenue. Is there a cap, or will additional tiers be added?
+    <span class="question-context">Item 6, Note 10, p. 21. 12-tier schedule from $100–$1,200/month.</span>
+  </li>
+  
+  <li>There's a #REF! error in the Item 19 table for 10+ Full Seasons franchisees. Can you provide the corrected average?
+    <span class="question-context">Item 19 Part 2, p. 55. Spreadsheet formula error in filed FDD.</span>
+  </li>
+  
+  <li>What does the Hometown Franchise ($25K fee, smaller territory) look like in practice? How does revenue compare to Full-Size territories?
+    <span class="question-context">Item 5, p. 13. 62 Hometown franchises as of end 2024.</span>
+  </li>
+  
+  <li>The West Chester, PA company-owned location was acquired in 2023 and sold back in 2024. What happened?
+    <span class="question-context">Item 20, Table 4, pp. 63–64. Short-lived company ownership.</span>
+  </li>
+  
+  <li>Transfer volume is ~37/year (7% of system). Are these primarily retirements, upgrades to multi-territory, or something else?
+    <span class="question-context">Item 20, Table 2. 37 transfers in 2022, 29 in 2023, 37 in 2024.</span>
+  </li>
+  
+</ol>
+
+<div class="methodology">
+  <h2 style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <p><strong>Source document:</strong> Mosquito Authority 2025 Franchise Disclosure Document,
+  filed with the Wisconsin Department of Financial Institutions. 232-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">b3c79bd51cd531ec6e5c34297acd7118ba47d8a9418c1d5fec18c150fd4ab980</code></p>
+  <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
+  review. Field-level provenance recorded (source year, state, page number, item reference).
+  Extraction confidence: high (3+ fields spot-checked against source).</p>
+  <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
+  fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Peer comparison:</strong> Same methodology applied to all 5 brands in cohort
+  (Mosquito Authority, Mosquito Hunters, Mosquito Joe, Mosquito Shield, Mosquito Squad).
+  All from 2025 FDDs filed with Wisconsin DFI.</p>
+  <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
+  recommendation to buy or avoid this franchise. It is a structured analysis of publicly
+  available regulatory filings. The buyer should read the actual FDD, consult a franchise
+  attorney, and conduct their own due diligence before making any investment decision.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": "2026-03-14T13:54:00Z",
+    "local_filename": "mosquito-shield_2025_wi.pdf",
+    "sha256": "3de232c6a558d2563de70252c118058788fc82bd9209331b172f4e09274408ec",
+    "page_count": null,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms Mosquito Shield Franchise, LLC 2025 FDD. NOTE: Legal entity has changed from 'Mosquito Shield Franchise Corporation' to 'Mosquito Shield Franchise, LLC' (reorganized Feb 25, 2022). Source inventory should be updated."
+  },
+
+  "brand": {
+    "brand_name": "Mosquito Shield",
+    "brand_slug": "mosquito-shield",
+    "legal_entity": "Mosquito Shield Franchise, LLC",
+    "parent_company": "Mosquito Holdco, Inc. / FS PEP Holdco, LLC / Princeton Equity Group, LLC",
+    "year_founded": 2012,
+    "year_first_franchised": 2013,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 54500,
+        "currency": "USD",
+        "range_low": 54500,
+        "range_high": 54500,
+        "field_status": "extracted",
+        "notes": "First territory $54,500. Multi-territory tiered: 2nd=$45K, 3rd=$35K, 4th=$34.5K, 5th=$34K, decreasing to 10th=$23.5K. Each territory ~50,000 single-family homes; $1.00 per home above 50,000. Fully earned, nonrefundable. 10% deposit option (Deposit Agreement, Exhibit F). Franchise Starter Package $23,600 (laptop, platform setup, 3-month supply, marketing materials, training hotel). Vehicle customization $13,890.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [12, 13], "item_reference": "Item 5", "exact_text": null }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": 8.0,
+        "basis": "Gross Sales",
+        "field_status": "extracted",
+        "notes": "8% of Gross Sales or Minimum Gross Sales (whichever greater), payable weekly. Minimum Gross Sales schedule escalates from $45K (Y1) to $283,500 (Y5+) for 1 territory. If minimums not met, franchisor may collect difference between actual royalty and 7% of required Minimum Gross Sales.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 6, Royalty row", "exact_text": "8% of Gross Sales" }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "Brand Fund Fee 2% of Gross Sales (weekly) + Local Advertising greater of $50,000 or 10% of gross revenues annually (after first year). Advertising Cooperative currently $0 (max $25K/year unless 2/3 approve more).",
+        "components": [
+          { "name": "Brand Fund Fee", "value": 2.0, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "weekly", "notes": "Advertising, marketing, promotional programs." },
+          { "name": "Local Advertising", "value": 10.0, "basis": "gross revenues", "minimum_dollar": 50000, "frequency": "annual (after first year)", "notes": "Greater of $50,000 or 10% of gross revenues each year after year 1. Highest local ad floor in the cohort." },
+          { "name": "Advertising Cooperative", "value": null, "basis": null, "minimum_dollar": null, "frequency": "as determined", "notes": "Currently $0. Max $25,000/year unless 2/3 of members approve more. Credits toward Local Advertising." }
+        ],
+        "notes": "Total marketing burden is very high: 2% Brand Fund + $50K+ local ad minimum + additional cooperative potential. The $50,000 local ad floor is the highest in the cohort.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [14, 15], "item_reference": "Item 6", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": null,
+        "frequency": "monthly",
+        "field_status": "ambiguous",
+        "notes": "Software/Applications & Tech Fees: then-current vendor rates, payable monthly. Accounting Software: $0-$250/month. Bookkeeping Service: $200-$500/month (mandatory approved vendor). Sales Center Fee: $300-$750/month based on location size. Total tech-related monthly costs could range ~$500-$1,500/month.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [15, 16], "item_reference": "Item 6, multiple rows", "exact_text": null }
+      },
+      "transfer_fee": {
+        "value": 15000,
+        "formula": null,
+        "field_status": "extracted",
+        "notes": "$15,000 standard transfer fee. If franchisor identifies buyer: greater of $15,000, 3% of purchase price, or actual costs. Franchisee also responsible for any broker sales commission.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Transfer Fee row", "exact_text": "$15,000" }
+      },
+      "other_fees": [
+        { "fee_name": "Sales Center Fee", "value": null, "frequency": "monthly", "field_status": "extracted", "notes": "$300-$750/month based on location size. Franchisor can require use for all calls.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Bookkeeping Service", "value": null, "frequency": "monthly", "field_status": "extracted", "notes": "$200-$500/month. Must use approved/designated vendor.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Renewal Fee", "value": 1000, "frequency": "one-time", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Non-Reporting Fee", "value": 25, "frequency": "per day per report", "field_status": "extracted", "notes": "Starting day after due date.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Insufficient Funds Fee", "value": 100, "frequency": "per occurrence", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Additional Training/Per Diem Assistance", "value": 250, "frequency": "per 8-hour day", "field_status": "extracted", "notes": "Plus out-of-pocket expenses.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Evaluation Fee (supplier testing)", "value": 2500, "frequency": "as incurred (max)", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Annual Conference Deposit", "value": 1000, "frequency": "annual", "field_status": "extracted", "notes": "Required as part of initial investment. Travel/lodging additional.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 54500, "high": 54500, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Annual Conference Registration Deposit", "low": 1000, "high": 1000, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Customized Vehicle", "low": 2100, "high": 16000, "method_of_payment": "Varied", "when_due": "Pre-opening", "to_whom_paid": "Various", "notes": "Low = 3 months financing; high = customization on own vehicle ($13,890). Full vehicle with customization ~$54,500 MSRP + customization.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Lease and Utility Deposits", "low": 0, "high": 1500, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Landlord", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Storage-Related Expenses", "low": 0, "high": 1200, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Landlord", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Franchise Starter Package", "low": 23600, "high": 23600, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": "Laptop, platform setup, 3-month pest control product supply, marketing materials, 3 months ProNexis/Pocomos/SEO, training hotel.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Business Management Software", "low": 250, "high": 250, "method_of_payment": "Monthly", "when_due": "As incurred", "to_whom_paid": "Vendor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Local Advertising Expenditure", "low": 35000, "high": 50000, "method_of_payment": "As incurred", "when_due": "First year", "to_whom_paid": "Various", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Training Expenses", "low": 1500, "high": 2700, "method_of_payment": "As incurred", "when_due": "During training", "to_whom_paid": "Various", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance Premiums", "low": 675, "high": 900, "method_of_payment": "As incurred", "when_due": "Pre-opening", "to_whom_paid": "Insurer", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Professional Fees", "low": 350, "high": 1200, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Professionals", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Licenses and Permits", "low": 50, "high": 100, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Government", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 1500, "high": 5000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Various", "notes": "Does not include salary, employees, rent, utilities.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 120525,
+      "total_high": 157950,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table, Total row", "exact_text": "TOTAL $120,525 $157,950" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Company-Owned Location Performance",
+          "description": "2024 cost structure and adjusted EBITDA as % of revenue for acquired franchise in SE Pennsylvania",
+          "period": "calendar year 2024",
+          "population": "1 company-owned location (SE Pennsylvania, 5+ years operational, larger geography than standard new territory). Acquired early 2025. Owner comp adjusted to reflect agreed GM compensation.",
+          "data": {
+            "cogs_pct": 19.1,
+            "facilities_supplies_pct": 3.6,
+            "payroll_personnel_pct": 33.2,
+            "marketing_advertising_pct": 3.6,
+            "insurance_pct": 4.3,
+            "legal_accounting_pct": 0.4,
+            "auto_travel_pct": 5.7,
+            "local_tax_licensing_pct": 0.2,
+            "dues_subscriptions_pct": 0.1,
+            "meals_entertainment_pct": 0.3,
+            "bank_charges_pct": 0.0,
+            "total_costs_pct": 70.5,
+            "adjusted_ebitda_pct": 29.5
+          },
+          "notes": "Only cost percentages disclosed, not absolute revenue. Payroll is largest cost (33.2%). Adjusted EBITDA of 29.5% is a strong margin. Owner comp was adjusted — does not reflect pre-acquisition owner draw.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 46, "item_reference": "Item 19, Company-Owned", "exact_text": null }
+        },
+        {
+          "table_label": "Table 1 - 2024 Gross Sales",
+          "description": "Franchisee gross sales by quartile for FY2024",
+          "period": "fiscal year 2024",
+          "population": "81 franchised outlets that completed more than one season by 12/31/2024. Excluded: 26 non-conforming, 1 operated by other locations, 15 not completed >1 season, 3 signed not opened. Total system: 125 outlets in 441 territories.",
+          "data": {
+            "system_wide": { "average": 285839.20, "median": 134918.11, "high": 2707259.78, "low": 3620.17, "at_above_avg": 24, "pct_at_above": 30, "avg_territories": 4.51, "territory_range": "1-23", "territory_median": 3 },
+            "Q1": { "average": 819520, "low": 391380, "high": 2707260, "median": 721144, "avg_territories": 8.1 },
+            "Q2": { "average": 210494, "low": 137159, "high": 391244, "median": 175371, "avg_territories": 4.4 },
+            "Q3": { "average": 94275, "low": 54051, "high": 134918, "median": 91470, "avg_territories": 3.4 },
+            "Q4": { "average": 31771, "low": 3620, "high": 51763, "median": 37004, "avg_territories": 2.3 }
+          },
+          "notes": "Only 81 of 125 outlets included (65%). 26 excluded as 'non-conforming' (21% of total) — this is the highest exclusion rate in the cohort and may significantly bias performance data upward. Average of $285,839 vs median of $134,918 shows heavy right skew (top performers pull average up). Multi-territory franchisees report consolidated gross sales. System-wide total sales: $25.7M (2024), up from $23.8M (2023), $20.5M (2022), $19.4M (2021).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 47, "item_reference": "Item 19, Table 1", "exact_text": null }
+        },
+        {
+          "table_label": "Table 2 - Recurring Revenue and Retention",
+          "description": "Customer retention and prepay metrics for 2024",
+          "period": "calendar year 2024",
+          "population": "System-wide",
+          "data": {
+            "total_customers_2024": 35902,
+            "returning_yoy_pct": 85,
+            "avg_revenue_per_customer": 715.26,
+            "prepay_dollars_2024": 7137785.36,
+            "prepay_pct_2023": 28
+          },
+          "notes": "85% customer retention is strong. ~57% of customers had available data for YoY calc (software-dependent). Prepay includes fall 2024 + Jan-Mar 2025 pre-season.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 48, "item_reference": "Item 19, Table 2", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 disclosed with company-owned P&L (cost % only, not absolute revenue) and franchisee gross sales quartiles plus retention data. Significant exclusion issue: 26 'non-conforming' outlets excluded (21%). Company-owned data is for a single acquired location with adjusted owner comp — useful but limited. System-wide sales data shows 4 years of growth ($19.4M to $25.7M).",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [45, 49], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 297,
+          "total_outlets_end": 369,
+          "opened": 91,
+          "closed": 13,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 12,
+          "ceased_operations_other": 0,
+          "company_owned_start": 2,
+          "company_owned_end": 0,
+          "notes": "Franchised per Table 1: 295 start, 369 end (+74). Table 3 totals: 296 start, 374 end. ONE-UNIT DISCREPANCY between Table 1 (295) and Table 3 (296) for 2022 franchised start. Table 1 Total row shows 295 (appears to exclude 2 company-owned from start count, showing 295 not 297). Company-owned: 2 sold to franchisees in 2022.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [50, 51, 57], "item_reference": "Item 20, Tables 1, 2, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 369,
+          "total_outlets_end": 407,
+          "opened": 103,
+          "closed": 65,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 21,
+          "ceased_operations_other": 5,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "Franchised per Table 1: 369 start, 407 end (+38). Table 3 totals: 374 start, 407 end. HIGH TERMINATION COUNT: 65 terminations against 103 openings. Massachusetts jumped from 14 to 39 (+25 opened in one year). Ceased operations: 5.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [50, 51, 57], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 407,
+          "total_outlets_end": 435,
+          "opened": 73,
+          "closed": 44,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 28,
+          "ceased_operations_other": 1,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "Franchised per Table 1: 407 start, 435 end (+28). Table 3: 407 start, 435 end. 44 terminations (down from 65 in 2023 but still high). Transfers increased to 28 (highest in cohort). PDF text rendering issue: 'PNenewns yJelvrsaenyia' appears as garbled 'Pennsylvania' in Table 2.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [50, 51, 57, 58], "item_reference": "Item 20, Tables 1, 2, 3, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": false,
+      "action_count": 0,
+      "action_types": [],
+      "notes": "No litigation required to be disclosed.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 12, "item_reference": "Item 3", "exact_text": "No litigation is required to be disclosed in this Item." }
+    },
+
+    "system_info": {
+      "year_company_founded": 2012,
+      "year_first_franchised": 2013,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [8, 10], "item_reference": "Item 1", "exact_text": null }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 139237.5,
+    "net_unit_growth": [
+      { "year": 2022, "value": 74, "source_fields": ["Table 1 franchised net: 369-295=+74"] },
+      { "year": 2023, "value": 38, "source_fields": ["Table 1 franchised net: 407-369=+38"] },
+      { "year": 2024, "value": 28, "source_fields": ["Table 1 franchised net: 435-407=+28"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 8.42, "source_fields": ["(13+0+0+0+12)/297 = 25/297"] },
+      { "year": 2023, "value": 24.66, "source_fields": ["(65+0+0+5+21)/369 = 91/369"] },
+      { "year": 2024, "value": 17.94, "source_fields": ["(44+0+0+1+28)/407 = 73/407"] }
+    ],
+    "system_age_years": 12,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-14T15:30:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 12, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 20, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].total_outlets_end", "page_verified": 50, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-14T15:30:00Z"
+    },
+    "warnings": [
+      "Legal entity changed from 'Mosquito Shield Franchise Corporation' to 'Mosquito Shield Franchise, LLC' (Feb 25, 2022 reorganization). Source inventory needs update.",
+      "Table 1 vs Table 3 discrepancy: 2022 franchised start is 295 (Table 1) vs 296 (Table 3). One-unit difference.",
+      "Table 1 Total row appears to exclude company-owned from 2022 start count (shows 295 not 297).",
+      "PDF text rendering issue: 'PNenewns yJelvrsaenyia' in Table 2 (garbled 'Pennsylvania').",
+      "Item 19 exclusion rate is highest in cohort: 26 'non-conforming' outlets excluded (21% of 125 total). May significantly bias gross sales data upward.",
+      "HIGH termination counts: 65 in 2023, 44 in 2024 (~10-16% of start-of-year count). Highest absolute termination numbers in cohort.",
+      "Massachusetts went from 14 to 39 outlets in 2023 (+25 opened) — unusual single-state concentration.",
+      "Advertising/marketing total burden is very high: 2% Brand Fund + $50K+ local ad minimum. Highest local ad floor in cohort.",
+      "Technology fee is ambiguous: multiple mandatory software/service components with variable pricing.",
+      "Minimum Gross Sales performance requirements with escalating thresholds — franchisor can collect 7% of shortfall."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "Multi-component: 2% Brand Fund + $50K local ad minimum + cooperative. No single rate.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.technology_fee.value", "reason": "Multiple mandatory components with variable vendor pricing.", "field_status": "ambiguous" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Marketing and tech fee are ambiguous.", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

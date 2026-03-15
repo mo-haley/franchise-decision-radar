@@ -1,0 +1,285 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": "2026-03-14T13:32:00Z",
+    "local_filename": "mosquito-joe_2025_wi.pdf",
+    "sha256": "78400773abfcd9f93207d0437fc41662d2bdc4b082d413871a5b2fb761beb393",
+    "page_count": null,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms Mosquito Joe SPV LLC 2025 FDD."
+  },
+
+  "brand": {
+    "brand_name": "Mosquito Joe",
+    "brand_slug": "mosquito-joe",
+    "legal_entity": "Mosquito Joe SPV LLC",
+    "parent_company": "Neighborly Assetco LLC / Dwyer Franchising LLC d/b/a Neighborly / KKR",
+    "year_founded": 2012,
+    "year_first_franchised": 2012,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 42500,
+        "currency": "USD",
+        "range_low": 34000,
+        "range_high": 44725,
+        "field_status": "extracted",
+        "notes": "Standard fee $42,500 for territory of 25,000-35,000 Targeted Households. $1.00 per additional household above 35,000. Average paid in 2024: ~$42,245. Range paid in 2024: $34,000-$44,725. Due in full at signing, nonrefundable. Extensive discount programs available (Community Heroes $8,500 off, VetFran $8,500 off, Licensed Pesticide Applicator $2,500 off, Roll-In 10-50%, HIRE 10-25%, Additional Concept 10%, Incentive Development 25-50%). Only one discount may be used. Development Agreement multi-territory pricing: 2 for $85K, 3 for $118.5K, 4 for $153K, 5 for $187.5K.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [24, 28], "item_reference": "Item 5", "exact_text": null }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": null,
+        "basis": "Gross Sales",
+        "tiers": [
+          { "threshold_up_to": 500000, "rate": 10.0 },
+          { "threshold_up_to": null, "rate": 7.0 }
+        ],
+        "field_status": "ambiguous",
+        "notes": "Tiered: 10% on first $500,000 of Gross Sales per territory per calendar year; 7% above $500,000. Reduced rate requires no default. Minimum License Fees begin Year 3: $325/week (Jun-Sep only), Year 4: $400/week, Year 5+: $500/week. No minimums Years 1-2.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [28, 29], "item_reference": "Item 6, License Fee row", "exact_text": null }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "Complex multi-component marketing structure with high mandatory spending floors. MAP Fee 2% of Gross Sales + Direct Marketing Program $37,000/year + Local Performance Marketing $35,000/year + SEO $325/month. Total mandatory first-year marketing spend is approximately $75,000+.",
+        "components": [
+          { "name": "MAP Fee (Brand Fund)", "value": 2.0, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "weekly", "notes": "Brand development, internet marketing, advertising materials. Includes WebPunch license." },
+          { "name": "Local Marketing Groups (LMG)", "value": 2.0, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "per LMG schedule", "notes": "May be required. Counts toward Minimum Local Marketing Spending but NOT toward Direct Marketing Program Fees." },
+          { "name": "Direct Marketing Program - Annual Fee", "value": null, "basis": null, "minimum_dollar": 37000, "frequency": "annual", "notes": "$37,000/year standard; $26,000 if prior year Gross Sales >= $450,000. 4+ territories: $126,000 total for 4 + $26,000 each additional. Setup fee $1,000 + mailing list $0.05/household ($1,250-$1,750)." },
+          { "name": "SEO Program Fee", "value": null, "basis": null, "minimum_dollar": 3900, "frequency": "annual ($325/month)", "notes": "Per website. May increase up to 30% annually." },
+          { "name": "Local Performance Marketing Investment", "value": null, "basis": null, "minimum_dollar": 35000, "frequency": "annual (first 12 months)", "notes": "Listed in Item 7 as a separate investment line item." }
+        ],
+        "notes": "Mosquito Joe has the most complex and highest-cost marketing structure in the cohort. The Direct Marketing Program alone ($37,000/year) exceeds most competitors' total marketing obligations.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [28, 30, 31, 35], "item_reference": "Item 6 and Item 7", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 371,
+        "frequency": "monthly",
+        "field_status": "extracted",
+        "notes": "$371/month + $25/month per additional territory. Covers ServSuite, Office365, FranConnect, Nextiva, Qvinci. Optional QuickBooks via ZorWare $30-$200/month additional. May increase up to 30% annually.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 30, "item_reference": "Item 6, Software System Monthly Fees row", "exact_text": null }
+      },
+      "transfer_fee": {
+        "value": null,
+        "formula": "$7,500 if gross sales price < $400,000; $20,000 if >= $400,000. Development Agreement: $20,000.",
+        "field_status": "extracted",
+        "notes": "May be waived for family/controlled entity transfers.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 31, "item_reference": "Item 6, Transfer Fee row", "exact_text": null }
+      },
+      "other_fees": [
+        { "fee_name": "Call Center Program", "value": 199.99, "frequency": "monthly + $25/closed sale", "field_status": "extracted", "notes": "Mandatory for rollover/after-hours. Paid to Neighborly Service Solutions SPV LLC.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 31, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Key Accounts/Management Fee", "value": null, "frequency": "as billed", "field_status": "extracted", "notes": "Up to 5% of Gross Sales related to Key Account work, Business Development leads, call center dispatched work.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 31, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Convention Fee", "value": 1000, "frequency": "annual", "field_status": "extracted", "notes": "Up to $1,000 + travel. $2,000 penalty for non-attendance.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 32, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Renewal Fee", "value": 5000, "frequency": "one-time", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 32, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Complaint Fee", "value": 50, "frequency": "per complaint", "field_status": "extracted", "notes": "Plus customer refunds at franchisor discretion.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 34, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Mobile Tablet Access", "value": 30, "frequency": "monthly per tablet", "field_status": "extracted", "notes": "Third-party vendor via ZorWare.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 35, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Audit Noncompliance Fee", "value": 500, "frequency": "per document (up to $2,500/audit)", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 33, "item_reference": "Item 6", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 42500, "high": 42500, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Direct Marketing Program / Setup + Annual Fee", "low": 37000, "high": 37000, "method_of_payment": "Per plan", "when_due": "Pre-opening", "to_whom_paid": "Franchisor", "notes": "$1,000 setup + $36,000 annual program fee.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Direct Marketing Program / Annual Mailing List Fee", "low": 1250, "high": 1750, "method_of_payment": "As billed", "when_due": "Pre-opening", "to_whom_paid": "Franchisor", "notes": "$0.05 per Targeted Household.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Local Performance Marketing Investment (12 months)", "low": 35000, "high": 35000, "method_of_payment": "As incurred", "when_due": "First 12 months", "to_whom_paid": "Vendors", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "SEO Program Fee (3 months)", "low": 325, "high": 975, "method_of_payment": "Monthly", "when_due": "1-3 months pre-opening", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Real Property", "low": 0, "high": 6000, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Landlord", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Office Furnishings, Signage & Fixtures", "low": 0, "high": 2000, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Tools, Equipment, Products, Uniforms & Supplies", "low": 5500, "high": 6500, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Vehicle, Shelving & Decals", "low": 3000, "high": 10000, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Training", "low": 100, "high": 2000, "method_of_payment": "As incurred", "when_due": "During training", "to_whom_paid": "Various", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance, Office & Marketing Supplies & Forms", "low": 6000, "high": 7000, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Various", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Professional Fees", "low": 0, "high": 1000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Professionals", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Licenses", "low": 100, "high": 3200, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Government", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Computer, Internet Devices, Phones, Software Setup", "low": 2600, "high": 5100, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Various", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Deposits", "low": 0, "high": 4000, "method_of_payment": "As incurred", "when_due": "As agreed", "to_whom_paid": "Various", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 16780, "high": 28050, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Various", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 150155,
+      "total_high": 192075,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table, Total row", "exact_text": "TOTALS Single Franchise $150,155-- $192,075" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Part I",
+          "description": "2024 Customer Retention Metrics and Gross Sales Per Treatment",
+          "period": "calendar year 2024",
+          "population": "410 franchised businesses (of 415 total). 2 excluded for not operating in 2024, 3 for not reporting full year.",
+          "data": {
+            "customer_retention": 0.77,
+            "recurring_customer_rate": 0.89,
+            "avg_gross_sales_per_treatment": 90.54,
+            "median_gross_sales_per_treatment": 88.62,
+            "high_gross_sales_per_treatment": 141.21,
+            "low_gross_sales_per_treatment": 63.04,
+            "at_or_above_average": 167,
+            "pct_at_or_above_average": 40.73
+          },
+          "notes": "77% customer retention is a strong signal. 89% recurring customer rate.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 81, "item_reference": "Item 19, Part I", "exact_text": null }
+        },
+        {
+          "table_label": "Part II",
+          "description": "Annual Gross Sales, Customers, and Jobs by Tenure",
+          "period": "calendar year 2024",
+          "population": "387 Reporting Businesses open 12+ months as of 12/31/2024. Excludes 23 opened during 2024 and 5 from Part I exclusions.",
+          "data": {
+            "gross_sales": {
+              "first_5_years": { "count": 91, "high": 850881, "low": 15980, "average": 214794, "median": 287832, "at_above_avg": 32, "pct_at_above": 35 },
+              "six_plus_years": { "count": 296, "high": 1901756, "low": 13884, "average": 432954, "median": 339460, "at_above_avg": 105, "pct_at_above": 35 }
+            },
+            "customers": {
+              "first_5_years": { "count": 91, "high": 964, "low": 24, "average": 298, "median": 397, "at_above_avg": 37, "pct_at_above": 41 },
+              "six_plus_years": { "count": 296, "high": 2111, "low": 16, "average": 583, "median": 462, "at_above_avg": 114, "pct_at_above": 39 }
+            },
+            "jobs": {
+              "first_5_years": { "count": 91, "high": 8234, "low": 188, "average": 2305, "median": 3328, "at_above_avg": 34, "pct_at_above": 37 },
+              "six_plus_years": { "count": 296, "high": 21307, "low": 159, "average": 4910, "median": 3932, "at_above_avg": 116, "pct_at_above": 39 }
+            }
+          },
+          "notes": "DOCUMENT QUALITY FLAG: Column headers for customers and jobs tables read 'Average Annual Gross Sales' and 'Median Annual Gross Sales' instead of appropriate labels — this is a copy/paste error in the filed FDD. Data values themselves appear correct for their respective metrics. STATISTICAL FLAG: First 5 Years median ($287,832) exceeds average ($214,794) for gross sales, indicating left-skewed distribution (a few very low performers pulling down average). Same pattern in customers (median 397 > avg 298) and jobs (median 3,328 > avg 2,305).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [82, 84], "item_reference": "Item 19, Part II", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 disclosed. Most useful disclosure in cohort for franchise buyers: provides actual gross sales by tenure, customer counts, job counts, retention metrics, and per-treatment revenue. The column header copy errors are a document quality issue but the underlying data is substantive. 24 franchised businesses that closed during 2024 are excluded. No company-owned P&L is provided.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [80, 84], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 374,
+          "total_outlets_end": 396,
+          "opened": 28,
+          "closed": 6,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 30,
+          "ceased_operations_other": 0,
+          "company_owned_start": 2,
+          "company_owned_end": 2,
+          "notes": "Franchised: 372 start, 394 end.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [84, 86, 89], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 396,
+          "total_outlets_end": 418,
+          "opened": 28,
+          "closed": 5,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 11,
+          "ceased_operations_other": 1,
+          "company_owned_start": 2,
+          "company_owned_end": 2,
+          "notes": "Franchised: 394 start, 416 end.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [84, 86, 89], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 418,
+          "total_outlets_end": 417,
+          "opened": 23,
+          "closed": 24,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 8,
+          "ceased_operations_other": 0,
+          "company_owned_start": 2,
+          "company_owned_end": 2,
+          "notes": "Franchised: 416 start, 415 end. TERMINATION SPIKE: 24 terminations in 2024 (vs 5 in 2023, 6 in 2022). Nearly 5x YoY increase. Alabama: 8 terminations (9 outlets to 1). System contracted by 1 unit for first time in reported period.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [84, 86, 89, 90], "item_reference": "Item 20, Tables 1, 2, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": true,
+      "action_count": 4,
+      "action_types": [
+        { "type": "franchisee dispute", "count": 1, "notes": "SPV LLC v. Bailey et al. Breach of contract (failure to pay Direct Marketing Program fees). Franchisor prevailed at trial (Sep 2023), appeal affirmed (Apr 2025). Counter-suit in Wisconsin alleging fraudulent inducement dismissed (Jan 2024)." },
+        { "type": "regulatory/affiliate", "count": 3, "notes": "3 concluded actions involving affiliate entities (Window Genie/For Franchising, Moorehead-Mitchell), not the Mosquito Joe franchisor directly." }
+      ],
+      "notes": "1 direct action (franchisor prevailed). 3 affiliate/predecessor actions. All concluded.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [21, 23], "item_reference": "Item 3", "exact_text": null }
+    },
+
+    "system_info": {
+      "year_company_founded": 2012,
+      "year_first_franchised": 2012,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [10, 11], "item_reference": "Item 1", "exact_text": null }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 171115,
+    "net_unit_growth": [
+      { "year": 2022, "value": 22, "source_fields": ["Table 1 franchised net: 394-372=+22"] },
+      { "year": 2023, "value": 22, "source_fields": ["Table 1 franchised net: 416-394=+22"] },
+      { "year": 2024, "value": -1, "source_fields": ["Table 1 franchised net: 415-416=-1"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 9.63, "source_fields": ["(6+0+0+0+30)/374 = 36/374"] },
+      { "year": 2023, "value": 4.29, "source_fields": ["(5+0+0+1+11)/396 = 17/396"] },
+      { "year": 2024, "value": 7.66, "source_fields": ["(24+0+0+0+8)/418 = 32/418"] }
+    ],
+    "system_age_years": 13,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-14T15:30:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 24, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 39, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].closed", "page_verified": 89, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-14T15:30:00Z"
+    },
+    "warnings": [
+      "Royalty is tiered (10% up to $500K, 7% above) — recorded with field_status 'ambiguous' because it cannot be expressed as a single rate.",
+      "Marketing structure is the most complex and highest-cost in the cohort. Direct Marketing Program alone is $37,000/year mandatory.",
+      "Item 19 column header copy errors: customers and jobs tables reuse 'Average Annual Gross Sales' headers instead of correct labels. Data values appear correct.",
+      "Item 19 First 5 Years: median exceeds average (left-skewed distribution, low performers pulling down average).",
+      "TERMINATION SPIKE: 24 terminations in 2024 (vs 5 in 2023). Nearly 5x increase. Alabama alone went from 9 to 1 outlet (8 terminations). System contracted for first time.",
+      "Entity structure: SPV within 6-layer Neighborly/KKR securitization chain. All franchise agreements transferred to SPV in March 2021.",
+      "Transfer fee is tiered by gross sales price ($7,500 or $20,000), not formula-based — recorded as extracted with formula field."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.royalty_rate.value", "reason": "Tiered: 10% up to $500K, 7% above. Cannot express as single rate.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "Multi-component structure: MAP 2% + DMP $37K/yr + SEO $325/mo + Local $35K. No single rate.", "field_status": "ambiguous" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Both royalty and marketing are ambiguous.", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}
