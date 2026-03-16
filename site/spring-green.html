@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <title>Spring-Green Franchise Review | Fees, Cost, Risks &amp; FDD Takeaways</title>
-<meta name="description" content="Review Spring-Green franchise cost, fees, and system health using regulator-source data from the 2025 FDD.">
+<meta name="description" content="Review Spring-Green franchise cost, fees, system health, and buyer watchouts using regulator-source FDD data.">
 <link rel="canonical" href="https://franchisedecisionradar.com/spring-green.html">
 
 <style>
@@ -36,7 +36,7 @@ strong { font-weight: 600; }
 
 /* ── Header / Nav ── */
 header {
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem;
   padding: 1.25rem 0; border-bottom: 2px solid #e2e8f0; margin-bottom: 2rem;
 }
 header .site-name {
@@ -47,10 +47,66 @@ header .site-mark {
   display: inline-block; width: 8px; height: 8px; background: #2563eb;
   border-radius: 2px; margin-right: 0.45rem; vertical-align: 1px;
 }
-nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
-nav a { font-size: 0.85rem; color: #64748b; font-weight: 500; transition: color 0.15s; }
-nav a:hover { color: #1e293b; text-decoration: none; }
-nav a.active { color: #1e293b; border-bottom: 2px solid #2563eb; }
+.nav-toggle {
+  display: none; margin-left: auto; background: none; border: none;
+  font-size: 1.4rem; cursor: pointer; color: #374151; padding: 0.25rem; line-height: 1;
+}
+nav#main-nav { display: flex; gap: 0.25rem; align-items: center; }
+nav#main-nav > a {
+  font-size: 0.85rem; color: #64748b; font-weight: 500;
+  transition: color 0.15s; padding: 0.4rem 0.6rem; white-space: nowrap;
+}
+nav#main-nav > a:hover { color: #1e293b; text-decoration: none; }
+nav#main-nav > a.active { color: #1e293b; border-bottom: 2px solid #2563eb; }
+.nav-dropdown { position: relative; }
+.nav-dropdown-trigger {
+  font-family: inherit; font-size: 0.85rem; color: #64748b; font-weight: 500;
+  background: none; border: none; cursor: pointer;
+  padding: 0.4rem 0.6rem; white-space: nowrap; transition: color 0.15s; line-height: 1.6;
+}
+.nav-dropdown-trigger:hover,
+.nav-dropdown--active .nav-dropdown-trigger { color: #1e293b; }
+.nav-dropdown--active .nav-dropdown-trigger { border-bottom: 2px solid #2563eb; }
+.nav-caret { font-size: 0.55rem; margin-left: 0.1rem; opacity: 0.5; }
+.nav-dropdown-menu {
+  display: none; position: absolute; top: calc(100% + 0.4rem); left: 0;
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.1); min-width: 200px;
+  padding: 0.5rem 0; z-index: 100;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu { display: block; }
+.nav-menu-group { padding: 0.25rem 0; }
+.nav-menu-group + .nav-menu-group { border-top: 1px solid #f1f5f9; }
+.nav-menu-heading {
+  display: block; padding: 0.45rem 1rem 0.2rem; font-size: 0.65rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8;
+}
+.nav-dropdown-menu a {
+  display: block; padding: 0.35rem 1rem 0.35rem 1.25rem; font-size: 0.82rem;
+  color: #64748b; font-weight: 500; white-space: nowrap;
+}
+.nav-dropdown-menu a:hover { background: #f8fafc; color: #1e293b; text-decoration: none; }
+.nav-dropdown-menu a.active { color: #2563eb; font-weight: 600; }
+@media (max-width: 768px) {
+  header { flex-wrap: wrap; }
+  .nav-toggle { display: block; }
+  nav#main-nav {
+    display: none; flex-direction: column; width: 100%; align-items: stretch;
+    border-top: 1px solid #e2e8f0; padding-top: 0.5rem; margin-top: 0.5rem; gap: 0;
+  }
+  nav#main-nav.open { display: flex; }
+  nav#main-nav > a { padding: 0.5rem 0; }
+  .nav-dropdown-trigger { text-align: left; width: 100%; padding: 0.5rem 0; }
+  .nav-dropdown-menu {
+    position: static; box-shadow: none; border: none; border-radius: 0;
+    padding: 0 0 0.25rem 0.5rem; background: transparent; min-width: 0;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu { display: none; }
+  .nav-dropdown.open .nav-dropdown-menu { display: block; }
+  .nav-menu-group + .nav-menu-group { border-top: none; }
+}
 
 /* ── Tables ── */
 table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.88rem; }
@@ -217,11 +273,60 @@ footer .footer-nav a:hover { color: #1e293b; }
 .mb-0 { margin-bottom: 0; }
 hr { border: none; border-top: 1px solid #e2e8f0; margin: 2.5rem 0; }
 
+/* ── Wedge Cards ── */
+.wedge-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+@media (max-width: 639px) { .wedge-grid { grid-template-columns: 1fr; } }
+.wedge-card {
+  border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem 1.65rem;
+  background: #fff; position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.wedge-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); transform: translateY(-1px); }
+.wedge-card h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+.wedge-card-desc { font-size: 0.85rem; color: #64748b; margin: 0 0 0.85rem; line-height: 1.5; }
+.wedge-card-status {
+  display: inline-block; font-size: 0.6rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 0.15rem 0.5rem; border-radius: 3px; margin-bottom: 0.65rem;
+}
+.wedge-card-status-live { background: #dcfce7; color: #166534; }
+.wedge-card-status-pending { background: #fef3c7; color: #92400e; }
+.wedge-card-stats {
+  display: flex; gap: 1.25rem; font-size: 0.78rem; color: #64748b;
+  margin-bottom: 0.85rem;
+}
+.wedge-card-stats strong { color: #1e293b; }
+.wedge-card-links {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1rem;
+  font-size: 0.82rem; font-weight: 600;
+}
+.wedge-card-pending {
+  border-style: dashed; border-color: #cbd5e1; background: #fafbfc;
+}
+.wedge-card-pending:hover { transform: none; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.wedge-card-pending-note {
+  font-size: 0.75rem; color: #94a3b8; margin: 0; line-height: 1.45;
+  font-style: italic;
+}
+
 /* ── Notation Legend ── */
 .notation-legend {
-  display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 0.85rem 1.15rem;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; padding: 0;
   background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 1rem 0 1.5rem;
-  font-size: 0.78rem; color: #64748b;
+  font-size: 0.78rem; color: #64748b; overflow: hidden;
+}
+.notation-legend > span {
+  padding: 0.85rem 1rem; border-right: 1px solid #e2e8f0;
+}
+.notation-legend > span:last-child { border-right: none; }
+@media (max-width: 640px) {
+  .notation-legend { grid-template-columns: 1fr; }
+  .notation-legend > span { border-right: none; border-bottom: 1px solid #e2e8f0; }
+  .notation-legend > span:last-child { border-bottom: none; }
 }
 
 /* ── Row with caveat styling ── */
@@ -266,7 +371,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
   background: #e2e8f0; border-radius: 10px; overflow: hidden; margin: 1rem 0 2rem;
   box-shadow: 0 1px 3px rgba(0,0,0,.06);
 }
-@media (min-width: 640px) { .metrics-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 640px) { .metrics-grid { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); } }
 .metric-item { background: #fff; padding: 1.15rem; border-top: 3px solid #2563eb; }
 .metric-item:nth-child(2) { border-top-color: #059669; }
 .metric-item:nth-child(3) { border-top-color: #d97706; }
@@ -480,16 +585,52 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 
 <header>
   <span class="site-name"><span class="site-mark"></span>Franchise Decision Radar</span>
-  <nav>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+  <nav id="main-nav">
     <a href="index.html">Home</a>
-    
-    
-    <a href="lawn-system-health.html">System Health</a>
-    
-    <a href="lawn-cost-to-enter.html">Cost to Enter</a>
-    
-    
+    <div class="nav-dropdown nav-dropdown--active">
+      <button class="nav-dropdown-trigger" aria-expanded="false">
+        Compare <span class="nav-caret">&#9662;</span>
+      </button>
+      <div class="nav-dropdown-menu">
+        
+        <div class="nav-menu-group">
+          <span class="nav-menu-heading">Mosquito</span>
+          
+          <a href="fee-burden.html">Fee Burden</a>
+          
+          <a href="system-health.html">System Health</a>
+          
+          <a href="cost-to-enter.html">Cost to Enter</a>
+          
+        </div>
+        
+        <div class="nav-menu-group">
+          <span class="nav-menu-heading">Lawn</span>
+          
+          <a href="lawn-fee-burden.html">Fee Burden</a>
+          
+          <a href="lawn-system-health.html">System Health</a>
+          
+          <a href="lawn-cost-to-enter.html">Cost to Enter</a>
+          
+        </div>
+        
+        <div class="nav-menu-group">
+          <span class="nav-menu-heading">Cleaning</span>
+          
+          <a href="cleaning-fee-burden.html">Fee Burden</a>
+          
+          <a href="cleaning-system-health.html">System Health</a>
+          
+          <a href="cleaning-cost-to-enter.html">Cost to Enter</a>
+          
+        </div>
+        
+      </div>
+    </div>
     <a href="report.html">Reports</a>
+    <a href="methodology.html">Methodology</a>
   </nav>
 </header>
 
@@ -499,7 +640,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 </div>
 <div class="brand-meta">
   <span><strong>Entity:</strong> Spring-Green Lawn Care Corp.</span>
-  <span><strong>Parent:</strong> Spring-Green Enterprises, Inc.</span>
+  <span><strong>Parent:</strong> Spring-Green Enterprises (private)</span>
   <span><strong>Ownership:</strong> private</span>
   <span><strong>Franchising since:</strong> 1977</span>
 </div>
@@ -517,9 +658,15 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
   </div>
   
   <div class="metric-item">
+    <div class="metric-value">$45,318</div>
+    <div class="metric-label">Annual Fees at $300K</div>
+    <div class="metric-context">#2 of 5 in cohort</div>
+  </div>
+  
+  <div class="metric-item">
     <div class="metric-value">+4 units</div>
     <div class="metric-label">3-Year Net Growth</div>
-    <div class="metric-context">Stable positive</div>
+    <div class="metric-context">Flat</div>
   </div>
 </div>
 
@@ -528,9 +675,21 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 <div style="margin:0.75rem 0 1.5rem">
   
   <div class="peer-row">
+    <span class="peer-label">Fee burden (at $300K)</span>
+    <span class="peer-value">$45,318/yr</span>
+    <span class="peer-rank">#2 of 5</span>
+  </div>
+  
+  <div class="peer-row">
     <span class="peer-label">Royalty rate</span>
-    <span class="peer-value">—</span>
-    <span class="peer-rank">See FDD for details</span>
+    <span class="peer-value">10% / 9% / 8%</span>
+    <span class="peer-rank">triple-tiered by revenue bracket</span>
+  </div>
+  
+  <div class="peer-row">
+    <span class="peer-label">Marketing floor</span>
+    <span class="peer-value">$4,000/yr</span>
+    <span class="peer-rank">low (2% national), regional not active</span>
   </div>
   
   <div class="peer-row">
@@ -539,10 +698,18 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
     <span class="peer-rank">lowest in cohort</span>
   </div>
   
+  <div class="peer-row">
+    <span class="peer-label">Disclosure quality</span>
+    <span class="peer-value">Strong</span>
+    <span class="peer-rank">2nd of 6</span>
+  </div>
+  
 </div>
 
 <p class="small muted">
   Peer comparisons from
+  
+  <a href="lawn-fee-burden.html">fee burden</a>, 
   
   <a href="lawn-system-health.html">system health</a>, 
   
@@ -552,12 +719,102 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 </p>
 
 
+<div class="inline-cta">
+  <span>Want the full Spring-Green analysis &mdash; Item 19 translation, risk flags, discovery day questions?</span>
+  <a href="report.html?brand=spring-green">Decision Report &mdash; $99 &rarr;</a>
+</div>
+
+
+
+<h2>Biggest Watchouts <span class="tag tag-editorial">Editorial</span></h2>
+<ul class="signal-list">
+  
+  <li><span class="signal-icon">&#x25B3;</span> Affiliate Superior Lawns has reacquired 4 franchised territories over 2 years (2023&ndash;2024) &mdash; company buying back territories is a mixed signal.</li>
+  
+  <li><span class="signal-icon">&#x25B3;</span> $35,000 Initial Marketing Campaign Fee + $16,500 Property Data Fee = $51,500 in upfront costs beyond the franchise fee.</li>
+  
+  <li><span class="signal-icon">&#x25B3;</span> Fee Adjustment clause allows up to 100% annual increase on technology, education, meeting, and reporting fees.</li>
+  
+  <li><span class="signal-icon">&#x25B3;</span> Some franchisees signed confidentiality clauses restricting them from speaking about their experience.</li>
+  
+  <li><span class="signal-icon">&#x25B3;</span> System growth is flat: +2/&minus;2/+4 net units over 3 years.</li>
+  
+</ul>
+
+
+
+<h2>Strongest Positives <span class="tag tag-editorial">Editorial</span></h2>
+<ul class="signal-list">
+  
+  <li><span class="signal-icon">&#x2713;</span> Privately held (no PE) &mdash; founder-family controlled, no securitization layers.</li>
+  
+  <li><span class="signal-icon">&#x2713;</span> 81.3% customer retention and $2.62 marketing ROI.</li>
+  
+  <li><span class="signal-icon">&#x2713;</span> Revenue per production vehicle ($201K) provides useful unit economics benchmark.</li>
+  
+  <li><span class="signal-icon">&#x2713;</span> 48-year franchising track record.</li>
+  
+  <li><span class="signal-icon">&#x2713;</span> Pest control add-on service expands revenue streams.</li>
+  
+</ul>
+
+
+
+<h2>Fee Burden Position <span class="tag tag-modeled">Modeled</span></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Revenue Level</th>
+      <th class="num">Annual Fees</th>
+      <th class="num">% of Revenue</th>
+      <th class="num">Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>$200,000</td>
+      <td class="num"><strong>$33,818</strong></td>
+      <td class="num">16.9%</td>
+      <td class="num">2 of 5</td>
+    </tr>
+    
+    <tr>
+      <td>$300,000</td>
+      <td class="num"><strong>$45,318</strong></td>
+      <td class="num">15.1%</td>
+      <td class="num">2 of 5</td>
+    </tr>
+    
+    <tr>
+      <td>$400,000</td>
+      <td class="num"><strong>$56,318</strong></td>
+      <td class="num">14.1%</td>
+      <td class="num">2 of 5</td>
+    </tr>
+    
+    <tr>
+      <td>$500,000</td>
+      <td class="num"><strong>$67,318</strong></td>
+      <td class="num">13.5%</td>
+      <td class="num">2 of 5</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<p class="small muted">
+  Year 5 assumptions, single territory. See <a href="fee-burden.html">full methodology</a>.
+</p>
 
 
 
 
-
-
+<div class="callout callout-caveat">
+  <div class="callout-title">Property Data Fee</div>
+  $16,500 initial + ongoing $0.55/SFDU for territory data. This is an unusual fee not seen in other brands &mdash; adds to total cost of operation.
+</div>
 
 
 
@@ -605,7 +862,34 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 
 
 
+<h2>Disclosure Quality <span class="tag tag-editorial">Editorial</span></h2>
+<p>Item 19 provides gross profit margin (68.1% including labor), gross sales by business type, revenue per customer ($556), and marketing ROI ($2.62 per $1). Customer retention of 81.3%. Note: gross margin includes direct labor unlike Lawn Doctor (which only deducts materials) &mdash; not directly comparable.</p>
 
+
+
+<div class="cta-block">
+  <h3>Get the Spring-Green Decision Report</h3>
+  <p>
+    Full fee burden modeling, Item 19 translation, risk flags, investment breakdown
+    analysis, and specific discovery day questions &mdash; the analysis that takes
+    this brand from &ldquo;interesting&rdquo; to &ldquo;ready to evaluate.&rdquo;
+  </p>
+  <div style="margin-top:1rem">
+    <a href="report.html?brand=spring-green" class="cta-button">Get the Decision Report &mdash; $99</a>
+  </div>
+  <p class="small muted" style="margin:0.6rem 0 0">One-time purchase &middot; Single brand &middot; Instant delivery</p>
+</div>
+
+<h3>What&rsquo;s in the report</h3>
+<div class="report-sections">
+  <div class="report-section-item"><span class="report-section-num">1</span><div><div class="report-section-title">Fee Burden Deep Dive</div><div class="report-section-desc">Dollar-level modeling at 4 revenue levels with component breakdown, minimum triggers, and year-by-year escalation</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">2</span><div><div class="report-section-title">Item 19 Translation</div><div class="report-section-desc">What the financial performance data actually says &mdash; and what it conspicuously omits</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">3</span><div><div class="report-section-title">Investment Breakdown</div><div class="report-section-desc">Where the initial investment goes, what&rsquo;s negotiable vs. fixed, what the FDD footnotes bury</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">4</span><div><div class="report-section-title">System Health Narrative</div><div class="report-section-desc">Churn context, closure patterns, transfer trends &mdash; what the Item 20 numbers actually mean</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">5</span><div><div class="report-section-title">Risk Flags &amp; Litigation</div><div class="report-section-desc">Regulatory history, entity changes, franchise dispute outcomes, and what they signal</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">6</span><div><div class="report-section-title">Discovery Day Questions</div><div class="report-section-desc">Specific, data-informed questions to ask the franchisor &mdash; derived from this brand&rsquo;s FDD</div></div></div>
+  <div class="report-section-item"><span class="report-section-num">7</span><div><div class="report-section-title">Peer Positioning</div><div class="report-section-desc">How this brand compares across the full lawn care category with narrative context</div></div></div>
+</div>
 
 
 <h2>Compare Other Brands</h2>
@@ -630,6 +914,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
   <nav class="footer-nav" aria-label="Footer">
     <a href="index.html">Home</a>
     <a href="report.html">Reports</a>
+    <a href="methodology.html">Methodology</a>
     
     
     <a href="mosquito-authority.html">Mosquito Authority</a>
@@ -641,6 +926,10 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
     <a href="mosquito-shield.html">Mosquito Shield</a>
     
     <a href="mosquito-squad.html">Mosquito Squad</a>
+    
+    <a href="mosquito-sheriff.html">Mosquito Sheriff</a>
+    
+    <a href="mosquitonix.html">MosquitoNix</a>
     
     
     
@@ -657,14 +946,45 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
     <a href="lawn-squad.html">Lawn Squad</a>
     
     
+    
+    <a href="merry-maids.html">Merry Maids</a>
+    
+    <a href="molly-maid.html">Molly Maid</a>
+    
+    <a href="cleaning-authority.html">The Cleaning Authority</a>
+    
+    <a href="the-maids.html">The Maids</a>
+    
+    <a href="maidpro.html">MaidPro</a>
+    
+    <a href="two-maids.html">Two Maids & A Mop</a>
+    
+    <a href="maid-right.html">Maid Right</a>
+    
+    
   </nav>
   <p>
     Built from 2025 Franchise Disclosure Documents filed with the Wisconsin Department
     of Financial Institutions. All data extracted from publicly available filings.
     Modeled values use explicitly documented assumptions. This is not investment advice.
+    <a href="methodology.html">Read our methodology</a>.
   </p>
 </footer>
 
+<script>
+document.querySelector('.nav-toggle')?.addEventListener('click', function() {
+  var nav = document.getElementById('main-nav');
+  var open = nav.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+document.querySelectorAll('.nav-dropdown-trigger').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var dd = this.closest('.nav-dropdown');
+    dd.classList.toggle('open');
+    this.setAttribute('aria-expanded', dd.classList.contains('open'));
+  });
+});
+</script>
 
 </body>
 </html>

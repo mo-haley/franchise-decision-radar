@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% block title %}Methodology | Franchise Decision Radar{% endblock %}
+{% block meta_description %}<meta name="description" content="How Franchise Decision Radar extracts, models, and presents franchise comparison data from regulator-filed Franchise Disclosure Documents.">{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_base_url }}methodology.html">{% endblock %}
+
+{% block content %}
+<h1>Methodology</h1>
+<p class="subhead">
+  How this data is sourced, extracted, modeled, and presented &mdash;
+  and why it looks different from what you&rsquo;ll find elsewhere.
+</p>
+
+<h2>Data Source</h2>
+<p>
+  Every data point on this site originates from <strong>Franchise Disclosure Documents (FDDs)</strong>
+  filed with the <strong>Wisconsin Department of Financial Institutions</strong>. Wisconsin requires
+  annual franchise registration with a complete FDD. These filings are public records.
+</p>
+<p>
+  We use regulator-filed PDFs &mdash; not franchisor-provided summaries, third-party databases,
+  or marketing materials. The FDD is the legal disclosure document a franchisor is required to
+  give prospective buyers before any money changes hands.
+</p>
+
+<div class="callout callout-context">
+  <div class="callout-title">Why Wisconsin?</div>
+  Wisconsin is one of a small number of states that requires franchise registration and makes
+  filed FDDs publicly accessible. This gives us a single, consistent source for comparing
+  brands that sell franchises in the same state under the same regulatory requirements.
+</div>
+
+<h2>What We Extract</h2>
+<p>
+  From each FDD, we extract structured data from specific disclosure items:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>FDD Item</th>
+      <th>What It Contains</th>
+      <th>What We Use It For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Item 5</td>
+      <td>Initial franchise fee</td>
+      <td>Cost to enter comparison</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Item 6</td>
+      <td>Other ongoing fees (royalty, marketing, technology, etc.)</td>
+      <td>Fee burden modeling</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Item 7</td>
+      <td>Estimated initial investment range</td>
+      <td>Startup cost comparison</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Item 19</td>
+      <td>Financial performance representations (optional)</td>
+      <td>Decision Reports (paid)</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Item 20</td>
+      <td>Outlet counts: openings, closings, transfers by year</td>
+      <td>System health comparison</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Every extracted value includes provenance: the filing year, source state, page number,
+  and specific item or table reference. If a value cannot be cleanly extracted, it is
+  recorded as unavailable with a note explaining why &mdash; we do not infer or fabricate data.
+</p>
+
+<h2>Three Layers of Data</h2>
+<p>
+  We separate raw facts from derived metrics from editorial assessments.
+  Each is tagged so you always know what you&rsquo;re looking at.
+</p>
+
+<div class="notation-legend">
+  <span><span class="tag tag-extracted">Extracted</span> Pulled directly from the FDD. Page-level provenance.</span>
+  <span><span class="tag tag-modeled">Modeled</span> Computed from FDD terms using stated assumptions.</span>
+  <span><span class="tag tag-editorial">Editorial</span> Evidence-based assessment. Always flagged.</span>
+</div>
+
+<h3>Extracted data</h3>
+<p>
+  Direct values from the disclosure document: franchise fees, investment ranges,
+  outlet counts, royalty rates. These are facts as stated in the filing.
+  No interpretation applied.
+</p>
+
+<h3>Modeled data</h3>
+<p>
+  Computed values where the FDD provides the terms but not the total. The primary example
+  is <strong>fee burden modeling</strong>: we take each brand&rsquo;s royalty rate, marketing
+  requirements, technology fees, and other mandatory costs, then compute total annual
+  ongoing fees at standard revenue levels ($200K, $300K, $400K, $500K).
+</p>
+
+<div class="methodology-compact">
+  <p><strong>Fee model assumptions:</strong> Year 5 &middot; Single territory &middot;
+  1 owner + 1 technician &middot; Even revenue distribution &middot; All mandatory fees enforced</p>
+  <p><strong>Included:</strong> Mandatory recurring fees &mdash; royalty, marketing/ad fund,
+  technology, call center, convention, website, mandatory bookkeeping/sales center</p>
+  <p><strong>Excluded:</strong> One-time fees, optional programs, business operating costs,
+  variable per-sale charges</p>
+</div>
+
+<p>
+  Where a fee has a range (e.g., bookkeeping $200&ndash;$500/month), we model at the low end
+  and disclose the range. Modeled values are always tagged and the assumptions are stated
+  on the page where they appear.
+</p>
+
+<h3>Editorial assessments</h3>
+<p>
+  Qualitative judgments &mdash; watchouts, positive signals, disclosure quality ratings &mdash;
+  are clearly labeled as editorial. They are evidence-based (citing specific FDD sections)
+  but represent our assessment, not extracted facts.
+</p>
+
+<h2>What We Do Not Do</h2>
+<ul class="signal-list">
+  <li><span class="signal-icon">&#x2717;</span> <strong>We do not rank franchises.</strong> Comparison tables are sorted by data values, not by recommendation.</li>
+  <li><span class="signal-icon">&#x2717;</span> <strong>We do not provide investment advice.</strong> This is structured data presentation, not a buy/avoid signal.</li>
+  <li><span class="signal-icon">&#x2717;</span> <strong>We do not accept franchisor payments.</strong> No brand pays to appear, and no brand pays to be excluded.</li>
+  <li><span class="signal-icon">&#x2717;</span> <strong>We do not fabricate data.</strong> If a value isn&rsquo;t in the FDD, we say so rather than estimate it.</li>
+  <li><span class="signal-icon">&#x2717;</span> <strong>We do not bury caveats.</strong> Data quality issues, classification quirks, and comparability limitations appear inline next to the data they affect.</li>
+</ul>
+
+<h2>Category Selection</h2>
+<p>
+  We cover <strong>recurring residential service franchises</strong> &mdash; territory-based,
+  homeowner-facing businesses with recurring or seasonal revenue. Categories are selected
+  based on:
+</p>
+<ul class="signal-list">
+  <li><span class="signal-icon">&#x2713;</span> <strong>Wisconsin filing density</strong> &mdash; enough brands registered to make comparison meaningful</li>
+  <li><span class="signal-icon">&#x2713;</span> <strong>Model comparability</strong> &mdash; brands in the category operate similarly enough that fee, cost, and system health comparisons are fair</li>
+  <li><span class="signal-icon">&#x2713;</span> <strong>Buyer decision value</strong> &mdash; a prospective franchisee researching this category would benefit from side-by-side data</li>
+</ul>
+<p>
+  We do not pursue breadth for its own sake. A category with 30 brands but high model drift
+  is less useful than a category with 6 tightly comparable brands.
+</p>
+
+<h2>Decision Reports</h2>
+<p>
+  The free comparison pages show <em>what</em> differs across brands. The paid Decision Reports
+  ($99/brand) explain <em>so what</em> and <em>what to ask about it</em>:
+</p>
+<ul class="signal-list">
+  <li><span class="signal-icon">&#x2713;</span> Full component fee modeling at 4 revenue levels</li>
+  <li><span class="signal-icon">&#x2713;</span> Item 19 (financial performance) translation &mdash; what the numbers mean and what&rsquo;s omitted</li>
+  <li><span class="signal-icon">&#x2713;</span> Investment line-by-line breakdown with negotiability notes</li>
+  <li><span class="signal-icon">&#x2713;</span> Closure and churn pattern analysis</li>
+  <li><span class="signal-icon">&#x2713;</span> Risk flags and litigation context</li>
+  <li><span class="signal-icon">&#x2713;</span> Discovery day questions derived from this brand&rsquo;s specific FDD</li>
+</ul>
+
+<div class="cta-secondary">
+  <p>Ready to compare franchise brands using regulator-source data?</p>
+  <a href="index.html" class="cta-button">Browse categories &rarr;</a>
+</div>
+{% endblock %}

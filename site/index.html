@@ -6,8 +6,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<title>Franchise Decision Radar | Compare Franchise Fees, Cost &amp; Risk</title>
-<meta name="description" content="Compare franchise brands using regulator-source data. Review fee burden, startup cost, system health, and brand-specific watchouts before you buy a franchise.">
+<title>Franchise Decision Radar | Recurring Residential Service Franchise Comparison</title>
+<meta name="description" content="Compare recurring residential service franchises using regulator-source disclosure data. Fee burden, system health, startup cost, and brand-specific risk across 17 brands in 3 categories.">
 <link rel="canonical" href="https://franchisedecisionradar.com/index.html">
 
 <script type="application/ld+json">
@@ -15,7 +15,7 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Franchise Decision Radar",
-  "description": "Franchise comparison and analysis built from regulator-filed disclosure documents.",
+  "description": "Recurring residential service franchise comparison built from regulator-filed disclosure documents.",
   "url": "https://franchisedecisionradar.com/"
 }
 </script>
@@ -46,7 +46,7 @@ strong { font-weight: 600; }
 
 /* ── Header / Nav ── */
 header {
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem;
   padding: 1.25rem 0; border-bottom: 2px solid #e2e8f0; margin-bottom: 2rem;
 }
 header .site-name {
@@ -57,10 +57,66 @@ header .site-mark {
   display: inline-block; width: 8px; height: 8px; background: #2563eb;
   border-radius: 2px; margin-right: 0.45rem; vertical-align: 1px;
 }
-nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
-nav a { font-size: 0.85rem; color: #64748b; font-weight: 500; transition: color 0.15s; }
-nav a:hover { color: #1e293b; text-decoration: none; }
-nav a.active { color: #1e293b; border-bottom: 2px solid #2563eb; }
+.nav-toggle {
+  display: none; margin-left: auto; background: none; border: none;
+  font-size: 1.4rem; cursor: pointer; color: #374151; padding: 0.25rem; line-height: 1;
+}
+nav#main-nav { display: flex; gap: 0.25rem; align-items: center; }
+nav#main-nav > a {
+  font-size: 0.85rem; color: #64748b; font-weight: 500;
+  transition: color 0.15s; padding: 0.4rem 0.6rem; white-space: nowrap;
+}
+nav#main-nav > a:hover { color: #1e293b; text-decoration: none; }
+nav#main-nav > a.active { color: #1e293b; border-bottom: 2px solid #2563eb; }
+.nav-dropdown { position: relative; }
+.nav-dropdown-trigger {
+  font-family: inherit; font-size: 0.85rem; color: #64748b; font-weight: 500;
+  background: none; border: none; cursor: pointer;
+  padding: 0.4rem 0.6rem; white-space: nowrap; transition: color 0.15s; line-height: 1.6;
+}
+.nav-dropdown-trigger:hover,
+.nav-dropdown--active .nav-dropdown-trigger { color: #1e293b; }
+.nav-dropdown--active .nav-dropdown-trigger { border-bottom: 2px solid #2563eb; }
+.nav-caret { font-size: 0.55rem; margin-left: 0.1rem; opacity: 0.5; }
+.nav-dropdown-menu {
+  display: none; position: absolute; top: calc(100% + 0.4rem); left: 0;
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.1); min-width: 200px;
+  padding: 0.5rem 0; z-index: 100;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu { display: block; }
+.nav-menu-group { padding: 0.25rem 0; }
+.nav-menu-group + .nav-menu-group { border-top: 1px solid #f1f5f9; }
+.nav-menu-heading {
+  display: block; padding: 0.45rem 1rem 0.2rem; font-size: 0.65rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8;
+}
+.nav-dropdown-menu a {
+  display: block; padding: 0.35rem 1rem 0.35rem 1.25rem; font-size: 0.82rem;
+  color: #64748b; font-weight: 500; white-space: nowrap;
+}
+.nav-dropdown-menu a:hover { background: #f8fafc; color: #1e293b; text-decoration: none; }
+.nav-dropdown-menu a.active { color: #2563eb; font-weight: 600; }
+@media (max-width: 768px) {
+  header { flex-wrap: wrap; }
+  .nav-toggle { display: block; }
+  nav#main-nav {
+    display: none; flex-direction: column; width: 100%; align-items: stretch;
+    border-top: 1px solid #e2e8f0; padding-top: 0.5rem; margin-top: 0.5rem; gap: 0;
+  }
+  nav#main-nav.open { display: flex; }
+  nav#main-nav > a { padding: 0.5rem 0; }
+  .nav-dropdown-trigger { text-align: left; width: 100%; padding: 0.5rem 0; }
+  .nav-dropdown-menu {
+    position: static; box-shadow: none; border: none; border-radius: 0;
+    padding: 0 0 0.25rem 0.5rem; background: transparent; min-width: 0;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu { display: none; }
+  .nav-dropdown.open .nav-dropdown-menu { display: block; }
+  .nav-menu-group + .nav-menu-group { border-top: none; }
+}
 
 /* ── Tables ── */
 table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.88rem; }
@@ -227,11 +283,60 @@ footer .footer-nav a:hover { color: #1e293b; }
 .mb-0 { margin-bottom: 0; }
 hr { border: none; border-top: 1px solid #e2e8f0; margin: 2.5rem 0; }
 
+/* ── Wedge Cards ── */
+.wedge-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+@media (max-width: 639px) { .wedge-grid { grid-template-columns: 1fr; } }
+.wedge-card {
+  border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem 1.65rem;
+  background: #fff; position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.wedge-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); transform: translateY(-1px); }
+.wedge-card h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+.wedge-card-desc { font-size: 0.85rem; color: #64748b; margin: 0 0 0.85rem; line-height: 1.5; }
+.wedge-card-status {
+  display: inline-block; font-size: 0.6rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 0.15rem 0.5rem; border-radius: 3px; margin-bottom: 0.65rem;
+}
+.wedge-card-status-live { background: #dcfce7; color: #166534; }
+.wedge-card-status-pending { background: #fef3c7; color: #92400e; }
+.wedge-card-stats {
+  display: flex; gap: 1.25rem; font-size: 0.78rem; color: #64748b;
+  margin-bottom: 0.85rem;
+}
+.wedge-card-stats strong { color: #1e293b; }
+.wedge-card-links {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1rem;
+  font-size: 0.82rem; font-weight: 600;
+}
+.wedge-card-pending {
+  border-style: dashed; border-color: #cbd5e1; background: #fafbfc;
+}
+.wedge-card-pending:hover { transform: none; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.wedge-card-pending-note {
+  font-size: 0.75rem; color: #94a3b8; margin: 0; line-height: 1.45;
+  font-style: italic;
+}
+
 /* ── Notation Legend ── */
 .notation-legend {
-  display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 0.85rem 1.15rem;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; padding: 0;
   background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 1rem 0 1.5rem;
-  font-size: 0.78rem; color: #64748b;
+  font-size: 0.78rem; color: #64748b; overflow: hidden;
+}
+.notation-legend > span {
+  padding: 0.85rem 1rem; border-right: 1px solid #e2e8f0;
+}
+.notation-legend > span:last-child { border-right: none; }
+@media (max-width: 640px) {
+  .notation-legend { grid-template-columns: 1fr; }
+  .notation-legend > span { border-right: none; border-bottom: 1px solid #e2e8f0; }
+  .notation-legend > span:last-child { border-bottom: none; }
 }
 
 /* ── Row with caveat styling ── */
@@ -276,7 +381,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
   background: #e2e8f0; border-radius: 10px; overflow: hidden; margin: 1rem 0 2rem;
   box-shadow: 0 1px 3px rgba(0,0,0,.06);
 }
-@media (min-width: 640px) { .metrics-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 640px) { .metrics-grid { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); } }
 .metric-item { background: #fff; padding: 1.15rem; border-top: 3px solid #2563eb; }
 .metric-item:nth-child(2) { border-top-color: #059669; }
 .metric-item:nth-child(3) { border-top-color: #d97706; }
@@ -490,43 +595,84 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 
 <header>
   <span class="site-name"><span class="site-mark"></span>Franchise Decision Radar</span>
-  <nav>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+  <nav id="main-nav">
     <a href="index.html" class="active">Home</a>
-    
-    
-    
-    <a href="fee-burden.html">Mosquito: Fee Burden</a>
-    
-    <a href="system-health.html">Mosquito: System Health</a>
-    
-    <a href="cost-to-enter.html">Mosquito: Cost to Enter</a>
-    
-    
-    
-    <a href="lawn-system-health.html">Lawn: System Health</a>
-    
-    <a href="lawn-cost-to-enter.html">Lawn: Cost to Enter</a>
-    
-    
-    
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-trigger" aria-expanded="false">
+        Compare <span class="nav-caret">&#9662;</span>
+      </button>
+      <div class="nav-dropdown-menu">
+        
+        <div class="nav-menu-group">
+          <span class="nav-menu-heading">Mosquito</span>
+          
+          <a href="fee-burden.html">Fee Burden</a>
+          
+          <a href="system-health.html">System Health</a>
+          
+          <a href="cost-to-enter.html">Cost to Enter</a>
+          
+        </div>
+        
+        <div class="nav-menu-group">
+          <span class="nav-menu-heading">Lawn</span>
+          
+          <a href="lawn-fee-burden.html">Fee Burden</a>
+          
+          <a href="lawn-system-health.html">System Health</a>
+          
+          <a href="lawn-cost-to-enter.html">Cost to Enter</a>
+          
+        </div>
+        
+        <div class="nav-menu-group">
+          <span class="nav-menu-heading">Cleaning</span>
+          
+          <a href="cleaning-fee-burden.html">Fee Burden</a>
+          
+          <a href="cleaning-system-health.html">System Health</a>
+          
+          <a href="cleaning-cost-to-enter.html">Cost to Enter</a>
+          
+        </div>
+        
+      </div>
+    </div>
     <a href="report.html">Reports</a>
+    <a href="methodology.html">Methodology</a>
   </nav>
 </header>
 
 
 <div class="hero">
-  <h1>Compare franchise fees, startup cost, and brand risk before you commit</h1>
+  <h1>Recurring residential service franchises &mdash; compared from the disclosure documents</h1>
   <p class="subhead">
-    Fee structures, growth trajectories, and disclosure quality across
-    11 franchise brands in 2 categories &mdash;
-    extracted from regulator-filed FDDs (Franchise Disclosure Documents),
+    Side-by-side fee burden, system health, and startup cost across
+    17 brands in 3 categories.
+    Built from FDDs filed with the Wisconsin Department of Financial Institutions,
     not franchisor marketing materials.
   </p>
   <div class="hero-actions">
-    <a href="#cohorts" class="cta-button">Start comparing &rarr;</a>
+    <a href="#categories" class="cta-button">Browse categories &rarr;</a>
     <a href="report.html" class="cta-button-outline">Decision Reports <span class="btn-price">&mdash; $99/brand</span></a>
   </div>
-  <div class="trust-badge"><span class="trust-badge-icon"></span> Built from public filings &middot; No franchisor affiliation</div>
+  <div class="trust-badge"><span class="trust-badge-icon"></span> Regulator-source data &middot; No franchisor affiliation &middot; <a href="methodology.html" style="color:inherit; text-decoration:underline">Methodology</a></div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-item">
+    <div class="stat-number">3</div>
+    <div class="stat-label">Curated categories of<br>recurring residential service</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">17</div>
+    <div class="stat-label">Franchise brands compared<br>from regulator-filed FDDs</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">$99</div>
+    <div class="stat-label">Per-brand Decision Report<br>with fee modeling &amp; risk flags</div>
+  </div>
 </div>
 
 <div class="steps-grid">
@@ -540,7 +686,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
       See how brands differ on fees, system health, and cost to enter.
       Narrow the field with data, not marketing.
     </p>
-    <a href="#cohorts">Pick a category &rarr;</a>
+    <a href="#categories">Pick a category &rarr;</a>
   </div>
   <span class="step-connector"></span>
   <div class="step">
@@ -550,54 +696,94 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
     </div>
     <h3>Go deeper on one brand</h3>
     <p>
-      Full fee modeling, Item 19 (financial performance) translation, risk flags, and
+      Full fee modeling, Item 19 translation, risk flags, and
       discovery day questions for the brand you&rsquo;re evaluating.
     </p>
     <a href="report.html">See Decision Reports &rarr;</a>
   </div>
 </div>
 
-<h2 id="cohorts">Categories Covered</h2>
+<h2 id="categories">Categories</h2>
+<p class="page-intro">
+  Each category covers a specific type of recurring residential service franchise &mdash;
+  territory-based, homeowner-facing, and comparable on fee structure, system health,
+  and disclosure quality. Categories are selected for density and comparability, not breadth.
+</p>
 
+<div class="wedge-grid">
+  
+  <div class="wedge-card">
+    <div class="wedge-card-status wedge-card-status-live">Live</div>
+    <h3>Mosquito Pest Control</h3>
+    <p class="wedge-card-desc">Residential mosquito and outdoor pest treatment franchises competing for the same buyer pool with similar services but sharply different economics.</p>
+    <div class="wedge-card-stats">
+      <span><strong>5</strong> brands compared</span>
+      
+      <span><strong>3</strong> comparison views</span>
+      
+    </div>
+    <div class="wedge-card-links">
+      
+      <a href="fee-burden.html">Fee Burden &rarr;</a>
+      
+      <a href="system-health.html">System Health &rarr;</a>
+      
+      <a href="cost-to-enter.html">Cost to Enter &rarr;</a>
+      
+      <a href="report.html">Decision Reports &rarr;</a>
+    </div>
+  </div>
+  
+  <div class="wedge-card">
+    <div class="wedge-card-status wedge-card-status-live">Live</div>
+    <h3>Lawn Care</h3>
+    <p class="wedge-card-desc">Residential lawn care, fertilization, and turf treatment franchises.</p>
+    <div class="wedge-card-stats">
+      <span><strong>5</strong> brands compared</span>
+      
+      <span><strong>3</strong> comparison views</span>
+      
+    </div>
+    <div class="wedge-card-links">
+      
+      <a href="lawn-fee-burden.html">Fee Burden &rarr;</a>
+      
+      <a href="lawn-system-health.html">System Health &rarr;</a>
+      
+      <a href="lawn-cost-to-enter.html">Cost to Enter &rarr;</a>
+      
+      <a href="lawn-report.html">Decision Reports &rarr;</a>
+    </div>
+  </div>
+  
+  <div class="wedge-card">
+    <div class="wedge-card-status wedge-card-status-live">Live</div>
+    <h3>Residential Cleaning</h3>
+    <p class="wedge-card-desc">Seven residential cleaning franchises that look similar from the outside but diverge sharply on network health, fee structure, and disclosure quality. Legacy giants are contracting while newer entrants grow.</p>
+    <div class="wedge-card-stats">
+      <span><strong>7</strong> brands compared</span>
+      
+      <span><strong>3</strong> comparison views</span>
+      
+    </div>
+    <div class="wedge-card-links">
+      
+      <a href="cleaning-fee-burden.html">Fee Burden &rarr;</a>
+      
+      <a href="cleaning-system-health.html">System Health &rarr;</a>
+      
+      <a href="cleaning-cost-to-enter.html">Cost to Enter &rarr;</a>
+      
+      <a href="cleaning-report.html">Decision Reports &rarr;</a>
+    </div>
+  </div>
+  
 
-<h3 style="margin-top:2rem">Mosquito Pest Control &mdash; 5 brands</h3>
-<p>Residential mosquito and outdoor pest treatment franchises competing for the same buyer pool with similar services but sharply different economics.</p>
-
-<div class="card-grid">
   
-  <div class="card">
-    <h3>Fee Burden</h3>
-    <p>
-      Ongoing fees at $200K&ndash;$500K revenue. Marketing burden drives the biggest cost differences.
-      
-    </p>
-    <a href="fee-burden.html">Compare 5 brands &rarr;</a>
-  </div>
-  
-  <div class="card">
-    <h3>System Health</h3>
-    <p>
-      Growth, attrition, and churn over 3 years. Fast growth can mask high churn.
-      
-    </p>
-    <a href="system-health.html">Compare 5 brands &rarr;</a>
-  </div>
-  
-  <div class="card">
-    <h3>Cost to Enter</h3>
-    <p>
-      Franchise fees and investment ranges. Low upfront cost does not mean lower long-term burden.
-      
-    </p>
-    <a href="cost-to-enter.html">Compare 5 brands &rarr;</a>
-  </div>
-  
-  <div class="card">
-    <h3>Decision Reports</h3>
-    <p>Brand-specific analysis with Item 19 translation, risk flags, and discovery day questions.</p>
-    <a href="report.html">View reports &rarr;</a>
-  </div>
 </div>
+
+
+<h3 style="margin-top:2.5rem" id="mosquito">Mosquito Pest Control &mdash; 5 brands</h3>
 
 <div class="table-wrap">
 <table>
@@ -689,6 +875,36 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
       <td><a href="mosquito-squad.html" class="small">View brand &rarr;</a></td>
     </tr>
     
+    
+    
+    <tr>
+      <td class="brand-name"><a href="mosquito-sheriff.html" style="color:inherit">Mosquito Sheriff</a></td>
+      <td class="num">5</td>
+      <td class="num">$79K&ndash;$81K</td>
+      
+      
+      
+      <td class="num">$39,600<span class="muted small"> (13.2%)</span></td>
+      
+      
+      <td><a href="mosquito-sheriff.html" class="small">View brand &rarr;</a></td>
+    </tr>
+    
+    
+    
+    <tr>
+      <td class="brand-name"><a href="mosquitonix.html" style="color:inherit">MosquitoNix</a></td>
+      <td class="num">8</td>
+      <td class="num">$121K&ndash;$157K</td>
+      
+      
+      
+      <td class="num">$90,100<span class="muted small"> (30.0%)</span></td>
+      
+      
+      <td><a href="mosquitonix.html" class="small">View brand &rarr;</a></td>
+    </tr>
+    
   </tbody>
 </table>
 </div>
@@ -702,35 +918,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 <hr>
 
 
-<h3 style="margin-top:2rem">Lawn Care &mdash; 6 brands</h3>
-<p>Residential lawn care, fertilization, and turf treatment franchises.</p>
-
-<div class="card-grid">
-  
-  <div class="card">
-    <h3>System Health</h3>
-    <p>
-      Growth, attrition, and churn over 3 years. Fast growth can mask high churn.
-      
-    </p>
-    <a href="lawn-system-health.html">Compare 6 brands &rarr;</a>
-  </div>
-  
-  <div class="card">
-    <h3>Cost to Enter</h3>
-    <p>
-      Franchise fees and investment ranges. Low upfront cost does not mean lower long-term burden.
-      
-    </p>
-    <a href="lawn-cost-to-enter.html">Compare 6 brands &rarr;</a>
-  </div>
-  
-  <div class="card">
-    <h3>Decision Reports</h3>
-    <p>Brand-specific analysis with Item 19 translation, risk flags, and discovery day questions.</p>
-    <a href="lawn-report.html">View reports &rarr;</a>
-  </div>
-</div>
+<h3 style="margin-top:2.5rem" id="lawn">Lawn Care &mdash; 5 brands</h3>
 
 <div class="table-wrap">
 <table>
@@ -739,6 +927,8 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
       <th>Brand</th>
       <th class="num">Outlets</th>
       <th class="num">Investment</th>
+      
+      <th class="num">Annual Fees at $300K</th>
       
       <th></th>
     </tr>
@@ -752,6 +942,11 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
       <td class="num">653</td>
       <td class="num">$150K&ndash;$177K</td>
       
+      
+      
+      <td class="num">$78,800<span class="muted small"> (26.3%)</span></td>
+      
+      
       <td><a href="lawn-doctor.html" class="small">View brand &rarr;</a></td>
     </tr>
     
@@ -761,6 +956,11 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
       <td class="brand-name"><a href="weed-man.html" style="color:inherit">Weed Man</a></td>
       <td class="num">121</td>
       <td class="num">$81K&ndash;$109K</td>
+      
+      
+      
+      <td class="num">$25,550<span class="muted small"> (8.5%)</span></td>
+      
       
       <td><a href="weed-man.html" class="small">View brand &rarr;</a></td>
     </tr>
@@ -772,6 +972,11 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
       <td class="num">126</td>
       <td class="num">$117K&ndash;$134K</td>
       
+      
+      
+      <td class="num">$45,318<span class="muted small"> (15.1%)</span></td>
+      
+      
       <td><a href="spring-green.html" class="small">View brand &rarr;</a></td>
     </tr>
     
@@ -781,6 +986,11 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
       <td class="brand-name"><a href="naturalawn.html" style="color:inherit">NaturaLawn</a></td>
       <td class="num">88</td>
       <td class="num">$77K&ndash;$152K</td>
+      
+      
+      
+      <td class="num">$101,584<span class="muted small"> (33.9%)</span></td>
+      
       
       <td><a href="naturalawn.html" class="small">View brand &rarr;</a></td>
     </tr>
@@ -792,6 +1002,11 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
       <td class="num">35</td>
       <td class="num">$141K&ndash;$243K</td>
       
+      
+      
+      <td class="num">$57,180<span class="muted small"> (19.1%)</span></td>
+      
+      
       <td><a href="lawn-pride.html" class="small">View brand &rarr;</a></td>
     </tr>
     
@@ -802,12 +1017,156 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
       <td class="num">7</td>
       <td class="num">$79K&ndash;$118K</td>
       
+      
+      
+      <td class="num">$98,540<span class="muted small"> (32.8%)</span></td>
+      
+      
       <td><a href="lawn-squad.html" class="small">View brand &rarr;</a></td>
     </tr>
     
   </tbody>
 </table>
 </div>
+
+<p class="small muted" style="margin-top:-0.5rem">
+  Annual fees <span class="tag tag-modeled">Modeled</span> at $300K gross revenue, Year 5, single territory.
+</p>
+
+
+
+<hr>
+
+
+<h3 style="margin-top:2.5rem" id="cleaning">Residential Cleaning &mdash; 7 brands</h3>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th class="num">Outlets</th>
+      <th class="num">Investment</th>
+      
+      <th class="num">Annual Fees at $300K</th>
+      
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+    
+    <tr>
+      <td class="brand-name"><a href="merry-maids.html" style="color:inherit">Merry Maids</a></td>
+      <td class="num">802</td>
+      <td class="num">$126K&ndash;$170K</td>
+      
+      
+      
+      <td class="num">$32,988<span class="muted small"> (11.0%)</span></td>
+      
+      
+      <td><a href="merry-maids.html" class="small">View brand &rarr;</a></td>
+    </tr>
+    
+    
+    
+    <tr>
+      <td class="brand-name"><a href="molly-maid.html" style="color:inherit">Molly Maid</a></td>
+      <td class="num">448</td>
+      <td class="num">$139K&ndash;$197K</td>
+      
+      
+      
+      <td class="num">$31,056<span class="muted small"> (10.4%)</span></td>
+      
+      
+      <td><a href="molly-maid.html" class="small">View brand &rarr;</a></td>
+    </tr>
+    
+    
+    
+    <tr>
+      <td class="brand-name"><a href="cleaning-authority.html" style="color:inherit">The Cleaning Authority</a></td>
+      <td class="num">233</td>
+      <td class="num">$92K&ndash;$147K</td>
+      
+      
+      
+      <td class="num">$22,902<span class="muted small"> (7.6%)</span></td>
+      
+      
+      <td><a href="cleaning-authority.html" class="small">View brand &rarr;</a></td>
+    </tr>
+    
+    
+    
+    <tr>
+      <td class="brand-name"><a href="the-maids.html" style="color:inherit">The Maids</a></td>
+      <td class="num">338</td>
+      <td class="num">$117K&ndash;$141K</td>
+      
+      
+      
+      <td class="num">$59,130<span class="muted small"> (19.7%)</span></td>
+      
+      
+      <td><a href="the-maids.html" class="small">View brand &rarr;</a></td>
+    </tr>
+    
+    
+    
+    <tr>
+      <td class="brand-name"><a href="maidpro.html" style="color:inherit">MaidPro</a></td>
+      <td class="num">237</td>
+      <td class="num">$109K&ndash;$158K</td>
+      
+      
+      
+      <td class="num">$30,000<span class="muted small"> (10.0%)</span></td>
+      
+      
+      <td><a href="maidpro.html" class="small">View brand &rarr;</a></td>
+    </tr>
+    
+    
+    
+    <tr>
+      <td class="brand-name"><a href="two-maids.html" style="color:inherit">Two Maids & A Mop</a></td>
+      <td class="num">144</td>
+      <td class="num">$93K&ndash;$149K</td>
+      
+      
+      
+      <td class="num">$64,800<span class="muted small"> (21.6%)</span></td>
+      
+      
+      <td><a href="two-maids.html" class="small">View brand &rarr;</a></td>
+    </tr>
+    
+    
+    
+    <tr>
+      <td class="brand-name"><a href="maid-right.html" style="color:inherit">Maid Right</a></td>
+      <td class="num">35</td>
+      <td class="num">$147K&ndash;$218K</td>
+      
+      
+      
+      <td class="num">$50,780<span class="muted small"> (16.9%)</span></td>
+      
+      
+      <td><a href="maid-right.html" class="small">View brand &rarr;</a></td>
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+
+<p class="small muted" style="margin-top:-0.5rem">
+  Annual fees <span class="tag tag-modeled">Modeled</span> at $300K gross revenue, Year 5, single territory.
+</p>
 
 
 
@@ -818,16 +1177,17 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
   <a href="report.html">Get a Decision Report &mdash; $99/brand &rarr;</a>
 </div>
 
-<h2>How This Works</h2>
+<h2>Why This Data Is Different</h2>
 <div class="notation-legend">
   <span><span class="tag tag-extracted">Extracted</span> Directly from the disclosure document</span>
   <span><span class="tag tag-modeled">Modeled</span> Computed from FDD terms with stated assumptions</span>
   <span><span class="tag tag-editorial">Editorial</span> Evidence-based assessment</span>
 </div>
 <p class="small">
-  Where data is not cleanly comparable, we say so inline. Caveats appear next to the
-  data they qualify, not buried in footnotes.
+  Every number traces to a specific page in a regulator-filed FDD.
+  Where data is not cleanly comparable, we say so inline.
   This is not investment advice or a franchise ranking.
+  <a href="methodology.html">Read the full methodology &rarr;</a>
 </p>
 
 
@@ -836,6 +1196,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
   <nav class="footer-nav" aria-label="Footer">
     <a href="index.html">Home</a>
     <a href="report.html">Reports</a>
+    <a href="methodology.html">Methodology</a>
     
     
     <a href="mosquito-authority.html">Mosquito Authority</a>
@@ -847,6 +1208,10 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
     <a href="mosquito-shield.html">Mosquito Shield</a>
     
     <a href="mosquito-squad.html">Mosquito Squad</a>
+    
+    <a href="mosquito-sheriff.html">Mosquito Sheriff</a>
+    
+    <a href="mosquitonix.html">MosquitoNix</a>
     
     
     
@@ -863,14 +1228,45 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
     <a href="lawn-squad.html">Lawn Squad</a>
     
     
+    
+    <a href="merry-maids.html">Merry Maids</a>
+    
+    <a href="molly-maid.html">Molly Maid</a>
+    
+    <a href="cleaning-authority.html">The Cleaning Authority</a>
+    
+    <a href="the-maids.html">The Maids</a>
+    
+    <a href="maidpro.html">MaidPro</a>
+    
+    <a href="two-maids.html">Two Maids & A Mop</a>
+    
+    <a href="maid-right.html">Maid Right</a>
+    
+    
   </nav>
   <p>
     Built from 2025 Franchise Disclosure Documents filed with the Wisconsin Department
     of Financial Institutions. All data extracted from publicly available filings.
     Modeled values use explicitly documented assumptions. This is not investment advice.
+    <a href="methodology.html">Read our methodology</a>.
   </p>
 </footer>
 
+<script>
+document.querySelector('.nav-toggle')?.addEventListener('click', function() {
+  var nav = document.getElementById('main-nav');
+  var open = nav.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+document.querySelectorAll('.nav-dropdown-trigger').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var dd = this.closest('.nav-dropdown');
+    dd.classList.toggle('open');
+    this.setAttribute('aria-expanded', dd.classList.contains('open'));
+  });
+});
+</script>
 
 </body>
 </html>

@@ -1,0 +1,327 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": null,
+    "local_filename": "molly-maid_2025_wi_auto.pdf",
+    "sha256": "44d5c311e25ac0883a9f3ab5b3377d7abbeef3ba87bacdea1d3bea31c00ca220",
+    "page_count": 377,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI via automated Playwright download. Cover page confirms Molly Maid SPV LLC 2025 FDD."
+  },
+
+  "brand": {
+    "brand_name": "Molly Maid",
+    "brand_slug": "molly-maid",
+    "legal_entity": "Molly Maid SPV LLC",
+    "parent_company": "Neighborly Assetco LLC / Dwyer Franchising LLC d/b/a Neighborly / KKR",
+    "year_founded": 1979,
+    "year_first_franchised": 1984,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": null,
+        "currency": "USD",
+        "range_low": 37838,
+        "range_high": 63635,
+        "field_status": "extracted",
+        "notes": "Two-part structure: fixed Initial Franchise Fee of $14,900 plus Territory Fee of $1.00 per Target Household (TH). Territory Fee typically $45,000-$70,000 (standard market) or $30,000-$45,000 (mid-size). Average paid in 2024: ~$55,967; range paid: $37,838-$63,635. All due at signing, nonrefundable. Franchise fee waived for expansion of existing compliant franchisees. Discounts available: VetFran (20% off territory fee), Roll-In (5-50% based on existing business gross sales), Multi-Unit (5-20% based on tenure + optional 5% cash discount), Additional Concept (10% off franchise fee). Software enrollment fee of $1,500 also due at signing (paid to ZorWare).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [23, 24, 25, 26], "item_reference": "Item 5", "exact_text": "An initial franchise fee of $14,900... a territory fee equal to $1.00 per Target Household... Territory Fees typically range from $45,000 to $70,000 for a standard-size market and $30,000 to $45,000 for a mid-size market." }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": null,
+        "basis": "Gross Sales",
+        "tiers": [
+          { "threshold_up_to": 500000, "rate": 6.5 },
+          { "threshold_up_to": 800000, "rate": 6.0 },
+          { "threshold_up_to": 1200000, "rate": 5.5 },
+          { "threshold_up_to": 1600000, "rate": 5.0 },
+          { "threshold_up_to": 2000000, "rate": 4.5 },
+          { "threshold_up_to": 2400000, "rate": 4.0 },
+          { "threshold_up_to": 2800000, "rate": 3.5 },
+          { "threshold_up_to": null, "rate": 3.0 }
+        ],
+        "field_status": "ambiguous",
+        "notes": "Called 'License Fee.' Progressive tiered structure: 6.5% on first $500K of Gross Sales per calendar year, declining to 3% above $2.8M. Tiers are marginal (like income tax brackets). Year 1 rates for Roll-In franchisees may differ (3% for small/medium, 2.5% for large). Minimum License Fees also apply starting Year 2, based on TH in territory. Some legacy franchisees may maintain preexisting rates on renewal.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [26, 36, 37], "item_reference": "Item 6, License Fee row and Fees Chart", "exact_text": null }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "Multi-component: MAP Contribution 2% of Gross Sales (brand fund) + Local Marketing Requirement ($1/TH/year declining to $0.15/TH as sales increase) + optional Local Marketing Groups (up to 3% of Gross Sales). Lower total mandatory marketing cost than Mosquito Joe but still meaningful.",
+        "components": [
+          { "name": "MAP Contribution (Brand Fund)", "value": 2.0, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "weekly", "notes": "Subject to ramp-up for legacy franchisees (pre-Nov 2022 agreements) through 2025. Full 2% applies to all from 2026." },
+          { "name": "Local Marketing Requirement", "value": null, "basis": "per TH per year", "minimum_dollar": null, "frequency": "annual", "notes": "$1.00/TH/year at $0-$15K weekly Gross Sales; declines to $0.50 ($15K-$20K), $0.25 ($20K-$25K), $0.15 ($25K+). Franchisor may collect and spend on franchisee's behalf if not met." },
+          { "name": "Local Marketing Groups (LMGs)", "value": null, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "as designated", "notes": "Up to 3% of Gross Sales if franchisor designates an LMG for your market. Counts toward Local Marketing Requirement." }
+        ],
+        "notes": "Marketing structure is less burdensome than Mosquito Joe (no mandatory $37K Direct Marketing Program). MAP is straightforward 2%. Local marketing requirement scales with territory size and declines as sales grow.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [26, 27, 34, 35], "item_reference": "Item 6, MAP Contribution row, Local Marketing Requirement row, Notes 4 and 5", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": null,
+        "frequency": "monthly",
+        "field_status": "ambiguous",
+        "notes": "Two components: (1) Technology Package $58/month to ZorWare (Qvinci, Broadly NPS, FranConnect, 1 Office365 E3, 1 Office365 Exchange); (2) CLEO business management software $405/month to ServiceTitan. Total ~$463/month. Optional QuickBooks via ZorWare $30-$200/month. Additional email accounts: $10.50-$24/month each. May increase up to 30% annually. $1,500 enrollment/training fee at signing.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [27, 28, 35], "item_reference": "Item 6, Software System Fees row and Note 6", "exact_text": null }
+      },
+      "transfer_fee": {
+        "value": 15000,
+        "formula": "$15,000 for single transfer; $15,000 + $2,500 per additional franchise if simultaneous transfer of multiple agreements. If assignee has $5M+ in outside investments, fee is greater of stated amount or franchisor's actual costs. Transferee must also buy transfer initial package (~$4,000).",
+        "field_status": "extracted",
+        "notes": "May be discounted or waived for transfers to controlled entities or immediate family.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [29, 30], "item_reference": "Item 6, Transfer Fee row", "exact_text": null }
+      },
+      "other_fees": [
+        { "fee_name": "Renewal Fee", "value": 5000, "frequency": "one-time at renewal", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 6, Renewal Fee row", "exact_text": null } },
+        { "fee_name": "Key Accounts/Management Fee", "value": null, "frequency": "as billed", "field_status": "extracted", "notes": "Up to 3% of total Gross Sales related to Key Account work, Business Development leads, or call center dispatched work.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [32, 33], "item_reference": "Item 6, Key Accounts row", "exact_text": null } },
+        { "fee_name": "Reunion/Regional Meetings", "value": 1000, "frequency": "per event", "field_status": "extracted", "notes": "Up to $1,000. $2,000 penalty for non-attendance. Does not include travel/lodging.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Training Fee (Buyer Commitment)", "value": 14900, "frequency": "one-time", "field_status": "extracted", "notes": "Payable only in event of transfer where transferee attends training prior to closing.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 33, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Additional Training Fee", "value": null, "frequency": "as requested", "field_status": "extracted", "notes": "Up to $100/hour per attendee. May increase up to 30% annually.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 32, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Territory Violation", "value": null, "frequency": "per violation", "field_status": "extracted", "notes": "First: 50% of cumulative revenue from wrongfully serviced customer. Subsequent: 100%. Second violation: right to terminate.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 31, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Amendment Fee", "value": 300, "frequency": "per amendment", "field_status": "extracted", "notes": "For modifications to franchise agreement at franchisee's request.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [31, 32], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Audit Noncompliance Fee", "value": 500, "frequency": "per document (up to $2,500/audit)", "field_status": "extracted", "notes": "Plus cost of rescheduled audit if due to lack of cooperation.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [30, 31], "item_reference": "Item 6, Audit rows", "exact_text": null } },
+        { "fee_name": "Late Fee (Software)", "value": 25, "frequency": "monthly", "field_status": "extracted", "notes": "If software fees unpaid within 30 days of invoice.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Late Fee (Franchise Agreement)", "value": 10, "frequency": "per day", "field_status": "extracted", "notes": "From due date until all sums paid.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 30, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Interest", "value": 12.0, "frequency": "per annum", "field_status": "extracted", "notes": "On unpaid balances. May be collected weekly or monthly via ACH.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 30, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Dishonored Check/ACH", "value": 50, "frequency": "per occurrence", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 32, "item_reference": "Item 6", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 14900, "high": 14900, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Molly Maid SPV LLC", "notes": "Waived for expansion of existing compliant franchisees.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 38, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Territory Fee", "low": 45000, "high": 70000, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Molly Maid SPV LLC", "notes": "$1.00 per Target Household. Typical range for standard market. Mid-size market: $30,000-$45,000.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 38, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Startup Package", "low": 8000, "high": 9000, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Third parties", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Software Enrollment and Training Fee", "low": 1500, "high": 1500, "method_of_payment": "Lump sum", "when_due": "15th of month following signing", "to_whom_paid": "ZorWare", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Auto Lease Deposit and Lease Expense", "low": 3900, "high": 5500, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Third parties", "notes": "Minimum 2 vehicles required (1 for estimates, 1 for team). New vehicle purchase: $23,500-$26,500.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Computer Hardware", "low": 2200, "high": 4500, "method_of_payment": "As agreed", "when_due": "Before opening", "to_whom_paid": "Third parties", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Leasehold Improvements", "low": 1000, "high": 5000, "method_of_payment": "Lump sum", "when_due": "Before opening", "to_whom_paid": "Third parties", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Real Estate, Utility Deposits and Three Months Rent", "low": 4000, "high": 7000, "method_of_payment": "Lump sum, due monthly", "when_due": "As incurred", "to_whom_paid": "Third parties", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Furniture, Fixtures and Equipment", "low": 2500, "high": 3500, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Third parties", "notes": "Includes washer/dryer, desks, chairs, file cabinet, telephone system.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Permits and Licenses", "low": 100, "high": 1000, "method_of_payment": "Lump sum", "when_due": "Before opening", "to_whom_paid": "Local and state authorities", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance Deposit and Three Months Insurance Expense", "low": 2800, "high": 5300, "method_of_payment": "As agreed", "when_due": "Before opening", "to_whom_paid": "Third parties", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Training Expenses for Travel, Food and Lodging", "low": 4000, "high": 5000, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Third parties", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Professional Fees", "low": 0, "high": 5000, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Third parties", "notes": "Accountant, financial advisor, attorney.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 50000, "high": 60000, "method_of_payment": "As agreed", "when_due": "As incurred", "to_whom_paid": "Various", "notes": "Payroll, marketing, gasoline, auto maintenance, internet, general business. Does not include owner salary/draw.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 139900,
+      "total_high": 197200,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 39, "item_reference": "Item 7 table, Total row", "exact_text": "$139,900 – $197,200" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Part I",
+          "description": "2024 Average and Median Gross Sales Per Cleaning",
+          "period": "calendar year 2024",
+          "population": "197 Operators representing 417 franchised businesses (of 448 total). Excludes: 9 opened during period, 13 mid-transfer, 2 unreliable data, 6 territory changes, 25 closed during period.",
+          "data": {
+            "by_quartile": [
+              { "group": "Top 10%", "avg_gross_sales_per_cleaning": 231.12, "high": 263.02, "low": 217.24, "median": 228.83, "count": 20, "at_or_above_avg": 9, "pct_at_or_above": 45 },
+              { "group": "1st Quartile", "avg_gross_sales_per_cleaning": 213.76, "high": 263.02, "low": 191.31, "median": 211.62, "count": 49, "at_or_above_avg": 24, "pct_at_or_above": 49 },
+              { "group": "2nd Quartile", "avg_gross_sales_per_cleaning": 178.88, "high": 190.87, "low": 169.75, "median": 179.79, "count": 50, "at_or_above_avg": 26, "pct_at_or_above": 52 },
+              { "group": "3rd Quartile", "avg_gross_sales_per_cleaning": 159.33, "high": 169.70, "low": 152.11, "median": 159.25, "count": 49, "at_or_above_avg": 24, "pct_at_or_above": 49 },
+              { "group": "4th Quartile", "avg_gross_sales_per_cleaning": 132.70, "high": 151.95, "low": 89.51, "median": 133.99, "count": 49, "at_or_above_avg": 27, "pct_at_or_above": 55 },
+              { "group": "Bottom 10%", "avg_gross_sales_per_cleaning": 112.19, "high": 131.41, "low": 89.51, "median": 114.68, "count": 20, "at_or_above_avg": 12, "pct_at_or_above": 60 },
+              { "group": "100%", "avg_gross_sales_per_cleaning": 173.43, "high": 263.02, "low": 89.51, "median": 169.75, "count": 197, "at_or_above_avg": 83, "pct_at_or_above": 42 }
+            ]
+          },
+          "notes": "System-wide average gross sales per cleaning: $173.43. Median: $169.75. Tight distribution between 2nd and 3rd quartiles. Bottom 10% still averages $112/cleaning.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [74, 75], "item_reference": "Item 19, Part I", "exact_text": null }
+        },
+        {
+          "table_label": "Part II",
+          "description": "2024 Average and Median Gross Sales Per Target Household",
+          "period": "calendar year 2024",
+          "population": "Same 197 Operators / 417 businesses.",
+          "data": {
+            "by_quartile": [
+              { "group": "Top 10%", "avg_gross_sales_per_th": 41.42, "high": 88.13, "low": 32.68, "median": 41.58, "count": 20, "at_or_above_avg": 10, "pct_at_or_above": 50 },
+              { "group": "1st Quartile", "avg_gross_sales_per_th": 32.60, "high": 88.13, "low": 22.59, "median": 31.75, "count": 49, "at_or_above_avg": 20, "pct_at_or_above": 41 },
+              { "group": "2nd Quartile", "avg_gross_sales_per_th": 18.39, "high": 22.44, "low": 15.17, "median": 18.36, "count": 50, "at_or_above_avg": 25, "pct_at_or_above": 50 },
+              { "group": "3rd Quartile", "avg_gross_sales_per_th": 13.04, "high": 15.12, "low": 10.63, "median": 13.59, "count": 49, "at_or_above_avg": 27, "pct_at_or_above": 55 },
+              { "group": "4th Quartile", "avg_gross_sales_per_th": 8.10, "high": 10.52, "low": 2.59, "median": 8.26, "count": 49, "at_or_above_avg": 27, "pct_at_or_above": 55 },
+              { "group": "Bottom 10%", "avg_gross_sales_per_th": 6.14, "high": 7.71, "low": 2.59, "median": 6.60, "count": 20, "at_or_above_avg": 12, "pct_at_or_above": 60 },
+              { "group": "100%", "avg_gross_sales_per_th": 16.23, "high": 88.13, "low": 2.59, "median": 15.17, "count": 197, "at_or_above_avg": 89, "pct_at_or_above": 45 }
+            ]
+          },
+          "notes": "Wide range in Gross Sales/TH ($2.59 to $88.13) suggests significant territory utilization variance. Top 10% generates ~5x more revenue per TH than the system average.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [76, 77], "item_reference": "Item 19, Part II", "exact_text": null }
+        },
+        {
+          "table_label": "Part III",
+          "description": "2024 Recurring vs Occasional Customers",
+          "period": "calendar year 2024",
+          "population": "Same 197 Operators / 417 businesses.",
+          "data": {
+            "recurring_customers": { "avg_pct": 91, "median_pct": 92, "at_or_above_avg": 110, "pct_at_or_above": 56 },
+            "occasional_customers": { "avg_pct": 9, "median_pct": 8, "at_or_above_avg": 87, "pct_at_or_above": 44 }
+          },
+          "notes": "91% recurring customer rate is a very strong signal for business predictability. This is one of the highest recurring rates in any franchise vertical.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 77, "item_reference": "Item 19, Part III", "exact_text": null }
+        },
+        {
+          "table_label": "Part IV",
+          "description": "2024 Same Business Sales Performance (YoY Growth 2023 vs 2024)",
+          "period": "calendar year 2024 vs 2023",
+          "population": "197 Reporting Franchisees operating same 417 businesses in both years.",
+          "data": {
+            "growth_distribution": [
+              { "bracket": "More than 20% growth", "count": 10, "pct": 5 },
+              { "bracket": "More than 10% and up to 20% growth", "count": 34, "pct": 17 },
+              { "bracket": "More than 5% and up to 10% growth", "count": 52, "pct": 27 },
+              { "bracket": "More than 0% and up to 5% growth", "count": 59, "pct": 30 },
+              { "bracket": "More than 0% and up to 5% decline", "count": 20, "pct": 10 },
+              { "bracket": "More than 5% and up to 10% decline", "count": 14, "pct": 7 },
+              { "bracket": "More than 10% and up to 20% decline", "count": 6, "pct": 3 },
+              { "bracket": "More than 20% decline", "count": 2, "pct": 1 }
+            ]
+          },
+          "notes": "79% of franchisees grew YoY. Only 21% declined. Only 4% declined more than 10%. Healthy same-store-sales picture.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [77, 78], "item_reference": "Item 19, Part IV", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 is disclosed with four parts. Unusually rich for cleaning vertical. Provides per-cleaning revenue, per-TH penetration, recurring customer rates, and YoY growth distribution. Does not disclose absolute total gross sales per franchisee (only per-cleaning and per-TH metrics). 25 businesses that closed during 2024 are excluded. No company-owned P&L.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [73, 78], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 501,
+          "total_outlets_end": 481,
+          "opened": 5,
+          "closed": 8,
+          "non_renewals": 1,
+          "reacquired_by_franchisor": 0,
+          "transferred": 20,
+          "ceased_operations_other": 16,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "All franchised, no company-owned. Net contraction of 20 units. Ceased operations (16) is the largest exit category. California lost 6 units (76→70).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [78, 81, 84], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 481,
+          "total_outlets_end": 464,
+          "opened": 7,
+          "closed": 2,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 15,
+          "ceased_operations_other": 22,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "Net contraction of 17 units. Terminations dropped to 2 but ceased operations rose to 22. Illinois: 32→28 (4 ceased). Virginia: 22→19 (3 ceased).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [78, 80, 84], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 464,
+          "total_outlets_end": 448,
+          "opened": 9,
+          "closed": 6,
+          "non_renewals": 2,
+          "reacquired_by_franchisor": 0,
+          "transferred": 13,
+          "ceased_operations_other": 17,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "Net contraction of 16 units. System continues to shrink but at a slower pace. Illinois: 28→25 (3 ceased). Kentucky: 7→4 (3 terminations). Puerto Rico: 6→2 (4 ceased). Maryland: 16→14 (2 non-renewals).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [78, 80, 84, 85], "item_reference": "Item 20, Tables 1, 2, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": true,
+      "action_count": 2,
+      "action_types": [
+        { "type": "regulatory/consumer protection", "count": 1, "notes": "State of Kansas vs. Molly Maid, Inc. (2010). Consent judgment for alleged KCPA violation (franchisee didn't document background checks on employees, gift certificate sales after termination). $25,000 civil penalty + $25,175 costs. Satisfied April 2011. Predecessor entity, not current franchisor." },
+        { "type": "regulatory/affiliate", "count": 1, "notes": "California v. FOR Franchising LLC d/b/a Window Genie (2017). Affiliate entity, not Molly Maid. Failed to submit ads to CA Commissioner. $5,000 administrative penalty. Concluded." }
+      ],
+      "notes": "Both actions are concluded and involve predecessor or affiliate entities, not the current Molly Maid SPV LLC franchisor directly. Light litigation profile.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [21, 22], "item_reference": "Item 3", "exact_text": null }
+    },
+
+    "system_info": {
+      "year_company_founded": 1979,
+      "year_first_franchised": 1984,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 10, "item_reference": "Item 1", "exact_text": "The System was initially developed and offered in Canada in 1979 by Molly Maid International, Inc... Predecessor was originally incorporated as a Michigan corporation on May 8, 1984" }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 168550,
+    "net_unit_growth": [
+      { "year": 2022, "value": -20, "source_fields": ["Table 1: 481-501=-20"] },
+      { "year": 2023, "value": -17, "source_fields": ["Table 1: 464-481=-17"] },
+      { "year": 2024, "value": -16, "source_fields": ["Table 1: 448-464=-16"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 8.98, "source_fields": ["(8+1+0+16+20)/501 = 45/501"] },
+      { "year": 2023, "value": 8.11, "source_fields": ["(2+0+0+22+15)/481 = 39/481"] },
+      { "year": 2024, "value": 8.19, "source_fields": ["(6+2+0+17+13)/464 = 38/464"] }
+    ],
+    "system_age_years": 41,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T12:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.notes (franchise fee amount)", "page_verified": 23, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 39, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 39, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[0].total_outlets_start (2022)", "page_verified": 78, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].total_outlets_end (2024)", "page_verified": 78, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-15T12:00:00Z"
+    },
+    "warnings": [
+      "SYSTEM CONTRACTION: Molly Maid has shrunk every year for 3 consecutive years (501→481→464→448). Net loss of 53 units over 3 years (-10.6%).",
+      "Royalty is tiered/marginal (6.5% to 3%) — recorded as ambiguous because it cannot be expressed as a single rate.",
+      "Technology costs are split: $58/month to ZorWare + $405/month CLEO to ServiceTitan = ~$463/month total. Recorded as ambiguous because of multi-payee structure.",
+      "Item 19 does not disclose absolute total gross sales per franchisee — only per-cleaning and per-TH metrics. Cross-brand revenue comparison requires additional calculation.",
+      "Initial Fees are two-part (fixed $14,900 franchise fee + variable territory fee), making direct comparison with flat-fee franchises complex.",
+      "Entity structure: SPV within Neighborly/KKR securitization chain. All franchise agreements transferred from predecessor to SPV in March 2021.",
+      "25 businesses that closed during 2024 are excluded from Item 19 data — survivorship bias applies.",
+      "'Ceased operations — other reasons' column in Item 20 includes transfers to existing franchisees, territory consolidations, and abandonments. This inflates the apparent exit rate relative to franchises that simply failed."
+    ],
+    "null_fields": [
+      { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "reason": "Two-part fee (franchise fee + territory fee). Cannot express as single value.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.royalty_rate.value", "reason": "Tiered marginal rate from 6.5% to 3%. Cannot express as single rate.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "Multi-component: MAP 2% + Local Marketing per TH + optional LMG. No single rate.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.technology_fee.value", "reason": "Split across two payees ($58/mo ZorWare + $405/mo ServiceTitan). Total ~$463/month.", "field_status": "ambiguous" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Both royalty and marketing are ambiguous multi-component structures.", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

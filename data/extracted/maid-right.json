@@ -1,0 +1,318 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": null,
+    "local_filename": "maid-right_2025_wi_auto.pdf",
+    "sha256": "d6553c082ea790cc762c013eba77954856436d0518e0f06721bc9f7ca5c31b2a",
+    "page_count": 203,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI via automated Playwright download. Cover page confirms Maid Right, LLC 2025 FDD."
+  },
+
+  "brand": {
+    "brand_name": "Maid Right",
+    "brand_slug": "maid-right",
+    "legal_entity": "Maid Right, LLC",
+    "parent_company": "PSB Group, LLC / Premium Service Brands, LLC / AE Capital, LLC",
+    "year_founded": 2013,
+    "year_first_franchised": 2013,
+    "ownership_structure": "private_founder_led"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 65000,
+        "currency": "USD",
+        "range_low": 25000,
+        "range_high": 65000,
+        "field_status": "extracted",
+        "notes": "Standard Franchise Fee is $65,000, payable by wire transfer in one lump-sum upon signing. If SBA-financed, typically $15,000 at signing and remainder ($50,000) after funding. Fully earned when paid and non-refundable. Discounts available: 10% for honorably discharged U.S. military veterans, rescue/emergency/policing personnel; 10% for existing PSB affiliate franchisees in compliance. Discounts may not be combined. During fiscal year 2024, franchise fees ranged from $25,000 to $65,000. Also requires $5,000 Initial Technology Fee at signing (non-refundable).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [17, 18], "item_reference": "Item 5", "exact_text": "The initial franchise fee (\"Franchise Fee\") for a Maid Right Business is $65,000... During our last fiscal year, we sold franchises for a Franchise Fee that ranged from $25,000 to $65,000." }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": 6.0,
+        "basis": "Gross Sales",
+        "tiers": null,
+        "field_status": "extracted",
+        "notes": "6% of Gross Sales with $150 per week minimum. Based on the previous week's Gross Sales, due every Tuesday. Flat rate, not tiered.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [18, 20], "item_reference": "Item 6, Royalty row and Notes", "exact_text": "Royalty: 6% of Gross Sales; $150 per week minimum" }
+      },
+      "advertising_and_marketing": {
+        "value": 2.0,
+        "basis": "Gross Sales",
+        "field_status": "extracted",
+        "structure_description": "Marketing Fund Contribution: the greater of 2% of Gross Sales per week or $50 per week. Advertising Cooperative Fee may also apply: up to the greater of $10,000 or 2% of Gross Sales per year, but is not in addition to other required marketing spend.",
+        "components": [
+          { "name": "Marketing Fund Contribution", "value": 2.0, "basis": "Gross Sales", "minimum_dollar": 50, "frequency": "weekly", "notes": "The greater of 2% of Gross Sales per week or $50 per week. Based on the previous week's Gross Sales." },
+          { "name": "Advertising Cooperative Fee", "value": null, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "as determined by cooperative", "notes": "Up to the greater of $10,000 or 2% of Gross Sales per year. Determined by members of Cooperative. Not in addition to other required marketing spend. Franchisor-owned outlets participate on same basis." }
+        ],
+        "notes": "Core marketing commitment is 2% of Gross Sales with $50/week minimum. Cooperative fee, if applicable, is not additive to the marketing fund contribution.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [18, 19], "item_reference": "Item 6, Marketing Fund Contribution row and Advertising Cooperative Fee row", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 210,
+        "frequency": "weekly",
+        "field_status": "extracted",
+        "notes": "$210 per week (approximately $910/month). Services include website development, email, software or other services paid directly by franchisor. Also $5,000 one-time initial technology fee at signing. Additionally, Accounting and Business Advisory Services Fee of $85 per week ($368/month) for monthly accounting and business advisory support.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 6, Technology Fee row and Accounting and Business Advisory Services Fee row", "exact_text": "Technology Fee: $210 per week... Accounting and Business Advisory Services Fee: $85 per week" }
+      },
+      "transfer_fee": {
+        "value": 20000,
+        "formula": "Greater of $20,000 or franchisor's actual out-of-pocket expenses. If transfer to an entity you control entirely, you pay only franchisor's costs for the transfer.",
+        "field_status": "extracted",
+        "notes": null,
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 6, Transfer Fee row", "exact_text": "Greater of $20,000 or our actual out-of-pocket expenses" }
+      },
+      "other_fees": [
+        { "fee_name": "Contact Center Fee", "value": null, "frequency": "weekly", "field_status": "extracted", "notes": "The greater of 2% of Gross Sales or the then-current weekly minimum ($50/week during first 12 weeks, $100/week during second 12 weeks, $150/week during remainder of first year, $220/week thereafter), with a weekly maximum of $770/week.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Contact Center Fee row", "exact_text": null } },
+        { "fee_name": "Accounting and Business Advisory Services Fee", "value": 85, "frequency": "weekly", "field_status": "extracted", "notes": "$85 per week. Includes monthly accounting and business advisory support. After 12 months operating, may opt out in favor of approved third-party vendor.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 6, Accounting and Business Advisory Services Fee row", "exact_text": null } },
+        { "fee_name": "Renewal Fee", "value": 15000, "frequency": "one-time at renewal", "field_status": "extracted", "notes": "Greater of 25% of then-current initial Franchise Fee or $15,000.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 6, Renewal Fee row", "exact_text": null } },
+        { "fee_name": "Annual Convention", "value": 1000, "frequency": "per event", "field_status": "extracted", "notes": "Attendance fee varies (recently $1,000 per attendee). $2,000 if you do not attend. Fees may be modified based on allocated costs. Does not include travel/lodging.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 6, Annual Convention row", "exact_text": null } },
+        { "fee_name": "Late Fees and Insufficient Funds Fees", "value": 100, "frequency": "per late payment", "field_status": "extracted", "notes": "$100 per late payment, plus 1.5% per month or the highest rate allowed by law, whichever is less. $100/report/week. Also applies to amounts revealed by audit.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 6, Late Fees row", "exact_text": null } },
+        { "fee_name": "Lost Profits", "value": null, "frequency": "upon demand", "field_status": "extracted", "notes": "An amount equal to the royalties, marketing fund payments and other fees that would have been paid for the full duration of the Franchise Agreement term. Applicable if terminated for cause or failure to operate.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 6, Lost Profits row", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Franchise Fee", "low": 65000, "high": 65000, "method_of_payment": "Wire", "when_due": "Upon Signing", "to_whom_paid": "Maid Right, LLC", "notes": "See Item 5. Fully earned when paid and non-refundable.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Vehicle", "low": 1500, "high": 5000, "method_of_payment": "As Arranged", "when_due": "Before Opening", "to_whom_paid": "Lessor", "notes": "Assumes lease of one vehicle (car, truck, or van). Does not include mandatory vehicle wrapping. Purchase cost likely higher.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Real Estate and/or Leasehold Improvements", "low": 0, "high": 3000, "method_of_payment": "As Arranged", "when_due": "Before Opening", "to_whom_paid": "Third Parties or Landlord", "notes": "Franchisor expects home office operation. If home office not permitted, small office lease likely $500-$1,500/month. High estimate includes one month rent plus security deposit.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Equipment & Supplies", "low": 3500, "high": 7000, "method_of_payment": "As Arranged", "when_due": "Before Opening", "to_whom_paid": "Third Parties, Approved Suppliers", "notes": "Equipment per cleaning crew: vacuum, cleaning chemicals, towels, hurricane mop, etc. Also general office supplies, computers, phones.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance", "low": 2000, "high": 5000, "method_of_payment": "As Arranged", "when_due": "Before Opening", "to_whom_paid": "Third Parties", "notes": "Must meet minimum coverage described in Item 8. Additional coverage may be required by state law.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Signage", "low": 3000, "high": 4000, "method_of_payment": "As Arranged", "when_due": "Before Opening", "to_whom_paid": "Third Parties, Approved Suppliers", "notes": "Includes fully wrapped vehicle and lawn signs. Costs vary by size, location, local zoning.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Technology Fee", "low": 5000, "high": 5000, "method_of_payment": "As Arranged", "when_due": "Before Opening", "to_whom_paid": "Maid Right, LLC", "notes": "One-time technology fee payable prior to commencing operations.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Grand Opening", "low": 2500, "high": 5000, "method_of_payment": "As Arranged", "when_due": "Before Opening", "to_whom_paid": "Third Parties", "notes": "Optional but recommended. Amount may vary based on media type, local costs, demographics, competition.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Training Expenses", "low": 3000, "high": 5000, "method_of_payment": "As Arranged", "when_due": "Before Opening", "to_whom_paid": "Third Parties", "notes": "No charge for initial training itself. Covers transportation, meals, lodging, incidentals. Also $500-$1,000 in fees for software, hardware, and other materials. Does not include owner/employee salary during training.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Licenses/Bonds", "low": 100, "high": 1500, "method_of_payment": "As Arranged", "when_due": "Before Opening", "to_whom_paid": "Licensing Authorities", "notes": "Construction permits, occupancy permits, operating licenses. Varies by local government.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Professional Fees", "low": 1500, "high": 3000, "method_of_payment": "As Arranged", "when_due": "As Necessary", "to_whom_paid": "Third Parties", "notes": "Legal and accounting fees for establishing the business.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Designated Manager Salary", "low": 0, "high": 30000, "method_of_payment": "As Arranged", "when_due": "As Necessary", "to_whom_paid": "Third Parties", "notes": "Applicable only if sole/primary owner is not devoting full-time, best efforts to the Business and hires a Designated Manager.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Marketing", "low": 10000, "high": 20000, "method_of_payment": "As Arranged", "when_due": "As Necessary", "to_whom_paid": "Third Parties", "notes": "In addition to required grand opening. Most franchisees choose to spend more on marketing in the initial period.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds (6 months)", "low": 50000, "high": 60000, "method_of_payment": "As Arranged", "when_due": "As Necessary", "to_whom_paid": "You Determine", "notes": "Working capital for first 6 months of operations.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 147100,
+      "total_high": 218500,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table, Total row", "exact_text": "$147,100–$218,500" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Table A",
+          "description": "2024 Fiscal Year Consolidated Average and Median Gross Sales",
+          "period": "fiscal year 2024",
+          "population": "18 franchisees operating 20 Franchised Businesses that were open and operating the entire fiscal year by the same franchisee. Excludes 21 franchisees operating 30 Franchised Businesses that were not open the entire year or not using CRM software properly.",
+          "data": {
+            "total_gross_sales": 10408825,
+            "by_franchised_business": { "count": 20, "average": 520441, "median": 356020 },
+            "by_franchisee": { "count": 18, "average": 578268, "median": 356020 }
+          },
+          "notes": "Total system Gross Sales of $10,408,825 across 18 franchisees/20 businesses. Average per business: $520,441. Median per business: $356,020. Large gap between average and median indicates top performers skew the average significantly.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 46, "item_reference": "Item 19, Table A", "exact_text": null }
+        },
+        {
+          "table_label": "Table B",
+          "description": "2024 Fiscal Year Average and Median Gross Sales by Quartile",
+          "period": "fiscal year 2024",
+          "population": "18 franchisees, 20 Franchised Businesses",
+          "data": {
+            "by_quartile": [
+              { "group": "Top Quartile", "average": 1258050, "high": 1731326, "low": 883697, "median": 1182243, "franchisees": 5, "franchised_businesses": 6 },
+              { "group": "Median 50%", "average": 435696, "high": 855782, "low": 287935, "median": 356020, "franchisees": 8, "franchised_businesses": 9 },
+              { "group": "Bottom Quartile", "average": 126601, "high": 278312, "low": 29745, "median": 95578, "franchisees": 5, "franchised_businesses": 5 }
+            ]
+          },
+          "notes": "Wide dispersion: top quartile averages $1.26M vs bottom quartile $127K. Top performer: $1.73M. Bottom performer: $29,745.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 46, "item_reference": "Item 19, Table B", "exact_text": null }
+        },
+        {
+          "table_label": "Table C",
+          "description": "Multiple Fiscal Year Average and Median Gross Sales by Tenure",
+          "period": "fiscal year 2024",
+          "population": "18 franchisees, 20 Franchised Businesses, segmented by time operational",
+          "data": {
+            "by_tenure": [
+              { "group": "12-23 Months Operational", "average": 66206, "high": 95578, "low": 29745, "median": 73295, "franchisees": 3, "franchised_businesses": 3 },
+              { "group": "24-35 Months Operational", "average": 274598, "high": 341468, "low": 156075, "median": 326250, "franchisees": 3, "franchised_businesses": 3 },
+              { "group": "36+ Months Operational", "average": 782201, "high": 1731326, "low": 278312, "median": 709533, "franchisees": 12, "franchised_businesses": 14 }
+            ]
+          },
+          "notes": "Strong maturity curve. 36+ month franchisees average $782K (median $710K). 12-23 month franchisees average only $66K. Two-thirds of reporting franchisees (12/18) have been operating 36+ months.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 46, "item_reference": "Item 19, Table C", "exact_text": null }
+        },
+        {
+          "table_label": "Table D (Job Size)",
+          "description": "2024 Fiscal Year Average Job Size and Average Gross Sales per Customer",
+          "period": "fiscal year 2024",
+          "population": "18 franchisees, 20 Franchised Businesses, all jobs submitted through CRM",
+          "data": {
+            "by_job_size_half": [
+              { "group": "Top 50% by Average Job Size", "avg_job_size": 227, "avg_gross_sales_per_customer": 2000 },
+              { "group": "Bottom 50% by Average Job Size", "avg_job_size": 184, "avg_gross_sales_per_customer": 2046 }
+            ]
+          },
+          "notes": "Interestingly, bottom 50% by job size have slightly higher average gross sales per customer ($2,046 vs $2,000), suggesting more frequent service or higher customer retention.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 47, "item_reference": "Item 19, Table D (first)", "exact_text": null }
+        },
+        {
+          "table_label": "Table D (Service Type)",
+          "description": "2024 Fiscal Year Percentage of Gross Sales and Average Job Size by Service Type",
+          "period": "fiscal year 2024",
+          "population": "18 franchisees, 20 Franchised Businesses",
+          "data": {
+            "by_service_type": [
+              { "type": "Recurring Service", "pct_of_gross_sales": 86.43, "avg_job_size": 190 },
+              { "type": "One Time Cleaning (And Initial Recurring Appointments)", "pct_of_gross_sales": 9.73, "avg_job_size": 268 },
+              { "type": "Commercial Cleaning", "pct_of_gross_sales": 1.98, "avg_job_size": 204 },
+              { "type": "Move In/Out Cleaning", "pct_of_gross_sales": 1.86, "avg_job_size": 317 }
+            ]
+          },
+          "notes": "86.43% of gross sales from recurring service. Move in/out has highest average job size ($317). Very small commercial cleaning component (1.98%).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 47, "item_reference": "Item 19, Table D (second)", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 is disclosed with four tables (A, B, C, D split into two sub-tables). Covers 18 of 39 total franchisees (46%). 21 franchisees/30 businesses excluded for not operating the full year or not using CRM properly — significant exclusion rate. As of December 31, 2024, there were 28 franchisees operating 35 territories. System is very small. No company-owned P&L disclosed.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [45, 47], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 24,
+          "total_outlets_end": 37,
+          "opened": 17,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 1,
+          "ceased_operations_other": 4,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "All franchised, no company-owned. Net growth of 13 units. Strong opening year (17 opened). 4 ceased operations (1 NJ, 2 FL, 1 TX). 1 transfer in Virginia.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [48, 49, 50], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 37,
+          "total_outlets_end": 44,
+          "opened": 21,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 14,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "Net growth of 7 units. Opened 21 new units but lost 14 to ceased operations. High churn: 14 ceased out of 37 starting (37.8%). Texas: 8 ceased operations. Florida: 4 ceased. North Carolina: 1, Virginia: 1. No transfers, no terminations.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [48, 49, 50], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 44,
+          "total_outlets_end": 35,
+          "opened": 6,
+          "closed": 6,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 2,
+          "ceased_operations_other": 9,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "Net contraction of 9 units. First year with terminations (6, all in Florida 4, Texas 2). 9 ceased operations (Texas 4, New York 2, Georgia 1, Tennessee 1, Virginia 1). 2 transfers in Georgia. Only 6 new openings vs 15 total exits. System shrinking.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [48, 49, 50, 51], "item_reference": "Item 20, Tables 1, 2, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": true,
+      "action_count": 17,
+      "action_types": [
+        { "type": "franchisor vs franchisee (affiliate)", "count": 5, "notes": "360 Painting, LLC (affiliate) brought actions against former franchisees for breach of contract, unauthorized use of marks, unpaid royalties. Includes Chshelokovskiy (pending), Misiph/AASK (consolidated to MA, pending), DeGregorio (settled $21K), Carreno (settled), and Rooterman LLC actions (pending). All involve sister brands, not Maid Right directly." },
+        { "type": "franchisee vs franchisor (affiliate)", "count": 3, "notes": "Former franchisees brought fraud/misrepresentation claims against 360 Painting/PSB/Paul Flick. Includes Misiph counterclaims, Belegu/Rooterman counterclaims, and Willett v. Window Gang (territory dispute, pending). None directly against Maid Right, LLC." },
+        { "type": "governmental/regulatory (affiliate)", "count": 7, "notes": "Multiple state regulatory actions against 360 Painting, LLC and Paul Flick for FDD disclosure failures: Maryland (2016, consent order; 2023, $50K penalty), Illinois (2020, AVC), Virginia (2021, settlement, $25K penalty), California (2022, desist & refrain + bar order on Flick for 36 months), Washington (2022, consent order, $2K costs). Also Maryland against Maid Right predecessor MRF for failure to register (2016, consent order)." },
+        { "type": "vendor/third party", "count": 2, "notes": "YP/yellowpages.com v. 360 Painting (settled $21K). CRM vendor dispute (Premium Service Brands settled $190K to terminate contract)." }
+      ],
+      "notes": "17 total actions disclosed. None are directly against Maid Right, LLC as a named defendant. However, many involve Paul Flick (CEO of both Maid Right and all PSB entities) and affiliate companies under the same parent (360 Painting, Rooterman, Window Gang). The volume and pattern of regulatory actions across multiple states (MD, IL, VA, CA, WA) regarding FDD disclosure failures by affiliates is a significant concern about the parent organization's compliance culture. California barred Paul Flick from offering/selling franchises in CA for 36 months. Confidentiality clauses: 'In the last 3 years, some franchisees have signed confidentiality clauses' restricting their ability to speak openly.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [12, 13, 14, 15, 16, 17], "item_reference": "Item 3", "exact_text": "Other than these 17 actions, no litigation is required to be disclosed in this Item." }
+    },
+
+    "system_info": {
+      "year_company_founded": 2013,
+      "year_first_franchised": 2013,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [7, 10], "item_reference": "Item 1", "exact_text": "Maid Right, LLC is a limited liability company formed in the State of Delaware on April 12, 2018... We began offering franchises in April 2018... MRF was organized on January 28, 2013 and began offering franchises in March 2013." }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 182800,
+    "net_unit_growth": [
+      { "year": 2022, "value": 13, "source_fields": ["Table 1: 37-24=+13"] },
+      { "year": 2023, "value": 7, "source_fields": ["Table 1: 44-37=+7"] },
+      { "year": 2024, "value": -9, "source_fields": ["Table 1: 35-44=-9"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 20.83, "source_fields": ["(0+0+0+4+1)/24 = 5/24"] },
+      { "year": 2023, "value": 37.84, "source_fields": ["(0+0+0+14+0)/37 = 14/37"] },
+      { "year": 2024, "value": 38.64, "source_fields": ["(6+0+0+9+2)/44 = 17/44"] }
+    ],
+    "system_age_years": 12,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T12:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value (franchise fee amount)", "page_verified": 17, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 21, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 21, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[0].total_outlets_start (2022)", "page_verified": 48, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].total_outlets_end (2024)", "page_verified": 48, "match": true },
+        { "field": "raw.item_19_financial_performance.tables[0].data.total_gross_sales", "page_verified": 46, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-15T12:00:00Z"
+    },
+    "warnings": [
+      "SYSTEM CONTRACTION IN 2024: Maid Right shrank from 44 to 35 units in 2024 (-20.5%) after growing in 2022-2023. First year of terminations (6 units).",
+      "HIGH TURNOVER RATE: 37.8% in 2023 and 38.6% in 2024 (exits/start). 2023 saw 14 ceased operations from a base of 37 units. Very high churn for a small system.",
+      "AFFILIATE LITIGATION PATTERN: 17 disclosed actions, primarily involving affiliate 360 Painting, LLC and CEO Paul Flick. Multiple state regulatory actions (MD, IL, VA, CA, WA) for FDD disclosure failures. Paul Flick was barred from offering/selling franchises in California for 36 months.",
+      "SMALL SYSTEM: Only 28 franchisees operating 35 territories as of December 31, 2024. 8 of these are master franchisees offering subfranchises.",
+      "ITEM 19 EXCLUSION RATE: Only 18 of 39 total franchisees (46%) included in financial performance data. 21 franchisees/30 businesses excluded.",
+      "SPECIAL RISK DISCLOSURES: FDD cover includes 6 special risk warnings required by states: out-of-state dispute resolution, spousal liability, short operating history, mandatory minimum payments, franchisor financial condition concerns, and unopened franchises with signed agreements.",
+      "FRANCHISOR FINANCIAL CONDITION: Special risk #5 states the franchisor's financial condition 'calls into question the franchisor's financial ability to provide services and support.' Financial statements are consolidated at Premium Service Brands, LLC level, not Maid Right standalone.",
+      "CONFIDENTIALITY CLAUSES: Some franchisees have signed confidentiality clauses restricting their ability to speak openly about their experience.",
+      "Contact Center Fee effectively adds another 2% of Gross Sales (with escalating minimums), making total ongoing fees approximately 10%+ of Gross Sales (6% royalty + 2% marketing + 2% contact center) before technology and accounting fees.",
+      "Technology Fee ($210/week) and Accounting Fee ($85/week) total $295/week (~$15,340/year) in mandatory service fees to franchisor, in addition to percentage-based fees.",
+      "Year founded/first franchised recorded as 2013 based on predecessor entity Maid Right Franchising, LLC. Current entity Maid Right, LLC formed April 2018 and acquired predecessor assets. PSB has been offering Maid Right franchises since April 2018."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.other_fees[0].value (Contact Center Fee)", "reason": "Complex structure: greater of 2% of Gross Sales or escalating weekly minimum ($50/$100/$150/$220) with $770/week cap. Cannot express as single value.", "field_status": "extracted" },
+      { "field": "raw.item_6_other_fees.other_fees[5].value (Lost Profits)", "reason": "Equals full remaining term royalties/fees — amount indeterminate.", "field_status": "extracted" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Contact Center Fee adds variable 2%+ and mandatory weekly service fees ($295/week) make a single rate misleading. Estimated total: ~10% of Gross Sales + $15,340/year in fixed fees.", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

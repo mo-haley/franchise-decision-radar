@@ -1,0 +1,393 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": null,
+    "local_filename": "two-maids_2025_wi_auto.pdf",
+    "sha256": "ec84e32d592c9c445666c2077e83a04116c61391310d508eda903b8a0a669bf6",
+    "page_count": 272,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms Two Maids Franchising, LLC 2025 FDD dated April 22, 2025."
+  },
+
+  "brand": {
+    "brand_name": "Two Maids & A Mop",
+    "brand_slug": "two-maids",
+    "legal_entity": "Two Maids Franchising, LLC",
+    "parent_company": "Home Franchise Concepts, LLC / JM Family Enterprises, Inc.",
+    "year_founded": 2013,
+    "year_first_franchised": 2013,
+    "ownership_structure": "family_office_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": null,
+        "currency": "USD",
+        "range_low": 59950,
+        "range_high": 59950,
+        "field_status": "extracted",
+        "notes": "Two-part structure: Initial Franchise Fee of $19,950 (first territory only) plus Initial Territory Fee of $40,000. Total $59,950 for first franchise. No franchise fee for subsequent franchise agreements; Additional Territory Fee of $40,000 (or $30,000 if purchased simultaneously with first territory). All due at signing, non-refundable, uniform. Veteran/spouse discount: 15% off both fees (franchise fee becomes $16,958, territory fee becomes $34,000). Conversion franchise: territory fee reduced by 10% of prior year Gross Revenue (max $10,000 discount).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [14, 15], "item_reference": "Item 5", "exact_text": "You will pay us an Initial Franchise Fee of $19,950 when you sign the franchise agreement for your first territory... you will also pay us an Initial Territory Fee of $40,000 for the first territory you obtain under your first franchise agreement." }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": null,
+        "basis": "Gross Revenue",
+        "tiers": [
+          { "threshold_up_to": 30000, "rate": 7.0 },
+          { "threshold_up_to": 60000, "rate": 6.0 },
+          { "threshold_up_to": 90000, "rate": 5.0 },
+          { "threshold_up_to": null, "rate": 4.0 }
+        ],
+        "field_status": "ambiguous",
+        "notes": "Blended/marginal rate structure calculated separately per territory per month: 7% on first $30K, 6% on $30K-$60K, 5% on $60K-$90K, 4% above $90K. Minimum royalty: $500/month in Year 1, $1,500/month thereafter per territory. Reported by 5th of month; funds drawn on 15th, in arrears.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [15, 19, 20], "item_reference": "Item 6, Royalty row and Note 2", "exact_text": "You must pay us a blended rate Royalty calculated separately for each of your territories each month equal to: 7.0% $0-$30,000; 6.0% $30,000.01-$60,000; 5.0% $60,000.01-$90,000; 4.0% $90,000.01 and above" }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "Two components: National Advertising Fund 2% of Gross Revenue (min $250/mo Year 1, $500/mo thereafter) + Local Advertising Start-Up Program Fee $3,000/month first 6 months then $2,500/month (subject to change; franchisor retains up to 10% management fee).",
+        "components": [
+          { "name": "National Advertising Fund Payment", "value": 2.0, "basis": "Gross Revenue", "minimum_dollar": 500, "frequency": "monthly", "notes": "Greater of 2% of Gross Revenue or $250/month (Year 1) / $500/month (thereafter). Paid same schedule as royalty." },
+          { "name": "Local Advertising Services Program Fee", "value": null, "basis": "flat monthly fee", "minimum_dollar": 2500, "frequency": "monthly", "notes": "$3,000/month during first 6 months of operation, then currently $2,500/month, subject to change. Primarily digital advertising media directed and executed by franchisor or designee. Franchisor may retain management fee of greater of $300 or 10% of monthly ad spend." }
+        ],
+        "notes": "Local ad spend is substantial: $3,000/mo for first 6 months ($18,000 in startup phase, $9,000 of which is in Item 7), then $2,500/month ongoing. Combined with 2% national fund, total marketing cost is meaningful. Local spend is executed by franchisor, not franchisee-directed.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [15, 16], "item_reference": "Item 6, National Advertising Fund Payment row, Local Advertising Services Program Fee row", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 650,
+        "frequency": "monthly",
+        "field_status": "extracted",
+        "notes": "Currently $650 per month per territory. Intended to partially reimburse franchisor for costs of technology platforms. May be increased based on actual costs but never more than actual costs. Paid same schedule as royalty.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Technology Fee row", "exact_text": "Currently $650 per month per territory." }
+      },
+      "transfer_fee": {
+        "value": null,
+        "formula": "If selling to a new franchisee: greater of $24,950 or 6% of sale price, up to maximum of $50,000. If selling to an existing franchisee: $5,000 transfer fee per territory. No charge for assignment to a corporate entity you control. Separate Transfer Lead Referral Fee of currently $15,000 (or amount of any broker fees) if buyer was already in franchisor's sale database.",
+        "field_status": "ambiguous",
+        "notes": "Transfer fee is variable and can be substantial. The $24,950-$50,000 range for new franchisees plus potential $15,000 referral fee creates significant friction for resale.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [16, 17], "item_reference": "Item 6, Fees on Transfer row and Transfer Lead Referral Fee row", "exact_text": null }
+      },
+      "other_fees": [
+        { "fee_name": "Renewal Fee", "value": 5000, "frequency": "one-time at renewal", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Renewal Fee row", "exact_text": null } },
+        { "fee_name": "Additional Territory Fee", "value": 40000, "frequency": "one-time per additional territory", "field_status": "extracted", "notes": "Equal to then-current Initial Territory Fee. $30,000 if purchased simultaneously with first territory.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Additional Territory Fee row", "exact_text": null } },
+        { "fee_name": "National Account Fees", "value": null, "frequency": "no more often than monthly", "field_status": "extracted", "notes": "Negotiated individually per program. Franchisor may charge fees or a percentage of the job for national account leads. Franchisee may opt out of servicing any national account.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, National Account Fees row", "exact_text": null } },
+        { "fee_name": "Encroachment Payment", "value": null, "frequency": "per occurrence", "field_status": "extracted", "notes": "100% of Gross Sales made in another franchisee's territory in violation of franchise agreement. Alternative to termination.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Encroachment Payment row", "exact_text": null } },
+        { "fee_name": "Transfer Lead Referral Fee", "value": 15000, "frequency": "per transfer", "field_status": "extracted", "notes": "Currently $15,000 or amount of any third-party broker fees. Payable when selling to a buyer already in franchisor's sale database.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6, Transfer Lead Referral Fee row", "exact_text": null } },
+        { "fee_name": "Insufficient Funds or Late Payment Fee", "value": 300, "frequency": "per occurrence", "field_status": "extracted", "notes": "Currently $300, subject to change. Payable if insufficient funds in account or payment is late.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Insufficient Funds or Late Payment Fee row", "exact_text": null } },
+        { "fee_name": "Late Reporting Administrative Fee", "value": 300, "frequency": "per occurrence", "field_status": "extracted", "notes": "Currently $300, subject to change. Payable if Gross Revenue not timely reported.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Late Reporting Administrative Fee row", "exact_text": null } },
+        { "fee_name": "Convention Fee", "value": null, "frequency": "annually", "field_status": "extracted", "notes": "Varies by venue and location, not to exceed $2,000 annually. Travel, accommodation and meals additional. May be collected in installments.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Convention Fee row", "exact_text": null } },
+        { "fee_name": "Optional Meetings and Trainings", "value": null, "frequency": "as scheduled", "field_status": "extracted", "notes": "Generally $100-$1,500 depending on venue and mode of delivery, plus travel, accommodation and some meals.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Optional Meetings and Trainings row", "exact_text": null } },
+        { "fee_name": "Additional Training Requested By You", "value": 250, "frequency": "per day", "field_status": "extracted", "notes": "Currently $250 per day plus travel and expenses. Paid to franchisor if you request on-site assistance.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 6, Additional Training Requested By You row", "exact_text": null } },
+        { "fee_name": "Audit", "value": null, "frequency": "as required", "field_status": "extracted", "notes": "Cost of inspection or audit. Payable if audit required due to failure to report, insufficient records, or if Gross Revenue or royalty understated by 5% or more.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 6, Audit row", "exact_text": null } },
+        { "fee_name": "Insurance Reimbursement", "value": null, "frequency": "upon demand", "field_status": "extracted", "notes": "If you fail to obtain required insurance, franchisor may obtain it and you must reimburse costs.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 19, "item_reference": "Item 6, Insurance row", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 19950, "high": 19950, "method_of_payment": "Lump sum or financed through us", "when_due": "At signing", "to_whom_paid": "Us", "notes": "Payable only with first franchise agreement. 15% discount for veterans/spouses.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Territory Fee", "low": 40000, "high": 40000, "method_of_payment": "Lump sum or financed through us", "when_due": "At signing", "to_whom_paid": "Us", "notes": "$30,000 if buying second territory simultaneously. 15% veteran discount. Conversion discount up to $10,000.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Lease, Utility and Security Deposit", "low": 2500, "high": 7500, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Landlord", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Leasehold Improvement Decorating Cost", "low": 4000, "high": 10000, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Service Providers", "notes": "Typical locations are light industrial/commercial, 1,200-1,800 sq ft. Minor improvements: painting, carpets, electrical.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Fixtures, Furnishings and Equipment, Computer System, Software, Fax, Printer, Phones", "low": 2500, "high": 9800, "method_of_payment": "As arranged", "when_due": "As arranged", "to_whom_paid": "Approved Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Uniforms", "low": 750, "high": 750, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Vendor", "notes": "10 sets: each set is 1 apron ($15) + 2 trademarked polo shirts ($60).", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Telephone/Communication System", "low": 140, "high": 140, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Vendor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Opening Inventory", "low": 1000, "high": 2000, "method_of_payment": "Lump sum", "when_due": "Prior to opening", "to_whom_paid": "Approved Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 20, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Business Licenses", "low": 100, "high": 500, "method_of_payment": "As arranged", "when_due": "Prior to opening", "to_whom_paid": "Suppliers, Licensing Agencies", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance", "low": 2500, "high": 4000, "method_of_payment": "As arranged", "when_due": "As incurred", "to_whom_paid": "Service Provider", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Legal and Accounting", "low": 0, "high": 2500, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Service Providers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Training Expenses", "low": 750, "high": 2250, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Transportation/Hotels/Restaurants", "notes": "No charge for training itself for franchisee + 1 employee. $1,000 travel voucher provided. Low estimate: 1 person drives. High estimate: 2 people fly. Additional employees: $500/day.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Signage - Interior/Exterior signs", "low": 250, "high": 1500, "method_of_payment": "Lump sum or monthly lease", "when_due": "Upon signing lease", "to_whom_paid": "Vendor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Local Advertising Start-Up Program Fee", "low": 9000, "high": 9000, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Vendor (franchisor may retain administrative fee up to 15%)", "notes": "$3,000 per month for first three months.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 10000, "high": 40000, "method_of_payment": "As arranged", "when_due": "As arranged", "to_whom_paid": "Employees / Suppliers", "notes": "Working capital for first 3 months. Does not include owner salary/draw. Based on recurring and operating expenses. Actual needs vary.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 93440,
+      "total_high": 149890,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 21, "item_reference": "Item 7 table, Total row", "exact_text": "$93,440-$149,890" },
+      "conversion_total_low": 83440,
+      "conversion_total_high": 139890,
+      "conversion_notes": "Conversion franchise total reflects up to $10,000 discount on territory fee based on 10% of prior year Gross Revenue."
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Chart 1",
+          "description": "2024 Locations Open 2 Years or More - Quintile One (Top 17 Territories by Gross Revenues)",
+          "period": "calendar year 2024",
+          "population": "Top 17 of 86 territories open 2+ years, ranked by Gross Revenue",
+          "data": {
+            "low": 827640, "average": 1167376, "median": 1120982, "high": 1778460,
+            "direct_labor_avg": 541735, "cleaning_materials_avg": 21749, "total_cost_of_sales_avg": 563484,
+            "gross_margin_dollar_avg": 603893, "gross_margin_pct_avg": 52,
+            "web_leads_per_month_avg": 238, "lead_conversion_pct_avg": 13,
+            "recurring_customer_pct_avg": 82, "avg_price_recurring_avg": 185, "avg_price_single_avg": 354, "avg_price_all_avg": 203,
+            "count": 17, "at_or_above_avg": 7, "pct_at_or_above_avg": 41, "at_or_above_median": 7, "pct_at_or_above_median": 41
+          },
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 50, "item_reference": "Item 19, Chart 1", "exact_text": null }
+        },
+        {
+          "table_label": "Chart 2",
+          "description": "2024 Locations Open 2 Years or More - Quintile Two (Next 17 Territories by Gross Revenues)",
+          "period": "calendar year 2024",
+          "population": "Second 17 of 86 territories open 2+ years, ranked by Gross Revenue",
+          "data": {
+            "low": 552492, "average": 653469, "median": 624583, "high": 805585,
+            "direct_labor_avg": 292628, "cleaning_materials_avg": 14340, "total_cost_of_sales_avg": 306968,
+            "gross_margin_dollar_avg": 346501, "gross_margin_pct_avg": 53,
+            "web_leads_per_month_avg": 192, "lead_conversion_pct_avg": 16,
+            "recurring_customer_pct_avg": 80, "avg_price_recurring_avg": 165, "avg_price_single_avg": 320, "avg_price_all_avg": 182,
+            "count": 17, "at_or_above_avg": 8, "pct_at_or_above_avg": 47, "at_or_above_median": 7, "pct_at_or_above_median": 41
+          },
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 51, "item_reference": "Item 19, Chart 2", "exact_text": null }
+        },
+        {
+          "table_label": "Chart 3",
+          "description": "2024 Locations Open 2 Years or More - Quintile Three (Next 17 Territories by Gross Revenues)",
+          "period": "calendar year 2024",
+          "population": "Third 17 of 86 territories open 2+ years, ranked by Gross Revenue",
+          "data": {
+            "low": 436689, "average": 494885, "median": 485936, "high": 550749,
+            "direct_labor_avg": 217158, "cleaning_materials_avg": 10126, "total_cost_of_sales_avg": 227284,
+            "gross_margin_dollar_avg": 267601, "gross_margin_pct_avg": 54,
+            "web_leads_per_month_avg": 157, "lead_conversion_pct_avg": 13,
+            "recurring_customer_pct_avg": 83, "avg_price_recurring_avg": 178, "avg_price_single_avg": 365, "avg_price_all_avg": 194,
+            "count": 17, "at_or_above_avg": 7, "pct_at_or_above_avg": 41, "at_or_above_median": 7, "pct_at_or_above_median": 41
+          },
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 52, "item_reference": "Item 19, Chart 3", "exact_text": null }
+        },
+        {
+          "table_label": "Chart 4",
+          "description": "2024 Locations Open 2 Years or More - Quintile Four (Next 17 Territories by Gross Revenues)",
+          "period": "calendar year 2024",
+          "population": "Fourth 17 of 86 territories open 2+ years, ranked by Gross Revenue",
+          "data": {
+            "low": 325011, "average": 376506, "median": 374370, "high": 424419,
+            "direct_labor_avg": 167189, "cleaning_materials_avg": 5985, "total_cost_of_sales_avg": 173175,
+            "gross_margin_dollar_avg": 203331, "gross_margin_pct_avg": 54,
+            "web_leads_per_month_avg": 165, "lead_conversion_pct_avg": 12,
+            "recurring_customer_pct_avg": 79, "avg_price_recurring_avg": 168, "avg_price_single_avg": 316, "avg_price_all_avg": 185,
+            "count": 17, "at_or_above_avg": 8, "pct_at_or_above_avg": 47, "at_or_above_median": 7, "pct_at_or_above_median": 41
+          },
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 53, "item_reference": "Item 19, Chart 4", "exact_text": null }
+        },
+        {
+          "table_label": "Chart 5",
+          "description": "2024 Locations Open 2 Years or More - Quintile Five (Lowest 18 Territories by Gross Revenues)",
+          "period": "calendar year 2024",
+          "population": "Bottom 18 of 86 territories open 2+ years, ranked by Gross Revenue",
+          "data": {
+            "low": 20422, "average": 229521, "median": 234989, "high": 320484,
+            "direct_labor_avg": 96245, "cleaning_materials_avg": 3545, "total_cost_of_sales_avg": 99790,
+            "gross_margin_dollar_avg": 129731, "gross_margin_pct_avg": 57,
+            "web_leads_per_month_avg": 105, "lead_conversion_pct_avg": 13,
+            "recurring_customer_pct_avg": 79, "avg_price_recurring_avg": 173, "avg_price_single_avg": 332, "avg_price_all_avg": 191,
+            "count": 18, "at_or_above_avg": 9, "pct_at_or_above_avg": 50, "at_or_above_median": 9, "pct_at_or_above_median": 50
+          },
+          "notes": "Bottom quintile low of $20,422 appears to be a near-inactive territory.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 54, "item_reference": "Item 19, Chart 5", "exact_text": null }
+        },
+        {
+          "table_label": "Charts 6-10",
+          "description": "2024 Locations Open 2 Years or More - Quintiles by Number of Households (same 86 territories re-sorted)",
+          "period": "calendar year 2024",
+          "population": "Same 86 territories open 2+ years, sorted by household count instead of Gross Revenue",
+          "data": {
+            "quintile_1_by_households": { "avg_gross_revenue": 692866, "median_gross_revenue": 664700, "count": 17, "household_range": "327,156-951,543" },
+            "quintile_2_by_households": { "avg_gross_revenue": 605376, "median_gross_revenue": 480136, "count": 17, "household_range": "231,235-295,618" },
+            "quintile_3_by_households": { "avg_gross_revenue": 588730, "median_gross_revenue": 544510, "count": 17, "household_range": "181,711-224,780" },
+            "quintile_4_by_households": { "avg_gross_revenue": 561261, "median_gross_revenue": 421841, "count": 17, "household_range": "126,872-180,722" },
+            "quintile_5_by_households": { "avg_gross_revenue": 459967, "median_gross_revenue": 444689, "count": 18, "household_range": "69,707-125,536" }
+          },
+          "notes": "Smaller territories (by household count) do not necessarily produce less revenue. Quintile 5 (smallest territories) averaged $460K vs Quintile 1 (largest) at $693K, suggesting territory density/saturation matters more than raw size.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [55, 56, 57, 58, 59], "item_reference": "Item 19, Charts 6-10", "exact_text": null }
+        },
+        {
+          "table_label": "Chart 11",
+          "description": "2024 Locations Open at Least 12 Months but Less Than 2 Years",
+          "period": "calendar year 2024",
+          "population": "17 territories open 1-2 years as of 12/31/2024",
+          "data": {
+            "low": 131463, "average": 274934, "median": 261784, "high": 401645,
+            "direct_labor_avg": 140998, "cleaning_materials_avg": 6270, "total_cost_of_sales_avg": 147268,
+            "gross_margin_dollar_avg": 127666, "gross_margin_pct_avg": 46,
+            "recurring_customer_pct_avg": 76, "avg_price_recurring_avg": 179, "avg_price_single_avg": 317, "avg_price_all_avg": 202,
+            "count": 17, "at_or_above_avg": 7, "pct_at_or_above_avg": 41, "at_or_above_median": 8, "pct_at_or_above_median": 47
+          },
+          "notes": "Year 1-2 territories average $275K Gross Revenue vs $584K system-wide average for 2+ year territories. Gross margin % is lower (46% vs 53%) as businesses ramp up.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 60, "item_reference": "Item 19, Chart 11", "exact_text": null }
+        },
+        {
+          "table_label": "Chart 12",
+          "description": "2024 Multi-Unit Owners' Locations Open Two Years or More",
+          "period": "calendar year 2024",
+          "population": "20 multi-unit franchisees operating 57 territories total (average 2.85 territories each). Figures are aggregate of all territories per owner.",
+          "data": {
+            "low": 495072, "average": 1692065, "median": 1692352, "high": 4302293,
+            "direct_labor_avg": 789678, "cleaning_materials_avg": 35597, "total_cost_of_sales_avg": 825275,
+            "gross_margin_dollar_avg": 866790, "gross_margin_pct_avg": 51,
+            "recurring_customer_pct_avg": 81, "avg_price_recurring_avg": 178, "avg_price_single_avg": 340, "avg_price_all_avg": 196,
+            "count": 20, "at_or_above_avg": 9, "pct_at_or_above_avg": 45, "at_or_above_median": 8, "pct_at_or_above_median": 40
+          },
+          "notes": "Multi-unit average of $1.69M gross revenue across ~2.85 territories = ~$594K per territory, roughly in line with single-territory averages.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 61, "item_reference": "Item 19, Chart 12", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": {
+        "system_wide_average_gross_revenue_2plus_years": null,
+        "system_wide_median_gross_revenue_2plus_years": null,
+        "notes": "No single system-wide average/median is stated. The 86 territories open 2+ years are presented only in quintiles. Weighted average across quintiles (Charts 1-5): approximately $584K average Gross Revenue. System-wide average gross margin approximately 53%."
+      },
+      "notes": "Item 19 is disclosed with 12 charts. Unusually detailed for cleaning vertical — includes gross revenue, direct labor, cleaning materials, cost of sales, gross margin, web leads, lead conversion, recurring customer %, and average pricing. Data is for 147 franchised locations as of 12/31/2024. Charts 1-5: 86 territories open 2+ years by revenue quintile. Charts 6-10: same 86 re-sorted by household count. Chart 11: 17 territories open 1-2 years. Chart 12: 20 multi-unit owners (57 territories). 44 locations open less than 1 year are excluded. Does not include owner salary, overhead, or SG&A — gross margin only, not net income.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [49, 62], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 92,
+          "total_outlets_end": 99,
+          "franchised_start": 91,
+          "franchised_end": 99,
+          "opened": 12,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 8,
+          "ceased_operations_other": 4,
+          "company_owned_start": 1,
+          "company_owned_end": 0,
+          "notes": "Strong growth year: 12 opened, only 4 ceased operations. Company-owned Birmingham location sold to franchisee. Ohio lost 1 (ceased), Pennsylvania lost 1 (ceased), Texas lost 1 (ceased), Utah lost 1 (ceased).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [63, 64, 65, 66, 67], "item_reference": "Item 20, Tables 1, 2, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 99,
+          "total_outlets_end": 118,
+          "franchised_start": 99,
+          "franchised_end": 118,
+          "opened": 24,
+          "closed": 2,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 6,
+          "ceased_operations_other": 3,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "Accelerating growth: 24 opened (doubled from prior year). Only 5 total exits (2 terminations + 3 ceased). Footnotes indicate some open/close same-year churn in Florida (2 units) and Illinois (1 unit). Texas added 5 new. Florida opened 6.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [63, 64, 65, 66, 67], "item_reference": "Item 20, Tables 1, 2, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 118,
+          "total_outlets_end": 144,
+          "franchised_start": 118,
+          "franchised_end": 144,
+          "opened": 32,
+          "closed": 3,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 10,
+          "ceased_operations_other": 3,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "Strongest growth year: 32 opened. Only 6 total exits (3 terminations + 3 ceased). Texas led openings with 6. Nevada added 4. Arizona added 2, Illinois added 2, Indiana added 2, Minnesota added 2. Georgia lost 1 (ceased), Louisiana lost 1 (ceased), New Hampshire lost 1 (ceased). Tennessee lost 1 (termination). 10 transfers, highest yet. 21 franchise agreements signed but not yet opened + 35 projected new outlets for 2025.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [63, 64, 65, 66, 67, 68, 69], "item_reference": "Item 20, Tables 1, 2, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": true,
+      "action_count": 1,
+      "action_types": [
+        { "type": "regulatory/affiliate", "count": 1, "notes": "In the Matter of: Aussie Pet Mobile, Inc. and Ian Moses (Administrative Proceeding before Securities Commissioner of Maryland, Case No. 2004-0162, 2005). Affiliate entity (Aussie Pet Mobile), under previous ownership, entered Consent Order on January 25, 2006 with Maryland Securities Division. Required to cease and desist from offer/sale of franchises in violation of Maryland Franchise Law, rescind franchise agreements with improperly disclosed franchisee, and implement new compliance procedures. No monetary sanctions. This involves an affiliate entity under prior ownership, not Two Maids Franchising, LLC directly." }
+      ],
+      "notes": "Only one disclosed action, involving an affiliate (Aussie Pet Mobile) under previous ownership — not Two Maids directly. Very clean litigation profile for the actual franchisor entity.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 14, "item_reference": "Item 3", "exact_text": "Other than this one action, no litigation is required to be disclosed in this Item." }
+    },
+
+    "system_info": {
+      "year_company_founded": 2013,
+      "year_first_franchised": 2013,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 9, "item_reference": "Item 1", "exact_text": "We are an Alabama limited liability company which was formed August 14, 2013 to initiate the TWO MAIDS & A MOP franchising program. We began franchising in 2013" }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 121665,
+    "net_unit_growth": [
+      { "year": 2022, "value": 7, "source_fields": ["Table 1: 99-92=+7"] },
+      { "year": 2023, "value": 19, "source_fields": ["Table 1: 118-99=+19"] },
+      { "year": 2024, "value": 26, "source_fields": ["Table 1: 144-118=+26"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 4.40, "source_fields": ["(0+0+0+4+8)/91 = 12/91 (franchised, excludes transfers: (0+0+0+4)/91 = 4/91 = 4.40%)"] },
+      { "year": 2023, "value": 5.05, "source_fields": ["(2+0+0+3+6)/99 = 11/99 (franchised, excludes transfers: (2+0+0+3)/99 = 5/99 = 5.05%)"] },
+      { "year": 2024, "value": 5.08, "source_fields": ["(3+0+0+3+10)/118 = 16/118 (franchised, excludes transfers: (3+0+0+3)/118 = 6/118 = 5.08%)"] }
+    ],
+    "system_age_years": 12,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T12:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.notes (franchise fee amount)", "page_verified": 14, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 21, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 21, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[0].total_outlets_start (2022)", "page_verified": 63, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].total_outlets_end (2024)", "page_verified": 63, "match": true },
+        { "field": "Item 20 Table 3 totals cross-check: 2022 91+12-0-0-0-4=99", "page_verified": 66, "match": true },
+        { "field": "Item 20 Table 3 totals cross-check: 2023 99+24-2-0-0-3=118", "page_verified": 66, "match": true },
+        { "field": "Item 20 Table 3 totals cross-check: 2024 118+32-3-0-0-3=144", "page_verified": 67, "match": true },
+        { "field": "Item 20 Table 1 vs Table 3 totals: all 3 years match", "page_verified": 63, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-15T12:00:00Z"
+    },
+    "warnings": [
+      "STRONG GROWTH: Two Maids system grew every year for 3 consecutive years (92->99->118->144). Net gain of 52 units over 3 years (+56.5%).",
+      "Royalty is tiered/marginal (7% to 4% monthly brackets) — recorded as ambiguous because it cannot be expressed as a single rate.",
+      "Local Advertising Services Program Fee is substantial: $3,000/month for first 6 months, then $2,500/month ongoing. This is franchisor-directed spend, not franchisee-controlled.",
+      "Technology fee of $650/month per territory is among the higher fixed monthly fees in the cleaning franchise vertical.",
+      "Transfer fee structure is complex and potentially expensive: $24,950-$50,000 for sales to new franchisees, plus possible $15,000 referral fee.",
+      "Item 19 provides gross margin only (revenue minus direct labor and cleaning materials). Does not include owner salary, rent, utilities, insurance, royalties, advertising fees, technology fees, or other SG&A. Actual net income significantly lower than stated gross margins.",
+      "Item 19 excludes 44 locations open less than 1 year — survivorship bias applies to Charts 1-10.",
+      "PDF contains OCR artifacts in Table 3 (Florida and other states) where footnote superscripts are merged with numbers. All values verified through cross-checking state totals against Table 1 summary.",
+      "Parent company is JM Family Enterprises (majority-owned by James M. Moran Intervivos Trust Number Two) through Home Franchise Concepts. Not publicly traded PE — classified as family_office_backed.",
+      "Franchisor offers in-house financing for Initial Franchise Fee and Initial Territory Fee (see Item 10, deferred).",
+      "Projected 35 new franchised outlets for 2025 plus 21 signed-but-not-yet-opened agreements suggests continued aggressive growth."
+    ],
+    "null_fields": [
+      { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "reason": "Two-part fee (franchise fee $19,950 + territory fee $40,000). Cannot express as single value since structure differs for subsequent agreements.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.royalty_rate.value", "reason": "Tiered marginal rate from 7% to 4%. Cannot express as single rate.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "Multi-component: 2% national fund + $2,500-$3,000/month local. No single rate.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.transfer_fee.value", "reason": "Variable: greater of $24,950 or 6% of sale price (max $50,000) for new buyers, $5,000 for existing franchisees.", "field_status": "ambiguous" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Both royalty and marketing are ambiguous multi-component structures.", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

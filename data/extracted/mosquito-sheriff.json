@@ -1,0 +1,215 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": "2026-03-15T00:00:00Z",
+    "local_filename": "mosquito-sheriff_2025_wi_auto.pdf",
+    "sha256": null,
+    "page_count": 144,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms Mosquito Sheriff Franchising, Inc. 2025 FDD. Issuance date April 29, 2025."
+  },
+
+  "brand": {
+    "brand_name": "Mosquito Sheriff",
+    "brand_slug": "mosquito-sheriff",
+    "legal_entity": "Mosquito Sheriff Franchising, Inc.",
+    "parent_company": null,
+    "parent_company_notes": "Privately held. Affiliate Mosquito Sheriff, LLC owns trademarks and operates 1 company-owned location. Principal: Patrice Rice.",
+    "year_founded": 2019,
+    "year_first_franchised": 2021,
+    "ownership_structure": "founder_operated"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 40000,
+        "currency": "USD",
+        "range_low": 40000,
+        "range_high": 40000,
+        "field_status": "extracted",
+        "notes": "Standard fee $40,000 for single territory, lump sum upon signing, non-refundable. Additional territories $20,000 each at franchisor's option. Veteran/first responder discount: $2,000 off (one territory only, one-time use). Starter Kit $27,500 is also due at signing but classified separately in Item 7.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 8, "item_reference": "Item 5", "exact_text": null }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": 10.0,
+        "basis": "Gross Revenues",
+        "tiers": null,
+        "field_status": "extracted",
+        "notes": "Flat 10% of Gross Revenues, paid monthly. Subject to minimum royalty escalation: Year 1 none, Year 2 $450/mo, Years 3-5 $950/mo, Year 6+ $2,000/mo. Greater of percentage or minimum applies.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [8, 9], "item_reference": "Item 6, Monthly Royalty Fee row", "exact_text": null }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "extracted",
+        "structure_description": "Monthly Brand Marketing Fee of $150/month. No percentage-based ad fund. No mandatory local marketing spending floor.",
+        "components": [
+          { "name": "Brand Marketing Fee", "value": null, "basis": null, "minimum_dollar": 1800, "frequency": "annual ($150/month)", "notes": "Beginning 60 days from Agreement Date. Flat dollar amount, not revenue-based." }
+        ],
+        "notes": "Simplest marketing structure in the cohort. $150/month flat fee, no percentage-based fund, no mandatory local spend.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 9, "item_reference": "Item 6, Monthly Brand Marketing Fee row", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": null,
+        "frequency": "monthly",
+        "field_status": "extracted",
+        "notes": "Pocomos Sales System: $350 setup + $250/month + $35 commission on annual contracts + $15 commission on single sprays. Dispatch Routing Software: tiered $100-$700/month based on prior 12-month Gross Revenue ($0-$50K: $100/mo; $50K-$100K: $200/mo; $100K-$200K: $300/mo; $200K-$350K: $400/mo; $350K-$500K: $600/mo; $500K+: $700/mo).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [10, 11], "item_reference": "Item 6", "exact_text": null }
+      },
+      "transfer_fee": {
+        "value": 7500,
+        "formula": null,
+        "field_status": "extracted",
+        "notes": "Flat $7,500 transfer fee.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 10, "item_reference": "Item 6, Transfer Fee row", "exact_text": null }
+      },
+      "other_fees": [
+        { "fee_name": "Renewal Fee", "value": 5000, "frequency": "one-time", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 10, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Additional Assistance", "value": null, "frequency": "as needed", "field_status": "extracted", "notes": "$500-$1,500/day plus travel expenses, lodging, meals.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 10, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Initial Training / Seminars / Convention", "value": null, "frequency": "as incurred", "field_status": "extracted", "notes": "$500-$3,000 plus estimated $50 materials/conference fees.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 11, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Late Fee", "value": 100, "frequency": "per occurrence", "field_status": "extracted", "notes": "Plus interest at lesser of 1.5%/month or max legal rate.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 11, "item_reference": "Item 6", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 40000, "high": 40000, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Tools & Equipment", "low": 2500, "high": 2500, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Starter Kit", "low": 27500, "high": 27500, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": "Customized website, initial product inventory, vehicle wrap, yard signs, door hangers, flyers, brochures, business cards, opening marketing materials.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Vehicle Lease", "low": 600, "high": 1050, "method_of_payment": "Monthly lease", "when_due": "As incurred", "to_whom_paid": "Auto dealer", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Vehicle Outfitted", "low": 5000, "high": 5000, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Expenses During Initial Training", "low": 500, "high": 1000, "method_of_payment": "As incurred", "when_due": "During training", "to_whom_paid": "Airlines, hotels, restaurants", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Computer Hardware, Software, and POS System", "low": 1000, "high": 1000, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Approved vendors", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Routing Software and Call Center Start-Up Fees", "low": 350, "high": 350, "method_of_payment": "Lump sum", "when_due": "As incurred", "to_whom_paid": "Approved vendor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Business Liability Insurance", "low": 1000, "high": 2000, "method_of_payment": "As incurred", "when_due": "Before opening", "to_whom_paid": "Supplier", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 1000, "high": 1600, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Suppliers, utilities", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 79450,
+      "total_high": 81500,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 13, "item_reference": "Item 7 table, Total row", "exact_text": "TOTAL $79,450 $81,500" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": false,
+      "representation_type": null,
+      "tables": [],
+      "normalized_metrics": null,
+      "notes": "No Item 19 financial performance representation made. Franchisor states: 'We do not make any representations about a franchisee's future financial performance or the past financial performance of company-owned or franchised outlets.'",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 35, "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 1,
+          "total_outlets_end": 2,
+          "opened": 1,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 1,
+          "company_owned_end": 1,
+          "notes": "Franchised: 0 start, 1 end. First franchised unit opened (D.C.).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [35, 36, 37], "item_reference": "Item 20, Tables 1-4", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 2,
+          "total_outlets_end": 5,
+          "opened": 3,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 1,
+          "company_owned_end": 1,
+          "notes": "Franchised: 1 start, 4 end. 3 new franchised units (IN, MD, OH).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [35, 36, 37], "item_reference": "Item 20, Tables 1-4", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 5,
+          "total_outlets_end": 6,
+          "opened": 1,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 1,
+          "company_owned_end": 1,
+          "notes": "Franchised: 4 start, 5 end. 1 new franchised unit (VA). Projected: 5 new units in 2025 (FL, GA, MD, VA, TX). Zero terminations, non-renewals, or transfers across all 3 years.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [35, 36, 37], "item_reference": "Item 20, Tables 1-5", "exact_text": null }
+        }
+      ]
+    },
+
+    "system_info": {
+      "year_company_founded": 2019,
+      "year_first_franchised": 2021,
+      "state_of_formation": "Delaware",
+      "principal_address": "251 Little Falls Drive, Wilmington, DE 19808",
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 1, "item_reference": "Cover page, Item 1", "exact_text": null }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 80475,
+    "net_unit_growth": [
+      { "year": 2022, "value": 1, "source_fields": ["Table 1 franchised net: 1-0=+1"] },
+      { "year": 2023, "value": 3, "source_fields": ["Table 1 franchised net: 4-1=+3"] },
+      { "year": 2024, "value": 1, "source_fields": ["Table 1 franchised net: 5-4=+1"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 0.0, "source_fields": ["(0+0+0+0+0)/1 = 0/1"] },
+      { "year": 2023, "value": 0.0, "source_fields": ["(0+0+0+0+0)/2 = 0/2"] },
+      { "year": 2024, "value": 0.0, "source_fields": ["(0+0+0+0+0)/5 = 0/5"] }
+    ],
+    "system_age_years": 4,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T00:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 8, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 13, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].opened", "page_verified": 36, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-15T00:00:00Z"
+    },
+    "warnings": [
+      "Very young, very small franchise system: 5 franchised units + 1 company-owned as of end 2024. Franchising since April 2021.",
+      "Zero terminations, non-renewals, transfers, or closures across all 3 reported years — positive but tiny sample size.",
+      "No Item 19 financial performance representation — no revenue or profit data disclosed.",
+      "$75,000 of $79,450-$81,500 total investment goes directly to the franchisor at signing (94-92%).",
+      "Technology fees are tiered by revenue (Dispatch Routing $100-$700/mo) and include per-sale commissions (Pocomos $15-$35/sale), making total tech cost revenue-dependent.",
+      "Projected 5 new units for 2025 would double the system size."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "Flat dollar amount ($150/month), not a percentage rate.", "field_status": "extracted" },
+      { "field": "raw.item_6_other_fees.technology_fee.value", "reason": "Multiple tiered components. Cannot express as single value.", "field_status": "extracted" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Technology fees are tiered and include per-sale commissions.", "field_status": "ambiguous" }
+    ]
+  }
+}

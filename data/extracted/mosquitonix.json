@@ -1,0 +1,266 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": "2026-03-15T00:00:00Z",
+    "local_filename": "mosquitonix_2025_wi_auto.pdf",
+    "sha256": null,
+    "page_count": 203,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI. Cover page confirms MosquitoNix Franchise, LLC 2025 FDD. Issuance date April 30, 2025."
+  },
+
+  "brand": {
+    "brand_name": "MosquitoNix",
+    "brand_slug": "mosquitonix",
+    "legal_entity": "MosquitoNix Franchise, LLC",
+    "parent_company": "FW-MQX Holdings, LLC / Franworth, LLC",
+    "parent_company_notes": "FW-MQX Holdings, LLC (Michigan) and O'Neal Family Trust (Texas). FW-MQX Holdings' parent is Franworth, LLC (Michigan). Predecessor: FEMO Group, LP (Texas) operated mosquito businesses since 2006.",
+    "year_founded": 2006,
+    "year_founded_notes": "Predecessor FEMO Group operated MosquitoNix businesses since 2006. Current franchisor entity formed June 26, 2023.",
+    "year_first_franchised": 2023,
+    "year_first_franchised_notes": "Began offering franchises December 2023. Predecessors offered MosquitoNix franchises off and on since 2008.",
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 49000,
+        "currency": "USD",
+        "range_low": 49000,
+        "range_high": 49000,
+        "field_status": "extracted",
+        "notes": "Standard fee $49,000 for single territory (up to 60,000 targeted households at $100K+ avg income). Additional households at $0.81 each (up to 15,000 more). Non-refundable. VetFran discount: $2,500 off. Multi-territory discounts available: T2 $49K, T3-5 $44K each, T6-9 $39K each, T10+ $35K each. Refranchised business: no initial franchise fee. Additional fees at signing: Initial Training Fee $7,000, Opening Package $13,500-$14,500, Pre-Opening Marketing $2,000.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [11, 12, 13], "item_reference": "Item 5", "exact_text": null }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": null,
+        "basis": "Gross Sales",
+        "tiers": [
+          { "threshold_up_to": 500000, "rate": 10.0 },
+          { "threshold_up_to": 600000, "rate": 9.0 },
+          { "threshold_up_to": 700000, "rate": 8.0 },
+          { "threshold_up_to": null, "rate": 7.0 }
+        ],
+        "field_status": "ambiguous",
+        "notes": "Tiered royalty: 10% on first $500K, 9% on $500K-$600K, 8% on $600K-$700K, 7% above $700K. Subject to minimum weekly royalty escalating from $0 (Year 1) to $387.50/week (Year 10). Greater of percentage or minimum applies. Paid weekly by EFT.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [14, 15], "item_reference": "Item 6, Royalty Fee row", "exact_text": null }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "Multi-component: Brand Development Fund 2% of Gross Sales + Customer Acquisition Commission 8% of single new sales + mandatory local marketing $42,000/year (Year 1), decreasing at higher revenue levels.",
+        "components": [
+          { "name": "Brand Development Fund", "value": 2.0, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "weekly", "notes": "May increase to 3% on 60 days' notice." },
+          { "name": "Customer Acquisition Commission", "value": 8.0, "basis": "Gross Sales on single new sales", "minimum_dollar": null, "frequency": "when invoiced", "notes": "8% of Gross Sales for misting systems, QuickNix, warranty upgrades, pest control, holiday lighting single new sales." },
+          { "name": "Local Marketing Requirement", "value": null, "basis": null, "minimum_dollar": 42000, "frequency": "annual (Year 1)", "notes": "Year 1: $42,000. Subsequent years: $42K if revenue <$500K, $21K if $500K-$700K, $16,800 if >$700K. Multiple contiguous territories: $15,000 per additional territory." }
+        ],
+        "notes": "Highest total marketing burden in the cohort when all components combined. The 8% Customer Acquisition Commission on new sales is unusual and substantial — effectively an additional royalty on new business revenue.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [14, 15, 16], "item_reference": "Item 6", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 75,
+        "frequency": "weekly",
+        "field_status": "extracted",
+        "notes": "$75/week (~$3,900/year). Cannot increase more than 20% per calendar year.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Technology Fee row", "exact_text": null }
+      },
+      "transfer_fee": {
+        "value": 10000,
+        "formula": null,
+        "field_status": "extracted",
+        "notes": "Flat $10,000 transfer fee.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Transfer Fee row", "exact_text": null }
+      },
+      "other_fees": [
+        { "fee_name": "Renewal Fee", "value": 10000, "frequency": "one-time", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Convention Fee", "value": 1000, "frequency": "annual per attendee", "field_status": "extracted", "notes": "1 person required per territory.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Regional Advertising Cooperative", "value": null, "frequency": "if established", "field_status": "extracted", "notes": "Currently none. If established, 1-2% of Gross Sales.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 16, "item_reference": "Item 6", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 49000, "high": 49000, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Service Vehicle (10% down on lease)", "low": 6200, "high": 6400, "method_of_payment": "Down payment", "when_due": "Before opening", "to_whom_paid": "Auto dealer", "notes": "10% down on $62,000-$64,000 vehicle lease.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Opening Package", "low": 13500, "high": 14500, "method_of_payment": "Lump sum", "when_due": "At signing", "to_whom_paid": "MQX Products, LLC (affiliate)", "notes": "MosquitoNix Pest & Holiday Lighting Systems, uniforms, yard signs.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Tools & Equipment", "low": 4000, "high": 7500, "method_of_payment": "As incurred", "when_due": "Before opening", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Storage Facility Rent", "low": 450, "high": 1500, "method_of_payment": "As incurred", "when_due": "Before opening", "to_whom_paid": "Landlord", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Computer Hardware Package", "low": 2500, "high": 3000, "method_of_payment": "Lump sum", "when_due": "Before opening", "to_whom_paid": "Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance", "low": 500, "high": 3500, "method_of_payment": "As incurred", "when_due": "Before opening", "to_whom_paid": "Insurer", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Training Fee", "low": 7000, "high": 7000, "method_of_payment": "Lump sum", "when_due": "Before training", "to_whom_paid": "Franchisor", "notes": "5 days technical in Jacksonville FL + 3 days virtual business training. Up to 3 attendees.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Travel & Living During Training", "low": 1500, "high": 8500, "method_of_payment": "As incurred", "when_due": "During training", "to_whom_paid": "Airlines, hotels, restaurants", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Market Entry Campaign", "low": 24000, "high": 24000, "method_of_payment": "As incurred", "when_due": "Before/at opening", "to_whom_paid": "Vendors", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Printed Marketing Material", "low": 2500, "high": 2500, "method_of_payment": "As incurred", "when_due": "Before opening", "to_whom_paid": "Vendors", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Professional Services", "low": 250, "high": 5000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Professionals", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 10000, "high": 25000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Various", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 121400,
+      "total_high": 157400,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 18, "item_reference": "Item 7 table, Total row", "exact_text": "TOTAL $121,400 $157,400" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Table 1 - Conforming Markets",
+          "description": "2024 P&L for 4 company-affiliated markets operating with recommended management and marketing levels",
+          "period": "calendar year 2024",
+          "population": "4 company-affiliated (NOT franchised) markets: Jacksonville, Mid-Cities, North Dallas, Dallas. Each covers approximately 3 territories worth of households.",
+          "data": {
+            "markets": [
+              { "name": "Jacksonville", "total_sales": 1492244, "cogs": 476653, "gross_profit": 1015591, "total_expenses": 431314, "net_income_pre_fees": 584277, "franchise_expenses": 134302, "net_operating_profit_if_franchised": 449975, "net_margin_pct": 30.15, "households": 192286, "territories_equivalent": 3.2 },
+              { "name": "Mid-Cities", "total_sales": 864696, "cogs": 217861, "gross_profit": 646835, "total_expenses": 267643, "net_income_pre_fees": 379192, "franchise_expenses": 77823, "net_operating_profit_if_franchised": 301370, "net_margin_pct": 34.85, "households": 187776, "territories_equivalent": 3.1 },
+              { "name": "North Dallas", "total_sales": 590480, "cogs": 106934, "gross_profit": 483546, "total_expenses": 269423, "net_income_pre_fees": 214123, "franchise_expenses": 64953, "net_operating_profit_if_franchised": 149170, "net_margin_pct": 25.26, "households": 202205, "territories_equivalent": 3.4 },
+              { "name": "Dallas", "total_sales": 1794711, "cogs": 508851, "gross_profit": 1285860, "total_expenses": 520065, "net_income_pre_fees": 765795, "franchise_expenses": 161524, "net_operating_profit_if_franchised": 604271, "net_margin_pct": 33.67, "households": 188429, "territories_equivalent": 3.1 }
+            ],
+            "totals": { "total_sales": 4742131, "net_operating_profit_if_franchised": 1504787, "net_margin_pct": 31.73, "territories_equivalent": 12.8 }
+          },
+          "notes": "These are company-affiliated markets, NOT franchisees. None paid royalty or brand fund during the measurement period; figures show hypothetical franchise expense deductions. Sales per 60K-household territory ranged from $173,671 (North Dallas) to $578,939 (Dallas).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [43, 46], "item_reference": "Item 19, Table 1", "exact_text": null }
+        },
+        {
+          "table_label": "Table 2 - Non-Conforming Markets",
+          "description": "2024 P&L for 3 company-affiliated markets with less management/marketing spend",
+          "period": "calendar year 2024",
+          "population": "3 company-affiliated markets: West Coast FL, Orlando, Hilton Head.",
+          "data": {
+            "markets": [
+              { "name": "West Coast FL", "total_sales": 504121, "net_operating_profit_if_franchised": 103252, "net_margin_pct": 16.93, "households": 396000, "territories_equivalent": 6.6 },
+              { "name": "Orlando", "total_sales": 603842, "net_operating_profit_if_franchised": -14592, "net_margin_pct": -2.25, "households": 198051, "territories_equivalent": 3.3 },
+              { "name": "Hilton Head", "total_sales": 173548, "net_operating_profit_if_franchised": -40782, "net_margin_pct": -22.25, "households": 11966, "territories_equivalent": 0.2 }
+            ],
+            "totals": { "total_sales": 1281510, "net_operating_profit_if_franchised": 47879, "net_margin_pct": 3.74, "territories_equivalent": 10.1 }
+          },
+          "notes": "Non-conforming markets spent less on management and marketing than recommended. 2 of 3 markets show negative net operating profit if franchised. Hilton Head is a sub-territory market (0.2 territories).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [46, 48], "item_reference": "Item 19, Table 2", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 disclosed with detailed P&L data for 7 company-affiliated markets. CRITICAL CAVEAT: All data is from company-operated locations, not franchisees (0 franchisees had operated a full year as of the reporting period). Conforming markets show strong margins (25-35%); non-conforming markets show 2 of 3 losing money after hypothetical franchise fees. The 8% Customer Acquisition Commission is included in franchise expense deductions. Confidentiality clauses restrict certain former FEMO Group franchisees from discussing their experience.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [43, 49], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 7,
+          "total_outlets_end": 7,
+          "opened": 0,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 7,
+          "company_owned_end": 7,
+          "notes": "Franchised: 0. All 7 outlets are company-owned (FL 3, SC 1, TX 3). No franchise system existed yet.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [49, 50, 51], "item_reference": "Item 20, Tables 1-4", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 7,
+          "total_outlets_end": 7,
+          "opened": 0,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 0,
+          "company_owned_start": 7,
+          "company_owned_end": 7,
+          "notes": "Franchised: 0. Began offering franchises in December 2023 but no units opened by year end.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [49, 50, 51], "item_reference": "Item 20, Tables 1-4", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 7,
+          "total_outlets_end": 15,
+          "opened": 10,
+          "closed": 0,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 0,
+          "ceased_operations_other": 2,
+          "company_owned_start": 7,
+          "company_owned_end": 7,
+          "notes": "Franchised: 0 start, 8 end. 10 franchised units opened but 2 ceased operations (South Carolina, 'Other Reasons'), leaving 8 at year end. Company-owned stable at 7. States: FL 1, GA 1, MO 1, NC 3, SC 1 (3 opened, 2 ceased), TN 1. Projected: 19 agreements signed not yet opened; 13 new franchised outlets projected for 2025.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [49, 50, 51, 52], "item_reference": "Item 20, Tables 1-5", "exact_text": null }
+        }
+      ]
+    },
+
+    "system_info": {
+      "year_company_founded": 2006,
+      "year_first_franchised": 2023,
+      "state_of_formation": "Delaware",
+      "principal_address": "8940 Western Way, Suite #2, Jacksonville, FL 32256",
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 1, "item_reference": "Cover page, Item 1", "exact_text": null }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 139400,
+    "net_unit_growth": [
+      { "year": 2022, "value": 0, "source_fields": ["No franchised units existed"] },
+      { "year": 2023, "value": 0, "source_fields": ["No franchised units opened"] },
+      { "year": 2024, "value": 8, "source_fields": ["Table 1 franchised net: 8-0=+8"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": null, "source_fields": ["No franchised units existed"] },
+      { "year": 2023, "value": null, "source_fields": ["No franchised units existed"] },
+      { "year": 2024, "value": null, "source_fields": ["First year of franchising. 2 of 10 opened units ceased operations (20%), but denominator is debatable for a launch year."] }
+    ],
+    "system_age_years": 2,
+    "system_age_notes": "Franchisor entity formed June 2023. Predecessor FEMO Group operated since 2006. Franchise system is functionally brand new.",
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T00:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 11, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 18, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].opened", "page_verified": 50, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-15T00:00:00Z"
+    },
+    "warnings": [
+      "Brand new franchise system: first franchised units opened in 2024. Only 8 franchised units at year end.",
+      "2 of 10 franchised units opened in 2024 ceased operations within the same year (South Carolina). 20% first-year attrition.",
+      "Royalty is tiered (10% down to 7%) — cannot be expressed as single rate.",
+      "8% Customer Acquisition Commission on new sales is unusual and substantial — effectively an additional royalty on new business.",
+      "Item 19 data is exclusively from company-operated locations, not franchisees. No franchisee had operated a full year.",
+      "Non-conforming markets show 2 of 3 locations unprofitable after hypothetical franchise fees.",
+      "$42,000 mandatory local marketing spend in Year 1 is the highest in the cohort.",
+      "Predecessor entity FEMO Group had franchisees subject to confidentiality clauses restricting discussion of their experience.",
+      "19 franchise agreements signed but not yet opened as of Dec 31, 2024 — aggressive growth pipeline.",
+      "Franchisor entity formed June 2023; predecessor operated since 2006. System age depends on which start date is used."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.royalty_rate.value", "reason": "Tiered: 10% to 7% based on revenue bands. Cannot express as single rate.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "Multi-component: 2% brand fund + 8% CAC + $42K local. No single rate.", "field_status": "ambiguous" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Both royalty and marketing are multi-component.", "field_status": "ambiguous" },
+      { "field": "derived.turnover_rate", "reason": "First year of franchising. 2 cessations from 10 openings but no meaningful base for rate calculation.", "field_status": "ambiguous" }
+    ]
+  }
+}

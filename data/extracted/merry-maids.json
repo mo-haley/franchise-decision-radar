@@ -1,0 +1,397 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": null,
+    "local_filename": "merry-maids_2025_wi_auto.pdf",
+    "sha256": "57043a9cc81ecb3b45ba6f4c48b09ae67e1c29e02b13dd9ba030fa409079a094",
+    "page_count": 271,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI via automated Playwright download. Cover page confirms Merry Maids SPE LLC 2025 FDD."
+  },
+
+  "brand": {
+    "brand_name": "Merry Maids",
+    "brand_slug": "merry-maids",
+    "legal_entity": "Merry Maids SPE LLC",
+    "parent_company": "ServiceMaster Systems LLC / ServiceMaster OpCo Holdings LLC / RW Purchaser LLC / Roark Capital",
+    "year_founded": 1980,
+    "year_first_franchised": 1980,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 55000,
+        "currency": "USD",
+        "range_low": null,
+        "range_high": null,
+        "field_status": "extracted",
+        "notes": "Flat $55,000 Initial Franchise Fee, payable in lump sum at signing, nonrefundable. Training for two people included in fee. Discounts available: Military (20% off), Affiliate (15% — existing ServiceMaster/Merry Maids/Two Men and a Truck franchisee or employee), Conversion Franchise (15%), Industry Experience (5% — 2+ years owning/employed by similar business). Only one discount may be used. Customer acquisition fee of $250 per existing customer may also apply if territory has active customers. In 2024, actual Initial Franchise Fees collected ranged from $18,750 to $49,500. Technology Fee of $499/month also begins at signing (estimated $998-$1,497 in pre-opening tech fees).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [22, 23, 24], "item_reference": "Item 5", "exact_text": "you must pay us an initial franchise fee equal to $55,000 (the 'Initial Franchise Fee') upon execution of the Franchise Agreement." }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": 7.0,
+        "basis": "Gross Sales",
+        "tiers": [
+          { "threshold_up_to": 400000, "rate": 7.0 },
+          { "threshold_up_to": 500000, "rate": 6.0 },
+          { "threshold_up_to": null, "rate": 5.0 }
+        ],
+        "field_status": "ambiguous",
+        "notes": "Base royalty is 7% of Gross Sales. 'Royalty Incentive' (discretionary, may be changed or discontinued at any time) reduces rate: 6% on Gross Sales between $400K-$500K, 5% on Gross Sales above $500K, all within a single calendar year per individual Franchised Business (not combined across multi-unit owners). National Account revenue excluded from tier calculation but still subject to applicable royalty rate. Resets each calendar year. If franchisee fails to timely renew, royalty increases by 2.5% of Gross Sales (to 9.5%) on a weekly basis until renewal is completed or agreement is terminated.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [24, 30], "item_reference": "Item 6, Royalty row and Note 3", "exact_text": "The Royalty will be 7% of Gross Sales of the Franchised Business until such time as Gross Sales of the Franchised Business exceed $400,000 in a given calendar year." }
+      },
+      "advertising_and_marketing": {
+        "value": 2.0,
+        "basis": "Gross Sales",
+        "field_status": "extracted",
+        "structure_description": "Two-component: Ad Fund Contribution 1.3% of Gross Sales (national advertising fund) + Local Marketing Obligation 0.7% of Gross Sales per week on 'Eligible Marketing'. Total mandatory marketing: 2.0% of Gross Sales. Additionally, $6,000 Initial Marketing Obligation in 120-day window around opening.",
+        "components": [
+          { "name": "Ad Fund Contribution (National Advertising Fund)", "value": 1.3, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "weekly", "notes": "Contributed to the National Advertising Fund ('Ad Fund')." },
+          { "name": "Local Marketing Obligation", "value": 0.7, "basis": "Gross Sales", "minimum_dollar": null, "frequency": "weekly", "notes": "Must be spent on 'Eligible Marketing' as specified by franchisor. If not met, difference must be contributed to Ad Fund." },
+          { "name": "Initial Marketing Obligation", "value": null, "basis": "fixed", "minimum_dollar": 6000, "frequency": "one-time", "notes": "$6,000 required spend on Eligible Marketing in 120-day window (60 days before to 60 days after opening)." }
+        ],
+        "notes": "Clean 2% total ongoing marketing cost (1.3% Ad Fund + 0.7% Local Marketing). Simpler structure than Molly Maid. Failure to meet Local Marketing Obligation triggers mandatory contribution of the shortfall to Ad Fund.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [24, 25], "item_reference": "Item 6, Ad Fund Contribution row and Local Marketing Obligations row", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 499,
+        "frequency": "monthly",
+        "field_status": "extracted",
+        "notes": "$499 per Franchised Business per month. Covers: MM360 (proprietary CRM), Service Mobility Software (dispatch/scheduling), Microsoft Office 365, learning management system, business intelligence platform, and document repository. Franchisor may change included products and services. Begins at signing of Franchise Agreement (pre-opening). Additional software: QuickBooks Accounting and Payroll annual license ~$475 (separate from Technology Fee).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [23, 25], "item_reference": "Item 5 (Technology Fees) and Item 6 (Technology Fee row)", "exact_text": "you must begin paying us the monthly Technology Fee, which is $499 per month per Franchised Business." }
+      },
+      "transfer_fee": {
+        "value": null,
+        "formula": "25% of then-current Initial Franchise Fee (currently $13,750) for standard transfer of 50%+ ownership. Reduced to 7.5% if transfer to owner's adult child (18+), $500 if transfer to spouse or to entity formed by existing owners, 15% if transfer due to death of controlling owner (not to spouse/child). Plus franchisor's and affiliates' costs and expenses including attorneys' fees. Non-refundable application fee of 25% of Transfer Fee due with transfer request.",
+        "field_status": "extracted",
+        "notes": "Transfer Fee is percentage-based, not flat. At current $55,000 franchise fee: standard transfer = $13,750, child transfer = $4,125, death transfer = $8,250, spouse/entity reorganization = $500. Transferee must also attend Initial Training (included in Transfer Fee).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [27], "item_reference": "Item 6, Transfer Fee row", "exact_text": null }
+      },
+      "other_fees": [
+        { "fee_name": "Renewal Fee", "value": null, "frequency": "one-time at renewal", "field_status": "extracted", "notes": "Tiered by years of operation: 0-5 years: 10% of then-current Initial Franchise Fee ($5,500); 5.01-10 years: 8% ($4,400); 10.01-15 years: 5% ($2,750); 15+ years: no renewal fee. New franchisees get 5-year initial term with option for two 5-year renewals.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [26], "item_reference": "Item 6, Renewal Fee row", "exact_text": null } },
+        { "fee_name": "Initial Training Fee (additional persons)", "value": 1000, "frequency": "per person/session", "field_status": "extracted", "notes": "For additional trainees, subsequent trainees, or transferees beyond the two included in Initial Franchise Fee or Transfer Fee.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [25], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Ongoing Training Programs", "value": null, "frequency": "as incurred", "field_status": "extracted", "notes": "Up to $500/trainee/program for virtual; $250/trainee/day at franchisor's office; $750/trainer/day + travel/living expenses for on-site training.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [25], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Meeting Registration Fee", "value": null, "frequency": "annually", "field_status": "extracted", "notes": "Up to $1,500 per person for annual conventions, regional meetings, or road shows. Currently no fee charged for meetings other than annual convention. 150% penalty fee if you fail to attend two consecutive annual conventions without valid business reason.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [25], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "National Accounts Processing Fee", "value": 20, "frequency": "per job", "field_status": "extracted", "notes": "Payable if participating in National Accounts Program.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [26], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Supplier/Product Review Fee", "value": 500, "frequency": "per item reviewed", "field_status": "extracted", "notes": "Plus actual expenses. Additional $500 + travel costs if on-site review required.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [26], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Lead Fee", "value": 10000, "frequency": "at closing of transfer", "field_status": "extracted", "notes": "Payable if franchisor refers a qualified lead who purchases franchise within 18 months. Not a Transfer Fee.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [26], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Change Fee", "value": 500, "frequency": "per change per Franchise Agreement", "field_status": "extracted", "notes": "For non-control transfers, entity name changes, DBA changes, entity form changes, agreement modifications. No charge for DBA or entity form change in first year. Fee may not exceed $750.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [27], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Audit", "value": 5000, "frequency": "per audit (if understatement found)", "field_status": "extracted", "notes": "$5,000 plus cost of audit, underpayment amount, and interest. Only payable if audit shows understatement of at least 5% of Gross Sales for any given month.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [27], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Interest and Late Fees", "value": null, "frequency": "as incurred", "field_status": "extracted", "notes": "Interest: 2% per month compounded daily (or max permitted by law). Late fees: $200/week for first four late weeks, $500/week thereafter, plus all costs including bank charges and attorneys' fees.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [28], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Insurance Procurement Fee", "value": null, "frequency": "as incurred", "field_status": "extracted", "notes": "Up to 150% of costs and expenses franchisor incurs to obtain and maintain insurance on your behalf if you fail to maintain required coverage.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [28], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Customer Complaint Management Fee", "value": 500, "frequency": "per complaint", "field_status": "extracted", "notes": "$500 plus costs/expenses. May increase to $750. Charged if franchisor intervenes in customer complaint.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [28], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Performance After Default", "value": null, "frequency": "as incurred", "field_status": "extracted", "notes": "Up to 120% of costs/expenses franchisor incurs to perform your obligations after default.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [28], "item_reference": "Item 6", "exact_text": null } },
+        { "fee_name": "Liquidated Damages", "value": null, "frequency": "on termination", "field_status": "extracted", "notes": "Average monthly Royalties and Ad Fund Contributions over past 12 months times lesser of remainder of term or 24 months. Payable if franchisor terminates due to your default.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [29], "item_reference": "Item 6", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 55000, "high": 55000, "method_of_payment": "Lump Sum", "when_due": "At Signing of Franchise Agreement", "to_whom_paid": "Us", "notes": "May vary with discounts (see Item 5). Does not include customer acquisition fee of $250/customer. Includes Initial Training for two people.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 31, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Travel and Living Expenses During Training", "low": 2500, "high": 7000, "method_of_payment": "As incurred", "when_due": "During training", "to_whom_paid": "Vendors", "notes": "10-day initial training in Memphis, TN or designated location. Low for 1 person, high for 2 people. Training may be conducted remotely.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [31, 32], "item_reference": "Item 7 table, Note 3", "exact_text": null } },
+        { "category": "Real Estate and Improvements", "low": 2000, "high": 4000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Vendors", "notes": "First 3 months rent, security deposit, and leasehold improvements. Typical office: 450-1,800 sq ft. Estimated rent: $6,000-$12,000/year.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [31, 32], "item_reference": "Item 7 table, Note 4", "exact_text": null } },
+        { "category": "Software and Hardware", "low": 1700, "high": 4300, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Vendors", "notes": "QuickBooks license ($475), iPad tablet ($300-$900), optional laptop ($1,000-$1,400), 2-3 months Technology Fees ($900-$1,485).", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [31, 32], "item_reference": "Item 7 table, Note 5", "exact_text": null } },
+        { "category": "Office Equipment", "low": 5250, "high": 6850, "method_of_payment": "Lump Sum", "when_due": "As incurred", "to_whom_paid": "Vendors", "notes": "Office furniture, fixtures, washer and dryer, office decorations.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [31, 32], "item_reference": "Item 7 table, Note 6", "exact_text": null } },
+        { "category": "Opening Inventory", "low": 6500, "high": 8000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Us", "notes": "Cleaning products, equipment, supplies, business cards, brochures, printed materials, uniforms.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [31, 32], "item_reference": "Item 7 table, Note 7", "exact_text": null } },
+        { "category": "Insurance", "low": 3400, "high": 9400, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Vendors", "notes": "First year insurance prepayment including general liability, auto, fidelity bond, workers' comp, employment practices liability.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [31, 32], "item_reference": "Item 7 table, Note 8", "exact_text": null } },
+        { "category": "Employee Screening", "low": 80, "high": 160, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Vendors", "notes": "Background checks and drug screening for initial employees.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [31, 32], "item_reference": "Item 7 table, Note 9", "exact_text": null } },
+        { "category": "Telephone Answering Service", "low": 50, "high": 300, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Vendor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 31, "item_reference": "Item 7 table, Note 10", "exact_text": null } },
+        { "category": "Opening Marketing", "low": 6000, "high": 8000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Vendors or Us", "notes": "Initial Marketing Obligation: $6,000 required spend in 120-day window around opening.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 31, "item_reference": "Item 7 table, Note 11", "exact_text": null } },
+        { "category": "Miscellaneous Opening Costs", "low": 1400, "high": 10000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Vendors", "notes": "Business license, security deposits, utilities, insurance deposit, incorporation fee, internet (~$100/month), stationery/forms/collateral (~$1,000 for 3 months).", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [31, 33], "item_reference": "Item 7 table, Note 12", "exact_text": null } },
+        { "category": "Professional Fees", "low": 5000, "high": 15000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Lawyers and CPAs", "notes": "Legal and accounting advice for entity formation, lease negotiation, FDD review, business plan, hiring practices.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [31, 33], "item_reference": "Item 7 table, Note 13", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 38000, "high": 43000, "method_of_payment": "As incurred", "when_due": "As incurred", "to_whom_paid": "Employees, Suppliers, Utilities", "notes": "Employee salaries/wages/benefits/uniforms, payroll taxes, licenses, phone/internet/utilities, vehicle payments/taxes/licensing, bank charges, taxes, advertising, supplies/equipment, Technology Fees, credit card processing.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [31, 33], "item_reference": "Item 7 table, Note 14", "exact_text": null } }
+      ],
+      "total_low": 126880,
+      "total_high": 170110,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 31, "item_reference": "Item 7 table, Total row", "exact_text": "$126,880 – $170,110" },
+      "notes": "Line item highs sum to $171,010, which is $900 higher than the stated total of $170,110. The stated total from the FDD is used as authoritative. Discrepancy likely in rounding of one or more line items in the published table."
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Table 1",
+          "description": "Gross Sales for Qualified Franchises in the Covered Period",
+          "period": "calendar year 2024 (January 1, 2024 to December 31, 2024)",
+          "population": "306 Qualified Franchises (territories with 40,000+ Qualified Households and office within territory) out of 725 Active Franchises out of 802 total Franchised Businesses. Excludes: 42 not operating full 12 months, 35 transferred during period, 419 Legacy Franchises (Active but not 'Qualified'), and 90 that ceased operating.",
+          "data": {
+            "by_quartile": [
+              { "group": "Top 10%", "count": 31, "avg_gross_sales": 1159708, "median_gross_sales": 1068527, "lowest_gross_sales": 906480, "highest_gross_sales": 1781273, "at_or_above_avg": 10, "pct_at_or_above": 32.3 },
+              { "group": "Top Quartile", "count": 77, "avg_gross_sales": 919797, "median_gross_sales": 854086, "lowest_gross_sales": 644057, "highest_gross_sales": 1781273, "at_or_above_avg": 29, "pct_at_or_above": 37.7 },
+              { "group": "2nd Quartile", "count": 76, "avg_gross_sales": 520467, "median_gross_sales": 519046, "lowest_gross_sales": 428193, "highest_gross_sales": 642400, "at_or_above_avg": 37, "pct_at_or_above": 48.7 },
+              { "group": "3rd Quartile", "count": 76, "avg_gross_sales": 338032, "median_gross_sales": 335389, "lowest_gross_sales": 253140, "highest_gross_sales": 426657, "at_or_above_avg": 36, "pct_at_or_above": 47.4 },
+              { "group": "Bottom Quartile", "count": 77, "avg_gross_sales": 169957, "median_gross_sales": 173413, "lowest_gross_sales": 42868, "highest_gross_sales": 252951, "at_or_above_avg": 40, "pct_at_or_above": 51.9 },
+              { "group": "Bottom 10%", "count": 31, "avg_gross_sales": 115387, "median_gross_sales": 121068, "lowest_gross_sales": 42868, "highest_gross_sales": 160557, "at_or_above_avg": 18, "pct_at_or_above": 58.1 },
+              { "group": "Total", "count": 306, "avg_gross_sales": 487441, "median_gross_sales": 427425, "lowest_gross_sales": 42868, "highest_gross_sales": 1781273, "at_or_above_avg": 127, "pct_at_or_above": 41.5 }
+            ]
+          },
+          "notes": "Only 306 of 802 total Franchised Businesses are represented (38.2%). 419 'Legacy Franchises' (likely smaller/older territories not meeting current 40K+ QH standard) are excluded entirely. Average Gross Sales of $487,441. Median of $427,425. Note: 90 Franchised Businesses that ceased operating during 2024 are excluded — none opened within 12 months prior to closing.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [58, 59], "item_reference": "Item 19, Table 1", "exact_text": null }
+        },
+        {
+          "table_label": "Table 2",
+          "description": "Gross Sales for Franchise Ownership Groups with Active Franchises in the Covered Period",
+          "period": "calendar year 2024",
+          "population": "249 Franchise Ownership Groups (FOGs) with at least one Active Franchise, out of 323 total FOGs. Excludes 74 FOGs not reporting full 12 months and 8 FOGs that ceased all operations.",
+          "data": {
+            "by_quartile": [
+              { "group": "Top 10%", "count": 25, "avg_gross_sales": 3225072, "median_gross_sales": 2458793, "lowest_gross_sales": 1891371, "highest_gross_sales": 5865164, "at_or_above_avg": 9, "pct_at_or_above": 36.0 },
+              { "group": "Top Quartile", "count": 62, "avg_gross_sales": 2241349, "median_gross_sales": 1761319, "lowest_gross_sales": 1336252, "highest_gross_sales": 5865164, "at_or_above_avg": 18, "pct_at_or_above": 29.0 },
+              { "group": "2nd Quartile", "count": 63, "avg_gross_sales": 1026869, "median_gross_sales": 1015222, "lowest_gross_sales": 768250, "highest_gross_sales": 1331608, "at_or_above_avg": 31, "pct_at_or_above": 49.2 },
+              { "group": "3rd Quartile", "count": 62, "avg_gross_sales": 620639, "median_gross_sales": 614985, "lowest_gross_sales": 480582, "highest_gross_sales": 767299, "at_or_above_avg": 32, "pct_at_or_above": 51.6 },
+              { "group": "Bottom Quartile", "count": 62, "avg_gross_sales": 300848, "median_gross_sales": 312292, "lowest_gross_sales": 38409, "highest_gross_sales": 469797, "at_or_above_avg": 29, "pct_at_or_above": 46.8 },
+              { "group": "Bottom 10%", "count": 25, "avg_gross_sales": 183059, "median_gross_sales": 210947, "lowest_gross_sales": 38409, "highest_gross_sales": 260902, "at_or_above_avg": 15, "pct_at_or_above": 60.0 },
+              { "group": "Total", "count": 249, "avg_gross_sales": 1047237, "median_gross_sales": 767299, "lowest_gross_sales": 38409, "highest_gross_sales": 5865164, "at_or_above_avg": 90, "pct_at_or_above": 36.7 }
+            ]
+          },
+          "notes": "FOG-level data shows multi-unit owners generate significantly more total revenue. Average FOG Gross Sales: $1,047,237, but median is $767,299, indicating right-skew from large multi-unit operators. Top FOG generated $5.87M. Includes both Qualified and Legacy Franchises.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [60], "item_reference": "Item 19, Table 2", "exact_text": null }
+        },
+        {
+          "table_label": "Table 3",
+          "description": "Gross Sales by Number of Active Franchises in Franchise Ownership Group in the Covered Period",
+          "period": "calendar year 2024",
+          "population": "249 FOGs / 725 Active Franchises. Breakdowns by 1, 2, 3-4, 5-7, and 8-24 Active Franchises per FOG.",
+          "data": {
+            "by_fog_size": [
+              {
+                "fog_size": "1",
+                "fog_count": 82,
+                "fog_avg_gross_sales": 547630,
+                "fog_median_gross_sales": 515865,
+                "fog_lowest": 38409,
+                "fog_highest": 1640713,
+                "fog_at_or_above_avg": 35,
+                "fog_pct_at_or_above": 42.7,
+                "franchise_count": 82,
+                "franchise_avg_gross_sales": 547630,
+                "franchise_median_gross_sales": 515865,
+                "franchise_lowest": 38409,
+                "franchise_highest": 1640713
+              },
+              {
+                "fog_size": "2",
+                "fog_count": 70,
+                "fog_avg_gross_sales": 765573,
+                "fog_median_gross_sales": 701185,
+                "fog_lowest": 213250,
+                "fog_highest": 1858649,
+                "fog_at_or_above_avg": 27,
+                "fog_pct_at_or_above": 40.3,
+                "franchise_count": 130,
+                "franchise_avg_gross_sales": 379135,
+                "franchise_median_gross_sales": 339229,
+                "franchise_lowest": 36762,
+                "franchise_highest": 1378115
+              },
+              {
+                "fog_size": "3 to 4",
+                "fog_count": 53,
+                "fog_avg_gross_sales": 1134584,
+                "fog_median_gross_sales": 975997,
+                "fog_lowest": 362898,
+                "fog_highest": 4712342,
+                "fog_at_or_above_avg": 23,
+                "fog_pct_at_or_above": 44.2,
+                "franchise_count": 179,
+                "franchise_avg_gross_sales": 334956,
+                "franchise_median_gross_sales": 253275,
+                "franchise_lowest": 26652,
+                "franchise_highest": 1781273
+              },
+              {
+                "fog_size": "5 to 7",
+                "fog_count": 31,
+                "fog_avg_gross_sales": 1690148,
+                "fog_median_gross_sales": 1447658,
+                "fog_lowest": 767299,
+                "fog_highest": 4564211,
+                "fog_at_or_above_avg": 12,
+                "fog_pct_at_or_above": 38.7,
+                "franchise_count": 177,
+                "franchise_avg_gross_sales": 299005,
+                "franchise_median_gross_sales": 237477,
+                "franchise_lowest": 19555,
+                "franchise_highest": 1444102
+              },
+              {
+                "fog_size": "8 to 24",
+                "fog_count": 13,
+                "fog_avg_gross_sales": 3541524,
+                "fog_median_gross_sales": 2947859,
+                "fog_lowest": 900873,
+                "fog_highest": 5865164,
+                "fog_at_or_above_avg": 5,
+                "fog_pct_at_or_above": 38.5,
+                "franchise_count": 157,
+                "franchise_avg_gross_sales": 288014,
+                "franchise_median_gross_sales": 218618,
+                "franchise_lowest": 9630,
+                "franchise_highest": 1471227
+              },
+              {
+                "fog_size": "All",
+                "fog_count": 249,
+                "fog_avg_gross_sales": 1047343,
+                "fog_median_gross_sales": 767299,
+                "fog_lowest": 38409,
+                "fog_highest": 5865164,
+                "fog_at_or_above_avg": 90,
+                "fog_pct_at_or_above": 36.7,
+                "franchise_count": 725,
+                "franchise_avg_gross_sales": 347990,
+                "franchise_median_gross_sales": 262519,
+                "franchise_lowest": 9630,
+                "franchise_highest": 1781273
+              }
+            ]
+          },
+          "notes": "Key insight: per-franchise average Gross Sales DECREASES as FOG size increases ($547K for single-unit vs $288K for 8-24 unit FOGs), suggesting multi-unit operators hold many smaller/legacy territories. Single-unit operators have highest per-franchise median ($515K). System-wide per-franchise average across all 725 Active Franchises: $347,990, median $262,519.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [61], "item_reference": "Item 19, Table 3", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 is disclosed with three tables. Table 1 (Qualified Franchises only) is the most relevant for new franchisees since it reflects current territory standards (40K+ QH). However, only 306 of 802 franchises (38.2%) qualify as 'Qualified Franchises.' 419 Legacy Franchises are excluded from Table 1 but included in Tables 2 and 3. Table 3 reveals per-franchise revenue for ALL Active Franchises: average $347,990, median $262,519. The gap between Qualified Franchise average ($487K) and all-franchise average ($348K) suggests Legacy Franchises significantly underperform. 90 businesses that ceased operations in 2024 are excluded from all tables — severe survivorship bias given 802 total units. No cost data, margins, or profitability disclosed.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [58, 62], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 989,
+          "total_outlets_end": 946,
+          "opened": 4,
+          "closed": 47,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 18,
+          "ceased_operations_other": 0,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "All franchised, no company-owned. Net contraction of 43 units. 47 terminations is a very high number — 4.8% termination rate. Largest state losses: California 137→125 (13 terminations), Illinois 49→46 (3), New Jersey 31→28 (3), Arizona 28→25 (3), Washington 27→24 (3).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [63, 65, 66, 67, 68, 69], "item_reference": "Item 20, Tables 1 and 3", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 946,
+          "total_outlets_end": 884,
+          "opened": 13,
+          "closed": 16,
+          "non_renewals": 24,
+          "reacquired_by_franchisor": 0,
+          "transferred": 66,
+          "ceased_operations_other": 35,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "Net contraction of 62 units — accelerating decline. Terminations dropped to 16 but non-renewals (24) and ceased operations (35) surged. 66 transfers indicates significant ownership turnover. Largest losses: California 125→107 (9 non-renewals, 9 ceased), Massachusetts 35→27 (9 ceased), Michigan 15→5 (5 terminations, 3 non-renewals, 3 ceased).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [63, 65, 66, 67, 68, 69], "item_reference": "Item 20, Tables 1 and 3", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 884,
+          "total_outlets_end": 802,
+          "opened": 8,
+          "closed": 10,
+          "non_renewals": 7,
+          "reacquired_by_franchisor": 0,
+          "transferred": 35,
+          "ceased_operations_other": 73,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "Net contraction of 82 units — worst year of the three. Ceased operations exploded to 73 (8.3% of start). Terminations and non-renewals dropped but the 'ceased operations - other reasons' category absorbed the exits. Major state losses: California 107→89 (6 terminated, 5 non-renewals, 7 ceased), Pennsylvania 37→28 (1 non-renewal, 8 ceased), New Jersey 28→21 (7 ceased), New York 35→31 (6 ceased), Ohio 25→19 (6 ceased), Connecticut 20→14 (6 ceased), Florida 64→58 (1 terminated, 6 ceased), Illinois 45→38 (1 terminated, 6 ceased), Virginia 31→26 (5 ceased). Projected 7 new franchised outlets in 2025 (only 1 agreement signed but not open).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [63, 65, 66, 67, 68, 69, 70], "item_reference": "Item 20, Tables 1, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": true,
+      "action_count": 3,
+      "action_types": [
+        { "type": "regulatory/affiliate/no-poaching", "count": 1, "notes": "The People of the State of California v. Arby's Restaurant Group, Inc. (2019). Affiliated program, not Merry Maids. Settlement regarding no-poach franchise agreement provisions. ARG paid no money but agreed to remove disputed provision." },
+        { "type": "regulatory/affiliate/no-poaching", "count": 1, "notes": "The People of the State of California v. Dunkin' Brands, Inc. (2019). Affiliated program, not Merry Maids. Similar no-poach settlement. DBI denied liability." },
+        { "type": "regulatory/affiliate/cybersecurity", "count": 1, "notes": "New York v. Dunkin' Brands, Inc. (2019). Affiliated program. NYAG filed re: credential-stuffing cyberattacks on DD Perks accounts (2015, 2018). Consent agreement: $650,000 in penalties/costs, security program requirements through September 2026." }
+      ],
+      "notes": "All three disclosed actions involve affiliated programs (Arby's and Dunkin'), NOT Merry Maids itself. FDD states: 'None of these actions have any impact on us or our brand nor allege any unlawful conduct by us.' No direct Merry Maids litigation disclosed. Statement: 'Other than these actions, no litigation is required to be disclosed in this Item.' Clean litigation profile for the brand itself.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [21, 22], "item_reference": "Item 3", "exact_text": "Other than these actions, no litigation is required to be disclosed in this Item." }
+    },
+
+    "system_info": {
+      "year_company_founded": 1980,
+      "year_first_franchised": 1980,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 9, "item_reference": "Item 1", "exact_text": "Our predecessor, Merry Maids Limited Partnership ('Predecessor'), a Delaware limited partnership, offered Merry Maids® franchises between 1980 and December 2020." }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 148495,
+    "net_unit_growth": [
+      { "year": 2022, "value": -43, "source_fields": ["Table 1: 946-989=-43"] },
+      { "year": 2023, "value": -62, "source_fields": ["Table 1: 884-946=-62"] },
+      { "year": 2024, "value": -82, "source_fields": ["Table 1: 802-884=-82"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 6.57, "source_fields": ["(47+0+0+0+18)/989 = 65/989"] },
+      { "year": 2023, "value": 14.90, "source_fields": ["(16+24+0+35+66)/946 = 141/946"] },
+      { "year": 2024, "value": 14.14, "source_fields": ["(10+7+0+73+35)/884 = 125/884"] }
+    ],
+    "system_age_years": 46,
+    "total_ongoing_fee_rate": 9.0
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T12:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 22, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 31, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 31, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[0].total_outlets_start (2022)", "page_verified": 63, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].total_outlets_end (2024)", "page_verified": 63, "match": true },
+        { "field": "raw.item_19_financial_performance.tables[0].data.by_quartile[6].avg_gross_sales (Total avg)", "page_verified": 59, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-15T12:00:00Z"
+    },
+    "warnings": [
+      "SEVERE SYSTEM CONTRACTION: Merry Maids has shrunk every year for 3 consecutive years with ACCELERATING decline (989→946→884→802). Net loss of 187 units over 3 years (-18.9%). 2024 was the worst year with 82 net losses.",
+      "MASSIVE CEASED OPERATIONS: 73 units 'ceased operations - other reasons' in 2024 alone (8.3% of start-of-year count). This is by far the largest exit category and is dramatically higher than 2022 (0) and 2023 (35).",
+      "HIGH TURNOVER WARNING: Wisconsin state-mandated risk disclosure (page 4) states: 'During the last three years, 213 outlets were terminated, not renewed, reacquired, or ceased operations for other reasons. This franchise could be a higher risk investment than a franchise in a system with a lower turnover rate.'",
+      "SURVIVORSHIP BIAS: Item 19 excludes 90 Franchised Businesses that ceased operating in 2024 from all financial performance tables. Additionally, 419 Legacy Franchises are excluded from Table 1 (Qualified Franchises only), showing only 306 of 802 units.",
+      "CONFIDENTIALITY CLAUSES: FDD discloses that current and former franchisees have signed confidentiality provisions 'restricting their ability to speak openly about their experiences.' This may limit due diligence.",
+      "NOT NEIGHBORLY/KKR: Merry Maids is owned by RW Purchaser LLC / Roark Capital Management, operating through ServiceMaster Systems LLC securitization structure. It is NOT part of the Neighborly/KKR family (unlike Molly Maid).",
+      "Royalty Incentive tiers (6% above $400K, 5% above $500K) are discretionary and 'may be changed or discontinued at any time.' Base rate is 7%.",
+      "Item 7 line items high column sums to $171,010, which is $900 more than the stated total of $170,110. Stated total used as authoritative.",
+      "MANDATORY MINIMUM PAYMENTS: Wisconsin risk disclosure notes 'You must make minimum royalty or advertising fund payments, regardless of your sales levels.'",
+      "SALES PERFORMANCE REQUIREMENT: Wisconsin risk disclosure notes minimum sales performance levels must be maintained or territorial rights may be lost / franchise terminated.",
+      "INDEPENDENT FRANCHISEE ORGANIZATION: MMFOA (Merry Maids Franchise Owners Association) exists through AAFD. This is an independent organization, not franchisor-sponsored.",
+      "Transfer Fee is percentage-based (25% of then-current Initial Franchise Fee = $13,750 at current $55K fee), which scales with future fee increases."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.royalty_rate.value set to 7.0 but actual effective rate varies", "reason": "Base rate is 7% but discretionary Royalty Incentive reduces to 6% ($400K-$500K) and 5% (above $500K). Marked ambiguous.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.transfer_fee.value", "reason": "Percentage-based formula (25% of then-current Initial Franchise Fee), not a fixed dollar amount.", "field_status": "extracted" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

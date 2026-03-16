@@ -1,0 +1,597 @@
+{
+  "model_version": "1.1",
+  "methodology": "docs/fee_modeling_framework.md",
+  "assumptions": {
+    "year_of_operation": 5,
+    "territories": 1,
+    "employees": "1 owner + cleaning crews",
+    "revenue_basis": "Gross Sales/Revenue (treated as equivalent)"
+  },
+  "revenue_levels": [
+    200000,
+    300000,
+    400000,
+    500000
+  ],
+  "results": [
+    {
+      "brand": "Merry Maids",
+      "gross_revenue": 200000,
+      "royalty": 14000.0,
+      "marketing": 4000.0,
+      "technology": 5988,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 23988.0,
+      "pct_of_revenue": 12.0,
+      "notes": [
+        "Royalty: 7% flat on all $200K (below $400K incentive tier threshold).",
+        "Marketing: 2% of Gross Sales (1.3% Ad Fund + 0.7% Local Marketing).",
+        "Technology: $499/mo x 12 = $5,988.",
+        "Royalty Incentive tiers (6% on $400K-$500K, 5% above $500K) are discretionary and may be changed or discontinued at any time. Modeled as active for Year 5."
+      ]
+    },
+    {
+      "brand": "Molly Maid",
+      "gross_revenue": 200000,
+      "royalty": 13000.0,
+      "marketing": 4000.0,
+      "technology": 5556,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 22556.0,
+      "pct_of_revenue": 11.3,
+      "notes": [
+        "Royalty: Marginal tiers. $200K all within first $500K tier at 6.5% = $13,000.",
+        "Marketing: 2% MAP only ($4,000). Local Marketing Requirement is per-TH (territory-size dependent) — excluded from model as it cannot be calculated without knowing TH count.",
+        "Technology: $58/mo ZorWare + $405/mo CLEO = $463/mo x 12 = $5,556.",
+        "Local Marketing Requirement exclusion likely understates total marketing cost by $5,000-$15,000+ depending on territory size."
+      ]
+    },
+    {
+      "brand": "The Cleaning Authority",
+      "gross_revenue": 200000,
+      "royalty": 12000.0,
+      "marketing": 2000.0,
+      "technology": 1902.16,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 15902.16,
+      "pct_of_revenue": 8.0,
+      "notes": [
+        "Royalty: Enterprise Market marginal tiers. $200K all within first $600K tier at 6% = $12,000.",
+        "Marketing: Brand Fund 1% = $2,000 (below $200/wk cap of $10,400/yr).",
+        "Technology: $36.58/wk x 52 = $1,902.16.",
+        "Local Marketing Fee (DHH-based, paid to franchisor) excluded — it is the primary ongoing marketing expense for TCA franchisees and its exclusion significantly understates total fee burden."
+      ]
+    },
+    {
+      "brand": "The Maids",
+      "gross_revenue": 200000,
+      "royalty": 13800.0,
+      "marketing": 34500.0,
+      "technology": 1680,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 49980.0,
+      "pct_of_revenue": 25.0,
+      "notes": [
+        "Royalty: NON-MARGINAL weekly tiers. $200K/yr = $3,846/wk falls in $0-$6,730 bracket at 6.9%. Annual royalty: $200,000 x 6.9% = $13,800.",
+        "Marketing: 2% Marketing Fund ($4,000) + 0.25% Technology Innovation Fund ($500) + $2,500/mo Local Marketing Requirement ($30,000) = $34,500.",
+        "Technology: $140/mo x 12 = $1,680.",
+        "Local Marketing Requirement ($2,500/mo = $30,000/yr) is a fixed dollar minimum, not revenue-based — regressive at lower revenue levels."
+      ]
+    },
+    {
+      "brand": "MaidPro",
+      "gross_revenue": 200000,
+      "royalty": 12000.0,
+      "marketing": 4000.0,
+      "technology": 6000,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 22000.0,
+      "pct_of_revenue": 11.0,
+      "notes": [
+        "Royalty: 6% flat = $12,000.",
+        "Marketing: 2% Brand Fund = $4,000.",
+        "Technology: $500/mo x 12 = $6,000.",
+        "Simplest fee structure in cohort. No mandatory local marketing percentage or dollar floor beyond first 24 months."
+      ]
+    },
+    {
+      "brand": "Two Maids & A Mop",
+      "gross_revenue": 200000,
+      "royalty": 14000.0,
+      "marketing": 34000.0,
+      "technology": 7800,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 55800.0,
+      "pct_of_revenue": 27.9,
+      "notes": [
+        "Royalty: Marginal monthly tiers. $200K/yr = $16,667/mo, entirely within first $30K bracket at 7%. Annual royalty: $200,000 x 7% = $14,000.",
+        "Marketing: 2% National Fund ($4,000) + $2,500/mo Local Advertising ($30,000) = $34,000.",
+        "Technology: $650/mo x 12 = $7,800.",
+        "Local Advertising is franchisor-directed spend ($2,500/mo ongoing after first 6 months at $3,000/mo). Franchisor retains up to 10% management fee."
+      ]
+    },
+    {
+      "brand": "Maid Right",
+      "gross_revenue": 200000,
+      "royalty": 12000.0,
+      "marketing": 4000.0,
+      "technology": 10920,
+      "call_center": 11440.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 4420,
+      "sales_center": 0.0,
+      "total": 42780.0,
+      "pct_of_revenue": 21.4,
+      "notes": [
+        "Royalty: 6% flat = $12,000. $150/wk minimum ($7,800/yr) not binding at $200K+.",
+        "Marketing: 2% = $4,000. $50/wk minimum ($2,600/yr) not binding at $200K.",
+        "Technology: $210/wk x 52 = $10,920.",
+        "Contact Center: Year 5 minimum $220/wk ($11,440/yr) exceeds 2% ($4,000). Dollar floor applies.",
+        "Bookkeeping: Accounting and Business Advisory Services Fee $85/wk x 52 = $4,420.",
+        "Contact center floor ($220/wk at Year 5) is highly regressive — 5.7% of revenue at $200K vs 2.3% at $500K."
+      ]
+    },
+    {
+      "brand": "Merry Maids",
+      "gross_revenue": 300000,
+      "royalty": 21000.0,
+      "marketing": 6000.0,
+      "technology": 5988,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 32988.0,
+      "pct_of_revenue": 11.0,
+      "notes": [
+        "Royalty: 7% flat on all $300K (below $400K incentive tier threshold).",
+        "Marketing: 2% of Gross Sales = $6,000.",
+        "Technology: $499/mo x 12 = $5,988."
+      ]
+    },
+    {
+      "brand": "Molly Maid",
+      "gross_revenue": 300000,
+      "royalty": 19500.0,
+      "marketing": 6000.0,
+      "technology": 5556,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 31056.0,
+      "pct_of_revenue": 10.4,
+      "notes": [
+        "Royalty: Marginal tiers. $300K all within first $500K tier at 6.5% = $19,500.",
+        "Marketing: 2% MAP only ($6,000). Local Marketing Requirement (per-TH) excluded.",
+        "Technology: $463/mo x 12 = $5,556."
+      ]
+    },
+    {
+      "brand": "The Cleaning Authority",
+      "gross_revenue": 300000,
+      "royalty": 18000.0,
+      "marketing": 3000.0,
+      "technology": 1902.16,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 22902.16,
+      "pct_of_revenue": 7.6,
+      "notes": [
+        "Royalty: Enterprise Market marginal tiers. $300K within first $600K tier at 6% = $18,000.",
+        "Marketing: Brand Fund 1% = $3,000 (below $200/wk cap of $10,400).",
+        "Technology: $36.58/wk x 52 = $1,902.16.",
+        "Local Marketing Fee (DHH-based) excluded — this is the primary marketing cost and its exclusion makes TCA appear artificially low."
+      ]
+    },
+    {
+      "brand": "The Maids",
+      "gross_revenue": 300000,
+      "royalty": 20700.0,
+      "marketing": 36750.0,
+      "technology": 1680,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 59130.0,
+      "pct_of_revenue": 19.7,
+      "notes": [
+        "Royalty: NON-MARGINAL weekly tiers. $300K/yr = $5,769/wk falls in $0-$6,730 bracket at 6.9%. Annual royalty: $300,000 x 6.9% = $20,700.",
+        "Marketing: 2% ($6,000) + 0.25% ($750) + $30,000 local = $36,750.",
+        "Technology: $140/mo x 12 = $1,680."
+      ]
+    },
+    {
+      "brand": "MaidPro",
+      "gross_revenue": 300000,
+      "royalty": 18000.0,
+      "marketing": 6000.0,
+      "technology": 6000,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 30000.0,
+      "pct_of_revenue": 10.0,
+      "notes": [
+        "Royalty: 6% flat = $18,000.",
+        "Marketing: 2% Brand Fund = $6,000.",
+        "Technology: $500/mo x 12 = $6,000."
+      ]
+    },
+    {
+      "brand": "Two Maids & A Mop",
+      "gross_revenue": 300000,
+      "royalty": 21000.0,
+      "marketing": 36000.0,
+      "technology": 7800,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 64800.0,
+      "pct_of_revenue": 21.6,
+      "notes": [
+        "Royalty: Marginal monthly tiers. $300K/yr = $25,000/mo, entirely within first $30K bracket at 7%. Annual royalty: $300,000 x 7% = $21,000.",
+        "Marketing: 2% National Fund ($6,000) + $2,500/mo Local ($30,000) = $36,000.",
+        "Technology: $650/mo x 12 = $7,800."
+      ]
+    },
+    {
+      "brand": "Maid Right",
+      "gross_revenue": 300000,
+      "royalty": 18000.0,
+      "marketing": 6000.0,
+      "technology": 10920,
+      "call_center": 11440.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 4420,
+      "sales_center": 0.0,
+      "total": 50780.0,
+      "pct_of_revenue": 16.9,
+      "notes": [
+        "Royalty: 6% flat = $18,000.",
+        "Marketing: 2% = $6,000.",
+        "Technology: $210/wk x 52 = $10,920.",
+        "Contact Center: Year 5 minimum $220/wk ($11,440/yr) exceeds 2% ($6,000). Dollar floor applies.",
+        "Bookkeeping: $85/wk x 52 = $4,420."
+      ]
+    },
+    {
+      "brand": "Merry Maids",
+      "gross_revenue": 400000,
+      "royalty": 28000.0,
+      "marketing": 8000.0,
+      "technology": 5988,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 41988.0,
+      "pct_of_revenue": 10.5,
+      "notes": [
+        "Royalty: 7% on entire $400K = $28,000. At exactly $400K, incentive tier has not yet been reached (kicks in above $400K).",
+        "Marketing: 2% of Gross Sales = $8,000.",
+        "Technology: $499/mo x 12 = $5,988."
+      ]
+    },
+    {
+      "brand": "Molly Maid",
+      "gross_revenue": 400000,
+      "royalty": 26000.0,
+      "marketing": 8000.0,
+      "technology": 5556,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 39556.0,
+      "pct_of_revenue": 9.9,
+      "notes": [
+        "Royalty: Marginal tiers. $400K all within first $500K tier at 6.5% = $26,000.",
+        "Marketing: 2% MAP only ($8,000). Local Marketing Requirement (per-TH) excluded.",
+        "Technology: $463/mo x 12 = $5,556."
+      ]
+    },
+    {
+      "brand": "The Cleaning Authority",
+      "gross_revenue": 400000,
+      "royalty": 24000.0,
+      "marketing": 4000.0,
+      "technology": 1902.16,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 29902.16,
+      "pct_of_revenue": 7.5,
+      "notes": [
+        "Royalty: Enterprise Market marginal tiers. $400K within first $600K tier at 6% = $24,000.",
+        "Marketing: Brand Fund 1% = $4,000 (below $200/wk cap of $10,400).",
+        "Technology: $36.58/wk x 52 = $1,902.16.",
+        "Local Marketing Fee (DHH-based) excluded."
+      ]
+    },
+    {
+      "brand": "The Maids",
+      "gross_revenue": 400000,
+      "royalty": 26000.0,
+      "marketing": 39000.0,
+      "technology": 1680,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 66680.0,
+      "pct_of_revenue": 16.7,
+      "notes": [
+        "Royalty: NON-MARGINAL weekly tiers. $400K/yr = $7,692/wk falls in $6,731-$13,460 bracket at 6.5%. Annual royalty: $400,000 x 6.5% = $26,000.",
+        "Marketing: 2% ($8,000) + 0.25% ($1,000) + $30,000 local = $39,000.",
+        "Technology: $140/mo x 12 = $1,680."
+      ]
+    },
+    {
+      "brand": "MaidPro",
+      "gross_revenue": 400000,
+      "royalty": 24000.0,
+      "marketing": 8000.0,
+      "technology": 6000,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 38000.0,
+      "pct_of_revenue": 9.5,
+      "notes": [
+        "Royalty: 6% flat = $24,000.",
+        "Marketing: 2% Brand Fund = $8,000.",
+        "Technology: $500/mo x 12 = $6,000."
+      ]
+    },
+    {
+      "brand": "Two Maids & A Mop",
+      "gross_revenue": 400000,
+      "royalty": 27600.0,
+      "marketing": 38000.0,
+      "technology": 7800,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 73400.0,
+      "pct_of_revenue": 18.4,
+      "notes": [
+        "Royalty: Marginal monthly tiers. $400K/yr = $33,333/mo. 7% on first $30K ($2,100) + 6% on $3,333 ($200.00) = $2,300/mo x 12 = $27,600.",
+        "Marketing: 2% National Fund ($8,000) + $2,500/mo Local ($30,000) = $38,000.",
+        "Technology: $650/mo x 12 = $7,800."
+      ]
+    },
+    {
+      "brand": "Maid Right",
+      "gross_revenue": 400000,
+      "royalty": 24000.0,
+      "marketing": 8000.0,
+      "technology": 10920,
+      "call_center": 11440.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 4420,
+      "sales_center": 0.0,
+      "total": 58780.0,
+      "pct_of_revenue": 14.7,
+      "notes": [
+        "Royalty: 6% flat = $24,000.",
+        "Marketing: 2% = $8,000.",
+        "Technology: $210/wk x 52 = $10,920.",
+        "Contact Center: Year 5 minimum $220/wk ($11,440/yr) exceeds 2% ($8,000). Dollar floor applies.",
+        "Bookkeeping: $85/wk x 52 = $4,420."
+      ]
+    },
+    {
+      "brand": "Merry Maids",
+      "gross_revenue": 500000,
+      "royalty": 34000.0,
+      "marketing": 10000.0,
+      "technology": 5988,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 49988.0,
+      "pct_of_revenue": 10.0,
+      "notes": [
+        "Royalty: Marginal incentive tiers. 7% on first $400K ($28,000) + 6% on $400K-$500K ($6,000) = $34,000.",
+        "Marketing: 2% of Gross Sales = $10,000.",
+        "Technology: $499/mo x 12 = $5,988.",
+        "Royalty Incentive tiers are discretionary — franchisor may change or discontinue at any time."
+      ]
+    },
+    {
+      "brand": "Molly Maid",
+      "gross_revenue": 500000,
+      "royalty": 32500.0,
+      "marketing": 10000.0,
+      "technology": 5556,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 48056.0,
+      "pct_of_revenue": 9.6,
+      "notes": [
+        "Royalty: Marginal tiers. $500K all within first $500K tier at 6.5% = $32,500.",
+        "Marketing: 2% MAP only ($10,000). Local Marketing Requirement (per-TH) excluded.",
+        "Technology: $463/mo x 12 = $5,556."
+      ]
+    },
+    {
+      "brand": "The Cleaning Authority",
+      "gross_revenue": 500000,
+      "royalty": 30000.0,
+      "marketing": 5000.0,
+      "technology": 1902.16,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 36902.16,
+      "pct_of_revenue": 7.4,
+      "notes": [
+        "Royalty: Enterprise Market marginal tiers. $500K within first $600K tier at 6% = $30,000.",
+        "Marketing: Brand Fund 1% = $5,000 (below $200/wk cap of $10,400).",
+        "Technology: $36.58/wk x 52 = $1,902.16.",
+        "Local Marketing Fee (DHH-based) excluded — at this revenue level, Local Marketing Fee likely adds $10,000-$20,000+."
+      ]
+    },
+    {
+      "brand": "The Maids",
+      "gross_revenue": 500000,
+      "royalty": 32500.0,
+      "marketing": 41250.0,
+      "technology": 1680,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 75430.0,
+      "pct_of_revenue": 15.1,
+      "notes": [
+        "Royalty: NON-MARGINAL weekly tiers. $500K/yr = $9,615/wk falls in $6,731-$13,460 bracket at 6.5%. Annual royalty: $500,000 x 6.5% = $32,500.",
+        "Marketing: 2% ($10,000) + 0.25% ($1,250) + $30,000 local = $41,250.",
+        "Technology: $140/mo x 12 = $1,680."
+      ]
+    },
+    {
+      "brand": "MaidPro",
+      "gross_revenue": 500000,
+      "royalty": 30000.0,
+      "marketing": 10000.0,
+      "technology": 6000,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 46000.0,
+      "pct_of_revenue": 9.2,
+      "notes": [
+        "Royalty: 6% flat = $30,000.",
+        "Marketing: 2% Brand Fund = $10,000.",
+        "Technology: $500/mo x 12 = $6,000."
+      ]
+    },
+    {
+      "brand": "Two Maids & A Mop",
+      "gross_revenue": 500000,
+      "royalty": 33600.0,
+      "marketing": 40000.0,
+      "technology": 7800,
+      "call_center": 0.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 0.0,
+      "sales_center": 0.0,
+      "total": 81400.0,
+      "pct_of_revenue": 16.3,
+      "notes": [
+        "Royalty: Marginal monthly tiers. $500K/yr = $41,667/mo. 7% on first $30K ($2,100) + 6% on $30K-$41,667 ($700.02) = $2,800.02/mo x 12 = $33,600.24, rounded to $33,600.",
+        "Marketing: 2% National Fund ($10,000) + $2,500/mo Local ($30,000) = $40,000.",
+        "Technology: $650/mo x 12 = $7,800."
+      ]
+    },
+    {
+      "brand": "Maid Right",
+      "gross_revenue": 500000,
+      "royalty": 30000.0,
+      "marketing": 10000.0,
+      "technology": 10920,
+      "call_center": 11440.0,
+      "convention": 0.0,
+      "website_digital": 0.0,
+      "software_vendor": 0.0,
+      "bookkeeping": 4420,
+      "sales_center": 0.0,
+      "total": 66780.0,
+      "pct_of_revenue": 13.4,
+      "notes": [
+        "Royalty: 6% flat = $30,000.",
+        "Marketing: 2% = $10,000.",
+        "Technology: $210/wk x 52 = $10,920.",
+        "Contact Center: Year 5 minimum $220/wk ($11,440/yr) exceeds 2% ($10,000). Dollar floor applies.",
+        "Bookkeeping: $85/wk x 52 = $4,420."
+      ]
+    }
+  ]
+}

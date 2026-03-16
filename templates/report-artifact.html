@@ -10,6 +10,9 @@
   .page-break { page-break-before: always; }
   h2 { page-break-after: avoid; }
   table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -38,10 +41,13 @@ tbody td.label { font-weight: 600; white-space: nowrap; }
 .callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
 
 .question-list { list-style: none; padding: 0; counter-reset: q; }
-.question-list li { padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; counter-increment: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
 .question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
 .question-list li:last-child { border-bottom: none; }
 .question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
 
 .methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
 .methodology p { margin: 0 0 0.5rem; }
@@ -57,11 +63,139 @@ tbody td.label { font-weight: 600; white-space: nowrap; }
 .implication strong { color: #1e40af; }
 ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
 ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
 </style>
 </head>
 <body>
 
-<div class="report-header">
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">{{ brand_name }}</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: {{ filing_year }} Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: {{ legal_entity }}</span>
+    <span>Report generated: {{ report_date }}</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num">1</span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num">2</span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num">3</span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num">4</span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num">5</span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num">6</span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    <li><span class="toc-num">7</span> <a href="#payback">Illustrative Payback Sensitivity</a></li>
+    <li><span class="toc-num">8</span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num">9</span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num">10</span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num">11</span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num">12</span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num">13</span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
   <h1>{{ brand_name }}</h1>
   <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
   <div class="report-meta">
@@ -71,12 +205,47 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
   </div>
 </div>
 
-<h2>Executive Summary</h2>
+<h2 id="executive-summary">Executive Summary</h2>
 <div class="exec-summary">
 {{ executive_summary }}
 </div>
 
-<h2>Fee Burden Analysis</h2>
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the mosquito pest control cohort.</p>
+
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in scorecard %}
+    <tr>
+      <td class="label">{{ item.dimension }}</td>
+      <td class="rating rating-{{ item.color }}">{{ item.rating }}</td>
+      <td class="sc-summary">{{ item.summary }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+{{ scorecard_posture }}
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+{{ buyer_fit_narrative }}
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
 {{ fee_burden_narrative }}
 
 <table>
@@ -100,18 +269,74 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
       <td class="num">${{ "{:,.0f}".format(row.tech_other) }}</td>
       <td class="num"><strong>${{ "{:,.0f}".format(row.total) }}</strong></td>
       <td class="num">{{ row.pct }}%</td>
-      <td class="num">{{ row.rank }}/5</td>
+      <td class="num">{{ row.rank }}/{{ cohort_size }}</td>
     </tr>
     {% endfor %}
   </tbody>
 </table>
 
+{% if fee_comparison %}
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  {% for bar in fee_comparison %}
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">{{ bar.brand }}</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill{% if bar.is_subject %} this-brand{% endif %}" style="width: {{ bar.bar_width }}%"></div>
+    </div>
+    <div class="fee-bar-value">{{ bar.pct }}%</div>
+  </div>
+  {% endfor %}
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+{% endif %}
+
 {{ fee_burden_detail }}
 
-<h2>Item 19 Interpretation</h2>
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
 {{ item19_narrative }}
 
-<h2>Investment Breakdown</h2>
+{% if item19_triangulation %}
+{{ item19_triangulation }}
+{% endif %}
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+{{ economics_preamble }}
+
+<table class="scenario-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for s in economics_scenarios %}
+    <tr>
+      <td class="scenario-name">{{ s.name }}</td>
+      <td class="num">${{ "{:,.0f}".format(s.revenue) }}</td>
+      <td class="num">${{ "{:,.0f}".format(s.franchisor_fees) }} ({{ s.fee_pct }}%)</td>
+      <td class="num">${{ "{:,.0f}".format(s.est_cogs) }}</td>
+      <td class="num"><strong>${{ "{:,.0f}".format(s.remaining) }}</strong></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<p class="assumption-note">{{ economics_assumptions }}</p>
+
+{{ economics_detail }}
+
+<!-- PAYBACK SENSITIVITY -->
+<h2 id="payback">Illustrative Payback Sensitivity</h2>
+{{ payback_narrative }}
+
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
 {{ investment_narrative }}
 
 <table>
@@ -140,7 +365,8 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
 
 {{ investment_detail }}
 
-<h2>System Health</h2>
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
 {{ system_health_narrative }}
 
 <table>
@@ -168,10 +394,12 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
 
 {{ system_health_detail }}
 
-<h2>Risk Signals</h2>
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
 {{ risk_narrative }}
 
-<h2>Peer Context</h2>
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
 {{ peer_narrative }}
 
 <table class="peer-table">
@@ -195,20 +423,55 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
   </tbody>
 </table>
 
-<h2>Questions for Discovery Day</h2>
+{% if peer_decision_overlay %}
+<h3>Decision overlay</h3>
+<table class="decision-overlay">
+  <tbody>
+    {% for item in peer_decision_overlay %}
+    <tr>
+      <td class="overlay-label">{{ item.label }}</td>
+      <td class="overlay-value">{{ item.brand }} — {{ item.rationale }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
 <p>These questions are derived from specific findings in the {{ brand_name }} 2025 FDD.
-They are designed to surface information the FDD does not fully explain.</p>
+Each includes context on why it matters and what to listen for.</p>
 
 <ol class="question-list">
   {% for q in discovery_questions %}
   <li>{{ q.question }}
     <span class="question-context">{{ q.context }}</span>
+    {% if q.why_it_matters or q.strong_answer or q.weak_answer %}
+    <dl class="question-sub">
+      {% if q.why_it_matters %}
+      <dt>Why it matters</dt>
+      <dd>{{ q.why_it_matters }}</dd>
+      {% endif %}
+      {% if q.strong_answer %}
+      <dt>Strong answer sounds like</dt>
+      <dd>{{ q.strong_answer }}</dd>
+      {% endif %}
+      {% if q.weak_answer %}
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>{{ q.weak_answer }}</dd>
+      {% endif %}
+      {% if q.follow_up %}
+      <dt>Follow-up</dt>
+      <dd>{{ q.follow_up }}</dd>
+      {% endif %}
+    </dl>
+    {% endif %}
   </li>
   {% endfor %}
 </ol>
 
 <div class="methodology">
-  <h2 style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
   <p><strong>Source document:</strong> {{ brand_name }} 2025 Franchise Disclosure Document,
   filed with the Wisconsin Department of Financial Institutions. {{ page_count }}-page
   regulator-source PDF. SHA-256: <code style="font-size:0.7rem">{{ sha256 }}</code></p>
@@ -218,13 +481,20 @@ They are designed to surface information the FDD does not fully explain.</p>
   <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
   Revenue distributed evenly across the year. All mandatory fees enforced. See
   fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
   <p><strong>Peer comparison:</strong> Same methodology applied to all 5 brands in cohort
   (Mosquito Authority, Mosquito Hunters, Mosquito Joe, Mosquito Shield, Mosquito Squad).
   All from 2025 FDDs filed with Wisconsin DFI.</p>
   <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
   recommendation to buy or avoid this franchise. It is a structured analysis of publicly
   available regulatory filings. The buyer should read the actual FDD, consult a franchise
-  attorney, and conduct their own due diligence before making any investment decision.</p>
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
 </div>
 
 </body>

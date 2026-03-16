@@ -1,0 +1,394 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": null,
+    "local_filename": "cleaning-authority_2025_wi_auto.pdf",
+    "sha256": "9731ea214c871b67839016ba35cdd6f38c1da35a463334a2d6691ce31e9b1c2f",
+    "page_count": 292,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI via automated Playwright download. Cover page confirms The Cleaning Authority Franchising SPE LLC 2025 FDD, dated April 2025."
+  },
+
+  "brand": {
+    "brand_name": "The Cleaning Authority",
+    "brand_slug": "cleaning-authority",
+    "legal_entity": "The Cleaning Authority Franchising SPE LLC",
+    "parent_company": "AB Assetco LLC / Authority Brands, Inc. / Apax Partners LLP",
+    "year_founded": null,
+    "year_first_franchised": 1996,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": null,
+        "currency": "USD",
+        "range_low": 7500,
+        "range_high": 64107,
+        "field_status": "extracted",
+        "notes": "Two-part structure: Territory Fee ($0.75 per Designated Household) + Franchise Fee ($20,000 for Enterprise Market, $15,000 for Hometown Market). Enterprise Market Territory Fee: $22,500-$45,000 (30,000-60,000 DHH). Hometown Market Territory Fee: $11,250-$22,499 (15,000-29,999 DHH). During fiscal year 2024, initial fees collected ranged from $7,500 to $64,107. All due at signing, nonrefundable. Discounts: Existing Franchisee (30% off combined fee for additional territories), Existing Affiliate Franchisee ($15,000 flat for first two territories), Military/VetFran (30% off combined fee), Diversity ($5,000 off Franchise Fee), Local Hero/First Responder ($5,000 off Franchise Fee). Training Software Access Fee of $250 also due at signing.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [16, 17, 18], "item_reference": "Item 5", "exact_text": "The Territory Fee is calculated by multiplying the number of Designated Households in the Territory by $0.75... you must pay us a base initial franchise fee (\"Franchise Fee\") of $20,000 for an Enterprise Market and $15,000 for a Hometown Market... During the fiscal year 2024, we collected initial fees (Territory Fee plus Franchise Fee) ranging from $7,500 to $64,107." }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": null,
+        "basis": "Gross Revenue",
+        "tiers": [
+          { "market_type": "Enterprise", "threshold_up_to": 600000, "rate": 6.0 },
+          { "market_type": "Enterprise", "threshold_up_to": 1300000, "rate": 5.0 },
+          { "market_type": "Enterprise", "threshold_up_to": null, "rate": 4.0 },
+          { "market_type": "Hometown", "threshold_up_to": 300000, "rate": 6.0 },
+          { "market_type": "Hometown", "threshold_up_to": 550000, "rate": 5.0 },
+          { "market_type": "Hometown", "threshold_up_to": null, "rate": 4.0 }
+        ],
+        "field_status": "ambiguous",
+        "notes": "Called 'Royalty Fee.' Progressive tiered structure differs by market type. Enterprise: 6% on first $600K Gross Revenue per calendar year, 5% from $600K-$1.3M, 4% above $1.3M. Hometown: 6% on first $300K, 5% from $300K-$550K, 4% above $550K. Tiers are marginal (like income tax brackets). Rate reverts to 6% at start of next calendar year. Reduced rates do not apply if franchisee is not in compliance with agreements.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [19], "item_reference": "Item 6, Royalty Fee row", "exact_text": "For Enterprise Markets, 6% of first $600,000 Gross Revenue during the calendar year; 5% of Gross Revenue from $600,000.01 to $1,300,000; 4% of Gross Revenue above $1,300,000.01." }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "Multi-component: Brand Fund Contribution (1% of Gross Revenue or $200/week, whichever is less) + Local Marketing Fee (variable based on DHH and customer count). No ad fund as a fixed percentage beyond the Brand Fund.",
+        "components": [
+          { "name": "Brand Fund Contribution", "value": 1.0, "basis": "Gross Revenue", "minimum_dollar": null, "maximum_dollar_per_week": 200, "frequency": "weekly", "notes": "1% of Gross Revenue or $200/week, whichever is less. Can be increased above 1% or above $200 cap with consent of 50%+ of franchised businesses." },
+          { "name": "Local Marketing Fee", "value": null, "basis": "per Designated Household", "minimum_dollar": null, "frequency": "weekly", "notes": "Currently $0.374 multiplied by a percentage of DHH in territory (9% to 13% depending on customer count, lower thresholds for Hometown Markets). Can increase up to 4% cumulative annually. Anticipated increase to $0.389 in 2025. Paid to franchisor who is the sole approved supplier of the Local Marketing Program." }
+        ],
+        "notes": "The Local Marketing Fee is the primary ongoing marketing cost. Unlike some franchises, this is not a simple percentage of revenue — it is calculated based on territory size (DHH) and customer count, creating a more complex cost structure. The Brand Fund at 1% (capped at $200/week) is relatively modest.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [19, 20, 26, 27], "item_reference": "Item 6, Brand Fund Contribution row, Local Marketing Fee row, Notes 3 and 4", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 36.58,
+        "frequency": "weekly",
+        "field_status": "extracted",
+        "notes": "Software Access Fee of $36.58/week for TCA IQ software. Increasing to $40.24/week beginning July 1, 2025. Franchisor reserves right to increase annually and/or require additional technology services. Increases typically implemented in July.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [21], "item_reference": "Item 6, Technology Fees row", "exact_text": "Currently, a Software Access Fee of $36.58. Beginning July 1, 2025, the Software Access Fee will increase to $40.24." }
+      },
+      "transfer_fee": {
+        "value": 10000,
+        "formula": "$10,000 base. If proposed transferee was referred by a third-party (e.g., broker) with whom franchisor has a referral arrangement, franchisee must also pay fee equal to the amount owed under that referral arrangement. If franchisor identifies the prospective purchaser, additional fee of the greater of: $15,000, 3% of total purchase price, or actual costs to identify purchaser.",
+        "field_status": "extracted",
+        "notes": "Base fee is $10,000 payable with request for approval of transfer.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [23], "item_reference": "Item 6, Transfer Fee row", "exact_text": null }
+      },
+      "other_fees": [
+        { "fee_name": "Call Center Fee", "value": null, "frequency": "per call", "field_status": "extracted", "notes": "Currently $2.58/call for new prospective customer, $3.05/call for all other calls. Beginning September 1, 2025: $2.97 and $4.21 respectively. Franchisor is approved supplier but franchisee may use another approved live voice service.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [20], "item_reference": "Item 6, Call Center Fee row", "exact_text": null } },
+        { "fee_name": "Annual Conference", "value": null, "frequency": "annual", "field_status": "extracted", "notes": "Fee determined by franchisor based on anticipated costs. Varies by location, number of attendees, timing of registration. Up to $600/attendee for on-site registration.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [22], "item_reference": "Item 6, Annual Conference row", "exact_text": null } },
+        { "fee_name": "Non-attendance Fee (Conference)", "value": 500, "frequency": "per missed conference", "field_status": "extracted", "notes": "$500 for first missed conference, $2,000 for each consecutive miss thereafter.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [22], "item_reference": "Item 6, Non-attendance Fee row", "exact_text": null } },
+        { "fee_name": "Additional Opening Support Fee", "value": null, "frequency": "as needed", "field_status": "extracted", "notes": "Up to $500/day plus travel, meal, and lodging expenses. Only if additional support beyond customary is requested and agreed.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [21], "item_reference": "Item 6, Additional Opening Support Fee row", "exact_text": null } },
+        { "fee_name": "Change of Ownership Fee", "value": 500, "frequency": "per event", "field_status": "extracted", "notes": "Greater of $500 or external legal/administrative costs, plus applicable training fees. May increase by max $100/year. For ownership modifications not resulting in change of control.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [23], "item_reference": "Item 6, Change of Ownership Fee row", "exact_text": null } },
+        { "fee_name": "Step In Fee", "value": null, "frequency": "per day during step-in", "field_status": "extracted", "notes": "Up to $500/day plus costs and overhead. If franchisee is in default, franchisor may step in and operate the business.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [24], "item_reference": "Item 6, Step In Fee row", "exact_text": null } },
+        { "fee_name": "Management Fee", "value": null, "frequency": "per day", "field_status": "extracted", "notes": "Up to $500/day plus costs and overhead. Applies if Key Person dies/incapacitated or is arrested/charged with serious criminal offense.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [24], "item_reference": "Item 6, Management Fee row", "exact_text": null } },
+        { "fee_name": "Interest", "value": 12.0, "frequency": "per annum", "field_status": "extracted", "notes": "12% per annum or max rate permitted by law, whichever is less. On unpaid balances from due date until paid.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [24], "item_reference": "Item 6, Interest row", "exact_text": null } },
+        { "fee_name": "Late Fee", "value": null, "frequency": "per occurrence", "field_status": "extracted", "notes": "$100 for second occurrence of payment 30+ days past due; $200 for third; $300 for each subsequent.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [24], "item_reference": "Item 6, Late Fee row", "exact_text": null } },
+        { "fee_name": "Insufficient Funds Fee", "value": 50, "frequency": "per occurrence", "field_status": "extracted", "notes": "$50 or the amount the bank charges franchisor, whichever is greater.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [24], "item_reference": "Item 6, Insufficient Funds Fee row", "exact_text": null } },
+        { "fee_name": "Liquidated Damages", "value": null, "frequency": "one-time (upon termination)", "field_status": "extracted", "notes": "Greater of: (i) two years of Royalty Fees (calculated as average per payment period x number of periods in 2 years); or (ii) $100,000. Payable only if franchisor terminates based on franchisee default.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [26], "item_reference": "Item 6, Liquidated Damages row", "exact_text": null } },
+        { "fee_name": "Service Deficiency", "value": null, "frequency": "per occurrence", "field_status": "extracted", "notes": "Franchisor's actual costs if it re-performs services or reimburses a customer due to a complaint with merit, contract dispute, or legal violation.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [23], "item_reference": "Item 6, Service Deficiency row", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "market_type_note": "Two separate tables: Enterprise Market and Hometown Market. Enterprise Market data shown as primary; Hometown Market data shown separately below.",
+      "enterprise_market": {
+        "line_items": [
+          { "category": "Territory Fee", "low": 22500, "high": 45000, "method_of_payment": "Lump sum", "when_due": "On signing Franchise Agreement", "to_whom_paid": "Franchisor", "notes": "$0.75 per Designated Household. Enterprise Markets typically have 30,000-60,000 DHH.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } },
+          { "category": "Franchise Fee", "low": 20000, "high": 20000, "method_of_payment": "Lump sum", "when_due": "On signing Franchise Agreement", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } },
+          { "category": "Computer, including Training Software Access Fee", "low": 1750, "high": 2750, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Franchisor and Various Third-Party Suppliers", "notes": "Includes $250 Training Software Access Fee. Low assumes some existing equipment.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } },
+          { "category": "Washer, Dryer & Furniture", "low": 1850, "high": 3350, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Various Third-Party Suppliers", "notes": "Low: 1 washer + 1 dryer. High: 1 washer + 2 dryers.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } },
+          { "category": "Cleaning Equipment and Supplies", "low": 2500, "high": 3500, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Various Third-Party Suppliers", "notes": "Vacuums, mops, dusters, totes, bottles, brushes, sponges, cloths.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } },
+          { "category": "Travel and Living Expenses While Training", "low": 3250, "high": 4250, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Various Third-Party Suppliers", "notes": "Includes Initial Training Program and 3-day On-Site Training for existing business purchases.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } },
+          { "category": "Insurance and Insurance Deposits", "low": 5500, "high": 7500, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Various Third-Party Suppliers", "notes": "Assumes 25% deposit plus 3 months of payments on first-year premium.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } },
+          { "category": "Opening Inventory", "low": 2500, "high": 3000, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Various Third-Party Suppliers", "notes": "Initial stock of cleaning solutions and products. Must meet environmentally friendly/sustainable standards.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } },
+          { "category": "Office Rent and Security Deposit", "low": 6000, "high": 12000, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Landlord", "notes": "3 months rent + security deposit. Enterprise: ~800-1,200 sq ft.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } },
+          { "category": "Vehicle Lease or Purchase", "low": 0, "high": 2000, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Third Parties", "notes": "3 months of costs. Low assumes franchisee already has qualifying vehicle.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } },
+          { "category": "Full Time Manager", "low": 0, "high": 13750, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Manager / governmental withholdings", "notes": "Low: owner operates. High: 3 months salary for approved full-time manager.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } },
+          { "category": "Additional Funds (3 months)", "low": 27000, "high": 30000, "method_of_payment": "As Incurred", "when_due": "As Incurred", "to_whom_paid": "Various Third-Party Suppliers", "notes": "Incorporation, internet, recruitment, employee wages (excl. owner salary/draw and manager salary), advertising for first 3 months. Does not include royalty fees.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table", "exact_text": null } }
+        ],
+        "total_low": 92850,
+        "total_high": 147100,
+        "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 28, "item_reference": "Item 7 Enterprise Market table, Total row", "exact_text": "$92,850 – $147,100" }
+      },
+      "hometown_market": {
+        "line_items": [
+          { "category": "Territory Fee", "low": 11250, "high": 22499, "method_of_payment": "Lump sum", "when_due": "On signing Franchise Agreement", "to_whom_paid": "Franchisor", "notes": "$0.75 per Designated Household. Hometown Markets: 15,000-29,999 DHH.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } },
+          { "category": "Franchise Fee", "low": 15000, "high": 15000, "method_of_payment": "Lump sum", "when_due": "On signing Franchise Agreement", "to_whom_paid": "Franchisor", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } },
+          { "category": "Computer, including Training Software Access Fee", "low": 1750, "high": 2750, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Franchisor and Various Third-Party Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } },
+          { "category": "Washer, Dryer & Furniture", "low": 1850, "high": 3350, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Various Third-Party Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } },
+          { "category": "Cleaning Equipment and Supplies", "low": 2500, "high": 3500, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Various Third-Party Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } },
+          { "category": "Travel and Living Expenses While Training", "low": 3250, "high": 4250, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Various Third-Party Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } },
+          { "category": "Insurance and Insurance Deposits", "low": 5500, "high": 7500, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Various Third-Party Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } },
+          { "category": "Opening Inventory", "low": 2500, "high": 3000, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Various Third-Party Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } },
+          { "category": "Office Rent and Security Deposit", "low": 6000, "high": 12000, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Landlord", "notes": "Hometown: ~700-1,100 sq ft.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } },
+          { "category": "Vehicle Lease or Purchase", "low": 0, "high": 2000, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Third Parties", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } },
+          { "category": "Full Time Manager", "low": 0, "high": 13750, "method_of_payment": "As Arranged", "when_due": "As Arranged", "to_whom_paid": "Manager / governmental withholdings", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } },
+          { "category": "Additional Funds (3 months)", "low": 27000, "high": 30000, "method_of_payment": "As Incurred", "when_due": "As Incurred", "to_whom_paid": "Various Third-Party Suppliers", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table", "exact_text": null } }
+        ],
+        "total_low": 76600,
+        "total_high": 119599,
+        "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 29, "item_reference": "Item 7 Hometown Market table, Total row", "exact_text": "$76,600 – $119,599" }
+      }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Table 1",
+          "description": "Enterprise Market Territories Operating Full Year 2024 — Gross Revenue by Performance Thirds",
+          "period": "fiscal year 2024",
+          "population": "206 Enterprise Market Territories operating for entire 2024 fiscal year (out of 233 total territories). Excluded: 12 Hometown Market Territories, 15 that opened during fiscal year, 3 that closed during fiscal year.",
+          "data": {
+            "by_third": [
+              {
+                "group": "Top Third",
+                "count": 69,
+                "total_actual_gross_revenue": 168743478,
+                "average_gross_revenue": 2445558,
+                "number_above_average": 27,
+                "pct_above_average": 39,
+                "median_gross_revenue": 2257951,
+                "gross_revenue_range_low": 1647733,
+                "gross_revenue_range_high": 5095479,
+                "total_customers": 48420,
+                "avg_price_per_clean": 172.69,
+                "total_number_of_cleans": 977130,
+                "avg_cogs_pct": 61,
+                "avg_weekly_customer_loss_pct": 0.76,
+                "total_recurring_leads": 58599,
+                "total_recurring_estimate_leads": 23887,
+                "total_one_time_only_leads": 52904,
+                "oto_revenue_as_pct_of_total": 1,
+                "pct_recurring_leads_resulting_in_appointments": 41,
+                "total_recurring_sales": 22939,
+                "estimated_total_employees": 3133
+              },
+              {
+                "group": "Middle Third",
+                "count": 68,
+                "total_actual_gross_revenue": 87558225,
+                "average_gross_revenue": 1287621,
+                "number_above_average": 30,
+                "pct_above_average": 44,
+                "median_gross_revenue": 1264579,
+                "gross_revenue_range_low": 976313,
+                "gross_revenue_range_high": 1643010,
+                "total_customers": 26749,
+                "avg_price_per_clean": 164.77,
+                "total_number_of_cleans": 531384,
+                "avg_cogs_pct": 61,
+                "avg_weekly_customer_loss_pct": 0.86,
+                "total_recurring_leads": 39380,
+                "total_recurring_estimate_leads": 16299,
+                "total_one_time_only_leads": 36580,
+                "oto_revenue_as_pct_of_total": 3,
+                "pct_recurring_leads_resulting_in_appointments": 41,
+                "total_recurring_sales": 14774,
+                "estimated_total_employees": 1826
+              },
+              {
+                "group": "Lower Third",
+                "count": 69,
+                "total_actual_gross_revenue": 44026914,
+                "average_gross_revenue": 638071,
+                "number_above_average": 40,
+                "pct_above_average": 58,
+                "median_gross_revenue": 692348,
+                "gross_revenue_range_low": 121197,
+                "gross_revenue_range_high": 973165,
+                "total_customers": 13578,
+                "avg_price_per_clean": 166.67,
+                "total_number_of_cleans": 264153,
+                "avg_cogs_pct": 63,
+                "avg_weekly_customer_loss_pct": 1.12,
+                "total_recurring_leads": 27429,
+                "total_recurring_estimate_leads": 12093,
+                "total_one_time_only_leads": 24786,
+                "oto_revenue_as_pct_of_total": 5,
+                "pct_recurring_leads_resulting_in_appointments": 44,
+                "total_recurring_sales": 10830,
+                "estimated_total_employees": 982
+              }
+            ],
+            "system_totals": {
+              "total_reporting_territories": 206,
+              "total_actual_gross_revenue": 300328617,
+              "overall_avg_gross_revenue": 1457906,
+              "gross_revenue_range_low": 121197,
+              "gross_revenue_range_high": 5095479
+            }
+          },
+          "notes": "Enterprise Market only (excludes 12 Hometown Market territories). Average Gross Revenue across all 206 reporting territories: ~$1,457,906. Systemwide total: ~$300.3M across these 206 territories. COGS generally includes direct labor, payroll taxes, workers' comp, GL insurance, cleaning supplies, mileage, and Royalty Fees. COGS excludes advertising, Local Marketing Fees, rent (~$1,200-$2,000/mo), phone/internet (~$250-$350/mo), manager salaries, owner draws, and employee advertising (~$300-$500/mo). Average price per clean is remarkably consistent across thirds ($164.77-$172.69).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [71, 72, 73], "item_reference": "Item 19, Table 1 and Notes", "exact_text": null }
+        },
+        {
+          "table_label": "Table 2 (Chart)",
+          "description": "Systemwide Sales Growth 2021-2024",
+          "period": "fiscal years 2021-2024",
+          "population": "All THE CLEANING AUTHORITY franchisees whose businesses were operational for any part of each calendar year.",
+          "data": {
+            "note": "Presented as a bar chart in the FDD. Exact dollar values not labeled on chart axes. Chart shows steady growth from 2021 through 2024."
+          },
+          "notes": "This is a bar chart without exact labeled values. The chart visually shows consistent systemwide sales growth over the 4-year period. No exact figures could be extracted from the chart format.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [73], "item_reference": "Item 19, Table 2", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 is disclosed with two components. Table 1 provides rich per-territory performance data for Enterprise Markets only (206 of 233 territories), including gross revenue, price per clean, COGS%, customer loss rates, lead data, and employee counts. Table 2 is a bar chart showing systemwide sales growth but without exact dollar values. Hometown Market territories (12) are excluded from Table 1. Unlike Molly Maid, this FDD discloses absolute total gross revenue per territory. Average COGS of 61-63% means ~37-39% gross margin before overhead. 3 territories that closed during 2024 are excluded — survivorship bias applies.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [70, 74], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 212,
+          "total_outlets_end": 221,
+          "franchised_start": 209,
+          "franchised_end": 218,
+          "opened": 12,
+          "closed": 3,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 11,
+          "ceased_operations_other": 0,
+          "company_owned_start": 3,
+          "company_owned_end": 3,
+          "notes": "Net growth of +9 franchised units. Strong openings (12) with minimal closures (3 terminations, 0 ceased operations). 11 transfers. Company-owned outlets (3, all in Maryland) unchanged. Florida (+2), New York (+2), Texas (+2) led growth.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [75, 78, 81], "item_reference": "Item 20, Tables 1, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 221,
+          "total_outlets_end": 224,
+          "franchised_start": 218,
+          "franchised_end": 221,
+          "opened": 13,
+          "closed": 4,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 13,
+          "ceased_operations_other": 6,
+          "company_owned_start": 3,
+          "company_owned_end": 3,
+          "notes": "Net growth of +3 franchised units. 13 opened but offset by 4 terminations and 6 ceased operations. Ceased operations in: California (1), Florida (1), Kentucky (1), Minnesota (1), New Jersey (2). 13 transfers. New York lost 1 (termination). Oklahoma and South Carolina each lost 1 (termination each). Pennsylvania lost 1 (termination).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [75, 78, 80, 81], "item_reference": "Item 20, Tables 1, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 224,
+          "total_outlets_end": 236,
+          "franchised_start": 221,
+          "franchised_end": 233,
+          "opened": 16,
+          "closed": 1,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 5,
+          "ceased_operations_other": 3,
+          "company_owned_start": 3,
+          "company_owned_end": 3,
+          "notes": "Net growth of +12 franchised units — best year in reporting period. 16 opened with only 1 termination (Florida) and 3 ceased operations (California, Oregon, Washington). Florida (+3), Texas (+3), Alabama (+1), Arizona (+1), Georgia (+1), Indiana (+1), North Carolina (+1), Wisconsin (+1) all grew. 11 franchise agreements signed but not yet opened as of year-end. 12 projected new franchised outlets in next fiscal year.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [75, 78, 81, 82], "item_reference": "Item 20, Tables 1, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": true,
+      "action_count": 2,
+      "action_types": [
+        { "type": "franchisee association class action", "count": 1, "notes": "Independent Association of Cleaning Authority Franchisees (TCAF) v. The Cleaning Authority, LLC n/k/a The Cleaning Authority Franchising SPE LLC. Filed October 2, 2023, Howard County, Maryland Circuit Court. TCAF alleges: inadequate disclosure of TCAF contact info in FDD, inhibition of franchisee association, denial of marketing revenue/expenditure information, above-market rates for marketing and services, failure to use marketing funds for franchisee benefit. Franchisor denies allegations. Court dismissed TCAF's representative claims (Feb/Mar 2024), holding claims must be individual arbitrations. TCAF appealed (April 2024). Oral arguments held April 3, 2025. PENDING." },
+        { "type": "breach of franchise agreement / counterclaim", "count": 1, "notes": "The Cleaning Authority Franchising SPE LLC v. Mike Cavallaro. Filed January 16, 2024, U.S. District Court for Maryland. Franchisor sued former franchisee for breach (unpaid fees, post-term non-compete violation). Franchisee counterclaimed alleging misrepresentations inducing franchise agreement. Franchisor moved for summary judgment on all claims (December 12, 2024). Motion fully briefed and under submission. PENDING." }
+      ],
+      "notes": "Both actions are pending. The TCAF lawsuit is particularly notable — an independent franchisee association alleging systemic issues with marketing fund transparency, above-market pricing, and inhibition of free association. This is a red flag that warrants attention from prospective franchisees. The Cavallaro case involves a former franchisee counterclaiming misrepresentation.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [15], "item_reference": "Item 3", "exact_text": null }
+    },
+
+    "system_info": {
+      "year_company_founded": null,
+      "year_first_franchised": 1996,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [6], "item_reference": "Item 1", "exact_text": "Our predecessors began offering THE CLEANING AUTHORITY franchises in 1996." },
+      "notes": "FDD does not state when the original business was founded, only that predecessors began offering franchises in 1996. Current franchisor entity (SPE LLC) organized March 24, 2021."
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": {
+      "enterprise_market": 119975,
+      "hometown_market": 98100
+    },
+    "net_unit_growth": [
+      { "year": 2022, "value": 9, "source_fields": ["Table 1: 221-212=+9 total, 218-209=+9 franchised"] },
+      { "year": 2023, "value": 3, "source_fields": ["Table 1: 224-221=+3 total, 221-218=+3 franchised"] },
+      { "year": 2024, "value": 12, "source_fields": ["Table 1: 236-224=+12 total, 233-221=+12 franchised"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 6.70, "source_fields": ["(3+0+0+0+11)/209 = 14/209"] },
+      { "year": 2023, "value": 10.55, "source_fields": ["(4+0+0+6+13)/218 = 23/218"] },
+      { "year": 2024, "value": 4.07, "source_fields": ["(1+0+0+3+5)/221 = 9/221"] }
+    ],
+    "system_age_years": null,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T12:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_7_initial_investment.enterprise_market.total_low", "page_verified": 28, "match": true },
+        { "field": "raw.item_7_initial_investment.enterprise_market.total_high", "page_verified": 28, "match": true },
+        { "field": "raw.item_7_initial_investment.hometown_market.total_low", "page_verified": 29, "match": true },
+        { "field": "raw.item_7_initial_investment.hometown_market.total_high", "page_verified": 29, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[0].total_outlets_start (2022)", "page_verified": 75, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].total_outlets_end (2024)", "page_verified": 75, "match": true },
+        { "field": "Item 20 Table 3 arithmetic: 2022 franchised 209+12-3-0-0-0=218", "page_verified": 81, "match": true },
+        { "field": "Item 20 Table 3 arithmetic: 2023 franchised 218+13-4-0-0-6=221", "page_verified": 81, "match": true },
+        { "field": "Item 20 Table 3 arithmetic: 2024 franchised 221+16-1-0-0-3=233", "page_verified": 81, "match": true },
+        { "field": "derived.initial_investment_midpoint.enterprise_market = (92850+147100)/2 = 119975", "page_verified": null, "match": true },
+        { "field": "derived.initial_investment_midpoint.hometown_market = (76600+119599)/2 = 98099.5 rounded to 98100", "page_verified": null, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-15T12:00:00Z"
+    },
+    "warnings": [
+      "SYSTEM GROWTH: The Cleaning Authority has grown every year for 3 consecutive years (212->221->224->236). Net gain of 24 total units over 3 years (+11.3%). 2024 was the strongest year (+12 units).",
+      "PENDING LITIGATION: TCAF (independent franchisee association) lawsuit alleging above-market pricing, marketing fund opacity, and inhibition of franchisee association rights. This is a material risk factor. Appeal pending as of April 2025.",
+      "Royalty is tiered/marginal (6%/5%/4%) with different thresholds for Enterprise vs. Hometown Markets — recorded as ambiguous because it cannot be expressed as a single rate.",
+      "Local Marketing Fee is based on Designated Households and customer count, not revenue — making direct cross-brand comparison complex.",
+      "Item 7 has TWO separate tables (Enterprise Market and Hometown Market) with different investment ranges. Enterprise: $92,850-$147,100. Hometown: $76,600-$119,599.",
+      "Item 19 only covers Enterprise Market territories (206 of 233). Hometown Market territories (12) are excluded entirely from financial performance data.",
+      "3 territories that closed during 2024 are excluded from Item 19 data — survivorship bias applies.",
+      "15 territories that opened during 2024 are excluded from Item 19 data.",
+      "Entity structure: SPV within Authority Brands / Apax Partners securitization chain. All franchise agreements transferred to SPV in May 2021.",
+      "Item 19 Table 2 (Systemwide Sales Growth) is presented as a bar chart without exact labeled values — only visual trend (upward) could be captured.",
+      "Confidentiality clauses: During last three fiscal years, current and former franchisees have signed confidentiality clauses and provisions restricting their ability to speak openly about their experience.",
+      "FDD does not state the year the original business was founded. The brand began franchising in 1996. The current franchisor entity (SPE LLC) was formed in March 2021 as part of securitization. Most recent predecessor (TCA LLC) offered franchises from September 2010 to May 2021."
+    ],
+    "null_fields": [
+      { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "reason": "Two-part fee (Territory Fee + Franchise Fee) with variable Territory Fee based on DHH. Cannot express as single value.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.royalty_rate.value", "reason": "Tiered marginal rate (6%/5%/4%) with different thresholds for Enterprise vs. Hometown Markets. Cannot express as single rate.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "Multi-component: Brand Fund 1% (capped $200/wk) + Local Marketing Fee based on DHH and customer count. No single rate.", "field_status": "ambiguous" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Both royalty and marketing are ambiguous multi-component structures.", "field_status": "ambiguous" },
+      { "field": "brand.year_founded", "reason": "FDD does not state the year the original business was founded. Only states franchising began in 1996.", "field_status": "not_found" },
+      { "field": "derived.system_age_years", "reason": "Cannot compute — year_company_founded not stated in FDD.", "field_status": "not_found" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

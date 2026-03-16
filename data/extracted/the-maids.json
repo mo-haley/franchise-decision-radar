@@ -1,0 +1,345 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": null,
+    "local_filename": "the-maids_2026_wi_auto.pdf",
+    "sha256": "276392d5c8479c0438ad7aa6bc53151bbede6de7a8a2a80cd8850e5d64312c86",
+    "page_count": 232,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI via automated Playwright download. Cover page confirms The Maids International, LLC 2026 FDD. Issuance date January 18, 2026. Fiscal year ends September 30."
+  },
+
+  "brand": {
+    "brand_name": "The Maids",
+    "brand_slug": "the-maids",
+    "legal_entity": "The Maids International, LLC",
+    "parent_company": "The Maids Holdings Inc. / Gladstone Management Corp.",
+    "year_founded": 1979,
+    "year_first_franchised": 1979,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2026,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 60000,
+        "currency": "USD",
+        "range_low": null,
+        "range_high": null,
+        "field_status": "extracted",
+        "notes": "Single-territory Initial Franchise Fee is $60,000 flat. Multi-territory pricing: 2-Pack $110,000; 3-Pack $145,000; 4-Pack $170,000; 5-Pack $190,000; each additional territory beyond 5th is $20,000. Due at signing, nonrefundable, fully earned when paid. VetFran discount: $1,000 off total regardless of number of territories. During FY ended Sept 30, 2025, collected fees ranging from $20,616 to $134,925. Additionally, a SMART Start Package of $19,900 is required within 30 days of signing (includes training, supplies, equipment, uniforms). SMART Start Package is not required for additional contiguous territories.",
+        "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [12, 13], "item_reference": "Item 5", "exact_text": "One (1) Territory $60,000" }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": null,
+        "basis": "Gross Revenues",
+        "tiers": [
+          { "threshold_weekly_up_to": 6730, "rate": 6.9 },
+          { "threshold_weekly_up_to": 13460, "rate": 6.5 },
+          { "threshold_weekly_up_to": 28840, "rate": 6.0 },
+          { "threshold_weekly_up_to": 48070, "rate": 5.5 },
+          { "threshold_weekly_up_to": 76920, "rate": 5.0 },
+          { "threshold_weekly_up_to": 134615, "rate": 4.5 },
+          { "threshold_weekly_up_to": null, "rate": 3.9 }
+        ],
+        "field_status": "ambiguous",
+        "notes": "Called 'Continuing License Fees.' Weekly tiered structure based on weekly Gross Revenues (NOT marginal/cumulative like Molly Maid — the entire week's revenue is charged at the single applicable rate). 6.9% for $0-$6,730/week down to 3.9% for $134,616+/week. Multi-unit owners in compliance may combine weekly Gross Revenues to reach lowest tier (excluding acquisitions after 12/31/2012). If in default, rate reverts to 6.9% regardless of revenue. Minimum weekly Continuing License Fees apply: $0 months 1-6, $150 months 7-24, $200 months 25-48, $250 months 49+.",
+        "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [13, 18, 19], "item_reference": "Item 6, Continuing License Fees row and Notes 3, 4, 5", "exact_text": null }
+      },
+      "advertising_and_marketing": {
+        "value": null,
+        "basis": null,
+        "field_status": "ambiguous",
+        "structure_description": "Multi-component: Marketing Fund Fee 2% of Gross Revenues (brand fund) + Technology Innovation Fund Fee 0.25% of Gross Revenues + Local Marketing Requirement ($2,500/month for 1st territory, $500/month for 2nd, $250/month for each additional) + Grand Opening Marketing ($5,000 one-time before opening).",
+        "components": [
+          { "name": "Marketing Fund Fee (Brand Fund)", "value": 2.0, "basis": "Gross Revenues", "minimum_dollar": null, "frequency": "weekly", "notes": "Deposited in The Maids National Marketing Fund. Franchisor may increase by up to 0.5% every 2 years with 90 days notice and Advisory Council review." },
+          { "name": "Technology Innovation Fund Fee", "value": 0.25, "basis": "Gross Revenues", "minimum_dollar": null, "frequency": "weekly", "notes": "Deposited in The Maids National Technology Fund. May be increased up to max 1% of weekly Gross Revenues with 90 days notice, capped at $15,000/franchisee/year." },
+          { "name": "Local Marketing Requirement", "value": null, "basis": "per territory per month", "minimum_dollar": 2500, "frequency": "monthly", "notes": "$2,500/month for first territory; $500/month additional for second contiguous territory; $250/month for each additional contiguous territory beyond second. If not spent, franchisor may collect and spend on franchisee's behalf." },
+          { "name": "Grand Opening Marketing", "value": 5000, "basis": "one-time", "minimum_dollar": 5000, "frequency": "one-time", "notes": "Minimum $5,000 in pre-opening marketing activities, due at least 30 days before opening. Not required for additional contiguous territories." }
+        ],
+        "notes": "Total mandatory marketing fund percentage is 2.25% of Gross Revenues (2% Marketing Fund + 0.25% Tech Innovation Fund) paid to franchisor weekly. Local marketing spend requirement of $2,500+/month is separate and spent by franchisee directly on approved marketing activities.",
+        "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [13, 19, 20], "item_reference": "Item 6, Marketing Fund Fee row, Technology Innovation Fund Fee row, Notes 6, 7, 11", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 140,
+        "frequency": "monthly",
+        "field_status": "extracted",
+        "notes": "Software and Support Fee of $140/month, plus $85/month for each additional office. Begins upon completion of SMART Start Training. Franchisor may modify program, designate different vendor/software, or modify pricing with 30 days notice. Portion attributable to franchisor costs may increase by actual cost increase; portion for overhead/admin may increase by up to 25%/year. In FY ended Sept 30, 2025, software revenue was $232,971 (1.2% of total revenue).",
+        "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [14, 19], "item_reference": "Item 6, Software and Support Fee row and Note 8", "exact_text": "Currently $140 per month (Additional $85 per month per additional office)" }
+      },
+      "transfer_fee": {
+        "value": 15000,
+        "formula": "$15,000 flat. Transfer fee is waived if an existing franchisee is the transferee.",
+        "field_status": "extracted",
+        "notes": "Must be paid before transfer date. Franchisor must approve the transfer.",
+        "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 15, "item_reference": "Item 6, Transfer Fee row", "exact_text": "$15,000" }
+      },
+      "other_fees": [
+        { "fee_name": "Renewal Fee", "value": 3750, "frequency": "one-time at renewal", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 14, "item_reference": "Item 6, Renewal Fee row", "exact_text": "$3,750" } },
+        { "fee_name": "TMI National Convention", "value": null, "frequency": "annual", "field_status": "extracted", "notes": "Registration up to $750/person (may increase to $1,000 with 30 days notice). Non-attendance fee of $1,000; $1,500 for two or more consecutive non-attendances. Travel and lodging additional. Attendance mandatory for franchisee or designated team member approved by CEO.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [14, 19, 20], "item_reference": "Item 6, TMI National Convention row and Note 9", "exact_text": null } },
+        { "fee_name": "National Sales Center Fees", "value": null, "frequency": "weekly", "field_status": "extracted", "notes": "Required for first year of operation, optional thereafter. $60/week base fee + $7.50/unsold quote + $36/sold quote. Subject to change with 30 days notice (max 25% increase/year). 60 days written notice required for cancellation after first year.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [14, 20], "item_reference": "Item 6, National Sales Center Fees row and Note 10", "exact_text": null } },
+        { "fee_name": "Audit Fees", "value": null, "frequency": "as incurred", "field_status": "extracted", "notes": "Up to $5,000 plus external audit costs, professional fees, employee salaries, travel. Only payable if audit reveals Gross Revenues understated by >2% or Continuing License Fees underpaid by >$500 in any 12-month period.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 15, "item_reference": "Item 6, Audit Fees row", "exact_text": null } },
+        { "fee_name": "Interest Charges", "value": 18.0, "frequency": "per annum", "field_status": "extracted", "notes": "18% per annum or maximum legal rate allowable in franchisee's state, whichever is lower. On all delinquent fee payments.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 15, "item_reference": "Item 6, Interest Charges row", "exact_text": "18% per annum or the maximum legal rate allowable" } },
+        { "fee_name": "ACH Insufficient Funds", "value": 25, "frequency": "per occurrence", "field_status": "extracted", "notes": "Up to $25 per insufficient fund draft.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 15, "item_reference": "Item 6, ACH Draft row", "exact_text": "Currently up to $25 per insufficient fund draft" } },
+        { "fee_name": "Non-Compliance Fee", "value": 500, "frequency": "per occurrence", "field_status": "extracted", "notes": "Up to $500 per occurrence for failure to comply on timely basis with certain obligations.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 15, "item_reference": "Item 6, Non-Compliance Fee row", "exact_text": "Up to $500 per occurrence" } },
+        { "fee_name": "On-Site Training and Consulting", "value": 250, "frequency": "per day", "field_status": "extracted", "notes": "Up to $250/day plus travel expenses. May increase by up to 25%/year.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Requested On-Site Training row", "exact_text": "Currently up to $250 per day plus travel expenses" } },
+        { "fee_name": "Territory Infringement Fee", "value": null, "frequency": "per occurrence", "field_status": "extracted", "notes": "Varies depending on type and severity, up to 100% of Gross Revenue earned from infringement.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Territory Infringement Fee row", "exact_text": null } },
+        { "fee_name": "Local Marketing (non-compliance)", "value": null, "frequency": "as incurred", "field_status": "extracted", "notes": "Payable if franchisee fails to meet Local Marketing Requirement. Varies by number of territories.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 16, "item_reference": "Item 6, Local Marketing row", "exact_text": null } },
+        { "fee_name": "Liquidated Damages", "value": null, "frequency": "upon termination", "field_status": "extracted", "notes": "Calculated as: combined weekly average revenue for preceding 12 months x weeks remaining in agreement x (6.9% CLF + 0.25% TIF + 2% MFF = 9.15%). Due within 15 days of termination. Applies if franchisor terminates for default or franchisee terminates.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [17, 20], "item_reference": "Item 6, Liquidated Damages row and Note 12", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 60000, "high": 60000, "method_of_payment": "Lump Sum", "when_due": "When you sign the Franchise Agreement", "to_whom_paid": "The Maids International, LLC", "notes": "Single-territory only. Multi-territory pricing in Table B.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 20, "item_reference": "Item 7, Table A", "exact_text": "$60,000" } },
+        { "category": "SMART Start Package", "low": 19900, "high": 19900, "method_of_payment": "Lump Sum", "when_due": "Before Training", "to_whom_paid": "The Maids International, LLC", "notes": "Includes training, cleaning solvents, supplies, consumables, uniforms, branded apparel, vacuums, and equipment. Not required for additional contiguous territories.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 20, "item_reference": "Item 7, Table A", "exact_text": "$19,900" } },
+        { "category": "Grand Opening Marketing", "low": 5000, "high": 5000, "method_of_payment": "As Incurred", "when_due": "Before Opening", "to_whom_paid": "Supplier/Us", "notes": "Minimum $5,000 in pre-opening marketing. In addition to Marketing Fund Fees and Local Marketing Requirement. Not required for additional contiguous territories.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 20, "item_reference": "Item 7, Table A", "exact_text": "$5,000" } },
+        { "category": "Office Security Deposit", "low": 0, "high": 2150, "method_of_payment": "Lump Sum", "when_due": "Before Opening", "to_whom_paid": "Landlord", "notes": null, "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 20, "item_reference": "Item 7, Table A", "exact_text": "$0 - $2,150" } },
+        { "category": "Office Fixtures, Decorating & Furniture", "low": 500, "high": 2000, "method_of_payment": "Lump Sum", "when_due": "Before Opening", "to_whom_paid": "Supplier", "notes": null, "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 20, "item_reference": "Item 7, Table A", "exact_text": "$500 - $2,000" } },
+        { "category": "Auto Down Payments or Lease Payments and Paint or Wrap Installation", "low": 1800, "high": 4500, "method_of_payment": "Lump Sum", "when_due": "Before Opening", "to_whom_paid": "Supplier", "notes": "Must purchase or lease at least one four-door automobile wrapped or decaled to The Maids brand standards.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 21, "item_reference": "Item 7, Table A", "exact_text": "$1,800 - $4,500" } },
+        { "category": "Telephone, Internet, and Computer Systems", "low": 900, "high": 1800, "method_of_payment": "Lump Sum", "when_due": "Before Opening", "to_whom_paid": "Supplier", "notes": "Must meet franchisor standards and specifications.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 21, "item_reference": "Item 7, Table A", "exact_text": "$900 - $1,800" } },
+        { "category": "Insurance Deposit", "low": 2200, "high": 3200, "method_of_payment": "Lump Sum", "when_due": "Before Opening", "to_whom_paid": "Supplier", "notes": "General liability $1M/$2M aggregate, vehicle $1M, property, fidelity $25K, all required by law.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 21, "item_reference": "Item 7, Table A", "exact_text": "$2,200 - $3,200" } },
+        { "category": "Washer and Dryer", "low": 1000, "high": 2000, "method_of_payment": "Lump Sum", "when_due": "Before Opening", "to_whom_paid": "Supplier", "notes": null, "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 21, "item_reference": "Item 7, Table A", "exact_text": "$1,000 - $2,000" } },
+        { "category": "Start Up Professional Services", "low": 500, "high": 1500, "method_of_payment": "Lump Sum", "when_due": "Before Opening", "to_whom_paid": "Supplier", "notes": null, "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 21, "item_reference": "Item 7, Table A", "exact_text": "$500 - $1,500" } },
+        { "category": "Wages, Travel and Living Expenses During SMART Start Training", "low": 1040, "high": 4650, "method_of_payment": "As Incurred", "when_due": "During Training", "to_whom_paid": "Manager, Airlines, Hotels, and Restaurants", "notes": "Includes wages, fringe benefits, payroll taxes, travel, lodging, food, auto rental for all attendees. Does not include franchisee compensation/payroll costs.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 21, "item_reference": "Item 7, Table A", "exact_text": "$1,040 - $4,650" } },
+        { "category": "Additional Funds - 3 Months", "low": 24880, "high": 34500, "method_of_payment": "As Incurred", "when_due": "Monthly", "to_whom_paid": "Supplier/Us", "notes": "Does not include Continuing License Fees, Marketing Fund Fees, Technology Innovation Fund Fees, or franchisee compensation/personal living expenses. Based on franchisor's years of experience and information from franchisees.", "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 21, "item_reference": "Item 7, Table A", "exact_text": "$24,880 - $34,500" } }
+      ],
+      "total_low": 117720,
+      "total_high": 141200,
+      "total_provenance": { "source_year": 2026, "source_state": "WI", "page_number": 21, "item_reference": "Item 7, Table A, GRAND TOTAL row", "exact_text": "$117,720 - $141,200" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "Table I",
+          "description": "Average Revenue Per Clean, Average Revenue Per Customer, and Percentage of Cleans by Service for Franchised Outlets and Territories",
+          "period": "October 1, 2024 through September 30, 2025",
+          "population": "97 Franchised Outlets operating in 338 Territories that were in operation for the full Measurement Period or closed during it and submitted complete reports (Reporting Franchised Outlets). 9 Excluded Outlets (opened during period) not included. 11 outlets in 20 territories that closed during the period ARE included.",
+          "data": {
+            "regular_maid_service": {
+              "revenue_per_clean": { "average": 221.39, "median": 204.61, "high": 357.16, "low": 123.18, "outlets_at_or_above_avg": "35 (36.1%)", "territories_at_or_above_avg": "151 (46.2%)" },
+              "annual_revenue_per_recurring_customer": { "average": 4202.89, "median": 3998.27, "high": 8101.26, "low": 1540.02, "outlets_at_or_above_avg": "40 (41.2%)", "territories_at_or_above_avg": "168 (52%)" },
+              "pct_of_cleans_by_service": { "average": 95.1, "median": 95.3, "outlets_at_or_above_avg": "53 (54.6%)", "territories_at_or_above_avg": "189 (57.8%)" }
+            },
+            "special_projects": {
+              "revenue_per_clean": { "average": 861.58, "median": 791.39, "high": 3884.40, "low": 284.41, "outlets_at_or_above_avg": "43 (44.3%)", "territories_at_or_above_avg": "163 (50%)" },
+              "annual_revenue_per_recurring_customer": { "average": 837.07, "median": 737.33, "high": 5147.74, "low": 192.37, "outlets_at_or_above_avg": "38 (39.2%)", "territories_at_or_above_avg": "112 (34.3%)" },
+              "pct_of_cleans_by_service": { "average": 4.9, "median": 4.9, "outlets_at_or_above_avg": "43 (44.3%)", "territories_at_or_above_avg": "137 (42%)" }
+            }
+          },
+          "notes": "Revenue Per Clean = total reported revenue / total reported number of Cleans. Annual Revenue per Recurring Customer = total recurring revenue / total recurring customers. Special Projects are one-time projects (not regularly scheduled).",
+          "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [45, 46], "item_reference": "Item 19, Table I", "exact_text": null }
+        },
+        {
+          "table_label": "Table II",
+          "description": "High Revenue, Low Revenue, Average and Median Revenue for Franchised Outlets and Territories",
+          "period": "October 1, 2024 through September 30, 2025",
+          "population": "Same 97 Reporting Franchised Outlets in 338 Territories.",
+          "data": {
+            "revenue_per_franchised_outlet": { "average": 1184666.90, "median": 764050.98, "high": 7223182.61, "low": 52996.01, "outlets_at_or_above_avg": "31 (32%)", "avg_regular_maid_customers": 235.7 },
+            "revenue_per_franchised_territory": { "average": 386244.05, "median": 305937.75, "high": 1278507.08, "low": 42433.50, "territories_at_or_above_avg": "183 (56%)", "avg_regular_maid_customers": 68.6 }
+          },
+          "notes": "Average number of Regular Maid Service Customers calculated as: (average revenue x 95.1%) / $4,202.89. Very wide range for outlet revenue ($52,996 to $7.2M) reflects that outlets operate varying numbers of territories (1 to many). Per-territory revenue is more comparable ($42K-$1.3M). Only 32% of outlets exceed the average (skewed by high-revenue multi-territory operators).",
+          "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [46, 47], "item_reference": "Item 19, Table II", "exact_text": null }
+        },
+        {
+          "table_label": "Table III",
+          "description": "Revenue and Expense Information for Company-Owned Outlets",
+          "period": "October 1, 2024 through September 30, 2025",
+          "population": "6 Company-Owned Outlet Offices operating in 31 Territories in 6 states. Excludes 6 Transferred Territories sold to a franchisee during the period. Company-Owned Outlets operate under franchise agreements with same ongoing fees and local marketing requirements as franchised outlets, but may pay lower Continuing License Fee percentage.",
+          "data": {
+            "total_revenue": { "average_all_6": 8546259, "average_per_office": 1424377, "pct_of_revenue": 100.0, "median_per_office": 1195040 },
+            "cost_of_sales_revenue": {
+              "lead_generation": { "avg_per_office": 253, "pct": 0.0 },
+              "direct_labor": { "avg_per_office": 549247, "pct": 38.6 },
+              "customer_service_other": { "avg_per_office": 27843, "pct": 2.0 },
+              "workers_comp_insurance": { "avg_per_office": 25960, "pct": 1.8 },
+              "vehicle_gas_maint_insurance": { "avg_per_office": 56723, "pct": 4.0 },
+              "employee_appreciation": { "avg_per_office": 3497, "pct": 0.2 },
+              "continuing_licensing_fees": { "avg_per_office": 76229, "pct": 5.4 },
+              "marketing_fund_fees": { "avg_per_office": 28558, "pct": 2.0 },
+              "tech_fund_fees": { "avg_per_office": 3570, "pct": 0.3 },
+              "payment_processing_fees": { "avg_per_office": 33441, "pct": 2.3 },
+              "supplies_equipment_uniforms": { "avg_per_office": 16042, "pct": 1.1 },
+              "cleaning_supplies": { "avg_per_office": 452, "pct": 0.0 },
+              "auto_fleet_expenses": { "avg_per_office": 41, "pct": 0.0 },
+              "customer_damage": { "avg_per_office": 960, "pct": 0.1 },
+              "total_cost_of_sales": { "avg_per_office": 822815, "pct": 57.8 }
+            },
+            "cost_of_supports_revenue": {
+              "cost_of_services_revenue": { "avg_per_office": 4226, "pct": 0.3 },
+              "recruiting_hiring_operations": { "avg_per_office": 8769, "pct": 0.6 },
+              "employee_benefits": { "avg_per_office": 49913, "pct": 3.5 },
+              "payroll_taxes": { "avg_per_office": 54001, "pct": 3.8 },
+              "telephone": { "avg_per_office": 184, "pct": 0.0 },
+              "equipment_leases_software_maintenance": { "avg_per_office": 860, "pct": 0.1 },
+              "rent_utilities_maintenance": { "avg_per_office": 70084, "pct": 4.9 },
+              "total_cost_of_supports": { "avg_per_office": 183812, "pct": 12.9 }
+            },
+            "total_cost_of_revenue": { "avg_per_office": 1010853, "pct": 71.0 },
+            "gross_profit": { "avg_per_office": 413524, "pct": 29.0 },
+            "operating_expenses": {
+              "general_and_admin": { "avg_per_office": 3473, "pct": 0.2 },
+              "marketing_and_advertising": { "avg_per_office": 57311, "pct": 4.0 },
+              "depreciation_and_amortization": { "avg_per_office": 13355, "pct": 0.9 },
+              "payroll_and_related": { "avg_per_office": 89440, "pct": 6.3 },
+              "operating_and_maintenance": { "avg_per_office": 9658, "pct": 0.7 },
+              "taxes_and_insurance": { "avg_per_office": 19972, "pct": 1.4 },
+              "total_operating_expenses": { "avg_per_office": 193210, "pct": 13.6 }
+            },
+            "other_income_expense": { "avg_per_office": 43, "pct": 0.0 },
+            "net_income": { "avg_per_office": 220356, "pct": 15.5, "median_per_office": 208952 }
+          },
+          "notes": "Highest revenue company-owned office: $2,513,955 (4 territories). Lowest: $686,848 (5 territories). 3 of 6 (50%) met or exceeded average. Company-owned offices may incur higher management salaries than owner-operated franchises. Marketing & Tech Innovation Fees reflect credits for prior year overcharges, so % is lower than expected. Average net income of $220,356 per office (15.5% margin) is a strong signal, but company-owned may pay lower CLF rate than franchisees.",
+          "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [47, 48], "item_reference": "Item 19, Table III", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 is disclosed with three tables. Table I provides per-clean revenue and customer metrics. Table II provides total revenue per outlet and per territory. Table III provides a full P&L for company-owned outlets showing 15.5% average net margin. Notably, Table II shows average outlet revenue of $1.18M but median of only $764K, indicating significant skew from multi-territory operators. Per-territory median revenue of $305,938 is the more comparable metric. 11 outlets that closed during the Measurement Period are included (unlike Molly Maid which excluded closures). Company-owned outlets may pay lower CLF rate than franchisees.",
+      "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [44, 49], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "fiscal_year_end": "September 30",
+      "years_reported": [
+        {
+          "year": 2023,
+          "total_outlets_start": 382,
+          "total_outlets_end": 374,
+          "franchised_outlets_start": 346,
+          "franchised_outlets_end": 340,
+          "opened": 12,
+          "closed": 17,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 1,
+          "transferred": 5,
+          "ceased_operations_other": 0,
+          "company_owned_start": 36,
+          "company_owned_end": 34,
+          "notes": "Fiscal year ended Sept 30, 2023. Net contraction of 8 total outlets (6 franchised, 2 company-owned). Terminations (17) dominated exits. Georgia lost 4 outlets (11->7, 6 terminations offset by 1 opening). Colorado lost 4 (14->10, 3 ceased). California lost 1 (36->35, 2 terminations offset by 1 opening). Company-owned: FL sold 2 to franchisees, PA reacquired 1 from franchisee.",
+          "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [49, 50, 53, 54], "item_reference": "Item 20, Tables 1, 2, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 374,
+          "total_outlets_end": 374,
+          "franchised_outlets_start": 340,
+          "franchised_outlets_end": 338,
+          "opened": 12,
+          "closed": 8,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 6,
+          "transferred": 6,
+          "ceased_operations_other": 0,
+          "company_owned_start": 34,
+          "company_owned_end": 36,
+          "notes": "Fiscal year ended Sept 30, 2024. System flat at 374 total outlets. Franchised contracted by 2 (340->338) while company-owned grew by 2 (34->36). 6 franchised outlets reacquired by franchisor. Company-owned reacquired 6 from franchisees (TX: 2, TN: 4) and sold 4 to franchisees (NY: 3, FL: 1). Maryland lost 1 (20->19, 2 terminations offset by 1 opening).",
+          "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [49, 50, 53, 54], "item_reference": "Item 20, Tables 1, 2, 3, 4", "exact_text": null }
+        },
+        {
+          "year": 2025,
+          "total_outlets_start": 374,
+          "total_outlets_end": 369,
+          "franchised_outlets_start": 338,
+          "franchised_outlets_end": 338,
+          "opened": 9,
+          "closed": 11,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 2,
+          "transferred": 4,
+          "ceased_operations_other": 0,
+          "company_owned_start": 36,
+          "company_owned_end": 31,
+          "notes": "Fiscal year ended Sept 30, 2025. Total system contracted by 5 (374->369). Franchised held flat at 338 despite 11 terminations (Table 3 TOTALS: start 338, opened 9, terminations 11, non-renewals 0, reacquired 2, ceased 0, end 338). NOTE: Table 3 arithmetic (338+9-11-0-2-0=334) does not reconcile to stated end of 338; the 4-unit gap likely reflects territories sold from company-owned to franchisees (Table 4 shows 1 sold to franchisees in 2025) plus net territory adjustments not separately itemized. Company-owned shrank significantly (36->31): 4 outlets closed (TN), 1 sold to franchisee. North Carolina grew by 6 (12->18). Colorado grew by 4 (9->13). Florida grew by 1 (40->41). Georgia shrank (7->5, 1 terminated, 1 ceased).",
+          "provenance": { "source_year": 2026, "source_state": "WI", "page_number": [49, 50, 53, 54, 55], "item_reference": "Item 20, Tables 1, 2, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": true,
+      "action_count": 4,
+      "action_types": [
+        { "type": "franchisor_vs_franchisee_breach", "count": 4, "notes": "All 4 actions were filed by TMI during FY2025 against former franchisees for breach of franchise agreement, unpaid fees, and related claims. (1) TMI v. Sparkle Maids LLC / Charles Nobes (Douglas County NE, Sept 2025): breach of franchise agreement, promissory note, guaranty. Seeking $467,469 plus costs. Motion for Default Judgment pending hearing April 2026. (2) TMI v. Raising Dreams Group LLC / Derk Wallace (D. Neb., Sept 2025): post-termination breach, trademark infringement, trade secret misappropriation, non-compete violation. Seeking injunctive relief and $127,323+ damages. Clerk's default entered against entity; litigation ongoing against individual. (3) TMI v. Edwin Manukyan (Douglas County NE, Sept 2025): breach of franchise agreement and promissory note. Seeking $69,385 plus costs. Service of process in progress. (4) TMI v. GoStar International Group USA LLC / Hongtao Xu / Chunyi Wang (D. Neb., Nov 2025): post-termination trademark infringement, unfair competition, breach, underreported revenues, unauthorized post-termination use of marks. Seeking $250,429+ damages. Service of process in progress." }
+      ],
+      "notes": "All 4 active lawsuits were filed by TMI against former franchisees, not the reverse. All involve breach/non-payment claims. Two also include trademark infringement and non-compete claims post-termination. No lawsuits filed against TMI by franchisees are disclosed. No bankruptcy disclosed (Item 4).",
+      "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 11, "item_reference": "Item 3", "exact_text": null }
+    },
+
+    "system_info": {
+      "year_company_founded": 1979,
+      "year_first_franchised": 1979,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2026, "source_state": "WI", "page_number": 9, "item_reference": "Item 1", "exact_text": "On October 9, 1979, we were incorporated in the State of Nebraska as The Maids International, Inc." }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 129460,
+    "net_unit_growth": [
+      { "year": 2023, "value": -8, "source_fields": ["Table 1: 374-382=-8 (total)"] },
+      { "year": 2024, "value": 0, "source_fields": ["Table 1: 374-374=0 (total)"] },
+      { "year": 2025, "value": -5, "source_fields": ["Table 1: 369-374=-5 (total)"] }
+    ],
+    "turnover_rate": [
+      { "year": 2023, "value": 5.24, "source_fields": ["(17+0+1+0+5)/382+((0+0+4)/36) franchised: (17+0+1+0)/346=18/346=5.20% | simplified total exit: (17+0+1+0)/346"] },
+      { "year": 2024, "value": 4.12, "source_fields": ["(8+0+6+0)/340=14/340=4.12% (franchised exits: terminations+non-renewals+reacquired+ceased)"] },
+      { "year": 2025, "value": 3.85, "source_fields": ["(11+0+2+0)/338=13/338=3.85% (franchised exits: terminations+non-renewals+reacquired+ceased)"] }
+    ],
+    "system_age_years": 47,
+    "total_ongoing_fee_rate": null
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T12:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 12, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 21, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 21, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[0].total_outlets_start (2023)", "page_verified": 49, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].total_outlets_end (2025)", "page_verified": 49, "match": true },
+        { "field": "raw.item_19_financial_performance.tables[1].data.revenue_per_franchised_territory.average", "page_verified": 46, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-15T12:00:00Z"
+    },
+    "warnings": [
+      "FISCAL YEAR: The Maids uses fiscal year ending September 30 (not calendar year). All Item 20 years refer to FY ending Sept 30 of that year. Item 19 Measurement Period is Oct 1, 2024 - Sept 30, 2025.",
+      "SYSTEM CONTRACTION: Total system has shrunk from 382 to 369 outlets over 3 years (-3.4%). Franchised outlets stabilized in FY2025 (338->338) but company-owned shrank significantly (36->31).",
+      "TABLE 3 ARITHMETIC DISCREPANCY: For FY2025, Table 3 TOTALS (338+9-11-0-2-0=334) do not reconcile to stated end count of 338. The 4-unit gap likely includes territories sold/transferred from company-owned to franchised that are not captured in the standard Table 3 columns.",
+      "ROYALTY IS TIERED (weekly, non-marginal): 6.9% to 3.9% based on weekly Gross Revenues brackets. Unlike Molly Maid's marginal/cumulative structure, The Maids uses a single-rate approach (entire week charged at one rate). Recorded as ambiguous because it cannot be expressed as a single rate.",
+      "MARKETING IS MULTI-COMPONENT: 2% Marketing Fund + 0.25% Technology Innovation Fund + $2,500+/month Local Marketing Requirement. Total franchisor-collected percentage is 2.25% of Gross Revenues.",
+      "MANDATORY MINIMUM ROYALTY: Minimum weekly CLF of $150 (months 7-24), $200 (months 25-48), $250 (months 49+). This creates a floor on franchisor payments even if revenue is zero.",
+      "LIQUIDATED DAMAGES CLAUSE: Termination triggers liquidated damages calculated at 9.15% of average weekly revenue x remaining weeks in agreement. This is a significant franchisee liability.",
+      "Item 19 includes outlets that closed during the Measurement Period (11 outlets in 20 territories). This may depress averages compared to systems that exclude closures.",
+      "COMPANY FINANCIAL CONDITION: FDD Special Risks page (page 5) notes franchisor's financial condition 'calls into question the Franchisor's financial ability to provide services and support.' Consolidated financials show net loss of $(3,857,961) for FY2025, member's deficit of $(3,548,483), and $28.56M in related-party long-term debt. However, correction of prior-year errors added $7.25M to equity.",
+      "CONFIDENTIALITY CLAUSES: FDD notes franchisees have signed confidentiality clauses that may restrict their ability to speak openly about their experience.",
+      "SMART START PACKAGE ($19,900) is a significant additional upfront cost beyond the franchise fee, representing ~25% of the non-fee initial investment."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.royalty_rate.value", "reason": "Weekly tiered rate from 6.9% to 3.9%. Cannot express as single rate.", "field_status": "ambiguous" },
+      { "field": "raw.item_6_other_fees.advertising_and_marketing.value", "reason": "Multi-component: 2% Marketing Fund + 0.25% Tech Fund + $2,500+/month Local Marketing. No single rate.", "field_status": "ambiguous" },
+      { "field": "derived.total_ongoing_fee_rate", "reason": "Both royalty and marketing are multi-component structures that cannot be expressed as a single percentage.", "field_status": "ambiguous" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

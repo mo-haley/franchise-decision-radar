@@ -10,6 +10,9 @@
   .page-break { page-break-before: always; }
   h2 { page-break-after: avoid; }
   table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -38,10 +41,13 @@ tbody td.label { font-weight: 600; white-space: nowrap; }
 .callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
 
 .question-list { list-style: none; padding: 0; counter-reset: q; }
-.question-list li { padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; counter-increment: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
 .question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
 .question-list li:last-child { border-bottom: none; }
 .question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
 
 .methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
 .methodology p { margin: 0 0 0.5rem; }
@@ -57,50 +63,296 @@ tbody td.label { font-weight: 600; white-space: nowrap; }
 .implication strong { color: #1e40af; }
 ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
 ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
 </style>
 </head>
 <body>
 
-<div class="report-header">
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">Mosquito Joe</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: 2025 Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: Mosquito Joe SPV LLC</span>
+    <span>Report generated: 2026-03-15</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num">1</span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num">2</span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num">3</span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num">4</span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num">5</span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num">6</span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    <li><span class="toc-num">7</span> <a href="#payback">Illustrative Payback Sensitivity</a></li>
+    <li><span class="toc-num">8</span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num">9</span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num">10</span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num">11</span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num">12</span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num">13</span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
   <h1>Mosquito Joe</h1>
   <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
   <div class="report-meta">
     Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
-    Legal entity: Mosquito Joe SPV LLC &middot; Parent: Neighborly Assetco LLC / Dwyer Franchising LLC d/b/a Neighborly / KKR<br>
+    Legal entity: Mosquito Joe SPV LLC<br>
     Report generated: 2026-03-15 &middot; Franchise Decision Radar
   </div>
 </div>
 
-<h2>Executive Summary</h2>
+<h2 id="executive-summary">Executive Summary</h2>
 <div class="exec-summary">
 
-<p>Mosquito Joe has the strongest brand recognition in the mosquito pest control cohort,
-backed by KKR through the Neighborly platform. It also offers the most useful Item 19
-disclosure: a tenure-split that separates first-five-year operators ($214,794 average gross
-sales) from six-plus-year operators ($432,954 average). This is real data that lets a buyer
-model their ramp trajectory, and no other brand in the cohort provides it with this clarity.</p>
+<p>Mosquito Joe is the third-largest mosquito franchise brand by outlet count (415 franchised)
+and the most data-rich in the cohort — its Item 19 discloses customer retention rates (77%),
+per-treatment pricing ($90.54 average), and gross sales broken out by operator tenure. For
+a buyer doing due diligence, this is the most transparent brand in the category.</p>
 
-<p>The cost of that brand and data is high. Mandatory marketing obligations exceed $75,000 per
-year — the highest in the cohort by a wide margin. The Direct Marketing Program alone ($37,000/year)
-exceeds most competitors' <em>total</em> marketing burden. A 2024 termination spike (24, up from 5
-the prior year) caused the system to contract for the first time, with Alabama losing 8 of 9
-outlets. The franchisor litigated a franchisee over unpaid DMP fees and won, signaling that these
-marketing obligations are non-negotiable. The entity structure is a 6-layer SPV securitization
-chain — the most complex in the cohort.</p>
+<p>The trade-off is cost. Mosquito Joe has the most complex and expensive fee structure in
+the cohort. At $300K gross revenue, annual franchisor fees total $84,752 (28.3% of revenue) —
+$32,000 more than Mosquito Authority and roughly $7,000 more than Mosquito Squad. The marketing
+structure alone includes five mandatory components (MAP fee, Direct Marketing Program, Local
+Performance Marketing, SEO, and potentially LMG), with first-year marketing obligations
+exceeding $75,000. Initial investment runs $150K–$192K, highest in the cohort.</p>
 
-<p>The tiered royalty (10% on the first $500K, 7% above) genuinely rewards growth, and at high
-revenue levels Joe's royalty rate becomes the lowest in the cohort. But the marketing floor is
-punitive at low revenue: at $200K gross sales, franchisor fees consume 36.4% of revenue.</p>
+<p>The sharpest concern is the 2024 termination spike: 24 closures (up from 5–6 in prior years),
+concentrated in Alabama (8 of 24). The system contracted by 1 unit for the first time in the
+reporting period. This may be a one-time correction, but it requires explanation.</p>
 
 </div>
 
-<h2>Fee Burden Analysis</h2>
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the mosquito pest control cohort.</p>
 
-<p>Marketing is the story. At every modeled revenue level, Mosquito Joe's marketing obligations
-dominate the fee structure. The DMP fee ($37,000/year, reduced to $26,000 only after surpassing
-$450K in prior-year gross sales) creates a high fixed floor that hits hardest when revenue is low.
-The tiered royalty provides meaningful relief above $500K, but few first-five-year operators
-reach that threshold (median $287,832).</p>
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">Entry cost burden</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">Highest in cohort. $150K–$192K driven by $72K+ in mandatory first-year marketing programs.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Ongoing fee burden</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">#4 at most revenue levels. 28% at $300K. Most complex fee structure with 5+ mandatory marketing components.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">System stability</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Steady growth reversed in 2024 (−1 unit). 24 terminations (5× prior years). Alabama cluster (8 of 24) is concentrated.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Revenue disclosure</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Best Item 19 in cohort. Retention rates, per-treatment pricing, and tenure-segmented gross sales. Actionable data.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Disclosure quality</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Copy-paste errors in Item 19 headers. Data appears correct but formatting sloppiness in a Neighborly-backed filing is notable.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Downside risk profile</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Termination spike needs explanation. Fee escalation provisions (30%/year on tech/SEO) and conditional fees create cost uncertainty.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Buyer fit breadth</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Requires $150K+ capital and tolerance for complex fee structure. Best for buyers who value brand infrastructure over cost efficiency.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Overall</td>
+      <td class="rating rating-mixed">Cautious</td>
+      <td class="sc-summary">Most data-rich brand but highest cost. The premium buys transparency and Neighborly infrastructure — not lower risk or better unit economics.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+Mosquito Joe is the most transparent brand in this cohort and the most
+expensive. The disclosure quality is genuinely useful — a buyer can build a more informed
+financial model from Joe's Item 19 than from any competitor's. But the fee complexity, the
+2024 termination spike, and the highest investment in the category mean this is not a low-risk
+entry. It suits a buyer with capital, comfort with complex fee structures, and belief in the
+Neighborly platform's value. It does not suit a budget-sensitive first-time buyer.
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+
+<h3>Best fit for</h3>
+<ul class="fit-list">
+<li><strong>Buyer who values data transparency:</strong> Joe's Item 19 gives you the most
+complete picture of system economics in the cohort. If you want to build a detailed financial
+model before committing, this brand gives you the most inputs to work with.</li>
+<li><strong>Buyer who values brand infrastructure:</strong> Neighborly's platform provides
+shared call centers, cross-brand marketing, operational systems, and a recognized home-services
+brand. If you believe platform effects matter, Joe delivers them.</li>
+<li><strong>Well-capitalized buyer:</strong> $150K–$192K entry cost plus $72K+ in Year 1
+marketing means you need $200K+ in accessible capital. This is not a shoestring operation.</li>
+<li><strong>Buyer comfortable with complex fee structures:</strong> If you can model and
+manage 5+ fee components, conditional charges, and escalation provisions, the complexity
+is navigable. If you want a simple cost structure, look elsewhere.</li>
+</ul>
+
+<h3>Weaker fit for</h3>
+<ul class="fit-list">
+<li><strong>Budget-sensitive first-time buyer:</strong> At $150K+ to enter and $85K/year in
+franchisor fees at $300K revenue, this is the most expensive option in the category. Mosquito
+Authority enters for $54K and costs $32K/year less to operate.</li>
+<li><strong>Buyer who prioritizes cost efficiency:</strong> If your strategy is to minimize
+franchisor fees and maximize retained earnings, Joe is the wrong brand. The fee structure
+is designed to fund franchisor programs, not minimize franchisee cost.</li>
+<li><strong>Buyer in a smaller or unproven market:</strong> The mandatory $72K+ in first-year
+marketing obligations don't scale down for smaller territories. If your market's potential
+is modest, the fixed marketing costs consume a disproportionate share of revenue.</li>
+</ul>
+
+<h3>Proceed only if</h3>
+<ul class="fit-list">
+<li>You have at least $200K in accessible capital (investment + personal reserves for 6+ months).</li>
+<li>You've gotten a satisfactory explanation for the 2024 termination spike — particularly the
+Alabama cluster.</li>
+<li>You've validated the DMP's ROI with 3+ current franchisees who can show actual lead attribution data.</li>
+<li>You understand and accept every conditional fee (LMG, per-sale call center, Key Accounts)
+and have modeled worst-case total fee burden.</li>
+</ul>
+
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
+
+<p>Mosquito Joe has the second-highest ongoing fee burden in the cohort at most revenue levels,
+and the most complex marketing structure of any brand reviewed. The primary cost driver is
+marketing: five mandatory components that total $44,900–$48,900/year before any conditional
+programs.</p>
+
 
 <table>
   <thead>
@@ -115,6 +367,7 @@ reach that threshold (median $287,832).</p>
     </tr>
   </thead>
   <tbody>
+    
     <tr>
       <td class="label">$200,000</td>
       <td class="num">$20,000</td>
@@ -124,6 +377,7 @@ reach that threshold (median $287,832).</p>
       <td class="num">36.4%</td>
       <td class="num">4/5</td>
     </tr>
+    
     <tr>
       <td class="label">$300,000</td>
       <td class="num">$30,000</td>
@@ -133,6 +387,7 @@ reach that threshold (median $287,832).</p>
       <td class="num">28.3%</td>
       <td class="num">4/5</td>
     </tr>
+    
     <tr>
       <td class="label">$400,000</td>
       <td class="num">$40,000</td>
@@ -140,8 +395,9 @@ reach that threshold (median $287,832).</p>
       <td class="num">$7,852</td>
       <td class="num"><strong>$96,752</strong></td>
       <td class="num">24.2%</td>
-      <td class="num">4/5</td>
+      <td class="num">5/5</td>
     </tr>
+    
     <tr>
       <td class="label">$500,000</td>
       <td class="num">$50,000</td>
@@ -149,144 +405,356 @@ reach that threshold (median $287,832).</p>
       <td class="num">$7,852</td>
       <td class="num"><strong>$97,752</strong></td>
       <td class="num">19.6%</td>
-      <td class="num">3/5</td>
+      <td class="num">2/5</td>
     </tr>
+    
   </tbody>
 </table>
+
+
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Authority</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 61.3%"></div>
+    </div>
+    <div class="fee-bar-value">17.6%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Squad</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 90.6%"></div>
+    </div>
+    <div class="fee-bar-value">26.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Hunters</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 93.4%"></div>
+    </div>
+    <div class="fee-bar-value">26.8%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Joe</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill this-brand" style="width: 98.6%"></div>
+    </div>
+    <div class="fee-bar-value">28.3%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Shield</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 100.0%"></div>
+    </div>
+    <div class="fee-bar-value">28.7%</div>
+  </div>
+  
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+
+
 
 <h3>Component breakdown</h3>
 <ul class="compact">
-<li><strong>Royalty (10%/7% tiered):</strong> 10% on the first $500K of Gross Sales per territory
-per calendar year; 7% above $500K. Minimum License Fees begin Year 3: $325/week (Jun–Sep only),
-Year 4 $400/week, Year 5+ $500/week. The tier break at $500K is the most generous royalty
-discount in the cohort — but you have to get there first. (pp. 28–29)</li>
-<li><strong>MAP Fee (Brand Fund, 2% of Gross Sales):</strong> Paid weekly. Covers brand
-development, internet marketing, advertising materials. (p. 30)</li>
-<li><strong>Direct Marketing Program ($37,000/year):</strong> Reduced to $26,000 only if prior
-year Gross Sales reached $450K. Setup fee $1,000 plus mailing list at $0.05/household
-($1,250–$1,750). This single line item exceeds most competitors' total marketing obligation. (pp. 30–31)</li>
-<li><strong>SEO ($325/month):</strong> Per website. May increase up to 30% annually. (p. 31)</li>
-<li><strong>Local Performance Marketing ($35,000):</strong> First 12 months. Listed as an Item 7
-investment line but is a marketing spend obligation. (p. 39)</li>
-<li><strong>Technology ($371/month):</strong> Plus $25/month per additional territory. Covers
-ServSuite, Office365, FranConnect, Nextiva, Qvinci. May increase up to 30% annually. (p. 30)</li>
-<li><strong>Call Center ($199.99/month + $25/closed sale):</strong> Mandatory for rollover and
-after-hours calls. Paid to Neighborly Service Solutions SPV LLC. (p. 31)</li>
-<li><strong>Convention (up to $1,000/year):</strong> Plus travel. $2,000 penalty for
-non-attendance — you pay more for not going than for going. (p. 32)</li>
+<li><strong>Royalty (10%/7% tiered):</strong> 10% on the first $500K of Gross Sales per
+territory, dropping to 7% above $500K. The tier benefits larger operators but is irrelevant
+at the revenue levels most single-territory operators reach. Minimum License Fees begin
+Year 3: $325/week (Jun–Sep only), Year 4: $400/week, Year 5+: $500/week. (pp. 28–29)</li>
+<li><strong>MAP Fee (2% of Gross Sales):</strong> Brand fund contribution. Includes
+WebPunch license. This is the straightforward component. (p. 28)</li>
+<li><strong>Direct Marketing Program ($37,000/year):</strong> The largest single mandatory
+fee. Covers direct mail and digital marketing programs. Reduced to $26,000 if prior-year
+Gross Sales exceed $450K. Setup fee $1,000 + mailing list fee $0.05/household ($1,250–$1,750
+additional). (pp. 30, 35)</li>
+<li><strong>Local Performance Marketing ($35,000/year):</strong> Required for the first
+12 months only. This is a first-year marketing investment on top of the DMP — a $35K
+obligation that does not repeat but significantly increases Year 1 cash requirements.
+(p. 35, Item 7)</li>
+<li><strong>SEO Program ($325/month):</strong> $3,900/year. Per website. May increase
+up to 30% annually. (p. 30)</li>
+<li><strong>Technology ($371/month):</strong> $4,452/year. Covers ServSuite, Office365,
+FranConnect, Nextiva, Qvinci. +$25/month per additional territory. May increase up
+to 30% annually. (p. 30)</li>
+<li><strong>Call Center ($200/month + $25/closed sale):</strong> Mandatory for rollover
+and after-hours. The per-sale fee is variable and excluded from the model — at 200
+closed sales/year, it adds $5,000. (p. 29)</li>
+<li><strong>Convention ($1,000/year):</strong> Plus travel. $2,000 penalty for
+non-attendance. (p. 31)</li>
 </ul>
 
 <div class="implication">
-<strong>What this means:</strong> At $300K revenue, you keep ~$215K after franchisor fees.
-At Mosquito Authority with the same revenue, you keep ~$247K. That $32,000/year difference
-compounds over a 10-year franchise term into $320,000 of additional retained earnings —
-roughly twice the initial investment at Authority. The question is whether Joe's brand
-recognition and marketing infrastructure generate enough incremental revenue to justify the cost.
+<strong>What this means:</strong> At $300K revenue, you retain ~$215K after franchisor fees.
+At Mosquito Authority, you'd keep ~$247K — a $32,000/year difference. Over a 10-year term,
+that's $320,000 in additional fees paid to the franchisor. The question is whether Neighborly's
+brand infrastructure, marketing programs, and operational support justify that premium.
 </div>
 
 <div class="callout">
-<div class="callout-title">The $500K inflection point</div>
-At $500K gross sales, two things happen simultaneously: the royalty drops from 10% to 7% on
-marginal revenue, and the DMP fee drops from $37,000 to $26,000. Total fees fall from 24.2%
-(at $400K) to 19.6% (at $500K). This is the most dramatic fee relief in the cohort — but the
-Item 19 data shows only 35% of first-five-year operators exceed the average of $214,794,
-meaning most early-stage franchisees are paying the higher rates. (pp. 28–29, 82)
+<div class="callout-title">Hidden variable — conditional fees</div>
+The fee model excludes Local Marketing Groups (LMG, 2% of Gross Sales — may be required)
+and the per-closed-sale call center fee ($25/sale). If both are active, add $11,000–$15,000/year
+at $300K revenue. The FDD also permits up to 30% annual increases on technology and SEO fees.
+The disclosed fee structure is a floor, not a ceiling.
 </div>
 
 
-<h2>Item 19 Interpretation</h2>
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
 
-<p>Mosquito Joe provides the most analytically useful revenue disclosure in the cohort. The
-tenure-split structure — separating first-five-year operators from six-plus-year operators —
-gives a buyer something rare: a data-grounded view of the revenue ramp over time.</p>
+<p>Mosquito Joe's Item 19 is the most useful in the cohort for a prospective buyer. It provides
+three things no other brand in this category discloses together: customer retention metrics,
+per-treatment pricing, and gross sales segmented by operator tenure.</p>
 
-<h3>Part I: Customer and treatment metrics (410 of 415 businesses)</h3>
+<h3>Part I — Customer metrics (2024)</h3>
+<p>Based on 410 of 415 franchised businesses:</p>
 <ul class="compact">
-<li><strong>Customer retention: 77%</strong> — meaning roughly 3 in 4 customers return the
-following season. This is a strong recurring revenue signal for a seasonal business.</li>
-<li><strong>Recurring customer rate: 89%</strong> — of the customer base in any given year,
-89% are repeat customers.</li>
-<li><strong>Average gross sales per treatment: $90.54</strong> (median $88.62, range $63–$141).
-Only 41% of businesses are at or above average. (p. 81)</li>
+<li><strong>Customer retention: 77%</strong> — three-quarters of customers return year over year</li>
+<li><strong>Recurring customer rate: 89%</strong> — among returning customers, nearly all are on
+recurring service plans</li>
+<li><strong>Average gross sales per treatment: $90.54</strong> (median: $88.62)</li>
+<li>167 of 410 (41%) achieved or exceeded the average per-treatment price</li>
 </ul>
 
-<h3>Part II: Revenue by tenure (387 businesses, 12+ months)</h3>
+<p>The 77% retention rate is a strong signal for a recurring-revenue business. It means roughly
+one in four customers needs to be replaced each year. Combined with the 89% recurring rate,
+the business model is demonstrably sticky once you acquire customers.</p>
+
+<h3>Part II — Gross sales by tenure (2024)</h3>
+<p>387 businesses open 12+ months, segmented by operating tenure:</p>
 
 <table>
+<thead>
+<tr>
+<th>Tenure</th>
+<th class="num">Count</th>
+<th class="num">Average</th>
+<th class="num">Median</th>
+<th class="num">High</th>
+<th class="num">Low</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="label">First 5 Years</td>
+<td class="num">91</td>
+<td class="num">$214,794</td>
+<td class="num">$287,832</td>
+<td class="num">$850,881</td>
+<td class="num">$15,980</td>
+</tr>
+<tr>
+<td class="label">Six Plus Years</td>
+<td class="num">296</td>
+<td class="num">$432,954</td>
+<td class="num">$339,460</td>
+<td class="num">$1,901,756</td>
+<td class="num">$13,884</td>
+</tr>
+</tbody>
+</table>
+
+<h3>What to be careful about</h3>
+<p><strong>The First 5 Years data is left-skewed:</strong> The median ($287,832) exceeds the
+average ($214,794), meaning a cluster of very low performers pulls the average down. If you're
+evaluating likely revenue, the median is more representative than the average for this cohort —
+but the $16K low shows some operators barely function.</p>
+
+<p><strong>These are per-franchisee figures, not per-territory.</strong> The FDD doesn't disclose
+how many territories each reporting business operates. If the average is 1.5–2 territories,
+per-territory revenue is significantly lower. The FDD does not clarify this.</p>
+
+<p><strong>Document quality flag:</strong> Column headers in the Part II tables contain copy-paste
+errors — customer and job count headers read "Average Annual Gross Sales" and "Median Annual
+Gross Sales" instead of the correct labels. The data values appear correct; it's a formatting
+error in the filed FDD, not a data integrity issue.</p>
+
+<div class="implication">
+<strong>What this means:</strong> A reasonable revenue expectation for a single-territory
+operator in the first 5 years is likely in the $200K–$290K range (between the average and
+median). Mature operators reach $340K–$430K. The high performers ($850K–$1.9M) almost certainly
+operate multiple territories. Plan around the median, not the average or the high — and validate
+the per-territory assumption with current franchisees.
+</div>
+
+
+
+
+<h3>Revenue triangulation</h3>
+<p>Cross-checking the gross sales data against treatment pricing provides a useful sanity check.
+At the average price of $90.54 per treatment:</p>
+<ul class="compact">
+<li>$215K (First 5 Years average) implies ~2,375 treatments/year</li>
+<li>$288K (First 5 Years median) implies ~3,180 treatments/year</li>
+<li>$340K (Six Plus Years median) implies ~3,750 treatments/year</li>
+</ul>
+<p>The reported average jobs per business for First 5 Years is 2,305 (median 3,328), which aligns
+closely with the treatment-count math. This internal consistency gives reasonable confidence
+in the revenue figures.</p>
+
+<p>Customer counts add another check: First 5 Years average of 298 customers, with ~8 treatments
+per customer per season (2,305 jobs ÷ 298 customers). The math is consistent. This is a business
+where you serve ~300 customers, each receiving ~8 treatments at ~$90, for ~$215K–$290K in
+gross revenue during the first few years.</p>
+
+
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
+This is not a profitability forecast. It is an illustrative scenario exercise using Mosquito
+Joe's disclosed Item 19 revenue data combined with a 23% cost-of-goods estimate borrowed from
+Mosquito Authority's company-owned P&L (the only company-owned cost data available in this cohort).
+Mosquito Joe does not disclose franchisee cost data. Your actual results depend on your market,
+operating costs, and execution.</p>
+
+
+<table class="scenario-table">
   <thead>
     <tr>
-      <th>Tenure</th>
-      <th class="num">Count</th>
-      <th class="num">Average</th>
-      <th class="num">Median</th>
-      <th class="num">High</th>
-      <th class="num">Low</th>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
     </tr>
   </thead>
   <tbody>
+    
     <tr>
-      <td class="label">First 5 Years</td>
-      <td class="num">91</td>
-      <td class="num">$214,794</td>
-      <td class="num">$287,832</td>
-      <td class="num">$850,881</td>
-      <td class="num">$15,980</td>
+      <td class="scenario-name">Conservative (First 5 Yrs avg)</td>
+      <td class="num">$215,000</td>
+      <td class="num">$74,551 (34.7%)</td>
+      <td class="num">$49,450</td>
+      <td class="num"><strong>$90,999</strong></td>
     </tr>
+    
     <tr>
-      <td class="label">6+ Years</td>
-      <td class="num">296</td>
-      <td class="num">$432,954</td>
-      <td class="num">$339,460</td>
-      <td class="num">$1,901,756</td>
-      <td class="num">$13,884</td>
+      <td class="scenario-name">Moderate (First 5 Yrs median)</td>
+      <td class="num">$288,000</td>
+      <td class="num">$83,311 (28.9%)</td>
+      <td class="num">$66,240</td>
+      <td class="num"><strong>$138,449</strong></td>
     </tr>
+    
+    <tr>
+      <td class="scenario-name">Mature (Six Plus Yrs median)</td>
+      <td class="num">$340,000</td>
+      <td class="num">$89,551 (26.3%)</td>
+      <td class="num">$78,200</td>
+      <td class="num"><strong>$172,249</strong></td>
+    </tr>
+    
   </tbody>
 </table>
+<p class="assumption-note">Revenue from Item 19 tenure-segmented data. COGS at 23% (borrowed from Mosquito Authority company-owned P&L — no MJ cost data available). Franchisor fees from fee burden model. 'Remaining' must cover: vehicle costs, insurance, chemical supplies, seasonal labor, marketing beyond mandatory programs, and your living expenses.</p>
 
-<h3>What the numbers tell you</h3>
-<p>The first-five-year cohort shows a left-skewed distribution: the <strong>median ($287,832)
-exceeds the average ($214,794)</strong>, meaning a cluster of very low performers is pulling
-the average down. The typical early-stage operator does better than the average suggests. Only
-35% of first-five-year operators are at or above average — which confirms the low-end tail is
-significant.</p>
 
-<p>The six-plus-year cohort reverses the pattern: average ($432,954) exceeds median ($339,460),
-indicating a right-skewed distribution — a few high performers pulling the average up. The
-typical mature operator earns closer to $339K than $433K.</p>
+<h3>What the scenarios tell you</h3>
 
-<p>The jump from early-stage median ($288K) to mature median ($339K) is meaningful but not
-dramatic — roughly $51K in additional annual revenue. Most of the "growth" in the average
-is driven by outlier performers (the high is $1.9M).</p>
+<p><strong>Conservative (First 5 Yrs average, $215K):</strong> After fees ($75K) and COGS ($49K),
+$91K remains. This must cover all operating costs and your living expenses. If non-fee operating
+costs run $30K–$40K, your effective owner draw is $50K–$60K before taxes. This is tighter than
+it looks — the $72K+ in first-year marketing obligations are already spent.</p>
 
-<h3>What to be careful about</h3>
+<p><strong>Moderate (First 5 Yrs median, $288K):</strong> The median revenue produces $133K
+remaining after fees and COGS. After typical operating costs, an owner draw of $80K–$95K is
+plausible. This is the scenario where Joe's economics start working. But remember: half of
+first-5-year operators are below this number.</p>
+
+<p><strong>Mature (Six Plus Yrs median, $340K):</strong> At mature revenue levels, $163K
+remains after fees and COGS. A well-run single-territory operation could generate $100K+
+owner draw at this level. This is where the Neighborly premium becomes defensible — if the
+brand infrastructure helped you get to $340K.</p>
+
+<div class="callout">
+<div class="callout-title">The cost premium in context</div>
+At $300K revenue, Mosquito Joe's franchisor fees are $85K — about $32K more than Mosquito
+Authority ($53K). That means the buyer is paying an additional $32K/year for the Neighborly
+platform. Is the brand infrastructure, marketing program, and operational support worth
+$32K/year to you? If the DMP and Neighborly's systems help you reach $340K+ faster than
+you'd reach $300K with a low-cost brand, the premium pays for itself. If not, you've funded
+corporate programs at the expense of your own economics.
+</div>
+
+<h3>What the buyer still needs to validate</h3>
 <ul class="compact">
-<li><strong>24 closed businesses excluded.</strong> The FDD excludes businesses that closed during
-2024 from the Item 19 calculations. Their revenue (likely low) is not reflected in the averages
-or medians. This is survivorship bias. (p. 82)</li>
-<li><strong>No company-owned P&L.</strong> Despite owning 2 locations, no company-owned financial
-performance data is disclosed. This is a gap — Mosquito Authority and Mosquito Squad both
-provide company-owned P&Ls. You cannot estimate expense ratios from this FDD alone.</li>
-<li><strong>Column header errors.</strong> The customers and jobs tables reuse "Average Annual
-Gross Sales" and "Median Annual Gross Sales" column headers instead of correct labels. This is
-a copy/paste error in the filed regulatory document — the data values appear correct for their
-respective metrics, but it is a document quality issue in a filing underlying a six-figure
-decision. (pp. 82–84)</li>
+<li><strong>Actual total fees:</strong> Model worst-case by including LMG (2% of GS), per-sale
+call center fees ($25 × estimated sales), Key Account fees (up to 5% of related GS), and
+30% annual escalation on tech/SEO.</li>
+<li><strong>Per-territory revenue:</strong> Confirm whether the Item 19 figures are per
+franchisee or per territory. If multi-territory operators are included in the averages,
+single-territory revenue is lower.</li>
+<li><strong>DMP attribution:</strong> Get actual lead data from 3+ franchisees. The $37K/year
+program should have measurable ROI — if the franchisor can't demonstrate it, that's a signal.</li>
+<li><strong>First-year cash flow:</strong> With $72K+ in mandatory Year 1 marketing, map the
+month-by-month cash draw against expected revenue ramp. The 3-month working capital estimate
+in Item 7 ($17K–$28K) is almost certainly insufficient.</li>
 </ul>
 
-<div class="implication">
-<strong>What this means:</strong> Plan for the median, not the average. A first-five-year
-single-territory operator should model around $288K in gross revenue — which, after $85K in
-franchisor fees (at that revenue level), leaves approximately $203K for all operating expenses,
-labor, and owner compensation. You will need to build your own expense model or talk to current
-franchisees, because this FDD provides no cost data.
+
+<!-- PAYBACK SENSITIVITY -->
+<h2 id="payback">Illustrative Payback Sensitivity</h2>
+
+<p>The table below shows how long it would take to recover your initial investment under
+different assumptions about annual owner draw (net income after all costs, fees, and
+operating expenses — but before personal taxes).</p>
+
+<table>
+<thead>
+<tr>
+<th>Assumed annual owner draw</th>
+<th class="num">Low investment ($150K)</th>
+<th class="num">Mid investment ($171K)</th>
+<th class="num">High investment ($192K)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="label">$40K (conservative early years)</td>
+<td class="num">3.8 years</td>
+<td class="num">4.3 years</td>
+<td class="num">4.8 years</td>
+</tr>
+<tr>
+<td class="label">$70K (moderate, Year 4+ target)</td>
+<td class="num">2.1 years</td>
+<td class="num">2.4 years</td>
+<td class="num">2.7 years</td>
+</tr>
+<tr>
+<td class="label">$100K (mature operation)</td>
+<td class="num">1.5 years</td>
+<td class="num">1.7 years</td>
+<td class="num">1.9 years</td>
+</tr>
+</tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Assumption sensitivity</div>
+These payback periods assume a constant annual draw, which is unrealistic. Year 1 income will
+be low while you build a customer base, and $72K+ in mandatory marketing is front-loaded.
+A more honest frame: if you reach $288K revenue (First 5 Years median) by Year 3 and sustain
+$80K–$95K owner draw from Year 3 onward, payback occurs around Year 5–6 at mid investment.
+The higher investment threshold compared to competitors means you need either higher revenue
+or a longer time horizon to recover your capital.
 </div>
 
 
-<h2>Investment Breakdown</h2>
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
 
-<p>Total investment: $150,155–$192,075. The striking feature is how much of it is mandatory
-marketing: the DMP ($37,000) plus Local Performance Marketing ($35,000) total $72,000 —
-roughly 40% of the investment going to marketing before the business serves its first customer.</p>
+<p>Highest in the cohort: $150,155–$192,075. The major cost drivers are the marketing programs:
+the Direct Marketing Program ($37K), Local Performance Marketing ($35K), and setup fees account
+for roughly half the total investment before you buy a single piece of equipment.</p>
+
 
 <table>
   <thead>
@@ -297,86 +765,103 @@ roughly 40% of the investment going to marketing before the business serves its 
     </tr>
   </thead>
   <tbody>
+    
     <tr>
       <td>Initial Franchise Fee</td>
       <td class="num">$42,500</td>
       <td class="num">$42,500</td>
     </tr>
+    
     <tr>
-      <td>Direct Marketing Program (Setup + Annual)</td>
+      <td>Direct Marketing Program / Setup + Annual Fee</td>
       <td class="num">$37,000</td>
       <td class="num">$37,000</td>
     </tr>
+    
     <tr>
-      <td>DMP Mailing List Fee</td>
+      <td>Direct Marketing Program / Annual Mailing List Fee</td>
       <td class="num">$1,250</td>
       <td class="num">$1,750</td>
     </tr>
+    
     <tr>
-      <td>Local Performance Marketing (12 months)</td>
+      <td>Local Performance Marketing Investment (12 months)</td>
       <td class="num">$35,000</td>
       <td class="num">$35,000</td>
     </tr>
+    
     <tr>
       <td>SEO Program Fee (3 months)</td>
       <td class="num">$325</td>
       <td class="num">$975</td>
     </tr>
+    
     <tr>
       <td>Real Property</td>
       <td class="num">$0</td>
       <td class="num">$6,000</td>
     </tr>
+    
     <tr>
-      <td>Office Furnishings, Signage &amp; Fixtures</td>
+      <td>Office Furnishings, Signage & Fixtures</td>
       <td class="num">$0</td>
       <td class="num">$2,000</td>
     </tr>
+    
     <tr>
-      <td>Tools, Equipment, Products, Uniforms &amp; Supplies</td>
+      <td>Tools, Equipment, Products, Uniforms & Supplies</td>
       <td class="num">$5,500</td>
       <td class="num">$6,500</td>
     </tr>
+    
     <tr>
-      <td>Vehicle, Shelving &amp; Decals</td>
+      <td>Vehicle, Shelving & Decals</td>
       <td class="num">$3,000</td>
       <td class="num">$10,000</td>
     </tr>
+    
     <tr>
       <td>Initial Training</td>
       <td class="num">$100</td>
       <td class="num">$2,000</td>
     </tr>
+    
     <tr>
-      <td>Insurance, Office &amp; Marketing Supplies</td>
+      <td>Insurance, Office & Marketing Supplies & Forms</td>
       <td class="num">$6,000</td>
       <td class="num">$7,000</td>
     </tr>
+    
     <tr>
       <td>Professional Fees</td>
       <td class="num">$0</td>
       <td class="num">$1,000</td>
     </tr>
+    
     <tr>
       <td>Licenses</td>
       <td class="num">$100</td>
       <td class="num">$3,200</td>
     </tr>
+    
     <tr>
       <td>Computer, Internet Devices, Phones, Software Setup</td>
       <td class="num">$2,600</td>
       <td class="num">$5,100</td>
     </tr>
+    
     <tr>
       <td>Deposits</td>
       <td class="num">$0</td>
       <td class="num">$4,000</td>
     </tr>
+    
     <tr>
-      <td>Additional Funds — 3 Months</td>
+      <td>Additional Funds - 3 Months</td>
       <td class="num">$16,780</td>
       <td class="num">$28,050</td>
     </tr>
+    
     <tr style="border-top:2px solid #333">
       <td class="label">Total</td>
       <td class="num"><strong>$150,155</strong></td>
@@ -385,321 +870,630 @@ roughly 40% of the investment going to marketing before the business serves its 
   </tbody>
 </table>
 
+
 <h3>What to know about the major line items</h3>
 <ul class="compact">
-<li><strong>Franchise fee ($42,500):</strong> Standardized for a territory of 25,000–35,000
-Targeted Households. Average actually paid in 2024: ~$42,245 (range $34,000–$44,725). Discounts
-available (Community Heroes, VetFran — $8,500 each) but only one discount at a time. Development
-Agreement pricing for multi-territory: 2 for $85K, 3 for $118.5K. (pp. 24, 28)</li>
-<li><strong>DMP + Local Performance Marketing ($72,000):</strong> These two mandatory marketing
-line items alone nearly match Mosquito Authority's entire high-end investment ($127,700). They
-are fixed costs — they do not scale with revenue. This is the defining cost characteristic of
-the Mosquito Joe franchise. (p. 39)</li>
-<li><strong>Vehicle ($3,000–$10,000):</strong> Notably low compared to competitors. Most of the
-investment cost is marketing, not equipment. (p. 39)</li>
-<li><strong>Working capital ($16,780–$28,050):</strong> Three months. For a seasonal business with
-near-zero winter revenue, plan for personal reserves beyond this. (p. 39)</li>
+<li><strong>Franchise fee ($42,500):</strong> Standard for 25,000–35,000 Targeted Households.
+Extensive discount programs available (Community Heroes $8,500 off, VetFran $8,500 off,
+Licensed Pesticide Applicator $2,500 off). Multi-territory pricing: 2 for $85K, 3 for
+$118.5K. Only one discount may be used. (pp. 24–28)</li>
+<li><strong>Direct Marketing Program ($37K–$38.75K):</strong> $37K annual fee + $1K setup +
+$1,250–$1,750 mailing list. This is a mandatory pre-opening expense, not optional marketing
+you choose to do. It's the single most distinctive cost in Mosquito Joe's model. (pp. 30, 35)</li>
+<li><strong>Local Performance Marketing ($35,000):</strong> Required first 12 months.
+This is on top of the DMP — essentially a $35K marketing investment required before you
+know if your territory works. (p. 35)</li>
+<li><strong>Vehicle ($3K–$10K):</strong> Vehicle, shelving, and decals. Notably lower
+than competitors because MJ's Item 7 assumes you're adding equipment to an existing
+vehicle, not buying one. (p. 39)</li>
+<li><strong>Additional funds ($16.8K–$28K):</strong> 3-month working capital estimate.
+Given the high fixed marketing costs, this is conservative. A buyer should plan for
+additional personal reserves beyond this. (p. 39)</li>
 </ul>
 
 <div class="implication">
-<strong>What this means:</strong> The investment range is narrow relative to competitors because
-the biggest line items (franchise fee, DMP, local performance marketing) are fixed. You can
-control vehicle cost and real property, but $114,500 of the $150,155 low end is non-negotiable
-(franchise fee + marketing). Compare to Mosquito Authority, where the vehicle alone creates a
-$30K swing in the range.
+<strong>What this means:</strong> Mosquito Joe's investment is front-loaded with mandatory
+marketing spend ($72K+ in Year 1 marketing programs alone). The theory is that this aggressive
+launch marketing builds a customer base faster. The risk is that you're paying $72K for
+marketing programs before you've validated your territory. If the programs underperform,
+that money is gone — unlike equipment, marketing spend has no residual value.
 </div>
 
 
-<h2>System Health</h2>
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
 
-<p>Steady growth in 2022 and 2023 (+22 net franchised units each year), then an abrupt reversal
-in 2024. Terminations spiked from 5 to 24 — a nearly 5x increase — and the system contracted
-for the first time in the reporting window.</p>
+<p>The second-largest system in the cohort (415 franchised units), with steady growth through
+2023 (+22/year) that reversed in 2024 (−1). The 2024 contraction is driven entirely by a
+termination spike: 24 closures, up from 5–6 in prior years. This is the most significant
+system health signal in the current filing.</p>
+
 
 <table>
   <thead>
     <tr>
       <th>Year</th>
-      <th class="num">Start</th>
       <th class="num">Opened</th>
-      <th class="num">Terminated</th>
-      <th class="num">Ceased</th>
-      <th class="num">Transferred</th>
+      <th class="num">Closed</th>
       <th class="num">Net</th>
       <th class="num">End Count</th>
     </tr>
   </thead>
   <tbody>
+    
     <tr>
       <td class="label">2022</td>
-      <td class="num">372</td>
       <td class="num">28</td>
       <td class="num">6</td>
-      <td class="num">0</td>
-      <td class="num">30</td>
       <td class="num">+22</td>
       <td class="num">394</td>
     </tr>
+    
     <tr>
       <td class="label">2023</td>
-      <td class="num">394</td>
       <td class="num">28</td>
-      <td class="num">5</td>
-      <td class="num">1</td>
-      <td class="num">11</td>
+      <td class="num">6</td>
       <td class="num">+22</td>
       <td class="num">416</td>
     </tr>
+    
     <tr>
       <td class="label">2024</td>
-      <td class="num">416</td>
       <td class="num">23</td>
       <td class="num">24</td>
-      <td class="num">0</td>
-      <td class="num">8</td>
       <td class="num">-1</td>
       <td class="num">415</td>
     </tr>
+    
   </tbody>
 </table>
 
+
 <h3>The 2024 termination spike</h3>
-<p>24 terminations in a single year against a base of 416 outlets (5.8% termination rate). For
-context: Mosquito Authority had zero terminations across the entire 3-year window. The geographic
-concentration is notable — <strong>Alabama went from 9 outlets to 1</strong> (8 terminations in a
-single state). This suggests either a regional compliance enforcement action or a cluster of
-underperforming operators, not random attrition.</p>
+<p>24 terminations in 2024, compared to 5 in 2023 and 6 in 2022. Nearly 5× the prior-year
+rate. Eight of the 24 were in Alabama, which went from 9 outlets to 1 — suggesting a
+state-level issue (regulatory, market, or operator-cluster problem) rather than a
+system-wide trend.</p>
 
-<h3>Transfer volume decline</h3>
-<p>Transfers dropped sharply: 30 (2022), 11 (2023), 8 (2024). In a healthy system, transfers
-indicate resale value. The decline could mean fewer buyers, fewer willing sellers, or franchisor
-resistance to transfers — worth asking about at Discovery Day.</p>
-
-<h3>Company-owned outlets</h3>
-<p>2 company-owned locations throughout the reporting period. No P&L is disclosed for these
-locations despite the Item 19 financial performance representation — an unusual omission.</p>
-
-<div class="implication">
-<strong>What this means:</strong> The 2024 data is a break from the prior trend. A system that
-grew steadily for years contracted for the first time. The Alabama cluster, the transfer
-decline, and the DMP litigation (discussed below) paint a picture of a franchisor enforcing
-compliance aggressively — which may be cleaning up the system or may be driving out operators
-who cannot sustain the marketing cost structure.
-</div>
-
-<div class="callout">
-<div class="callout-title">2024 attrition in context</div>
-Mosquito Joe's 5.7% attrition rate is second-highest in the cohort (Mosquito Shield: 11.1%,
-Mosquito Squad: 4.3%, Mosquito Authority: 1.8%, Mosquito Hunters: 0.0%). But Joe's spike is
-concentrated in one year after two years of stability, which is a different pattern than Shield's
-sustained high churn. The question is whether 2024 was a one-time correction or the beginning
-of a trend.
-</div>
-
-
-<h2>Risk Signals</h2>
-
-<h3>SPV/securitization entity structure</h3>
-<p>Mosquito Joe SPV LLC sits within a 6-layer entity chain: KKR at the top, through Neighborly,
-through Dwyer Franchising, through Neighborly Assetco, to the SPV. All franchise agreements were
-transferred to the SPV in March 2021. This is the most complex entity structure in the cohort.
-The practical implication: your franchise agreement is with a special-purpose vehicle, not the
-operating company. In a default or dispute, the SPV's assets and obligations are ring-fenced from
-the broader Neighborly platform.</p>
-
-<h3>DMP litigation (Bailey case)</h3>
-<p>The franchisor sued a franchisee (Bailey) for failure to pay Direct Marketing Program fees.
-The franchisor prevailed at trial (September 2023) and on appeal (April 2025). A counter-suit
-in Wisconsin alleging fraudulent inducement was dismissed (January 2024). (pp. 21–23)</p>
+<p>The remaining 16 terminations were distributed across other states. Without more detail,
+this could represent:</p>
+<ul class="compact">
+<li>A one-time enforcement action against underperforming operators</li>
+<li>A change in franchisor tolerance for non-compliance (possibly related to the Bailey
+litigation, which involved failure to pay DMP fees)</li>
+<li>Genuine market stress in certain territories</li>
+</ul>
 
 <div class="implication">
-<strong>What this means:</strong> The DMP is non-negotiable. The franchisor litigated to enforce
-it, won, and the decision survived appeal. If you sign a Mosquito Joe franchise agreement, the
-$37,000/year DMP obligation is a hard floor — do not plan on renegotiating it if revenue
-disappoints.
+<strong>What this means:</strong> This is the most important item to investigate at Discovery
+Day. A one-time correction of non-compliant operators is actually a positive signal (the
+franchisor is enforcing quality). But if it reflects market deterioration or fee-burden
+stress, it's a warning. The Alabama concentration is notable — ask specifically about
+what happened there.
 </div>
 
-<h3>2024 termination spike</h3>
-<p>Discussed above in System Health. 24 terminations versus 5 the prior year. Alabama: 9 outlets
-to 1. The system contracted for the first time. This is the most significant red flag in the
-filing. (pp. 84–90)</p>
+<h3>Transfer activity</h3>
+<p>30 transfers in 2022, 11 in 2023, 8 in 2024. The steep decline (30 → 8) coincides with
+the termination spike. Fewer transfers could mean fewer voluntary exits (good), or fewer
+willing buyers for resales (bad). Context matters.</p>
 
-<h3>Item 19 document quality</h3>
-<p>Column headers for the customers and jobs tables in Part II carry incorrect labels — "Average
-Annual Gross Sales" and "Median Annual Gross Sales" instead of the appropriate customer/job
-labels. This is a copy/paste error in a document filed with a state securities regulator. The
-data values appear correct for their respective metrics, but the error indicates insufficient
-quality review of the filed document. (pp. 82–84)</p>
-
-<h3>Marketing cost structure as operational risk</h3>
-<p>At $200K gross sales, mandatory franchisor fees consume 36.4% of revenue. The DMP ($37K),
-MAP (2%), SEO ($3,900), and Local Performance Marketing ($35K in year one) create a marketing
-cost floor that is independent of revenue. A franchisee generating $150K in gross sales is
-paying the same marketing fees as one generating $400K. This is the biggest operational risk
-in the franchise — not because the marketing doesn't work, but because the cost is not
-proportional to the revenue it generates at lower volumes.</p>
+<h3>Company-owned footprint</h3>
+<p>Two company-owned locations, stable across the reporting period. Minimal franchisor
+competition with franchisees.</p>
 
 
-<h2>Peer Context</h2>
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
 
-<p>Mosquito Joe occupies a distinctive position in the cohort: strongest brand recognition and
-best revenue disclosure, but highest marketing costs and second-highest total fee burden. The
-tiered royalty is a genuine differentiator at high revenue, but most early-stage operators
-won't reach the threshold where it matters.</p>
+<h3>Fee complexity and escalation risk</h3>
+<p>Five mandatory marketing components, plus technology and call center fees, each with
+separate escalation provisions (up to 30% annual increases on tech and SEO). The
+Key Accounts/Management Fee (up to 5% of related Gross Sales) and per-closed-sale
+call center fee ($25/sale) are variable and hard to forecast. The FDD's fee structure
+is the most complex in the cohort — and complexity itself is a risk, because it makes
+total cost of ownership harder to predict.</p>
 
-<p><strong>Closest comparison: Mosquito Hunters.</strong> Both have high fixed marketing costs
-(Hunters: $37,500 local ad minimum; Joe: $37,000 DMP plus additional). Both are PE-backed with
-complex fee structures. Hunters has a smaller system (135 vs 415) with zero 2024 terminations,
-but also lacks the tenure-split revenue data that makes Joe's Item 19 valuable.</p>
+<h3>Entity structure</h3>
+<p>Mosquito Joe SPV LLC is a securitization vehicle within Neighborly's multi-brand
+platform (Neighborly Assetco LLC / Dwyer Franchising LLC / KKR). The SPV structure
+is standard for PE-backed franchise portfolios but means the entity could be sold,
+restructured, or have royalty streams redirected without changing the operating
+relationship. All five brands in this cohort are PE-backed; the SPV layering is
+distinctive to Mosquito Joe.</p>
 
-<p><strong>Sharpest contrast: Mosquito Authority.</strong> Opposite cost profiles. Authority's total
-fees at $300K are $52,800 (17.6%) versus Joe's $84,752 (28.3%). Authority has zero terminations
-versus Joe's 24. Authority's investment low end ($54K) is about one-third of Joe's ($150K). The
-trade-off: Authority has weaker brand recognition and less sophisticated marketing infrastructure.</p>
+<h3>Litigation</h3>
+<p>One direct action: <em>SPV LLC v. Bailey et al.</em> — breach of contract for
+failure to pay Direct Marketing Program fees. The franchisor prevailed at trial
+(Sep 2023) and on appeal (Apr 2025). The franchisee's countersuit alleging
+fraudulent inducement was dismissed. Three additional concluded actions involving
+Neighborly affiliate entities, not MJ directly.</p>
 
-<p><strong>Interesting comparison: Mosquito Squad.</strong> Similar revenue data quality (Squad
-provides a company-owned P&L with $20.8M revenue and 25.9% margin), slightly lower total fees
-($77,880 at $300K vs $84,752), and a tiered royalty that phases down more gradually
-(10/9/8%). Squad is $12K–$28K more expensive to enter but $7K/year cheaper to operate.</p>
+<div class="implication">
+<strong>What this means:</strong> The Bailey case is instructive — it shows the
+franchisor will enforce DMP payment obligations through litigation. If you sign,
+you are committing to the full marketing program. The fee complexity means your
+total cost of ownership may be higher than the base model suggests once conditional
+fees and escalation provisions are factored in.
+</div>
+
+<h3>Document quality</h3>
+<p>Copy-paste errors in Item 19 Part II column headers (customer/job tables labeled
+with gross sales headers). Data values appear correct. This is a formatting blemish,
+not a data integrity issue — but notable in a Neighborly-backed brand with corporate
+resources to produce clean filings.</p>
+
+
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
+
+<p>Mosquito Joe sits at the premium end of this cohort: highest investment, second-highest
+ongoing fees, most complex fee structure. The compensating factor is disclosure quality —
+Joe's Item 19 is the most useful in the category, giving buyers actual retention rates,
+per-treatment pricing, and tenure-segmented revenue data that no competitor matches.</p>
+
+<p><strong>Direct contrast: Mosquito Authority.</strong> Opposite ends of the cost spectrum.
+Authority costs $32K/year less in ongoing fees at $300K revenue, enters for $54K–$128K
+(vs Joe's $150K–$192K), and has zero terminations. Joe offers more data transparency and
+the Neighborly brand infrastructure. The question is whether the Neighborly ecosystem
+justifies a $320K premium over a 10-year term.</p>
+
+<p><strong>Closest comparison: Mosquito Squad.</strong> Similar system size, similar PE
+backing (Authority Brands). Squad's fees are slightly lower ($78K vs $85K at $300K),
+but Squad's Item 19 is richer in some dimensions (per-territory revenue, company-owned
+P&L). Squad's graduated royalty (10/9/8%) rewards scale better than Joe's 10/7% tier.</p>
+
+<p><strong>The Neighborly factor:</strong> Joe is the only brand in this cohort backed by
+a multi-brand franchise platform (25+ service brands). This means shared call centers,
+cross-selling potential, and operational infrastructure that standalone brands can't match.
+Whether this translates to better unit economics for an individual franchisee is the
+question the buyer must answer — the FDD provides the data, the buyer provides the judgment.</p>
+
 
 <table class="peer-table">
   <thead>
     <tr>
       <th>Metric</th>
+      
       <th class="num">Mosquito Authority</th>
+      
       <th class="num">Mosquito Hunters</th>
+      
       <th class="num">Mosquito Joe</th>
+      
       <th class="num">Mosquito Shield</th>
+      
       <th class="num">Mosquito Squad</th>
+      
     </tr>
   </thead>
   <tbody>
+    
     <tr>
       <td class="label">System size</td>
+      
       <td class="num">546</td>
+      
       <td class="num">135</td>
+      
       <td class="num this-brand">415</td>
+      
       <td class="num">435</td>
+      
       <td class="num">226</td>
+      
     </tr>
+    
     <tr>
       <td class="label">Investment range</td>
+      
       <td class="num">$54K–$127K</td>
+      
       <td class="num">$141K–$170K</td>
+      
       <td class="num this-brand">$150K–$192K</td>
+      
       <td class="num">$120K–$157K</td>
+      
       <td class="num">$162K–$220K</td>
+      
     </tr>
+    
     <tr>
       <td class="label">Fee burden at $300K</td>
+      
       <td class="num">$52,800</td>
+      
       <td class="num">$80,300</td>
+      
       <td class="num this-brand">$84,752</td>
+      
       <td class="num">$86,000</td>
+      
       <td class="num">$77,880</td>
+      
     </tr>
+    
     <tr>
       <td class="label">% of revenue</td>
+      
       <td class="num">17.6%</td>
+      
       <td class="num">26.8%</td>
+      
       <td class="num this-brand">28.3%</td>
+      
       <td class="num">28.7%</td>
+      
       <td class="num">26.0%</td>
+      
     </tr>
+    
     <tr>
       <td class="label">3-year net growth</td>
+      
       <td class="num">+22</td>
+      
       <td class="num">+8</td>
+      
       <td class="num this-brand">+43</td>
+      
       <td class="num">+140</td>
+      
       <td class="num">+3</td>
+      
     </tr>
+    
     <tr>
       <td class="label">2024 attrition</td>
+      
       <td class="num">1.8%</td>
+      
       <td class="num">0.0%</td>
+      
       <td class="num this-brand">5.7%</td>
+      
       <td class="num">11.1%</td>
+      
       <td class="num">4.3%</td>
+      
     </tr>
+    
     <tr>
       <td class="label">Royalty rate</td>
+      
       <td class="num">10%</td>
+      
       <td class="num">10%</td>
+      
       <td class="num this-brand">10/7%</td>
+      
       <td class="num">8%</td>
+      
       <td class="num">10/9/8%</td>
+      
     </tr>
+    
   </tbody>
 </table>
 
-<h2>Questions for Discovery Day</h2>
+
+<h3>Decision overlay</h3>
+<table class="decision-overlay">
+  <tbody>
+    
+    <tr>
+      <td class="overlay-label">Lowest-cost entry</td>
+      <td class="overlay-value">Mosquito Authority — $54K–$128K. MJ is $150K–$192K — $96K more at the low end.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Lowest ongoing fee burden</td>
+      <td class="overlay-value">Mosquito Authority — 17–18% of revenue. MJ is 28% at $300K — $32K/year more in franchisor fees.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Best revenue disclosure</td>
+      <td class="overlay-value">Mosquito Joe — Retention rates, per-treatment pricing, tenure-segmented sales. Most actionable Item 19 in cohort.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Most system stability</td>
+      <td class="overlay-value">Mosquito Authority — Zero terminations. MJ had 24 in 2024 — a 5× spike requiring explanation.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Best for data-driven buyer</td>
+      <td class="overlay-value">Mosquito Joe — Most transparent FDD. If you want to model before you commit, MJ gives you the most inputs.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Highest 'costs more than it looks' risk</td>
+      <td class="overlay-value">Mosquito Joe — Conditional fees (LMG, per-sale, Key Accounts) and 30%/year escalation provisions mean disclosed fees are a floor.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Best for first-time buyer</td>
+      <td class="overlay-value">Mosquito Authority — Lowest risk, lowest cost. MJ requires $200K+ capital and comfort with fee complexity.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
 <p>These questions are derived from specific findings in the Mosquito Joe 2025 FDD.
-They are designed to surface information the FDD does not fully explain.</p>
+Each includes context on why it matters and what to listen for.</p>
 
 <ol class="question-list">
-
-  <li>24 franchisees were terminated in 2024 — nearly 5x the prior year. Alabama went from 9 outlets to 1. What caused the spike, and was it a one-time correction or an ongoing enforcement initiative?
-    <span class="question-context">Item 20, Tables 1–3, pp. 84–90. System contracted for first time.</span>
+  
+  <li>24 franchisees were terminated in 2024 — nearly 5× the prior year. What happened?
+    <span class="question-context">Item 20, 2024 data. 8 of 24 terminations in Alabama (9 outlets to 1).</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>This is the single biggest system health anomaly in the filing. Whether it's a one-time correction or a systemic issue changes the risk profile of buying in.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'The Alabama cluster was [specific issue: regulatory, non-compliance, operator group]. The remaining 16 were enforcement of fee obligations we'd been patient on. We don't expect this level to repeat.' Specific causes, willingness to detail.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'We're focused on quality over quantity. Sometimes you need to clean house.' Vague, positions mass termination as routine housekeeping.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for the termination causes by state. Ask whether any of the terminated franchisees dispute the franchisor's characterization.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The DMP fee is $37,000/year mandatory. The Bailey litigation confirmed it's non-negotiable. For a franchisee doing $150K–$200K in gross sales, what is the expected ROI on that $37,000, and how do you measure it?
-    <span class="question-context">Item 6, pp. 30–31; Item 3, pp. 21–23. DMP alone exceeds most competitors' total marketing.</span>
+  
+  <li>The Direct Marketing Program costs $37,000/year. What is the measured ROI for a typical territory?
+    <span class="question-context">Item 6/Item 7. DMP is the single largest mandatory fee beyond royalty.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>You're committing to $37K/year in a program you can't opt out of. If the ROI is strong, it's an investment. If it's unclear, it's a $37K tax.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Average DMP-sourced leads convert at [X]% and generate $[Y] in first-year revenue per territory. Here's the attribution data.' Specific, measurable, willing to share tracking.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Our franchisees tell us it works. Marketing is a long-term investment.' No data, no attribution, anecdotal evidence only.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask to see actual DMP campaign reports from a territory similar to yours. Ask what happens if you believe the program is underperforming — can you redirect spend?</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>You own 2 locations but provide no company-owned P&L in Item 19. Mosquito Authority and Mosquito Squad both provide company-owned financials. Why is this omitted?
-    <span class="question-context">Item 19, pp. 80–84; Item 20, company-owned tables. 2 company-owned locations throughout reporting period.</span>
+  
+  <li>The fee model excludes LMG (2% of Gross Sales) and the per-sale call center fee ($25/sale). Under what circumstances are these activated, and what is the typical total cost?
+    <span class="question-context">Item 6. LMG 'may be required.' Call center fee is per closed sale on rollover/after-hours calls.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>These conditional fees could add $11K–$15K/year at $300K revenue. If they're routinely active, your actual fee burden is significantly higher than the base model.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'LMG is active in [X]% of territories. Average annual LMG cost is $[Y]. Call center averages [Z] closed sales per territory per year.' Transparent about actual frequency and cost.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'LMG depends on your local market. The call center fee is only for leads we generate for you.' Deflects from total cost impact.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for the average total franchisor fee payment (all components) from a territory doing $300K in Gross Sales. Compare to the base model.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The Item 19 Part II column headers for customers and jobs tables carry incorrect labels (copy/paste of gross sales headers). Can you provide corrected tables?
-    <span class="question-context">Item 19, Part II, pp. 82–84. Document quality issue in filed regulatory document.</span>
+  
+  <li>The Bailey litigation was over DMP fee non-payment. How common is DMP non-compliance, and are the 2024 terminations related?
+    <span class="question-context">Item 3, Bailey v. SPV LLC. Franchisor prevailed on breach of contract for DMP fees.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>If the franchisor is litigating and terminating over DMP fee compliance, it signals either that the DMP creates genuine financial stress for operators or that the franchisor is tightening enforcement. Either way, it affects your risk.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Bailey was an isolated case. DMP compliance is [X]%. The 2024 terminations were for [separate specific reasons].' Distinguishes the cases clearly.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'We enforce our agreements consistently. Franchisees who don't follow the program put the whole system at risk.' Policy language, avoids the specific question.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask how many franchisees are currently in default or on payment plans for DMP fees.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>Transfer volume dropped from 30 (2022) to 11 (2023) to 8 (2024). Is the decline driven by fewer willing buyers, franchisor resistance to transfers, or franchisees choosing not to sell?
-    <span class="question-context">Item 20, Table 2, pp. 86–89. Sharp year-over-year decline in transfer activity.</span>
+  
+  <li>The Item 19 shows First 5 Years average ($215K) well below the median ($288K). What's happening with the low performers?
+    <span class="question-context">Item 19 Part II. Left-skewed distribution with a $16K low.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>Left skew means a cluster of operators at very low revenue is pulling the average down. Understanding why some operators are at $16K–$50K tells you what failure looks like in this system.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Low performers are typically [part-time operators / seasonal markets / territories that hadn't ramped yet]. Here's what we do to support underperformers.' Honest about causes, active about support.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Every business has a range of outcomes. We provide the tools, franchisees provide the effort.' Implies low performance is the franchisee's fault without evidence.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask how many of the 91 First 5 Years businesses are below $100K, and whether any are on performance improvement plans.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The tiered royalty (7% above $500K) is the most generous in the cohort. What percentage of franchisees currently reach that threshold, and what is the average time to reach it?
-    <span class="question-context">Item 6, pp. 28–29. Only 35% of first-five-year operators are at or above the $214K average.</span>
+  
+  <li>Transfer activity dropped from 30 (2022) to 8 (2024). Is the resale market contracting?
+    <span class="question-context">Item 20, Table 2. 73% decline in transfers over 2 years.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>If fewer territories are changing hands, it could mean franchisees are happy (positive) or that buyers aren't willing to pay asking prices (negative). In a system that just had 24 terminations, the latter interpretation needs to be ruled out.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Transfer volume declined because franchisee retention improved — fewer people wanting to sell. Average resale prices have [increased/held steady].' Data on resale economics.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Transfers fluctuate year to year.' No data, no explanation for a 73% decline.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for the average resale price as a multiple of annual Gross Sales. Ask if any of the 2024 terminated territories were previously listed for sale.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The entity structure is a 6-layer SPV chain within the KKR/Neighborly platform. All franchise agreements were transferred to Mosquito Joe SPV LLC in March 2021. If the SPV is sold or restructured, what happens to existing franchise agreements?
-    <span class="question-context">Item 1, pp. 10–11. SPV securitization structure is most complex in cohort.</span>
+  
+  <li>Technology and SEO fees may increase up to 30% annually. What has the actual increase history been?
+    <span class="question-context">Item 6, technology fee ($371/month) and SEO ($325/month) escalation clauses.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>A 30% annual increase on $8,352/year (combined tech + SEO) would reach $14,000+ within 3 years. The permission to escalate is disclosed; the track record matters.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Tech fees have increased [X]% over the past 3 years. We added [specific capabilities] with each increase.' Transparent history, value justification.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'We always try to keep fees reasonable. The 30% is a contractual maximum, not a plan.' No history, no commitment.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for a 3-year fee history for all recurring non-royalty charges.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The Local Performance Marketing investment is $35,000 in the first 12 months. What happens after month 12 — does the spend obligation continue at that level, reduce, or become discretionary?
-    <span class="question-context">Item 7, p. 39. Listed as an initial investment line item, not in Item 6 ongoing fees.</span>
+  
+  <li>What does the Neighborly multi-brand platform actually deliver to a Mosquito Joe franchisee that a standalone brand can't?
+    <span class="question-context">Parent: Neighborly Assetco LLC / KKR. 25+ service brands.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>Mosquito Joe's fees are the highest in the cohort. The implicit justification is Neighborly's infrastructure. The buyer needs to know what that infrastructure concretely provides vs. what standalone competitors deliver for less.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Cross-brand lead sharing generated [X] leads per MJ territory last year. Neighborly's shared call center handles [Y]% of inbound calls. Here's the NPS data for our support services.' Measurable, specific.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Being part of the Neighborly family gives you access to our proven systems and brand recognition.' Marketing language without measurable claims.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for actual cross-brand lead volume data for a territory similar to yours. Ask what Neighborly services would disappear if MJ were spun off.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>Technology fees ($371/month) and SEO ($325/month) may each increase up to 30% annually. What has the actual annual increase been over the past 3 years?
-    <span class="question-context">Item 6, pp. 30–31. 30% annual cap on both; actual increases not disclosed.</span>
+  
+  <li>The Key Accounts/Management Fee can reach 5% of related Gross Sales. How much revenue typically comes through this channel?
+    <span class="question-context">Item 6. Key Account work, Business Development leads, call center dispatched work.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>If 20% of your revenue comes through Key Accounts, this adds 1% to your effective total fee burden. At higher percentages, it materially changes the economics.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Key Account revenue averages [X]% of total Gross Sales per territory. The management fee on that is [Y].' Transparent about volume and cost.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Key Accounts are a great revenue source. The fee covers our business development costs.' Avoids quantifying the cost impact.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask whether Key Account leads are opt-in or automatic. Ask if you can decline Key Account work.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The Item 19 first-five-year median ($287,832) exceeds the average ($214,794), indicating a left-skewed distribution. Can you share the revenue distribution in quartiles or deciles so we can see where the floor is?
-    <span class="question-context">Item 19, Part II, p. 82. Only high/low/avg/median disclosed; distribution shape matters for planning.</span>
+  
+  <li>What does a realistic first-year cash flow timeline look like for a single-territory operator starting in spring?
+    <span class="question-context">Seasonal business. Item 7 shows $16.8K–$28K in 3-month working capital. First-year marketing obligations exceed $72K.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>With $150K+ invested and $72K+ in Year 1 marketing obligations, the cash draw in Year 1 is severe. The buyer needs to understand when revenue starts offsetting costs and how long personal reserves need to last.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Typical spring start: first revenue in Month 2, breakeven on monthly cash flow by Month 5–6. Here's a sample first-year P&L from a recent launch.' Specific timeline with supporting data.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Results vary by market. We recommend having 6 months of personal expenses saved.' Generic advice without franchise-specific cash flow data.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask when the DMP and LPM payments are due relative to revenue ramp. Ask how many 2024 launches hit monthly breakeven within the first season.</dd>
+      
+    </dl>
+    
   </li>
-
+  
 </ol>
 
 <div class="methodology">
-  <h2 style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
   <p><strong>Source document:</strong> Mosquito Joe 2025 Franchise Disclosure Document,
-  filed with the Wisconsin Department of Financial Institutions. Regulator-source PDF.
-  SHA-256: <code style="font-size:0.7rem">78400773abfcd9f93207d0437fc41662d2bdc4b082d413871a5b2fb761beb393</code></p>
+  filed with the Wisconsin Department of Financial Institutions. ~230-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">78400773abfcd9f93207d0437fc41662d2bdc4b082d413871a5b2fb761beb393</code></p>
   <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
   review. Field-level provenance recorded (source year, state, page number, item reference).
   Extraction confidence: high (3+ fields spot-checked against source).</p>
   <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
-  Revenue distributed evenly across the year. All mandatory fees enforced. DMP at standard rate
-  ($37,000) for revenue levels below $450K prior-year threshold; reduced ($26,000) at $500K.
-  See fee_modeling_framework.md for full methodology.</p>
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
+  fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
   <p><strong>Peer comparison:</strong> Same methodology applied to all 5 brands in cohort
   (Mosquito Authority, Mosquito Hunters, Mosquito Joe, Mosquito Shield, Mosquito Squad).
   All from 2025 FDDs filed with Wisconsin DFI.</p>
   <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
   recommendation to buy or avoid this franchise. It is a structured analysis of publicly
   available regulatory filings. The buyer should read the actual FDD, consult a franchise
-  attorney, and conduct their own due diligence before making any investment decision.</p>
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
 </div>
 
 </body>

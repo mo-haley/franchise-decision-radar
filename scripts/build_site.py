@@ -25,7 +25,6 @@ DATA_DERIVED = ROOT / "data" / "derived"
 TEMPLATES = ROOT / "templates"
 SITE = ROOT / "site"
 
-# TODO: Replace with production domain when deployed (e.g. "https://franchisedecisionradar.com/")
 SITE_BASE_URL = "https://franchisedecisionradar.com/"
 
 
@@ -61,6 +60,61 @@ def load_fee_model(filename: str) -> Optional[dict]:
         return None
     with open(path) as f:
         return json.load(f)
+
+
+# Minimum franchised outlet count for inclusion in peer comparison pages.
+# Brands below this threshold get individual brand pages but are excluded
+# from fee-burden, system-health, and cost-to-enter comparison tables.
+COMPARISON_MIN_OUTLETS = 25
+
+
+def normalize_item7(data: dict) -> tuple[int, int, int]:
+    """Extract (total_low, total_high, midpoint) from Item 7, handling split-market brands.
+
+    Some brands (e.g., The Cleaning Authority) have separate enterprise/hometown
+    market tables instead of a single total_low/total_high. For those, we use the
+    enterprise market as the primary comparison figure.
+    """
+    item7 = data["raw"]["item_7_initial_investment"]
+    derived_mid = data["derived"]["initial_investment_midpoint"]
+
+    if "total_low" in item7:
+        low = item7["total_low"]
+        high = item7["total_high"]
+        mid = derived_mid if isinstance(derived_mid, (int, float)) else int(derived_mid)
+    elif "enterprise_market" in item7:
+        ent = item7["enterprise_market"]
+        low = ent["total_low"]
+        high = ent["total_high"]
+        mid = derived_mid.get("enterprise_market", (low + high) // 2) if isinstance(derived_mid, dict) else derived_mid
+    else:
+        raise ValueError(f"Unrecognized Item 7 structure: {list(item7.keys())}")
+
+    return int(low), int(high), int(mid)
+
+
+def franchised_outlet_count(data: dict) -> int:
+    """Return the most recent year-end franchised outlet count for a brand."""
+    years = data["raw"]["item_20_outlet_summary"]["years_reported"]
+    y_last = sorted(years, key=lambda y: y["year"])[-1]
+    return y_last["total_outlets_end"] - (y_last.get("company_owned_end") or 0)
+
+
+def filter_comparison_brands(
+    brands: dict[str, dict],
+) -> tuple[dict[str, dict], list[str]]:
+    """Split brands into comparison-eligible and excluded based on outlet count.
+
+    Returns (eligible_brands, excluded_slugs).
+    """
+    eligible = {}
+    excluded = []
+    for slug, data in brands.items():
+        if franchised_outlet_count(data) >= COMPARISON_MIN_OUTLETS:
+            eligible[slug] = data
+        else:
+            excluded.append(slug)
+    return eligible, excluded
 
 
 def build_slug_map(brands: dict[str, dict]) -> dict[str, str]:
@@ -121,6 +175,21 @@ TRAJECTORY_OVERRIDES: dict[str, tuple[str, str]] = {
     "Mosquito Joe": ("Deteriorating", "negative"),
     "Mosquito Shield": ("Decelerating + high churn", "negative"),
     "Mosquito Squad": ("Recovering", "positive"),
+    "Mosquito Sheriff": ("Early-stage launch", "caution"),
+    "MosquitoNix": ("Launch year", "caution"),
+    "Lawn Doctor": ("Accelerating", "positive"),
+    "Weed Man": ("Stable (contract restructure)", "caution"),
+    "Spring-Green": ("Flat", "caution"),
+    "NaturaLawn": ("Stable niche", "positive"),
+    "Lawn Pride": ("Explosive launch", "positive"),
+    "Lawn Squad": ("Launch year", "caution"),
+    "Merry Maids": ("Accelerating contraction", "negative"),
+    "Molly Maid": ("Steady contraction", "negative"),
+    "The Cleaning Authority": ("Stable positive", "positive"),
+    "The Maids": ("Mild contraction", "caution"),
+    "MaidPro": ("Stabilizing", "caution"),
+    "Two Maids & A Mop": ("Accelerating", "positive"),
+    "Maid Right": ("Growing but high churn", "caution"),
 }
 
 # Editorial content per brand — only for brands with manually authored analysis.
@@ -356,6 +425,640 @@ BRAND_EDITORIAL: dict[str, dict] = {
         }],
         "health_flag": None,
     },
+    "mosquito-sheriff": {
+        "parent_short": "Founder-operated",
+        "ownership": "founder-operated",
+        "royalty_display": "10%",
+        "royalty_context": "Flat rate on Gross Revenues",
+        "marketing_floor": "$1,800/yr",
+        "marketing_context": "lowest in cohort (flat $150/mo)",
+        "disclosure_quality": "Minimal",
+        "disclosure_rank": "7th of 7",
+        "disclosure_narrative": (
+            "No Item 19 financial performance representation. No revenue, profit, or "
+            "customer data disclosed. With only 5 franchised units and no public "
+            "performance benchmarks, a buyer cannot assess unit economics from the FDD."
+        ),
+        "watchouts": [
+            "94% of initial investment ($75,000 of $79,450&ndash;$81,500) goes directly to "
+            "the franchisor at signing &mdash; highest franchisor capture ratio in either cohort.",
+            "No Item 19 disclosure &mdash; zero financial performance data available.",
+            "5 franchised units total. Smallest system in the mosquito cohort by a wide margin.",
+            "Technology fees are tiered by revenue (Dispatch Routing $100&ndash;$700/mo) and "
+            "include per-sale commissions ($15&ndash;$35/sale) &mdash; unpredictable ongoing cost.",
+            "Minimum royalty escalates to $2,000/month at Year 6+ ($24,000/year).",
+        ],
+        "positives": [
+            "Lowest initial investment in the cohort ($79,450&ndash;$81,500).",
+            "Simplest marketing structure: flat $150/month. No percentage-based fund, no "
+            "mandatory local spend.",
+            "Zero terminations, non-renewals, or transfers across all 3 years.",
+            "Projected to double system size in 2025 (5 new units).",
+        ],
+        "fee_caveats": [],
+        "health_flag": {
+            "title": "Micro-system",
+            "text": "5 franchised units is extremely small. Zero closures is positive but "
+                    "the sample size is too small to draw conclusions about system stability.",
+        },
+    },
+    "mosquitonix": {
+        "parent_short": "Franworth / O'Neal Family Trust",
+        "ownership": "PE-backed",
+        "royalty_display": "10% / 9% / 8% / 7%",
+        "royalty_context": "four-tier, rewards scale",
+        "marketing_floor": "$42,000+/yr",
+        "marketing_context": "highest local spend in cohort",
+        "disclosure_quality": "Mixed",
+        "disclosure_rank": "6th of 7",
+        "disclosure_narrative": (
+            "Item 19 provides detailed P&amp;L for 7 company-operated markets &mdash; but "
+            "no franchisees had operated a full year at reporting time. Conforming markets "
+            "show 25&ndash;35% net margins; non-conforming markets show 2 of 3 unprofitable. "
+            "8% Customer Acquisition Commission on new sales is substantial and unusual."
+        ),
+        "watchouts": [
+            "8% Customer Acquisition Commission on new sales is effectively a second royalty "
+            "&mdash; combined with 10% royalty and 2% brand fund = 20% on new sales revenue.",
+            "2 of 10 franchised units ceased operations in their first year (20% first-year attrition).",
+            "$42,000 mandatory local marketing spend in Year 1 is the highest in the mosquito cohort.",
+            "Item 19 data is exclusively from company-operated locations. Zero franchisee data.",
+            "Predecessor FEMO Group franchisees subject to confidentiality clauses.",
+            "19 franchise agreements signed but not yet opened &mdash; aggressive pipeline, execution risk.",
+        ],
+        "positives": [
+            "Four-tier royalty (10% &rarr; 7%) rewards scale more aggressively than any competitor.",
+            "Detailed Item 19 P&amp;L with actual COGS and expense breakdowns (company-operated).",
+            "Conforming markets show 25&ndash;35% net operating margins after franchise fees.",
+            "Holiday lighting revenue stream ($418K across 4 conforming markets).",
+            "7 company-owned locations provide operational playbook (operating since 2006).",
+        ],
+        "fee_caveats": [{
+            "title": "Customer Acquisition Commission",
+            "text": "8% CAC on single new sales (misting, pest control, holiday lighting) is "
+                    "charged on top of the 10% royalty + 2% brand fund. On a new misting system "
+                    "sale of $3,586, total franchisor take is $717 (20%).",
+        }],
+        "health_flag": {
+            "title": "First-year attrition",
+            "text": "2 of 10 franchised units opened in 2024 ceased operations within the same "
+                    "year (South Carolina). 20% first-year attrition in the launch year.",
+        },
+    },
+    "lawn-doctor": {
+        "parent_short": "CNL Strategic Capital",
+        "ownership": "PE-backed",
+        "royalty_display": "10%",
+        "royalty_context": "Flat rate on Net Revenues",
+        "marketing_floor": "$30,000+/yr",
+        "marketing_context": "high, 10% or $30K floor + national fund",
+        "disclosure_quality": "Best in cohort",
+        "disclosure_rank": "1st of 6",
+        "disclosure_narrative": (
+            "Richest Item 19 in the lawn cohort: 4 tables covering revenue by territory count, "
+            "customer metrics (avg tenure 6.15 years), gross profit margin (85.4%), and a 16-year "
+            "historical revenue trend ($367K avg in 2009 &rarr; $1.13M in 2024). Median franchisee "
+            "revenue of $659K. Only blemish: 37% exclusion rate on Table C."
+        ),
+        "watchouts": [
+            "Highest initial franchise fee in the lawn cohort: $127,000 (includes $70,600 "
+            "mandatory training/supply fee).",
+            "25% total royalty on out-of-territory revenue (10% base + 15% surcharge) &mdash; "
+            "structurally discourages geographic expansion.",
+            "Marketing obligation requires the greater of $30,000 or 10% of Net Revenues for "
+            "local advertising, plus national fund (2% or $5,500/yr) &mdash; expensive at low revenue.",
+            "Mandatory equipment leases: Turf Tamer Applicator $335/mo + Power Seeder $306/mo "
+            "= $641/month ongoing.",
+            "Transfer fee is 75% of the initial license fee ($37,500) &mdash; highest in cohort.",
+        ],
+        "positives": [
+            "Largest system in the lawn cohort (653 outlets) with 58 years of franchising history.",
+            "Terminations dropped to 1 in 2024 (from 13 in 2022) &mdash; dramatically improving churn.",
+            "16-year revenue trend shows 3x growth ($367K &rarr; $1.13M average).",
+            "Average customer tenure of 6.15 years &mdash; strong retention signal.",
+            "85.4% gross profit margin (materials only) &mdash; high-margin service business.",
+            "Clean litigation history: zero actions required to be disclosed.",
+        ],
+        "fee_caveats": [{
+            "title": "Regional fund exposure",
+            "text": "If in a regional fund area (15 regions), up to 5% additional marketing "
+                    "contribution. Total national + regional capped at 5% of Net Revenues, but "
+                    "this is on top of the $30K+ local requirement.",
+        }],
+        "health_flag": None,
+    },
+    "weed-man": {
+        "parent_short": "TH Canada (private, Canadian)",
+        "ownership": "private",
+        "royalty_display": "6.5% / 5.5%",
+        "royalty_context": "tiered at $1M &mdash; rewards scale",
+        "marketing_floor": "$2,400/yr",
+        "marketing_context": "lowest in cohort (1.2%)",
+        "disclosure_quality": "Weakest in cohort",
+        "disclosure_rank": "6th of 6",
+        "disclosure_narrative": (
+            "No Item 19 financial performance representation &mdash; the only lawn brand that "
+            "declines to disclose. A buyer cannot assess unit economics from the FDD. Combined "
+            "with the 2024 contract restructure making Item 20 data hard to interpret, Weed Man "
+            "offers the least transparency in the cohort."
+        ),
+        "watchouts": [
+            "No Item 19 disclosure &mdash; zero financial performance data.",
+            "Item 20 data is heavily distorted by 2024 contract merging: Table 1 shows apparent "
+            "-134 net change that is entirely an accounting artifact.",
+            "Technology fee is revenue-based (0.65% of prior year gross, min $1,200/yr) &mdash; "
+            "scales with success, unpredictable.",
+            "Canadian-origin system with complex multi-layer ownership: US franchisor, Canadian "
+            "master licensor, sub-franchisor consolidation in 2025.",
+        ],
+        "positives": [
+            "Lowest ongoing fee burden in the cohort at every revenue level (8.5% of revenue).",
+            "Lowest royalty rate (6.5%/5.5%) and lowest marketing contribution (1.2%).",
+            "Franchisor matches 50% of franchisee advertising contributions until 2033.",
+            "55-year brand history (founded 1970) with 154 physical locations.",
+            "Also offers mosquito control and perimeter pest services &mdash; multiple revenue streams.",
+        ],
+        "fee_caveats": [{
+            "title": "Minimum royalty",
+            "text": "Minimum annual royalty of $7,192 per Unit Territory (CPI-adjusted). "
+                    "At very low revenue this floor exceeds the 6.5% rate.",
+        }],
+        "health_flag": {
+            "title": "Contract restructure obscures data",
+            "text": "~95% of franchisees converted to new agreements effective Jan 1, 2024. "
+                    "Multi-area contracts were merged, reducing reported outlet count from 255 "
+                    "to 117 (an accounting change, not system contraction).",
+        },
+    },
+    "spring-green": {
+        "parent_short": "Spring-Green Enterprises (private)",
+        "ownership": "private",
+        "royalty_display": "10% / 9% / 8%",
+        "royalty_context": "triple-tiered by revenue bracket",
+        "marketing_floor": "$4,000/yr",
+        "marketing_context": "low (2% national), regional not active",
+        "disclosure_quality": "Strong",
+        "disclosure_rank": "2nd of 6",
+        "disclosure_narrative": (
+            "Item 19 provides gross profit margin (68.1% including labor), gross sales by business "
+            "type, revenue per customer ($556), and marketing ROI ($2.62 per $1). Customer retention "
+            "of 81.3%. Note: gross margin includes direct labor unlike Lawn Doctor (which only "
+            "deducts materials) &mdash; not directly comparable."
+        ),
+        "watchouts": [
+            "Affiliate Superior Lawns has reacquired 4 franchised territories over 2 years "
+            "(2023&ndash;2024) &mdash; company buying back territories is a mixed signal.",
+            "$35,000 Initial Marketing Campaign Fee + $16,500 Property Data Fee = $51,500 in "
+            "upfront costs beyond the franchise fee.",
+            "Fee Adjustment clause allows up to 100% annual increase on technology, education, "
+            "meeting, and reporting fees.",
+            "Some franchisees signed confidentiality clauses restricting them from speaking "
+            "about their experience.",
+            "System growth is flat: +2/&minus;2/+4 net units over 3 years.",
+        ],
+        "positives": [
+            "Privately held (no PE) &mdash; founder-family controlled, no securitization layers.",
+            "81.3% customer retention and $2.62 marketing ROI.",
+            "Revenue per production vehicle ($201K) provides useful unit economics benchmark.",
+            "48-year franchising track record.",
+            "Pest control add-on service expands revenue streams.",
+        ],
+        "fee_caveats": [{
+            "title": "Property Data Fee",
+            "text": "$16,500 initial + ongoing $0.55/SFDU for territory data. This is an unusual "
+                    "fee not seen in other brands &mdash; adds to total cost of operation.",
+        }],
+        "health_flag": None,
+    },
+    "naturalawn": {
+        "parent_short": "Founder-operated (Philip Catron)",
+        "ownership": "private (founder)",
+        "royalty_display": "9% / 7%",
+        "royalty_context": "reduces to 7% at $500K+ on renewal",
+        "marketing_floor": "$60,000&ndash;$80,000/yr",
+        "marketing_context": "highest in cohort (annual spend requirement)",
+        "disclosure_quality": "Good",
+        "disclosure_rank": "3rd of 6",
+        "disclosure_narrative": (
+            "Item 19 provides both company-owned and franchise data. Company-owned gross margin "
+            "60.7%&ndash;65.2% (includes labor). Franchisee avg revenue $2.19M (median $1.1M). "
+            "Revenue per customer $810 (highest in cohort) reflects organic-based premium positioning. "
+            "Population count discrepancy: stated 44 but detail tables sum to 47."
+        ),
+        "watchouts": [
+            "Requires $150,000&ndash;$250,000 line of credit IN ADDITION to the $77,500&ndash;$152,650 "
+            "cash investment &mdash; the only brand requiring a credit line.",
+            "$60,000&ndash;$80,000 annual marketing spend is ongoing, not one-time &mdash; creates the "
+            "highest ongoing fee burden in the cohort at low revenue levels (45.8% at $200K).",
+            "System contracted in 2024 (&minus;2 net units) after growing +4 each in 2022&ndash;2023.",
+            "Active TCPA lawsuit (Ford v. NaturaLawn) &mdash; potential liability for telemarketing practices.",
+            "Item 3 contains contradictory disclosure: heading says &ldquo;no litigation required&rdquo; "
+            "but then discloses the TCPA case.",
+        ],
+        "positives": [
+            "Highest revenue per customer in the cohort ($810 avg franchised) &mdash; organic-based "
+            "premium positioning commands higher prices.",
+            "Founder-operated (Philip Catron) with 36-year track record &mdash; no PE layers.",
+            "Zero transfers across all 3 reported years &mdash; unique in the lawn cohort.",
+            "Royalty reduces to 7% upon renewal at $500K+ Gross Sales.",
+            "Franchisee avg revenue ($2.19M) exceeds company-owned ($1.73M) &mdash; franchisees "
+            "outperform corporate locations.",
+        ],
+        "fee_caveats": [{
+            "title": "Marketing is not a fee &mdash; it is a spend requirement",
+            "text": "The $60K&ndash;$80K annual marketing spend goes to third-party vendors, not "
+                    "the franchisor. But it is a mandatory expense that materially affects unit economics "
+                    "and is modeled as part of the fee burden.",
+        }],
+        "health_flag": None,
+    },
+    "lawn-pride": {
+        "parent_short": "KKR / Neighborly",
+        "ownership": "PE-backed (Neighborly SPV)",
+        "royalty_display": "8%",
+        "royalty_context": "standard rate, Roll-In discounts available",
+        "marketing_floor": "$20,000+/yr",
+        "marketing_context": "2% MAP + $20K local (year 3+)",
+        "disclosure_quality": "Below average",
+        "disclosure_rank": "5th of 6",
+        "disclosure_narrative": (
+            "Item 19 discloses only per-customer revenue (not total revenue or gross sales per unit). "
+            "All 35 franchised units are extremely new (30 opened during 2024). Affiliate location "
+            "shows declining per-customer revenue ($1,341 &rarr; $838 over 4 years). Most limited "
+            "Item 19 in the lawn cohort."
+        ),
+        "watchouts": [
+            "Brand new franchise system: started January 2023. All 35 units are less than 2 years old.",
+            "$80,000 mandatory local marketing spend in Year 1 &mdash; combined with 2% MAP and "
+            "8% royalty, this front-loads costs heavily.",
+            "Same Neighborly/KKR/SPV structure as Mosquito Joe &mdash; 6-layer securitization.",
+            "Affiliate per-customer revenue declining year over year ($1,341 &rarr; $838 residential).",
+            "Item 19 provides no total revenue or gross sales data &mdash; only per-customer averages.",
+            "Mandatory HelpDesk ($200&ndash;$400/mo) and Call Center ($350&ndash;$450/mo + $25/booking) "
+            "fees in addition to technology fee.",
+        ],
+        "positives": [
+            "Explosive growth: 30 new units in 2024, 6x system size in one year.",
+            "Zero terminations or transfers across all years.",
+            "Lowest headline royalty in the lawn cohort (8% flat).",
+            "Extensive discount programs for initial franchise fee.",
+            "Part of Neighborly portfolio &mdash; established support infrastructure.",
+        ],
+        "fee_caveats": [{
+            "title": "Year 1 marketing burden",
+            "text": "$80,000 local marketing spend requirement in Year 1 is mandatory. Combined "
+                    "with 2% MAP fee, a new franchisee at $200K revenue spends $84,000+ on marketing "
+                    "alone (42% of revenue).",
+        }],
+        "health_flag": {
+            "title": "All units are brand new",
+            "text": "30 of 35 franchised units opened during 2024. No unit has a full year of "
+                    "operating history. Zero closures is expected for a system this new.",
+        },
+    },
+    "lawn-squad": {
+        "parent_short": "Apax Partners / Authority Brands",
+        "ownership": "PE-backed",
+        "royalty_display": "7%",
+        "royalty_context": "flat rate &mdash; lowest headline rate",
+        "marketing_floor": "$42,000+/yr",
+        "marketing_context": "2% brand fund + $42K local",
+        "disclosure_quality": "Best P&amp;L in cohort",
+        "disclosure_rank": "4th of 6",
+        "disclosure_narrative": (
+            "Most detailed P&amp;L disclosure in the lawn cohort: company-owned outlets show EBITDA "
+            "with imputed franchisor fees. Cleveland: $399K/territory revenue, 16% EBITDA. Columbus: "
+            "$192K/territory, 19% EBITDA. However, data is company-owned only (0 franchisees have "
+            "operated a full year)."
+        ),
+        "watchouts": [
+            "Highest ongoing fee burden in the lawn cohort at every revenue level: 7% royalty + "
+            "2% brand fund + 5% call center = 14% of Gross Revenue before marketing.",
+            "5% call center fee (percentage of Gross Revenue) is effectively a second royalty &mdash; "
+            "most other brands charge flat monthly call center fees.",
+            "$42,000/year mandatory local marketing on top of 14% franchisor take.",
+            "Monthly technology costs total $1,170 ($450 tech + $370 ServiceMinder + $350 website).",
+            "Liquidated damages clause: greater of 2 years&rsquo; royalty or $50,000 on default.",
+            "Only 7 franchised territories open (4 franchisees).",
+        ],
+        "positives": [
+            "Most detailed P&amp;L in the lawn cohort: EBITDA with imputed fees.",
+            "Company-owned locations prove 16&ndash;19% EBITDA at scale.",
+            "Sister brand to Mosquito Squad &mdash; established parent (Authority Brands).",
+            "Lowest headline royalty in the lawn cohort (7% flat).",
+            "80% customer retention, 71% sales conversion, $810 avg customer value.",
+            "AB Inc. guarantees franchisor&rsquo;s obligations under franchise agreements.",
+        ],
+        "fee_caveats": [{
+            "title": "Effective royalty is 14%, not 7%",
+            "text": "The 5% call center fee (charged as % of Gross Revenue, not flat monthly) "
+                    "plus 2% brand fund bring total franchisor percentage take to 14% before any "
+                    "marketing or technology costs.",
+        }],
+        "health_flag": {
+            "title": "Micro-system",
+            "text": "Only 7 franchised territories operated by 4 franchisees. Company-owned "
+                    "data is strong but franchise track record is non-existent.",
+        },
+    },
+    # --- Residential Cleaning cohort ---
+    "merry-maids": {
+        "parent_short": "Roark Capital / ServiceMaster",
+        "ownership": "PE-backed",
+        "royalty_display": "7% / 6% / 5%",
+        "royalty_context": "incentive tiers (discretionary, may be discontinued)",
+        "marketing_floor": "$0 + 2% of Gross Sales",
+        "marketing_context": "2% total (1.3% ad fund + 0.7% local) &mdash; lowest in cohort",
+        "disclosure_quality": "Mixed",
+        "disclosure_rank": "4th of 7",
+        "disclosure_narrative": (
+            "Item 19 provides average and median gross sales for &ldquo;Qualified Franchises&rdquo; "
+            "($487K avg, $427K median) but only 306 of 802 units qualify. 419 &ldquo;Legacy "
+            "Franchises&rdquo; are reported separately at lower averages ($256K). Wisconsin risk "
+            "disclosure flags the turnover rate as a specific risk factor."
+        ),
+        "watchouts": [
+            "System contracted by 187 units over 3 years (989 &rarr; 802, &minus;18.9%). "
+            "Contraction is accelerating: &minus;43, &minus;62, &minus;82.",
+            "73 units ceased operations in 2024 alone &mdash; highest single-year loss in the cohort.",
+            "Only 306 of 802 units qualify for the Item 19 &ldquo;Qualified&rdquo; tier. "
+            "419 Legacy Franchises have lower averages and were on different fee structures.",
+            "Wisconsin risk disclosure explicitly flags turnover rate as a buyer risk.",
+            "Incentive royalty tiers (6% at $400K+, 5% at $500K+) are discretionary and "
+            "may be discontinued at any time.",
+        ],
+        "positives": [
+            "Largest system in the cleaning cohort (802 units) with 46 years of history.",
+            "Lowest marketing burden in the cohort: 2% total (1.3% ad fund + 0.7% local).",
+            "Qualified Franchise average gross sales of $487,441 (median $427,425).",
+            "Simple fee structure with low technology cost ($499/month).",
+            "Lowest initial investment in the cohort ($127K&ndash;$170K).",
+        ],
+        "fee_caveats": [{
+            "title": "Incentive tiers are not guaranteed",
+            "text": "The reduced royalty rates (6% at $400K+, 5% at $500K+) are discretionary "
+                    "incentive programs that the franchisor can discontinue at any time. "
+                    "Base rate is 7%.",
+        }],
+        "health_flag": {
+            "title": "Accelerating contraction",
+            "text": "System lost 187 units in 3 years (&minus;18.9%), with losses accelerating "
+                    "each year. 73 units ceased operations in 2024 alone. Wisconsin risk "
+                    "disclosure flags the turnover rate.",
+        },
+    },
+    "molly-maid": {
+        "parent_short": "KKR / Neighborly",
+        "ownership": "PE-backed (Neighborly SPV)",
+        "royalty_display": "6.5% / 6% / 5.5% / 5% / 4.5% / 4% / 3.5% / 3%",
+        "royalty_context": "8-tier marginal &mdash; declines to 3% above $2.8M",
+        "marketing_floor": "2% + $1/TH/yr local",
+        "marketing_context": "moderate (MAP 2% + declining per-TH local)",
+        "disclosure_quality": "Strong",
+        "disclosure_rank": "2nd of 7",
+        "disclosure_narrative": (
+            "Item 19 provides 4 parts: per-cleaning revenue ($173 avg), per-TH penetration, "
+            "91% recurring customer rate, and YoY growth distribution. 79% of franchisees grew "
+            "in 2024. Does not disclose absolute total gross sales per franchisee. 25 businesses "
+            "that closed during 2024 excluded."
+        ),
+        "watchouts": [
+            "System has contracted every year for 3 consecutive years "
+            "(501 &rarr; 481 &rarr; 464 &rarr; 448, &minus;10.6%).",
+            "Item 19 does not disclose absolute total gross sales per franchisee &mdash; only "
+            "per-cleaning and per-TH metrics. Revenue comparisons require inference.",
+            "Technology costs total ~$463/month ($58 ZorWare + $405 CLEO/ServiceTitan).",
+            "Same Neighborly/KKR SPV structure as Mosquito Joe &mdash; securitization layers.",
+            "Minimum License Fees apply from Year 2 based on TH in territory.",
+        ],
+        "positives": [
+            "Tiered marginal royalty genuinely rewards growth: 6.5% on first $500K declining "
+            "to 3% above $2.8M. Most favorable royalty structure in the cleaning cohort at scale.",
+            "91% recurring customer rate &mdash; one of the highest in any franchise vertical.",
+            "79% of franchisees grew YoY in 2024. Only 4% declined more than 10%.",
+            "Per-cleaning revenue of $173 average ($170 median) is a useful unit metric.",
+            "45-year system history (founded 1979, US franchising since 1984).",
+        ],
+        "fee_caveats": [{
+            "title": "Minimum License Fees",
+            "text": "Minimum fees based on TH in territory apply from Year 2. At low revenue, "
+                    "these minimums may exceed the percentage-based royalty.",
+        }],
+        "health_flag": {
+            "title": "Steady contraction",
+            "text": "System has lost 53 units over 3 years (&minus;10.6%). Contraction is "
+                    "consistent but slowing slightly (&minus;20, &minus;17, &minus;16).",
+        },
+    },
+    "cleaning-authority": {
+        "parent_short": "Apax Partners / Authority Brands",
+        "ownership": "PE-backed",
+        "royalty_display": "6% / 5% / 4%",
+        "royalty_context": "tiered &mdash; different thresholds for Enterprise vs Hometown",
+        "marketing_floor": "1% brand fund + DHH-based local",
+        "marketing_context": "low &mdash; brand fund capped at $200/wk",
+        "disclosure_quality": "Best in cohort",
+        "disclosure_rank": "1st of 7",
+        "disclosure_narrative": (
+            "Richest Item 19 in the cleaning cohort: 206 Enterprise Market territories with "
+            "average gross revenue by thirds (Top $2.45M, Middle $1.29M, Lower $638K), "
+            "average price per clean ($165&ndash;$173), and average COGS (61&ndash;63%). "
+            "The only cleaning brand providing revenue-tier breakdowns with COGS."
+        ),
+        "watchouts": [
+            "TCAF lawsuit (The Cleaning Authority Franchisee Association) alleges marketing "
+            "fund opacity, above-market vendor pricing, and inhibition of association rights. "
+            "Pending as of filing.",
+            "Two separate investment tables (Enterprise vs Hometown Market) make direct comparison "
+            "with single-table brands less straightforward.",
+            "Brand fund capped at $200/week &mdash; but local marketing fee is DHH-based, "
+            "not revenue-based, creating unpredictable cost.",
+            "Royalty thresholds differ between Enterprise and Hometown markets.",
+        ],
+        "positives": [
+            "Only growing system among the large cleaning franchises: +24 units over 3 years (+11.3%).",
+            "Turnover rate dropped from 10.6% (2023) to 4.1% (2024) &mdash; best improvement in cohort.",
+            "Richest Item 19 disclosure: revenue by thirds, COGS percentages, price per clean.",
+            "Top-third Enterprise territories average $2.45M gross revenue.",
+            "Sister brand to Mosquito Squad &mdash; established Authority Brands platform.",
+            "Lowest initial investment in the cohort ($93K&ndash;$147K Enterprise).",
+        ],
+        "fee_caveats": [{
+            "title": "Dual market structure",
+            "text": "Enterprise and Hometown markets have different fee thresholds, investment "
+                    "ranges, and territory definitions. Comparison data uses Enterprise Market.",
+        }],
+        "health_flag": None,
+    },
+    "the-maids": {
+        "parent_short": "Gladstone Management Corp",
+        "ownership": "private",
+        "royalty_display": "6.9% / 5.9% / 4.9% / 3.9%",
+        "royalty_context": "non-marginal tiers &mdash; entire week at one rate",
+        "marketing_floor": "2% + 0.25% + $2,500+/mo local",
+        "marketing_context": "moderate-to-high (2.25% + mandatory local spend)",
+        "disclosure_quality": "Good",
+        "disclosure_rank": "3rd of 7",
+        "disclosure_narrative": (
+            "Item 19 provides 3 tables: per-territory revenue ($386K avg, $306K median), "
+            "company-owned P&amp;L showing 15.5% net margin ($220K/office average), and "
+            "detailed expense categories. One of only two cleaning brands disclosing "
+            "company-owned profitability."
+        ),
+        "watchouts": [
+            "Franchisor financial condition is flagged as a special risk in state disclosures. "
+            "Net loss of $(3.86M) in FY2025, member&rsquo;s deficit of $(3.55M), "
+            "$28.56M in related-party debt.",
+            "$19,900 mandatory SMART Start Package on top of $60,000 franchise fee.",
+            "Royalty is non-marginal (entire week at one rate based on threshold). "
+            "Crossing a threshold changes the rate on ALL revenue, not just the increment.",
+            "Minimum royalty ($150&ndash;$250/week) applies if percentage doesn&rsquo;t meet floor.",
+            "Fiscal year ends September 30, making calendar-year comparisons non-standard.",
+        ],
+        "positives": [
+            "Company-owned P&amp;L shows 15.5% average net margin ($220K/office) &mdash; "
+            "one of only two cleaning brands proving profitability at the franchisor level.",
+            "47-year system history (founded 1979). Longest track record in the cohort.",
+            "System contraction slowing: franchised outlets stabilized at 338 in FY2025.",
+            "Per-territory average revenue of $386K with $306K median.",
+            "Privately held (Gladstone) &mdash; no PE securitization layers.",
+        ],
+        "fee_caveats": [{
+            "title": "Non-marginal royalty structure",
+            "text": "Unlike marginal/progressive tiers, the entire week&rsquo;s revenue is "
+                    "charged at whatever rate the threshold dictates. Crossing from 6.9% to "
+                    "5.9% saves on ALL sales, not just the increment.",
+        }],
+        "health_flag": {
+            "title": "Franchisor financial condition",
+            "text": "State-required risk disclosure flags financial condition. Net loss of "
+                    "$(3.86M), member&rsquo;s deficit of $(3.55M), significant related-party debt.",
+        },
+    },
+    "maidpro": {
+        "parent_short": "The Riverside Company / Threshold Brands",
+        "ownership": "PE-backed",
+        "royalty_display": "6%",
+        "royalty_context": "flat rate &mdash; simplest structure in cohort",
+        "marketing_floor": "2% brand fund",
+        "marketing_context": "low (8% total ongoing = royalty + brand fund only)",
+        "disclosure_quality": "Good",
+        "disclosure_rank": "5th of 7",
+        "disclosure_narrative": (
+            "Item 19 provides system-wide average gross consumer sales of $461,941 "
+            "(median $397,548) across 231 outlets with quintile breakdowns. Wide dispersion: "
+            "Q1 avg $958K vs Q4 avg $134K. Jobs data also provided."
+        ),
+        "watchouts": [
+            "Franchise Option Program creates a bifurcated royalty structure: standard 6% vs "
+            "10% for franchisees who entered through the option program.",
+            "Technology fee of $500/month ($6,000/year) is above average for the cohort.",
+            "Table 1 in the FDD contains a year-label typo (third row labeled &ldquo;2023&rdquo; "
+            "should be &ldquo;2024&rdquo;) &mdash; document quality blemish.",
+            "Confidentiality clauses restrict some former franchisees from speaking openly.",
+            "Wide performance dispersion: Q1 avg $958K vs Q4 avg $134K "
+            "(7:1 ratio between top and bottom quintile).",
+        ],
+        "positives": [
+            "Simplest fee structure in the cohort: 6% flat royalty + 2% brand fund = 8% total. "
+            "No tiered schedules, no mandatory local marketing minimums.",
+            "System stabilized in 2024 (0 net change) after 3 years of mild contraction.",
+            "Turnover rate improving: 15.0% &rarr; 12.4% &rarr; 8.4% over 3 years.",
+            "Average gross sales of $461,941 with useful quintile breakdowns.",
+            "Transfer fee of only $5,000 &mdash; lowest in the cohort.",
+        ],
+        "fee_caveats": [{
+            "title": "Franchise Option Program",
+            "text": "Franchisees who entered through the $0-down Franchise Option Program pay "
+                    "10% royalty instead of 6%. This affects per-brand fee comparisons.",
+        }],
+        "health_flag": None,
+    },
+    "two-maids": {
+        "parent_short": "JM Family Enterprises / Home Franchise Concepts",
+        "ownership": "PE-backed",
+        "royalty_display": "7% / 6% / 5% / 4%",
+        "royalty_context": "marginal tiered by monthly revenue",
+        "marketing_floor": "2% national + $2,500&ndash;$3,000/mo local",
+        "marketing_context": "moderate-to-high (2% + $30K&ndash;$36K/yr local)",
+        "disclosure_quality": "Strong",
+        "disclosure_rank": "2nd of 7",
+        "disclosure_narrative": (
+            "Richest Item 19 in terms of breadth: 12 charts covering 5 quintiles of territories "
+            "open 2+ years (86 territories), new territories (1&ndash;2 years, 17), multi-unit "
+            "owners (20), gross margins (52% top quintile), and labor efficiency."
+        ),
+        "watchouts": [
+            "Technology fee of $650/month per territory ($7,800/year) &mdash; "
+            "highest tech fee in the cleaning cohort.",
+            "Transfer fee is complex and expensive: $24,950&ndash;$50,000 for new buyers, "
+            "plus potential $15,000 referral fee.",
+            "Mandatory franchisor-directed local advertising of $2,500&ndash;$3,000/month "
+            "($30K&ndash;$36K/year) on top of 2% national fund.",
+            "Minimum royalty of $1,500/month applies from Year 2.",
+        ],
+        "positives": [
+            "Fastest growing system in the cleaning cohort: +52 units over 3 years (+56.5%). "
+            "2024 saw 32 openings vs only 6 exits.",
+            "Top quintile territories average $1.17M gross revenue with 52% gross margin.",
+            "Most detailed Item 19 in the cohort: 12 charts, quintile breakdowns, multi-unit data.",
+            "Tiered royalty rewards growth: drops from 7% to 4% above $90K/month.",
+            "21 signed-but-not-opened agreements + 35 projected for 2025 &mdash; strong pipeline.",
+        ],
+        "fee_caveats": [{
+            "title": "Local advertising is franchisor-directed",
+            "text": "The $2,500&ndash;$3,000/month local advertising is managed by the franchisor, "
+                    "not discretionary. Combined with 2% national fund, total marketing "
+                    "costs are $32K&ndash;$42K/year at any revenue level.",
+        }],
+        "health_flag": None,
+    },
+    "maid-right": {
+        "parent_short": "Premium Service Brands / AE Capital",
+        "ownership": "founder-led",
+        "royalty_display": "6%",
+        "royalty_context": "flat rate, $150/week minimum",
+        "marketing_floor": "2% + $50/wk + contact center 2%",
+        "marketing_context": "moderate headline but high fixed weekly minimums",
+        "disclosure_quality": "Below average",
+        "disclosure_rank": "6th of 7",
+        "disclosure_narrative": (
+            "Item 19 includes only 18 of 39 franchisees (46%). Average $520K, median $356K. "
+            "Strong maturity curve (36+ months avg $782K, 86% recurring). But 21 franchisees "
+            "excluded &mdash; highest exclusion rate in the cohort."
+        ),
+        "watchouts": [
+            "CEO Paul Flick barred from California franchise sales for 36 months due to "
+            "regulatory actions at affiliate 360 Painting.",
+            "17 disclosed litigation actions against affiliates (360 Painting, ProLift Garage Doors) "
+            "across multiple states for FDD disclosure failures.",
+            "System contracted sharply in 2024: &minus;9 units (&minus;20.5%). "
+            "First 6 terminations appeared after 2 years of none.",
+            "Turnover rates are the highest in the cohort: 20.8%, 37.8%, 38.6% over 3 years.",
+            "Highest initial investment in the cohort ($147K&ndash;$219K). "
+            "Effective ongoing fixed fees (~$15,340/year in weekly minimums) are substantial.",
+            "State risk disclosures flag franchisor financial condition, short operating history, "
+            "and significant number of unopened franchises.",
+        ],
+        "positives": [
+            "86.4% of revenue from recurring service &mdash; strong business predictability.",
+            "Mature franchisees (36+ months) average $782K gross revenue.",
+            "Simple flat 6% royalty with no tiered complexity.",
+            "10 franchise agreements signed but not yet opened as of year-end 2024 "
+            "&mdash; pipeline suggests continued interest.",
+        ],
+        "fee_caveats": [{
+            "title": "Fixed weekly minimums add up",
+            "text": "Technology ($210/wk), accounting ($85/wk), contact center ($50&ndash;$220/wk "
+                    "escalating) add ~$295&ndash;$515/week in fixed costs regardless of revenue.",
+        }],
+        "health_flag": {
+            "title": "CEO regulatory history",
+            "text": "Paul Flick (CEO/founder) was barred from California franchise sales for "
+                    "36 months. 17 affiliate litigation actions for FDD disclosure failures "
+                    "across multiple states.",
+        },
+    },
 }
 
 BRAND_META_DESCRIPTIONS: dict[str, str] = {
@@ -364,6 +1067,21 @@ BRAND_META_DESCRIPTIONS: dict[str, str] = {
     "mosquito-joe": "Review Mosquito Joe franchise fees, startup cost, system health, and key risks using public disclosure data for serious franchise buyers.",
     "mosquito-shield": "Review Mosquito Shield franchise cost, ongoing fees, system health signals, and key buyer risks before committing capital.",
     "mosquito-squad": "Review Mosquito Squad franchise cost, royalty structure, system health, and major decision factors using regulator-source data.",
+    "mosquito-sheriff": "Review Mosquito Sheriff franchise cost, fees, system size, and key risks using regulator-source FDD data for prospective franchise buyers.",
+    "mosquitonix": "Review MosquitoNix franchise cost, fee structure, system health, and buyer watchouts using 2025 FDD data from Wisconsin DFI.",
+    "lawn-doctor": "Review Lawn Doctor franchise cost, ongoing fees, system health, and key risks using regulator-source FDD data before investing.",
+    "weed-man": "Review Weed Man franchise cost, royalty structure, system health, and key decision factors using 2025 FDD data.",
+    "spring-green": "Review Spring-Green franchise cost, fees, system health, and buyer watchouts using regulator-source FDD data.",
+    "naturalawn": "Review NaturaLawn franchise cost, fee burden, system health, and key risks for organic lawn care franchise buyers.",
+    "lawn-pride": "Review Lawn Pride franchise cost, fees, system growth, and key watchouts using 2025 FDD data from Wisconsin DFI.",
+    "lawn-squad": "Review Lawn Squad franchise cost, fee structure, system health, and major buyer risks using regulator-source FDD data.",
+    "merry-maids": "Review Merry Maids franchise cost, fees, system health, and contraction risk using regulator-source FDD data.",
+    "molly-maid": "Review Molly Maid franchise cost, tiered royalty structure, system health, and key risks using 2025 FDD data.",
+    "cleaning-authority": "Review The Cleaning Authority franchise cost, system growth, COGS data, and key buyer factors using regulator-source FDD data.",
+    "the-maids": "Review The Maids franchise cost, company-owned P&L, system health, and franchisor financial condition using 2026 FDD data.",
+    "maidpro": "Review MaidPro franchise cost, simple fee structure, system health, and key risks using 2025 FDD data.",
+    "two-maids": "Review Two Maids franchise cost, growth trajectory, fee structure, and key decision factors using 2025 FDD data.",
+    "maid-right": "Review Maid Right franchise cost, system health, regulatory history, and key buyer risks using 2025 FDD data.",
 }
 
 BRAND_DIFFERENTIATORS: dict[str, str] = {
@@ -372,15 +1090,38 @@ BRAND_DIFFERENTIATORS: dict[str, str] = {
     "mosquito-joe": "Highest marketing spend",
     "mosquito-shield": "Fastest growth",
     "mosquito-squad": "Highest avg revenue",
+    "mosquito-sheriff": "Lowest investment",
+    "mosquitonix": "Holiday lighting add-on",
+    "lawn-doctor": "Largest system, 58yr track record",
+    "weed-man": "Lowest fee burden",
+    "spring-green": "Privately held, 48yr history",
+    "naturalawn": "Organic-based premium",
+    "lawn-pride": "Explosive growth (Neighborly)",
+    "lawn-squad": "Detailed P&L disclosure",
+    "merry-maids": "Largest system, lowest fees",
+    "molly-maid": "Best tiered royalty at scale",
+    "cleaning-authority": "Only growing large brand",
+    "the-maids": "Company-owned P&L disclosed",
+    "maidpro": "Simplest fee structure",
+    "two-maids": "Fastest growth (+57%)",
+    "maid-right": "Highest recurring revenue %",
 }
 
 # Stripe Payment Links — add real URLs as reports go live.
 STRIPE_PAYMENT_LINKS: dict[str, str | None] = {
-    "mosquito-authority": None,
+    "mosquito-authority": "https://buy.stripe.com/REPLACE_ME_MOSQUITO_AUTHORITY",  # TODO: replace with real Stripe Payment Link
     "mosquito-hunters": None,
     "mosquito-joe": None,
     "mosquito-shield": None,
     "mosquito-squad": None,
+    "mosquito-sheriff": None,
+    "mosquitonix": None,
+    "lawn-doctor": None,
+    "weed-man": None,
+    "spring-green": None,
+    "naturalawn": None,
+    "lawn-pride": None,
+    "lawn-squad": None,
 }
 
 # Mosquito-specific cost page editorial
@@ -390,10 +1131,19 @@ MOSQUITO_FEE_NOTES: dict[str, str] = {
     "Mosquito Joe": "Standard single territory. Discounts available.",
     "Mosquito Shield": "First territory. Multi-territory discounts available.",
     "Mosquito Squad": "Standard territory (350K\u2013500K pop). Micro territory $35K.",
+    "Mosquito Sheriff": "$40K franchise fee + $27.5K Starter Kit. $75K to franchisor at signing.",
+    "MosquitoNix": "$49K franchise fee + $7K training + $13.5K Opening Package. VetFran $2.5K off.",
+    "Lawn Doctor": "$50K license + $70.6K training/supply + $6.4K equipment deposits. Highest in lawn cohort.",
+    "Weed Man": "$30K\u2013$50K based on territory population. Seasonal early-payment discounts (5\u201310%).",
+    "Spring-Green": "$45K franchise fee + $35K marketing campaign + $16.5K property data.",
+    "NaturaLawn": "$39.5K standard. Discounts for existing lawn care operators.",
+    "Lawn Pride": "$0.89/Targeted Household. Typical $40K\u2013$62K. Neighborly discounts available.",
+    "Lawn Squad": "$45K standard. Authority Brands franchisees: $15K. Heavy discounting in 2024.",
 }
 
 MOSQUITO_RESERVES: dict[str, str] = {
     "Mosquito Squad": "12 months",
+    "NaturaLawn": "6 months",
 }
 
 MOSQUITO_ROYALTY: dict[str, tuple[str, str]] = {
@@ -402,11 +1152,21 @@ MOSQUITO_ROYALTY: dict[str, tuple[str, str]] = {
     "Mosquito Joe": ("10% / 7%", "10% on first $500K, 7% above. Rewards growth."),
     "Mosquito Shield": ("8%", "Flat rate \u2014 lowest in cohort. Min Gross Sales shortfall penalty."),
     "Mosquito Squad": ("10% / 9% / 8%", "Triple-tiered by revenue bracket. Min $3K/mo at Year 9+."),
+    "Mosquito Sheriff": ("10%", "Flat rate. Min $2K/mo at Year 6+."),
+    "MosquitoNix": ("10% / 9% / 8% / 7%", "Four-tiered by revenue. Most aggressive scale discount."),
+    "Lawn Doctor": ("10%", "Flat rate on Net Revenues. Plus 15% on out-of-territory."),
+    "Weed Man": ("6.5% / 5.5%", "Tiered at $1M. Lowest rate in lawn cohort."),
+    "Spring-Green": ("10% / 9% / 8%", "Triple-tiered by revenue bracket."),
+    "NaturaLawn": ("9% / 7%", "Reduces to 7% at renewal if $500K+ sustained."),
+    "Lawn Pride": ("8%", "Flat rate. Roll-In franchisees get reduced 4\u20136%."),
+    "Lawn Squad": ("7%", "Flat rate \u2014 lowest headline. But +5% call center = 12% effective."),
 }
 
 MOSQUITO_ROYALTY_ORDER = [
     "Mosquito Shield", "Mosquito Squad", "Mosquito Joe",
-    "Mosquito Authority", "Mosquito Hunters",
+    "Mosquito Authority", "Mosquito Hunters", "Mosquito Sheriff", "MosquitoNix",
+    "Lawn Squad", "Lawn Pride", "Weed Man", "NaturaLawn",
+    "Spring-Green", "Lawn Doctor",
 ]
 
 MOSQUITO_INVESTMENT_DETAILS: list[dict] = [
@@ -415,6 +1175,14 @@ MOSQUITO_INVESTMENT_DETAILS: list[dict] = [
     {"brand_name": "Mosquito Joe", "detail": "<strong>$72K in mandatory marketing</strong> ($37K DMP + $35K local). These two items alone are nearly half the total. 3-mo reserves."},
     {"brand_name": "Mosquito Shield", "detail": "$23.6K mandatory Starter Package. $35K&ndash;$50K first-year local advertising. 3-mo reserves."},
     {"brand_name": "Mosquito Squad", "detail": "$9.5K business outfitting + $4K&ndash;$9.5K truck outfitting. <strong>12-month reserves ($84K&ndash;$117K)</strong>."},
+    {"brand_name": "Mosquito Sheriff", "detail": "<strong>$75K to franchisor at signing</strong> ($40K fee + $27.5K Starter Kit + $5K vehicle + $2.5K tools). 3-mo reserves only $1K&ndash;$1.6K."},
+    {"brand_name": "MosquitoNix", "detail": "$24K Market Entry Campaign + $13.5K Opening Package. Vehicle 10% down on $62K&ndash;$64K lease. 3-mo reserves."},
+    {"brand_name": "Lawn Doctor", "detail": "<strong>$70.6K mandatory training/supply</strong> (on top of $50K license). $6K&ndash;$14K holiday lighting inventory. 3-mo reserves."},
+    {"brand_name": "Weed Man", "detail": "$4.6K training + $6.25K software/hardware. $25K&ndash;$30K reserves (3 months). Lowest total in lawn cohort."},
+    {"brand_name": "Spring-Green", "detail": "<strong>$35K Initial Marketing Campaign + $16.5K Property Data Fee</strong>. $5.5K equipment (20% down on lease). 3-mo reserves."},
+    {"brand_name": "NaturaLawn", "detail": "<strong>$60K&ndash;$80K annual marketing</strong> is the largest line item. Plus $150K&ndash;$250K credit line required. <strong>6-mo reserves</strong>."},
+    {"brand_name": "Lawn Pride", "detail": "<strong>$81.7K&ndash;$146K reserves (3 months)</strong> includes $80K Year 1 Local Marketing Spend. Highest reserves in cohort."},
+    {"brand_name": "Lawn Squad", "detail": "$6K call center setup fee. $5.8K&ndash;$18K vehicle. $1.17K/mo total technology costs. 3-mo reserves."},
 ]
 
 
@@ -459,7 +1227,7 @@ def build_fee_context(fee_model: dict, brands: dict[str, dict]) -> dict:
 
     # 10-year burden at $300K — derive midpoints from brand data
     investment_midpoints = {
-        data["brand"]["brand_name"]: data["derived"]["initial_investment_midpoint"]
+        data["brand"]["brand_name"]: normalize_item7(data)[2]
         for data in brands.values()
     }
 
@@ -608,9 +1376,8 @@ def build_cost_context(brands: dict[str, dict], brand_slug_map: dict[str, str]) 
     for slug, data in brands.items():
         name = data["brand"]["brand_name"]
         item5 = data["raw"]["item_5_initial_fees"]["initial_franchise_fee"]
-        item7 = data["raw"]["item_7_initial_investment"]
         item6 = data["raw"]["item_6_other_fees"]
-        derived = data["derived"]
+        inv_low, inv_high, inv_mid = normalize_item7(data)
 
         # Franchise fee display
         if item5["value"] is not None:
@@ -634,9 +1401,9 @@ def build_cost_context(brands: dict[str, dict], brand_slug_map: dict[str, str]) 
 
         investment_data.append({
             "brand_name": name,
-            "total_low": item7["total_low"],
-            "total_high": item7["total_high"],
-            "midpoint": derived["initial_investment_midpoint"],
+            "total_low": inv_low,
+            "total_high": inv_high,
+            "midpoint": inv_mid,
             "reserves_period": reserves,
             "caveat": name in MOSQUITO_RESERVES,
         })
@@ -717,15 +1484,13 @@ def build_brand_contexts(
         brand_name = data["brand"]["brand_name"]
         derived = data["derived"]
         years = data["raw"]["item_20_outlet_summary"]["years_reported"]
-        item7 = data["raw"]["item_7_initial_investment"]
         item6 = data["raw"]["item_6_other_fees"]
         sorted_years = sorted(years, key=lambda y: y["year"])
         y_last = sorted_years[-1]
 
         franchised_end = y_last["total_outlets_end"] - (y_last.get("company_owned_end") or 0)
 
-        inv_low = item7["total_low"]
-        inv_high = item7["total_high"]
+        inv_low, inv_high, _ = normalize_item7(data)
         investment_range = f"${inv_low // 1000}K\u2013${inv_high // 1000}K"
         investment_note = "Item 7 range"
         if brand_name in MOSQUITO_RESERVES:
@@ -935,13 +1700,16 @@ def build_nav_pages(cohort: dict) -> list[dict]:
 
 
 def build_all_nav(cohorts: list[dict]) -> list[dict]:
-    """Build combined navigation data for all cohorts."""
+    """Build combined navigation data for all cohorts with comparison pages."""
     result = []
     for cohort in cohorts:
+        pages = build_nav_pages(cohort)
+        if not pages:
+            continue
         cohort_nav = {
             "id": cohort["id"],
             "short_name": cohort["short_name"],
-            "pages": build_nav_pages(cohort),
+            "pages": pages,
         }
         result.append(cohort_nav)
     return result
@@ -974,12 +1742,34 @@ def build_site() -> None:
     )
 
     cohorts = load_registry()
-    all_nav = build_all_nav(cohorts)
     total_pages = 0
 
-    # Pre-collect brand info for all cohorts (needed by footer on every page)
+    # Filter to cohorts where ALL brand JSONs exist AND contain valid extraction data
+    def _cohort_ready(cohort: dict) -> bool:
+        for slug in cohort["brands"]:
+            path = DATA_EXTRACTED / f"{slug}.json"
+            if not path.exists():
+                return False
+            try:
+                data = json.loads(path.read_text())
+                # Check for a required field that only exists in completed extractions
+                normalize_item7(data)
+            except (KeyError, TypeError, ValueError, json.JSONDecodeError):
+                return False
+        return True
+
+    ready_cohorts = [c for c in cohorts if _cohort_ready(c)]
+    pending_cohorts = [c for c in cohorts if c not in ready_cohorts]
+    if pending_cohorts:
+        for c in pending_cohorts:
+            print(f"  Skipped: {c['display_name']} (no extracted data yet)")
+
+    # Only include ready cohorts in nav
+    all_nav = build_all_nav(ready_cohorts)
+
+    # Pre-collect brand info for all ready cohorts (needed by footer on every page)
     all_brands_by_cohort: list[dict] = []
-    for cohort in cohorts:
+    for cohort in ready_cohorts:
         pre_brands = load_brand_data(cohort["brands"])
         all_brands_by_cohort.append({
             "id": cohort["id"],
@@ -991,15 +1781,39 @@ def build_site() -> None:
             ],
         })
 
-    for cohort in cohorts:
+    for cohort in ready_cohorts:
         brand_slugs = cohort["brands"]
         brands = load_brand_data(brand_slugs)
         slug_map = build_slug_map(brands)
         prefix = cohort["url_prefix"]
 
+        # Split brands into comparison-eligible and excluded
+        comp_brands, excluded_slugs = filter_comparison_brands(brands)
+        comp_slugs = [s for s in brand_slugs if s in comp_brands]
+        comp_slug_map = build_slug_map(comp_brands)
+
+        if excluded_slugs:
+            excluded_names = [brands[s]["brand"]["brand_name"] for s in excluded_slugs]
+            print(f"  Comparison exclusion (<{COMPARISON_MIN_OUTLETS} outlets): "
+                  f"{', '.join(excluded_names)}")
+
         fee_model = None
         if cohort.get("has_fee_model") and cohort.get("fee_model_file"):
             fee_model = load_fee_model(cohort["fee_model_file"])
+
+        # Filter fee model results to only comparison-eligible brands
+        comp_fee_model = None
+        if fee_model:
+            comp_brand_names = {
+                comp_brands[s]["brand"]["brand_name"] for s in comp_slugs
+            }
+            comp_fee_model = {
+                **fee_model,
+                "results": [
+                    r for r in fee_model["results"]
+                    if r["brand"] in comp_brand_names
+                ],
+            }
 
         nav_pages = build_nav_pages(cohort)
 
@@ -1011,38 +1825,38 @@ def build_site() -> None:
             "cohort_id": cohort["id"],
             "cohort_display_name": cohort["display_name"],
             "cohort_short_name": cohort["short_name"],
-            "cohort_brand_count": len(brand_slugs),
-            "brand_slug_map": slug_map,
+            "cohort_brand_count": len(comp_slugs),
+            "brand_slug_map": comp_slug_map,
         }
 
-        # Fee burden (only if model exists)
-        if fee_model and "fee-burden" in cohort["comparison_pages"]:
-            fee_ctx = build_fee_context(fee_model, brands)
+        # Fee burden — comparison-eligible brands only
+        if comp_fee_model and "fee-burden" in cohort["comparison_pages"]:
+            fee_ctx = build_fee_context(comp_fee_model, comp_brands)
             active = f"{prefix}fee-burden" if prefix else "fee-burden"
             render_page(env, "fee-burden.html", f"{prefix}fee-burden.html", {
                 **shared, "active_page": active, **fee_ctx,
             })
             total_pages += 1
 
-        # System health
+        # System health — comparison-eligible brands only
         if "system-health" in cohort["comparison_pages"]:
-            health_ctx = build_health_context(brands, slug_map)
+            health_ctx = build_health_context(comp_brands, comp_slug_map)
             active = f"{prefix}system-health" if prefix else "system-health"
             render_page(env, "system-health.html", f"{prefix}system-health.html", {
                 **shared, "active_page": active, **health_ctx,
             })
             total_pages += 1
 
-        # Cost to enter
+        # Cost to enter — comparison-eligible brands only
         if "cost-to-enter" in cohort["comparison_pages"]:
-            cost_ctx = build_cost_context(brands, slug_map)
+            cost_ctx = build_cost_context(comp_brands, comp_slug_map)
             active = f"{prefix}cost-to-enter" if prefix else "cost-to-enter"
             render_page(env, "cost-to-enter.html", f"{prefix}cost-to-enter.html", {
                 **shared, "active_page": active, **cost_ctx,
             })
             total_pages += 1
 
-        # Report listing
+        # Report listing — ALL brands (including sub-threshold)
         report_ctx = build_report_context(brands, brand_slugs)
         active = f"{prefix}report" if prefix else "report"
         render_page(env, "report.html", f"{prefix}report.html", {
@@ -1050,7 +1864,7 @@ def build_site() -> None:
         })
         total_pages += 1
 
-        # Brand pages
+        # Brand pages — ALL brands get individual pages
         brand_ctxs = build_brand_contexts(
             brands, brand_slugs, fee_model, slug_map, cohort,
         )
@@ -1082,24 +1896,32 @@ def build_site() -> None:
             total_pages += 1
 
     # --- Homepage (multi-cohort) ---
-    homepage_cohorts = []
-    for cohort in cohorts:
+    live_cohorts = []
+    for cohort in ready_cohorts:
         brand_slugs = cohort["brands"]
         brands = load_brand_data(brand_slugs)
         slug_map = build_slug_map(brands)
+        comp_brands_hp, _ = filter_comparison_brands(brands)
         fee_model = None
         if cohort.get("has_fee_model") and cohort.get("fee_model_file"):
             fee_model = load_fee_model(cohort["fee_model_file"])
 
-        homepage_cohorts.append({
+        # Pre-compute investment ranges (handles split-market brands)
+        brand_investment = {}
+        for s in brand_slugs:
+            low, high, _ = normalize_item7(brands[s])
+            brand_investment[s] = {"low": low, "high": high}
+
+        live_cohorts.append({
             "id": cohort["id"],
             "display_name": cohort["display_name"],
             "short_name": cohort["short_name"],
             "description": cohort["description"],
-            "brand_count": len(brand_slugs),
+            "brand_count": len(comp_brands_hp),
             "brand_slugs": brand_slugs,
             "brands_data": brands,
             "brand_slug_map": slug_map,
+            "brand_investment": brand_investment,
             "has_fee_model": fee_model is not None,
             "fee_model": fee_model,
             "comparison_pages": [
@@ -1109,13 +1931,42 @@ def build_site() -> None:
             "report_url": f"{cohort['url_prefix']}report.html",
         })
 
+    # Pending cohorts shown as "coming soon" on homepage
+    hp_pending_cohorts = [
+        {
+            "id": c["id"],
+            "display_name": c["display_name"],
+            "short_name": c["short_name"],
+            "description": c["description"],
+            "brands": c["brands"],
+        }
+        for c in pending_cohorts
+    ]
+
+    total_brands = sum(c["brand_count"] for c in live_cohorts)
+    total_categories = len(live_cohorts) + len(hp_pending_cohorts)
+
     render_page(env, "index.html", "index.html", {
         "site_base_url": SITE_BASE_URL,
         "active_page": "home",
         "all_nav": all_nav,
         "all_brands_by_cohort": all_brands_by_cohort,
         "nav_pages": [],
-        "cohorts": homepage_cohorts,
+        "cohort_id": None,
+        "live_cohorts": live_cohorts,
+        "pending_cohorts": hp_pending_cohorts,
+        "total_brands": total_brands,
+        "total_categories": total_categories,
+    })
+    total_pages += 1
+
+    # --- Methodology page ---
+    render_page(env, "methodology.html", "methodology.html", {
+        "site_base_url": SITE_BASE_URL,
+        "active_page": "methodology",
+        "all_nav": all_nav,
+        "all_brands_by_cohort": all_brands_by_cohort,
+        "nav_pages": [],
         "cohort_id": None,
     })
     total_pages += 1

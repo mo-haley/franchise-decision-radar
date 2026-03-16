@@ -10,6 +10,9 @@
   .page-break { page-break-before: always; }
   h2 { page-break-after: avoid; }
   table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -38,10 +41,13 @@ tbody td.label { font-weight: 600; white-space: nowrap; }
 .callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
 
 .question-list { list-style: none; padding: 0; counter-reset: q; }
-.question-list li { padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; counter-increment: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
 .question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
 .question-list li:last-child { border-bottom: none; }
 .question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
 
 .methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
 .methodology p { margin: 0 0 0.5rem; }
@@ -57,57 +63,297 @@ tbody td.label { font-weight: 600; white-space: nowrap; }
 .implication strong { color: #1e40af; }
 ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
 ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
 </style>
 </head>
 <body>
 
-<div class="report-header">
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">Mosquito Squad</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: 2025 Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: Mosquito Squad Franchising SPE LLC</span>
+    <span>Report generated: 2026-03-15</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num">1</span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num">2</span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num">3</span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num">4</span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num">5</span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num">6</span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    <li><span class="toc-num">7</span> <a href="#payback">Illustrative Payback Sensitivity</a></li>
+    <li><span class="toc-num">8</span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num">9</span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num">10</span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num">11</span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num">12</span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num">13</span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
   <h1>Mosquito Squad</h1>
   <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
   <div class="report-meta">
     Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
     Legal entity: Mosquito Squad Franchising SPE LLC<br>
-    Parent: AB Assetco LLC / Authority Brands, Inc. / Apax Partners, LLP<br>
     Report generated: 2026-03-15 &middot; Franchise Decision Radar
   </div>
 </div>
 
-<h2>Executive Summary</h2>
+<h2 id="executive-summary">Executive Summary</h2>
 <div class="exec-summary">
 
-<p>Mosquito Squad has the best disclosure quality of any brand in the mosquito pest control
-cohort. Its Item 19 spans seven tables covering per-territory revenue by quartile, close rates,
-renewal rates, per-appointment and per-customer revenue, five-year systemwide growth, and a
-full company-owned P&amp;L. No other brand comes close to this level of transparency.</p>
+<p>Mosquito Squad has the best disclosure in the mosquito pest control cohort — and it is
+not close. Its Item 19 provides per-territory revenue broken out by quartile, close and renewal
+rates, per-appointment and per-customer revenue, five years of systemwide growth data, and a
+14-territory company-owned P&amp;L showing $20.8M revenue with a 25.9% net margin. No other
+brand in this category gives a prospective buyer this much to work with.</p>
 
-<p>The numbers that transparency reveals are strong: $484,506 average revenue per territory
-across 207 qualifying territories, $124.3M in total systemwide sales (5x the next closest
-competitor), and a company-owned operation across 14 territories generating $20.8M in revenue
-at 25.9% net margin. Same-store growth was 5% in 2024. Zero franchisee terminations in 2024,
-down from 12 in 2022.</p>
+<p>The trade-off is that Squad is a mid-cost, mid-complexity brand that is still recovering from a
+rough 2022 (−10 net franchised units). The system has grown since (+4 in 2023, +9 in 2024), and
+2024 saw zero terminations. But at 226 franchised outlets, it is smaller than Mosquito Authority
+(546) and Mosquito Joe (415), and the investment range ($162K–$220K) is inflated by a 12-month
+working capital estimate that most competitors quote at 3 months.</p>
 
-<p>The cost of entry is the highest in the cohort at $162,380&ndash;$220,375 &mdash; though
-$84K&ndash;$117K of that is 12-month working capital reserves (competitors typically budget only
-3 months). The fee structure rewards scale: a triple-tiered royalty (10%/9%/8%) and a local
-marketing cap of $50,000 mean that larger operators pay proportionally less. At $300K revenue,
-total fees of $77,880 (26.0%) are second-lowest in the cohort after Mosquito Authority.</p>
-
-<p>The risks are concentrated in exit terms and legacy issues. Liquidated damages on termination
-are the most aggressive in the cohort: the greater of two years' average royalty or $50,000.
-Year 9+ minimum royalty reaches $3,000/month ($36K/year). The system contracted in 2022 (-10
-net franchised units) before recovering. A 2024 Massachusetts Attorney General action addressed
-misleading environmental claims in marketing. The data is the best in the cohort; the cost and
-exit terms are the most aggressive.</p>
+<p>The graduated royalty (10%/9%/8%) rewards scale, and the local marketing cap ($50K/year) puts
+a ceiling on a cost that is uncapped at most competitors. The Massachusetts Attorney General
+marketing-claims action (2024) is a regulatory signal worth understanding — it affects how
+franchisees can advertise, not the franchise relationship itself.</p>
 
 </div>
 
-<h2>Fee Burden Analysis</h2>
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the mosquito pest control cohort.</p>
 
-<p>Squad's fee structure is unusual in two ways: the Brand Fund is a flat monthly fee (not
-a percentage of revenue), and the local marketing obligation is capped at $50,000/year. Both
-features benefit higher-revenue operators. The triple-tiered royalty (10% on first $250K, 9%
-on $250K&ndash;$500K, 8% above $500K) adds a third scale advantage. At lower revenue, the
-$35,000 local marketing floor drives total burden above 34%.</p>
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">Entry cost burden</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Headline $162K–$220K is inflated by 12-month working capital. Core investment ~$78K–$103K. Franchise fee ($50K) is highest in cohort.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Ongoing fee burden</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">#2 at lower revenue, #3 at higher. 26% at $300K. Graduated royalty and marketing cap reward scale.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">System stability</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Recovering from 2022 contraction (−10 net). Zero terminations in 2024. Trajectory positive but 3-year net is only +3.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Revenue disclosure</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Best in cohort. Per-territory quartile data, company-owned P&L ($20.8M, 25.9% margin), close/renewal rates. Most actionable Item 19.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Disclosure quality</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Comprehensive, well-structured. Table numbering error is minor. Honest 12-month working capital estimate. Best overall FDD quality.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Downside risk profile</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Aggressive liquidated damages ($50K+ on termination). MA AG marketing-claims action. 15 company-owned territories create franchisor competition.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Buyer fit breadth</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Best for data-driven buyers who want to model before committing. Higher franchise fee ($50K) and complex royalty tiers narrow the entry profile.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Overall</td>
+      <td class="rating rating-mixed">Moderate</td>
+      <td class="sc-summary">The data-transparency leader in the cohort. Mid-cost, recovering system, most useful Item 19 for buyer financial modeling.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+Mosquito Squad is the best-disclosed brand in this cohort and a reasonable
+mid-range option for a buyer who values data over cost minimization. The per-territory quartile
+data and company-owned P&amp;L provide the strongest foundation for financial modeling of any brand
+reviewed. The system's 2022 contraction is a historical concern, not a current one — 2024 showed
+genuine recovery. The main risks are the aggressive liquidated damages clause, the 15 company-owned
+territories, and the regulatory signal from the MA AG action. None are disqualifying; all warrant
+Discovery Day investigation.
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+
+<h3>Best fit for</h3>
+<ul class="fit-list">
+<li><strong>Data-driven buyer who wants to model before committing:</strong> Squad's Item 19
+provides more inputs for a financial model than any competitor. If you want to build a
+territory P&amp;L from real data before signing, this is the brand that enables it.</li>
+<li><strong>Buyer planning to scale:</strong> The graduated royalty (10/9/8%) and marketing cap
+($50K) reward revenue growth. At $500K+, Squad's fee structure becomes competitive with brands
+that cost less at lower revenue levels.</li>
+<li><strong>Buyer comfortable with a recovering system:</strong> The 2022 contraction and
+subsequent recovery are fully disclosed. If you believe the turnaround is real, you're buying
+into a system with positive momentum and room to grow.</li>
+<li><strong>Buyer in a non-Northeast market:</strong> The 15 company-owned territories are
+concentrated in MA/NH/RI. Outside this region, there's no direct franchisor competition.</li>
+</ul>
+
+<h3>Weaker fit for</h3>
+<ul class="fit-list">
+<li><strong>Budget-sensitive first-time buyer:</strong> $50K franchise fee (highest in cohort)
+plus $15.5K–$21K in outfitting fees means $65K–$71K to the franchisor before any operating
+costs. Mosquito Authority enters for $25K–$45K.</li>
+<li><strong>Buyer who prioritizes system stability:</strong> The 3-year net growth of +3 units is
+essentially flat. Authority (+22) and Joe (+43) have stronger growth records. The 2022 contraction
+is a historical fact that some buyers won't look past.</li>
+<li><strong>Buyer in the Northeast:</strong> 15 company-owned territories in MA/NH/RI mean
+the franchisor is your neighbor and competitor. Territory protections need careful review.</li>
+</ul>
+
+<h3>Proceed only if</h3>
+<ul class="fit-list">
+<li>You've gotten a satisfactory explanation for the 2021–2022 restructuring (14 reacquisitions,
+12 terminations) and believe the recovery is durable.</li>
+<li>You've understood the liquidated damages clause ($50K+ on termination) and accepted
+the exit cost.</li>
+<li>You've validated Q3 economics ($226K median per territory) with 3+ current single-territory
+franchisees — not just Q1/Q2 operators.</li>
+<li>If in the Northeast, you've confirmed territory protections against company-owned expansion.</li>
+</ul>
+
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
+
+<p>Mosquito Squad sits in the middle of the cohort on fee burden — second-lowest at $200K–$300K
+revenue, but third at higher levels where the graduated royalty tiers provide less relief than
+competitors' stepped structures. The marketing cap ($50K/year) is a distinctive feature: it's
+a cost ceiling that no other brand offers.</p>
 
 
 <table>
@@ -123,7 +369,7 @@ $35,000 local marketing floor drives total burden above 34%.</p>
     </tr>
   </thead>
   <tbody>
-
+    
     <tr>
       <td class="label">$200,000</td>
       <td class="num">$20,000</td>
@@ -131,9 +377,9 @@ $35,000 local marketing floor drives total burden above 34%.</p>
       <td class="num">$9,180</td>
       <td class="num"><strong>$68,380</strong></td>
       <td class="num">34.2%</td>
-      <td class="num">3/5</td>
+      <td class="num">2/5</td>
     </tr>
-
+    
     <tr>
       <td class="label">$300,000</td>
       <td class="num">$29,500</td>
@@ -143,7 +389,7 @@ $35,000 local marketing floor drives total burden above 34%.</p>
       <td class="num">26.0%</td>
       <td class="num">2/5</td>
     </tr>
-
+    
     <tr>
       <td class="label">$400,000</td>
       <td class="num">$38,500</td>
@@ -153,7 +399,7 @@ $35,000 local marketing floor drives total burden above 34%.</p>
       <td class="num">23.0%</td>
       <td class="num">2/5</td>
     </tr>
-
+    
     <tr>
       <td class="label">$500,000</td>
       <td class="num">$47,500</td>
@@ -161,230 +407,400 @@ $35,000 local marketing floor drives total burden above 34%.</p>
       <td class="num">$9,180</td>
       <td class="num"><strong>$110,880</strong></td>
       <td class="num">22.2%</td>
-      <td class="num">2/5</td>
+      <td class="num">4/5</td>
     </tr>
-
+    
   </tbody>
 </table>
+
+
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Authority</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 61.3%"></div>
+    </div>
+    <div class="fee-bar-value">17.6%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Squad</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill this-brand" style="width: 90.6%"></div>
+    </div>
+    <div class="fee-bar-value">26.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Hunters</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 93.4%"></div>
+    </div>
+    <div class="fee-bar-value">26.8%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Joe</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 98.6%"></div>
+    </div>
+    <div class="fee-bar-value">28.3%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Shield</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 100.0%"></div>
+    </div>
+    <div class="fee-bar-value">28.7%</div>
+  </div>
+  
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+
 
 
 <h3>Component breakdown</h3>
 <ul class="compact">
-<li><strong>Royalty (10%/9%/8% tiered):</strong> 10% on first $250K of calendar-year gross
-revenue, 9% on $250K&ndash;$500K, 8% above $500K. Or minimum royalty (whichever is greater):
-$0/mo in Year 1, escalating to $3,000/mo by Year 9+ ($36K/year). The tiered structure
-rewards scale &mdash; at $500K you pay an effective 9.5% blended rate. (pp. 19&ndash;20, 29)</li>
-<li><strong>Brand Fund ($150&ndash;$450/mo flat):</strong> Escalates from $150/mo in Year 1 to
-$450/mo in Year 7+. Flat fee, not percentage-based &mdash; unusual in this cohort. At $300K
-revenue, this is only 1.4% of revenue; at $500K, under 1%. (p. 20)</li>
-<li><strong>Local Marketing ($35K floor, $50K cap):</strong> Greater of $35,000 or 10% of
-prior-year gross revenue, capped at $50,000/year. The cap is unique in the cohort and protects
-high-revenue operators. But the $35K floor hits hard at low revenue: it is 17.5% of $200K
-revenue. (pp. 20&ndash;21)</li>
-<li><strong>Website Fee ($350/mo):</strong> $4,200/year. Can be increased 10% on 30 days'
+<li><strong>Royalty (10%/9%/8% graduated):</strong> 10% on first $250K, 9% on $250K–$500K, 8%
+above $500K per territory per calendar year. Minimum royalty begins Month 13: $650/mo (Y2),
+escalating to $3,000/mo (Y9+). The graduation rewards scale — at $500K revenue, effective
+rate is 9.5%. (pp. 19–20, 29)</li>
+<li><strong>Brand Fund ($150–$450/month, escalating):</strong> Flat fee, not percentage-based.
+$350/mo at Year 5 ($4,200/year). Unusual structure — doesn't scale with revenue, which
+benefits high-revenue operators and costs low-revenue operators proportionally more. (p. 20)</li>
+<li><strong>Local Marketing ($35K floor / $50K cap):</strong> Greater of $35,000 or 10% of
+prior-year Gross Revenue, up to $50,000. The cap is a rare feature — at $500K+ revenue, you
+hit the ceiling while competitors' obligations keep climbing. (pp. 20–21)</li>
+<li><strong>Website ($350/month):</strong> $4,200/year. Can be increased 10% on 30 days'
 notice. (p. 22)</li>
-<li><strong>Technology ($60/mo) + ServiceMinder ($280/mo + $25/user):</strong> Combined
-$340/mo baseline before additional users. Technology fee may increase to $150/mo. (p. 22)</li>
-<li><strong>Convention ($600/yr max):</strong> Non-attendance penalties: $500 first miss,
-$2,000 each consecutive miss. (p. 25)</li>
+<li><strong>Technology ($60/month):</strong> $720/year — covers branded email and required
+portals. Separately: ServiceMinder operational software at $280/month + $25/user, paid to
+vendor. Combined tech cost is ~$4,380/year. (p. 22)</li>
+<li><strong>Conference ($600/year):</strong> Non-attendance penalties: $500 first miss, $2,000
+each consecutive miss. (p. 25)</li>
 </ul>
 
 <div class="implication">
-<strong>What this means:</strong> At $300K revenue, you keep ~$222K after franchisor fees.
-At $500K, you keep ~$389K (77.8%). The structure is designed for operators who can scale past
-$350K, where the local marketing floor and Brand Fund become proportionally cheaper. Below
-$250K, the fixed-cost components make this one of the most expensive systems to operate.
+<strong>What this means:</strong> At $300K revenue, Squad's $77,880 in total fees (26%) puts it
+between Authority ($52,800 / 17.6%) and Joe ($84,752 / 28.3%). The graduated royalty and
+marketing cap mean Squad's cost curve flattens at higher revenue — at $500K, Squad's 22.2%
+is competitive. The fee structure rewards growth more than any other brand in the cohort.
 </div>
 
 <div class="callout">
-<div class="callout-title">Aggressive exit penalty</div>
-Liquidated damages on termination: the greater of two years' average royalty fees or $50,000.
-For a franchisee averaging $300K in revenue (and therefore ~$29.5K/year in royalty), this
-means $59,000 owed on termination. This is the most aggressive exit penalty in the cohort
-and should be factored into any worst-case planning. (p. 27)
+<div class="callout-title">Marketing cap advantage</div>
+Squad caps local marketing at $50,000/year. At $500K revenue, Mosquito Joe's marketing
+obligations are uncapped, and Mosquito Shield's local ad floor is $50K with no ceiling on
+other marketing components. The cap creates a predictable cost ceiling that matters
+increasingly as revenue grows.
 </div>
 
 
-<h2>Item 19 Interpretation</h2>
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
 
-<p>Squad's Item 19 is the crown jewel of this cohort &mdash; seven tables providing more
-granularity than any competitor. Critically, revenue is reported <strong>per territory</strong>,
-not per franchisee (unlike Mosquito Authority), making the data directly actionable for
-a single-territory buyer.</p>
+<p>Mosquito Squad's Item 19 is the most comprehensive in the cohort — seven tables covering
+every dimension a buyer needs: per-territory revenue by quartile, operational conversion
+metrics, systemwide trends, and a full company-owned P&amp;L. This section is long because
+there is genuinely a lot to interpret.</p>
 
-<h3>Per-territory gross revenue (Table 1)</h3>
-<p>207 qualifying territories in FY2024. The distribution is heavily right-skewed:</p>
+<h3>Per-territory revenue by quartile (Table 1)</h3>
+<p>Based on 207 franchised territories operating for the full 2024 fiscal year:</p>
 
 <table>
-  <thead>
-    <tr>
-      <th>Quartile</th>
-      <th class="num">Territories</th>
-      <th class="num">Average</th>
-      <th class="num">Median</th>
-      <th class="num">Range</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="label">Q1 (top)</td>
-      <td class="num">52</td>
-      <td class="num">$1,123,247</td>
-      <td class="num">$955,075</td>
-      <td class="num">$656K&ndash;$2.8M</td>
-    </tr>
-    <tr>
-      <td class="label">Q2</td>
-      <td class="num">52</td>
-      <td class="num">$467,598</td>
-      <td class="num">$443,197</td>
-      <td class="num">$318K&ndash;$654K</td>
-    </tr>
-    <tr>
-      <td class="label">Q3</td>
-      <td class="num">51</td>
-      <td class="num">$233,445</td>
-      <td class="num">$226,114</td>
-      <td class="num">$165K&ndash;$316K</td>
-    </tr>
-    <tr>
-      <td class="label">Q4 (bottom)</td>
-      <td class="num">52</td>
-      <td class="num">$108,907</td>
-      <td class="num">$111,552</td>
-      <td class="num">$11K&ndash;$165K</td>
-    </tr>
-    <tr style="border-top:2px solid #333">
-      <td class="label">All territories</td>
-      <td class="num">207</td>
-      <td class="num"><strong>$484,506</strong></td>
-      <td class="num"><strong>$317,881</strong></td>
-      <td class="num">$11K&ndash;$2.8M</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Quartile</th>
+<th class="num">Territories</th>
+<th class="num">Average</th>
+<th class="num">Median</th>
+<th class="num">High</th>
+<th class="num">Low</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="label">Q1 (top 25%)</td>
+<td class="num">52</td>
+<td class="num">$1,123,247</td>
+<td class="num">$955,075</td>
+<td class="num">$2,787,688</td>
+<td class="num">$656,078</td>
+</tr>
+<tr>
+<td class="label">Q2</td>
+<td class="num">52</td>
+<td class="num">$467,598</td>
+<td class="num">$443,197</td>
+<td class="num">$653,830</td>
+<td class="num">$317,881</td>
+</tr>
+<tr>
+<td class="label">Q3</td>
+<td class="num">51</td>
+<td class="num">$233,445</td>
+<td class="num">$226,114</td>
+<td class="num">$316,113</td>
+<td class="num">$165,032</td>
+</tr>
+<tr>
+<td class="label">Q4 (bottom 25%)</td>
+<td class="num">52</td>
+<td class="num">$108,907</td>
+<td class="num">$111,552</td>
+<td class="num">$164,719</td>
+<td class="num">$11,242</td>
+</tr>
+<tr style="border-top:2px solid #333">
+<td class="label">All territories</td>
+<td class="num">207</td>
+<td class="num">$484,506</td>
+<td class="num">$317,881</td>
+<td class="num">$2,787,688</td>
+<td class="num">$11,242</td>
+</tr>
+</tbody>
 </table>
 
-<p>The gap between average ($484,506) and median ($317,881) tells the story: top-quartile
-operators pulling in $1.1M+ drag the average up. The median territory &mdash; the one you are
-more likely to resemble in your first years &mdash; earns $318K. Only 36% of territories
-exceed the average. Aggregate franchised revenue: $100.3M. (p. 69)</p>
+<p>This is the only brand in the cohort that discloses <strong>per-territory</strong> revenue.
+The average ($484,506) and median ($317,881) tell different stories — the gap between them
+($167K) signals significant right skew from top performers. The median is the more representative
+number for a prospective single-territory buyer.</p>
 
-<h3>Operational metrics (Tables 2&ndash;5)</h3>
+<h3>Operational metrics</h3>
+<p>From 75 franchisees (183 territories) who reported via CRM and submitted year-end P&amp;L:</p>
 <ul class="compact">
-<li><strong>Close rate:</strong> 48% average, 51% median (75 franchisees, 183 territories).
-Q1 franchisees close at 65%, Q4 at 30%. (p. 70)</li>
-<li><strong>Renewal rate:</strong> 70% average, 69% median. Range: 33%&ndash;90%. (p. 71)</li>
-<li><strong>Per-appointment revenue:</strong> $98 average, $95 median. (p. 71)</li>
-<li><strong>Per-customer revenue:</strong> $705 average, $715 median. (p. 72)</li>
+<li><strong>Close rate: 48% average</strong> (Q1 operators: 65%, Q4: 30%)</li>
+<li><strong>Renewal rate: 70% average</strong> (median 69%, range 33%–90%)</li>
+<li><strong>Revenue per appointment: $98 average</strong> (median $95)</li>
+<li><strong>Revenue per customer: $705 average</strong> (median $715)</li>
 </ul>
 
-<h3>Systemwide growth (Table 6)</h3>
-<p>Five-year trajectory: $81.2M (2020), $100.7M (2021), $114.5M (2022), $117.4M (2023),
-$124.3M (2024). Growth has decelerated from 24% (2021) to 6% (2024). Same-store growth
-was 5% across 195 territories. Franchised revenue specifically declined -6% in 2022
-(driven by territory reacquisitions and terminations) before recovering to +3% (2023) and
-+7% (2024). (p. 73)</p>
+<p>The 70% renewal rate is below Mosquito Joe's 77%. Combined with the 48% close rate, the
+business model requires replacing roughly 30% of customers each year — and converting fewer
+than half of leads. A buyer should expect significant ongoing marketing spend to maintain
+revenue, which aligns with the $35K+ local marketing obligation.</p>
 
-<h3>Company-owned P&amp;L (Table 7, labeled "Table 9" in FDD)</h3>
-<p>The most valuable table in any FDD in this cohort. Full P&amp;L for 14 company-owned
-territories across Massachusetts (9), New Hampshire (3), and Rhode Island (2):</p>
+<h3>Company-owned P&amp;L (14 territories, MA/NH/RI)</h3>
+<p>The best unit economics data in the entire cohort:</p>
+<ul class="compact">
+<li>Revenue: $20,843,565 (~$1.49M per territory)</li>
+<li>COGS: 47.7% — technician labor (23.4%), program costs (12.7%), marketing (7.3%), products (4.3%)</li>
+<li>Gross profit: 52.3%</li>
+<li>Operating expenses: 26.4% — admin personnel (16.2%), facilities (4.1%), professional fees (3.0%)</li>
+<li><strong>Net income: 25.9% ($5.4M)</strong></li>
+</ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Line Item</th>
-      <th class="num">Amount</th>
-      <th class="num">% of Revenue</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Revenue</td>
-      <td class="num">$20,843,565</td>
-      <td class="num">100.0%</td>
-    </tr>
-    <tr>
-      <td>COGS</td>
-      <td class="num">$9,937,278</td>
-      <td class="num">47.7%</td>
-    </tr>
-    <tr>
-      <td style="padding-left:1.5rem; font-size:0.82rem; color:#555;">Technician labor</td>
-      <td class="num" style="font-size:0.82rem; color:#555;"></td>
-      <td class="num" style="font-size:0.82rem; color:#555;">23.4%</td>
-    </tr>
-    <tr>
-      <td style="padding-left:1.5rem; font-size:0.82rem; color:#555;">Marketing</td>
-      <td class="num" style="font-size:0.82rem; color:#555;"></td>
-      <td class="num" style="font-size:0.82rem; color:#555;">7.3%</td>
-    </tr>
-    <tr>
-      <td style="padding-left:1.5rem; font-size:0.82rem; color:#555;">Program costs</td>
-      <td class="num" style="font-size:0.82rem; color:#555;"></td>
-      <td class="num" style="font-size:0.82rem; color:#555;">12.7%</td>
-    </tr>
-    <tr>
-      <td style="padding-left:1.5rem; font-size:0.82rem; color:#555;">Products</td>
-      <td class="num" style="font-size:0.82rem; color:#555;"></td>
-      <td class="num" style="font-size:0.82rem; color:#555;">4.3%</td>
-    </tr>
-    <tr>
-      <td><strong>Gross Profit</strong></td>
-      <td class="num"><strong>$10,906,288</strong></td>
-      <td class="num"><strong>52.3%</strong></td>
-    </tr>
-    <tr>
-      <td>Operating Expenses</td>
-      <td class="num">$5,503,426</td>
-      <td class="num">26.4%</td>
-    </tr>
-    <tr>
-      <td style="padding-left:1.5rem; font-size:0.82rem; color:#555;">Admin personnel</td>
-      <td class="num" style="font-size:0.82rem; color:#555;"></td>
-      <td class="num" style="font-size:0.82rem; color:#555;">16.2%</td>
-    </tr>
-    <tr>
-      <td style="padding-left:1.5rem; font-size:0.82rem; color:#555;">Facilities</td>
-      <td class="num" style="font-size:0.82rem; color:#555;"></td>
-      <td class="num" style="font-size:0.82rem; color:#555;">4.1%</td>
-    </tr>
-    <tr>
-      <td style="padding-left:1.5rem; font-size:0.82rem; color:#555;">Professional fees</td>
-      <td class="num" style="font-size:0.82rem; color:#555;"></td>
-      <td class="num" style="font-size:0.82rem; color:#555;">3.0%</td>
-    </tr>
-    <tr style="border-top:2px solid #333">
-      <td class="label">Net Ordinary Income</td>
-      <td class="num"><strong>$5,402,862</strong></td>
-      <td class="num"><strong>25.9%</strong></td>
-    </tr>
-  </tbody>
-</table>
+<div class="callout">
+<div class="callout-title">Important context for the P&amp;L</div>
+This is a 14-territory corporate operation, not a single-territory franchisee. The per-territory
+economics ($1.49M revenue, ~$386K net) are dramatically better than a typical single-territory
+franchisee will achieve — Q1 operators average $1.1M, most are below $500K. The P&amp;L is most
+useful for cost ratios (what percentage goes to labor, chemicals, overhead), not absolute dollars.
+Company-owned territories do not pay royalty or brand fund fees, so a franchisee's cost structure
+will differ.
+</div>
 
-<p><strong>What to be careful about:</strong> This P&amp;L is from a 14-territory, mature,
-company-owned operation that does not pay royalty fees. A single-territory franchisee paying
-10% royalty on $300K revenue would see their effective net margin drop by 10 percentage
-points before accounting for scale disadvantages in admin, marketing, and purchasing. Technician
-labor at 23.4% of revenue is the single largest cost line &mdash; labor market conditions in
-your territory will determine whether this ratio holds. The table numbering error ("Table 9"
-for the 7th table) is a disclosure quality blemish. (p. 74)</p>
+<h3>What to be careful about</h3>
+<p><strong>Excluded territories:</strong> 29 of 236 territories were excluded from Table 1
+(9 opened during year, 10 ceased, 10 added by existing franchisees). The 10 ceased territories
+are notable — these are units that stopped operating during 2024 and are not reflected in the
+revenue data.</p>
+
+<p><strong>Table numbering error:</strong> The company-owned P&amp;L is labeled "Table 9" in the
+FDD but is the 7th table in Item 19. Minor formatting issue.</p>
 
 <div class="implication">
-<strong>What this means:</strong> The company-owned P&amp;L is the only real profitability
-benchmark in the entire cohort. At scale (14 territories, $1.5M/territory average), the
-business generates 25.9% net margin before royalty. For a single-territory franchisee at the
-$318K median revenue, the economics will look very different: subtract 10% royalty ($32K),
-recognize that admin costs won't scale as efficiently, and the realistic pre-tax margin is
-likely in the 10&ndash;15% range. Use the cost ratios as a guide, not the margin as a promise.
+<strong>What this means:</strong> A prospective single-territory buyer should plan around Q3
+economics as a reasonable base case: $226K median revenue per territory. Q2 ($443K) is
+achievable with strong execution and a good market. The company-owned P&amp;L provides cost
+ratios to build a realistic expense model — specifically the 23.4% technician labor ratio,
+which is the largest single cost line and directly applicable to a franchisee operation.
 </div>
 
 
-<h2>Investment Breakdown</h2>
 
-<p>Headline investment of $162,380&ndash;$220,375 is the highest in the cohort &mdash; but the
-comparison is misleading. Squad budgets 12 months of working capital ($83,855&ndash;$116,805)
-versus 3 months for most competitors. Stripping out the extra 9 months of reserves, the
-apples-to-apples range is approximately $79K&ndash;$104K, which is mid-cohort.</p>
+
+<h3>Revenue triangulation</h3>
+<p>Cross-checking revenue against operational metrics:</p>
+<ul class="compact">
+<li>At $705/customer (average) and Q3 median revenue of $226K: ~320 customers per territory</li>
+<li>At $98/appointment and Q3 median revenue: ~2,300 appointments per territory per year</li>
+<li>With 70% renewal rate: ~225 returning customers + ~95 new customers needed per year</li>
+<li>At 48% close rate: ~200 leads needed per year to acquire 95 new customers</li>
+</ul>
+<p>This math is internally consistent and gives a concrete picture of the business at Q3 level:
+serve ~320 customers, deliver ~2,300 treatments, close ~200 leads, retain ~225 renewals.
+The marketing machine needs to generate roughly 4 qualified leads per week during the
+season to sustain this level.</p>
+
+<p><strong>Same-store growth:</strong> 195 territories that operated in both 2023 and 2024 showed
+5% aggregate growth ($93.7M → $98.2M). This is a positive signal for existing operators — the
+business grows modestly with tenure, not just with new territory openings.</p>
+
+
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
+This is not a profitability forecast. It is an illustrative scenario exercise using Mosquito
+Squad's per-territory revenue quartiles (Item 19 Table 1) combined with a 28% cost-of-goods
+estimate derived from the company-owned P&amp;L (technician labor 23.4% + products 4.3%). The
+company-owned P&amp;L shows 47.7% total COGS, but that includes marketing (7.3%) and program costs
+(12.7%) that partially overlap with franchisor fees. The 28% figure represents direct service
+delivery costs only. Your actual COGS will depend on your market, staffing model, and
+chemical costs.</p>
+
+
+<table class="scenario-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="scenario-name">Conservative (Q4 average)</td>
+      <td class="num">$109,000</td>
+      <td class="num">$37,278 (34.2%)</td>
+      <td class="num">$30,520</td>
+      <td class="num"><strong>$41,202</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Moderate (Q3 median)</td>
+      <td class="num">$226,000</td>
+      <td class="num">$70,850 (31.3%)</td>
+      <td class="num">$63,280</td>
+      <td class="num"><strong>$91,870</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Strong (Q2 median)</td>
+      <td class="num">$443,000</td>
+      <td class="num">$100,050 (22.6%)</td>
+      <td class="num">$124,040</td>
+      <td class="num"><strong>$218,910</strong></td>
+    </tr>
+    
+  </tbody>
+</table>
+<p class="assumption-note">Revenue from Item 19 per-territory quartile data. COGS at 28% (technician labor + products from company-owned P&L). Franchisor fees from fee burden model. 'Remaining' must cover: vehicle costs, insurance, storage/facilities, admin, marketing beyond mandatory programs, and your living expenses.</p>
+
+
+<h3>What the scenarios tell you</h3>
+
+<p><strong>Conservative (Q4 average, $109K):</strong> After fees ($67K) and COGS ($31K),
+only $11K remains. This does not work as a standalone business. Q4 operators are either in
+ramp-up phase, operating part-time, or in distressed territories. At this revenue level,
+the minimum royalty ($650/mo in Year 2) is not yet binding, but the $35K local marketing
+obligation consumes 32% of revenue before any other cost.</p>
+
+<p><strong>Moderate (Q3 median, $226K):</strong> After fees ($71K) and COGS ($63K), $92K
+remains. After typical operating costs ($25K–$35K for vehicle, insurance, facilities, admin),
+an owner draw of $55K–$65K is plausible. This is a functional business — not luxury income,
+but a real livelihood. 51 of 207 territories (25%) are at or above this level within Q3.</p>
+
+<p><strong>Strong (Q2 median, $443K):</strong> After fees ($92K) and COGS ($124K), $227K
+remains. After operating costs, an owner draw of $150K+ is achievable. This is where Squad's
+graduated royalty starts paying off — the effective rate drops below 10%, and the marketing cap
+kicks in. 104 of 207 territories (50%) are at or above Q3 level.</p>
+
+<div class="callout">
+<div class="callout-title">The company-owned benchmark</div>
+The company-owned operation achieves 25.9% net margin at $1.49M/territory — but without paying
+franchisor fees. A franchisee at Q2 median ($443K) paying $92K in franchisor fees would see
+margins closer to 15–18% after all costs. This is still attractive, but roughly 8–10 percentage
+points lower than the company-owned P&amp;L suggests. The P&amp;L is useful for cost ratios, not
+for margin expectations.
+</div>
+
+<h3>What the buyer still needs to validate</h3>
+<ul class="compact">
+<li><strong>Technician labor costs in your market:</strong> The company-owned P&amp;L shows 23.4%
+of revenue in tech labor. Verify whether this ratio holds in your geography — labor costs vary
+significantly by market.</li>
+<li><strong>Q3 achievability timeline:</strong> Talk to 3+ current single-territory operators
+about how long it took to reach $226K+ revenue. The quartile data is a snapshot, not a trajectory.</li>
+<li><strong>Marketing spend effectiveness:</strong> At Q4 revenue ($109K), the mandatory $35K
+marketing obligation is 32% of revenue. Ask whether the franchisor provides marketing support
+or optimization for territories at this level.</li>
+<li><strong>Seasonality reserves:</strong> Revenue is concentrated in spring–fall. Plan for
+3–5 months of minimal income. The 12-month working capital estimate in Item 7 reflects
+this reality.</li>
+</ul>
+
+
+<!-- PAYBACK SENSITIVITY -->
+<h2 id="payback">Illustrative Payback Sensitivity</h2>
+
+<p>The table below shows how long it would take to recover your initial investment under
+different assumptions about annual owner draw (net income after all costs, fees, and
+operating expenses — but before personal taxes).</p>
+
+<table>
+<thead>
+<tr>
+<th>Assumed annual owner draw</th>
+<th class="num">Core investment (~$90K)</th>
+<th class="num">Mid investment ($162K)</th>
+<th class="num">High investment ($220K)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="label">$30K (ramp years)</td>
+<td class="num">3.0 years</td>
+<td class="num">5.4 years</td>
+<td class="num">7.3 years</td>
+</tr>
+<tr>
+<td class="label">$60K (Q3 steady state)</td>
+<td class="num">1.5 years</td>
+<td class="num">2.7 years</td>
+<td class="num">3.7 years</td>
+</tr>
+<tr>
+<td class="label">$100K (Q2 target)</td>
+<td class="num">0.9 years</td>
+<td class="num">1.6 years</td>
+<td class="num">2.2 years</td>
+</tr>
+</tbody>
+</table>
+
+<p class="assumption-note">
+"Core investment" strips out the 12-month working capital to show payback on capital you
+wouldn't recover even if the business immediately generates cash. The "Mid" and "High"
+columns include the full Item 7 range — if you view the working capital as sunk investment
+rather than bridge funding, payback takes longer.
+</p>
+
+<div class="callout">
+<div class="callout-title">The honest frame</div>
+If you reach Q3 economics ($226K revenue, ~$60K draw) by Year 3 and sustain it, payback on
+core investment occurs around Year 4.5. At the full mid-range investment ($162K), payback
+extends to Year 5.7. The key variable is how quickly you exit Q4 — the first 1–2 years of
+minimal income are the period where your personal reserves matter most.
+</div>
+
+
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
+
+<p>The headline range ($162K–$220K) is the highest in the cohort, but it is misleading. Squad
+includes 12 months of working capital in Item 7 ($84K–$117K), while most competitors include
+only 3 months. Adjusting for equivalent working capital assumptions, the comparable investment
+is roughly $100K–$130K — closer to the middle of the cohort.</p>
 
 
 <table>
@@ -396,85 +812,91 @@ apples-to-apples range is approximately $79K&ndash;$104K, which is mid-cohort.</
     </tr>
   </thead>
   <tbody>
-
+    
     <tr>
       <td>Franchise Fee</td>
       <td class="num">$50,000</td>
       <td class="num">$50,000</td>
     </tr>
-
+    
     <tr>
       <td>Business Outfitting Fee</td>
       <td class="num">$9,500</td>
       <td class="num">$9,500</td>
     </tr>
-
+    
     <tr>
       <td>Operations Outfitting Fee</td>
       <td class="num">$2,000</td>
       <td class="num">$2,000</td>
     </tr>
-
+    
     <tr>
       <td>Truck Outfitting Fee</td>
       <td class="num">$4,000</td>
       <td class="num">$9,500</td>
     </tr>
-
+    
     <tr>
       <td>Travel and Living During Training</td>
       <td class="num">$1,000</td>
       <td class="num">$1,500</td>
     </tr>
-
+    
     <tr>
       <td>Vehicle</td>
       <td class="num">$0</td>
       <td class="num">$11,000</td>
     </tr>
-
+    
     <tr>
       <td>Vehicle Signage</td>
       <td class="num">$2,400</td>
       <td class="num">$3,500</td>
     </tr>
-
+    
     <tr>
       <td>Storage Facility</td>
       <td class="num">$0</td>
       <td class="num">$3,600</td>
     </tr>
-
+    
     <tr>
       <td>Computer Systems</td>
       <td class="num">$800</td>
       <td class="num">$2,000</td>
     </tr>
-
+    
     <tr>
       <td>Software</td>
       <td class="num">$355</td>
       <td class="num">$630</td>
     </tr>
-
+    
+    <tr>
+      <td>Telephone Services</td>
+      <td class="num">$400</td>
+      <td class="num">$700</td>
+    </tr>
+    
     <tr>
       <td>Insurance</td>
       <td class="num">$7,000</td>
       <td class="num">$7,500</td>
     </tr>
-
+    
     <tr>
       <td>Professional Fees</td>
       <td class="num">$1,070</td>
       <td class="num">$2,140</td>
     </tr>
-
+    
     <tr>
-      <td>Additional Funds &mdash; 12 Months</td>
+      <td>Additional Funds - 12 Months</td>
       <td class="num">$83,855</td>
       <td class="num">$116,805</td>
     </tr>
-
+    
     <tr style="border-top:2px solid #333">
       <td class="label">Total</td>
       <td class="num"><strong>$162,380</strong></td>
@@ -486,368 +908,619 @@ apples-to-apples range is approximately $79K&ndash;$104K, which is mid-cohort.</
 
 <h3>What to know about the major line items</h3>
 <ul class="compact">
-<li><strong>Franchise fee ($50K standard, $35K micro):</strong> Standard territory covers
-350K&ndash;500K population. Micro territory under 350K. Extensive discounts available:
-Conversion (25&ndash;75% off or $5K fixed for $500K+ revenue businesses), Veterans/Active-Duty
-(30%), Diversity ($5K off), Local Hero ($5K off). Range actually collected in FY2024:
-$24,000&ndash;$53,461. (pp. 15, 18)</li>
-<li><strong>Pre-opening outfitting ($15.5K&ndash;$21K):</strong> Three franchisor-paid fees:
-Business Outfitting ($9,500), Operations Outfitting ($2,000), Truck Outfitting ($4K&ndash;$9.5K
-depending on gas vs. electric blowers). These are paid to the franchisor, not third parties. (p. 30)</li>
-<li><strong>Insurance ($7K&ndash;$7.5K):</strong> Higher than most competitors. Reflects pest
-control liability exposure. (p. 30)</li>
-<li><strong>Working capital ($84K&ndash;$117K for 12 months):</strong> The biggest line item.
-A 3-month equivalent would be ~$21K&ndash;$29K, bringing the total investment to $79K&ndash;$104K.
-The 12-month budget is more realistic for a seasonal business with minimal winter revenue, but
-it inflates the headline comparison. (p. 31)</li>
+<li><strong>Franchise fee ($50,000 standard):</strong> $35K for Micro territories (&lt;350K pop).
+Extensive discount programs (Veterans 30%, Existing Franchisee 30%, Conversion 25–75%). Range
+collected in 2024: $24K–$53.5K, suggesting significant discounting in practice. (pp. 15, 18)</li>
+<li><strong>Pre-opening outfitting fees ($15.5K–$21K):</strong> Business Outfitting $9,500 +
+Operations Outfitting $2,000 + Truck Outfitting $4K–$9.5K. These are paid to the franchisor
+and cover initial setup, equipment, and vehicle branding. (p. 30)</li>
+<li><strong>Additional Funds — 12 months ($84K–$117K):</strong> This is the line that inflates
+the range. It includes local marketing obligations ($35K+), software fees, insurance, and
+operating expenses for a full year. Most competitors show 3 months here. The 12-month estimate
+is arguably more honest — it forces the buyer to plan for a full year of negative cash flow.
+(p. 31)</li>
+<li><strong>Vehicle ($0–$11K):</strong> Assumes an existing vehicle; the range covers
+modifications and signage. (p. 30)</li>
+<li><strong>Insurance ($7K–$7.5K):</strong> Higher than most competitors, reflecting the
+outdoor service nature of the business. (p. 30)</li>
 </ul>
 
 <div class="implication">
-<strong>What this means:</strong> The real capital outlay (excluding reserves) is $79K&ndash;$104K.
-The franchise fee discounts are aggressive enough that many buyers will pay well under $50K &mdash;
-actual 2024 collections went as low as $24K. A veteran with a qualifying vehicle and a micro
-territory could realistically enter for under $100K total including 12 months of reserves.
+<strong>What this means:</strong> Strip out the 12-month working capital and Squad's core
+investment (franchise fee + outfitting + vehicle + equipment) is roughly $70K–$95K. The
+franchisor is being transparent about how much cash you actually need for the first year — other
+brands quote lower investment ranges by hiding 9 months of operating costs in "Additional Funds"
+footnotes. The honest Item 7 is a feature, not a bug.
 </div>
 
 
-<h2>System Health</h2>
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
 
-<p>Squad's system story over 2022&ndash;2024 is contraction, recovery, and growth. The 2022
-contraction (&minus;10 net franchised units, 12 terminations) was the worst year in the reporting
-window. By 2024, terminations dropped to zero, openings reached 19, and the system added 9 net
-franchised units. Fifteen company-owned outlets have remained stable throughout.</p>
+<p>Squad's system health tells a recovery story. The franchise contracted by 10 units in 2022
+(12 terminations, 3 non-renewals, only 5 openings) — the worst single year in the cohort.
+Since then: +4 in 2023, +9 in 2024, with zero terminations in 2024. The three-year net is
++3 franchised units, essentially flat — but the trajectory is positive.</p>
 
 
 <table>
   <thead>
     <tr>
       <th>Year</th>
-      <th class="num">Start</th>
       <th class="num">Opened</th>
-      <th class="num">Terminated</th>
-      <th class="num">Non-Renew / Ceased</th>
-      <th class="num">Transferred</th>
-      <th class="num">End</th>
+      <th class="num">Closed</th>
       <th class="num">Net</th>
+      <th class="num">End Count</th>
     </tr>
   </thead>
   <tbody>
-
+    
     <tr>
       <td class="label">2022</td>
-      <td class="num">223</td>
       <td class="num">5</td>
-      <td class="num">12</td>
-      <td class="num">3 / 0</td>
-      <td class="num">18</td>
+      <td class="num">15</td>
+      <td class="num">-10</td>
       <td class="num">213</td>
-      <td class="num">&minus;10</td>
     </tr>
-
+    
     <tr>
       <td class="label">2023</td>
-      <td class="num">213</td>
       <td class="num">15</td>
-      <td class="num">6</td>
-      <td class="num">1 / 4</td>
-      <td class="num">14</td>
-      <td class="num">217</td>
+      <td class="num">11</td>
       <td class="num">+4</td>
+      <td class="num">217</td>
     </tr>
-
+    
     <tr>
       <td class="label">2024</td>
-      <td class="num">217</td>
       <td class="num">19</td>
-      <td class="num">0</td>
-      <td class="num">3 / 7</td>
-      <td class="num">12</td>
-      <td class="num">226</td>
+      <td class="num">10</td>
       <td class="num">+9</td>
+      <td class="num">226</td>
     </tr>
-
+    
   </tbody>
 </table>
 
 
-<h3>Zero terminations in 2024</h3>
-<p>The drop from 12 terminations (2022) to 6 (2023) to 0 (2024) is the strongest termination
-trend in the cohort. By contrast, Mosquito Shield terminated 65 franchisees in a single year
-(2023). Zero terminations does not mean zero attrition &mdash; 3 non-renewals and 7 ceased
-operations still occurred &mdash; but it means the franchisor is not actively removing franchisees.
-2024 attrition rate: 4.3%. (pp. 76&ndash;84)</p>
+<h3>The 2022 contraction</h3>
+<p>2022 was a rough year: 12 terminations, 3 non-renewals, 5 openings, net −10 franchised
+units. This followed a major 2021 event where the franchisor reacquired 14 territories
+(reflected in the 12,646% spike in company-owned revenue that year). The picture is one
+of a system that went through a significant restructuring — culling underperformers and
+absorbing territories — before stabilizing.</p>
 
-<h3>Transfer activity</h3>
-<p>18, 14, 12 transfers per year (declining). In a system with 220+ outlets, this represents
-~5&ndash;8% annual ownership turnover. Transfers indicate the franchise has resale value &mdash;
-buyers exist for existing territories. The declining trend may reflect fewer distressed sales
-as the system stabilizes.</p>
+<div class="implication">
+<strong>What this means:</strong> The 2022 contraction is not a current-year risk signal.
+It's a historical restructuring. The relevant question is whether the post-2022 trajectory
+(+4, +9, zero terminations in 2024) represents genuine recovery or just a pause before
+the next correction. The 2024 data is encouraging — 19 openings, zero terminations, 13
+signed agreements not yet open.
+</div>
+
+<h3>Transfer and exit activity</h3>
+<p>18 transfers in 2022, 14 in 2023, 12 in 2024 — declining but still active. Turnover rate
+improved from 13.9% (2022) to 9.5% (2024). In 2024, the exits were 3 non-renewals and 7
+ceased operations, with zero terminations — suggesting voluntary departures, not franchisor
+enforcement.</p>
 
 <h3>Company-owned footprint</h3>
-<p>15 territories across Massachusetts (9), New Hampshire (3), and Rhode Island (2) &mdash;
-stable across all three years. This is the largest company-owned operation in the cohort.
-These territories generated $20.8M in revenue (FY2024), averaging $1.49M per territory. The
-franchisor operates meaningful skin-in-the-game locations, not token company stores. (pp. 78, 82&ndash;83)</p>
+<p>15 company-owned territories (MA, NH, RI), stable across the reporting period. This is the
+largest company-owned operation in the cohort and the basis for the P&amp;L data in Item 19. The
+franchisor is a significant operator in its own system, which creates both alignment (they know
+the business firsthand) and potential tension (they compete with franchisees in the Northeast).</p>
+
+
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
+
+<h3>Massachusetts Attorney General action (2024)</h3>
+<p>Assurance of Discontinuance with the MA AG (September 2024) over marketing claims: alleging
+that advertisements claiming barrier protection provides health benefits, is "natural" or
+"all-natural," eliminates a high percentage of dangers, may be used "worry-free," and uses
+"EPA-approved" pesticides violated the Massachusetts Consumer Protection Act. Not an admission
+of liability. Squad agreed to cease such advertisements, alert franchisees, and inform new
+MA franchisees. Collective cost: $13,000 for investigation.</p>
 
 <div class="implication">
-<strong>What this means:</strong> The system is mature (16 years, 226 franchised units) with
-modest but improving growth. Three-year net: +3 franchised units. This is not a high-growth
-story like Shield (+140) &mdash; it is a stabilization-and-quality story. The 2022 contraction
-is worth understanding (what drove 12 terminations?), but the 2024 data shows a healthier system.
+<strong>What this means:</strong> This is a marketing-language issue, not a franchise-relationship
+issue. But it affects how franchisees can advertise — certain claims that may have been part of
+standard marketing materials are now prohibited in Massachusetts and potentially challengeable
+in other states. Ask the franchisor what marketing materials were revised and whether similar
+actions are pending elsewhere.
 </div>
 
+<h3>Liquidated damages</h3>
+<p>On termination: the greater of 2 years' average Royalty Fees or $50,000. This is the most
+aggressive exit penalty in the cohort. At $300K revenue with ~$30K annual royalty, the penalty
+would be $60K. This creates a significant financial barrier to exit — you cannot walk away cheaply.</p>
 
-<h2>Risk Signals</h2>
+<h3>Entity structure</h3>
+<p>Mosquito Squad Franchising SPE LLC, within Authority Brands / Apax Partners. SPE
+(Special Purpose Entity) structure is standard for PE-backed franchise systems. Authority Brands
+operates multiple home-service brands (Benjamin Franklin Plumbing, Mister Sparky, One Hour
+Heating &amp; Air, DRYmedic, etc.). The multi-brand parent provides operational infrastructure
+but also means franchise royalty streams can be securitized and redirected.</p>
 
-<h3>Liquidated damages on termination</h3>
-<p>The greater of two years' average royalty fees or $50,000. This is the most aggressive exit
-penalty in the cohort. At $300K revenue (royalty ~$29.5K/year), the penalty would be ~$59,000.
-At $500K revenue, it rises to ~$95,000. This creates a significant financial barrier to exit
-and should be a focal point of attorney review. (p. 27)</p>
-
-<h3>Year 9+ minimum royalty</h3>
-<p>Minimum royalty escalates from $0/month (Year 1) to $3,000/month by Year 9 ($36,000/year).
-At $300K revenue, the percentage-based royalty ($29,500) exceeds this minimum. But at lower
-revenue levels, or during a slow season, the minimum becomes the binding constraint. A
-franchisee earning $200K would pay $20K in percentage royalty but owe $36K under the minimum
-by Year 9 &mdash; an effective 18% royalty rate. (pp. 19&ndash;20, 29)</p>
-
-<h3>MA Attorney General action (September 2024)</h3>
-<p>Assurance of Discontinuance with Massachusetts AG regarding misleading environmental and
-health claims in advertising: that barrier protection provides health benefits, is "natural"
-or "all-natural," eliminates a high percentage of dangers, may be used "worry-free," and uses
-"EPA-approved" pesticides. Not an admission of liability. $13,000 in investigation costs.
-Expires 2034. The action relates to marketing claims, not franchise relationship issues, but
-franchisees may need to adjust marketing language. (pp. 14&ndash;15)</p>
-
-<h3>2022 system contraction</h3>
-<p>The system lost 10 net franchised units in 2022 (12 terminations, 3 non-renewals, only 5
-openings). Franchised revenue declined -6% that year. Context: the franchisor reacquired 14
-territories in December 2021 (now the company-owned P&amp;L territories), which contributed to
-the contraction. The system has recovered, but the 2022 data shows the franchisor was willing
-to terminate aggressively when conditions warranted. (pp. 73, 76&ndash;78)</p>
-
-<div class="implication">
-<strong>What this means:</strong> The combination of $50K+ liquidated damages and escalating
-minimum royalty creates the most restrictive exit environment in the cohort. If the business
-underperforms, you face a choice between continuing to pay above-market minimums or paying a
-substantial termination penalty. Negotiate these terms before signing, or at minimum ensure your
-attorney reviews them closely.
-</div>
+<h3>Company-owned territory tension</h3>
+<p>15 company-owned territories generating $20.8M in revenue is a meaningful footprint. While
+this provides excellent P&amp;L disclosure, it also means the franchisor directly competes with
+franchisees in the MA/NH/RI market. A buyer in the Northeast should understand whether company-owned
+expansion is planned and whether territory protections are sufficient.</p>
 
 
-<h2>Peer Context</h2>
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
 
-<p>Squad offers the best data in the cohort at the highest cost. At $300K revenue, its fee
-burden ($77,880, 26.0%) is second-lowest after Authority ($52,800, 17.6%) &mdash; but the gap
-is $25,000/year. The investment is nominally highest but includes 12-month reserves. The
-Item 19 is unmatched. The exit terms are the most aggressive.</p>
+<p>Mosquito Squad occupies a distinctive position: mid-cost fees, the richest disclosure in the
+category, and a system that is recovering from a rough 2022. It's not the cheapest (Authority),
+not the largest (Joe), and not the fastest-growing (Shield). But it gives a buyer more data
+to make a decision than any competitor.</p>
 
-<p><strong>Closest comparison: Mosquito Authority.</strong> Both mature, stable, PE-backed, with
-strong disclosure. Authority is cheaper to enter and operate but has less granular Item 19 data
-(per-franchisee, not per-territory) and only one company-owned location. If transparency matters
-most, Squad wins. If cost matters most, Authority wins.</p>
+<p><strong>Direct contrast: Mosquito Authority.</strong> Authority is cheaper at every dimension
+($25K/year less in fees at $300K, $108K less at the low investment end) and has zero terminations.
+But Authority's Item 19 doesn't provide per-territory revenue, and the company-owned P&amp;L is
+a single location generating $384K. Squad's 14-territory, $20.8M operation gives a fundamentally
+richer picture of unit economics — even if the absolute numbers aren't directly applicable.</p>
 
-<p><strong>Sharpest contrast: Mosquito Shield.</strong> Opposite profiles on data quality and
-growth strategy. Shield added +140 units in three years with the highest churn in the cohort
-(65 terminations in 2023). Lowest royalty (8%) but highest local marketing floor ($50K, uncapped).
-Shield discloses less but grows faster. Squad discloses more but grows modestly.</p>
+<p><strong>Closest comparison: Mosquito Joe.</strong> Similar system size, both PE-backed platforms.
+Joe's fees are higher ($85K vs $78K at $300K), Joe's Item 19 provides tenure-segmented data but
+not per-territory quartiles. Squad's per-territory quartile data is arguably more actionable for
+a prospective buyer than Joe's per-franchisee averages. Joe has better customer retention (77%
+vs 70%). The choice between Joe and Squad comes down to: do you want Neighborly's infrastructure
+at a premium, or Authority Brands' data transparency at a moderate price?</p>
+
+<p><strong>The data-transparency edge:</strong> Squad is the only brand where you can look at
+per-territory revenue distributions, company-owned cost structures, close rates, renewal rates,
+and per-customer economics in one filing. For a buyer who wants to build a financial model
+before committing, this is the most useful raw material in the category.</p>
 
 
 <table class="peer-table">
   <thead>
     <tr>
       <th>Metric</th>
-
+      
       <th class="num">Mosquito Authority</th>
-
+      
       <th class="num">Mosquito Hunters</th>
-
+      
       <th class="num">Mosquito Joe</th>
-
+      
       <th class="num">Mosquito Shield</th>
-
+      
       <th class="num">Mosquito Squad</th>
-
+      
     </tr>
   </thead>
   <tbody>
-
+    
     <tr>
       <td class="label">System size</td>
-
+      
       <td class="num">546</td>
-
+      
       <td class="num">135</td>
-
+      
       <td class="num">415</td>
-
+      
       <td class="num">435</td>
-
+      
       <td class="num this-brand">226</td>
-
+      
     </tr>
-
+    
     <tr>
       <td class="label">Investment range</td>
-
-      <td class="num">$54K&ndash;$127K</td>
-
-      <td class="num">$141K&ndash;$170K</td>
-
-      <td class="num">$150K&ndash;$192K</td>
-
-      <td class="num">$120K&ndash;$157K</td>
-
-      <td class="num this-brand">$162K&ndash;$220K</td>
-
+      
+      <td class="num">$54K–$127K</td>
+      
+      <td class="num">$141K–$170K</td>
+      
+      <td class="num">$150K–$192K</td>
+      
+      <td class="num">$120K–$157K</td>
+      
+      <td class="num this-brand">$162K–$220K</td>
+      
     </tr>
-
+    
     <tr>
       <td class="label">Fee burden at $300K</td>
-
+      
       <td class="num">$52,800</td>
-
+      
       <td class="num">$80,300</td>
-
+      
       <td class="num">$84,752</td>
-
+      
       <td class="num">$86,000</td>
-
+      
       <td class="num this-brand">$77,880</td>
-
+      
     </tr>
-
+    
     <tr>
       <td class="label">% of revenue</td>
-
+      
       <td class="num">17.6%</td>
-
+      
       <td class="num">26.8%</td>
-
+      
       <td class="num">28.3%</td>
-
+      
       <td class="num">28.7%</td>
-
+      
       <td class="num this-brand">26.0%</td>
-
+      
     </tr>
-
+    
     <tr>
       <td class="label">3-year net growth</td>
-
+      
       <td class="num">+22</td>
-
+      
       <td class="num">+8</td>
-
+      
       <td class="num">+43</td>
-
+      
       <td class="num">+140</td>
-
+      
       <td class="num this-brand">+3</td>
-
+      
     </tr>
-
+    
     <tr>
       <td class="label">2024 attrition</td>
-
+      
       <td class="num">1.8%</td>
-
+      
       <td class="num">0.0%</td>
-
+      
       <td class="num">5.7%</td>
-
+      
       <td class="num">11.1%</td>
-
+      
       <td class="num this-brand">4.3%</td>
-
+      
     </tr>
-
+    
     <tr>
       <td class="label">Royalty rate</td>
-
+      
       <td class="num">10%</td>
-
+      
       <td class="num">10%</td>
-
+      
       <td class="num">10/7%</td>
-
+      
       <td class="num">8%</td>
-
+      
       <td class="num this-brand">10/9/8%</td>
-
+      
     </tr>
-
+    
   </tbody>
 </table>
 
-<h2>Questions for Discovery Day</h2>
+
+<h3>Decision overlay</h3>
+<table class="decision-overlay">
+  <tbody>
+    
+    <tr>
+      <td class="overlay-label">Lowest-cost entry</td>
+      <td class="overlay-value">Mosquito Authority — $54K–$128K. Squad's core investment is ~$78K–$103K (stripping 12-month working capital).</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Lowest ongoing fee burden</td>
+      <td class="overlay-value">Mosquito Authority — 17–18% of revenue. Squad is 26% at $300K — $25K/year more.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Best disclosure depth</td>
+      <td class="overlay-value">Mosquito Squad — Per-territory quartile revenue, company-owned P&L, close/renewal rates. Most actionable data for financial modeling.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Best for scaling</td>
+      <td class="overlay-value">Mosquito Squad — Graduated royalty (10/9/8%) and marketing cap ($50K) reward revenue growth. Fee burden decreases with scale.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Most system stability</td>
+      <td class="overlay-value">Mosquito Authority — Zero terminations, +22 net 3-year. Squad: +3 net 3-year, recovering from 2022 contraction.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Best company-owned benchmark</td>
+      <td class="overlay-value">Mosquito Squad — $20.8M, 14 territories, 25.9% margin. No other brand provides comparable unit economics data.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Best for first-time buyer</td>
+      <td class="overlay-value">Mosquito Authority — Lowest risk, lowest cost. Squad's $50K franchise fee and complex royalty tiers are less forgiving for new entrants.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
 <p>These questions are derived from specific findings in the Mosquito Squad 2025 FDD.
-They are designed to surface information the FDD does not fully explain.</p>
+Each includes context on why it matters and what to listen for.</p>
 
 <ol class="question-list">
-
-  <li>The system contracted by 10 franchised units in 2022 with 12 terminations. What specifically drove those terminations &mdash; performance defaults, relationship issues, or something else?
-    <span class="question-context">Item 20, pp. 76&ndash;78. Terminations dropped to 6 (2023) then 0 (2024).</span>
+  
+  <li>The system contracted by 10 units in 2022 and 14 territories were reacquired in 2021. What triggered the restructuring?
+    <span class="question-context">Item 20, 2022 data. Item 19 Table 6 shows 12,646% company-owned revenue spike in 2021.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>A 14-territory reacquisition followed by 12 terminations is a major system event. Whether it was a strategic cleanup or a crisis response changes how you interpret the post-2022 recovery.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'We identified underperforming territories in [specific regions], reacquired some to stabilize service quality, and terminated franchisees who weren't meeting standards. Here's the timeline and outcome.' Specific, structured, demonstrates control.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'We went through a transition period. The system is stronger now.' Vague, avoids explaining the scale of the restructuring.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask what happened to the 14 reacquired territories — were they resold, converted to company-owned, or closed? How many of the 2022 terminations were in the same regions?</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>Liquidated damages on termination are the greater of two years' average royalty or $50,000. Has this provision ever been enforced, and is there any flexibility in negotiating the minimum?
-    <span class="question-context">Item 6, p. 27. Most aggressive exit penalty in cohort.</span>
+  
+  <li>The company-owned P&L shows 25.9% net margin on $20.8M. What would that look like adjusted for franchisee-level fees?
+    <span class="question-context">Item 19 Table 7 (labeled Table 9). Company-owned pays no royalty or brand fund.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>The P&L is the most useful in the cohort, but company-owned territories don't pay franchisor fees. A franchisee at equivalent per-territory revenue ($1.49M) would owe roughly $130K–$145K in additional fees. Understanding the adjusted margin tells you what your economics actually look like.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'At the average per-territory level, a franchisee would net approximately $[X] after fees. Here's how we walk prospective buyers through the adjustment.' Willing to do the math with you.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'The P&L shows the business is very profitable. Franchisees do great.' Avoids the fee adjustment, implies company-owned margins are representative.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for the COGS breakdown by line item. Specifically: is the 23.4% technician labor ratio achievable for a single-territory operator, or does it reflect multi-territory staffing efficiencies?</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The Year 9+ minimum royalty is $3,000/month ($36K/year). How many current franchisees are paying the minimum rather than the percentage rate, and at what revenue level does it typically become binding?
-    <span class="question-context">Item 6, pp. 19&ndash;20, 29. Escalating schedule from $0 (Y1) to $3K/mo (Y9+).</span>
+  
+  <li>The Massachusetts AG action required you to stop certain marketing claims. Which specific materials were revised, and have similar challenges been raised in other states?
+    <span class="question-context">Item 3, Assurance of Discontinuance (Sep 2024). Claims about 'natural,' 'health benefits,' 'EPA-approved.'</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>If key marketing claims are now prohibited, franchisees need to know what language they can and can't use. Similar challenges in other states could further restrict marketing options.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'We revised [specific materials]. Here are the updated marketing guidelines. No similar actions pending in other states. Here's our compliance review process.' Transparent, proactive.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'It was a Massachusetts-specific issue. We settled for $13K and moved on.' Dismissive, doesn't address the impact on franchisee marketing.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask to see the current approved marketing materials. Ask whether franchisees were consulted before the AOD was agreed to.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The company-owned P&amp;L shows 25.9% net margin across 14 territories at $1.49M/territory average. What margin should a single-territory franchisee at the $318K median revenue realistically expect after royalty?
-    <span class="question-context">Item 19, Table 7 (labeled Table 9), p. 74. Does not include royalty (company-owned).</span>
+  
+  <li>The liquidated damages clause requires the greater of 2 years' royalty or $50,000 on termination. Has this been enforced, and is it negotiable?
+    <span class="question-context">Item 6, Liquidated Damages row. Most aggressive exit penalty in cohort.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>At $300K revenue, this penalty is ~$60K — a significant barrier to exit. If it's strictly enforced, it materially affects the downside risk of buying in.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'We've enforced it [X] times in the last 3 years. The clause is standard and not negotiable, but here's how it works in practice.' Transparent about enforcement history.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'That's a standard franchise provision. We rarely have terminations.' Avoids the enforcement question.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask how many of the 2022–2024 terminations/non-renewals resulted in liquidated damages collection. Ask whether the clause survives a transfer (i.e., does a buyer inherit the obligation?).</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>Technician labor is 23.4% of revenue in the company-owned operation. How are technicians compensated (hourly vs. per-service), and what is the typical staffing ratio per territory?
-    <span class="question-context">Item 19, Table 7, p. 74. Largest single cost line.</span>
+  
+  <li>Q4 territories average $109K revenue. What support exists for operators in the bottom quartile?
+    <span class="question-context">Item 19 Table 1. 52 territories in Q4, low of $11,242.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>25% of territories are at or below $165K — a revenue level where franchisor fees ($68K at $200K) consume a disproportionate share. Understanding what happens to struggling operators tells you about the safety net.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'We have a performance improvement program. Q4 operators get [specific support: territory analysis, marketing assistance, operational coaching]. Here's the Q4-to-Q3 graduation rate.' Structured support with measurable outcomes.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Those are usually newer territories that haven't ramped yet.' Assumes all Q4 operators are early-stage without evidence.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask how many of the 10 territories that ceased operations in 2024 were in Q4. Ask what the average tenure of Q4 operators is.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The MA Attorney General AOD requires ceasing certain environmental/health marketing claims. What marketing language can franchisees still use, and does this affect lead generation materials nationally?
-    <span class="question-context">Item 3, pp. 14&ndash;15. AOD expires 2034.</span>
+  
+  <li>The 70% renewal rate is below Mosquito Joe's 77%. What is driving the 30% annual customer loss, and what programs exist to improve retention?
+    <span class="question-context">Item 19 Table 3. 70% average, range 33%–90%.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>Losing 30% of customers annually means you need to replace roughly 100 customers per year at Q3 revenue levels. The cost of acquiring 100 new customers at 48% close rate requires ~200 leads — this is why marketing obligations are $35K+.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Retention varies by service type and market. Our top quartile retains 85%+. Here's what they do differently and how we're implementing that system-wide.' Acknowledges the issue, shows improvement plan.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'70% is strong for a seasonal service business.' Accepts the rate without addressing the cost of churn.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask whether retention rates have improved or declined over the past 3 years. Ask for retention broken out by single-territory vs multi-territory operators.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>Local marketing has a $35,000 floor and a $50,000 cap. How prescriptive is the franchisor about how that money is spent, and what channels are required vs. optional?
-    <span class="question-context">Item 6, pp. 20&ndash;21. Unique floor-and-ceiling structure.</span>
+  
+  <li>The Brand Fund is a flat fee ($150–$450/month) rather than a percentage. What does it fund, and how are spending decisions made?
+    <span class="question-context">Item 6, Brand Fund. Escalates from $150 (Y1) to $450/mo (Y7+).</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>Flat-fee brand funds are unusual — they don't scale with system revenue, which means the fund grows only as franchisee count grows. Understanding what it funds and how it's governed tells you whether you're paying for value or just a line item.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'The Brand Fund supports [specific programs: national digital campaigns, brand development, conference]. Spending is reviewed by the franchisee advisory council. Here's last year's fund report.' Governance and transparency.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'It supports the brand.' No specifics, no governance detail, no spending report.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for a breakdown of Brand Fund spending. Ask if franchisees have voting input on fund priorities.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The franchise fee range actually collected in FY2024 was $24,000&ndash;$53,461. Under what circumstances do buyers qualify for the lower end of that range?
-    <span class="question-context">Item 5, pp. 15, 18. Extensive discount programs (Conversion, Veteran, Diversity, etc.).</span>
+  
+  <li>15 company-owned territories generate $20.8M in the Northeast. Is company-owned expansion planned, and how do territory protections work for franchisees in adjacent markets?
+    <span class="question-context">Item 20 Tables 3-4. 15 company-owned stable across 3 years. MA (9), NH (3), RI (2).</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>A franchisor that operates 15 territories is a significant competitor to its own franchisees in the region. Territory encroachment risk is higher when the franchisor has operational infrastructure and incentive to expand company-owned.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'No company-owned expansion planned. Franchisee territories have [specific protections: minimum population, geographic boundaries, non-compete radius]. We haven't converted any franchised territory to company-owned since [date].' Concrete protections.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Our company-owned territories are in a different market. There's no conflict.' Ignores the structural incentive.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask whether the 14 territories reacquired in 2021 were converted to the current 15 company-owned. Ask if Item 12 territory protections include a right of first refusal on adjacent territories.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>Bottom-quartile territories averaged $109K in revenue (one as low as $11K). What support does the franchisor provide to underperforming territories, and at what point does a territory become a termination candidate?
-    <span class="question-context">Item 19, Table 1, p. 69. 52 territories in Q4.</span>
+  
+  <li>Franchised revenue declined -6% in 2022 but recovered to +7% in 2024. What drove the decline, and is the recovery sustainable?
+    <span class="question-context">Item 19 Table 6. Same-store growth 5% in 2024 (195 territories).</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>A system-level revenue decline followed by recovery could reflect either a one-time disruption or structural volatility. The 5% same-store growth is positive, but one year doesn't prove a trend.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'The 2022 decline was driven by [specific factors: reacquisitions removing revenue, territory closures, market conditions]. 2024 same-store growth of 5% reflects [specific improvements: better marketing programs, service expansion, pricing]. We expect [realistic outlook].' Honest about causes, specific about recovery drivers.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'2022 was an off year. We're back on track.' No specifics, assumes recovery is self-evident.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for 2025 year-to-date same-store growth data if available. Ask whether the recovery is concentrated in specific regions or broad-based.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The 14 company-owned territories were reacquired in December 2021. Were these previously franchised territories that were underperforming, or were they acquired for strategic reasons?
-    <span class="question-context">Item 19, Table 6, p. 73. Company-owned revenue spike of 12,646% YoY in 2022.</span>
+  
+  <li>The minimum royalty escalates to $3,000/month by Year 9. How many current franchisees are paying the minimum versus the percentage?
+    <span class="question-context">Item 6, Royalty Fee. Minimums begin Month 13, escalate through Year 9+.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>If you're paying the minimum royalty ($36K/year at Year 9+), it means your revenue is below $360K — a level where $36K in royalty alone is already 10%+. Understanding how many operators are at the minimum tells you about the bottom of the system's economics.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'[X]% of franchisees currently pay the minimum. Most hit the percentage threshold by Year [Y].' Specific data, willingness to share system distribution.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'The minimum is there to ensure commitment. Most franchisees exceed it quickly.' No data, implied dismissal.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask whether the minimum royalty has ever been waived or deferred for struggling operators.</dd>
+      
+    </dl>
+    
   </li>
-
+  
 </ol>
 
 <div class="methodology">
-  <h2 style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
   <p><strong>Source document:</strong> Mosquito Squad 2025 Franchise Disclosure Document,
-  filed with the Wisconsin Department of Financial Institutions. Regulator-source PDF.
-  SHA-256: <code style="font-size:0.7rem">b176969051509bc58513af2f3870f80d96107ee5a48ccc16f43070bf5ce88c97</code></p>
+  filed with the Wisconsin Department of Financial Institutions. ~230-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">b176969051509bc58513af2f3870f80d96107ee5a48ccc16f43070bf5ce88c97</code></p>
   <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
   review. Field-level provenance recorded (source year, state, page number, item reference).
   Extraction confidence: high (3+ fields spot-checked against source).</p>
   <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
-  Revenue distributed evenly across the year. All mandatory fees enforced. Brand Fund at Year 5
-  rate ($350/mo). ServiceMinder at $280/mo + $25/user (1 user). See
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
   fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
   <p><strong>Peer comparison:</strong> Same methodology applied to all 5 brands in cohort
   (Mosquito Authority, Mosquito Hunters, Mosquito Joe, Mosquito Shield, Mosquito Squad).
   All from 2025 FDDs filed with Wisconsin DFI.</p>
   <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
   recommendation to buy or avoid this franchise. It is a structured analysis of publicly
   available regulatory filings. The buyer should read the actual FDD, consult a franchise
-  attorney, and conduct their own due diligence before making any investment decision.</p>
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
 </div>
 
 </body>

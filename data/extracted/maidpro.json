@@ -1,0 +1,289 @@
+{
+  "source_document": {
+    "download_origin": "WI_DFI",
+    "download_url": null,
+    "downloaded_at": null,
+    "local_filename": "maidpro_2025_wi_auto.pdf",
+    "sha256": "6f544315bc684e5494d541f1e0ae768bcc4ebe05ee87e94b4350b10057577102",
+    "page_count": 262,
+    "ocr_used": false,
+    "document_identity_notes": "Regulator-source PDF from Wisconsin DFI via automated Playwright download. Cover page confirms MaidPro Franchise, LLC 2025 FDD."
+  },
+
+  "brand": {
+    "brand_name": "MaidPro",
+    "brand_slug": "maidpro",
+    "legal_entity": "MaidPro Franchise, LLC",
+    "parent_company": "Threshold Brands, LLC / HS Group Holding Company, LLC / The Riverside Company",
+    "year_founded": 1993,
+    "year_first_franchised": 1997,
+    "ownership_structure": "private_equity_backed"
+  },
+  "filing_year": 2025,
+
+  "raw": {
+    "item_5_initial_fees": {
+      "initial_franchise_fee": {
+        "value": 45000,
+        "currency": "USD",
+        "range_low": 0,
+        "range_high": 45000,
+        "field_status": "extracted",
+        "notes": "Standard Initial Franchise Fee is $45,000, due at signing in lump sum. Non-refundable (except under Franchise Option Program). During 2024, actual fees ranged from $0 to $45,000 due to waivers and discounts. Territory is ~45,000 Qualified Households. Discounts: Military/First Responder (20% off first franchise), Multi-Unit (25% off 2nd+ if 3+ purchased simultaneously), Hard to Serve/Underserved Markets (up to 10% off), Conversion Franchise Program (waives fee entirely, reduces royalty to 2% for first 2 years). Franchise Option Program: fee refunded at opening in exchange for 10% royalty (instead of 6%) for 10 years. Training fee of $500 per additional attendee beyond 2.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [8, 9], "item_reference": "Item 5", "exact_text": "You will pay us an initial franchise fee of $45,000 (the \"Initial Franchise Fee\")... During 2024 our franchise offering included waivers, discounts and refunds such that our Initial Franchise Fees ranged from $0 to $45,000." }
+      }
+    },
+
+    "item_6_other_fees": {
+      "royalty_rate": {
+        "value": 6.0,
+        "basis": "Gross Consumer Sales",
+        "tiers": null,
+        "field_status": "extracted",
+        "notes": "Continuing Royalty is 6% of monthly Gross Consumer Sales. Minimum Royalty of $800/month applies after first 12 months if Gross Consumer Sales fall below $15,000 in any month. Additional Premium Royalty of 2.5% applies on Gross Consumer Sales from customers outside franchisee's territory (with franchisor permission). Conversion franchisees pay reduced 2% royalty for first 2 years (minimum $150/month). Franchise Option Program participants pay 10% royalty for 10 years (in exchange for refunded franchise fee).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [10, 13, 14], "item_reference": "Item 6, Continuing Royalty row, Notes 1-2", "exact_text": null }
+      },
+      "advertising_and_marketing": {
+        "value": 2.0,
+        "basis": "Gross Consumer Sales",
+        "field_status": "extracted",
+        "structure_description": "Single brand fund fee of 2% of Gross Consumer Sales. No additional mandatory local marketing fund contribution as a percentage of sales, but franchisees must spend a minimum of $3,000/month on local advertising for first 24 months (included in Item 7 estimates). After 24 months, Manuals govern local spend amount.",
+        "components": [
+          { "name": "Brand Fund Fee", "value": 2.0, "basis": "Gross Consumer Sales", "minimum_dollar": null, "frequency": "monthly", "notes": "Current Brand Fund Fee is 2% of monthly Gross Consumer Sales." },
+          { "name": "Marketing Services (TMS Connect)", "value": null, "basis": "flat monthly", "minimum_dollar": 90, "frequency": "monthly", "notes": "Optional. $90/month per territory for Internet Presence support and management. Additional $305/month per territory for SEO services." }
+        ],
+        "notes": "Simpler marketing structure than many competitors. 2% brand fund is the only mandatory percentage-based marketing fee. Local advertising minimum of $3,000/month for first 24 months is a flat dollar amount, not percentage-based.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [10, 14, 17], "item_reference": "Item 6, Brand Fund Fee row, Note 4, Note 7", "exact_text": null }
+      },
+      "technology_fee": {
+        "value": 500,
+        "frequency": "monthly",
+        "field_status": "extracted",
+        "notes": "Technology Fee is $500/month. Waived for second and subsequent MaidPro franchises. Includes MaidPro proprietary cloud-based software (4 user licenses), 4 branded email licenses, MACS marketing/communications tool, and 1-800 customer service number/call routing. Additional software licenses: $25/month each. Additional email licenses: $7-$24/month each depending on storage. MaidPro Go app: optional $10/month. Text messaging: optional $5/month + per-text charges. Fee may increase up to 10% per year (compounding).",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [12, 13, 14, 16], "item_reference": "Item 6, Technology Fee row, MaidPro Software row, Email Licenses row, Notes 3 and 14", "exact_text": null }
+      },
+      "transfer_fee": {
+        "value": 5000,
+        "formula": "$5,000 flat transfer fee, payable by transferring franchisee.",
+        "field_status": "extracted",
+        "notes": "Transfer fee is a straightforward $5,000. Significantly lower than many competitors.",
+        "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 10, "item_reference": "Item 6, Transfer Fee row", "exact_text": null }
+      },
+      "other_fees": [
+        { "fee_name": "Renewal Fee", "value": 2500, "frequency": "one-time at renewal", "field_status": "extracted", "notes": null, "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 12, "item_reference": "Item 6, Renewal Fee row", "exact_text": null } },
+        { "fee_name": "Additional Employee Initial Training Fee", "value": 500, "frequency": "per person", "field_status": "extracted", "notes": "For each additional person beyond the first two who attend Initial Training.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 10, "item_reference": "Item 6, Additional Employee Initial Training Fee row", "exact_text": null } },
+        { "fee_name": "Ongoing Training Fee", "value": 75, "frequency": "per hour per employee (on-site)", "field_status": "extracted", "notes": "Registration fee for training programs varies. On-site training: expenses plus $75/hour per employee.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [10, 15], "item_reference": "Item 6, Ongoing Training row, Note 6", "exact_text": null } },
+        { "fee_name": "Late Submission Fee", "value": 100, "frequency": "per violation", "field_status": "extracted", "notes": "Plus 12% interest per annum (or max rate allowed by law) from date due until paid.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [10, 15], "item_reference": "Item 6, Late Submission Fee row, Note 7", "exact_text": null } },
+        { "fee_name": "National Sales Center", "value": null, "frequency": "monthly per inquiry", "field_status": "extracted", "notes": "Optional service. $35/inquiry for first 20, $32 for next 30, $30 for over 50 inquiries per month.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [10, 15], "item_reference": "Item 6, National Sales Center row, Note 8", "exact_text": null } },
+        { "fee_name": "Convention Fee", "value": 1500, "frequency": "per event (maximum)", "field_status": "extracted", "notes": "Up to $1,500 depending on costs. Non-refundable. Must attend. Does not include travel/lodging/meals. Single fee covers multiple franchises owned.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [11, 16], "item_reference": "Item 6, Convention Fee row, Note 10", "exact_text": null } },
+        { "fee_name": "Customer Complaint", "value": null, "frequency": "per occurrence", "field_status": "extracted", "notes": "All amounts franchisor incurs to satisfy a customer complaint if they intervene.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 11, "item_reference": "Item 6, Customer Complaint row", "exact_text": null } },
+        { "fee_name": "Step In Fee", "value": 200, "frequency": "per hour per employee", "field_status": "extracted", "notes": "$200/hour per employee assigned plus expenses and attorneys' fees. Only applies if franchisee is in default, absent, incapacitated, or deceased.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 12, "item_reference": "Item 6, Step In Fee row", "exact_text": null } },
+        { "fee_name": "Non-compete Fee", "value": null, "frequency": "monthly if in breach", "field_status": "extracted", "notes": "Amount equal to then-current initial franchise fee for each Competitive Business plus 7% of that business's gross sales until expiration of non-competition period.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 12, "item_reference": "Item 6, Non-compete Fee row", "exact_text": null } },
+        { "fee_name": "Payment Processing Fee", "value": 35, "frequency": "monthly per account", "field_status": "extracted", "notes": "Optional. $35/month per account plus per-transaction fees: credit card 2.99% + $0.29/transaction, e-check 1% of transaction.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [13, 16], "item_reference": "Item 6, Payment Processing Fee row, Note 12", "exact_text": null } },
+        { "fee_name": "Phone and Messaging Services", "value": 34.99, "frequency": "monthly per user", "field_status": "extracted", "notes": "Optional alternative to MaidPro Software messaging. $34.99/month per user plus $0.012/text message. Additional phone numbers $5/month each.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [13, 16], "item_reference": "Item 6, Phone and Messaging Services row, Note 13", "exact_text": null } },
+        { "fee_name": "Marketing Services (TMS Connect)", "value": 90, "frequency": "monthly", "field_status": "extracted", "notes": "Optional. $90/month per territory for Internet Presence support/management. SEO services also available at $305/month per territory.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [13, 17], "item_reference": "Item 6, Marketing Services row, Note 15", "exact_text": null } }
+      ]
+    },
+
+    "item_7_initial_investment": {
+      "line_items": [
+        { "category": "Initial Franchise Fee", "low": 45000, "high": 45000, "method_of_payment": "Lump Sum", "when_due": "At signing of Franchise Agreement", "to_whom_paid": "MaidPro Franchise, LLC", "notes": "See Item 5 for discounts and waivers. Non-refundable except under Franchise Option Program.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Travel and Living Expenses while Training", "low": 3800, "high": 7000, "method_of_payment": "As Incurred", "when_due": "During Training", "to_whom_paid": "Airlines, Hotels and Restaurants", "notes": "Estimated for 1-2 persons for travel, lodging, meals during on-site training.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Equipment", "low": 7500, "high": 8500, "method_of_payment": "As Incurred", "when_due": "As Incurred", "to_whom_paid": "Suppliers", "notes": "General cleaning equipment: washing machine, dryer, vacuum cleaners, cleaning supplies.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Miscellaneous Opening Costs", "low": 6160, "high": 8850, "method_of_payment": "As Incurred", "when_due": "As Incurred", "to_whom_paid": "MaidPro, Suppliers, Governmental Agencies", "notes": "Includes computer, software, incorporation fees, etc.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Cost for Initial Vehicle with Wrap", "low": 5300, "high": 28000, "method_of_payment": "As Incurred", "when_due": "As Incurred", "to_whom_paid": "Leasing Company/Vendor", "notes": "Low estimate is for lease/financed used vehicle; high is for new vehicle purchase. Must display MaidPro car wrap. Wrap cost included.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Initial Printing Materials", "low": 1300, "high": 1300, "method_of_payment": "As Incurred", "when_due": "As Incurred", "to_whom_paid": "Suppliers", "notes": "Miscellaneous stationery needs.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Advertising - Initial 3 Months", "low": 15000, "high": 15000, "method_of_payment": "As Incurred", "when_due": "As Incurred", "to_whom_paid": "Suppliers and Vendors", "notes": "Includes required minimum monthly local advertising spend of $3,000 for first 24 months.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Real Estate", "low": 5000, "high": 10000, "method_of_payment": "As Incurred", "when_due": "Prior to Opening", "to_whom_paid": "Landlord", "notes": "Lease approximately 800 sq ft. Anticipated rent of $11-$15/sq ft per year. Must be located within territory.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 7 table", "exact_text": null } },
+        { "category": "Insurance", "low": 2000, "high": 12000, "method_of_payment": "As Incurred", "when_due": "As Incurred", "to_whom_paid": "Vendors", "notes": "Required: commercial general liability ($1M/$2M), hired/non-owned auto, workers' comp, third-party bonding ($25K per loss). Varies by state, payroll, and number of employees.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [17, 18, 19], "item_reference": "Item 7 table, Note 9", "exact_text": null } },
+        { "category": "Additional Funds - 3 Months", "low": 18800, "high": 23000, "method_of_payment": "As Incurred", "when_due": "As Incurred", "to_whom_paid": "MaidPro, Suppliers, Employees", "notes": "Includes payroll costs, insurance, professional fees, monthly Technology Fee and software licenses.", "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 7 table", "exact_text": null } }
+      ],
+      "total_low": 109860,
+      "total_high": 158650,
+      "total_provenance": { "source_year": 2025, "source_state": "WI", "page_number": 17, "item_reference": "Item 7 table, Total row", "exact_text": "$109,860 - $158,650" }
+    },
+
+    "item_19_financial_performance": {
+      "disclosed": true,
+      "representation_type": "historic",
+      "tables": [
+        {
+          "table_label": "All Franchised Businesses",
+          "description": "2024 Gross Consumer Sales and Jobs for all 231 franchised MaidPro outlets open the full year",
+          "period": "calendar year 2024 (12-month period ended December 31, 2024)",
+          "population": "231 franchised outlets open for entire Relevant Time Period (of 237 total). Excludes 6 outlets opened during 2024 that were not open for the full period.",
+          "data": {
+            "all_outlets": {
+              "count": 231,
+              "avg_gross_consumer_sales": 461941,
+              "median_gross_consumer_sales": 397548,
+              "pct_at_or_above_avg_sales": 42,
+              "sales_range_high": 2815974,
+              "sales_range_low": 14440,
+              "avg_jobs": 2644,
+              "median_jobs": 2168,
+              "pct_at_or_above_avg_jobs": 45,
+              "jobs_range_high": 16324,
+              "jobs_range_low": 106
+            },
+            "by_quartile": [
+              { "quartile": 1, "count": 53, "avg_gross_consumer_sales": 958412, "median_gross_consumer_sales": 891162, "pct_at_or_above_avg_sales": 34, "sales_range_high": 2815974, "sales_range_low": 659453, "avg_jobs": 5357, "median_jobs": 4602, "pct_at_or_above_avg_jobs": 34, "jobs_range_high": 16324, "jobs_range_low": 3291 },
+              { "quartile": 2, "count": 53, "avg_gross_consumer_sales": 520615, "median_gross_consumer_sales": 515502, "pct_at_or_above_avg_sales": 47, "sales_range_high": 653310, "sales_range_low": 414509, "avg_jobs": 3044, "median_jobs": 3131, "pct_at_or_above_avg_jobs": 53, "jobs_range_high": 4873, "jobs_range_low": 1926 },
+              { "quartile": 3, "count": 53, "avg_gross_consumer_sales": 312844, "median_gross_consumer_sales": 318560, "pct_at_or_above_avg_sales": 53, "sales_range_high": 406207, "sales_range_low": 225079, "avg_jobs": 1860, "median_jobs": 1796, "pct_at_or_above_avg_jobs": 36, "jobs_range_high": 3360, "jobs_range_low": 986 },
+              { "quartile": 4, "count": 52, "avg_gross_consumer_sales": 134476, "median_gross_consumer_sales": 139439, "pct_at_or_above_avg_sales": 52, "sales_range_high": 222138, "sales_range_low": 14440, "avg_jobs": 777, "median_jobs": 736, "pct_at_or_above_avg_jobs": 44, "jobs_range_high": 1446, "jobs_range_low": 106 }
+            ],
+            "combined_2_locations": {
+              "count": 10,
+              "avg_gross_consumer_sales": 474633,
+              "median_gross_consumer_sales": 469942,
+              "pct_at_or_above_avg_sales": 50,
+              "sales_range_high": 891675,
+              "sales_range_low": 87961,
+              "avg_jobs": 2663,
+              "median_jobs": 2519,
+              "pct_at_or_above_avg_jobs": 50,
+              "jobs_range_high": 4640,
+              "jobs_range_low": 582,
+              "notes": "10 Franchised Businesses that report Gross Consumer Sales from two territories as an aggregate. Excluded from quartile breakdown."
+            }
+          },
+          "notes": "System-wide average Gross Consumer Sales: $461,941. Median: $397,548. Wide range from $14,440 to $2,815,974. Only 42% of outlets at or above average, indicating top-heavy distribution. Gross Consumer Sales do not reflect costs, operating expenses, or other deductions. 7 outlets permanently closed in 2024 are excluded. Territory definition changed in January 2023 to ~45,000 qualified households with $100K+ income (previously varied: 20K-80K households with $75K+ income).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [38, 39, 40], "item_reference": "Item 19", "exact_text": null }
+        }
+      ],
+      "normalized_metrics": null,
+      "notes": "Item 19 is disclosed with a single table showing Gross Consumer Sales and Jobs by quartile for 2024. Provides absolute revenue figures unlike some competitors who only disclose per-unit or per-service metrics. Does not include any cost/expense data. Conversion franchisees and Franchise Option Program participants are included in the data. Territory sizes have varied historically, which affects comparability across franchisees. 7 permanently closed outlets excluded (survivorship bias). No company-owned P&L.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [38, 40], "item_reference": "Item 19", "exact_text": null }
+    },
+
+    "item_20_outlet_summary": {
+      "years_reported": [
+        {
+          "year": 2022,
+          "total_outlets_start": 246,
+          "total_outlets_end": 241,
+          "opened": 19,
+          "closed": 13,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 13,
+          "ceased_operations_other": 11,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "All franchised, no company-owned. Net contraction of 5 units. Terminations (13) were the largest exit category. California: 24->22 (3 opened, 5 terminated). Pennsylvania: 15->10 (4 terminated, 1 ceased). New Jersey: 15->14 (1 opened, 2 ceased).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [40, 41, 42, 43, 44, 45], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2023,
+          "total_outlets_start": 241,
+          "total_outlets_end": 237,
+          "opened": 12,
+          "closed": 9,
+          "non_renewals": 1,
+          "reacquired_by_franchisor": 0,
+          "transferred": 14,
+          "ceased_operations_other": 6,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "Net contraction of 4 units. Terminations (9) still largest exit category but decreasing. California: 22->19 (1 opened, 1 terminated, 3 ceased). Nevada: 5->2 (3 terminated). Florida: 20->18 (1 opened, 2 terminated, 1 ceased).",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [40, 41, 42, 43, 44, 45], "item_reference": "Item 20, Tables 1, 2, 3", "exact_text": null }
+        },
+        {
+          "year": 2024,
+          "total_outlets_start": 237,
+          "total_outlets_end": 237,
+          "opened": 7,
+          "closed": 4,
+          "non_renewals": 0,
+          "reacquired_by_franchisor": 0,
+          "transferred": 13,
+          "ceased_operations_other": 3,
+          "company_owned_start": 0,
+          "company_owned_end": 0,
+          "notes": "System stable: net change of 0 units. Terminations (4) lowest in 3 years. Maryland: 8->5 (3 terminated). Michigan: 4->3 (1 ceased). New York: 7->6 (1 ceased). Projected openings for next fiscal year: 4 new franchised outlets (CO, CT, FL x2) plus 2 signed agreements not yet opened (IL, OH). Table 1 in FDD contains a typographical error: third row labeled '2023' should read '2024' based on context and Table 3 totals.",
+          "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [40, 41, 42, 43, 44, 45, 46], "item_reference": "Item 20, Tables 1, 2, 3, 4, 5", "exact_text": null }
+        }
+      ]
+    },
+
+    "item_3_litigation": {
+      "has_litigation": true,
+      "action_count": 1,
+      "action_types": [
+        { "type": "franchisor vs. franchisee", "count": 1, "notes": "MaidPro Franchise, LLC v. La Lucha, Inc., Mariusz Mastalerz, and Lorraine Marques, AAA Case No. 01-24-0003-3646. Filed March 27, 2024. Arbitration alleging former franchisee failed to pay amounts due and operated a competing maid services business in violation of post-termination non-compete. Resolved by settlement on June 30, 2024: franchisee paid amounts owed and agreed to abide by non-compete." }
+      ],
+      "notes": "Single arbitration action, initiated by franchisor, resolved by settlement within 3 months. Light litigation profile. No regulatory actions, no pending matters.",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": 8, "item_reference": "Item 3", "exact_text": null }
+    },
+
+    "system_info": {
+      "year_company_founded": 1993,
+      "year_first_franchised": 1997,
+      "states_registered": null,
+      "states_registered_status": "deferred",
+      "provenance": { "source_year": 2025, "source_state": "WI", "page_number": [1, 8], "item_reference": "Item 1", "exact_text": "our former affiliate, MaidPro, Inc., provided residential and commercial cleaning services from 1993 to 2020... We have been offering franchises since February 1, 1997." }
+    },
+
+    "item_12_territory": { "_status": "deferred" },
+    "item_17_contract_terms": { "_status": "deferred" },
+    "item_21_financial_statements_summary": { "_status": "deferred" }
+  },
+
+  "derived": {
+    "initial_investment_midpoint": 134255,
+    "net_unit_growth": [
+      { "year": 2022, "value": -5, "source_fields": ["Table 1: 241-246=-5"] },
+      { "year": 2023, "value": -4, "source_fields": ["Table 1: 237-241=-4"] },
+      { "year": 2024, "value": 0, "source_fields": ["Table 1: 237-237=0"] }
+    ],
+    "turnover_rate": [
+      { "year": 2022, "value": 15.04, "source_fields": ["(13+0+0+11+13)/246 = 37/246"] },
+      { "year": 2023, "value": 12.45, "source_fields": ["(9+1+0+6+14)/241 = 30/241"] },
+      { "year": 2024, "value": 8.44, "source_fields": ["(4+0+0+3+13)/237 = 20/237"] }
+    ],
+    "system_age_years": 29,
+    "total_ongoing_fee_rate": 8.0
+  },
+
+  "metadata": {
+    "extraction_timestamp": "2026-03-15T12:00:00Z",
+    "extraction_method": "pdfplumber + manual review",
+    "extraction_confidence": "high",
+    "spot_check": {
+      "checked_fields": [
+        { "field": "raw.item_5_initial_fees.initial_franchise_fee.value", "page_verified": 8, "match": true },
+        { "field": "raw.item_7_initial_investment.total_low", "page_verified": 17, "match": true },
+        { "field": "raw.item_7_initial_investment.total_high", "page_verified": 17, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[0].total_outlets_start (2022)", "page_verified": 40, "match": true },
+        { "field": "raw.item_20_outlet_summary.years_reported[2].total_outlets_end (2024)", "page_verified": 45, "match": true },
+        { "field": "raw.item_19_financial_performance.tables[0].data.all_outlets.avg_gross_consumer_sales", "page_verified": 39, "match": true },
+        { "field": "derived.initial_investment_midpoint = (109860+158650)/2 = 134255", "page_verified": 17, "match": true }
+      ],
+      "checked_by": "automated extraction with pdfplumber verification",
+      "checked_at": "2026-03-15T12:00:00Z"
+    },
+    "warnings": [
+      "SYSTEM CONTRACTION (stabilizing): MaidPro shrank for 2 years then stabilized (246->241->237->237). Net loss of 9 units over 3 years (-3.7%), but 2024 showed zero net change.",
+      "Table 1 in FDD contains a typographical error: the third row is labeled '2023' but contextually represents 2024 data (start=237, end=237, net change=0). This is confirmed by Table 3 state-by-state totals for 2024.",
+      "Turnover rate declining: 15.0% (2022) -> 12.4% (2023) -> 8.4% (2024). Positive trend.",
+      "Item 19 does not disclose costs or expenses — only Gross Consumer Sales and number of jobs. Profitability cannot be assessed from FDD data alone.",
+      "Territory definition changed January 2023 (~45K qualified households at $100K+ income), making historical comparisons across franchisees complex.",
+      "Franchise Option Program allows $0 franchise fee in exchange for 10% royalty (vs. 6%) for 10 years — creates two distinct fee structures within the system.",
+      "Conversion franchisees pay reduced 2% royalty for first 2 years — further variation in royalty structures.",
+      "7 outlets that permanently closed in 2024 are excluded from Item 19 data — survivorship bias applies.",
+      "Wide revenue dispersion: Q1 average ($958K) is 7.1x Q4 average ($134K). Bottom quartile average of $134K may not support franchise fee obligations.",
+      "In the last 3 years, current and former franchisees signed provisions restricting their ability to speak openly about their experience — due diligence caveat.",
+      "An independent franchisee association (Maid Together Franchisee Association Inc.) exists, which may indicate franchisee-franchisor tensions.",
+      "PE-backed: MaidPro is owned through Threshold Brands / HS Group Holding Company / The Riverside Company (private equity). Financial statements are for parent HS Group Holding Company, LLC."
+    ],
+    "null_fields": [
+      { "field": "raw.item_6_other_fees.other_fees[4].value (National Sales Center)", "reason": "Fee is per-inquiry with tiered pricing ($30-$35/inquiry). No single value.", "field_status": "extracted" },
+      { "field": "raw.item_6_other_fees.other_fees[6].value (Customer Complaint)", "reason": "Variable — all amounts franchisor incurs. No fixed value.", "field_status": "extracted" },
+      { "field": "raw.item_6_other_fees.other_fees[8].value (Non-compete Fee)", "reason": "Formula-based: current franchise fee + 7% of competitive business gross sales. No single value.", "field_status": "extracted" },
+      { "field": "raw.system_info.states_registered", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_12_territory", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_17_contract_terms", "reason": "Deferred.", "field_status": "deferred" },
+      { "field": "raw.item_21_financial_statements_summary", "reason": "Deferred.", "field_status": "deferred" }
+    ]
+  }
+}

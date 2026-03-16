@@ -10,6 +10,9 @@
   .page-break { page-break-before: always; }
   h2 { page-break-after: avoid; }
   table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -38,10 +41,13 @@ tbody td.label { font-weight: 600; white-space: nowrap; }
 .callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
 
 .question-list { list-style: none; padding: 0; counter-reset: q; }
-.question-list li { padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; counter-increment: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
 .question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
 .question-list li:last-child { border-bottom: none; }
 .question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
 
 .methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
 .methodology p { margin: 0 0 0.5rem; }
@@ -57,35 +63,304 @@ tbody td.label { font-weight: 600; white-space: nowrap; }
 .implication strong { color: #1e40af; }
 ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
 ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
 </style>
 </head>
 <body>
 
-<div class="report-header">
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">Mosquito Hunters</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: 2025 Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: Mosquito Hunters, LLC</span>
+    <span>Report generated: 2026-03-15</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num">1</span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num">2</span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num">3</span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num">4</span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num">5</span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num">6</span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    <li><span class="toc-num">7</span> <a href="#payback">Illustrative Payback Sensitivity</a></li>
+    <li><span class="toc-num">8</span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num">9</span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num">10</span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num">11</span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num">12</span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num">13</span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
   <h1>Mosquito Hunters</h1>
   <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
   <div class="report-meta">
     Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
-    Legal entity: Mosquito Hunters, LLC &middot; Parent: LD Parent, Inc. / CNL Strategic Capital, LLC<br>
+    Legal entity: Mosquito Hunters, LLC<br>
     Report generated: 2026-03-15 &middot; Franchise Decision Radar
   </div>
 </div>
 
-<h2>Executive Summary</h2>
+<h2 id="executive-summary">Executive Summary</h2>
 <div class="exec-summary">
 
-<p>Mosquito Hunters is a PE-backed combination franchise (Pest Hunters / Mosquito Hunters / Humbug Holiday Lighting) with the highest cost to enter in the mosquito pest control cohort: $141,295&ndash;$170,743, anchored by a $107,000 initial franchise fee that is more than double the next most expensive brand. At $300K gross revenue, annual franchisor fees total $80,300 (26.8% of revenue), driven by a mandatory marketing floor of $37,500 that functions as a regressive tax on smaller operators. The system is the smallest in the cohort at 135 franchised outlets, and its Item 19 &mdash; while containing 7 tables &mdash; does not disclose total revenue per franchise unit, making it impossible to build a revenue model from the FDD alone.</p>
+<p>Mosquito Hunters is the smallest system in the mosquito pest control cohort (135 franchised
+outlets) and the only brand structured as a combination franchise — bundling mosquito control,
+general pest control (Pest Hunters), and holiday lighting (Humbug). This diversification is the
+single most distinctive feature of the brand: it directly addresses the seasonality problem that
+every mosquito franchise faces.</p>
 
-<p>The strongest signal in this FDD is the 2024 turnaround: after 17 terminations in 2022 and 11 in 2023, the system recorded zero terminations and added 13 net outlets in 2024. The combination franchise model offers genuine diversification &mdash; the Humbug Holiday Lighting program generated $64,727 average revenue across 26 participating franchisees, providing meaningful winter-season income in a traditionally seasonal business. But a prospective buyer faces a core problem: you cannot assess unit economics from this document. The 26% exclusion rate in Item 19 (including 8 operators excluded for not investing in the franchisor's marketing programs) further limits the reliability of what is disclosed.</p>
+<p>The Item 19 provides 7 tables of operational data — customer counts, treatment pricing,
+customer values by region, and holiday lighting revenue — but <strong>does not disclose gross
+revenue or profitability per franchise unit</strong>. This means the most fundamental number a
+buyer needs (how much money does this business make?) must be triangulated from indirect data.
+The triangulation is possible and produces plausible estimates, but it is inference, not
+disclosure.</p>
+
+<p>The system health story is one of genuine turnaround. Hunters contracted in 2022 (−4 net)
+and 2023 (−1), then reversed sharply in 2024 (+13, zero terminations). The 3-year net of +8
+is modest, but the trajectory — from 17 terminations in 2022 to zero in 2024 — is the most
+dramatic stability improvement in the cohort. The initial franchise fee ($107,000) is the
+highest in the category by a wide margin, driven by a $57,000 bundled training/supply/support
+component that is unlike any competitor's fee structure.</p>
 
 </div>
 
-<h2>Fee Burden Analysis</h2>
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the mosquito pest control cohort.</p>
 
-<p>Mosquito Hunters has the second-highest ongoing fee burden in the cohort at every modeled
-revenue level. The primary driver is the marketing floor: the $37,500 annual minimum is
-18.75% of revenue at $200K, falling to 10% only at $375K+. Combined with a $9,000/year
-call center fee and $1,800/year technology fee, the fixed-cost layer is substantial.</p>
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">Entry cost burden</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">Highest initial franchise fee in cohort ($107K, of which $57K is mandatory bundled package). Total $141K–$171K.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Ongoing fee burden</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">#3 at most revenue levels. 26.8% at $300K. $37.5K marketing floor is regressive. 25% out-of-territory royalty is most aggressive in cohort.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">System stability</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Dramatic turnaround: 17 terminations (2022) to zero (2024). But smallest system (135 outlets) and only +8 net over 3 years.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Revenue disclosure</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">No gross revenue disclosed. Customer counts and values enable triangulation (~$120K–$210K mosquito-only) but this is inference, not disclosure.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Disclosure quality</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">7 Item 19 tables with useful operational data, but the deliberate omission of revenue is a transparency concern. 26% SP exclusion rate.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Downside risk profile</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">System stabilizing. No litigation. But small system, high initial fee, and revenue uncertainty create meaningful risk.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Buyer fit breadth</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Only combination franchise in cohort (mosquito + pest + holiday). Appeals to buyers who want diversification. Requires comfort with revenue uncertainty.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Overall</td>
+      <td class="rating rating-mixed">Cautious</td>
+      <td class="sc-summary">The differentiation story (combination franchise, holiday lighting) is real. The disclosure gap (no revenue) is real. Both must be weighed.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+Mosquito Hunters is the hardest brand in this cohort to evaluate — not
+because the data is bad, but because the most important number (revenue) isn't disclosed. The
+operational data is genuinely useful: customer counts, treatment pricing, customer values, and
+holiday lighting economics give you the building blocks. But the buyer must do the assembly. The
+combination franchise is a legitimate differentiator that no competitor matches. The system health
+turnaround (zero terminations in 2024) is encouraging. The $107K initial fee is the hardest pill
+to swallow without revenue validation. This brand requires more franchisee due diligence than any
+other in the cohort — not because it's necessarily worse, but because the FDD asks you to take
+more on trust.
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+
+<h3>Best fit for</h3>
+<ul class="fit-list">
+<li><strong>Buyer who wants year-round revenue:</strong> The combination franchise (mosquito
+spring–fall + holiday lighting fall–winter + pest control year-round) directly addresses the
+seasonality problem that limits every other brand in the cohort. If off-season income matters
+to you, Hunters is the only option.</li>
+<li><strong>Buyer comfortable with operational complexity:</strong> Running three service lines
+requires more diverse skills (pest identification, lighting design, seasonal inventory
+management) than a single-service franchise. If you welcome variety, this fits.</li>
+<li><strong>Buyer willing to do more pre-purchase diligence:</strong> The revenue gap in the
+FDD means you must validate economics through 3–5 franchisee conversations. If you're
+disciplined about diligence, the data is obtainable — it's just not in the document.</li>
+</ul>
+
+<h3>Weaker fit for</h3>
+<ul class="fit-list">
+<li><strong>Buyer who needs transparent unit economics before committing:</strong> If you want
+to model P&amp;L from disclosed data (like Joe or Squad provide), Hunters won't give you that.
+Revenue must be inferred or obtained informally.</li>
+<li><strong>Budget-sensitive buyer:</strong> $107K initial franchise fee is more than double
+most competitors. The $57K bundled package cannot be negotiated or unbundled.</li>
+<li><strong>Buyer who wants a simple, focused business:</strong> Three service lines, seasonal
+transitions, and different inventory/skill requirements create more operational complexity than
+a pure mosquito franchise.</li>
+</ul>
+
+<h3>Proceed only if</h3>
+<ul class="fit-list">
+<li>You've validated actual total revenue with 3+ current Strategic Partners across different
+regions and service mixes.</li>
+<li>You've gotten a satisfactory explanation for why gross revenue is not disclosed while
+competitors provide it.</li>
+<li>You understand what the $57K training/supply/support package includes and have compared
+it against competitors' offerings at lower price points.</li>
+<li>You've confirmed that the 2024 turnaround (zero terminations) reflects structural changes,
+not just a one-year pause in enforcement.</li>
+<li>You've evaluated whether you actually want to operate three service lines or just want
+a mosquito franchise — because you're buying all three.</li>
+</ul>
+
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
+
+<p>Mosquito Hunters sits in the middle of the cohort on ongoing fee burden — third at most
+revenue levels. The 10% royalty matches Authority, the $37,500 marketing floor is competitive
+with Joe's $37K DMP, and the $9,000/year call center fee is a meaningful fixed cost at lower
+revenue levels. The structure is simpler than Joe's or Shield's.</p>
 
 
 <table>
@@ -101,7 +376,7 @@ call center fee and $1,800/year technology fee, the fixed-cost layer is substant
     </tr>
   </thead>
   <tbody>
-
+    
     <tr>
       <td class="label">$200,000</td>
       <td class="num">$20,000</td>
@@ -109,9 +384,9 @@ call center fee and $1,800/year technology fee, the fixed-cost layer is substant
       <td class="num">$12,800</td>
       <td class="num"><strong>$70,300</strong></td>
       <td class="num">35.1%</td>
-      <td class="num">4/5</td>
+      <td class="num">3/5</td>
     </tr>
-
+    
     <tr>
       <td class="label">$300,000</td>
       <td class="num">$30,000</td>
@@ -121,7 +396,7 @@ call center fee and $1,800/year technology fee, the fixed-cost layer is substant
       <td class="num">26.8%</td>
       <td class="num">3/5</td>
     </tr>
-
+    
     <tr>
       <td class="label">$400,000</td>
       <td class="num">$40,000</td>
@@ -131,7 +406,7 @@ call center fee and $1,800/year technology fee, the fixed-cost layer is substant
       <td class="num">23.2%</td>
       <td class="num">3/5</td>
     </tr>
-
+    
     <tr>
       <td class="label">$500,000</td>
       <td class="num">$50,000</td>
@@ -139,101 +414,379 @@ call center fee and $1,800/year technology fee, the fixed-cost layer is substant
       <td class="num">$12,800</td>
       <td class="num"><strong>$112,800</strong></td>
       <td class="num">22.6%</td>
-      <td class="num">3/5</td>
+      <td class="num">5/5</td>
     </tr>
-
+    
   </tbody>
 </table>
 
 
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Authority</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 61.3%"></div>
+    </div>
+    <div class="fee-bar-value">17.6%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Squad</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 90.6%"></div>
+    </div>
+    <div class="fee-bar-value">26.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Hunters</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill this-brand" style="width: 93.4%"></div>
+    </div>
+    <div class="fee-bar-value">26.8%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Joe</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 98.6%"></div>
+    </div>
+    <div class="fee-bar-value">28.3%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Mosquito Shield</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 100.0%"></div>
+    </div>
+    <div class="fee-bar-value">28.7%</div>
+  </div>
+  
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+
+
+
 <h3>Component breakdown</h3>
 <ul class="compact">
-<li><strong>Royalty (10% flat):</strong> Mid-cohort rate. Paid weekly on Net Revenues. An additional
-15% royalty applies to any revenue earned outside your territory, bringing the out-of-territory
-rate to 25%. (p. 15)</li>
-<li><strong>Marketing ($37,500 or 10%, whichever is greater):</strong> Three mandatory components:
-Local Advertising ($8,000 or 2%), Centrally Managed Media Fund ($26,500 or 7%), and Tools &amp;
-Programs Fund ($3,000 or 1%). The $37,500 floor does not scale with revenue until you exceed
-$375,000 &mdash; below that, you pay more than 10%. Flagged as "Special Risk" in the FDD itself. (pp. 15&ndash;16, 19&ndash;20)</li>
-<li><strong>Technology ($150/mo):</strong> Increases to $250/mo when cumulative Net Revenues
-reach $1,000,000. May increase up to $500/mo at franchisor's discretion. (p. 15)</li>
-<li><strong>Call Center ($750/mo):</strong> First year included in franchise fee. May increase,
-not to exceed $1,000/mo. Adds $9,000/year in fixed cost from Year 2 forward. (p. 17)</li>
-<li><strong>Convention (up to $2,000/yr):</strong> Must pay even if not attending. Travel and
-lodging are additional. (p. 17)</li>
+<li><strong>Royalty (10% of Net Revenues):</strong> Standard rate. Basis is Net Revenues
+(excludes taxes/refunds), not Gross Sales — modeled as equivalent at these revenue levels.
+Additional 15% royalty on revenue earned outside territory (total 25% for out-of-territory
+work). (p. 15)</li>
+<li><strong>Marketing ($37,500 floor or 10%):</strong> Three mandatory components: Local
+Advertising ($8K or 2%), Centrally Managed Media Fund ($26.5K or 7%), and Tools &amp;
+Programs Fund ($3K or 1%). The combined floor ($37,500) is regressive at lower revenue —
+at $200K, it's 18.75% of revenue on marketing alone. (pp. 15–16, 19–20)</li>
+<li><strong>Call Center ($750/month):</strong> $9,000/year. First year included in the initial
+franchise fee. May increase, not expected to exceed $1,000/month. This is a significant
+fixed cost — higher than any competitor's call center charge. (p. 15)</li>
+<li><strong>Technology ($150/month):</strong> $1,800/year. Increases to $250/month when
+cumulative Net Revenues reach $1M. May increase up to $500/month. (p. 15)</li>
+<li><strong>Convention (up to $2,000/year):</strong> Must pay even if not attending. Excludes
+travel/lodging. (p. 17)</li>
 </ul>
 
 <div class="implication">
-<strong>What this means:</strong> At $300K revenue, you keep ~$220K after franchisor fees.
-At Mosquito Authority, you would keep ~$247K &mdash; a $27,500/year difference that compounds
-to $275,000 over a 10-year term. The marketing floor is the dominant factor: at $200K revenue,
-marketing alone consumes 18.75% of gross &mdash; nearly double the royalty rate.
+<strong>What this means:</strong> At $300K revenue, Hunters' $80,300 total fees (26.8%) are
+mid-cohort — less than Joe ($84,752) and Shield ($86,000), more than Authority ($52,800) and
+Squad ($77,880). The fee structure is relatively straightforward compared to Joe's 5-component
+marketing or Shield's minimum gross sales penalty. The main cost risk is the $37,500 marketing
+floor hitting hard at low revenue: at $200K, total fees are $70,300 (35.1%).
 </div>
 
 <div class="callout">
-<div class="callout-title">Special Risk — Marketing floor</div>
-The FDD itself flags the marketing obligation as a "Special Risk" on page 4. The $37,500 annual
-minimum is the highest dollar-denominated marketing floor in the cohort after Mosquito Shield's
-$50,000. Unlike percentage-based marketing fees that scale with revenue, this floor creates a
-disproportionate burden on operators who are still building their customer base.
+<div class="callout-title">The out-of-territory penalty</div>
+Revenue earned outside your assigned territory incurs an additional 15% royalty (total 25%).
+This is the most punitive out-of-territory provision in the cohort. If your service area
+bleeds across territory lines — common in pest control where customers don't know franchise
+boundaries — this can create unexpected cost. Ask the franchisor how territory boundaries
+are enforced in practice. (p. 15)
 </div>
 
 
-<h2>Item 19 Interpretation</h2>
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
 
-<p>Mosquito Hunters' Item 19 contains 7 tables across 10 pages &mdash; more granular than most
-competitors. But it has a critical gap: <strong>no table discloses total revenue per franchise
-unit</strong>. The tables provide building blocks (customer counts, per-treatment pricing,
-customer values) but never assemble them into a revenue figure. This omission is the single
-most important limitation of this FDD.</p>
+<p>Mosquito Hunters' Item 19 is the most unusual in the cohort. It provides 7 tables of
+operational data — customer counts, treatment pricing, customer values, and holiday lighting
+revenue — but <strong>never discloses gross revenue or profitability per franchise unit</strong>.
+This means the single most important number a buyer needs must be inferred, not read.</p>
 
-<h3>What is disclosed</h3>
+<h3>What IS disclosed</h3>
+
+<p><strong>Customer counts by quartile (Table A.1):</strong> 63 Strategic Partners operating 100
+territories, segmented by quartile:</p>
+
+<table>
+<thead>
+<tr>
+<th>Quartile</th>
+<th class="num">SPs</th>
+<th class="num">Avg Customers</th>
+<th class="num">Median</th>
+<th class="num">High</th>
+<th class="num">Low</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="label">Q1 (top 25%)</td>
+<td class="num">15</td>
+<td class="num">444</td>
+<td class="num">439</td>
+<td class="num">611</td>
+<td class="num">357</td>
+</tr>
+<tr>
+<td class="label">Q2</td>
+<td class="num">16</td>
+<td class="num">283</td>
+<td class="num">287</td>
+<td class="num">354</td>
+<td class="num">213</td>
+</tr>
+<tr>
+<td class="label">Q3</td>
+<td class="num">16</td>
+<td class="num">167</td>
+<td class="num">163</td>
+<td class="num">203</td>
+<td class="num">147</td>
+</tr>
+<tr>
+<td class="label">Q4 (bottom 25%)</td>
+<td class="num">16</td>
+<td class="num">101</td>
+<td class="num">100</td>
+<td class="num">146</td>
+<td class="num">30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Treatment pricing (Tables A.2–A.3):</strong> Mosquito treatment prices range from
+$72–$88 average by region. Non-mosquito pest control averages $61–$88. Pricing is competitive
+with the cohort.</p>
+
+<p><strong>Customer value (Table A.4):</strong> Average annual customer value for mosquito-only
+service ranges from $726 (Region 2: Midwest/Mid-Atlantic) to $1,232 (Region 4: FL/LA/TX).
+Median values are similar. This is per-customer annual spend, not per-territory revenue.</p>
+
+<p><strong>Holiday lighting (Table A.7):</strong> 26 Strategic Partners fully participated in
+Humbug Holiday Lighting in 2024 (up from 3 in 2023 pilot). Average revenue: $64,727. Median:
+$53,701. High: $305,528. This is the most distinctive data point in the filing — no other
+brand offers a counter-seasonal revenue stream.</p>
+
+<h3>What is NOT disclosed</h3>
 <ul class="compact">
-<li><strong>Customer counts (Table A.1):</strong> 63 qualifying SPs averaged 101&ndash;444
-customers per quartile. Top quartile averaged 444 customers; bottom quartile averaged 101.
-(p. 55)</li>
-<li><strong>Per-treatment pricing (Table A.2):</strong> Mosquito-only treatments average
-$72&ndash;$88 depending on region. (p. 56)</li>
-<li><strong>Customer value (Table A.4):</strong> Average annual value per mosquito customer
-ranges from $726 (Region 2) to $1,232 (Region 4, which includes FL/LA/TX with longer
-seasons). (p. 58)</li>
-<li><strong>Holiday lighting (Table A.7):</strong> 26 participating SPs averaged $64,727 in
-Humbug revenue, with a median of $53,701. Range: $2,899&ndash;$305,528. This is the most
-useful table in the Item 19 &mdash; actual revenue per franchisee for a defined service line.
-(p. 61)</li>
+<li><strong>Total gross revenue per franchise unit</strong> — not disclosed anywhere</li>
+<li><strong>Profitability or cost structure</strong> — no P&amp;L, no COGS, no margin data</li>
+<li><strong>Revenue per territory</strong> — customer counts are per Strategic Partner (who may
+operate multiple territories), not per territory</li>
+<li><strong>Customer retention rate</strong> — not disclosed (unlike Joe at 77% and Shield at 85%)</li>
 </ul>
 
-<h3>What is missing</h3>
-<p><strong>Total revenue per franchise unit.</strong> You can attempt to multiply customer
-counts by customer values, but the tables use different populations, different regional
-groupings, and different inclusion criteria. The FDD does not perform this calculation,
-and the data does not cleanly support doing it yourself.</p>
-
-<h3>The exclusion problem</h3>
-<p>22 of 85 Strategic Partners (26%) are excluded from Item 19 tables. Of those, 8 were
-excluded specifically for "failing to invest in MH marketing programs." This creates a
-circularity: the franchisor requires $37,500/year in marketing spend, excludes operators
-who do not meet that threshold from performance data, and then presents the remaining
-operators' results as representative. The disclosed performance data may overstate what a
-typical operator achieves.</p>
-
 <div class="implication">
-<strong>What this means:</strong> You cannot build a revenue model from this FDD. You know
-what customers pay per treatment ($72&ndash;$88) and how many customers top performers have
-(444 avg in Q1), but you do not know total revenue per unit. The holiday lighting data
-($64,727 avg) is the one concrete revenue figure &mdash; and it applies to only 26 of 135
-franchised outlets. To estimate unit economics, you will need to talk to current franchisees
-directly.
+<strong>What this means:</strong> Hunters gives you the building blocks to estimate revenue
+(customer count × customer value), but requires you to assemble them yourself. The absence of
+a direct revenue disclosure is itself a signal — the franchisor chose to disclose operational
+metrics while withholding the bottom line. A buyer should ask why. The holiday lighting data is
+a genuine differentiator and deserves separate analysis.
 </div>
 
 
-<h2>Investment Breakdown</h2>
 
-<p>Highest in the cohort: $141,295&ndash;$170,743. The $107,000 franchise fee ($50,000 license +
-$57,000 training/supply/support) accounts for 63&ndash;75% of the total investment. This is
-more than double Mosquito Authority's maximum franchise fee ($45,000) and the highest single
-line item across all five brands. The combination franchise model adds $8,400&ndash;$16,800
-for holiday lighting inventory and equipment.</p>
+
+<h3>Revenue triangulation (inferred — not disclosed)</h3>
+<p><strong>This section presents revenue estimates derived from indirect Item 19 data.
+These are not disclosed figures. They are analytical inferences with meaningful uncertainty.</strong></p>
+
+<p>Using Region 2 (Midwest/Mid-Atlantic, 21 businesses — the largest regional group) as
+the baseline for customer value ($726 average):</p>
+<ul class="compact">
+<li>Q3 median (163 customers) × $726 = <strong>~$118K mosquito revenue</strong></li>
+<li>Q2 median (287 customers) × $726 = <strong>~$208K mosquito revenue</strong></li>
+<li>Q1 median (439 customers) × $726 = <strong>~$319K mosquito revenue</strong></li>
+</ul>
+
+<p>Adding holiday lighting for the 26 participating SPs (median $53,701):</p>
+<ul class="compact">
+<li>Q3 + holiday lighting: ~$118K + $54K = <strong>~$172K combination revenue</strong></li>
+<li>Q2 + holiday lighting: ~$208K + $54K = <strong>~$262K combination revenue</strong></li>
+</ul>
+
+<p>Adding non-mosquito pest control revenue is harder — the FDD provides treatment counts
+and pricing but not customer-level revenue for pest control in an easily combinable format.
+Directionally, pest control adds $10K–$30K per SP depending on the market.</p>
+
+<div class="callout">
+<div class="callout-title">Triangulation uncertainty</div>
+These estimates carry at least ±20% uncertainty. The customer value varies significantly
+by region ($726–$1,232), the customer count data excludes 26% of SPs, and pest control
+revenue is not cleanly estimable. The combination franchise (mosquito + pest + holiday)
+adds genuine revenue diversification, but the total is uncertain. A buyer must validate
+these estimates directly with current franchisees — the FDD does not give you the answer.
+</div>
+
+
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
+This section uses revenue estimates <strong>inferred from indirect Item 19 data</strong>, not
+disclosed figures. Mosquito Hunters does not disclose gross revenue per franchise unit. Revenue
+is triangulated from customer counts (Table A.1) × customer values (Table A.4, Region 2
+baseline). COGS at 23% is borrowed from Mosquito Authority's company-owned P&amp;L — the only
+single-territory cost data available in the cohort. Mosquito Hunters provides no cost data.
+These scenarios carry more uncertainty than those in the other reports in this series.</p>
+
+
+<table class="scenario-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="scenario-name">Mosquito-only (Q3 triangulation)</td>
+      <td class="num">$118,000</td>
+      <td class="num">$41,418 (35.1%)</td>
+      <td class="num">$27,140</td>
+      <td class="num"><strong>$49,442</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Mosquito-only (Q2 triangulation)</td>
+      <td class="num">$208,000</td>
+      <td class="num">$71,100 (34.2%)</td>
+      <td class="num">$47,840</td>
+      <td class="num"><strong>$89,060</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Combination (Q2 + holiday lighting)</td>
+      <td class="num">$262,000</td>
+      <td class="num">$76,500 (29.2%)</td>
+      <td class="num">$60,260</td>
+      <td class="num"><strong>$125,240</strong></td>
+    </tr>
+    
+  </tbody>
+</table>
+<p class="assumption-note">Revenue triangulated from Item 19 customer counts × customer values (Region 2 baseline, $726/customer). Holiday lighting from Table A.7 median ($53,701). COGS at 23% (borrowed from Mosquito Authority — no Hunters cost data available). Franchisor fees from fee burden model. 'Remaining' must cover: vehicle lease ($14.4K–$18.3K/year), insurance, storage, bookkeeping, seasonal labor, and your living expenses.</p>
+
+
+<h3>What the scenarios tell you</h3>
+
+<p><strong>Mosquito-only conservative (Q3 triangulation, $118K):</strong> After fees ($69K)
+and COGS ($27K), $22K remains. This must cover vehicle lease ($14K–$18K/year), insurance,
+storage, and living expenses. At Q3 mosquito-only revenue, the business is likely cash-flow
+negative after operating costs. This is why the combination franchise matters — holiday
+lighting income could bridge the gap.</p>
+
+<p><strong>Mosquito-only moderate (Q2 triangulation, $208K):</strong> After fees ($77K) and
+COGS ($48K), $83K remains. After vehicle lease and operating costs ($25K–$35K), an owner draw
+of $48K–$58K is plausible. This is a functional but modest livelihood — and it requires reaching
+Q2 customer counts (287 median), which fewer than half of qualifying SPs achieve.</p>
+
+<p><strong>Combination franchise (Q2 + holiday, $262K):</strong> After fees ($82K) and COGS
+($60K), $120K remains. After operating costs, an owner draw of $70K–$85K becomes plausible.
+This is the scenario where Hunters' combination model starts to differentiate — the holiday
+lighting revenue fills the winter gap and pushes total economics past the pure-mosquito
+competitors at comparable fee levels.</p>
+
+<div class="callout">
+<div class="callout-title">The inference chain</div>
+These scenarios are two steps removed from disclosed data: (1) revenue is triangulated, not
+reported, and (2) COGS is borrowed from another brand. The combination scenario adds a third
+inference layer: assuming holiday lighting participation and median performance. Each step adds
+uncertainty. The scenarios are useful for framing questions, not for financial planning. A buyer
+must validate actual revenue — from franchisee conversations, not from this report.
+</div>
+
+<h3>What the buyer still needs to validate</h3>
+<ul class="compact">
+<li><strong>Actual total revenue:</strong> The single most important number. Ask 3+ current SPs
+for their total gross revenue across all three service lines.</li>
+<li><strong>Holiday lighting economics:</strong> The $54K median revenue sounds attractive, but
+what are the costs? Inventory ($6K–$14K initial), labor (installation and removal), insurance,
+and equipment — the FDD doesn't provide holiday-lighting-specific margins.</li>
+<li><strong>The $57K bundle value:</strong> Compare what Hunters provides for $57K against
+what competitors include in their $0–$25K franchise fees. Is the training longer? Are the
+supplies better? Is the first-year call center service a genuine advantage?</li>
+<li><strong>Service mix viability:</strong> Ask SPs who run all three lines about the
+operational complexity. Is it three businesses or one business with three revenue streams?</li>
+</ul>
+
+
+<!-- PAYBACK SENSITIVITY -->
+<h2 id="payback">Illustrative Payback Sensitivity</h2>
+
+<p>The table below shows how long it would take to recover your initial investment under
+different assumptions about annual owner draw. <strong>Revenue estimates are inferred from
+indirect Item 19 data, not disclosed figures. These payback periods carry more uncertainty
+than those in the other reports in this series.</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Assumed annual owner draw</th>
+<th class="num">Low investment ($141K)</th>
+<th class="num">Mid investment ($156K)</th>
+<th class="num">High investment ($171K)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="label">$30K (mosquito-only conservative)</td>
+<td class="num">4.7 years</td>
+<td class="num">5.2 years</td>
+<td class="num">5.7 years</td>
+</tr>
+<tr>
+<td class="label">$55K (mosquito-only moderate)</td>
+<td class="num">2.6 years</td>
+<td class="num">2.8 years</td>
+<td class="num">3.1 years</td>
+</tr>
+<tr>
+<td class="label">$80K (combination franchise)</td>
+<td class="num">1.8 years</td>
+<td class="num">2.0 years</td>
+<td class="num">2.1 years</td>
+</tr>
+</tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">The honest frame</div>
+At mosquito-only Q3 economics, payback takes 5+ years on a $141K+ investment with inferred
+revenue. At the combination-franchise level ($262K revenue, $80K draw), payback is ~2 years —
+but this assumes Q2 mosquito performance plus median holiday lighting participation, both of
+which are estimates, not disclosed outcomes. The combination model is the bull case: if it works,
+the economics are competitive. If it doesn't (you don't participate in holiday lighting, or
+your market doesn't support it), you have a $141K+ mosquito franchise with the highest initial
+fee and mid-tier ongoing fees. Validate the combination thesis before committing.
+</div>
+
+
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
+
+<p>The headline investment range ($141,295–$170,743) is mid-to-high in the cohort, but the
+fee structure is unique: $107,000 goes directly to the franchisor ($50K license fee + $57K
+training/supply/support package). This is the highest initial franchise fee in the category
+by a wide margin — nearly double Authority's $45K and more than double Squad's $50K standalone
+fee.</p>
 
 
 <table>
@@ -245,103 +798,103 @@ for holiday lighting inventory and equipment.</p>
     </tr>
   </thead>
   <tbody>
-
+    
     <tr>
       <td>Initial License Fee</td>
       <td class="num">$50,000</td>
       <td class="num">$50,000</td>
     </tr>
-
+    
     <tr>
-      <td>Training, Supply &amp; Support Fee</td>
+      <td>Initial Marketing Program, Training, Supply and Support Fee</td>
       <td class="num">$57,000</td>
       <td class="num">$57,000</td>
     </tr>
-
+    
     <tr>
-      <td>Service Vehicle Deposit</td>
+      <td>Service Vehicle deposit</td>
       <td class="num">$8,350</td>
       <td class="num">$16,700</td>
     </tr>
-
+    
     <tr>
-      <td>Service Vehicle Lease Payment</td>
+      <td>Service Vehicle lease payment</td>
       <td class="num">$1,200</td>
       <td class="num">$1,525</td>
     </tr>
-
+    
     <tr>
       <td>Computer Software</td>
       <td class="num">$415</td>
       <td class="num">$656</td>
     </tr>
-
+    
     <tr>
       <td>Computers</td>
       <td class="num">$0</td>
       <td class="num">$2,000</td>
     </tr>
-
+    
     <tr>
-      <td>Opening Mosquito Inventory</td>
+      <td>Opening Mosquito Control Inventory</td>
       <td class="num">$500</td>
       <td class="num">$1,000</td>
     </tr>
-
+    
     <tr>
-      <td>Holiday Lighting Start-Up Inventory</td>
+      <td>Holiday Lighting Start-Up Inventory Package</td>
       <td class="num">$6,000</td>
       <td class="num">$14,000</td>
     </tr>
-
+    
     <tr>
-      <td>Holiday Lighting Start-Up Equipment</td>
+      <td>Holiday Lighting Start-Up Equipment Package</td>
       <td class="num">$2,400</td>
       <td class="num">$2,800</td>
     </tr>
-
+    
     <tr>
       <td>Uniforms</td>
       <td class="num">$250</td>
       <td class="num">$500</td>
     </tr>
-
+    
     <tr>
       <td>Rental Space</td>
       <td class="num">$0</td>
       <td class="num">$3,000</td>
     </tr>
-
+    
     <tr>
       <td>Bookkeeper</td>
       <td class="num">$400</td>
       <td class="num">$600</td>
     </tr>
-
+    
     <tr>
       <td>Training Expenses</td>
       <td class="num">$1,900</td>
       <td class="num">$4,400</td>
     </tr>
-
+    
     <tr>
       <td>Utility/Security Deposit</td>
       <td class="num">$200</td>
       <td class="num">$200</td>
     </tr>
-
+    
     <tr>
       <td>Insurance</td>
       <td class="num">$800</td>
       <td class="num">$1,000</td>
     </tr>
-
+    
     <tr>
-      <td>Additional Funds &mdash; 3 Months</td>
+      <td>Additional Funds - 3 Months</td>
       <td class="num">$11,880</td>
       <td class="num">$15,362</td>
     </tr>
-
+    
     <tr style="border-top:2px solid #333">
       <td class="label">Total</td>
       <td class="num"><strong>$141,295</strong></td>
@@ -353,342 +906,558 @@ for holiday lighting inventory and equipment.</p>
 
 <h3>What to know about the major line items</h3>
 <ul class="compact">
-<li><strong>Franchise fee ($107,000):</strong> Two components paid at signing: $50,000 license fee
-+ $57,000 training/supply/support fee. Both nonrefundable. VetFran/MinorityFran/First Responder
-discount: 10% off the license portion ($5,000 savings). Additional territory: $25,000. (pp. 14&ndash;15)</li>
-<li><strong>Holiday lighting ($8,400&ndash;$16,800):</strong> Inventory and equipment for Humbug Holiday
-Lighting &mdash; a mandatory component of the combination franchise. This is unique to Hunters and
-does not appear in any competitor's Item 7. (p. 21)</li>
-<li><strong>Service vehicle ($8,350&ndash;$16,700 deposit + $1,200&ndash;$1,525/mo lease):</strong>
-60- or 72-month lease with 10&ndash;20% down. Unlike Authority, there is no option to use an
-existing personal vehicle. (p. 21)</li>
-<li><strong>Working capital ($11,880&ndash;$15,362):</strong> Only 3 months. For a seasonal business
-with near-zero winter mosquito revenue, this is tight. The holiday lighting program partially
-addresses seasonality, but first-year operators should plan for personal reserves well beyond
-this estimate. (p. 21)</li>
+<li><strong>Initial License Fee ($50,000):</strong> The franchise fee itself. VetFran/MinorityFran
+/First Responder discount: 10% off this portion. Additional territory: $25,000. (pp. 14–15)</li>
+<li><strong>Training, Supply &amp; Support Fee ($57,000):</strong> Mandatory bundled package
+covering initial training, pest control supplies, marketing materials, and first-year call
+center service. This is the most distinctive and expensive line item in the cohort — no other
+brand bundles a $57K pre-opening package. The buyer cannot unbundle or source components
+independently. (p. 15)</li>
+<li><strong>Service Vehicle ($8.35K–$16.7K deposit):</strong> 60- or 72-month lease with 10–20%
+down. The ongoing lease payment ($1,200–$1,525/month) is listed separately. Total vehicle cost
+over the lease term is $72K–$110K — a significant long-term commitment not fully reflected in
+the Item 7 range. (p. 21)</li>
+<li><strong>Holiday Lighting Inventory ($6K–$14K):</strong> New line item for the Humbug
+program. This is the investment that enables the counter-seasonal revenue stream. (p. 21)</li>
+<li><strong>Additional Funds — 3 months ($11.9K–$15.4K):</strong> Modest working capital
+estimate. Like most competitors (except Squad's 12-month approach), this underestimates true
+first-year cash needs. (p. 21)</li>
 </ul>
 
 <div class="implication">
-<strong>What this means:</strong> The minimum investment is $141,295, with no meaningful way to
-reduce it &mdash; the $107,000 fee is fixed and the vehicle is a lease, not optional. Compare
-this to Mosquito Authority, where a buyer with a qualifying truck can enter for ~$54,000. The
-$87,000+ gap in entry cost means Hunters franchisees need substantially more revenue just to
-reach breakeven on their investment.
+<strong>What this means:</strong> $107K of the $141K–$171K investment goes to the franchisor.
+This is 75% of the low-end investment — the highest franchisor share in the cohort. The $57K
+bundled package means you are paying for training, supplies, and call center service upfront
+whether or not you would have chosen to spend that amount independently. The value proposition
+of this bundle is the central question of the investment decision.
 </div>
 
 
-<h2>System Health</h2>
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
 
-<p>Mosquito Hunters had a volatile three-year window that ended with a dramatic turnaround.
-The system shrank by 4 outlets in 2022 and 1 in 2023, with 28 total terminations across those
-two years. Then in 2024: zero terminations, 13 new openings, and net growth of +13 outlets.
-The swing from -4 to +13 is the sharpest year-over-year reversal in the cohort.</p>
+<p>Mosquito Hunters tells a clear turnaround story. The system contracted for two consecutive
+years (2022: −4 net, 2023: −1) before reversing sharply in 2024 (+13, zero terminations).
+The 3-year net of +8 franchised units is modest, but the trajectory from 17 terminations in
+2022 to zero in 2024 is the most dramatic stability improvement in the cohort.</p>
 
 
 <table>
   <thead>
     <tr>
       <th>Year</th>
-      <th class="num">Start</th>
       <th class="num">Opened</th>
-      <th class="num">Terminated</th>
-      <th class="num">Transferred</th>
+      <th class="num">Closed</th>
       <th class="num">Net</th>
       <th class="num">End Count</th>
     </tr>
   </thead>
   <tbody>
-
+    
     <tr>
       <td class="label">2022</td>
-      <td class="num">127</td>
       <td class="num">13</td>
       <td class="num">17</td>
-      <td class="num">10</td>
       <td class="num">-4</td>
       <td class="num">123</td>
     </tr>
-
+    
     <tr>
       <td class="label">2023</td>
-      <td class="num">123</td>
       <td class="num">10</td>
       <td class="num">11</td>
-      <td class="num">8</td>
       <td class="num">-1</td>
       <td class="num">122</td>
     </tr>
-
+    
     <tr>
       <td class="label">2024</td>
-      <td class="num">122</td>
       <td class="num">13</td>
       <td class="num">0</td>
-      <td class="num">5</td>
       <td class="num">+13</td>
       <td class="num">135</td>
     </tr>
-
+    
   </tbody>
 </table>
 
 
-<h3>The classification question</h3>
-<p>Every franchise closure across all three years is coded exclusively as a "Termination." Zero
-non-renewals. Zero ceased operations. Zero reacquisitions. Across 28 closures over two years,
-every single one was a franchisor-initiated termination. This is statistically unusual.
-Most franchise systems show a mix of terminations, non-renewals, and voluntary closures. When
-100% of exits are coded as terminations, it suggests either an unusually aggressive franchisor
-posture or a classification methodology that categorizes all departures under a single bucket.
-Either interpretation deserves scrutiny. (pp. 62&ndash;67)</p>
-
-<h3>The 2024 reversal</h3>
-<p>Zero terminations in 2024 &mdash; after 17 in 2022 and 11 in 2023 &mdash; is a genuine
-positive signal. The franchisor projects 21 new franchised outlets in the next year (p. 68).
-Whether the improvement reflects better franchisee support, a change in enforcement posture,
-or simply the departure of underperformers in prior years is unclear from the FDD alone.</p>
-
-<h3>Transfer activity</h3>
-<p>10, 8, 5 transfers per year, declining. In a system of 122&ndash;135 outlets, this is a
-moderate rate (4&ndash;8%). Transfer activity declining alongside terminations may indicate
-improving franchisee satisfaction or simply a smaller pool of motivated sellers.</p>
+<h3>The contraction years (2022–2023)</h3>
+<p>17 terminations in 2022, 11 in 2023. All closures across all three years are coded
+exclusively as "Terminations" — zero non-renewals, zero ceased operations. This classification
+is the franchisor's choice and is unusually uniform. In other brands, exits are distributed
+across multiple categories. Whether this reflects genuine termination or a reporting convention
+is worth understanding.</p>
 
 <div class="implication">
-<strong>What this means:</strong> The 3-year net growth of +8 outlets (127 to 135) is the
-second-weakest in the cohort after Mosquito Squad (+3). But the trajectory matters: the system
-was shrinking and is now growing. Ask the franchisor what changed in 2024 &mdash; whether it was
-a policy shift, better operator support, or the natural conclusion of pruning weak franchisees.
+<strong>What this means:</strong> The contraction was real — the system shrank from 127 to 122
+franchised outlets over two years. But the coding pattern matters. If all exits are classified
+as terminations (franchisor-initiated), it suggests the franchisor was actively removing
+operators. If some were actually voluntary departures coded as terminations, the picture is
+different. Ask the franchisor what triggered each termination category.
 </div>
 
+<h3>The 2024 reversal</h3>
+<p>Zero terminations, 13 openings, net +13. The turnover rate dropped from 20.3% (2022) to
+3.9% (2024) — the sharpest improvement in the cohort. 21 projected new outlets for next year.
+This is either a genuine operational turnaround or a one-year anomaly. One year of data doesn't
+prove a trend, but zero terminations is zero terminations.</p>
 
-<h2>Risk Signals</h2>
+<h3>Transfer activity</h3>
+<p>10 transfers in 2022, 8 in 2023, 5 in 2024 — steadily declining. This is consistent with
+a stabilizing system: fewer people wanting to sell, or the system is small enough that transfer
+volume is naturally low.</p>
 
-<h3>No litigation</h3>
-<p>No litigation required to be disclosed in Item 3. Clean. This is notable in a system that
-terminated 28 franchisees over 2022&ndash;2023 &mdash; no terminated franchisee pursued claims
-that reached the disclosure threshold. (p. 14)</p>
+<h3>Affiliate-owned footprint</h3>
+<p>6 affiliate-owned territories, stable across the reporting period. These are excluded from
+the Item 19 data. The franchisor operates a small portion of the system alongside
+franchisees.</p>
 
-<h3>Classification methodology</h3>
-<p>All 28 closures across 2022&ndash;2023 are coded as "Terminations" &mdash; zero non-renewals
-or ceased operations across the entire 3-year reporting window. This uniform classification
-is unique among the five brands reviewed and may reflect how the franchisor categorizes exits
-rather than the actual circumstances of each departure. (pp. 62&ndash;67)</p>
+
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
+
+<h3>Revenue disclosure gap</h3>
+<p>The absence of gross revenue disclosure is the most significant risk signal in this FDD —
+not because it implies bad economics, but because it prevents the buyer from independently
+validating the business model. Every other brand in the cohort provides some form of revenue
+data (per-territory, per-outlet, or per-franchisee). Hunters provides customer counts,
+treatment pricing, and customer values — the building blocks — but withholds the assembled
+number. A buyer must ask why, and must validate revenue directly with current franchisees.</p>
+
+<h3>The $107K initial franchise fee</h3>
+<p>The highest in the cohort by far. The $57K training/supply/support bundle is mandatory and
+non-negotiable. If the bundled services (training, supplies, call center first year) are
+genuinely worth $57K, this is fair pricing. If comparable services could be sourced for $20K–
+$30K, the buyer is overpaying. There is no way to verify this from the FDD alone — the buyer
+needs to compare the training program, supply quality, and call center service against what
+competitors offer at lower price points.</p>
 
 <h3>Item 19 exclusion rate</h3>
-<p>26% of Strategic Partners (22 of 85) are excluded from Item 19 performance data. Eight were
-excluded specifically for not investing in the franchisor's marketing programs &mdash; the same
-programs that cost $37,500/year minimum. Excluding underperformers who did not buy enough
-marketing from the performance tables creates a survivorship bias that overstates typical
-results. (p. 55)</p>
+<p>22 of 85 Strategic Partners (26%) are excluded from the Item 19 tables. Eight are excluded
+specifically for "failing to invest in MH marketing programs." Excluding operators who don't
+follow the system is defensible — but it also means the reported customer counts and values
+represent compliant operators only. If non-compliant operators have materially lower customer
+counts, the disclosed data overstates what a typical operator achieves.</p>
 
 <h3>Out-of-territory royalty</h3>
-<p>Revenue earned outside your territory incurs an additional 15% royalty on top of the standard
-10%, for a combined 25% royalty rate. This is disclosed but easy to miss. If your territory is
-small or you serve customers near the boundary, this surcharge is material. (p. 15)</p>
+<p>25% total royalty on revenue earned outside territory (10% standard + 15% surcharge). This
+is the most aggressive out-of-territory provision in the cohort. In practice, pest control
+customers don't know or respect franchise boundaries. If 10% of your revenue is classified as
+out-of-territory, you pay an extra $2,100–$5,250/year at typical revenue levels.</p>
 
-<h3>Entity and ownership</h3>
-<p>PE-backed (LD Parent, Inc. / CNL Strategic Capital, LLC). The brand has changed hands: the
-original concept was founded in 2013, current entity began May 2018. Now operating as a
-combination franchise covering pest control, mosquito control, and holiday lighting under
-three brand names. All five brands in this cohort are PE-backed; this is industry-standard.</p>
+<h3>Combination franchise complexity</h3>
+<p>Hunters is now a three-brand combination (Mosquito Hunters + Pest Hunters + Humbug Holiday
+Lighting). This diversification is genuinely valuable for offsetting seasonality, but it also
+means you're operating three distinct service lines with different skill requirements, inventory
+needs, and customer acquisition strategies. The operational complexity is higher than a
+single-service franchise.</p>
+
+<h3>Litigation</h3>
+<p>No litigation required to be disclosed. Clean record across the reporting period.</p>
 
 
-<h2>Peer Context</h2>
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
 
-<p>Mosquito Hunters occupies an unusual position in the cohort: highest cost to enter, weakest
-disclosure on unit economics, smallest system &mdash; but with a combination franchise model
-that no competitor offers and a dramatic 2024 turnaround. The holiday lighting program provides
-a genuine answer to the seasonality problem that plagues every mosquito-focused franchise.</p>
+<p>Mosquito Hunters occupies a unique position in this cohort: the smallest system, the only
+combination franchise, the highest initial fee, and the only brand that gives you customer
+data without giving you revenue. It is not easily comparable to the other four on a single
+dimension.</p>
 
-<p><strong>Closest comparison: Mosquito Joe.</strong> Both have high marketing spend floors
-(Hunters $37,500; Joe comparable), both charge 10% royalty, and both have total fee burdens
-in the 26&ndash;28% range at $300K revenue. Joe has a larger system (415 vs 135) and richer
-Item 19 data. Hunters has the combination franchise advantage and lower 2024 attrition.</p>
+<p><strong>Cost comparison: Mosquito Authority.</strong> Authority enters for $54K–$128K vs.
+Hunters' $141K–$171K. At $300K revenue, Authority's ongoing fees are $52,800 vs. Hunters'
+$80,300 — a $27,500/year gap. Authority has zero terminations vs. Hunters' recent 28. The
+cost-and-stability comparison heavily favors Authority. Hunters' advantage is the combination
+franchise: Authority offers mosquito control only.</p>
 
-<p><strong>Sharpest contrast: Mosquito Authority.</strong> Opposite on nearly every dimension.
-Authority: $54K&ndash;$127K investment, 17.6% fee burden, 546 outlets, zero terminations,
-rich Item 19 with per-franchisee revenue data. Hunters: $141K&ndash;$170K investment, 26.8%
-fee burden, 135 outlets, no total revenue disclosed. Authority is the low-cost/low-risk option;
-Hunters is a higher-cost bet on diversification through the combination franchise model.</p>
+<p><strong>Disclosure comparison: Mosquito Joe &amp; Squad.</strong> Joe and Squad both
+disclose gross revenue per franchise unit (Joe by tenure, Squad by quartile per territory).
+Hunters discloses customer counts and values but not the total. For financial modeling, Joe
+and Squad give you the assembled picture; Hunters gives you the parts and asks you to build
+it yourself.</p>
+
+<p><strong>The differentiation case: combination franchise.</strong> If you are specifically
+attracted to the multi-service model (mosquito + pest + holiday lighting), Hunters is the only
+option in this cohort. The holiday lighting data ($54K median per participating SP) represents
+a genuine counter-seasonal revenue stream that no competitor offers. The question is whether
+this diversification justifies the $107K initial fee and the disclosure limitations.</p>
 
 
 <table class="peer-table">
   <thead>
     <tr>
       <th>Metric</th>
-
+      
       <th class="num">Mosquito Authority</th>
-
+      
       <th class="num">Mosquito Hunters</th>
-
+      
       <th class="num">Mosquito Joe</th>
-
+      
       <th class="num">Mosquito Shield</th>
-
+      
       <th class="num">Mosquito Squad</th>
-
+      
     </tr>
   </thead>
   <tbody>
-
+    
     <tr>
       <td class="label">System size</td>
-
+      
       <td class="num">546</td>
-
+      
       <td class="num this-brand">135</td>
-
+      
       <td class="num">415</td>
-
+      
       <td class="num">435</td>
-
+      
       <td class="num">226</td>
-
+      
     </tr>
-
+    
     <tr>
       <td class="label">Investment range</td>
-
-      <td class="num">$54K&ndash;$127K</td>
-
-      <td class="num this-brand">$141K&ndash;$170K</td>
-
-      <td class="num">$150K&ndash;$192K</td>
-
-      <td class="num">$120K&ndash;$157K</td>
-
-      <td class="num">$162K&ndash;$220K</td>
-
+      
+      <td class="num">$54K–$127K</td>
+      
+      <td class="num this-brand">$141K–$170K</td>
+      
+      <td class="num">$150K–$192K</td>
+      
+      <td class="num">$120K–$157K</td>
+      
+      <td class="num">$162K–$220K</td>
+      
     </tr>
-
+    
     <tr>
       <td class="label">Fee burden at $300K</td>
-
+      
       <td class="num">$52,800</td>
-
+      
       <td class="num this-brand">$80,300</td>
-
+      
       <td class="num">$84,752</td>
-
+      
       <td class="num">$86,000</td>
-
+      
       <td class="num">$77,880</td>
-
+      
     </tr>
-
+    
     <tr>
       <td class="label">% of revenue</td>
-
+      
       <td class="num">17.6%</td>
-
+      
       <td class="num this-brand">26.8%</td>
-
+      
       <td class="num">28.3%</td>
-
+      
       <td class="num">28.7%</td>
-
+      
       <td class="num">26.0%</td>
-
+      
     </tr>
-
+    
     <tr>
       <td class="label">3-year net growth</td>
-
+      
       <td class="num">+22</td>
-
+      
       <td class="num this-brand">+8</td>
-
+      
       <td class="num">+43</td>
-
+      
       <td class="num">+140</td>
-
+      
       <td class="num">+3</td>
-
+      
     </tr>
-
+    
     <tr>
       <td class="label">2024 attrition</td>
-
+      
       <td class="num">1.8%</td>
-
+      
       <td class="num this-brand">0.0%</td>
-
+      
       <td class="num">5.7%</td>
-
+      
       <td class="num">11.1%</td>
-
+      
       <td class="num">4.3%</td>
-
+      
     </tr>
-
+    
     <tr>
       <td class="label">Royalty rate</td>
-
+      
       <td class="num">10%</td>
-
+      
       <td class="num this-brand">10%</td>
-
+      
       <td class="num">10/7%</td>
-
+      
       <td class="num">8%</td>
-
+      
       <td class="num">10/9/8%</td>
-
+      
     </tr>
-
+    
   </tbody>
 </table>
 
-<h2>Questions for Discovery Day</h2>
+
+<h3>Decision overlay</h3>
+<table class="decision-overlay">
+  <tbody>
+    
+    <tr>
+      <td class="overlay-label">Lowest-cost entry</td>
+      <td class="overlay-value">Mosquito Authority — $54K–$128K. Hunters' $107K franchise fee alone exceeds most competitors' total investment low end.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Lowest ongoing fee burden</td>
+      <td class="overlay-value">Mosquito Authority — 17–18% of revenue. Hunters is 26.8% at $300K.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Best revenue disclosure</td>
+      <td class="overlay-value">Mosquito Joe — Retention rates, per-treatment pricing, tenure-segmented sales. Hunters provides building blocks but withholds total revenue.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Most system stability</td>
+      <td class="overlay-value">Mosquito Authority — Zero terminations across 3 years. Hunters improved to zero in 2024 but started from 17 in 2022.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Only combination franchise</td>
+      <td class="overlay-value">Mosquito Hunters — Mosquito + pest + holiday lighting. Only brand addressing seasonality directly. Holiday median: $54K per participating SP.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Best unit economics data</td>
+      <td class="overlay-value">Mosquito Squad — Per-territory quartiles + $20.8M company-owned P&L. Hunters has no revenue or cost disclosure.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Best for first-time buyer</td>
+      <td class="overlay-value">Mosquito Authority — Lowest risk, lowest cost, simplest model. Hunters requires most pre-purchase diligence and highest initial fee.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
 <p>These questions are derived from specific findings in the Mosquito Hunters 2025 FDD.
-They are designed to surface information the FDD does not fully explain.</p>
+Each includes context on why it matters and what to listen for.</p>
 
 <ol class="question-list">
-
-  <li>The system went from 17 terminations in 2022 to zero in 2024. What specifically changed &mdash; franchisee support, enforcement policy, or something else?
-    <span class="question-context">Item 20, Tables 1&ndash;3, pp. 62&ndash;67. 28 terminations in 2022&ndash;2023, then zero.</span>
+  
+  <li>The Item 19 provides customer counts and values but never discloses gross revenue per franchise unit. Why?
+    <span class="question-context">Item 19 — 7 tables of operational data, no revenue total. Every other brand in the cohort discloses some form of revenue.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>Revenue disclosure is the single most useful data point for a prospective buyer. Its absence forces reliance on triangulation and franchisee conversations. Understanding the franchisor's reasoning tells you whether this is a strategic choice (revenue data is unfavorable) or a structural one (the combination franchise makes revenue reporting complex).</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Revenue varies significantly by service mix and market. We provide building blocks so buyers can model their specific situation. Here is supplemental revenue data we can share informally.' Acknowledges the gap, offers to fill it.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Our Item 19 is comprehensive — 7 tables of data. We give you more operational detail than most brands.' Deflects from what's missing.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for total revenue (all services combined) for the median Strategic Partner. Ask whether revenue data was disclosed in prior-year FDDs.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>Every franchise closure across all three reporting years is coded as a "Termination" &mdash; no non-renewals, no ceased operations. Why does every exit fall into a single category?
-    <span class="question-context">Item 20, Tables 1&ndash;3, pp. 62&ndash;67. Uniform classification across 28 closures is statistically unusual.</span>
+  
+  <li>The initial franchise fee is $107,000 — the highest in the cohort by far. What specifically does the $57,000 training/supply/support component include, and how does it compare to competitors' training programs?
+    <span class="question-context">Item 5. $50K license + $57K bundled package. Next highest is Shield at $54.5K total franchise fee.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>75% of the low-end investment goes directly to the franchisor. The $57K bundle is the most expensive pre-opening package in the cohort. If the services are genuinely worth $57K, it's fair. If not, the buyer is overpaying for a bundle they can't unbundle.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'The $57K covers [specific itemized list: X days training, Y months product supply, Z call center minutes]. Here's how each component is valued. Competitors charge less but provide [specific differences].' Transparent breakdown.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'It's a comprehensive launch program. Our franchisees tell us it's worth every penny.' No breakdown, no comparison.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for a line-item breakdown of the $57K. Ask what a franchisee receives differently than competitors' $0–$25K training programs.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>Item 19 excludes 22 of 85 Strategic Partners (26%), including 8 for not investing in MH marketing programs. What was the performance of those 8 excluded operators?
-    <span class="question-context">Item 19, Table A.1, p. 55. Exclusion for not buying marketing creates survivorship bias.</span>
+  
+  <li>17 terminations in 2022, 11 in 2023, then zero in 2024. What changed?
+    <span class="question-context">Item 20. All exits across all years coded as 'Terminations' — zero in any other category.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>The turnaround is the most dramatic in the cohort. Understanding what drove it tells you whether the improvement is structural (operational changes, better territory selection, improved support) or cyclical (one good year).</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'We [changed territory selection criteria / improved training / added support programs / restructured underperforming markets]. Here are the specific operational changes and their timing.' Cause-and-effect, not coincidence.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'We're focused on supporting our franchisees. The results speak for themselves.' No explanation for why 2024 was different from 2022.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask whether the same franchisor management team was in place throughout 2022–2024. Ask whether franchise agreement terms changed.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The Item 19 provides customer counts, per-treatment pricing, and customer values &mdash; but never total revenue per franchise unit. What is the average total revenue for a single-territory operator?
-    <span class="question-context">Item 19, Tables A.1&ndash;A.5, pp. 55&ndash;59. Critical gap: no total revenue figure disclosed.</span>
+  
+  <li>26 of 63 qualifying SPs participated in Humbug Holiday Lighting. What's the adoption trajectory, and what does a non-participating SP look like during winter?
+    <span class="question-context">Item 19 Table A.7. 26 SPs in 2024, up from 3 in 2023 pilot. Median revenue: $53,701.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>The combination franchise is the core differentiator. If only 41% of SPs participate in holiday lighting, 59% have a pure mosquito/pest business with winter dead season. Understanding adoption rates and barriers tells you how real the diversification is.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Adoption grew from 3 to 26 and we expect [X] next year. Non-participants typically [describe winter operations: reduced hours, off-season marketing, etc]. Here's the revenue impact of adding holiday lighting.' Adoption trajectory with economics.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Holiday lighting is optional but strongly recommended. Participants love it.' No adoption data, no economics for non-participants.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask what prevents the other 37 SPs from participating (inventory cost? skill gap? market?). Ask whether the $6K–$14K lighting inventory investment is a one-time or recurring cost.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The Humbug Holiday Lighting program shows $64,727 average revenue across 26 participants. What are the typical costs (labor, inventory replenishment, insurance) to generate that revenue?
-    <span class="question-context">Item 19, Table A.7, p. 61. Revenue disclosed but no cost data for holiday lighting.</span>
+  
+  <li>22 Strategic Partners (26%) are excluded from Item 19, including 8 for not investing in MH marketing. What were their customer counts?
+    <span class="question-context">Item 19 population notes. Exclusion rate is comparable to Shield's 21%.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>If excluded SPs have significantly lower customer counts, the reported quartile data is biased upward. The 8 excluded for marketing non-compliance are particularly interesting — their underperformance may reflect what happens when the marketing programs don't work or feel unaffordable.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Excluded SPs averaged [X] customers. The 8 marketing non-compliant operators averaged [Y] customers. Here's the data with all SPs included.' Transparent, quantified.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'We exclude operators who don't follow the system. The data represents what compliant franchisees achieve.' Defensible but avoids the performance question.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask whether any of the 8 marketing-excluded SPs were subsequently terminated. Ask for the customer count distribution with all 85 SPs included.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The marketing floor is $37,500/year &mdash; flagged as a "Special Risk" in the FDD itself. Has there been any consideration of restructuring this as a pure percentage to reduce the burden on smaller operators?
-    <span class="question-context">Item 6, pp. 15&ndash;16, 19&ndash;20; Special Risk flag on p. 4.</span>
+  
+  <li>The 25% royalty on out-of-territory revenue — how is 'outside territory' determined in practice, and what percentage of a typical SP's revenue falls outside?
+    <span class="question-context">Item 6. 10% standard + 15% surcharge for out-of-territory revenue.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>If boundary enforcement is strict and 10–15% of revenue is classified as out-of-territory, this adds $2,100–$7,900/year in extra royalty at typical revenue levels. In pest control, customers near territory edges frequently straddle boundaries.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'We define territory by [zip code / geography / household count]. Typical out-of-territory revenue is [X]% of total. Here's how disputes are resolved.' Specific mechanism and typical impact.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Territories are clearly defined. Out-of-territory revenue is rare.' No data on typical incidence.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for the average out-of-territory royalty paid per SP last year. Ask whether territory boundaries can be adjusted.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>Out-of-territory revenue incurs a 25% combined royalty (10% standard + 15% surcharge). How is "outside territory" determined for customers near a boundary, and how common is this surcharge in practice?
-    <span class="question-context">Item 6, p. 15. 15% additional royalty on out-of-territory Net Revenues.</span>
+  
+  <li>The vehicle lease runs 60–72 months at $1,200–$1,525/month. What is the total cost of ownership, and can franchisees source vehicles independently?
+    <span class="question-context">Item 7. Deposit $8.4K–$16.7K + monthly lease. Total over term: $72K–$110K.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>The vehicle cost over the lease term exceeds the franchise fee. If franchisees must use a designated supplier and lease structure, the total cost may be above market. If they can source independently, the Item 7 range is more controllable.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Franchisees can source vehicles independently as long as they meet [specific specs]. Here are the specs. The designated supplier offers [competitive advantage].' Flexibility and transparency.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'Our vehicle program ensures brand consistency. It's competitively priced.' No flexibility, no market comparison.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask whether any current franchisees sourced vehicles independently and at what cost.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The $107,000 franchise fee is the highest in the cohort by a wide margin. The training/supply/support component ($57,000) is larger than many competitors' entire franchise fee. What does this $57,000 specifically cover beyond initial training?
-    <span class="question-context">Item 5, pp. 14&ndash;15. $50K license + $57K training/supply = $107K total.</span>
+  
+  <li>The combination franchise adds pest control and holiday lighting. What percentage of total revenue does each service line contribute for a typical SP?
+    <span class="question-context">Brand is now Mosquito Hunters + Pest Hunters + Humbug Holiday Lighting.</span>
+    
+    <dl class="question-sub">
+      
+      <dt>Why it matters</dt>
+      <dd>Understanding the revenue mix tells you whether this is truly a diversified business or a mosquito franchise with add-ons. If 90% of revenue is mosquito, the combination is marketing, not economics.</dd>
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>'Typical mix is [X]% mosquito, [Y]% pest, [Z]% holiday. SPs with all three services average $[total]. Here's how the mix changes by market and tenure.' Specific, segmented.</dd>
+      
+      
+      <dt>Weak / evasive answer sounds like</dt>
+      <dd>'It depends on the market. We encourage SPs to maximize all three service lines.' No data on typical mix.</dd>
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Ask for revenue-mix data segmented by SPs who participate in all three services vs mosquito-only. Ask which service line is growing fastest.</dd>
+      
+    </dl>
+    
   </li>
-
-  <li>The technology fee starts at $150/month and may increase to $500/month at the franchisor's discretion. What would trigger an increase, and is there a cap beyond $500?
-    <span class="question-context">Item 6, p. 15. Current: $150/mo, jumps to $250/mo at $1M cumulative revenue, may go to $500/mo.</span>
-  </li>
-
-  <li>Working capital in Item 7 covers only 3 months ($11,880&ndash;$15,362). For a seasonal mosquito business, what do you recommend franchisees have in personal reserves to cover the first off-season?
-    <span class="question-context">Item 7, p. 21. 3-month working capital estimate in a seasonal business model.</span>
-  </li>
-
+  
 </ol>
 
 <div class="methodology">
-  <h2 style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
   <p><strong>Source document:</strong> Mosquito Hunters 2025 Franchise Disclosure Document,
   filed with the Wisconsin Department of Financial Institutions. 255-page
   regulator-source PDF. SHA-256: <code style="font-size:0.7rem">2226332c1fc1ea66d75e56dfc717f6536ba3193867c48696e6955695dd36f931</code></p>
@@ -696,16 +1465,22 @@ They are designed to surface information the FDD does not fully explain.</p>
   review. Field-level provenance recorded (source year, state, page number, item reference).
   Extraction confidence: high (3+ fields spot-checked against source).</p>
   <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
-  Revenue distributed evenly across the year. All mandatory fees enforced. Call center fee
-  at $750/month (Year 2+). Technology fee at $150/month. See
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
   fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
   <p><strong>Peer comparison:</strong> Same methodology applied to all 5 brands in cohort
   (Mosquito Authority, Mosquito Hunters, Mosquito Joe, Mosquito Shield, Mosquito Squad).
   All from 2025 FDDs filed with Wisconsin DFI.</p>
   <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
   recommendation to buy or avoid this franchise. It is a structured analysis of publicly
   available regulatory filings. The buyer should read the actual FDD, consult a franchise
-  attorney, and conduct their own due diligence before making any investment decision.</p>
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
 </div>
 
 </body>

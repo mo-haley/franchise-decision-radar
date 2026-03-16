@@ -11,7 +11,9 @@
         "mosquito-hunters",
         "mosquito-joe",
         "mosquito-shield",
-        "mosquito-squad"
+        "mosquito-squad",
+        "mosquito-sheriff",
+        "mosquitonix"
       ],
       "has_fee_model": true,
       "fee_model_file": "fee_burden_model_output.json",
@@ -31,8 +33,28 @@
         "lawn-pride",
         "lawn-squad"
       ],
-      "has_fee_model": false,
-      "comparison_pages": ["system-health", "cost-to-enter"]
+      "has_fee_model": true,
+      "fee_model_file": "lawn_fee_burden_model_output.json",
+      "comparison_pages": ["fee-burden", "system-health", "cost-to-enter"]
+    },
+    {
+      "id": "cleaning",
+      "display_name": "Residential Cleaning",
+      "short_name": "Cleaning",
+      "description": "Seven residential cleaning franchises that look similar from the outside but diverge sharply on network health, fee structure, and disclosure quality. Legacy giants are contracting while newer entrants grow.",
+      "url_prefix": "cleaning-",
+      "brands": [
+        "merry-maids",
+        "molly-maid",
+        "cleaning-authority",
+        "the-maids",
+        "maidpro",
+        "two-maids",
+        "maid-right"
+      ],
+      "has_fee_model": true,
+      "fee_model_file": "cleaning_fee_burden_model_output.json",
+      "comparison_pages": ["fee-burden", "system-health", "cost-to-enter"]
     }
   ]
 }

@@ -8,13 +8,19 @@
       "display_name": "Mosquito & Outdoor Pest Control",
       "description": "Residential mosquito and biting-pest outdoor treatment franchises.",
       "brand_count": 7,
-      "extraction_status": "5 of 7 brands extracted (Phase 1-2 complete). Mosquito Sheriff and MosquitoNix sourced but not yet extracted."
+      "extraction_status": "7 of 7 brands extracted."
     },
     "lawn_turf_treatment": {
       "display_name": "Lawn Care & Turf Treatment",
       "description": "Residential lawn care, fertilization, and weed/pest turf treatment franchises.",
       "brand_count": 6,
       "extraction_status": "6 of 6 brands extracted. All 6 PDFs sourced from Wisconsin DFI (2025 filings)."
+    },
+    "residential_cleaning": {
+      "display_name": "Residential Cleaning & Maid Service",
+      "description": "Residential house cleaning and maid service franchises.",
+      "brand_count": 7,
+      "extraction_status": "0 of 7 brands extracted. All 7 PDFs sourced from Wisconsin DFI. Pending extraction."
     }
   },
 
@@ -303,10 +309,9 @@
       "brand_name": "Mosquito Sheriff",
       "brand_slug": "mosquito-sheriff",
       "wedge": "mosquito_outdoor_pest",
-      "extraction_status": "pending",
+      "extraction_status": "extracted",
       "entity_aliases": {
-        "current_legal_entity": null,
-        "current_legal_entity_notes": "Not yet confirmed. Must extract from FDD cover page.",
+        "current_legal_entity": "Mosquito Sheriff Franchising, Inc.",
         "trade_names": ["Mosquito Sheriff"]
       },
       "filing_year": 2025,
@@ -326,10 +331,9 @@
       "brand_name": "MosquitoNix",
       "brand_slug": "mosquitonix",
       "wedge": "mosquito_outdoor_pest",
-      "extraction_status": "pending",
+      "extraction_status": "extracted",
       "entity_aliases": {
-        "current_legal_entity": null,
-        "current_legal_entity_notes": "Not yet confirmed. Must extract from FDD cover page.",
+        "current_legal_entity": "MosquitoNix Franchise, LLC",
         "trade_names": ["MosquitoNix"]
       },
       "filing_year": 2025,
@@ -482,6 +486,160 @@
       },
       "known_fdd_urls": [],
       "ambiguity_flags": []
+    },
+    {
+      "brand_name": "Merry Maids",
+      "brand_slug": "merry-maids",
+      "wedge": "residential_cleaning",
+      "extraction_status": "pending",
+      "entity_aliases": {
+        "current_legal_entity": "Merry Maids SPE LLC",
+        "trade_names": ["Merry Maids"]
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "merry-maids_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "automated_playwright",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "Molly Maid",
+      "brand_slug": "molly-maid",
+      "wedge": "residential_cleaning",
+      "extraction_status": "pending",
+      "entity_aliases": {
+        "current_legal_entity": "Molly Maid SPV LLC",
+        "trade_names": ["Molly Maid"]
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "molly-maid_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "automated_playwright",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "The Cleaning Authority",
+      "brand_slug": "cleaning-authority",
+      "wedge": "residential_cleaning",
+      "extraction_status": "pending",
+      "entity_aliases": {
+        "current_legal_entity": "The Cleaning Authority Franchising SPE LLC",
+        "trade_names": ["The Cleaning Authority"]
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "cleaning-authority_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "automated_playwright",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "The Maids",
+      "brand_slug": "the-maids",
+      "wedge": "residential_cleaning",
+      "extraction_status": "pending",
+      "entity_aliases": {
+        "current_legal_entity": "The Maids International, LLC",
+        "trade_names": ["The Maids"]
+      },
+      "filing_year": 2026,
+      "source_state": "WI",
+      "raw_pdf": "the-maids_2026_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "automated_playwright",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "MaidPro",
+      "brand_slug": "maidpro",
+      "wedge": "residential_cleaning",
+      "extraction_status": "pending",
+      "entity_aliases": {
+        "current_legal_entity": "MAIDPRO FRANCHISE, LLC",
+        "trade_names": ["MaidPro"]
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "maidpro_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "automated_playwright",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "Two Maids & A Mop",
+      "brand_slug": "two-maids",
+      "wedge": "residential_cleaning",
+      "extraction_status": "pending",
+      "entity_aliases": {
+        "current_legal_entity": "Two Maids Franchising, LLC",
+        "trade_names": ["Two Maids & A Mop", "Two Maids"]
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "two-maids_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "automated_playwright",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
+    },
+    {
+      "brand_name": "Maid Right",
+      "brand_slug": "maid-right",
+      "wedge": "residential_cleaning",
+      "extraction_status": "pending",
+      "entity_aliases": {
+        "current_legal_entity": "Maid Right, LLC",
+        "trade_names": ["Maid Right"]
+      },
+      "filing_year": 2025,
+      "source_state": "WI",
+      "raw_pdf": "maid-right_2025_wi_auto.pdf",
+      "sources": {
+        "wisconsin_dfi": {
+          "status": "confirmed_registered",
+          "access_method": "automated_playwright",
+          "search_url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx"
+        }
+      },
+      "known_fdd_urls": [],
+      "ambiguity_flags": []
     }
   ],
 
@@ -491,7 +649,7 @@
       "url": "https://apps.dfi.wi.gov/apps/FranchiseSearch/MainSearch.aspx",
       "trust_tier": "regulator",
       "access_method": "manual_browser",
-      "notes": "All 13 brands (7 mosquito, 6 lawn) confirmed registered. ASP.NET WebForms with session tokens prevents programmatic access. No CAPTCHA."
+      "notes": "All 20 brands (7 mosquito, 6 lawn, 7 cleaning) confirmed registered. ASP.NET WebForms portal. No CAPTCHA."
     },
     "california_dfpi": {
       "name": "California Department of Financial Protection and Innovation (DFPI)",

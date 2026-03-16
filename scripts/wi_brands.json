@@ -76,5 +76,47 @@
     "search_term": "Lawn Squad",
     "expected_entity": "Lawn Squad",
     "wedge": "lawn_turf_treatment"
+  },
+  {
+    "brand_slug": "merry-maids",
+    "search_term": "Merry Maids",
+    "expected_entity": "Merry Maids",
+    "wedge": "residential_cleaning"
+  },
+  {
+    "brand_slug": "molly-maid",
+    "search_term": "Molly Maid",
+    "expected_entity": "Molly Maid",
+    "wedge": "residential_cleaning"
+  },
+  {
+    "brand_slug": "cleaning-authority",
+    "search_term": "Cleaning Authority",
+    "expected_entity": "Cleaning Authority",
+    "wedge": "residential_cleaning"
+  },
+  {
+    "brand_slug": "the-maids",
+    "search_term": "The Maids",
+    "expected_entity": "The Maids",
+    "wedge": "residential_cleaning"
+  },
+  {
+    "brand_slug": "maidpro",
+    "search_term": "MaidPro",
+    "expected_entity": "MaidPro",
+    "wedge": "residential_cleaning"
+  },
+  {
+    "brand_slug": "two-maids",
+    "search_term": "Two Maids",
+    "expected_entity": "Two Maids",
+    "wedge": "residential_cleaning"
+  },
+  {
+    "brand_slug": "maid-right",
+    "search_term": "Maid Right",
+    "expected_entity": "Maid Right",
+    "wedge": "residential_cleaning"
   }
 ]
