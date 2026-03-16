@@ -1109,7 +1109,7 @@ BRAND_DIFFERENTIATORS: dict[str, str] = {
 
 # Stripe Payment Links — add real URLs as reports go live.
 STRIPE_PAYMENT_LINKS: dict[str, str | None] = {
-    "mosquito-authority": "https://buy.stripe.com/REPLACE_ME_MOSQUITO_AUTHORITY",  # TODO: replace with real Stripe Payment Link
+    "mosquito-authority": "https://buy.stripe.com/dRmbJ3ewz1PY6E0ejCaw001",
     "mosquito-hunters": None,
     "mosquito-joe": None,
     "mosquito-shield": None,
