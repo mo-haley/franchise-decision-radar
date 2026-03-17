@@ -187,21 +187,19 @@
     <span style="display:inline-block; width:4px; height:1.4rem; background:#2563eb; border-radius:2px; flex-shrink:0;"></span>
     <h3 style="margin:0; font-size:1.1rem;">{{ group.display_name }}</h3>
   </div>
-  <p class="small muted" style="margin:0.15rem 0 0 1rem;">{{ group.paid_count }} paid report{{ 's' if group.paid_count != 1 else '' }} &middot; {{ group.total_count }} brands total</p>
+  <p class="small muted" style="margin:0.15rem 0 0 1rem;">{{ group.paid_count }} report{{ 's' if group.paid_count != 1 else '' }} available</p>
 </div>
 <div style="max-width: 540px;">
   {% for b in group.brands %}
+  {% if b.stripe_payment_link %}
   <div class="report-purchase-card">
     <div class="report-purchase-info">
       <h3>{{ b.brand_name }}{% if b.differentiator %}<span class="report-differentiator">{{ b.differentiator }}</span>{% endif %}</h3>
       <p class="small muted">{{ b.system_size }} outlets &middot; Franchising since {{ b.year_first_franchised }}</p>
     </div>
-    {% if b.stripe_payment_link %}
     <a href="{{ b.stripe_payment_link }}" class="cta-button" style="font-size:0.82rem; padding:0.5rem 1.15rem; white-space:nowrap;">Get report &mdash; $99</a>
-    {% else %}
-    <a href="{{ b.slug }}.html" style="font-size:0.82rem; font-weight:600; white-space:nowrap;">Free review &rarr;</a>
-    {% endif %}
   </div>
+  {% endif %}
   {% endfor %}
 </div>
 {% endfor %}
