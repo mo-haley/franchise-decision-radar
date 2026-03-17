@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Your {{ brand_name }} Decision Report — Franchise Decision Radar{% endblock %}
+{% block title %}Your {{ brand_name if not brand_name.startswith("The ") else brand_name[4:] }} Decision Report — Franchise Decision Radar{% endblock %}
 
 {% block head %}
 <meta name="robots" content="noindex, nofollow">
@@ -8,7 +8,7 @@
 {% block content %}
 <div style="max-width: 580px; margin: 1.5rem 0 0;">
 
-  <h1 style="font-size: 1.75rem;">Your {{ brand_name }} Decision Report is ready.</h1>
+  <h1 style="font-size: 1.75rem;">Your {{ brand_name if not brand_name.startswith("The ") else brand_name[4:] }} Decision Report is ready.</h1>
   <p class="subhead">
     You now have the full buyer-facing analysis, including fee structure, system health,
     disclosed risks, and the issues most likely to matter before signing.
@@ -30,7 +30,7 @@
 
   <h2 style="font-size: 1.1rem;">What you just received</h2>
   <p>
-    This report is designed to help you pressure-test the {{ brand_name }} opportunity
+    This report is designed to help you pressure-test the {{ brand_name if not brand_name.startswith("The ") else brand_name[4:] }} opportunity
     before you commit capital. It focuses on the economics, disclosed constraints, system
     stability, and the specific issues a buyer should pay close attention to in the FDD.
   </p>
@@ -38,31 +38,39 @@
   <div class="report-sections" style="margin-bottom: 2rem;">
     <div class="report-section-item">
       <span class="report-section-num">1</span>
-      <div><div class="report-section-title">Fee Burden Deep Dive</div></div>
+      <div><div class="report-section-title">Executive Summary &amp; Decision Scorecard</div></div>
     </div>
     <div class="report-section-item">
       <span class="report-section-num">2</span>
-      <div><div class="report-section-title">Item 19 Revenue Translation</div></div>
+      <div><div class="report-section-title">Buyer-Fit Profile</div></div>
     </div>
     <div class="report-section-item">
       <span class="report-section-num">3</span>
-      <div><div class="report-section-title">Investment Breakdown</div></div>
+      <div><div class="report-section-title">Fee Burden Analysis &amp; Cohort Comparison</div></div>
     </div>
     <div class="report-section-item">
       <span class="report-section-num">4</span>
-      <div><div class="report-section-title">System Health Narrative</div></div>
+      <div><div class="report-section-title">Item 19 Translation &amp; Revenue Triangulation</div></div>
     </div>
     <div class="report-section-item">
       <span class="report-section-num">5</span>
-      <div><div class="report-section-title">Risk Flags &amp; Litigation</div></div>
+      <div><div class="report-section-title">Economics Reality Check &amp; Payback Sensitivity</div></div>
     </div>
     <div class="report-section-item">
       <span class="report-section-num">6</span>
-      <div><div class="report-section-title">Discovery Day Questions</div></div>
+      <div><div class="report-section-title">Investment Breakdown</div></div>
     </div>
     <div class="report-section-item">
       <span class="report-section-num">7</span>
-      <div><div class="report-section-title">Peer Positioning</div></div>
+      <div><div class="report-section-title">System Health &amp; Risk Signals</div></div>
+    </div>
+    <div class="report-section-item">
+      <span class="report-section-num">8</span>
+      <div><div class="report-section-title">Peer Context &amp; Decision Overlay</div></div>
+    </div>
+    <div class="report-section-item">
+      <span class="report-section-num">9</span>
+      <div><div class="report-section-title">Discovery Day Diligence Script</div></div>
     </div>
   </div>
 

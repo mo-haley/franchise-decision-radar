@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merry Maids — Franchise Decision Report</title>
+<style>
+@media print {
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a; background: #fff; line-height: 1.7;
+  max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem;
+}
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0 0 0.25rem; letter-spacing: -0.02em; font-family: -apple-system, sans-serif; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid #ccc; font-family: -apple-system, sans-serif; }
+h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.4rem; font-family: -apple-system, sans-serif; }
+p { margin: 0 0 0.9rem; }
+strong { font-weight: 700; }
+a { color: #1a1a1a; }
+
+.report-header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 1.75rem; }
+.report-meta { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; line-height: 1.5; margin-top: 0.5rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; font-family: -apple-system, sans-serif; }
+thead th { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 2px solid #333; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #555; }
+thead th.num { text-align: right; }
+tbody td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; }
+tbody td.num { text-align: right; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; }
+tbody td.label { font-weight: 600; white-space: nowrap; }
+
+.callout { padding: 0.75rem 1rem; margin: 0.75rem 0 1.25rem; border-left: 3px solid #d97706; background: #fffbeb; font-size: 0.88rem; }
+.callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
+
+.question-list { list-style: none; padding: 0; counter-reset: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
+.question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+.question-list li:last-child { border-bottom: none; }
+.question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
+
+.methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
+.methodology p { margin: 0 0 0.5rem; }
+
+.exec-summary { font-size: 1.02rem; line-height: 1.75; }
+.peer-table td.this-brand { background: #f5f7fa; }
+
+.implication {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem;
+  color: #1e40af; margin: 0.5rem 0 1rem; line-height: 1.5;
+  padding-left: 0.75rem; border-left: 2px solid #93c5fd;
+}
+.implication strong { color: #1e40af; }
+ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
+ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+.toc-list { counter-reset: toc-counter; }
+.toc-list li .toc-num-auto::before {
+  counter-increment: toc-counter;
+  content: counter(toc-counter);
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">Merry Maids</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: 2025 Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: Merry Maids SPE LLC</span>
+    <span>Report generated: 2026-03-17</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num toc-num-auto"></span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    
+    <li><span class="toc-num toc-num-auto"></span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
+  <h1>Merry Maids</h1>
+  <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
+  <div class="report-meta">
+    Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
+    Legal entity: Merry Maids SPE LLC<br>
+    Report generated: 2026-03-17 &middot; Franchise Decision Radar
+  </div>
+</div>
+
+<h2 id="executive-summary">Executive Summary</h2>
+<div class="exec-summary">
+
+<p>Merry Maids is the second-largest residential cleaning franchise in this cohort (802 units as of year-end
+2024) and among the oldest (franchising since 1980). It is owned by Roark Capital through the ServiceMaster
+securitization structure — not Neighborly/KKR (a common misconception). The system is in severe contraction:
+989 to 802 units over three years, a net loss of 187 (-18.9%), with the decline accelerating each year
+(-43, -62, -82). This is the most aggressive contraction trajectory in the cohort.</p>
+
+<p>The Item 19 discloses total gross revenue for "Qualified Franchises" (306 of 802 units with 40,000+
+Qualified Households): average $487,441, median $427,425. But 419 "Legacy Franchises" and 90 that ceased
+operations during 2024 are excluded — survivorship bias is significant. The broader picture from Table 3
+shows all 725 Active Franchises averaging $347,990 per franchise (median $262,519). The gap between
+Qualified and all-franchise averages suggests Legacy territories substantially underperform.</p>
+
+<p>The fee structure is mid-cohort: 11.0% at $300K with a 7% base royalty (discretionary incentive tiers at
+$400K and $500K), 2% total marketing, and $499/month technology fee. The royalty incentive tiers are
+explicitly discretionary — the franchisor may change or discontinue them at any time. This means the true
+guaranteed ongoing rate is 9% (7% royalty + 2% marketing) plus technology, not the 6% or 5% that the
+incentive tiers suggest at higher revenue.</p>
+
+</div>
+
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the residential cleaning cohort.</p>
+
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">Entry cost burden</td>
+      <td class="rating rating-mixed">Moderate</td>
+      <td class="sc-summary">$127K–$170K total investment. Mid-cohort. $55K flat franchise fee with multiple discount programs (military 20%, affiliate 15%, conversion 15%).</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Ongoing fee burden</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">11.0% at $300K. Mid-cohort. But royalty incentive tiers (6% and 5% at higher revenue) are discretionary and can be withdrawn at any time.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">System stability</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">Severe contraction: -187 units over 3 years (-18.9%). 73 ceased operations in 2024 alone. Decline is accelerating, not stabilizing.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Revenue disclosure</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Total gross revenue by quartile for Qualified Franchises AND by Franchise Ownership Group size. Three tables with genuine analytical depth.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Disclosure quality</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Severe survivorship bias: only 306 of 802 units in Table 1 (38.2%). 90 ceased businesses excluded. Confidentiality clauses restrict franchisee speech.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Downside risk profile</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">Accelerating contraction. 90 businesses ceased in 2024. Liquidated damages clause. Wisconsin risk disclosure explicitly warns of high turnover rate.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Buyer fit breadth</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Strong brand recognition and established infrastructure. Multi-unit economics disclosed (FOG data). But system trajectory is concerning for long-term brand investment.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Overall</td>
+      <td class="rating rating-weak">Caution</td>
+      <td class="sc-summary">Meaningful revenue data offset by the most severe system contraction in the cohort. Qualified Franchise economics look viable ($487K average), but the system is losing units faster than any peer. Relative cohort position does not establish absolute profitability.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+Merry Maids has genuine strengths: a recognized brand, disclosed revenue data,
+a clean direct litigation profile, and an established multi-unit operator ecosystem. But the system
+contraction is severe and accelerating — 82 net unit losses in 2024 alone, with 73 businesses ceasing
+operations. The Wisconsin risk disclosure explicitly warns that this franchise "could be a higher risk
+investment than a franchise in a system with a lower turnover rate." When the state regulator adds a
+warning label, read it carefully. Your diligence must focus on why units are exiting at this rate and
+whether the available territories represent opportunity (former operators who failed for controllable
+reasons) or signal (structural decline in the brand's competitiveness).
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+
+<h3>Best fit for</h3>
+<ul class="fit-list">
+<li><strong>Multi-unit operator seeking scale:</strong> The FOG (Franchise Ownership Group) data shows
+top-quartile multi-unit operators averaging $2.24M in combined gross sales. The system is designed for
+multi-territory ownership — 67% of operators hold 2+ territories.</li>
+<li><strong>Resale buyer acquiring an existing operation:</strong> With 35 transfers in 2024 and the
+independent MMFOA franchisee association, there is an active resale market. Buying an existing, cash-flowing
+territory may be lower-risk than starting new in a contracting system.</li>
+<li><strong>Conversion franchise buyer:</strong> 15% discount on franchise fee for conversion, plus
+$250/customer acquisition fee for existing territory customers. If you already run a cleaning business,
+the conversion path reduces entry cost and preserves revenue continuity.</li>
+</ul>
+
+<h3>Weaker fit for</h3>
+<ul class="fit-list">
+<li><strong>New-to-franchise buyer seeking system momentum:</strong> The system is contracting at an
+accelerating rate. New unit openings (4, 13, 8 per year) are minimal compared to exits. If you want to
+join a growing brand, Two Maids or The Cleaning Authority are expanding.</li>
+<li><strong>Buyer relying on discretionary royalty tiers:</strong> The 6% and 5% incentive rates above
+$400K and $500K are not guaranteed. If the franchisor discontinues them, your effective royalty jumps from
+~6.3% blended to 7% flat at $500K — a $3,500/year increase. Do not build your financial model around
+rates the franchisor can revoke.</li>
+<li><strong>Single-territory buyer in a small market:</strong> If your territory has fewer than 40,000
+Qualified Households, you are a "Legacy Franchise" — excluded from Table 1 of Item 19 entirely. You have
+no disclosed revenue benchmarks for your territory type.</li>
+</ul>
+
+<h3>Proceed only if</h3>
+<ul class="fit-list">
+<li>You understand why 73 businesses ceased operations in 2024 and whether the territories available to
+you were among them. Ask the franchisor for the specific exit history of your proposed territory.</li>
+<li>You have modeled your financials using the 7% base royalty, not the incentive tiers. If the incentive
+rates hold, treat it as upside.</li>
+<li>You have talked to current franchisees — acknowledging that confidentiality clauses may limit what
+they share — about whether franchisor support quality has declined as the system contracts.</li>
+</ul>
+
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
+
+<p>Merry Maids' fee burden is mid-cohort: 11.0% at $300K, declining to 10.0% at $500K if the discretionary
+royalty incentive tiers hold. This places it slightly above Molly Maid (10.4%) and MaidPro (10.0%), but
+well below The Maids (19.7%) and Two Maids (21.6%). The important caveat: the royalty incentive tiers that
+reduce the rate from 7% to 6% ($400K–$500K) and 5% (above $500K) are explicitly discretionary. The
+guaranteed fee floor is 9% of revenue (7% royalty + 2% marketing) plus $499/month technology.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>At Revenue</th>
+      <th class="num">Royalty</th>
+      <th class="num">Marketing</th>
+      <th class="num">Tech / Other</th>
+      <th class="num">Total</th>
+      <th class="num">% of Rev</th>
+      <th class="num">Cohort Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">$200,000</td>
+      <td class="num">$14,000</td>
+      <td class="num">$4,000</td>
+      <td class="num">$5,988</td>
+      <td class="num"><strong>$23,988</strong></td>
+      <td class="num">12.0%</td>
+      <td class="num">4/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$300,000</td>
+      <td class="num">$21,000</td>
+      <td class="num">$6,000</td>
+      <td class="num">$5,988</td>
+      <td class="num"><strong>$32,988</strong></td>
+      <td class="num">11.0%</td>
+      <td class="num">4/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$400,000</td>
+      <td class="num">$28,000</td>
+      <td class="num">$8,000</td>
+      <td class="num">$5,988</td>
+      <td class="num"><strong>$41,988</strong></td>
+      <td class="num">10.5%</td>
+      <td class="num">4/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$500,000</td>
+      <td class="num">$34,000</td>
+      <td class="num">$10,000</td>
+      <td class="num">$5,988</td>
+      <td class="num"><strong>$49,988</strong></td>
+      <td class="num">10.0%</td>
+      <td class="num">4/7</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">The Cleaning Authority</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 35.2%"></div>
+    </div>
+    <div class="fee-bar-value">7.6%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">MaidPro</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 46.3%"></div>
+    </div>
+    <div class="fee-bar-value">10.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Molly Maid</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 48.1%"></div>
+    </div>
+    <div class="fee-bar-value">10.4%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Merry Maids</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill this-brand" style="width: 50.9%"></div>
+    </div>
+    <div class="fee-bar-value">11.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Maid Right</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 78.2%"></div>
+    </div>
+    <div class="fee-bar-value">16.9%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">The Maids</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 91.2%"></div>
+    </div>
+    <div class="fee-bar-value">19.7%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Two Maids & A Mop</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 100.0%"></div>
+    </div>
+    <div class="fee-bar-value">21.6%</div>
+  </div>
+  
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+
+
+
+<h3>Component breakdown</h3>
+<ul class="compact">
+<li><strong>Royalty (7% base, discretionary tiers):</strong> 7% of Gross Sales is the contractual base.
+"Royalty Incentive" reduces to 6% on $400K–$500K and 5% above $500K — but the FDD states this incentive
+"may be changed or discontinued at any time." National Account revenue excluded from tier calculation.
+Resets each calendar year. Failure to timely renew franchise agreement triggers 2.5% royalty increase
+(to 9.5%). (pp. 24, 30)</li>
+<li><strong>Marketing (2% total):</strong> Clean split: 1.3% Ad Fund (national) + 0.7% Local Marketing
+Obligation (must be spent on approved "Eligible Marketing"). If Local Marketing Obligation not met,
+shortfall must be contributed to the Ad Fund. Plus $6,000 Initial Marketing Obligation in 120-day window
+around opening. (pp. 24–25)</li>
+<li><strong>Technology ($499/month):</strong> Per Franchised Business. Covers MM360 CRM, Service Mobility
+software, Office 365, LMS, BI platform. Begins at signing (pre-opening). Additional QuickBooks license
+~$475/year separate. (pp. 23, 25)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> At $300K revenue, Merry Maids retains ~$267K after modelable franchisor
+fees — comparable to Molly Maid (~$269K) and slightly less than MaidPro (~$270K). The gap is narrow at
+this level. But if the royalty incentive is revoked, the $400K+ economics change: at $500K, you'd retain
+~$450K with incentive tiers vs ~$443K without — a $7,000/year difference that compounds over a 10-year term.
+</div>
+
+<div class="callout">
+<div class="callout-title">Late fees are unusually punitive</div>
+Interest on unpaid balances: 2% per month compounded daily (24% APR) or max legal rate. Late fees: $200/week
+for first 4 weeks, then $500/week, plus all costs including attorneys' fees. These are among the most
+aggressive late-payment provisions in the cohort. If cash flow timing is tight (seasonal business, slow
+ramp-up), these penalties can compound quickly. (p. 28)
+</div>
+
+
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
+
+<p>Merry Maids' Item 19 provides three tables with meaningful analytical depth — but severe survivorship
+bias limits how much you can trust the headline numbers. Understanding what is included and excluded is
+as important as the numbers themselves.</p>
+
+<h3>Table 1 — Qualified Franchises (306 of 802 units)</h3>
+<ul class="compact">
+<li><strong>Population:</strong> 306 "Qualified Franchises" — territories with 40,000+ Qualified Households
+and office physically within the territory. This is 38.2% of total units.</li>
+<li><strong>Average:</strong> $487,441. Median: $427,425.</li>
+<li><strong>Top quartile (77 units):</strong> Average $919,797, median $854,086.</li>
+<li><strong>Bottom quartile (77 units):</strong> Average $169,957, median $173,413. Low of $42,868.</li>
+<li><strong>41.5% at or above the average</strong> — top-heavy distribution.</li>
+</ul>
+
+<h3>Table 2 — Franchise Ownership Groups (249 FOGs)</h3>
+<ul class="compact">
+<li><strong>Average FOG revenue:</strong> $1,047,237. Median: $767,299.</li>
+<li>Multi-unit operators dominate: top 10% of FOGs average $3.23M.</li>
+<li>67% of FOGs operate 2+ franchises — this is a multi-unit system.</li>
+</ul>
+
+<h3>Table 3 — Revenue by FOG size (the most revealing table)</h3>
+<ul class="compact">
+<li><strong>Single-unit FOGs (82):</strong> Average $547,630 per franchise. Median: $515,865.</li>
+<li><strong>2-unit FOGs (70):</strong> Average $379,135 per franchise. Median: $339,229.</li>
+<li><strong>5-7 unit FOGs (31):</strong> Average $299,005 per franchise. Median: $237,477.</li>
+<li><strong>All 725 Active Franchises:</strong> Average $347,990. Median: $262,519.</li>
+<li>Key insight: per-franchise revenue <strong>decreases</strong> as FOG size increases. Single-unit
+operators have the highest per-franchise average ($548K) and median ($516K). Multi-unit operators spread
+revenue across more territories, many of which are likely smaller Legacy territories.</li>
+</ul>
+
+<h3>What's excluded</h3>
+<ul class="compact">
+<li><strong>419 Legacy Franchises:</strong> Active but not "Qualified" (smaller territories, or office
+outside territory). Excluded from Table 1 entirely. Their all-franchise average of $348K (Table 3) vs
+Qualified average of $487K suggests they substantially underperform.</li>
+<li><strong>90 businesses that ceased operations in 2024:</strong> Excluded from all tables. None opened
+within 12 months prior to closing. This is severe survivorship bias — 90 closures from 802 units (11.2%)
+are removed before calculating averages.</li>
+<li><strong>No cost data:</strong> Revenue only. No COGS, margins, or profitability of any kind.</li>
+</ul>
+
+
+
+
+<h3>What the excluded units tell you</h3>
+<p>The gap between Table 1 (Qualified, $487K average) and Table 3 all-franchise data ($348K average)
+is $139K — a 28.5% difference. This means the 419 Legacy Franchises that are excluded from the headline
+number significantly underperform the Qualified population. If you are offered a Legacy territory (under
+40,000 QH), your closest revenue benchmark is the all-franchise Table 3 data, not the Table 1 headline.</p>
+
+<p><strong>For a single-territory Qualified Franchise at the median ($427K):</strong></p>
+<ul class="compact">
+<li>Franchisor fees at 11.0%: ~$47K</li>
+<li>Revenue after fees: ~$380K</li>
+<li>Estimated COGS at 55% (industry norm, not disclosed): ~$235K</li>
+<li>Remaining for overhead and owner draw: ~$145K</li>
+<li>After overhead (rent $12K–$18K, insurance $5K–$10K, vehicle $6K–$10K, misc $5K–$8K):
+~$99K–$112K for owner income before taxes</li>
+</ul>
+
+<p><strong>For a single-territory at the all-franchise median ($263K):</strong></p>
+<ul class="compact">
+<li>Franchisor fees at ~11%: ~$29K</li>
+<li>Revenue after fees: ~$234K</li>
+<li>Estimated COGS at 55%: ~$145K</li>
+<li>Remaining: ~$89K</li>
+<li>After overhead: ~$48K–$61K for owner income</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> The economics look viable at the Qualified Franchise median ($427K) but
+tight at the all-franchise median ($263K). Given that 90 businesses closed in 2024 — and their revenue
+is excluded from all tables — the actual distribution includes a significant tail of territories where
+the economics did not work. If you are evaluating Merry Maids, focus on whether your proposed territory
+resembles the Qualified population or the broader all-franchise population. The $140K gap between those
+benchmarks is the difference between a viable and a marginal business.
+</div>
+
+
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
+This is not a profitability forecast. It uses Merry Maids' disclosed Table 1 revenue for Qualified
+Franchises (306 of 802 total units) and Table 3 all-franchise data. No cost data is disclosed — COGS
+is estimated from industry norms. The royalty incentive tiers are discretionary and may be changed or
+discontinued. Your actual results depend on territory size, local market conditions, labor costs, and
+whether your territory qualifies as a "Qualified Franchise" or a Legacy territory.</p>
+
+
+<table class="scenario-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="scenario-name">All-franchise median (Table 3)</td>
+      <td class="num">$263,000</td>
+      <td class="num">$29,658 (11.3%)</td>
+      <td class="num">$144,650</td>
+      <td class="num"><strong>$88,692</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Qualified Franchise median (Table 1)</td>
+      <td class="num">$427,000</td>
+      <td class="num">$44,148 (10.3%)</td>
+      <td class="num">$234,850</td>
+      <td class="num"><strong>$148,002</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Single-unit FOG average (Table 3)</td>
+      <td class="num">$548,000</td>
+      <td class="num">$49,988 (9.1%)</td>
+      <td class="num">$301,400</td>
+      <td class="num"><strong>$196,612</strong></td>
+    </tr>
+    
+  </tbody>
+</table>
+<p class="assumption-note">Revenue from Item 19: all-franchise median from Table 3 ($262,519, rounded to $263K), Qualified Franchise median from Table 1 ($427,425, rounded to $427K), single-unit FOG average from Table 3 ($547,630, rounded to $548K). COGS estimated at 55% (cleaning industry norm — not disclosed by Merry Maids). Royalty modeled at 7% base rate (discretionary incentive tiers not included as they may be revoked). 'Remaining' must cover all overhead, taxes, and owner draw. 90 businesses that ceased operations in 2024 are excluded from all revenue benchmarks — survivorship bias applies.</p>
+
+
+
+
+
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
+
+<p>Mid-cohort entry cost: $126,880–$170,110. The flat $55,000 franchise fee is straightforward, with
+multiple discount programs: Military (20% off), Affiliate (15% — existing ServiceMaster/related brand
+franchisee or employee), Conversion (15%), Industry Experience (5%). Actual fees collected in 2024
+ranged from $18,750 to $49,500. An additional $250 per existing customer acquisition fee may apply if
+the territory has active customers from a prior operator. (pp. 22–24)</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th class="num">Low</th>
+      <th class="num">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>Initial Franchise Fee</td>
+      <td class="num">$55,000</td>
+      <td class="num">$55,000</td>
+    </tr>
+    
+    <tr>
+      <td>Travel and Living Expenses During Training</td>
+      <td class="num">$2,500</td>
+      <td class="num">$7,000</td>
+    </tr>
+    
+    <tr>
+      <td>Real Estate and Improvements</td>
+      <td class="num">$2,000</td>
+      <td class="num">$4,000</td>
+    </tr>
+    
+    <tr>
+      <td>Software and Hardware</td>
+      <td class="num">$1,700</td>
+      <td class="num">$4,300</td>
+    </tr>
+    
+    <tr>
+      <td>Office Equipment</td>
+      <td class="num">$5,250</td>
+      <td class="num">$6,850</td>
+    </tr>
+    
+    <tr>
+      <td>Opening Inventory</td>
+      <td class="num">$6,500</td>
+      <td class="num">$8,000</td>
+    </tr>
+    
+    <tr>
+      <td>Insurance</td>
+      <td class="num">$3,400</td>
+      <td class="num">$9,400</td>
+    </tr>
+    
+    <tr>
+      <td>Employee Screening</td>
+      <td class="num">$80</td>
+      <td class="num">$160</td>
+    </tr>
+    
+    <tr>
+      <td>Telephone Answering Service</td>
+      <td class="num">$50</td>
+      <td class="num">$300</td>
+    </tr>
+    
+    <tr>
+      <td>Opening Marketing</td>
+      <td class="num">$6,000</td>
+      <td class="num">$8,000</td>
+    </tr>
+    
+    <tr>
+      <td>Miscellaneous Opening Costs</td>
+      <td class="num">$1,400</td>
+      <td class="num">$10,000</td>
+    </tr>
+    
+    <tr>
+      <td>Professional Fees</td>
+      <td class="num">$5,000</td>
+      <td class="num">$15,000</td>
+    </tr>
+    
+    <tr>
+      <td>Additional Funds - 3 Months</td>
+      <td class="num">$38,000</td>
+      <td class="num">$43,000</td>
+    </tr>
+    
+    <tr style="border-top:2px solid #333">
+      <td class="label">Total</td>
+      <td class="num"><strong>$126,880</strong></td>
+      <td class="num"><strong>$170,110</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>What to know about the major line items</h3>
+<ul class="compact">
+<li><strong>Franchise Fee ($55,000 flat):</strong> Fixed, nonrefundable, includes Initial Training for
+two people. Multiple discounts available but only one may be used. Conversion franchisees (existing cleaning
+businesses) get 15% off. At the military discount: $44,000. (pp. 22–23)</li>
+<li><strong>Additional Funds — 3 months ($38,000–$43,000):</strong> Covers employee wages, payroll taxes,
+uniforms, licenses, phone/internet/utilities, vehicle payments, bank charges, advertising, supplies, Technology
+Fees, credit card processing. Does not include owner salary or draw. This is the largest single line item.
+(pp. 31, 33)</li>
+<li><strong>Professional Fees ($5,000–$15,000):</strong> Legal and accounting. The wide range suggests you
+should budget for the high end if you want thorough FDD review and entity formation. (pp. 31, 33)</li>
+<li><strong>Insurance ($3,400–$9,400):</strong> First-year prepayment including GL, auto, fidelity bond,
+workers' comp, employment practices liability. Varies by state and payroll size. (pp. 31–32)</li>
+<li><strong>Opening Marketing ($6,000–$8,000):</strong> Includes the mandatory $6,000 Initial Marketing
+Obligation in the 120-day window around opening. (p. 31)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> Plan for ~$149K at the midpoint. The franchise fee discounts (up to 20%)
+can reduce total investment by $8K–$11K if you qualify. The Technology Fee ($499/month) begins at signing,
+not at opening — so you'll pay $1,000–$1,500 in tech fees before the business generates any revenue.
+Factor this into your pre-opening cash burn estimate.
+</div>
+
+
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
+
+<p>Merry Maids is experiencing the most severe system contraction in the residential cleaning cohort.
+The system has shrunk from 989 to 802 units over three years — a net loss of 187 units (-18.9%). The
+decline is accelerating: -43 (2022), -62 (2023), -82 (2024). In 2024 alone, 73 businesses ceased
+operations (8.3% of start-of-year count), 10 were terminated, and 7 were not renewed. Only 8 new
+franchises opened. Wisconsin's mandatory risk disclosure states this franchise "could be a higher risk
+investment than a franchise in a system with a lower turnover rate." (pp. 4, 63–70)</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num">Opened</th>
+      <th class="num">Closed</th>
+      <th class="num">Net</th>
+      <th class="num">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">2022</td>
+      <td class="num">4</td>
+      <td class="num">47</td>
+      <td class="num">-43</td>
+      <td class="num">946</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2023</td>
+      <td class="num">13</td>
+      <td class="num">75</td>
+      <td class="num">-62</td>
+      <td class="num">884</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2024</td>
+      <td class="num">8</td>
+      <td class="num">90</td>
+      <td class="num">-82</td>
+      <td class="num">802</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Exit composition — an evolving pattern</h3>
+<ul class="compact">
+<li><strong>2022:</strong> 47 terminations, 0 non-renewals, 0 ceased operations, 18 transfers. Terminations
+dominated — the franchisor was actively cutting underperformers.</li>
+<li><strong>2023:</strong> 16 terminations, 24 non-renewals, 35 ceased operations, 66 transfers. A shift:
+terminations dropped but non-renewals surged and "ceased operations" appeared for the first time. 66
+transfers indicate massive ownership churn.</li>
+<li><strong>2024:</strong> 10 terminations, 7 non-renewals, 73 ceased operations, 35 transfers. Ceased
+operations exploded. The 73 businesses ceasing operations represent the largest single-year exit event
+in this cohort by a wide margin.</li>
+</ul>
+
+<p>The shift from terminations (2022) to ceased operations (2024) suggests the exits are increasingly
+voluntary — franchisees choosing to leave rather than being forced out. This is a more concerning pattern
+than franchisor-initiated pruning, because it suggests operators are concluding the business is not viable.</p>
+
+<h3>Geographic concentration of losses</h3>
+<p>The contraction is nationwide but concentrated:</p>
+<ul class="compact">
+<li><strong>California:</strong> 137→89 over 3 years (-48 units, -35%).</li>
+<li><strong>Pennsylvania:</strong> Accelerating losses: 2 (2022), 1 (2023), 9 (2024).</li>
+<li><strong>New Jersey:</strong> 31→21 over 3 years (-10 units, -32%).</li>
+<li><strong>Connecticut, Ohio, New York, Florida, Illinois:</strong> All lost 5–7 units in 2024 alone.</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> This is not a regional problem — the contraction is systemic. A buyer
+must understand whether the exits reflect (a) the franchise model no longer competing effectively in
+those markets, (b) the Roark/ServiceMaster ownership structure extracting value rather than investing,
+or (c) a natural portfolio reset after decades of growth. The answer determines whether the remaining
+802 units represent a stabilized base or a system still mid-decline. With only 8 openings in 2024 and
+1 signed-but-not-opened agreement, there is no visible growth pipeline.
+</div>
+
+
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
+
+<h3>System contraction is the dominant risk</h3>
+<p>187 net unit losses over 3 years (-18.9%), accelerating. 90 businesses ceased operations in 2024 and
+are excluded from all Item 19 revenue data. The Wisconsin risk disclosure explicitly flags the high turnover
+rate. For a prospective buyer, this is not background noise — it is the central fact that must be explained
+before investing. (pp. 4, 63–70)</p>
+
+<h3>Survivorship bias in Item 19</h3>
+<p>Only 306 of 802 units (38.2%) are in Table 1. 419 Legacy Franchises and 90 ceased businesses are excluded.
+The $487K average for Qualified Franchises may overstate what a typical operator experiences. The all-franchise
+average of $348K (Table 3) is more representative but still excludes the 90 closures. The actual median
+across all 802 units — including those that closed — is unknowable from the FDD. (pp. 58–62)</p>
+
+<h3>Discretionary royalty tiers</h3>
+<p>The 6% ($400K–$500K) and 5% (above $500K) incentive rates are discretionary and "may be changed or
+discontinued at any time." Do not model your economics around these rates. If revoked at $500K revenue,
+your annual royalty increases by $3,500. (pp. 24, 30)</p>
+
+<h3>Ownership structure</h3>
+<p>Merry Maids is owned by RW Purchaser LLC / Roark Capital Management through the ServiceMaster securitization
+structure. This is <strong>not</strong> the same ownership as Molly Maid (Neighborly/KKR). Roark Capital is
+a PE firm — typical implications include financial engineering, cost discipline, and potential for brand
+flipping or portfolio restructuring. The system contraction pattern is consistent with PE-style portfolio
+optimization. (p. 9)</p>
+
+<h3>Confidentiality clauses</h3>
+<p>Current and former franchisees have signed confidentiality provisions restricting their ability to speak
+openly about their experience. MMFOA (Merry Maids Franchise Owners Association) exists through AAFD as an
+independent organization — its existence may indicate franchisee-franchisor tensions worth investigating.</p>
+
+<h3>Liquidated damages</h3>
+<p>If terminated for default: average monthly Royalties and Ad Fund Contributions over the past 12 months ×
+the lesser of remaining term or 24 months. At $400K revenue with 24 months: ~$14,400 ($600/month × 24).
+Less punitive than The Maids' formula but still a meaningful exit cost. (p. 29)</p>
+
+
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
+
+<p>Merry Maids is the second-largest system in the cohort by unit count but the fastest-shrinking by
+percentage (-18.9% over 3 years). It offers disclosed revenue data, a mid-cohort fee structure, and
+deep multi-unit operator economics — but the contraction trajectory dominates the competitive picture.</p>
+
+<p><strong>Closest comparison: Molly Maid.</strong> Similar scale, similar age, similar system contraction
+(though Molly Maid's is less severe at -10.6%). Molly Maid does not disclose total revenue; Merry Maids
+does ($487K Qualified, $348K all-franchise). Molly Maid has slightly lower modelable fees (10.4% vs 11.0%
+at $300K). Both are PE-backed legacy brands losing units. If revenue disclosure matters, Merry Maids provides
+more. If stability matters, Molly Maid is contracting more slowly.</p>
+
+<p><strong>Sharpest contrast: Two Maids & A Mop.</strong> Growing 56.5% while Merry Maids shrinks 18.9%.
+Two Maids charges significantly higher fees (21.6% vs 11.0% at $300K) but provides richer disclosure and
+growth momentum. If you believe the cleaning franchise market is growing, Two Maids is the growth bet.
+If you believe established territories are the value play, Merry Maids' resale market (35 transfers in
+2024) offers entry points.</p>
+
+<p><strong>Lower-risk alternative: MaidPro.</strong> Simpler fees (10.0% at $300K), disclosed revenue ($462K
+average), stabilizing system (237 units, net zero change in 2024), and declining turnover (8.4%). If Merry
+Maids' brand recognition is not worth the contraction risk, MaidPro is the less dramatic option.</p>
+
+
+<table class="peer-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      
+      <th class="num">Maid Right</th>
+      
+      <th class="num">MaidPro</th>
+      
+      <th class="num">Merry Maids</th>
+      
+      <th class="num">Molly Maid</th>
+      
+      <th class="num">The Cleaning Authority</th>
+      
+      <th class="num">The Maids</th>
+      
+      <th class="num">Two Maids & A Mop</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">System size</td>
+      
+      <td class="num">35</td>
+      
+      <td class="num">237</td>
+      
+      <td class="num this-brand">802</td>
+      
+      <td class="num">448</td>
+      
+      <td class="num">233</td>
+      
+      <td class="num">338</td>
+      
+      <td class="num">144</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Investment range</td>
+      
+      <td class="num">$147K–$218K</td>
+      
+      <td class="num">$109K–$158K</td>
+      
+      <td class="num this-brand">$126K–$170K</td>
+      
+      <td class="num">$139K–$197K</td>
+      
+      <td class="num">$92K–$147K</td>
+      
+      <td class="num">$117K–$141K</td>
+      
+      <td class="num">$93K–$149K</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Fee burden at $300K</td>
+      
+      <td class="num">$50,780</td>
+      
+      <td class="num">$30,000</td>
+      
+      <td class="num this-brand">$32,988</td>
+      
+      <td class="num">$31,056</td>
+      
+      <td class="num">$22,902</td>
+      
+      <td class="num">$59,130</td>
+      
+      <td class="num">$64,800</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">% of revenue</td>
+      
+      <td class="num">16.9%</td>
+      
+      <td class="num">10.0%</td>
+      
+      <td class="num this-brand">11.0%</td>
+      
+      <td class="num">10.4%</td>
+      
+      <td class="num">7.6%</td>
+      
+      <td class="num">19.7%</td>
+      
+      <td class="num">21.6%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">3-year net growth</td>
+      
+      <td class="num">+11</td>
+      
+      <td class="num">-9</td>
+      
+      <td class="num this-brand">-187</td>
+      
+      <td class="num">-53</td>
+      
+      <td class="num">+24</td>
+      
+      <td class="num">-13</td>
+      
+      <td class="num">+52</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Recent attrition</td>
+      
+      <td class="num">34.1%</td>
+      
+      <td class="num">3.0%</td>
+      
+      <td class="num this-brand">10.2%</td>
+      
+      <td class="num">5.4%</td>
+      
+      <td class="num">1.8%</td>
+      
+      <td class="num">2.9%</td>
+      
+      <td class="num">5.1%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Royalty rate</td>
+      
+      <td class="num">6.0%</td>
+      
+      <td class="num">6.0%</td>
+      
+      <td class="num this-brand">7.0%</td>
+      
+      <td class="num">6.5–3.0%</td>
+      
+      <td class="num">6.0–4.0%</td>
+      
+      <td class="num">6.9–3.9%</td>
+      
+      <td class="num">7.0–4.0%</td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<p>These questions are derived from specific findings in the Merry Maids 2025 FDD.
+Each includes context on why it matters and what to listen for.</p>
+
+<ol class="question-list">
+  
+  <li>73 businesses ceased operations in 2024 — the largest single-year exit in the cohort. What were the primary reasons these operators exited, and how many were Legacy vs Qualified Franchises?
+    <span class="question-context">Item 20, pp. 63–70. 'Ceased operations — other reasons' surged from 0 (2022) to 35 (2023) to 73 (2024).</span>
+    
+  </li>
+  
+  <li>The Royalty Incentive tiers (6% at $400K–$500K, 5% above $500K) are discretionary and may be changed or discontinued at any time. Has the franchisor ever changed or discontinued these tiers?
+    <span class="question-context">Item 6, pp. 24, 30. Incentive applied per individual Franchised Business per calendar year.</span>
+    
+  </li>
+  
+  <li>Table 1 covers only 306 'Qualified Franchises' of 802 total. What is the average and median gross revenue for the 419 Legacy Franchises?
+    <span class="question-context">Item 19, pp. 58–62. Legacy Franchises = Active but not meeting current 40K+ Qualified Household standard or office-within-territory requirement.</span>
+    
+  </li>
+  
+  <li>The MMFOA (Merry Maids Franchise Owners Association) is an independent franchisee organization through AAFD. What is the franchisor's relationship with the MMFOA, and what are the primary concerns franchisees have raised?
+    <span class="question-context">FDD reference to independent franchisee organizations.</span>
+    
+  </li>
+  
+  <li>90 businesses ceased operations during 2024 and are excluded from all Item 19 tables. If their revenue were included, how would the system-wide average and median change?
+    <span class="question-context">Item 19, pp. 58–59. Survivorship bias from excluding 11.2% of units.</span>
+    
+  </li>
+  
+  <li>Only 8 new franchises opened in 2024, and only 1 agreement is signed but not yet open. What is the franchisor's growth strategy — is the focus on new sales, resales to existing operators, or territory consolidation?
+    <span class="question-context">Item 20, pp. 63–70. Projected 7 new openings in 2025.</span>
+    
+  </li>
+  
+</ol>
+
+<div class="methodology">
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <p><strong>Source document:</strong> Merry Maids 2025 Franchise Disclosure Document,
+  filed with the Wisconsin Department of Financial Institutions. 271-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">57043a9cc81ecb3b45ba6f4c48b09ae67e1c29e02b13dd9ba030fa409079a094</code></p>
+  <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
+  review. Field-level provenance recorded (source year, state, page number, item reference).
+  Extraction confidence: high (3+ fields spot-checked against source).</p>
+  <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
+  fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
+  <p><strong>Peer comparison:</strong> Same methodology applied to all 7 brands in this cohort
+  (Maid Right, MaidPro, Merry Maids, Molly Maid, The Cleaning Authority, The Maids, Two Maids & A Mop).
+  All from 2025 FDDs filed with Wisconsin DFI.</p>
+  <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
+  recommendation to buy or avoid this franchise. It is a structured analysis of publicly
+  available regulatory filings. The buyer should read the actual FDD, consult a franchise
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
+</div>
+
+</body>
+</html>

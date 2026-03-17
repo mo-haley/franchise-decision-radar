@@ -1119,25 +1119,25 @@ BRAND_DIFFERENTIATORS: dict[str, str] = {
 # Stripe Payment Links — add real URLs as reports go live.
 STRIPE_PAYMENT_LINKS: dict[str, str | None] = {
     "mosquito-authority": "https://buy.stripe.com/dRmbJ3ewz1PY6E0ejCawo01",
-    "mosquito-hunters": None,
-    "mosquito-joe": None,
-    "mosquito-shield": None,
-    "mosquito-squad": None,
+    "mosquito-hunters": "https://buy.stripe.com/fZuaEZagj66e5zWa3mawo02",
+    "mosquito-joe": "https://buy.stripe.com/dRm4gBfADbqy9Qc0sMawo03",
+    "mosquito-shield": "https://buy.stripe.com/5kQ14p4VZ8emfaw7Veawo04",
+    "mosquito-squad": "https://buy.stripe.com/7sYbJ39cfcuC3rOejCawo05",
     "mosquito-sheriff": None,
     "mosquitonix": None,
-    "lawn-doctor": None,
+    "lawn-doctor": "https://buy.stripe.com/7sY28tewzcuCbYkejCawo06",
     "weed-man": None,
-    "spring-green": None,
-    "naturalawn": None,
+    "spring-green": "https://buy.stripe.com/eVq28t9cf9iq7I4fnGawo07",
+    "naturalawn": "https://buy.stripe.com/4gM6oJ88bfGO3rO0sMawo08",
     "lawn-pride": None,
     "lawn-squad": None,
-    "merry-maids": None,
-    "molly-maid": None,
-    "cleaning-authority": None,
-    "the-maids": None,
-    "maidpro": None,
-    "two-maids": None,
-    "maid-right": None,
+    "merry-maids": "https://buy.stripe.com/bJecN7gEHdyG0fC4J2awo09",
+    "molly-maid": "https://buy.stripe.com/eVqfZjcor1PY2nK7Veawo0a",
+    "cleaning-authority": "https://buy.stripe.com/9B628tcor9iq6E02AUawo0b",
+    "the-maids": "https://buy.stripe.com/4gMdRb4VZgKS7I4dfyawo0c",
+    "maidpro": "https://buy.stripe.com/7sYcN7bknamuaUg8Ziawo0d",
+    "two-maids": "https://buy.stripe.com/dRm5kFfADcuC7I40sMawo0e",
+    "maid-right": "https://buy.stripe.com/7sY14pgEH66e6E0b7qawo0f",
 }
 
 # Mosquito-specific cost page editorial
@@ -1690,6 +1690,49 @@ def build_report_context(
     return {"brands": brand_list}
 
 
+def build_master_report_context(
+    ready_cohorts: list[dict],
+) -> dict:
+    """Build context for the unified master report page across all cohorts."""
+    cohort_groups: list[dict] = []
+    for cohort in ready_cohorts:
+        brand_slugs = all_cohort_slugs(cohort)
+        brand_slugs = [
+            s for s in brand_slugs
+            if (DATA_EXTRACTED / f"{s}.json").exists()
+        ]
+        brands = load_brand_data(brand_slugs)
+        brand_list = []
+        for slug in brand_slugs:
+            data = brands[slug]
+            years = data["raw"]["item_20_outlet_summary"]["years_reported"]
+            y_last = sorted(years, key=lambda y: y["year"])[-1]
+            franchised = (
+                y_last["total_outlets_end"]
+                - (y_last.get("company_owned_end") or 0)
+            )
+            stripe_link = STRIPE_PAYMENT_LINKS.get(slug)
+            brand_list.append({
+                "brand_name": data["brand"]["brand_name"],
+                "slug": slug,
+                "system_size": franchised,
+                "year_first_franchised": data["brand"]["year_first_franchised"],
+                "differentiator": BRAND_DIFFERENTIATORS.get(slug, ""),
+                "stripe_payment_link": stripe_link,
+                "is_paid": stripe_link is not None,
+            })
+        paid_count = sum(1 for b in brand_list if b["is_paid"])
+        cohort_groups.append({
+            "id": cohort["id"],
+            "display_name": cohort["display_name"],
+            "short_name": cohort["short_name"],
+            "brands": brand_list,
+            "paid_count": paid_count,
+            "total_count": len(brand_list),
+        })
+    return {"cohort_groups": cohort_groups}
+
+
 # ---------------------------------------------------------------------------
 # Navigation helpers
 # ---------------------------------------------------------------------------
@@ -1876,14 +1919,6 @@ def build_site() -> None:
             })
             total_pages += 1
 
-        # Report listing — ALL brands (including sub-threshold)
-        report_ctx = build_report_context(brands, brand_slugs)
-        active = f"{prefix}report" if prefix else "report"
-        render_page(env, "report.html", f"{prefix}report.html", {
-            **shared, "active_page": active, **report_ctx,
-        })
-        total_pages += 1
-
         # Brand pages — ALL brands get individual pages
         brand_ctxs = build_brand_contexts(
             brands, brand_slugs, comp_fee_model, slug_map, cohort,
@@ -1914,6 +1949,19 @@ def build_site() -> None:
             output_path.write_text(html)
             print(f"  Built: {output_path.relative_to(ROOT)}")
             total_pages += 1
+
+    # --- Master report page (all cohorts) ---
+    master_report_ctx = build_master_report_context(ready_cohorts)
+    render_page(env, "report.html", "report.html", {
+        "site_base_url": SITE_BASE_URL,
+        "active_page": "report",
+        "all_nav": all_nav,
+        "all_brands_by_cohort": all_brands_by_cohort,
+        "nav_pages": [],
+        "cohort_id": None,
+        **master_report_ctx,
+    })
+    total_pages += 1
 
     # --- Homepage (multi-cohort) ---
     live_cohorts = []
@@ -1949,7 +1997,6 @@ def build_site() -> None:
                 {"url": f"{cohort['url_prefix']}{pid}.html", "label": PAGE_LABELS[pid]}
                 for pid in cohort["comparison_pages"]
             ],
-            "report_url": f"{cohort['url_prefix']}report.html",
         })
 
     # Pending cohorts shown as "coming soon" on homepage

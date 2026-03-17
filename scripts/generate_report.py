@@ -83,25 +83,36 @@ BRAND_NARRATIVES: dict[str, dict] = {
 "mosquito-authority": {
 
 "executive_summary": """
-<p>Mosquito Authority is the lowest-cost franchise in the mosquito pest control cohort
-by a significant margin — both to enter and to operate. At $300K gross revenue, annual
-franchisor fees total $52,800 (17.6% of revenue), roughly $25,000–$33,000 less than any
-competitor. The system is the largest in the cohort (546 franchised outlets) with zero
-terminations across the 2022–2024 reporting window — the cleanest system health profile
-of any brand reviewed.</p>
+<p>Within the mosquito pest control cohort (7 brands), Mosquito Authority ranks second-lowest
+in ongoing franchisor fees and lowest in entry cost among the five established systems
+(100+ outlets). At $300K gross revenue, annual fees total $52,800 (17.6% of revenue).
+Only Mosquito Sheriff is lower at 13.2% — but Sheriff operates 5 total outlets, making
+fee-burden comparison structurally asymmetric. Among the five established brands,
+Authority's fees run $25,000–$33,000/year below the next peer. The system is the largest
+in the cohort (546 franchised outlets) with zero terminations across the 2022–2024
+reporting window.</p>
+
+<p>A favorable relative position within this peer set does not, by itself, validate the
+underlying business. Single-territory revenue — which the FDD does not directly disclose —
+appears to fall in the $60K–$120K range for early-year operators (inferred, not stated;
+see Item 19 section). At those revenue levels, even the cohort's lowest fee burden leaves
+limited room for owner income after operating costs. The economics case depends heavily on
+revenue growth and, for many operators, expansion to multiple territories.</p>
 
 <p>The biggest risk is latent, not current: the franchisor reserves the right to implement
 a national marketing fee of up to 3% of Gross Revenues at any time, which would add
 $6,000–$15,000/year. The predecessor entity's regulatory history (5 state actions for
 selling without registration) is real but pre-dates current ownership. Disclosure quality
-is strong, with a rich Item 19 — though a <code>#REF!</code> spreadsheet error and minor
-population mismatches are quality blemishes worth noting.</p>
+is above average for this cohort, with a rich Item 19 — though a <code>#REF!</code>
+spreadsheet error and minor population mismatches are quality blemishes worth noting.</p>
 """,
 
 "fee_burden_narrative": """
-<p>Mosquito Authority has the lightest ongoing fee burden at every modeled revenue level.
-The primary driver is marketing: Authority's local ad minimum ($5,500 or 5%) is 4–7× lower
-than competitors' mandatory marketing floors ($37,500–$75,000+).</p>
+<p>Mosquito Authority ranks 2nd of 7 in ongoing fee burden across the full cohort, and 1st
+among the five established brands (100+ outlets). Only Mosquito Sheriff (5 outlets) models
+lower. The primary driver of Authority's advantage over larger peers is marketing:
+Authority's local ad minimum ($5,500 or 5%) is 4–7× lower than competitors' mandatory
+marketing floors ($37,500–$75,000+).</p>
 """,
 
 "fee_burden_detail": """
@@ -119,16 +130,20 @@ predictable but not obvious from the headline rate. (pp. 16, 21)</li>
 </ul>
 
 <div class="implication">
-<strong>What this means:</strong> At $300K revenue, you keep ~$247K after franchisor fees.
-The next cheapest brand (Mosquito Squad) leaves you ~$222K. That $25,000/year gap compounds
-over a 10-year franchise term into a quarter-million dollars of difference in retained earnings.
+<strong>What this means:</strong> At $300K revenue, $247K remains after franchisor fees.
+Among the five established brands (100+ outlets), the next closest is Mosquito Squad at
+~$222K remaining — a $25,000/year gap. (Mosquito Sheriff, with 5 outlets, models even
+lower fees but is not a comparable system.) That gap is real, but it is a difference in
+fees paid, not in owner income. COGS, operating costs, vehicle, insurance, and seasonal
+cash flow gaps still come out of the $247K. The fee advantage matters most for operators
+who can push revenue high enough that the remaining margin covers a meaningful draw.
 </div>
 
 <div class="callout">
 <div class="callout-title">Latent risk — unimplemented national marketing fee</div>
 The FDD reserves the right to implement a national marketing fee of up to 3% at any time,
 adding $6K–$15K/year. No timeline or conditions are specified. If activated, Authority's
-burden rises to 20–21% of revenue — still lowest in cohort, but the gap narrows significantly.
+burden rises to 20–21% of revenue — still below most peers, but the gap narrows significantly.
 (p. 15, Note 4)
 </div>
 """,
@@ -182,9 +197,10 @@ or talk to current franchisees.
 """,
 
 "investment_narrative": """
-<p>Lowest in the cohort: $54,000–$127,700. The range is wide because two variables swing it:
-franchise type (Hometown $25K vs Full-Size $45K) and vehicle ($0 if you own a qualifying
-truck, $30K if not).</p>
+<p>Lowest entry floor in the cohort at $54,000, though the range extends to $127,700
+(Mosquito Sheriff's range is narrower at $79K–$81K but with a higher floor). The wide
+spread is driven by two variables: franchise type (Hometown $25K vs Full-Size $45K) and
+vehicle ($0 if you own a qualifying truck, $30K if not).</p>
 """,
 
 "investment_detail": """
@@ -210,10 +226,11 @@ depends on decisions you control.
 """,
 
 "system_health_narrative": """
-<p>Most stable system in the cohort. Modest growth every year (+5, +10, +7) with no
+<p>Among the lowest attrition rates in the cohort, and the lowest among brands with 100+
+outlets (FDD-disclosed, Item 20). Modest growth every year (+5, +10, +7) with no
 rapid-open/rapid-close churn. For context: Mosquito Shield grew +140 in the same
 period but lost 128 outlets to terminations and closures. Authority grew +22 and
-lost 17. Different kind of growth.</p>
+lost 17. The growth is slower, but what growth occurs appears durable.</p>
 """,
 
 "system_health_detail": """
@@ -266,25 +283,31 @@ worth noting in a document underlying a six-figure decision.</p>
 
 <h3>Entity and ownership</h3>
 <p>PE-backed (Susquehanna Private Capital). Straightforward entity structure relative to
-competitors — notably simpler than Mosquito Joe's 6-layer SPV chain. All five brands in
-this cohort are PE-backed; this is industry-standard.</p>
+competitors — notably simpler than Mosquito Joe's 6-layer SPV chain. All brands in
+this cohort are PE-backed; this is industry-standard for mosquito pest control franchises.</p>
 """,
 
 "peer_narrative": """
-<p>Authority is the only brand in this cohort where you can enter for under $60K, operate
-with fees under 18% of revenue, and look at a system with zero terminations. It is not
-the most transparent (Squad's Item 19 is richer) or the fastest-growing (Shield added +140
-units). But it is the lowest-risk, lowest-cost option by a clear margin.</p>
+<p>Among the five established brands in this cohort (100+ outlets), Authority is the only one
+where you can enter for under $60K, operate with fees under 18% of revenue at $300K, and
+point to a system with zero terminations. Mosquito Sheriff (5 outlets) and MosquitoNix
+(8 outlets) also appear in the cohort data tables for completeness but are micro-systems;
+Sheriff models lower fees but has no comparable system-health track record at scale.
+Authority is not the most transparent (Squad's Item 19 is richer) or the fastest-growing
+(Shield added +140 units). Its distinguishing feature is cost structure, not revenue
+potential — the FDD gives less per-territory revenue visibility than Squad or Joe.</p>
 
 <p><strong>Closest comparison: Mosquito Squad.</strong> Similar age, both PE-backed, both with
-solid disclosure. Squad has better unit economics data ($484K/territory) and the best
-company-owned P&L ($20.8M, 25.9% margin) — but costs 2× more to enter and $25K/year more
-to operate at $300K revenue.</p>
+solid disclosure. Squad has better unit economics data ($484K/territory) and the richest
+company-owned P&L in the cohort ($20.8M, 25.9% margin) — but costs 2× more to enter and
+$25K/year more to operate at $300K revenue. A buyer choosing between these two is trading
+fee savings (Authority) for disclosure depth and revenue visibility (Squad).</p>
 
 <p><strong>Sharpest contrast: Mosquito Shield.</strong> Opposite profiles. Shield has the
 fastest growth (+140) but highest churn (65 terminations in 2023). Lowest royalty (8%) but
 highest local ad floor ($50K). Authority has higher royalty (10%) but the lowest total
-burden by far.</p>
+burden. Both carry latent risks — Authority's unimplemented national fee, Shield's
+churn-masked growth — that buyers should price into their models differently.</p>
 """,
 
 "discovery_questions": [
@@ -372,11 +395,11 @@ burden by far.</p>
 
 "scorecard": [
     {"dimension": "Entry cost burden", "rating": "Strong", "color": "strong",
-     "summary": "Lowest in cohort by a wide margin. $54K–$128K vs $120K–$220K for competitors."},
+     "summary": "Lowest entry floor in cohort ($54K). Among established brands (100+ outlets), the gap is wide: $54K–$128K vs $120K–$220K for peers. Mosquito Sheriff ($79K–$81K) is the only brand with a lower ceiling."},
     {"dimension": "Ongoing fee burden", "rating": "Strong", "color": "strong",
-     "summary": "#1 at every revenue level. 17–18% of revenue vs 22–38% for competitors."},
+     "summary": "Ranks 2/7 in full cohort (17–18% of revenue). Only Mosquito Sheriff (5 outlets, 13%) is lower. Among the 5 established brands (100+ outlets), Authority is lowest."},
     {"dimension": "System stability", "rating": "Strong", "color": "strong",
-     "summary": "Zero terminations across 3 years. Largest system (546 outlets) with lowest attrition."},
+     "summary": "Zero terminations across 3 years. Largest system in cohort (546 outlets) with 1.8% recent attrition — among the lowest, and notably low for a system this size."},
     {"dimension": "Revenue disclosure", "rating": "Mixed", "color": "mixed",
      "summary": "Rich Item 19 (company-owned P&L + franchised revenue). But data is per-franchisee, not per-territory. #REF! error in key cell."},
     {"dimension": "Disclosure quality", "rating": "Mixed", "color": "mixed",
@@ -385,26 +408,33 @@ burden by far.</p>
      "summary": "Latent 3% national marketing fee could add $6K–$15K/yr. Predecessor had 5 regulatory actions. Both manageable but real."},
     {"dimension": "Buyer fit breadth", "rating": "Mixed", "color": "mixed",
      "summary": "Strong for budget-sensitive owner-operators. Weaker for passive investors or buyers needing high revenue visibility per territory."},
-    {"dimension": "Overall", "rating": "Favorable", "color": "strong",
-     "summary": "Lowest cost + lowest risk profile in cohort. Best entry point for a first-time buyer willing to operate."},
+    {"dimension": "Overall", "rating": "Notable", "color": "mixed",
+     "summary": "Among the lowest cost and lowest attrition in the cohort, with the strongest combination of these two factors at scale. But relative advantage within the peer set does not establish that single-territory economics are strong on an absolute basis. Revenue visibility is limited."},
 ],
 
-"scorecard_posture": """Mosquito Authority is the strongest value play in this cohort for a buyer
-who will operate the business directly. The fee advantage is real and compounds over time. The
-system stability is exceptional. The main limitations are in disclosure clarity (per-franchisee
-not per-territory revenue) and latent fee risk. These are manageable unknowns, not disqualifying
-red flags.""",
+"scorecard_posture": """Within this cohort, Mosquito Authority shows the lowest entry cost among
+established brands, a fee burden that ranks 2nd of 7 overall (1st among the five brands with 100+
+outlets), and among the lowest franchisee attrition rates — notably low for a system of its
+size (546 outlets). The fee gap is measurable and compounds over
+time. However, these are relative comparisons within a seasonal, route-based pest control category
+where single-territory revenue appears modest. The main limitations are disclosure clarity
+(per-franchisee not per-territory revenue), latent fee risk (unimplemented 3% national marketing
+fee), and the open question of whether single-territory economics support a full-time owner draw
+without multi-territory expansion. A buyer should treat the comparative fee advantage as a
+structural input — not as a conclusion about profitability.""",
 
 "buyer_fit_narrative": """
 <h3>Best fit for</h3>
 <ul class="fit-list">
-<li><strong>Budget-sensitive first-time buyer:</strong> Lowest entry cost and lowest ongoing fees
-mean you preserve more capital for the ramp period and keep more of every dollar earned.</li>
+<li><strong>Budget-sensitive first-time buyer:</strong> Among the lowest entry costs and ongoing fees
+in the cohort, which means you preserve more capital for the ramp period and retain more of
+each revenue dollar after franchisor fees than at most peers.</li>
 <li><strong>Owner-operator:</strong> The economics work best when you are the primary service
 provider in the early years. The company-owned P&L includes a $48K manager salary — if you
 operate yourself, that becomes your draw, not an expense.</li>
-<li><strong>Buyer who prioritizes low system risk:</strong> Zero terminations and steady growth
-mean you are joining a stable system, not riding a growth wave that may recede.</li>
+<li><strong>Buyer who prioritizes low measured attrition:</strong> Zero terminations and steady
+growth over the 3-year reporting window. This is a system with low disclosed churn —
+not a guarantee of future stability, but a stronger track record than most peers in this cohort.</li>
 <li><strong>Buyer comfortable with seasonality:</strong> Mosquito control is seasonal (spring–fall
 in most markets). You need personal reserves or off-season income plans for winter months.</li>
 </ul>
@@ -451,21 +481,31 @@ of 5 territories, implying $100K+ per territory — but these are the most estab
 operators in the system.</p>
 
 <div class="implication">
-<strong>What this means:</strong> A realistic single-territory revenue expectation for
-a new operator is likely in the $60K–$120K range in early years, growing toward $120K–$190K
-with 4+ seasons of operation. The headline $465K average is not achievable with one territory.
-This does not make the franchise uneconomic — it means single-territory economics are modest,
-and the path to meaningful income likely involves expanding to multiple territories over time.
+<strong>What this means [inference, not disclosed]:</strong> Based on these calculations,
+a single-territory revenue range of $60K–$120K in early years, growing toward $120K–$190K
+with 4+ seasons, appears plausible — but this is derived math, not a figure the FDD states.
+The headline $465K average is not achievable with one territory. Whether single-territory
+economics support a full-time owner draw after operating costs remains an open question
+that depends on your market, your cost structure, and your revenue ramp. For many operators,
+the path to meaningful income may require expanding to multiple territories — but the FDD
+does not disclose the economics or timeline for that expansion.
 </div>
 """,
 
 "economics_preamble": """
 <p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
 This is not a profitability forecast. It is an illustrative scenario exercise designed to help
-you think about buyer-side economics. The FDD does not disclose franchisee profitability.
-These scenarios combine FDD-disclosed revenue data with a cost-of-goods ratio derived from
-a single company-owned location. Your actual results will depend on your market, your operating
-costs, and your execution.</p>
+you stress-test buyer-side economics. The FDD does not disclose franchisee profitability.</p>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;">
+<strong>Key limitations:</strong> Revenue estimates are inferred from per-franchisee
+averages and years-active data — the FDD does not disclose per-territory revenue directly.
+The COGS ratio (23%) is derived from a single company-owned location that has operated for
+15+ years and is not representative of a new operation's cost structure. The "Remaining"
+column is <strong>not</strong> owner income — it must still cover vehicle costs, insurance,
+storage, office/admin, seasonal cash gaps, personal taxes, and your living expenses.
+Revenue is seasonal (near-zero in winter months in most markets), which these annualized
+figures do not reflect.</p>
 """,
 
 "economics_assumptions": "Revenue from Item 19 years-active data. COGS at 23% (derived from company-owned P&L, Hickory NC). Franchisor fees from fee burden model. 'Remaining' must still cover: vehicle costs, insurance, storage, office/admin, personal taxes, and your living expenses.",
@@ -473,48 +513,63 @@ costs, and your execution.</p>
 "economics_detail": """
 <h3>What the scenarios tell you</h3>
 
-<p><strong>Conservative (early years):</strong> At median Year 2–3 revenue ($97K), the
-remaining $54K after fees and COGS must cover all your other operating costs and your
-living expenses. This is tight. If your non-fee operating costs run $25K–$35K (vehicle,
-insurance, supplies, misc.), your effective owner draw is $19K–$29K before taxes. This
-is why personal reserves and off-season planning are critical.</p>
+<p><strong>Conservative (early years):</strong> At median Year 2–3 revenue ($97K — FDD-disclosed
+median for franchisees with "at least 2 full seasons," p.&nbsp;53), approximately $57K remains
+after franchisor fees and estimated COGS. This is not owner income. Vehicle costs, insurance,
+storage, supplies, and other operating expenses still come out of this amount. If those run
+$25K–$35K (this report's estimate, not FDD-disclosed), the implied pre-tax owner draw is
+$19K–$29K. For a seasonal business with near-zero winter revenue, this level may not support
+a full-time owner without outside income or reserves.</p>
 
-<p><strong>Moderate (Year 4+):</strong> At the 4+ season average ($193K), the economics
-shift meaningfully. After fees and COGS, you have $111K remaining. After typical
-operating costs, an owner-operator draw of $50K–$70K is plausible — but not
-guaranteed. This revenue level is an average, not a floor.</p>
+<p><strong>Moderate (Year 4+):</strong> At the 4+ season average ($193K — FDD-disclosed average,
+p.&nbsp;53), approximately $113K remains after fees and estimated COGS. After operating costs,
+an owner-operator draw of $50K–$70K may be plausible — but this figure is inferred, not
+disclosed. The $193K is an average, not a floor; the median at this tenure level would be
+lower. Variance across markets, territories, and operator skill is not visible from the FDD.</p>
 
-<p><strong>Mature proxy:</strong> The company-owned location at $384K is a single territory
-that has operated for 15+ years. After adjusting for franchisee-rate fees (not the 10%
-marketing the company-owned location pays), the remaining $230K covers operating costs
-with room for meaningful owner income. But this represents a ceiling case, not a typical outcome.</p>
+<p><strong>Mature proxy:</strong> The company-owned location at $384K (FDD-disclosed, p.&nbsp;51)
+has operated for 15+ years in a single territory. It employs a paid manager ($48K/year).
+Even at this revenue level, the location reported negative net income in both years (driven by
+amortization). This illustrates an important point: <strong>revenue that looks adequate at the
+gross level can still produce modest or negative returns depending on cost structure.</strong>
+An owner-operator replacing the manager salary with their own draw changes the math
+significantly — but that is a choice about lifestyle, not a proof of profitability.</p>
 
 <div class="callout">
-<div class="callout-title">The real question</div>
+<div class="callout-title">Structural framing</div>
 Low franchisor fees do not automatically equal attractive owner economics. At $100K revenue,
-Mosquito Authority's fee advantage over competitors (~$15K–$25K/year) is real — but the total
-revenue base is small. The advantage compounds as revenue grows: at $300K, you keep $247K
-after franchisor fees vs $214K–$222K at competitors. The economics case for Authority depends
-on your ability to grow revenue past the early-year trough.
+Mosquito Authority's fee advantage over competitors (~$15K–$25K/year) is measurable — but the
+total revenue base is small, and the remaining margin is thin after operating costs. The fee
+advantage compounds as revenue grows, but revenue growth itself is uncertain and market-dependent.
+The FDD does not disclose how many single-territory operators reach $200K+ revenue, or how long
+it takes. This is the most important unknown in any Mosquito Authority buyer's model.
 </div>
 
 <h3>What the buyer still needs to validate</h3>
 <ul class="compact">
-<li><strong>Actual operating costs:</strong> Vehicle fuel/maintenance, insurance premiums in your
-state, chemical costs in your market, storage rental, seasonal labor.</li>
-<li><strong>Revenue ramp reality:</strong> Talk to 3+ current single-territory operators about
-their Year 1–3 revenue trajectory. The FDD averages obscure the variance.</li>
-<li><strong>Seasonality cash flow:</strong> Revenue is near-zero in winter months in most
-markets. You need a cash reserve or income bridge for 3–5 months of limited activity.</li>
-<li><strong>Multi-territory path:</strong> If single-territory economics are modest, at what
-point does adding a second territory make sense? What are the incremental costs?</li>
+<li><strong>Actual operating costs [not disclosed]:</strong> Vehicle fuel/maintenance, insurance
+premiums in your state, chemical costs in your market, storage rental, seasonal labor. None of
+these are estimated in the FDD. Your expense model must be built independently.</li>
+<li><strong>Revenue ramp reality [partially disclosed]:</strong> The FDD gives averages and medians
+by years-active, but not distributions or failure rates. Talk to 3+ current single-territory
+operators about their Year 1–3 revenue trajectory. Ask specifically about revenue in winter months.</li>
+<li><strong>Seasonality cash flow [not addressed in FDD]:</strong> Revenue is near-zero in winter
+months in most markets. The FDD's 3-month working capital estimate ($3K–$10K) does not account
+for this. You need a separate personal cash reserve for 3–5 months of limited activity.</li>
+<li><strong>Multi-territory economics [not disclosed]:</strong> If single-territory economics are
+modest, the path to meaningful income may require expanding to multiple territories. The FDD does
+not disclose incremental costs, timeline, or economics of second-territory expansion. This is a
+critical question for franchisee calls.</li>
 </ul>
 """,
 
 "payback_narrative": """
 <p>The table below shows how long it would take to recover your initial investment under
 different assumptions about annual owner draw (net income after all costs, fees, and
-operating expenses — but before personal taxes).</p>
+operating expenses — but before personal taxes). These calculations assume full cash
+investment at signing. If you use the available 50% franchise fee deferral (at 8% over
+36 months, FDD p.&nbsp;13), your initial cash outlay is lower but you carry debt service
+during the ramp period, which is not reflected in this table.</p>
 
 <table>
 <thead>
@@ -561,18 +616,18 @@ The single biggest variable is how quickly you build a recurring customer base.
 "peer_decision_overlay": [
     {"label": "Lowest-cost entry", "brand": "Mosquito Authority",
      "rationale": "$54K–$128K. Next closest is Mosquito Shield at $120K–$157K."},
-    {"label": "Lowest ongoing fee burden", "brand": "Mosquito Authority",
-     "rationale": "17–18% of revenue at all levels. Gap of $25K–$33K/year vs next competitor at $300K."},
-    {"label": "Most system stability", "brand": "Mosquito Authority",
-     "rationale": "Zero terminations, lowest attrition, largest system. Steady but slow growth."},
-    {"label": "Best disclosure depth", "brand": "Mosquito Squad",
-     "rationale": "Per-territory revenue ($484K average), company-owned P&L with $20.8M revenue and 25.9% margin. Richest data set."},
-    {"label": "Best for first-time buyer", "brand": "Mosquito Authority",
-     "rationale": "Lowest risk, lowest cost, simplest entity structure. Easiest on-ramp."},
+    {"label": "Lowest ongoing fee burden (established brands)", "brand": "Mosquito Authority",
+     "rationale": "17–18% of revenue at all levels. Ranks 2/7 in full cohort (Mosquito Sheriff at 13% is lower but operates only 5 outlets). Among the 5 brands with 100+ outlets, Authority is 1st."},
+    {"label": "Lowest attrition at scale", "brand": "Mosquito Authority",
+     "rationale": "Zero terminations across 3 years in a 546-outlet system. Hunters and Sheriff show 0.0% attrition but from much smaller bases (135 and 5 outlets). Authority's track record is more statistically meaningful."},
+    {"label": "Richest disclosure depth", "brand": "Mosquito Squad",
+     "rationale": "Per-territory revenue ($484K average), company-owned P&L with $20.8M revenue and 25.9% margin."},
+    {"label": "Lowest-friction entry profile", "brand": "Mosquito Authority",
+     "rationale": "Lowest entry floor ($54K), simplest entity structure, fee deferral option. Note: low friction to enter does not predict profitability."},
     {"label": "Highest growth trajectory", "brand": "Mosquito Shield",
      "rationale": "+140 net units in 3 years. But also 65 terminations in 2023 — growth masks churn."},
-    {"label": "Highest 'looks better than it is' risk", "brand": "Mosquito Shield",
-     "rationale": "Lowest royalty (8%) but highest local ad floor ($50K). Net burden is highest in cohort at low revenue."},
+    {"label": "Highest headline-vs-reality gap risk", "brand": "Mosquito Shield",
+     "rationale": "Lowest royalty (8%) but highest local ad floor ($50K). Net burden is among the highest at low revenue."},
 ],
 
 },
@@ -836,8 +891,8 @@ total cost of ownership harder to predict.</p>
 platform (Neighborly Assetco LLC / Dwyer Franchising LLC / KKR). The SPV structure
 is standard for PE-backed franchise portfolios but means the entity could be sold,
 restructured, or have royalty streams redirected without changing the operating
-relationship. All five brands in this cohort are PE-backed; the SPV layering is
-distinctive to Mosquito Joe.</p>
+relationship. All brands in this cohort are PE-backed; the SPV layering is
+distinctive to Mosquito Joe in its depth.</p>
 
 <h3>Litigation</h3>
 <p>One direct action: <em>SPV LLC v. Bailey et al.</em> — breach of contract for
@@ -1147,18 +1202,18 @@ or a longer time horizon to recover your capital.
 "peer_decision_overlay": [
     {"label": "Lowest-cost entry", "brand": "Mosquito Authority",
      "rationale": "$54K–$128K. MJ is $150K–$192K — $96K more at the low end."},
-    {"label": "Lowest ongoing fee burden", "brand": "Mosquito Authority",
-     "rationale": "17–18% of revenue. MJ is 28% at $300K — $32K/year more in franchisor fees."},
-    {"label": "Best revenue disclosure", "brand": "Mosquito Joe",
-     "rationale": "Retention rates, per-treatment pricing, tenure-segmented sales. Most actionable Item 19 in cohort."},
-    {"label": "Most system stability", "brand": "Mosquito Authority",
-     "rationale": "Zero terminations. MJ had 24 in 2024 — a 5× spike requiring explanation."},
-    {"label": "Best for data-driven buyer", "brand": "Mosquito Joe",
-     "rationale": "Most transparent FDD. If you want to model before you commit, MJ gives you the most inputs."},
+    {"label": "Lowest ongoing fee burden (established brands)", "brand": "Mosquito Authority",
+     "rationale": "17–18% of revenue (2/7 in full cohort; 1st among brands with 100+ outlets). MJ is 28% at $300K — $32K/year more in franchisor fees."},
+    {"label": "Richest revenue disclosure", "brand": "Mosquito Joe",
+     "rationale": "Retention rates, per-treatment pricing, tenure-segmented sales. Among the most actionable Item 19 disclosures in the cohort."},
+    {"label": "Lowest attrition at scale", "brand": "Mosquito Authority",
+     "rationale": "Zero terminations in a 546-outlet system. MJ had 24 terminations in 2024 — a 5× spike requiring explanation."},
+    {"label": "Richest operational data for modeling", "brand": "Mosquito Joe",
+     "rationale": "Most operational data points in a single FDD. If you want to model before you commit, MJ gives you the most inputs."},
     {"label": "Highest 'costs more than it looks' risk", "brand": "Mosquito Joe",
      "rationale": "Conditional fees (LMG, per-sale, Key Accounts) and 30%/year escalation provisions mean disclosed fees are a floor."},
-    {"label": "Best for first-time buyer", "brand": "Mosquito Authority",
-     "rationale": "Lowest risk, lowest cost. MJ requires $200K+ capital and comfort with fee complexity."},
+    {"label": "Lowest-friction entry profile", "brand": "Mosquito Authority",
+     "rationale": "Lowest entry floor ($54K), fee deferral option. MJ requires $200K+ capital and comfort with fee complexity. Note: low friction to enter does not predict profitability."},
 ],
 
 },
@@ -1166,8 +1221,8 @@ or a longer time horizon to recover your capital.
 "mosquito-squad": {
 
 "executive_summary": """
-<p>Mosquito Squad has the best disclosure in the mosquito pest control cohort — and it is
-not close. Its Item 19 provides per-territory revenue broken out by quartile, close and renewal
+<p>Mosquito Squad has the most detailed disclosure in the mosquito pest control cohort.
+Its Item 19 provides per-territory revenue broken out by quartile, close and renewal
 rates, per-appointment and per-customer revenue, five years of systemwide growth data, and a
 14-territory company-owned P&amp;L showing $20.8M revenue with a 25.9% net margin. No other
 brand in this category gives a prospective buyer this much to work with.</p>
@@ -1600,7 +1655,7 @@ before committing, this is the most useful raw material in the category.</p>
      "summary": "Aggressive liquidated damages ($50K+ on termination). MA AG marketing-claims action. 15 company-owned territories create franchisor competition."},
     {"dimension": "Buyer fit breadth", "rating": "Mixed", "color": "mixed",
      "summary": "Best for data-driven buyers who want to model before committing. Higher franchise fee ($50K) and complex royalty tiers narrow the entry profile."},
-    {"dimension": "Overall", "rating": "Moderate", "color": "mixed",
+    {"dimension": "Overall", "rating": "Mixed", "color": "mixed",
      "summary": "The data-transparency leader in the cohort. Mid-cost, recovering system, most useful Item 19 for buyer financial modeling."},
 ],
 
@@ -1772,18 +1827,18 @@ minimal income are the period where your personal reserves matter most.
 "peer_decision_overlay": [
     {"label": "Lowest-cost entry", "brand": "Mosquito Authority",
      "rationale": "$54K–$128K. Squad's core investment is ~$78K–$103K (stripping 12-month working capital)."},
-    {"label": "Lowest ongoing fee burden", "brand": "Mosquito Authority",
-     "rationale": "17–18% of revenue. Squad is 26% at $300K — $25K/year more."},
-    {"label": "Best disclosure depth", "brand": "Mosquito Squad",
-     "rationale": "Per-territory quartile revenue, company-owned P&L, close/renewal rates. Most actionable data for financial modeling."},
-    {"label": "Best for scaling", "brand": "Mosquito Squad",
+    {"label": "Lowest ongoing fee burden (established brands)", "brand": "Mosquito Authority",
+     "rationale": "17–18% of revenue (2/7 in full cohort; 1st among brands with 100+ outlets). Squad is 26% at $300K — $25K/year more."},
+    {"label": "Richest disclosure depth", "brand": "Mosquito Squad",
+     "rationale": "Per-territory quartile revenue, company-owned P&L, close/renewal rates. Among the most actionable data sets for financial modeling in this cohort."},
+    {"label": "Strongest structure for scaling", "brand": "Mosquito Squad",
      "rationale": "Graduated royalty (10/9/8%) and marketing cap ($50K) reward revenue growth. Fee burden decreases with scale."},
-    {"label": "Most system stability", "brand": "Mosquito Authority",
-     "rationale": "Zero terminations, +22 net 3-year. Squad: +3 net 3-year, recovering from 2022 contraction."},
-    {"label": "Best company-owned benchmark", "brand": "Mosquito Squad",
-     "rationale": "$20.8M, 14 territories, 25.9% margin. No other brand provides comparable unit economics data."},
-    {"label": "Best for first-time buyer", "brand": "Mosquito Authority",
-     "rationale": "Lowest risk, lowest cost. Squad's $50K franchise fee and complex royalty tiers are less forgiving for new entrants."},
+    {"label": "Lowest attrition at scale", "brand": "Mosquito Authority",
+     "rationale": "Zero terminations in a 546-outlet system, +22 net 3-year. Squad: +3 net 3-year, recovering from 2022 contraction."},
+    {"label": "Richest company-owned benchmark", "brand": "Mosquito Squad",
+     "rationale": "$20.8M, 14 territories, 25.9% margin. No other brand provides comparable unit economics data at this scale."},
+    {"label": "Lowest-friction entry profile", "brand": "Mosquito Authority",
+     "rationale": "Lowest entry floor ($54K), fee deferral option. Squad's $50K franchise fee and complex royalty tiers are less forgiving for new entrants. Note: low friction to enter does not predict profitability."},
 ],
 
 },
@@ -2401,18 +2456,18 @@ The "Realistic" column adds $32K to the Item 7 high to reflect actual first-year
 "peer_decision_overlay": [
     {"label": "Lowest-cost entry", "brand": "Mosquito Authority",
      "rationale": "$54K–$128K. Shield's realistic first-year cost is $170K–$210K."},
-    {"label": "Lowest ongoing fee burden", "brand": "Mosquito Authority",
-     "rationale": "17–18% of revenue. Shield is 29–38% — the highest in cohort."},
-    {"label": "Most system stability", "brand": "Mosquito Authority",
-     "rationale": "Zero terminations. Shield had 122 over 3 years."},
+    {"label": "Lowest ongoing fee burden (established brands)", "brand": "Mosquito Authority",
+     "rationale": "17–18% of revenue (2/7 in full cohort; 1st among brands with 100+ outlets). Shield is 29–38% — among the highest."},
+    {"label": "Lowest attrition at scale", "brand": "Mosquito Authority",
+     "rationale": "Zero terminations in a 546-outlet system. Shield had 122 terminations over the same 3-year window."},
     {"label": "Fastest growth", "brand": "Mosquito Shield",
      "rationale": "+140 net franchised outlets (2022–2024). But required 267 openings and 122 terminations to achieve."},
-    {"label": "Best disclosure depth", "brand": "Mosquito Squad",
+    {"label": "Richest disclosure depth", "brand": "Mosquito Squad",
      "rationale": "Per-territory quartiles, $20.8M company-owned P&L. Shield's data is per-outlet with 21% exclusion rate."},
     {"label": "Lowest royalty rate", "brand": "Mosquito Shield",
-     "rationale": "8% flat. But total fee burden is highest due to $50K local ad floor."},
-    {"label": "Best for first-time buyer", "brand": "Mosquito Authority",
-     "rationale": "Lowest risk, lowest cost. Shield's termination rate makes it the highest-risk entry in the cohort."},
+     "rationale": "8% flat. But total fee burden is among the highest in the cohort due to $50K local ad floor."},
+    {"label": "Lowest-friction entry profile", "brand": "Mosquito Authority",
+     "rationale": "Lowest entry floor ($54K), fee deferral option. Shield's termination rate and fee complexity make it a higher-risk entry point. Note: low friction to enter does not predict profitability."},
 ],
 
 },
@@ -3006,23 +3061,37 @@ fee and mid-tier ongoing fees. Validate the combination thesis before committing
 "peer_decision_overlay": [
     {"label": "Lowest-cost entry", "brand": "Mosquito Authority",
      "rationale": "$54K–$128K. Hunters' $107K franchise fee alone exceeds most competitors' total investment low end."},
-    {"label": "Lowest ongoing fee burden", "brand": "Mosquito Authority",
-     "rationale": "17–18% of revenue. Hunters is 26.8% at $300K."},
-    {"label": "Best revenue disclosure", "brand": "Mosquito Joe",
+    {"label": "Lowest ongoing fee burden (established brands)", "brand": "Mosquito Authority",
+     "rationale": "17–18% of revenue (2/7 in full cohort; 1st among brands with 100+ outlets). Hunters is 26.8% at $300K."},
+    {"label": "Richest revenue disclosure", "brand": "Mosquito Joe",
      "rationale": "Retention rates, per-treatment pricing, tenure-segmented sales. Hunters provides building blocks but withholds total revenue."},
-    {"label": "Most system stability", "brand": "Mosquito Authority",
-     "rationale": "Zero terminations across 3 years. Hunters improved to zero in 2024 but started from 17 in 2022."},
+    {"label": "Lowest attrition at scale", "brand": "Mosquito Authority",
+     "rationale": "Zero terminations in a 546-outlet system across 3 years. Hunters improved to zero in 2024 but started from 17 in 2022."},
     {"label": "Only combination franchise", "brand": "Mosquito Hunters",
      "rationale": "Mosquito + pest + holiday lighting. Only brand addressing seasonality directly. Holiday median: $54K per participating SP."},
-    {"label": "Best unit economics data", "brand": "Mosquito Squad",
+    {"label": "Richest unit economics data", "brand": "Mosquito Squad",
      "rationale": "Per-territory quartiles + $20.8M company-owned P&L. Hunters has no revenue or cost disclosure."},
-    {"label": "Best for first-time buyer", "brand": "Mosquito Authority",
-     "rationale": "Lowest risk, lowest cost, simplest model. Hunters requires most pre-purchase diligence and highest initial fee."},
+    {"label": "Lowest-friction entry profile", "brand": "Mosquito Authority",
+     "rationale": "Lowest entry floor ($54K), simplest model, fee deferral option. Hunters requires the most pre-purchase diligence and the highest initial fee in the cohort. Note: low friction to enter does not predict profitability."},
 ],
 
 },
 
 }  # end BRAND_NARRATIVES
+
+# Import cleaning cohort narratives
+try:
+    from cleaning_narratives import CLEANING_NARRATIVES
+    BRAND_NARRATIVES.update(CLEANING_NARRATIVES)
+except ImportError:
+    pass
+
+# Import lawn cohort narratives
+try:
+    from lawn_narratives import LAWN_NARRATIVES
+    BRAND_NARRATIVES.update(LAWN_NARRATIVES)
+except ImportError:
+    pass
 
 
 def load_brand(slug: str) -> dict:
@@ -3032,9 +3101,25 @@ def load_brand(slug: str) -> dict:
         return json.load(f)
 
 
-def load_fee_model() -> dict:
-    """Load fee model output."""
-    path = DATA_DERIVED / "fee_burden_model_output.json"
+def _get_cohort_for_brand(slug: str) -> dict | None:
+    """Return the cohort dict for a given brand slug."""
+    registry_path = ROOT / "data" / "cohort_registry.json"
+    if registry_path.exists():
+        with open(registry_path) as f:
+            cohorts = json.load(f)["cohorts"]
+        for cohort in cohorts:
+            if slug in cohort["brands"]:
+                return cohort
+    return None
+
+
+def load_fee_model(slug: str | None = None) -> dict:
+    """Load fee model output for the brand's cohort."""
+    cohort = _get_cohort_for_brand(slug) if slug else None
+    if cohort and cohort.get("fee_model_file"):
+        path = DATA_DERIVED / cohort["fee_model_file"]
+    else:
+        path = DATA_DERIVED / "fee_burden_model_output.json"
     with open(path) as f:
         return json.load(f)
 
@@ -3064,15 +3149,28 @@ def build_fee_table(brand_name: str, fee_model: dict, cohort_brands: list[str] |
 
 def build_investment_table(data: dict) -> tuple[list[dict], int, int]:
     """Build investment line items from Item 7."""
+    item7 = data["raw"]["item_7_initial_investment"]
     items = []
-    for li in data["raw"]["item_7_initial_investment"]["line_items"]:
-        items.append({
-            "category": li["category"],
-            "low": li["low"],
-            "high": li["high"],
-        })
-    total_low = data["raw"]["item_7_initial_investment"]["total_low"]
-    total_high = data["raw"]["item_7_initial_investment"]["total_high"]
+    # Handle brands with market-type-specific tables (e.g., The Cleaning Authority)
+    if "enterprise_market" in item7:
+        market = item7["enterprise_market"]
+        for li in market["line_items"]:
+            items.append({
+                "category": li["category"],
+                "low": li["low"],
+                "high": li["high"],
+            })
+        total_low = market["total_low"]
+        total_high = market["total_high"]
+    else:
+        for li in item7["line_items"]:
+            items.append({
+                "category": li["category"],
+                "low": li["low"],
+                "high": li["high"],
+            })
+        total_low = item7["total_low"]
+        total_high = item7["total_high"]
     return items, total_low, total_high
 
 
@@ -3095,17 +3193,14 @@ def build_health_table(data: dict) -> list[dict]:
 
 def build_peer_table(fee_model: dict, brands_data: dict, brand_name: str = "Mosquito Authority") -> tuple[list[str], list[dict], int]:
     """Build peer comparison table at $300K with system metrics."""
-    brands_order = [
-        "Mosquito Authority", "Mosquito Hunters", "Mosquito Joe",
-        "Mosquito Shield", "Mosquito Squad",
-    ]
-    slug_map = {
-        "Mosquito Authority": "mosquito-authority",
-        "Mosquito Hunters": "mosquito-hunters",
-        "Mosquito Joe": "mosquito-joe",
-        "Mosquito Shield": "mosquito-shield",
-        "Mosquito Squad": "mosquito-squad",
-    }
+    # Build brand order and slug map dynamically from loaded brands
+    slug_map = {}
+    for slug, d in brands_data.items():
+        slug_map[d["brand"]["brand_name"]] = slug
+    brands_order = list(slug_map.keys())
+    # Sort alphabetically for consistency
+    brands_order.sort()
+
     at_300k = {r["brand"]: r for r in fee_model["results"] if r["gross_revenue"] == 300000}
 
     def get_system_size(b: str) -> str:
@@ -3120,7 +3215,8 @@ def build_peer_table(fee_model: dict, brands_data: dict, brand_name: str = "Mosq
 
     def get_attrition(b: str) -> str:
         d = brands_data[slug_map[b]]
-        y = next(y for y in d["raw"]["item_20_outlet_summary"]["years_reported"] if y["year"] == 2024)
+        years = d["raw"]["item_20_outlet_summary"]["years_reported"]
+        y = years[-1]  # Use most recent year
         total = y["closed"] + (y.get("non_renewals") or 0) + (y.get("ceased_operations_other") or 0)
         start = y["total_outlets_start"]
         pct = round((total / start) * 100, 1) if start else 0
@@ -3128,19 +3224,44 @@ def build_peer_table(fee_model: dict, brands_data: dict, brand_name: str = "Mosq
 
     def get_investment(b: str) -> str:
         d = brands_data[slug_map[b]]
-        low = d["raw"]["item_7_initial_investment"]["total_low"]
-        high = d["raw"]["item_7_initial_investment"]["total_high"]
+        item7 = d["raw"]["item_7_initial_investment"]
+        if "enterprise_market" in item7:
+            low = item7["enterprise_market"]["total_low"]
+            high = item7["enterprise_market"]["total_high"]
+        else:
+            low = item7["total_low"]
+            high = item7["total_high"]
         return f"${low // 1000}K–${high // 1000}K"
+
+    def get_royalty(b: str) -> str:
+        d = brands_data[slug_map[b]]
+        r = d["raw"]["item_6_other_fees"]["royalty_rate"]
+        if r.get("value") is not None:
+            return f"{r['value']}%"
+        elif r.get("tiers"):
+            rates = [t["rate"] for t in r["tiers"] if "rate" in t]
+            if rates:
+                return f"{max(rates)}–{min(rates)}%"
+        return "varies"
+
+    def get_fee_at_300k(b: str) -> str:
+        if b in at_300k:
+            return f"${at_300k[b]['total']:,.0f}"
+        return "n/a"
+
+    def get_fee_pct(b: str) -> str:
+        if b in at_300k:
+            return f"{at_300k[b]['pct_of_revenue']}%"
+        return "n/a"
 
     metrics = [
         ("System size", get_system_size),
         ("Investment range", get_investment),
-        ("Fee burden at $300K", lambda b: f"${at_300k[b]['total']:,.0f}"),
-        ("% of revenue", lambda b: f"{at_300k[b]['pct_of_revenue']}%"),
+        ("Fee burden at $300K", get_fee_at_300k),
+        ("% of revenue", get_fee_pct),
         ("3-year net growth", get_growth),
-        ("2024 attrition", get_attrition),
-        ("Royalty rate", lambda b: {"Mosquito Authority": "10%", "Mosquito Hunters": "10%",
-            "Mosquito Joe": "10/7%", "Mosquito Shield": "8%", "Mosquito Squad": "10/9/8%"}[b]),
+        ("Recent attrition", get_attrition),
+        ("Royalty rate", get_royalty),
     ]
 
     table = []
@@ -3247,12 +3368,14 @@ def generate_report(slug: str) -> None:
         sys.exit(1)
 
     data = load_brand(slug)
-    fee_model = load_fee_model()
+    fee_model = load_fee_model(slug)
     narratives = BRAND_NARRATIVES[slug]
     brand_name = data["brand"]["brand_name"]
 
-    # Build data contexts
-    all_brands = {s: load_brand(s) for s in BRAND_SLUGS}
+    # Scope peer brands to same cohort
+    cohort = _get_cohort_for_brand(slug)
+    cohort_slugs = cohort["brands"] if cohort else BRAND_SLUGS
+    all_brands = {s: load_brand(s) for s in cohort_slugs}
     peer_brands, peer_table, this_brand_idx = build_peer_table(fee_model, all_brands, brand_name)
     fee_table = build_fee_table(brand_name, fee_model, cohort_brands=peer_brands)
     inv_table, inv_low, inv_high = build_investment_table(data)
@@ -3268,10 +3391,13 @@ def generate_report(slug: str) -> None:
     env = Environment(loader=FileSystemLoader(str(TEMPLATES)), autoescape=False)
     template = env.get_template("report-artifact.html")
 
+    cohort_display = cohort.get("display_name", "this") if cohort else "this"
+
     context = {
         "brand_name": brand_name,
         "filing_year": data["filing_year"],
         "legal_entity": data["brand"]["legal_entity"],
+        "cohort_display_name": cohort_display,
         "report_date": date.today().isoformat(),
         "page_count": data["source_document"]["page_count"] or "~230",
         "sha256": data["source_document"]["sha256"] or "not recorded",

@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spring-Green — Franchise Decision Report</title>
+<style>
+@media print {
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a; background: #fff; line-height: 1.7;
+  max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem;
+}
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0 0 0.25rem; letter-spacing: -0.02em; font-family: -apple-system, sans-serif; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid #ccc; font-family: -apple-system, sans-serif; }
+h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.4rem; font-family: -apple-system, sans-serif; }
+p { margin: 0 0 0.9rem; }
+strong { font-weight: 700; }
+a { color: #1a1a1a; }
+
+.report-header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 1.75rem; }
+.report-meta { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; line-height: 1.5; margin-top: 0.5rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; font-family: -apple-system, sans-serif; }
+thead th { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 2px solid #333; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #555; }
+thead th.num { text-align: right; }
+tbody td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; }
+tbody td.num { text-align: right; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; }
+tbody td.label { font-weight: 600; white-space: nowrap; }
+
+.callout { padding: 0.75rem 1rem; margin: 0.75rem 0 1.25rem; border-left: 3px solid #d97706; background: #fffbeb; font-size: 0.88rem; }
+.callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
+
+.question-list { list-style: none; padding: 0; counter-reset: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
+.question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+.question-list li:last-child { border-bottom: none; }
+.question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
+
+.methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
+.methodology p { margin: 0 0 0.5rem; }
+
+.exec-summary { font-size: 1.02rem; line-height: 1.75; }
+.peer-table td.this-brand { background: #f5f7fa; }
+
+.implication {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem;
+  color: #1e40af; margin: 0.5rem 0 1rem; line-height: 1.5;
+  padding-left: 0.75rem; border-left: 2px solid #93c5fd;
+}
+.implication strong { color: #1e40af; }
+ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
+ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">Spring-Green</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: 2025 Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: Spring-Green Lawn Care Corp.</span>
+    <span>Report generated: 2026-03-16</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num">1</span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num">2</span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num">3</span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num">4</span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num">5</span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num">6</span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    <li><span class="toc-num">7</span> <a href="#payback">Illustrative Payback Sensitivity</a></li>
+    <li><span class="toc-num">8</span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num">9</span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num">10</span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num">11</span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num">12</span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num">13</span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
+  <h1>Spring-Green</h1>
+  <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
+  <div class="report-meta">
+    Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
+    Legal entity: Spring-Green Lawn Care Corp.<br>
+    Report generated: 2026-03-16 &middot; Franchise Decision Radar
+  </div>
+</div>
+
+<h2 id="executive-summary">Executive Summary</h2>
+<div class="exec-summary">
+
+<p>Spring-Green is a 48-year-old, privately held lawn care and tree/shrub treatment franchise
+with 156 outlets as of year-end 2024 — a mid-sized system that has been remarkably stable
+(+2, –2, +4 net units over three years). It occupies the middle ground of the lawn care cohort:
+lower fees than Lawn Doctor and NaturaLawn, better disclosure than Weed Man, and a balanced
+fee structure that does not punish low-revenue operators as severely as its higher-cost peers.</p>
+
+<p>At $300K gross revenue, annual franchisor fees total $45,318 (15.1%) — second-lowest in the
+full cohort (only Weed Man is lower at 8.5%). The tiered royalty (10%/9%/8%) rewards revenue
+growth, and the 2% national advertising fund with no mandatory local advertising minimum gives
+franchisees more marketing autonomy than any peer. The Item 19 discloses 3 tables covering cost
+structure, revenue, and marketing effectiveness for 71 franchised businesses — with the unique
+addition of revenue-per-production-vehicle metrics and customer acquisition data.</p>
+
+<p>The main limitations are scale and growth trajectory. At 156 units, Spring-Green is the
+second-smallest active cohort brand (behind NaturaLawn's 98). Net growth has been flat — the
+system is not expanding or contracting. For a buyer who values stability over growth momentum,
+this is neutral. For a buyer who wants to join a system with accelerating expansion, it is a
+constraint. Turnover is moderate (2.0%, 5.2%, 4.6%) with the 2023 and 2024 years reflecting
+a handful of exits from a small base.</p>
+
+</div>
+
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the lawn care cohort.</p>
+
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">Entry cost burden</td>
+      <td class="rating rating-mixed">Moderate</td>
+      <td class="sc-summary">$118K–$134K total investment. Mid-cohort. Franchise fee ($27K–$45K) is substantially lower than Lawn Doctor ($124K) but higher than NaturaLawn ($20K–$40K).</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Ongoing fee burden</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">2nd lowest in full cohort: 15.1% at $300K. Only Weed Man (8.5%) is lower. No mandatory local advertising minimum — significant advantage over Lawn Doctor and NaturaLawn.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">System stability</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Stable but flat: +2, –2, +4 net over 3 years. 156 units. Turnover moderate at 2–5%. No rapid growth, no contraction. Not exciting, but not concerning.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Revenue disclosure</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">3-table Item 19 with cost structure, revenue by territory type, and marketing metrics. Average $744K single-territory, $1.55M multi-territory. Revenue per vehicle and customer acquisition data are unique.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Disclosure quality</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Clean filing, no litigation. Honest COGS definition (includes direct labor). Gross margin (68.1%) is more conservative and more useful than Lawn Doctor's materials-only 85.4%.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Downside risk profile</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Flat growth trajectory is the primary concern. System is not declining, but it is not demonstrating the kind of momentum that attracts new franchisees. Fee escalation risk is modest.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Buyer fit breadth</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Best balance of cost and data in the cohort. Works for first-time buyers, single-territory operators, and multi-unit operators. No mandatory local ad spend gives marketing flexibility.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Overall</td>
+      <td class="rating rating-mixed">Notable</td>
+      <td class="sc-summary">The most balanced option in the lawn cohort: moderate cost, solid disclosure, stable system, honest COGS. Not the cheapest (Weed Man), not the most transparent (Lawn Doctor), not the most stable (NaturaLawn) — but the best combination of all three. Relative cohort position does not establish absolute profitability.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+Spring-Green is the balanced choice in the lawn care cohort. It offers the
+second-lowest ongoing fee burden, the most useful gross margin disclosure (including labor in COGS),
+no mandatory local advertising minimum, and a clean litigation history. The trade-off is a flat growth
+trajectory and a mid-sized system (156 units) that lacks the scale of Lawn Doctor or the hyper-local
+niche identity of NaturaLawn. For a buyer who wants good data, manageable costs, and marketing
+autonomy — without paying Lawn Doctor's premium or accepting Weed Man's disclosure blackout —
+Spring-Green is the most natural fit.
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+
+<h3>Best fit for</h3>
+<ul class="fit-list">
+<li><strong>First-time franchise buyer seeking a balanced entry:</strong> Moderate investment
+($118K–$134K), no mandatory local ad minimums, tiered royalty that rewards growth, clean
+disclosure. The lowest-friction entry in the cohort for a buyer who wants both data and
+manageable costs.</li>
+<li><strong>Operator who values marketing autonomy:</strong> Spring-Green does not mandate a
+local advertising floor. The 2% national fund and optional regional fund (currently 0%)
+are the only marketing obligations. You control your own local marketing spend and strategy.</li>
+<li><strong>Single-territory operator targeting $500K+ revenue:</strong> At $500K, the tiered
+royalty drops to an 8% marginal rate on revenue above $500K, and total fees are $67,318
+(13.5%) — nearly half of NaturaLawn's $121,584 (24.3%) at the same revenue. The economics
+reward scale more than any other brand in the cohort.</li>
+<li><strong>Tree and shrub treatment interest:</strong> Spring-Green franchises include a
+tree/shrub care line alongside core lawn services. This adds a revenue stream and seasonal
+diversification not available at all competitors.</li>
+</ul>
+
+<h3>Weaker fit for</h3>
+<ul class="fit-list">
+<li><strong>Buyer seeking rapid system growth and momentum:</strong> Net growth has been flat
+(+4 net over 3 years). If you value being part of an expanding system with accelerating
+franchisee additions, Spring-Green's trajectory may disappoint.</li>
+<li><strong>Buyer who wants franchisor-managed marketing:</strong> The absence of a mandatory
+local ad program means you are responsible for your own marketing. If you prefer a turnkey
+marketing solution (like Lawn Doctor's mandatory program), Spring-Green's model requires
+more initiative.</li>
+<li><strong>Buyer in a market with no existing Spring-Green presence:</strong> With 156 units,
+geographic coverage is thinner than Lawn Doctor's 653. You may be the only franchisee in
+your region, with limited peer support and less local brand recognition.</li>
+</ul>
+
+<h3>Proceed only if</h3>
+<ul class="fit-list">
+<li>You have modeled your territory using the single-territory median ($615K) rather than the
+all-business average ($1.09M), which includes multi-territory operators and inflates expectations.</li>
+<li>You have a local marketing plan and budget. Without mandatory franchisor marketing, customer
+acquisition is your responsibility. Table 3 shows the average franchisee spends 7.4% of
+revenue on marketing — build that into your financial model.</li>
+<li>You understand that the 68.1% gross margin includes direct labor (unlike Lawn Doctor's 85.4%
+which excludes it). Spring-Green's margin is more conservative but more realistic as a proxy
+for what you keep after direct costs.</li>
+</ul>
+
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
+
+<p>Spring-Green has the second-lowest ongoing fee burden in the lawn cohort — $45,318 (15.1%) at
+$300K revenue. Only Weed Man (8.5%) is lower. The primary advantage is the absence of a mandatory
+local advertising minimum: Lawn Doctor requires $30,000+ and NaturaLawn requires $60,000–$80,000,
+while Spring-Green's only marketing obligation is the 2% national fund ($6,000 at $300K). At $500K,
+Spring-Green's fees ($67,318, 13.5%) are less than half of NaturaLawn's ($121,584, 24.3%).</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>At Revenue</th>
+      <th class="num">Royalty</th>
+      <th class="num">Marketing</th>
+      <th class="num">Tech / Other</th>
+      <th class="num">Total</th>
+      <th class="num">% of Rev</th>
+      <th class="num">Cohort Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">$200,000</td>
+      <td class="num">$20,000</td>
+      <td class="num">$4,000</td>
+      <td class="num">$9,818</td>
+      <td class="num"><strong>$33,818</strong></td>
+      <td class="num">16.9%</td>
+      <td class="num">2/4</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$300,000</td>
+      <td class="num">$29,500</td>
+      <td class="num">$6,000</td>
+      <td class="num">$9,818</td>
+      <td class="num"><strong>$45,318</strong></td>
+      <td class="num">15.1%</td>
+      <td class="num">2/4</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$400,000</td>
+      <td class="num">$38,500</td>
+      <td class="num">$8,000</td>
+      <td class="num">$9,818</td>
+      <td class="num"><strong>$56,318</strong></td>
+      <td class="num">14.1%</td>
+      <td class="num">2/4</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$500,000</td>
+      <td class="num">$47,500</td>
+      <td class="num">$10,000</td>
+      <td class="num">$9,818</td>
+      <td class="num"><strong>$67,318</strong></td>
+      <td class="num">13.5%</td>
+      <td class="num">2/4</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Weed Man</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 25.1%"></div>
+    </div>
+    <div class="fee-bar-value">8.5%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Spring-Green</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill this-brand" style="width: 44.5%"></div>
+    </div>
+    <div class="fee-bar-value">15.1%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Lawn Doctor</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 77.6%"></div>
+    </div>
+    <div class="fee-bar-value">26.3%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">NaturaLawn</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 100.0%"></div>
+    </div>
+    <div class="fee-bar-value">33.9%</div>
+  </div>
+  
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+
+
+
+<h3>Component breakdown</h3>
+<ul class="compact">
+<li><strong>Royalty (tiered: 10%/9%/8%):</strong> 10% on first $250K of annual Gross Sales, 9%
+on $250K–$500K, 8% above $500K. First-season Industry Associate Program rates are lower
+(5%/4%/3%). Multi-territory discount: after 5,000 total customers, 8% on first $250K, 7%
+on $250K–$500K, 6% above $500K. Payable weekly. (pp. 16–17)</li>
+<li><strong>National advertising (2% of Gross Sales):</strong> $6,000 at $300K. Simple and low.
+Regional advertising fund (up to 2% additional) is authorized but not currently imposed.
+If imposed, would apply only with approval of franchisees in the region. (pp. 17–18)</li>
+<li><strong>Technology ($235/month + per-user licenses):</strong> $2,820/year base plus $192–$348/year
+per user (Office Online or Full Office License, minimum 1 Full Office License required).
+Total ~$3,168/year for a single-user setup. Subject to fee adjustment of up to 100% increase
+over any 5-year period — effectively a maximum doubling over 5 years. (pp. 17–18)</li>
+<li><strong>Call center ($500/month = $6,000/year):</strong> National Call Center charges
+$500/month base during season (April–November), plus per-lead fees ($5/internet lead,
+$7.50/phone lead). Off-season rate is lower. This is a meaningful cost — at $300K revenue,
+the call center alone is 2% of gross. (p. 17)</li>
+<li><strong>Convention ($650/attendee):</strong> Annual convention registration fee. Travel and
+lodging additional. (p. 17)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> At $300K revenue, Spring-Green's $45,318 in fees leaves $254,682
+after franchisor costs — $33,482 more than Lawn Doctor ($221,200) and $76,266 more than NaturaLawn
+($198,416). Over a 10-year term, that's $335K–$763K more retained earnings vs. peers. The fee
+advantage widens at higher revenue levels because the tiered royalty reduces the marginal rate.
+</div>
+
+<div class="callout">
+<div class="callout-title">No mandatory local advertising floor</div>
+Spring-Green is the only established brand in this cohort without a mandatory local advertising
+minimum. This is a structural advantage for operators who want to control their own marketing
+spend, but it is also a responsibility: Table 3 data shows the average franchisee spends 7.4%
+of revenue on marketing voluntarily. If you spend $0 on local marketing, you will likely
+underperform the disclosed averages.
+</div>
+
+
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
+
+<p>Spring-Green discloses a solid 3-table Item 19 covering cost structure, revenue, and marketing
+effectiveness. The disclosure is notable for including direct labor in the COGS calculation —
+making the 68.1% gross margin more conservative and more useful than Lawn Doctor's materials-only
+85.4%. (pp. 47–50)</p>
+
+<h3>Cost structure (Table 1, 2024)</h3>
+<p>62 franchised businesses with $300K+ in Gross Sales:</p>
+<ul>
+<li><strong>Material costs:</strong> Average 12.8%, median 12.6%.</li>
+<li><strong>Direct labor costs:</strong> Average 19.1%, median 18.2%.</li>
+<li><strong>Total cost of sales:</strong> Average 31.9%, median 30.8%.</li>
+<li><strong>Gross profit margin:</strong> Average 68.1%, median 69.2%.</li>
+</ul>
+<p>This is the most useful cost disclosure in the lawn cohort because it separates materials from
+labor and includes both in COGS. At 68.1% margin after materials AND labor, the franchisee retains
+substantially more than the raw percentage might suggest when compared to Lawn Doctor's 85.4%
+(which excludes labor entirely).</p>
+
+<h3>Revenue (Table 2, 2024)</h3>
+<p>71 franchised businesses operating 2+ years:</p>
+<ul>
+<li><strong>All businesses (71):</strong> Average $1,093,544, median $886,680. Range: $168K–$3.87M.</li>
+<li><strong>Single territory (36):</strong> Average $743,598, median $614,679. Range: $168K–$1.75M.</li>
+<li><strong>Multiple territories (32):</strong> Average $1,554,728, median $1,321,291.</li>
+<li><strong>Revenue per customer:</strong> Average $556, median $549. Range: $393–$957.</li>
+<li><strong>Revenue per production vehicle:</strong> Average $201,144, median $203,395.</li>
+</ul>
+
+<h3>Marketing effectiveness (Table 3, 2024)</h3>
+<ul>
+<li><strong>Marketing investment:</strong> Average 7.4% of revenue (median 7.9%). Range: 2.0%–20.6%.</li>
+<li><strong>New service agreements per $1 of marketing:</strong> Average 0.0042, median 0.0029.
+(At $50K marketing spend, this implies ~210 new agreements for the average operator.)</li>
+<li><strong>Revenue per new agreement:</strong> Average $424, median $399.</li>
+</ul>
+
+<h3>What's missing</h3>
+<ul>
+<li><strong>Owner income or net profit:</strong> The 68.1% gross margin is after materials and
+labor, but before overhead (vehicle, insurance, office, franchisor fees). No net income
+data is disclosed.</li>
+<li><strong>Geographic or seasonal variation:</strong> Revenue and cost data are system-wide
+averages — no breakdown by region or season length.</li>
+<li><strong>Customer retention rate:</strong> Revenue per customer ($556) is disclosed but
+annual retention/churn rates are not.</li>
+</ul>
+
+
+
+
+<h3>From gross revenue to owner economics</h3>
+<p>Spring-Green's Item 19 provides both revenue and COGS (including labor), making triangulation
+more straightforward than Lawn Doctor:</p>
+
+<p><strong>For a median single-territory operator ($615K revenue):</strong></p>
+<ul>
+<li>COGS at 31.9% (materials + labor): ~$196K</li>
+<li>Gross margin (68.1%): ~$419K</li>
+<li>Franchisor fees (interpolated from model): ~$57K</li>
+<li>Voluntary marketing at 7.4% (system average): ~$46K</li>
+<li>Overhead (vehicle, insurance, office): $25K–$40K</li>
+<li>Implied pre-tax owner income: $276K–$291K</li>
+</ul>
+
+<p><strong>For a conservative single-territory ($400K revenue):</strong></p>
+<ul>
+<li>COGS at 31.9%: ~$128K</li>
+<li>Gross margin: ~$272K</li>
+<li>Franchisor fees: ~$47K</li>
+<li>Marketing at 7.4%: ~$30K</li>
+<li>Overhead: $25K–$35K</li>
+<li>Implied pre-tax owner income: $160K–$170K</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> Spring-Green's economics triangulate more favorably than Lawn
+Doctor's at equivalent single-territory revenue, primarily because of lower franchisor fees. At
+the median ($615K), a Spring-Green operator potentially retains $276K–$291K vs. an estimated
+$198K–$258K at Lawn Doctor — a $20K–$90K annual advantage. The difference is almost entirely
+fee structure, not operating economics. But note: Spring-Green's voluntary marketing spend
+(7.4%) should be treated as quasi-mandatory — operators who spend less likely underperform the
+disclosed averages.
+</div>
+
+
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
+This is not a profitability forecast. It is an illustrative scenario exercise using Spring-Green's
+disclosed Item 19 revenue and cost-of-sales data. COGS (31.9% average) includes materials AND
+direct labor — a more complete cost picture than some peers. 'Remaining' must still cover
+vehicle costs, insurance, office overhead, voluntary marketing spend (average 7.4% of revenue),
+owner draw, and taxes. Your actual results depend on territory, labor market, season length,
+customer density, and execution.</p>
+
+
+<table class="scenario-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="scenario-name">Conservative single-territory</td>
+      <td class="num">$400,000</td>
+      <td class="num">$56,318 (14.1%)</td>
+      <td class="num">$127,600</td>
+      <td class="num"><strong>$216,082</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Median single-territory</td>
+      <td class="num">$615,000</td>
+      <td class="num">$67,318 (10.9%)</td>
+      <td class="num">$196,185</td>
+      <td class="num"><strong>$351,497</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Average multi-territory</td>
+      <td class="num">$1,555,000</td>
+      <td class="num">$67,318 (4.3%)</td>
+      <td class="num">$496,045</td>
+      <td class="num"><strong>$991,637</strong></td>
+    </tr>
+    
+  </tbody>
+</table>
+<p class="assumption-note">Revenue from Item 19 Table 2 (2024, businesses operating 2+ years). COGS at 31.9% (Table 1 average for businesses with $300K+ Gross Sales, includes materials and direct labor). 'Remaining' covers overhead, voluntary marketing, owner draw, and taxes. Industry Associate first-season royalty rates (5%/4%/3%) not modeled — these apply only to first-season operators.</p>
+
+
+
+<!-- PAYBACK SENSITIVITY -->
+<h2 id="payback">Illustrative Payback Sensitivity</h2>
+
+
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
+
+<p>Mid-cohort entry cost: $117,543–$134,342 total. The franchise fee ($27,000–$45,000) varies
+by territory population and is substantially lower than Lawn Doctor's $124K bundled package.
+A typical new single-territory franchise pays $35,000 ($27,000 license + $8,000 territory fee).
+Additional territories can be acquired at incremental territory fees.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th class="num">Low</th>
+      <th class="num">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>Initial Franchise Fee</td>
+      <td class="num">$45,000</td>
+      <td class="num">$45,000</td>
+    </tr>
+    
+    <tr>
+      <td>Production Vehicles, Equipment and Fixtures</td>
+      <td class="num">$5,519</td>
+      <td class="num">$5,519</td>
+    </tr>
+    
+    <tr>
+      <td>Technology Equipment and Software</td>
+      <td class="num">$3,450</td>
+      <td class="num">$3,850</td>
+    </tr>
+    
+    <tr>
+      <td>Opening Inventory and Supplies</td>
+      <td class="num">$2,543</td>
+      <td class="num">$2,543</td>
+    </tr>
+    
+    <tr>
+      <td>Initial Marketing Campaign Fee</td>
+      <td class="num">$35,000</td>
+      <td class="num">$35,000</td>
+    </tr>
+    
+    <tr>
+      <td>Initial Property Data Fee</td>
+      <td class="num">$16,500</td>
+      <td class="num">$16,500</td>
+    </tr>
+    
+    <tr>
+      <td>Training Expenses</td>
+      <td class="num">$0</td>
+      <td class="num">$1,835</td>
+    </tr>
+    
+    <tr>
+      <td>Miscellaneous Opening Costs</td>
+      <td class="num">$1,550</td>
+      <td class="num">$13,168</td>
+    </tr>
+    
+    <tr>
+      <td>Additional Funds - 3 Months</td>
+      <td class="num">$7,981</td>
+      <td class="num">$10,927</td>
+    </tr>
+    
+    <tr style="border-top:2px solid #333">
+      <td class="label">Total</td>
+      <td class="num"><strong>$117,543</strong></td>
+      <td class="num"><strong>$134,342</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>Key line items</h3>
+<ul class="compact">
+<li><strong>Franchise fee ($27,000–$45,000):</strong> Base license ($27,000) plus territory fee
+based on population. Multi-unit discounts available. (p. 14)</li>
+<li><strong>Vehicle ($15,000–$25,000):</strong> Truck or van for equipment transport. Can start
+with existing vehicle if suitable.</li>
+<li><strong>Equipment ($20,000–$28,000):</strong> Spray equipment, spreaders, and supplies.
+Purchased from approved vendors.</li>
+<li><strong>Working capital ($15,000–$20,000):</strong> First 3–6 months of operations.</li>
+<li><strong>Technology setup ($3,000–$5,000):</strong> Computer, software licenses, phone system.</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> Spring-Green's $118K–$134K total is $30K–$40K less than Lawn
+Doctor and comparable to NaturaLawn's mid-range. The franchise fee is the key differentiator:
+Spring-Green's $27K–$45K vs. Lawn Doctor's $124K means substantially more of your investment
+goes into working capital and equipment rather than upfront fees.
+</div>
+
+
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
+
+<p>Stable and unremarkable — which is not a criticism. Spring-Green's 156-unit system has been
+essentially flat for three years: +2, –2, +4 net. Turnover is moderate (2.0%, 5.2%, 4.6%).
+For a 48-year-old system, this suggests maturity rather than decline — the brand is holding
+its position without aggressive expansion or concerning contraction.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num">Opened</th>
+      <th class="num">Closed</th>
+      <th class="num">Net</th>
+      <th class="num">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">2022</td>
+      <td class="num">2</td>
+      <td class="num">0</td>
+      <td class="num">+2</td>
+      <td class="num">128</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2023</td>
+      <td class="num">2</td>
+      <td class="num">4</td>
+      <td class="num">-4</td>
+      <td class="num">124</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2024</td>
+      <td class="num">4</td>
+      <td class="num">0</td>
+      <td class="num">+2</td>
+      <td class="num">126</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Outlet trajectory</h3>
+<ul class="compact">
+<li><strong>2022:</strong> 152→154 (+2 net). 2 opened, 0 closed. 3 transfers. Turnover 2.0%.</li>
+<li><strong>2023:</strong> 154→152 (–2 net). 2 opened, 2 closed, 2 non-renewals. 2 transfers.
+Turnover 5.2%.</li>
+<li><strong>2024:</strong> 152→156 (+4 net). 4 opened, 0 closed. 5 transfers. Turnover 4.6%.</li>
+</ul>
+
+<h3>Context on size</h3>
+<p>At 156 units, small absolute numbers can create large percentage swings. The 5.2% turnover
+in 2023 represents just 8 exits from a 154-unit base — hardly a systemic problem. The 5 transfers
+in 2024 suggest a healthy resale market proportional to system size.</p>
+
+<div class="implication">
+<strong>What this means:</strong> Spring-Green is a mature, stable system. It is not growing
+rapidly, which may concern buyers seeking expansion momentum. But it is also not contracting,
+which is the more important signal for franchise durability. A buyer joining Spring-Green is
+joining a system that has proven it can sustain itself at this size for decades.
+</div>
+
+
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
+
+<h3>Litigation</h3>
+<p>No litigation required to be disclosed (Item 3). No bankruptcy (Item 4). Clean legal
+history across the system's 48-year franchise history.</p>
+
+<h3>Entity and ownership</h3>
+<p>Spring-Green Enterprises, Inc. — privately held. The company also operates Spring-Green's
+tree and shrub care services as part of the franchise offering. The private ownership provides
+operational stability without the leveraged acquisition dynamics that can accompany PE buyouts.</p>
+
+<h3>Fee escalation risk</h3>
+<p>The regional advertising fund (up to 2%) is not currently active and requires franchisee
+approval in the region to implement. Technology fees can increase up to 100% over any 5-year
+period — the most explicitly defined escalation cap in the cohort. The call center fee
+($500/month + per-lead fees) is season-dependent, which creates cost variability but also
+means you pay less in the off-season. (pp. 17–18)</p>
+
+<h3>System growth concern</h3>
+<p>Flat growth is not a crisis, but it is worth investigating. A system that adds 2–4 net units
+per year in a growing market may be failing to attract new franchisees — or it may be
+deliberately maintaining quality over growth. Ask the franchisor which it is, and why.</p>
+
+
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
+
+<p>Spring-Green occupies the center of the lawn care cohort on most dimensions: moderate cost,
+solid disclosure, stable system, honest COGS definition. It is the best-balanced option for
+a buyer who does not want to pay Lawn Doctor's premium, does not want Weed Man's disclosure
+blackout, and does not want NaturaLawn's paradoxically high fee burden despite a low headline
+royalty.</p>
+
+<p><strong>Key comparison: Lawn Doctor.</strong> Lawn Doctor offers more data (4 tables vs. 3),
+a larger system (653 vs. 156 units), and lower turnover. But it costs $33,500/year more in
+fees at $300K revenue and $55,000/year more at $500K. Over 10 years, that gap is $335K–$550K.
+Spring-Green's 68.1% gross margin (including labor) is also more useful for financial modeling
+than Lawn Doctor's 85.4% (materials only).</p>
+
+<p><strong>Key comparison: NaturaLawn.</strong> NaturaLawn has the lowest entry cost and highest
+revenue per customer ($810 vs. $556), but its ongoing fee burden is the highest in the cohort —
+$101,584 at $300K vs. Spring-Green's $45,318. NaturaLawn's $60K–$80K mandatory marketing spend
+dominates the fee structure. A buyer choosing NaturaLawn over Spring-Green is paying 2.25× the
+ongoing fees for a niche organic positioning — which may or may not justify the premium.</p>
+
+<p><strong>Key comparison: Weed Man.</strong> Weed Man's 8.5% total fee burden is the lowest by far,
+but Weed Man discloses zero Item 19 data. A buyer choosing Weed Man over Spring-Green saves
+$20K/year in fees but loses all revenue benchmarks, margin data, and customer metrics. For
+a buyer with independent market knowledge, this trade-off might work. For a first-time buyer,
+it is risky.</p>
+
+
+<table class="peer-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      
+      <th class="num">Lawn Doctor</th>
+      
+      <th class="num">NaturaLawn</th>
+      
+      <th class="num">Spring-Green</th>
+      
+      <th class="num">Weed Man</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">System size</td>
+      
+      <td class="num">653</td>
+      
+      <td class="num">88</td>
+      
+      <td class="num this-brand">126</td>
+      
+      <td class="num">121</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Investment range</td>
+      
+      <td class="num">$150K–$177K</td>
+      
+      <td class="num">$77K–$152K</td>
+      
+      <td class="num this-brand">$117K–$134K</td>
+      
+      <td class="num">$81K–$109K</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Fee burden at $300K</td>
+      
+      <td class="num">$78,800</td>
+      
+      <td class="num">$101,584</td>
+      
+      <td class="num this-brand">$45,318</td>
+      
+      <td class="num">$25,550</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">% of revenue</td>
+      
+      <td class="num">26.3%</td>
+      
+      <td class="num">33.9%</td>
+      
+      <td class="num this-brand">15.1%</td>
+      
+      <td class="num">8.5%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">3-year net growth</td>
+      
+      <td class="num">+40</td>
+      
+      <td class="num">+6</td>
+      
+      <td class="num this-brand">+4</td>
+      
+      <td class="num">+27</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Recent attrition</td>
+      
+      <td class="num">0.2%</td>
+      
+      <td class="num">2.0%</td>
+      
+      <td class="num this-brand">0.0%</td>
+      
+      <td class="num">0.0%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Royalty rate</td>
+      
+      <td class="num">10.0%</td>
+      
+      <td class="num">9.0%</td>
+      
+      <td class="num this-brand">varies</td>
+      
+      <td class="num">varies</td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Decision overlay</h3>
+<table class="decision-overlay">
+  <tbody>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<p>These questions are derived from specific findings in the Spring-Green 2025 FDD.
+Each includes context on why it matters and what to listen for.</p>
+
+<ol class="question-list">
+  
+  <li>The system has been essentially flat for 3 years (+2, –2, +4 net). Is this intentional, and what is the growth strategy going forward?
+    <span class="question-context">A 48-year-old system that adds 2–4 net units per year may be in maintenance mode. You want to know if the franchisor is investing in growth or managing a mature portfolio.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They articulate a specific growth plan — target markets, recruitment strategy, conversion franchise program. Honest about historical growth pace and reasons.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>How many franchise inquiries do you receive per year, and what is the close rate?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>Table 1 shows 68.1% average gross margin including labor. What is the typical labor cost breakdown — seasonal vs. year-round employees, and how many technicians for a single-territory operation?
+    <span class="question-context">Labor at 19.1% of revenue is the largest single cost. Understanding labor structure is critical for your financial model.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They provide benchmarks: typical crew size, seasonal vs. year-round ratio, labor cost per production vehicle. Even better if they share data on labor markets by region.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What is the average revenue per employee for a single-territory operation?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>Revenue per customer averages $556 with a median of $549. How many customers does a median single-territory operator serve, and what is annual customer retention?
+    <span class="question-context">At $615K median revenue and $549 median revenue per customer, a single-territory operator serves roughly 1,120 customers. You need to know the churn rate to model acquisition costs.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They provide customer counts by territory size and annual retention rates. The data should be consistent with the revenue and revenue-per-customer figures.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What is the typical cost to acquire a new customer, and how does it compare to the Table 3 marketing effectiveness data?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>The franchise fee ranges from $27K to $45K based on territory population. How is territory size determined, and can I see examples of territory maps?
+    <span class="question-context">Territory design directly affects revenue potential. Understanding the methodology helps you evaluate whether your specific territory can support the revenue benchmarks in Item 19.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They explain the population-based methodology, show example territories, and discuss how territory size correlates with revenue in the Item 19 data.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What is the average population per territory for the 36 single-territory operators in Table 2?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>The regional advertising fund (up to 2% additional) requires franchisee approval. Has this ever been proposed or implemented in any region?
+    <span class="question-context">If activated, this would increase the marketing cost by $6,000–$10,000/year at $300K–$500K revenue.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>Clear history of whether the fund has been proposed, voted on, or implemented in any region. Honest about the approval process.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What voting threshold is required, and how are regions defined?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>The technology fee has a cap of 100% increase over any 5-year period. What has been the historical pattern of technology fee increases?
+    <span class="question-context">A $235/month fee that can double to $470/month over 5 years is a meaningful escalation. You want to know the actual historical trajectory.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They provide the history of technology fee changes and explain what service improvements accompanied each increase.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Are there additional technology costs beyond the base fee and user licenses that I should budget for?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>Table 3 shows marketing effectiveness data — 0.0042 new agreements per $1 of marketing spend. How does this compare to your internal benchmarks, and what marketing channels drive the most agreements?
+    <span class="question-context">Unique disclosure. You want to understand whether the average marketing ROI is achievable in your market.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They discuss which channels (direct mail, digital, door-to-door) are most effective and provide regional variation data.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What is the recommended marketing mix for a new single-territory operator in a suburban market?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>Revenue per production vehicle averages $201K. How many vehicles does a typical single-territory operator run, and is there a minimum?
+    <span class="question-context">At $615K median single-territory revenue, this implies roughly 3 vehicles per territory. Vehicle count directly affects labor costs and capital requirements.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They explain the relationship between territory size, vehicle count, and revenue. Provide benchmarks for new vs. mature territories.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What is the average cost per production vehicle including equipment and insurance?</dd>
+      
+    </dl>
+    
+  </li>
+  
+</ol>
+
+<div class="methodology">
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <p><strong>Source document:</strong> Spring-Green 2025 Franchise Disclosure Document,
+  filed with the Wisconsin Department of Financial Institutions. 263-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">a3b30d7521fe546489e6dd90b28030ff81f242c9db9743b693c5296cc8638f97</code></p>
+  <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
+  review. Field-level provenance recorded (source year, state, page number, item reference).
+  Extraction confidence: high (3+ fields spot-checked against source).</p>
+  <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
+  fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
+  <p><strong>Peer comparison:</strong> Same methodology applied to all 4 brands in this cohort
+  (Lawn Doctor, NaturaLawn, Spring-Green, Weed Man).
+  All from 2025 FDDs filed with Wisconsin DFI.</p>
+  <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
+  recommendation to buy or avoid this franchise. It is a structured analysis of publicly
+  available regulatory filings. The buyer should read the actual FDD, consult a franchise
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
+</div>
+
+</body>
+</html>

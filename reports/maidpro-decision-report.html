@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaidPro — Franchise Decision Report</title>
+<style>
+@media print {
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a; background: #fff; line-height: 1.7;
+  max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem;
+}
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0 0 0.25rem; letter-spacing: -0.02em; font-family: -apple-system, sans-serif; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid #ccc; font-family: -apple-system, sans-serif; }
+h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.4rem; font-family: -apple-system, sans-serif; }
+p { margin: 0 0 0.9rem; }
+strong { font-weight: 700; }
+a { color: #1a1a1a; }
+
+.report-header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 1.75rem; }
+.report-meta { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; line-height: 1.5; margin-top: 0.5rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; font-family: -apple-system, sans-serif; }
+thead th { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 2px solid #333; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #555; }
+thead th.num { text-align: right; }
+tbody td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; }
+tbody td.num { text-align: right; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; }
+tbody td.label { font-weight: 600; white-space: nowrap; }
+
+.callout { padding: 0.75rem 1rem; margin: 0.75rem 0 1.25rem; border-left: 3px solid #d97706; background: #fffbeb; font-size: 0.88rem; }
+.callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
+
+.question-list { list-style: none; padding: 0; counter-reset: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
+.question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+.question-list li:last-child { border-bottom: none; }
+.question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
+
+.methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
+.methodology p { margin: 0 0 0.5rem; }
+
+.exec-summary { font-size: 1.02rem; line-height: 1.75; }
+.peer-table td.this-brand { background: #f5f7fa; }
+
+.implication {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem;
+  color: #1e40af; margin: 0.5rem 0 1rem; line-height: 1.5;
+  padding-left: 0.75rem; border-left: 2px solid #93c5fd;
+}
+.implication strong { color: #1e40af; }
+ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
+ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+.toc-list { counter-reset: toc-counter; }
+.toc-list li .toc-num-auto::before {
+  counter-increment: toc-counter;
+  content: counter(toc-counter);
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">MaidPro</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: 2025 Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: MaidPro Franchise, LLC</span>
+    <span>Report generated: 2026-03-17</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num toc-num-auto"></span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    
+    <li><span class="toc-num toc-num-auto"></span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
+  <h1>MaidPro</h1>
+  <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
+  <div class="report-meta">
+    Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
+    Legal entity: MaidPro Franchise, LLC<br>
+    Report generated: 2026-03-17 &middot; Franchise Decision Radar
+  </div>
+</div>
+
+<h2 id="executive-summary">Executive Summary</h2>
+<div class="exec-summary">
+
+<p>MaidPro is a 29-year-old residential cleaning franchise (MaidPro Franchise, LLC / Threshold Brands /
+The Riverside Company) with 237 outlets as of year-end 2024. The system has stabilized after modest
+contraction: 246 to 241 to 237 to 237 over three years, with net zero change in 2024. Turnover has
+improved significantly — 15.0% to 12.4% to 8.4% — the strongest improving-turnover trend in the cohort
+alongside The Maids.</p>
+
+<p>MaidPro has the simplest fee structure in the residential cleaning cohort: 6% flat royalty, 2% Brand
+Fund, $500/month technology fee. No mandatory local marketing percentage, no DHH-based fees, no contact
+center surcharges, no escalating weekly minimums. At $300K revenue, total fees are $30,000 (10.0%) —
+the lowest fully-transparent burden in the cohort (The Cleaning Authority models lower at 7.6%, but its
+DHH-based Local Marketing Fee is excluded — see that report for details). At $500K, fees are $46,000 (9.2%).
+The simplicity is itself a competitive advantage: you can model your economics without hidden fee layers
+or territory-size-dependent variables.</p>
+
+<p>The Item 19 discloses total gross revenue by quartile for 231 outlets: system average $461,941, median
+$397,548. The dispersion is wide (Q1 average $958K vs Q4 average $134K), and only 42% of outlets exceed
+the average — a top-heavy distribution. No cost data is disclosed. The franchise offers a Franchise Option
+Program ($0 franchise fee in exchange for 10% royalty for 10 years) and a Conversion Program (2% royalty
+for first 2 years), creating distinct fee tiers within the system.</p>
+
+</div>
+
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the residential cleaning cohort.</p>
+
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">Entry cost burden</td>
+      <td class="rating rating-mixed">Moderate</td>
+      <td class="sc-summary">$110K–$159K total investment. Mid-cohort. $45K franchise fee with military (20%), multi-unit (25%), and conversion (full waiver) discounts available.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Ongoing fee burden</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Lowest fully-transparent fee burden in cohort (TCA models lower but excludes its DHH-based Local Marketing Fee). 10.0% at $300K, 9.2% at $500K. Simplest structure — no hidden layers.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">System stability</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Stabilized at 237 units after modest contraction (-9 over 3 years, -3.7%). Turnover improving: 15.0%→12.4%→8.4%. Net zero change in 2024 is a positive inflection.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Revenue disclosure</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Total gross revenue by quartile for 231 outlets. System average $462K, median $398K. Clear, comparable data.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Disclosure quality</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Table 1 has a typographical error (mislabeled year). Territory definition changed in 2023 (~45K QH at $100K+ income). Confidentiality clauses present. 7 closures excluded.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Downside risk profile</td>
+      <td class="rating rating-mixed">Moderate</td>
+      <td class="sc-summary">Wide revenue dispersion (Q1 7.1× Q4). Bottom quartile average of $134K may not support fee obligations. Franchise Option Program creates 10% royalty cohort within system.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Buyer fit breadth</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Lowest fully-modelable fee burden and simplest structure in cohort. Multiple entry paths (standard, conversion, franchise option). Works for budget-sensitive and control-oriented buyers.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Overall</td>
+      <td class="rating rating-strong">Favorable</td>
+      <td class="sc-summary">The cleanest fee structure and lowest fully-modelable ongoing cost in the cohort, paired with disclosed revenue and a stabilizing system. The trade-off is less franchisor-managed marketing infrastructure and a smaller system than legacy competitors. Relative cohort position does not establish absolute profitability.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+MaidPro is the simplest franchise in this cohort to model: flat 6% royalty, 2% brand
+fund, $500/month tech fee, and that's it. No DHH-based marketing fees, no contact center surcharges, no
+escalating weekly minimums. You can calculate your total franchisor obligation in 30 seconds. The fee
+advantage is real — $29K/year less than The Maids and $35K/year less than Two Maids at $300K revenue. The
+trade-off: MaidPro's marketing infrastructure is thinner than brands that charge for managed local advertising,
+and the system is smaller. You are paying less but getting less franchisor-directed marketing support. If
+you want to control your own marketing spend and keep more of what you earn, MaidPro is the cohort's
+strongest argument for that approach.
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+
+<h3>Best fit for</h3>
+<ul class="fit-list">
+<li><strong>Cost-conscious buyer who wants to keep more revenue:</strong> MaidPro retains the most revenue
+for the franchisee at every modeled level. At $500K, you keep $454K after franchisor fees. At Two Maids,
+you'd keep $419K. That $35K/year gap compounds.</li>
+<li><strong>Marketing-independent operator:</strong> No mandatory franchisor-managed local advertising program.
+The $3,000/month local ad minimum for the first 24 months is a spend requirement, not a payment to the
+franchisor. You choose where and how to advertise.</li>
+<li><strong>Conversion franchise buyer:</strong> The Conversion Program waives the franchise fee entirely
+and reduces royalty to 2% for the first 2 years. If you already run a cleaning business, this is the
+lowest-friction entry in the cohort.</li>
+<li><strong>Buyer who values fee transparency:</strong> Every fee is predictable and calculable. No territory-
+size-dependent marketing costs, no contact center escalators, no discretionary royalty adjustments.</li>
+</ul>
+
+<h3>Weaker fit for</h3>
+<ul class="fit-list">
+<li><strong>Buyer who wants franchisor-managed marketing:</strong> MaidPro does not run your local advertising
+for you. The optional TMS Connect Internet Presence service is $90/month, SEO is $305/month — but these
+are opt-in, not managed programs. If you want the franchisor to handle lead generation, Two Maids or
+The Cleaning Authority offer more managed infrastructure (at higher cost).</li>
+<li><strong>Buyer seeking large-system brand recognition:</strong> 237 outlets is smaller than Molly Maid
+(448), Merry Maids (802), or The Maids (369). If national brand awareness is a priority, larger systems
+offer more. MaidPro's recognition is regional, not national.</li>
+<li><strong>Risk-averse buyer focused on bottom-quartile outcomes:</strong> Q4 average revenue is $134K
+with a low of $14,440. At that level, franchisor fees ($22K/year) consume 16% of gross revenue before
+any operating costs. The bottom quartile of MaidPro is not viable as a standalone business.</li>
+</ul>
+
+<h3>Proceed only if</h3>
+<ul class="fit-list">
+<li>You are comfortable managing your own local marketing. The fee savings versus managed-marketing brands
+assume you can generate leads efficiently on your own or through the optional MaidPro tools.</li>
+<li>You have evaluated whether the Franchise Option Program (10% royalty for 10 years) or the standard
+program (6% royalty, $45K fee) is better for your cash flow profile. At $400K revenue, the crossover
+is ~7.5 years — after that, the standard program saves money.</li>
+<li>You understand that territory definitions changed in January 2023 (~45K QH at $100K+ income), which
+means historical performance data from pre-2023 territories may not be comparable to current offerings.</li>
+</ul>
+
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
+
+<p>MaidPro has the lowest fully-transparent ongoing fee burden in the residential cleaning cohort at every modeled revenue
+level: 11.0% at $200K, 10.0% at $300K, 9.5% at $400K, 9.2% at $500K. The gap versus competitors is
+significant — $29,130/year less than The Maids and $34,800/year less than Two Maids at $300K. The primary
+reason: no mandatory local marketing program payable to the franchisor. MaidPro charges a flat 2% Brand
+Fund and leaves local marketing to the franchisee.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>At Revenue</th>
+      <th class="num">Royalty</th>
+      <th class="num">Marketing</th>
+      <th class="num">Tech / Other</th>
+      <th class="num">Total</th>
+      <th class="num">% of Rev</th>
+      <th class="num">Cohort Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">$200,000</td>
+      <td class="num">$12,000</td>
+      <td class="num">$4,000</td>
+      <td class="num">$6,000</td>
+      <td class="num"><strong>$22,000</strong></td>
+      <td class="num">11.0%</td>
+      <td class="num">2/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$300,000</td>
+      <td class="num">$18,000</td>
+      <td class="num">$6,000</td>
+      <td class="num">$6,000</td>
+      <td class="num"><strong>$30,000</strong></td>
+      <td class="num">10.0%</td>
+      <td class="num">2/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$400,000</td>
+      <td class="num">$24,000</td>
+      <td class="num">$8,000</td>
+      <td class="num">$6,000</td>
+      <td class="num"><strong>$38,000</strong></td>
+      <td class="num">9.5%</td>
+      <td class="num">2/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$500,000</td>
+      <td class="num">$30,000</td>
+      <td class="num">$10,000</td>
+      <td class="num">$6,000</td>
+      <td class="num"><strong>$46,000</strong></td>
+      <td class="num">9.2%</td>
+      <td class="num">2/7</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">The Cleaning Authority</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 35.2%"></div>
+    </div>
+    <div class="fee-bar-value">7.6%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">MaidPro</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill this-brand" style="width: 46.3%"></div>
+    </div>
+    <div class="fee-bar-value">10.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Molly Maid</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 48.1%"></div>
+    </div>
+    <div class="fee-bar-value">10.4%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Merry Maids</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 50.9%"></div>
+    </div>
+    <div class="fee-bar-value">11.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Maid Right</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 78.2%"></div>
+    </div>
+    <div class="fee-bar-value">16.9%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">The Maids</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 91.2%"></div>
+    </div>
+    <div class="fee-bar-value">19.7%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Two Maids & A Mop</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 100.0%"></div>
+    </div>
+    <div class="fee-bar-value">21.6%</div>
+  </div>
+  
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+
+
+
+<h3>Component breakdown</h3>
+<ul class="compact">
+<li><strong>Royalty (6% flat):</strong> Simplest royalty in the cohort. No tiers, no brackets, no discretionary
+incentives, no resets. 6% of monthly Gross Consumer Sales. Minimum Royalty of $800/month applies after
+12 months if sales fall below $15,000/month. Premium Royalty of 2.5% on out-of-territory customers
+(with franchisor permission). (pp. 10, 13–14)</li>
+<li><strong>Brand Fund (2% flat):</strong> Monthly. Straightforward. No additional local marketing percentage
+to the franchisor. The mandatory $3,000/month local advertising spend for the first 24 months is a franchisee-
+directed requirement, not a payment to the franchisor. (pp. 10, 14)</li>
+<li><strong>Technology ($500/month):</strong> Covers proprietary cloud-based software (4 licenses), branded
+email (4 licenses), MACS marketing tool, and 1-800 customer service number. Waived for second and subsequent
+MaidPro franchises. May increase up to 10% per year compounding. (pp. 12–14, 16)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> At $300K revenue, you retain ~$270K after franchisor fees. At Merry Maids
+(next comparable): ~$267K. At The Maids: ~$241K. At Two Maids: ~$235K. The MaidPro advantage is modest vs
+Merry Maids and Molly Maid but dramatic vs The Maids and Two Maids. Over a 10-year term at $300K revenue,
+the cumulative fee difference vs The Maids is $291,300. That is real money.
+</div>
+
+<div class="callout">
+<div class="callout-title">Two hidden fee structures within the system</div>
+MaidPro has two alternative fee programs that create different cost profiles for different operators:
+(1) Franchise Option Program: $0 franchise fee but 10% royalty for 10 years (vs standard 6%). At $400K
+revenue, the annual cost difference is $16,000/year — the $45K franchise fee is recovered in under 3 years.
+After Year 3, the standard program saves money every year. (2) Conversion Program: franchise fee waived,
+2% royalty for first 2 years. These operators are included in the Item 19 data — their economics differ
+from standard franchisees. (pp. 8–9)
+</div>
+
+
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
+
+<p>MaidPro's Item 19 discloses total Gross Consumer Sales and number of jobs for 231 franchised outlets
+open the full calendar year 2024. It is straightforward and comparable — a single table with system-wide
+and quartile breakdowns, plus a separate section for operators reporting from two combined territories.</p>
+
+<h3>System-wide performance</h3>
+<ul class="compact">
+<li><strong>Average Gross Consumer Sales:</strong> $461,941. Median: $397,548.</li>
+<li><strong>Range:</strong> $14,440 to $2,815,974. Extremely wide.</li>
+<li><strong>42% at or above average</strong> — top-heavy distribution driven by high performers.</li>
+<li><strong>Average jobs:</strong> 2,644. Implied average revenue per job: ~$175.</li>
+</ul>
+
+<h3>By quartile</h3>
+<ul class="compact">
+<li><strong>Q1 (53 outlets):</strong> Average $958,412, median $891,162. Range: $659K–$2.82M.</li>
+<li><strong>Q2 (53 outlets):</strong> Average $520,615, median $515,502. Range: $415K–$653K.</li>
+<li><strong>Q3 (53 outlets):</strong> Average $312,844, median $318,560. Range: $225K–$406K.</li>
+<li><strong>Q4 (52 outlets):</strong> Average $134,476, median $139,439. Range: $14K–$222K.</li>
+</ul>
+
+<h3>What this tells you</h3>
+<ul class="compact">
+<li>The Q1-to-Q4 ratio is 7.1:1 ($958K vs $134K). This is among the widest dispersions in the cohort.</li>
+<li>Q2 and Q3 are relatively tight ($313K–$521K) — suggesting a "middle band" of $300K–$500K as the
+realistic range for an established single-territory operator.</li>
+<li>Q4 includes outlets generating as little as $14K — some may be part-time, winding down, or in the
+Conversion/Franchise Option Program with different operating profiles.</li>
+</ul>
+
+<h3>What's missing</h3>
+<ul class="compact">
+<li><strong>Any cost data:</strong> No COGS, no gross margin, no expense breakdown. Cannot assess
+profitability from the FDD alone.</li>
+<li><strong>Revenue by territory age/tenure:</strong> Unlike The Cleaning Authority or Two Maids, MaidPro
+does not break out revenue by how long the territory has been operating. You cannot see the ramp curve.</li>
+<li><strong>Survivorship bias:</strong> 7 outlets that permanently closed in 2024 are excluded. 6 that
+opened during 2024 (not full year) are also excluded. Smaller exclusion count than Merry Maids (90) or
+Molly Maid (25).</li>
+</ul>
+
+
+
+
+<h3>From gross revenue to owner economics</h3>
+<p>MaidPro does not disclose costs. Using industry-norm estimates:</p>
+
+<p><strong>At the system median ($398K):</strong></p>
+<ul class="compact">
+<li>Franchisor fees at 10%: ~$40K</li>
+<li>Revenue after fees: ~$358K</li>
+<li>Estimated COGS at 55% (cleaning industry norm): ~$219K</li>
+<li>Remaining for overhead and owner draw: ~$139K</li>
+<li>After overhead (rent $12K–$18K, insurance $4K–$8K, vehicle $5K–$8K, local marketing $18K–$36K,
+misc $4K–$6K): ~$63K–$96K for owner income before taxes</li>
+</ul>
+
+<p><strong>At Q3 average ($313K):</strong></p>
+<ul class="compact">
+<li>Franchisor fees: ~$31K. Revenue after fees: ~$282K.</li>
+<li>COGS at 55%: ~$172K. Remaining: ~$110K.</li>
+<li>After overhead ($43K–$76K): ~$34K–$67K for owner income.</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> MaidPro's fee advantage translates to approximately $5K–$15K more in
+annual owner income compared to mid-range competitors at the same revenue level. The advantage grows
+at lower revenue levels where MaidPro's lack of fixed-dollar marketing fees (no $30K/year local marketing
+program) matters most. At $300K, the fee difference vs The Maids is $29K — potentially the difference
+between a viable and an unviable business.
+</div>
+
+<div class="callout">
+<div class="callout-title">The $3,000/month local marketing question</div>
+MaidPro requires $3,000/month in local advertising for the first 24 months — $72,000 over two years. This
+is a spend requirement, not a fee to the franchisor. After 24 months, the Manuals govern the spend amount
+(not disclosed). The critical question for your model: what is the required local marketing spend after
+Month 24? If it drops to $1,000/month, your Year 3+ costs improve materially. If it remains at $3,000/month,
+MaidPro's true ongoing cost is closer to competitors than the modelable fees suggest.
+</div>
+
+
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
+This is not a profitability forecast. It uses MaidPro's disclosed Item 19 revenue data (231 outlets,
+calendar year 2024). No cost data is disclosed — COGS and overhead are estimated from industry norms.
+Conversion franchisees (2% royalty) and Franchise Option Program participants (10% royalty) are included
+in the revenue data — their economics differ from standard 6% franchisees. Your actual results depend on
+your territory, labor market, marketing effectiveness, and operating model.</p>
+
+
+<table class="scenario-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="scenario-name">Q4 average</td>
+      <td class="num">$134,000</td>
+      <td class="num">$14,740 (11.0%)</td>
+      <td class="num">$73,700</td>
+      <td class="num"><strong>$45,560</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Q3 average</td>
+      <td class="num">$313,000</td>
+      <td class="num">$31,040 (9.9%)</td>
+      <td class="num">$172,150</td>
+      <td class="num"><strong>$109,810</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">System median</td>
+      <td class="num">$398,000</td>
+      <td class="num">$37,840 (9.5%)</td>
+      <td class="num">$218,900</td>
+      <td class="num"><strong>$141,260</strong></td>
+    </tr>
+    
+  </tbody>
+</table>
+<p class="assumption-note">Revenue from Item 19 quartile data (CY2024, 231 outlets). COGS estimated at 55% (cleaning industry norm — not disclosed by MaidPro). Franchisor fees at standard 6% royalty + 2% Brand Fund + $500/mo tech = varies by revenue level. 'Remaining' must cover local marketing (minimum $3,000/month for first 24 months), overhead, taxes, and owner draw. Q4 scenario may include part-time, winding-down, or alternative-fee-program operators.</p>
+
+
+
+
+
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
+
+<p>Mid-cohort entry cost: $109,860–$158,650. The $45,000 franchise fee is competitive (below Merry Maids'
+$55K, The Maids' $60K, and Molly Maid's $60K–$85K combined fees). Multiple programs reduce or eliminate
+the fee: Military/First Responder (20% off first franchise), Multi-Unit (25% off 2nd+ if 3+ purchased
+simultaneously), Conversion (full waiver), Franchise Option ($0 fee, 10% royalty for 10 years). (pp. 8–9)</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th class="num">Low</th>
+      <th class="num">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>Initial Franchise Fee</td>
+      <td class="num">$45,000</td>
+      <td class="num">$45,000</td>
+    </tr>
+    
+    <tr>
+      <td>Travel and Living Expenses while Training</td>
+      <td class="num">$3,800</td>
+      <td class="num">$7,000</td>
+    </tr>
+    
+    <tr>
+      <td>Equipment</td>
+      <td class="num">$7,500</td>
+      <td class="num">$8,500</td>
+    </tr>
+    
+    <tr>
+      <td>Miscellaneous Opening Costs</td>
+      <td class="num">$6,160</td>
+      <td class="num">$8,850</td>
+    </tr>
+    
+    <tr>
+      <td>Cost for Initial Vehicle with Wrap</td>
+      <td class="num">$5,300</td>
+      <td class="num">$28,000</td>
+    </tr>
+    
+    <tr>
+      <td>Initial Printing Materials</td>
+      <td class="num">$1,300</td>
+      <td class="num">$1,300</td>
+    </tr>
+    
+    <tr>
+      <td>Advertising - Initial 3 Months</td>
+      <td class="num">$15,000</td>
+      <td class="num">$15,000</td>
+    </tr>
+    
+    <tr>
+      <td>Real Estate</td>
+      <td class="num">$5,000</td>
+      <td class="num">$10,000</td>
+    </tr>
+    
+    <tr>
+      <td>Insurance</td>
+      <td class="num">$2,000</td>
+      <td class="num">$12,000</td>
+    </tr>
+    
+    <tr>
+      <td>Additional Funds - 3 Months</td>
+      <td class="num">$18,800</td>
+      <td class="num">$23,000</td>
+    </tr>
+    
+    <tr style="border-top:2px solid #333">
+      <td class="label">Total</td>
+      <td class="num"><strong>$109,860</strong></td>
+      <td class="num"><strong>$158,650</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>What to know about the major line items</h3>
+<ul class="compact">
+<li><strong>Franchise fee ($45,000):</strong> Due at signing, nonrefundable. Training for 2 included. The
+Franchise Option Program refunds this fee at opening in exchange for 10% royalty (vs 6%) for 10 years —
+a meaningful cash-flow alternative for capital-constrained buyers. (pp. 8–9)</li>
+<li><strong>Advertising — Initial 3 months ($15,000):</strong> Mandatory $3,000/month local advertising
+for first 24 months. Item 7 captures only the first 3 months ($15,000). Total first-year local ad cost:
+$36,000. Total 24-month commitment: $72,000. This is the largest ongoing cost commitment and is separate
+from franchisor fees. (p. 17)</li>
+<li><strong>Cost for initial vehicle with wrap ($5,300–$28,000):</strong> Widest range of any line item.
+Low is lease/financed used vehicle; high is new vehicle purchase. Must display MaidPro car wrap. (p. 17)</li>
+<li><strong>Additional Funds — 3 months ($18,800–$23,000):</strong> Includes payroll, insurance, professional
+fees, monthly Technology Fee. Does not include owner salary. (p. 17)</li>
+<li><strong>Insurance ($2,000–$12,000):</strong> Varies widely by state, payroll, and employee count.
+Workers' comp and third-party bonding ($25K per loss) required. (pp. 17–19)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> Plan for ~$134K at the midpoint. The Franchise Option Program ($0 fee)
+reduces cash-at-signing by $45K but increases ongoing costs by $16K/year at $400K revenue ($40K vs $24K
+royalty). The crossover point where the standard program becomes cheaper is approximately Year 2.8 at $400K
+revenue. Most buyers who can afford the $45K fee upfront should pay it — the 10-year commitment to 10%
+royalty is a steep long-term cost.
+</div>
+
+
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
+
+<p>MaidPro's system is stabilizing after modest contraction. Unit count declined from 246 to 237 over
+three years (-3.7%), but 2024 showed net zero change — the first year without net losses. Turnover has
+improved significantly: 15.0% (2022) to 12.4% (2023) to 8.4% (2024). The trajectory is positive.
+Terminations dropped from 13 to 9 to 4 over the period. Only 7 outlets permanently closed in 2024 —
+the lowest exit count in the cohort relative to system size.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num">Opened</th>
+      <th class="num">Closed</th>
+      <th class="num">Net</th>
+      <th class="num">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">2022</td>
+      <td class="num">19</td>
+      <td class="num">24</td>
+      <td class="num">-5</td>
+      <td class="num">241</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2023</td>
+      <td class="num">12</td>
+      <td class="num">16</td>
+      <td class="num">-4</td>
+      <td class="num">237</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2024</td>
+      <td class="num">7</td>
+      <td class="num">7</td>
+      <td class="num">+0</td>
+      <td class="num">237</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Modest, stabilizing system</h3>
+<ul class="compact">
+<li><strong>2022:</strong> 19 opened, 13 terminated, 11 ceased, 13 transferred. Net: -5.</li>
+<li><strong>2023:</strong> 12 opened, 9 terminated, 6 ceased, 1 non-renewal, 14 transferred. Net: -4.</li>
+<li><strong>2024:</strong> 7 opened, 4 terminated, 3 ceased, 13 transferred. Net: 0.</li>
+</ul>
+<p>The key trend: exits are declining (37 → 30 → 20) while new openings have slowed (19 → 12 → 7).
+The system reached equilibrium in 2024 — not through growth, but through reduced churn. (pp. 40–46)</p>
+
+<h3>Active transfer market</h3>
+<p>13 transfers per year across the period — consistent and substantial relative to the 237-unit system
+(5.5% transfer rate). This suggests territories have resale value and an established ownership turnover
+mechanism. The $5,000 flat transfer fee is the lowest in the cohort — significantly below Molly Maid
+($15,000), The Maids ($15,000), and Two Maids ($25K–$50K). Low transfer friction is a positive signal
+for exit optionality.</p>
+
+<h3>Projected growth</h3>
+<p>4 new outlets projected (CO, CT, FL ×2), plus 2 signed-but-not-opened (IL, OH). Modest pipeline but
+consistent with a system that is not aggressively expanding. (pp. 45–46)</p>
+
+<div class="implication">
+<strong>What this means:</strong> MaidPro is not a growth story. It is a stability story. The system
+found its floor in 2024 at 237 units. Turnover is dropping. The $5,000 transfer fee means exits are
+low-friction. For a buyer, the relevant question is whether 237 units is a stable base or a pause before
+further decline. The turnover trajectory (15% → 8.4%) strongly favors the stable-base interpretation.
+</div>
+
+<h3>No company-owned outlets</h3>
+<p>Zero company-owned locations. All 237 outlets are franchised. The franchisor is not competing with
+its franchisees. (pp. 40–46)</p>
+
+
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
+
+<h3>Revenue dispersion is the primary economic risk</h3>
+<p>The 7.1:1 ratio between Q1 ($958K) and Q4 ($134K) average revenue means outcomes vary enormously.
+Q4's average of $134K — with a low of $14K — represents a cohort of operators for whom the franchise
+is not working as a full-time business. At $134K revenue, franchisor fees ($22K), estimated COGS ($74K),
+and basic overhead ($30K+) leave effectively nothing for owner income. The question is whether Q4
+territories are failing due to market conditions, operator execution, or structural issues with certain
+territory types. (pp. 38–40)</p>
+
+<h3>Territory definition change</h3>
+<p>In January 2023, MaidPro changed its territory definition to ~45,000 Qualified Households with
+$100K+ household income (previously 20K–80K QH with $75K+ income). This means territories sold before
+2023 may be structurally different from current offerings. Older territories could be significantly
+smaller or in lower-income markets. The Item 19 data includes all 231 outlets regardless of territory
+definition — historical territories may drag averages. (pp. 38, 40)</p>
+
+<h3>Franchise Option Program creates a split system</h3>
+<p>Operators who chose the Franchise Option Program ($0 fee, 10% royalty for 10 years) pay 67% more
+in royalties than standard operators at the same revenue level. They are included in the Item 19 revenue
+data but their cost structure is materially different. A buyer comparing themselves to the system average
+must account for the fact that some peers are paying 6% royalty and others are paying 10%. (pp. 8–9)</p>
+
+<h3>Litigation: effectively clean</h3>
+<p>Single disclosed arbitration — MaidPro vs former franchisee for unpaid fees and non-compete violation.
+Settled within 3 months (June 2024). No pending matters. No regulatory actions. This is the lightest
+litigation profile in the cohort. (p. 8)</p>
+
+<h3>Independent franchisee association</h3>
+<p>Maid Together Franchisee Association Inc. exists as an independent organization. Independent franchisee
+associations sometimes form in response to franchisor-franchisee tensions. The FDD does not provide details
+on the association's membership or concerns. Ask about its role during your diligence.</p>
+
+<h3>Confidentiality clauses</h3>
+<p>Current and former franchisees have signed provisions restricting their ability to speak openly — a
+due diligence obstacle consistent across several brands in this cohort.</p>
+
+
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
+
+<p>MaidPro has the simplest and lowest fully-modelable fee structure in the residential cleaning cohort. It offers fee
+transparency that no competitor matches, disclosed revenue data, a stabilizing system, and the lowest
+transfer fee ($5K). It is the anti-complexity choice.</p>
+
+<p><strong>Closest comparison: Molly Maid.</strong> Similar fee burden (10.0% vs 10.4% at $300K), similar
+system trajectory (both stabilizing after contraction). Molly Maid has more brand recognition and
+Neighborly infrastructure but does not disclose total revenue. MaidPro discloses revenue and has simpler
+fees. Molly Maid offers the bigger brand name; MaidPro offers more transparency and simplicity.</p>
+
+<p><strong>Sharpest contrast: The Maids.</strong> The Maids charges $59,130 at $300K vs MaidPro's $30,000 —
+nearly double. The Maids provides a company-owned P&L (15.5% net margin) that MaidPro cannot match.
+The question: is The Maids' profitability data worth $29K/year more in fees? For an analytical buyer
+who values data, possibly. For a cost-conscious buyer, MaidPro's fee advantage is transformative.</p>
+
+<p><strong>Growth alternative: Two Maids & A Mop.</strong> If you want a franchise that is growing rapidly
+and provides franchisor-managed marketing, Two Maids is the opposite end of the spectrum. You pay 21.6%
+of revenue at $300K (vs MaidPro's 10.0%) but get managed advertising, richer disclosure, and system
+momentum. MaidPro is the DIY bet; Two Maids is the managed bet.</p>
+
+
+<table class="peer-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      
+      <th class="num">Maid Right</th>
+      
+      <th class="num">MaidPro</th>
+      
+      <th class="num">Merry Maids</th>
+      
+      <th class="num">Molly Maid</th>
+      
+      <th class="num">The Cleaning Authority</th>
+      
+      <th class="num">The Maids</th>
+      
+      <th class="num">Two Maids & A Mop</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">System size</td>
+      
+      <td class="num">35</td>
+      
+      <td class="num this-brand">237</td>
+      
+      <td class="num">802</td>
+      
+      <td class="num">448</td>
+      
+      <td class="num">233</td>
+      
+      <td class="num">338</td>
+      
+      <td class="num">144</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Investment range</td>
+      
+      <td class="num">$147K–$218K</td>
+      
+      <td class="num this-brand">$109K–$158K</td>
+      
+      <td class="num">$126K–$170K</td>
+      
+      <td class="num">$139K–$197K</td>
+      
+      <td class="num">$92K–$147K</td>
+      
+      <td class="num">$117K–$141K</td>
+      
+      <td class="num">$93K–$149K</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Fee burden at $300K</td>
+      
+      <td class="num">$50,780</td>
+      
+      <td class="num this-brand">$30,000</td>
+      
+      <td class="num">$32,988</td>
+      
+      <td class="num">$31,056</td>
+      
+      <td class="num">$22,902</td>
+      
+      <td class="num">$59,130</td>
+      
+      <td class="num">$64,800</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">% of revenue</td>
+      
+      <td class="num">16.9%</td>
+      
+      <td class="num this-brand">10.0%</td>
+      
+      <td class="num">11.0%</td>
+      
+      <td class="num">10.4%</td>
+      
+      <td class="num">7.6%</td>
+      
+      <td class="num">19.7%</td>
+      
+      <td class="num">21.6%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">3-year net growth</td>
+      
+      <td class="num">+11</td>
+      
+      <td class="num this-brand">-9</td>
+      
+      <td class="num">-187</td>
+      
+      <td class="num">-53</td>
+      
+      <td class="num">+24</td>
+      
+      <td class="num">-13</td>
+      
+      <td class="num">+52</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Recent attrition</td>
+      
+      <td class="num">34.1%</td>
+      
+      <td class="num this-brand">3.0%</td>
+      
+      <td class="num">10.2%</td>
+      
+      <td class="num">5.4%</td>
+      
+      <td class="num">1.8%</td>
+      
+      <td class="num">2.9%</td>
+      
+      <td class="num">5.1%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Royalty rate</td>
+      
+      <td class="num">6.0%</td>
+      
+      <td class="num this-brand">6.0%</td>
+      
+      <td class="num">7.0%</td>
+      
+      <td class="num">6.5–3.0%</td>
+      
+      <td class="num">6.0–4.0%</td>
+      
+      <td class="num">6.9–3.9%</td>
+      
+      <td class="num">7.0–4.0%</td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<p>These questions are derived from specific findings in the MaidPro 2025 FDD.
+Each includes context on why it matters and what to listen for.</p>
+
+<ol class="question-list">
+  
+  <li>The mandatory local advertising spend is $3,000/month for the first 24 months. What is the required spend after Month 24, and who determines it?
+    <span class="question-context">Item 6, pp. 14, 17. After 24 months, 'Manuals govern local spend amount' — not specified in FDD.</span>
+    
+  </li>
+  
+  <li>Q4 outlets average $134K in revenue with a low of $14K. How many of the 52 Q4 outlets are Franchise Option Program participants (10% royalty), Conversion Program operators (2% royalty), or standard franchisees (6% royalty)?
+    <span class="question-context">Item 19, pp. 38–40. Three distinct fee structures coexist in the system. Program participation likely correlates with performance.</span>
+    
+  </li>
+  
+  <li>Territory definitions changed in January 2023 to ~45K Qualified Households at $100K+ income. How many of the 231 reporting outlets are on the old territory definition vs the new one?
+    <span class="question-context">Item 19 footnotes, pp. 38, 40. Historical territories ranged from 20K–80K QH at $75K+ income.</span>
+    
+  </li>
+  
+  <li>The $5,000 transfer fee is the lowest in the cohort. What has been the typical resale price for MaidPro territories that transferred in 2024, expressed as a multiple of trailing 12-month revenue?
+    <span class="question-context">Item 20, pp. 40–46. 13 transfers in 2024.</span>
+    
+  </li>
+  
+  <li>The Franchise Option Program charges 10% royalty for 10 years in exchange for $0 franchise fee. How many current operators are on this program, and what is their average revenue compared to standard franchisees?
+    <span class="question-context">Item 5, pp. 8–9. $45K franchise fee refunded at opening, replaced by 10% royalty.</span>
+    
+  </li>
+  
+  <li>The Maid Together Franchisee Association exists as an independent organization. What is the association's current focus, and does the franchisor engage with it on policy decisions?
+    <span class="question-context">FDD reference to independent franchisee organization.</span>
+    
+  </li>
+  
+</ol>
+
+<div class="methodology">
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <p><strong>Source document:</strong> MaidPro 2025 Franchise Disclosure Document,
+  filed with the Wisconsin Department of Financial Institutions. 262-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">6f544315bc684e5494d541f1e0ae768bcc4ebe05ee87e94b4350b10057577102</code></p>
+  <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
+  review. Field-level provenance recorded (source year, state, page number, item reference).
+  Extraction confidence: high (3+ fields spot-checked against source).</p>
+  <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
+  fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
+  <p><strong>Peer comparison:</strong> Same methodology applied to all 7 brands in this cohort
+  (Maid Right, MaidPro, Merry Maids, Molly Maid, The Cleaning Authority, The Maids, Two Maids & A Mop).
+  All from 2025 FDDs filed with Wisconsin DFI.</p>
+  <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
+  recommendation to buy or avoid this franchise. It is a structured analysis of publicly
+  available regulatory filings. The buyer should read the actual FDD, consult a franchise
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
+</div>
+
+</body>
+</html>

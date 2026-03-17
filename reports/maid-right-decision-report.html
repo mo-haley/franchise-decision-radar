@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maid Right — Franchise Decision Report</title>
+<style>
+@media print {
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a; background: #fff; line-height: 1.7;
+  max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem;
+}
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0 0 0.25rem; letter-spacing: -0.02em; font-family: -apple-system, sans-serif; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid #ccc; font-family: -apple-system, sans-serif; }
+h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.4rem; font-family: -apple-system, sans-serif; }
+p { margin: 0 0 0.9rem; }
+strong { font-weight: 700; }
+a { color: #1a1a1a; }
+
+.report-header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 1.75rem; }
+.report-meta { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; line-height: 1.5; margin-top: 0.5rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; font-family: -apple-system, sans-serif; }
+thead th { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 2px solid #333; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #555; }
+thead th.num { text-align: right; }
+tbody td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; }
+tbody td.num { text-align: right; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; }
+tbody td.label { font-weight: 600; white-space: nowrap; }
+
+.callout { padding: 0.75rem 1rem; margin: 0.75rem 0 1.25rem; border-left: 3px solid #d97706; background: #fffbeb; font-size: 0.88rem; }
+.callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
+
+.question-list { list-style: none; padding: 0; counter-reset: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
+.question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+.question-list li:last-child { border-bottom: none; }
+.question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
+
+.methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
+.methodology p { margin: 0 0 0.5rem; }
+
+.exec-summary { font-size: 1.02rem; line-height: 1.75; }
+.peer-table td.this-brand { background: #f5f7fa; }
+
+.implication {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem;
+  color: #1e40af; margin: 0.5rem 0 1rem; line-height: 1.5;
+  padding-left: 0.75rem; border-left: 2px solid #93c5fd;
+}
+.implication strong { color: #1e40af; }
+ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
+ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+.toc-list { counter-reset: toc-counter; }
+.toc-list li .toc-num-auto::before {
+  counter-increment: toc-counter;
+  content: counter(toc-counter);
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">Maid Right</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: 2025 Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: Maid Right, LLC</span>
+    <span>Report generated: 2026-03-17</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num toc-num-auto"></span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    
+    <li><span class="toc-num toc-num-auto"></span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
+  <h1>Maid Right</h1>
+  <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
+  <div class="report-meta">
+    Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
+    Legal entity: Maid Right, LLC<br>
+    Report generated: 2026-03-17 &middot; Franchise Decision Radar
+  </div>
+</div>
+
+<h2 id="executive-summary">Executive Summary</h2>
+<div class="exec-summary">
+
+<p>Maid Right is a small, founder-led residential cleaning franchise (Maid Right, LLC / Premium Service
+Brands / PSB Group) with 35 outlets as of year-end 2024 — down from 44 the prior year. It is the smallest
+system in this cohort by a wide margin (the next smallest is MaidPro at 237) and the only non-PE-backed
+brand. The system grew from 24 to 44 units over 2022–2023, then contracted to 35 in 2024 — a net loss
+of 9 units in a single year, the first year of terminations (6). Turnover rates are extraordinary:
+37.8% (2023) and 38.6% (2024).</p>
+
+<p>The Item 19 discloses total gross sales for 20 franchised businesses operated by 18 franchisees:
+average $520,441, median $356,020. But only 18 of 39 total franchisees (46%) are included — 21 franchisees
+operating 30 businesses are excluded for not operating the full year or not using CRM software properly.
+The exclusion rate is itself a significant signal about system maturity and data infrastructure.</p>
+
+<p>The fee structure is deceptively complex. The headline royalty (6%) and marketing (2%) rates are
+competitive, but mandatory weekly service fees — Technology ($210/week), Contact Center ($220/week
+minimum at Year 5), and Accounting/Business Advisory ($85/week) — add $295/week ($15,340/year) in
+fixed costs paid to the franchisor regardless of revenue. At $300K revenue, total franchisor fees reach
+$50,780 (16.9%). At $200K, they spike to 21.4%. This places Maid Right's fee burden third-highest in
+the cohort — above Merry Maids, Molly Maid, and MaidPro — despite a nominally "low" royalty rate.</p>
+
+<p>The most significant risk factors are not economic but organizational: CEO Paul Flick was barred from
+offering or selling franchises in California for 36 months. Affiliate entities under the same parent
+(360 Painting, Rooterman, Window Gang) have been the subject of regulatory actions in 6 states for FDD
+disclosure failures. The franchisor's financial condition is flagged by state regulators. Confidentiality
+clauses restrict current and former franchisees from speaking openly. These are not hypothetical risks —
+they are documented regulatory findings about the parent organization's compliance culture.</p>
+
+</div>
+
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the residential cleaning cohort.</p>
+
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">Entry cost burden</td>
+      <td class="rating rating-mixed">Moderate</td>
+      <td class="sc-summary">$147K–$219K total investment. Highest in cohort. $65K standard franchise fee plus $5K technology fee at signing.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Ongoing fee burden</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">Third-highest in cohort (16.9% at $300K). Nominal 6% royalty is masked by $295/week in mandatory fixed service fees (tech + contact center + accounting).</td>
+    </tr>
+    
+    <tr>
+      <td class="label">System stability</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">35 units, contracting. 38.6% turnover in 2024. First-ever terminations (6) in 2024. System grew then shrank — classic early-franchise volatility.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Revenue disclosure</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Item 19 has 4 tables with quartile, tenure, and service-type data. But only 46% of franchisees included. 86% recurring revenue is a positive signal.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Disclosure quality</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">17 affiliate litigation actions. CEO barred in California. 6 state regulatory actions. Financial condition flagged. Confidentiality clauses. High Item 19 exclusion rate.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Downside risk profile</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">Affiliate regulatory pattern, franchisor financial condition warning, 38.6% turnover, system contraction, and confidentiality clauses create a multi-layered risk profile.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Buyer fit breadth</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">Very narrow. Suitable only for buyers with high risk tolerance who have independently validated the local market, the specific territory, and the franchisor's financial stability.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Overall</td>
+      <td class="rating rating-weak">Elevated Risk</td>
+      <td class="sc-summary">The data is sufficient to analyze but the risk profile is the most elevated in the cohort. The regulatory pattern, turnover rate, system contraction, and financial condition warnings demand exceptional diligence. Inclusion in this library reflects analytical value for cohort comparison, not endorsement. Relative cohort position does not establish absolute profitability.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+Maid Right is included in this cohort library because it represents a distinct
+archetype — small, founder-led, high-risk — that buyers encounter in the market and deserve disciplined
+analysis of, not silence about. The data is sufficient for a structured report. But the risk profile is
+the most elevated in the cohort by every measure: turnover, regulatory history, financial condition, and
+system trajectory. This is a franchise where the disclosed risks are not theoretical — they are documented
+regulatory findings across multiple states about the parent organization. Your diligence must be
+exceptionally thorough, and you should assume that the disclosed risks understate the actual situation
+given the confidentiality clauses restricting franchisee speech.
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+
+<h3>Best fit for</h3>
+<ul class="fit-list">
+<li><strong>Experienced operator with high risk tolerance who has independently validated the opportunity:</strong>
+If you have cleaning industry experience, a strong local market, and have personally verified the franchisor's
+financial stability and support quality through direct investigation — not just the FDD — Maid Right's
+relatively low royalty rate (6%) and recurring revenue model could work. But you are assuming risks that
+most buyers should not.</li>
+<li><strong>Existing PSB Group franchisee expanding into cleaning:</strong> If you already operate a
+360 Painting, Window Gang, or other PSB brand and are familiar with the parent organization's strengths
+and weaknesses, you have informational advantages other buyers lack. 10% discount for existing PSB
+affiliates. (p. 17)</li>
+</ul>
+
+<h3>Weaker fit for</h3>
+<ul class="fit-list">
+<li><strong>First-time franchise buyer:</strong> A system with 38.6% turnover, 35 units, a CEO barred from
+selling franchises in one state, and franchisor financial condition warnings is not an appropriate first
+franchise for most buyers.</li>
+<li><strong>Buyer seeking peer support and system scale:</strong> 28 franchisees operating 35 territories
+— 8 of whom are master franchisees. The peer network is very thin. In comparison, Molly Maid has 197
+operators, Merry Maids has 249 FOGs.</li>
+<li><strong>Buyer in California:</strong> CEO Paul Flick was barred from offering or selling franchises
+in California for 36 months by the California Department of Financial Protection and Innovation. While
+this applied to the 360 Painting affiliate, not Maid Right directly, the regulatory action is on the
+same individual who leads Maid Right. (pp. 15–16)</li>
+</ul>
+
+<h3>Proceed only if</h3>
+<ul class="fit-list">
+<li>You have independently verified the franchisor's current financial condition beyond what the FDD
+discloses. The state-mandated risk disclosure flags the franchisor's financial ability to provide services
+and support. (p. 5)</li>
+<li>You have read and understood all 17 litigation actions — particularly the regulatory pattern across
+6 states (MD, IL, VA, CA, WA). The individual actions are against affiliate entities, but the pattern
+reflects the parent organization's compliance culture.</li>
+<li>You have talked to multiple current and former franchisees, with full awareness that confidentiality
+clauses may limit what they share. Try to reach franchisees who have exited — the 38.6% turnover rate
+means many recent exits exist.</li>
+<li>You have modeled the full fee burden including the $295/week fixed service fees — not just the
+6% royalty and 2% marketing headline rates.</li>
+</ul>
+
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
+
+<p>Maid Right's fee burden is third-highest in the cohort: 21.4% at $200K, 16.9% at $300K, 13.4% at $500K.
+The headline royalty (6%) and marketing (2%) rates are competitive — matching MaidPro. But the mandatory
+weekly service fees ($295/week = $15,340/year) create a fixed-cost floor that is highly regressive.
+At $200K revenue, these service fees alone consume 7.7% of gross — more than most competitors' entire
+technology fees. The Contact Center Fee ($220/week minimum at Year 5) is the most punitive component,
+escalating from $50/week in the first 12 weeks to $220/week by Year 5.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>At Revenue</th>
+      <th class="num">Royalty</th>
+      <th class="num">Marketing</th>
+      <th class="num">Tech / Other</th>
+      <th class="num">Total</th>
+      <th class="num">% of Rev</th>
+      <th class="num">Cohort Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">$200,000</td>
+      <td class="num">$12,000</td>
+      <td class="num">$4,000</td>
+      <td class="num">$26,780</td>
+      <td class="num"><strong>$42,780</strong></td>
+      <td class="num">21.4%</td>
+      <td class="num">5/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$300,000</td>
+      <td class="num">$18,000</td>
+      <td class="num">$6,000</td>
+      <td class="num">$26,780</td>
+      <td class="num"><strong>$50,780</strong></td>
+      <td class="num">16.9%</td>
+      <td class="num">5/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$400,000</td>
+      <td class="num">$24,000</td>
+      <td class="num">$8,000</td>
+      <td class="num">$26,780</td>
+      <td class="num"><strong>$58,780</strong></td>
+      <td class="num">14.7%</td>
+      <td class="num">5/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$500,000</td>
+      <td class="num">$30,000</td>
+      <td class="num">$10,000</td>
+      <td class="num">$26,780</td>
+      <td class="num"><strong>$66,780</strong></td>
+      <td class="num">13.4%</td>
+      <td class="num">5/7</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">The Cleaning Authority</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 35.2%"></div>
+    </div>
+    <div class="fee-bar-value">7.6%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">MaidPro</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 46.3%"></div>
+    </div>
+    <div class="fee-bar-value">10.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Molly Maid</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 48.1%"></div>
+    </div>
+    <div class="fee-bar-value">10.4%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Merry Maids</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 50.9%"></div>
+    </div>
+    <div class="fee-bar-value">11.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Maid Right</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill this-brand" style="width: 78.2%"></div>
+    </div>
+    <div class="fee-bar-value">16.9%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">The Maids</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 91.2%"></div>
+    </div>
+    <div class="fee-bar-value">19.7%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Two Maids & A Mop</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 100.0%"></div>
+    </div>
+    <div class="fee-bar-value">21.6%</div>
+  </div>
+  
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+
+
+
+<h3>Component breakdown</h3>
+<ul class="compact">
+<li><strong>Royalty (6% flat):</strong> Competitive rate matching MaidPro. $150/week minimum. At $200K+
+revenue, the percentage exceeds the minimum. (pp. 18, 20)</li>
+<li><strong>Marketing (2% of Gross Sales):</strong> $50/week minimum. Straightforward. Advertising Cooperative
+Fee may also apply (up to $10K or 2% per year) but is not in addition to other required marketing spend.
+(pp. 18–19)</li>
+<li><strong>Technology Fee ($210/week = $10,920/year):</strong> The second-highest technology cost in the
+cohort (behind only Two Maids' $7,800 on a per-year basis, but Maid Right's is actually higher). Covers
+website, email, software. Also requires $5,000 one-time Initial Technology Fee at signing. (p. 19)</li>
+<li><strong>Contact Center Fee (escalating minimums):</strong> Greater of 2% of Gross Sales or escalating
+weekly minimum: $50/week (weeks 1–12), $100/week (weeks 13–24), $150/week (remainder of Year 1),
+$220/week (Year 2+). Maximum cap of $770/week. At $200K revenue, the $220/week minimum ($11,440/year)
+far exceeds the 2% rate ($4,000/year). At $500K, the 2% rate ($10,000) still falls below the minimum
+($11,440). The floor does not become non-binding until revenue exceeds ~$572K. (p. 18)</li>
+<li><strong>Accounting and Business Advisory Fee ($85/week = $4,420/year):</strong> Monthly accounting
+and business advisory support. Can opt out after 12 months in favor of approved third-party vendor.
+(p. 19)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> At $300K revenue, Maid Right charges $50,780 — nearly $21K more than
+MaidPro ($30,000) despite having the same nominal royalty and marketing rates. The entire difference is
+the $295/week in mandatory service fees. Over a 10-year term, that is $207,000 more than MaidPro's fees.
+The service fees are what make Maid Right's effective fee burden closer to The Maids and Two Maids than
+to MaidPro, despite the similar headline rates.
+</div>
+
+<div class="callout">
+<div class="callout-title">The contact center escalation trap</div>
+The Contact Center Fee starts at $50/week but reaches $220/week by Year 2. A franchisee who joins
+at $200K revenue pays $11,440/year for the contact center alone — 5.7% of gross revenue on a single
+service. At MaidPro, the optional National Sales Center is a per-inquiry charge ($30–$35/inquiry) that
+scales with actual usage. The difference in philosophy — mandatory flat floor vs optional variable rate —
+is fundamental to comparing these systems.
+</div>
+
+
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
+
+<p>Maid Right's Item 19 provides four tables covering fiscal year 2024 for 18 franchisees operating
+20 Franchised Businesses. The data is detailed — consolidated revenue, quartile breakdowns, tenure
+segmentation, and service mix. But the 46% inclusion rate (18 of 39 franchisees) creates significant
+questions about what the excluded 54% look like.</p>
+
+<h3>Table A — Consolidated system revenue</h3>
+<ul class="compact">
+<li><strong>Total system Gross Sales: $10,408,825</strong> across 20 businesses.</li>
+<li><strong>Average per business:</strong> $520,441. Median: $356,020.</li>
+<li>Large gap between average and median ($164K) indicates top performers skew the average significantly.</li>
+</ul>
+
+<h3>Table B — Revenue by quartile</h3>
+<ul class="compact">
+<li><strong>Top quartile (6 businesses):</strong> Average $1,258,050, median $1,182,243. Range: $884K–$1.73M.</li>
+<li><strong>Middle 50% (9 businesses):</strong> Average $435,696, median $356,020. Range: $288K–$856K.</li>
+<li><strong>Bottom quartile (5 businesses):</strong> Average $126,601, median $95,578. Range: $30K–$278K.</li>
+</ul>
+
+<h3>Table C — Revenue by tenure (most revealing)</h3>
+<ul class="compact">
+<li><strong>12–23 months (3 businesses):</strong> Average $66,206. Range: $30K–$96K.</li>
+<li><strong>24–35 months (3 businesses):</strong> Average $274,598. Range: $156K–$341K.</li>
+<li><strong>36+ months (14 businesses):</strong> Average $782,201, median $709,533. Range: $278K–$1.73M.</li>
+</ul>
+<p>Strong maturity curve: 36+ month operators average nearly 12× what 12–23 month operators generate.
+But two-thirds of reporting franchisees (12/18) have been operating 36+ months — the sample is heavily
+weighted toward survivors.</p>
+
+<h3>Table D — Service mix</h3>
+<ul class="compact">
+<li><strong>86.4% recurring service</strong> ($190 avg job size). Strong recurring base.</li>
+<li>Move in/out cleaning: 1.9% of sales but $317 avg job size (highest per-job).</li>
+<li>Commercial: only 1.98%. This is a residential-focused operation.</li>
+</ul>
+
+<h3>What's excluded — and why it matters</h3>
+<ul class="compact">
+<li><strong>21 franchisees operating 30 businesses excluded</strong> for not operating the full year
+or not using CRM software properly. That is 54% of franchisees and 60% of businesses.</li>
+<li>The "not using CRM software properly" exclusion criterion is unusual and concerning — it suggests
+either poor technology adoption across the system or a franchisor-selected filter that removes
+inconvenient data points.</li>
+<li>With 38.6% annual turnover, many of the excluded operators may have exited during 2024. Their
+revenue is not reflected in the averages.</li>
+</ul>
+
+
+
+
+<h3>From gross sales to owner economics</h3>
+<p>Using disclosed revenue and industry cost estimates:</p>
+
+<p><strong>At the median ($356K):</strong></p>
+<ul class="compact">
+<li>Franchisor fees at ~15%: ~$53K (including $15.3K fixed weekly fees)</li>
+<li>Revenue after fees: ~$303K</li>
+<li>Estimated COGS at 55%: ~$196K</li>
+<li>Remaining for overhead and owner draw: ~$107K</li>
+<li>After overhead (rent, insurance, vehicle, marketing beyond 2%): ~$50K–$75K for owner income</li>
+</ul>
+
+<p><strong>At 12–23 month average ($66K):</strong></p>
+<ul class="compact">
+<li>Franchisor fees: ~$25K (fixed fees dominate: $15.3K weekly fees + ~$4K royalty + ~$1.3K marketing + ~$5K technology setup). The fixed fees exceed the royalty at this revenue level.</li>
+<li>Revenue after fees: ~$41K</li>
+<li>Estimated COGS: ~$36K</li>
+<li>Remaining: ~$5K for all overhead and owner income. This is not viable.</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> The ramp period is brutal. A new Maid Right territory generating $66K
+in Year 1 sends ~$25K to the franchisor in fees — 38% of gross revenue. After COGS and basic overhead,
+the operator is deeply negative. The 36+ month cohort at $782K average looks much better (~$100K+ implied
+owner income), but you have to survive 2–3 years of negative or marginal cash flow to get there — in a
+system where 38.6% of operators exited in a single year. The tenure data simultaneously proves the model
+works at maturity and demonstrates why the turnover rate is so high.
+</div>
+
+<div class="callout">
+<div class="callout-title">The 54% exclusion problem</div>
+When more than half the system is excluded from performance data, the reported averages describe survivors,
+not the system. MaidPro excludes 2.5% (6 of 237 for not operating full year). Molly Maid excludes 7%
+(31 of 448). Maid Right excludes 54% (21 of 39). This is not a minor statistical caveat — it fundamentally
+changes what the averages mean. The system average for the INCLUDED population is $520K. The system average
+for the entire system — including excluded operators generating unknown revenue — could be substantially lower.
+</div>
+
+
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
+This is not a profitability forecast. It uses Maid Right's disclosed Item 19 revenue for 20 franchised
+businesses (of 50 total) that were open the full year and using CRM properly. 54% of the system is
+excluded from these figures. No cost data is disclosed. COGS is estimated from industry norms. The fixed
+weekly service fees ($295/week = $15,340/year) dominate the fee burden at lower revenue levels and create
+a structural disadvantage vs competitors with variable-only fee structures. Your actual results depend on
+territory, market conditions, ramp speed, and whether the franchisor delivers the services these fees
+are meant to cover.</p>
+
+
+<table class="scenario-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="scenario-name">Year 1-2 operator (Table C avg)</td>
+      <td class="num">$66,000</td>
+      <td class="num">$14,124 (21.4%)</td>
+      <td class="num">$36,300</td>
+      <td class="num"><strong>$15,576</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">System median (Table A)</td>
+      <td class="num">$356,000</td>
+      <td class="num">$55,260 (15.5%)</td>
+      <td class="num">$195,800</td>
+      <td class="num"><strong>$104,940</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">36+ month operator average (Table C)</td>
+      <td class="num">$782,000</td>
+      <td class="num">$66,780 (8.5%)</td>
+      <td class="num">$430,100</td>
+      <td class="num"><strong>$285,120</strong></td>
+    </tr>
+    
+  </tbody>
+</table>
+<p class="assumption-note">Revenue from Item 19 Tables A and C (FY2024, 18 franchisees / 20 businesses — 46% of system). COGS estimated at 55% (cleaning industry norm — not disclosed). Fixed weekly fees ($295/week = $15,340/year) apply regardless of revenue level. 'Remaining' must cover all overhead, taxes, and owner draw. 54% of franchisees excluded from data. Turnover rate of 38.6% means many operators do not reach the 36+ month maturity stage.</p>
+
+
+
+
+
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
+
+<p>Highest entry cost in the cleaning cohort: $147,100–$218,500. The $65,000 standard franchise fee is
+the highest single fee in the cohort, with a $5,000 one-time technology fee on top. Military/first
+responder and existing PSB affiliate discounts (10% each) are available. During 2024, actual franchise
+fees ranged from $25,000 to $65,000 — suggesting substantial negotiation or promotional discounting.
+The Designated Manager Salary line ($0–$30,000) creates a wide range in total investment. (pp. 17–21)</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th class="num">Low</th>
+      <th class="num">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>Franchise Fee</td>
+      <td class="num">$65,000</td>
+      <td class="num">$65,000</td>
+    </tr>
+    
+    <tr>
+      <td>Vehicle</td>
+      <td class="num">$1,500</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Real Estate and/or Leasehold Improvements</td>
+      <td class="num">$0</td>
+      <td class="num">$3,000</td>
+    </tr>
+    
+    <tr>
+      <td>Equipment & Supplies</td>
+      <td class="num">$3,500</td>
+      <td class="num">$7,000</td>
+    </tr>
+    
+    <tr>
+      <td>Insurance</td>
+      <td class="num">$2,000</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Signage</td>
+      <td class="num">$3,000</td>
+      <td class="num">$4,000</td>
+    </tr>
+    
+    <tr>
+      <td>Technology Fee</td>
+      <td class="num">$5,000</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Grand Opening</td>
+      <td class="num">$2,500</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Training Expenses</td>
+      <td class="num">$3,000</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Licenses/Bonds</td>
+      <td class="num">$100</td>
+      <td class="num">$1,500</td>
+    </tr>
+    
+    <tr>
+      <td>Professional Fees</td>
+      <td class="num">$1,500</td>
+      <td class="num">$3,000</td>
+    </tr>
+    
+    <tr>
+      <td>Designated Manager Salary</td>
+      <td class="num">$0</td>
+      <td class="num">$30,000</td>
+    </tr>
+    
+    <tr>
+      <td>Marketing</td>
+      <td class="num">$10,000</td>
+      <td class="num">$20,000</td>
+    </tr>
+    
+    <tr>
+      <td>Additional Funds (6 months)</td>
+      <td class="num">$50,000</td>
+      <td class="num">$60,000</td>
+    </tr>
+    
+    <tr style="border-top:2px solid #333">
+      <td class="label">Total</td>
+      <td class="num"><strong>$147,100</strong></td>
+      <td class="num"><strong>$218,500</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>What to know about the major line items</h3>
+<ul class="compact">
+<li><strong>Franchise Fee ($65,000 standard):</strong> Highest in cohort. Payable by wire at signing.
+If SBA-financed: $15,000 at signing, remainder after funding. Non-refundable. Discounts: 10% military/
+first responder, 10% existing PSB affiliate (not combinable). (pp. 17–18)</li>
+<li><strong>Additional Funds — 6 months ($50,000–$60,000):</strong> Note: 6-month runway, not the 3-month
+standard most competitors use. This is appropriate given the revenue ramp data (Year 1–2 average: $66K).
+But at the low end ($50K), that is $8,333/month for 6 months — tight given that franchisor fees alone
+are $2,100+/month before any COGS or overhead. (p. 21)</li>
+<li><strong>Marketing ($10,000–$20,000):</strong> In addition to the mandatory 2% ongoing marketing fund.
+This is pre-opening and launch marketing spend. (p. 21)</li>
+<li><strong>Designated Manager Salary ($0–$30,000):</strong> Applies only if the owner is not devoting
+full-time efforts and hires a manager. Creates the wide range in total investment. If you plan to be
+hands-on, this is $0. (p. 21)</li>
+<li><strong>Initial Technology Fee ($5,000 one-time):</strong> In addition to the ongoing $210/week
+technology fee. Paid at signing. (p. 18)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> Plan for $183K at the midpoint — the most capital-intensive entry in the
+cohort. Combined with the highest ongoing fee burden among percentage-based-plus-fixed-fee brands,
+Maid Right requires the most capital AND charges among the most in ongoing fees. The math only works
+at $350K+ revenue, which the tenure data suggests takes 2–3 years to reach. You need enough capital
+to survive negative cash flow for an extended ramp period in a system where 38.6% of operators
+exited in a single year.
+</div>
+
+
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
+
+<p>Maid Right is the smallest and most volatile system in the residential cleaning cohort. The unit count
+tells a boom-and-bust story: 24 outlets at start of 2022, rapid growth to 44 by end of 2023 (17 and 21
+openings), then contraction to 35 in 2024 (only 6 openings against 15 exits). The system expanded
+aggressively, lost a significant portion of the new entrants, and is now smaller than it was 18 months
+after the growth surge began.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num">Opened</th>
+      <th class="num">Closed</th>
+      <th class="num">Net</th>
+      <th class="num">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">2022</td>
+      <td class="num">17</td>
+      <td class="num">4</td>
+      <td class="num">+13</td>
+      <td class="num">37</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2023</td>
+      <td class="num">21</td>
+      <td class="num">14</td>
+      <td class="num">+7</td>
+      <td class="num">44</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2024</td>
+      <td class="num">6</td>
+      <td class="num">15</td>
+      <td class="num">-9</td>
+      <td class="num">35</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Turnover that demands explanation</h3>
+<ul class="compact">
+<li><strong>2022:</strong> 17 opened, 4 ceased operations, 1 transfer. Turnover: 20.8%. Fast growth phase.</li>
+<li><strong>2023:</strong> 21 opened, 14 ceased operations. Turnover: 37.8%. The 14 ceased exits wiped out
+two-thirds of the 21 new openings. Texas alone lost 8 units to ceased operations.</li>
+<li><strong>2024:</strong> 6 opened, 6 terminated, 9 ceased, 2 transferred. Turnover: 38.6%. First-ever
+terminations. System contracted by 9 net units.</li>
+</ul>
+<p>The pattern is classic early-franchise volatility: aggressive unit sales, rapid openings, then
+equally rapid exits as operators discover the economics do not work at early-stage revenue levels.
+The tenure data (Year 1–2 average revenue of $66K) explains why — operators generating $66K against
+$25K+ in franchisor fees cannot sustain the business. (pp. 48–51)</p>
+
+<h3>Geographic concentration of losses</h3>
+<ul class="compact">
+<li><strong>Texas:</strong> 8 ceased (2023), then 4 ceased + 2 terminated (2024). Texas accounts for
+14 of the 27 exits in 2023–2024 — over half the total losses.</li>
+<li><strong>Florida:</strong> 2 ceased (2022), 4 ceased (2023), 4 terminated (2024). 10 total exits.</li>
+<li>The geographic concentration suggests market-specific problems (oversaturation, inadequate support,
+or poor territory selection) rather than purely systemic issues.</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> A 38.6% turnover rate means roughly 1 in 3 operators exits per year.
+This is nearly 5× higher than The Maids (3.9%), 4.6× higher than MaidPro (8.4%), and 4.7× higher than
+Molly Maid (8.2%). Even for a small, young system, this rate is exceptional. The growth-then-contraction
+pattern suggests the franchisor sold territories faster than it could support them — a concern reinforced
+by the financial condition warnings. If you are evaluating Maid Right, the single most important question
+is whether the factors that caused 38.6% annual turnover have been addressed.
+</div>
+
+<h3>Master franchisees</h3>
+<p>8 of 28 franchisees are master franchisees offering subfranchises. This is an unusual structure
+for a 35-unit system and introduces an additional layer between the franchisor and the operator.
+Ask how many of the operational territories are master-franchised vs direct.</p>
+
+
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
+
+<h3>Affiliate regulatory pattern — the most significant risk</h3>
+<p>17 disclosed litigation actions. While none directly name Maid Right, LLC as defendant, the pattern
+involves the same CEO (Paul Flick), the same parent organization (PSB Group / Premium Service Brands),
+and the same types of violations:</p>
+<ul class="compact">
+<li><strong>Maryland (2016):</strong> Consent order against Maid Right predecessor (MRF) for failure to register.</li>
+<li><strong>Maryland (2023):</strong> $50,000 penalty against 360 Painting for disclosure failures.</li>
+<li><strong>Illinois (2020):</strong> Assurance of Voluntary Compliance against 360 Painting.</li>
+<li><strong>Virginia (2021):</strong> Settlement with $25,000 penalty against 360 Painting.</li>
+<li><strong>California (2022):</strong> Desist and refrain order + bar order on Paul Flick for 36 months
+from offering/selling franchises in California.</li>
+<li><strong>Washington (2022):</strong> Consent order against 360 Painting, $2,000 costs.</li>
+</ul>
+<p>Six state regulatory actions across 6 states — all for FDD disclosure failures — involving the same
+leadership and parent organization. When multiple independent state regulators reach similar conclusions
+about the same people, the pattern is the signal. (pp. 12–17)</p>
+
+<h3>Franchisor financial condition</h3>
+<p>Wisconsin special risk disclosure: the franchisor's financial condition "calls into question the
+franchisor's financial ability to provide services and support." Financial statements are consolidated
+at the Premium Service Brands, LLC level, not standalone for Maid Right. This means you cannot assess
+Maid Right's individual financial health from the FDD. (p. 5)</p>
+
+<h3>38.6% annual turnover</h3>
+<p>This is the headline statistic that summarizes system health. In 2024, 17 of 44 starting outlets
+exited (6 terminated, 9 ceased, 2 transferred). For comparison: The Maids' turnover is 3.9%, MaidPro's
+is 8.4%, Molly Maid's is 8.2%. Maid Right's rate is in a different category entirely.</p>
+
+<h3>Confidentiality clauses</h3>
+<p>"In the last 3 years, some franchisees have signed confidentiality clauses" restricting speech. In a
+system with 38.6% turnover and 17 litigation actions, the inability to speak freely with former operators
+about their experience is a substantial obstacle to informed due diligence.</p>
+
+<h3>Additional fee risks</h3>
+<ul class="compact">
+<li><strong>Lost Profits clause:</strong> Upon termination, you owe an amount equal to the royalties,
+marketing fund payments, and other fees that would have been paid for the full remaining term. On a
+$300K/year territory with 5 years remaining at ~17% fee burden: ~$255,000. (p. 20)</li>
+<li><strong>Annual Convention:</strong> $1,000 attendance fee — or $2,000 if you do NOT attend. You
+are penalized more for absence than presence. (p. 19)</li>
+</ul>
+
+
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
+
+<p>Maid Right occupies a unique — and isolated — position in the residential cleaning cohort. It is the
+smallest system (35 units vs 237–802 for peers), the only founder-led brand, the only one with a
+multi-state regulatory pattern against its parent organization, and the only one with turnover above
+15%. It is not directly comparable to any peer on system maturity or stability.</p>
+
+<p><strong>Fee comparison with MaidPro:</strong> Both charge 6% royalty and 2% marketing. But MaidPro's total
+fees at $300K are $30,000 (10.0%) vs Maid Right's $50,780 (16.9%). The entire $20,780 gap is mandatory
+weekly service fees that MaidPro does not charge. MaidPro also has 237 units, improving turnover (8.4%),
+one settled litigation action, and no regulatory pattern. For a buyer comparing 6%-royalty brands,
+MaidPro is the straightforward alternative.</p>
+
+<p><strong>Risk comparison with Merry Maids:</strong> Both are contracting systems. Merry Maids is larger (802
+units) and contracting at -18.9% over 3 years. Maid Right is smaller (35 units) and contracted -20.5%
+in a single year. Merry Maids has disclosed revenue data for a larger population. Both have confidentiality
+clauses. But Maid Right carries a regulatory pattern and financial condition warning that Merry Maids
+does not. The risk profiles are qualitatively different — Merry Maids is a declining legacy; Maid Right
+is a young system with organizational red flags.</p>
+
+<p><strong>Why this report exists:</strong> Maid Right is included in the cohort library because excluding it
+would create a distorted peer set. Buyers who encounter Maid Right in the market deserve the same disciplined
+analysis available for every other cleaning franchise. The elevated risk profile is not a reason to omit the
+brand — it is a reason to analyze it transparently.</p>
+
+
+<table class="peer-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      
+      <th class="num">Maid Right</th>
+      
+      <th class="num">MaidPro</th>
+      
+      <th class="num">Merry Maids</th>
+      
+      <th class="num">Molly Maid</th>
+      
+      <th class="num">The Cleaning Authority</th>
+      
+      <th class="num">The Maids</th>
+      
+      <th class="num">Two Maids & A Mop</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">System size</td>
+      
+      <td class="num this-brand">35</td>
+      
+      <td class="num">237</td>
+      
+      <td class="num">802</td>
+      
+      <td class="num">448</td>
+      
+      <td class="num">233</td>
+      
+      <td class="num">338</td>
+      
+      <td class="num">144</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Investment range</td>
+      
+      <td class="num this-brand">$147K–$218K</td>
+      
+      <td class="num">$109K–$158K</td>
+      
+      <td class="num">$126K–$170K</td>
+      
+      <td class="num">$139K–$197K</td>
+      
+      <td class="num">$92K–$147K</td>
+      
+      <td class="num">$117K–$141K</td>
+      
+      <td class="num">$93K–$149K</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Fee burden at $300K</td>
+      
+      <td class="num this-brand">$50,780</td>
+      
+      <td class="num">$30,000</td>
+      
+      <td class="num">$32,988</td>
+      
+      <td class="num">$31,056</td>
+      
+      <td class="num">$22,902</td>
+      
+      <td class="num">$59,130</td>
+      
+      <td class="num">$64,800</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">% of revenue</td>
+      
+      <td class="num this-brand">16.9%</td>
+      
+      <td class="num">10.0%</td>
+      
+      <td class="num">11.0%</td>
+      
+      <td class="num">10.4%</td>
+      
+      <td class="num">7.6%</td>
+      
+      <td class="num">19.7%</td>
+      
+      <td class="num">21.6%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">3-year net growth</td>
+      
+      <td class="num this-brand">+11</td>
+      
+      <td class="num">-9</td>
+      
+      <td class="num">-187</td>
+      
+      <td class="num">-53</td>
+      
+      <td class="num">+24</td>
+      
+      <td class="num">-13</td>
+      
+      <td class="num">+52</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Recent attrition</td>
+      
+      <td class="num this-brand">34.1%</td>
+      
+      <td class="num">3.0%</td>
+      
+      <td class="num">10.2%</td>
+      
+      <td class="num">5.4%</td>
+      
+      <td class="num">1.8%</td>
+      
+      <td class="num">2.9%</td>
+      
+      <td class="num">5.1%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Royalty rate</td>
+      
+      <td class="num this-brand">6.0%</td>
+      
+      <td class="num">6.0%</td>
+      
+      <td class="num">7.0%</td>
+      
+      <td class="num">6.5–3.0%</td>
+      
+      <td class="num">6.0–4.0%</td>
+      
+      <td class="num">6.9–3.9%</td>
+      
+      <td class="num">7.0–4.0%</td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<p>These questions are derived from specific findings in the Maid Right 2025 FDD.
+Each includes context on why it matters and what to listen for.</p>
+
+<ol class="question-list">
+  
+  <li>Paul Flick was barred from offering or selling franchises in California for 36 months (through the 360 Painting affiliate). Has that bar expired, and have any other states taken similar action since 2022?
+    <span class="question-context">Item 3, pp. 15–16. California Department of Financial Protection and Innovation issued desist & refrain order plus bar order.</span>
+    
+  </li>
+  
+  <li>The franchisor's financial condition is flagged by state regulators as calling into question the ability to provide services and support. What is Maid Right's standalone financial position — separate from the consolidated Premium Service Brands financials?
+    <span class="question-context">FDD Special Risk #5, p. 5. Financials are consolidated at PSB level.</span>
+    
+  </li>
+  
+  <li>21 of 39 franchisees (54%) are excluded from Item 19 for 'not operating the full year or not using CRM software properly.' How many were excluded for each reason, and what was their revenue?
+    <span class="question-context">Item 19 notes, pp. 45–47. Only 18 of 39 franchisees included.</span>
+    
+  </li>
+  
+  <li>Turnover was 38.6% in 2024. Of the 17 exits (6 terminated, 9 ceased, 2 transferred), what were the primary reasons operators left?
+    <span class="question-context">Item 20, pp. 48–51. Texas accounted for 6 exits (4 ceased + 2 terminated), Florida for 4 terminated.</span>
+    
+  </li>
+  
+  <li>The Contact Center Fee escalates to $220/week minimum by Year 2 ($11,440/year). What is the actual value delivered by the Contact Center — specifically, how many leads/calls does it handle per week for a typical franchisee, and what is the conversion rate?
+    <span class="question-context">Item 6, p. 18. Contact Center Fee: greater of 2% or escalating weekly minimum up to $770/week cap.</span>
+    
+  </li>
+  
+  <li>8 of 28 franchisees are master franchisees offering subfranchises. How does the master franchise structure affect support, quality control, and the franchisee experience for sub-franchisees?
+    <span class="question-context">Item 19 notes. System includes master franchisees alongside direct franchisees.</span>
+    
+  </li>
+  
+</ol>
+
+<div class="methodology">
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <p><strong>Source document:</strong> Maid Right 2025 Franchise Disclosure Document,
+  filed with the Wisconsin Department of Financial Institutions. 203-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">d6553c082ea790cc762c013eba77954856436d0518e0f06721bc9f7ca5c31b2a</code></p>
+  <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
+  review. Field-level provenance recorded (source year, state, page number, item reference).
+  Extraction confidence: high (3+ fields spot-checked against source).</p>
+  <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
+  fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
+  <p><strong>Peer comparison:</strong> Same methodology applied to all 7 brands in this cohort
+  (Maid Right, MaidPro, Merry Maids, Molly Maid, The Cleaning Authority, The Maids, Two Maids & A Mop).
+  All from 2025 FDDs filed with Wisconsin DFI.</p>
+  <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
+  recommendation to buy or avoid this franchise. It is a structured analysis of publicly
+  available regulatory filings. The buyer should read the actual FDD, consult a franchise
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NaturaLawn — Franchise Decision Report</title>
+<style>
+@media print {
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a; background: #fff; line-height: 1.7;
+  max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem;
+}
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0 0 0.25rem; letter-spacing: -0.02em; font-family: -apple-system, sans-serif; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid #ccc; font-family: -apple-system, sans-serif; }
+h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.4rem; font-family: -apple-system, sans-serif; }
+p { margin: 0 0 0.9rem; }
+strong { font-weight: 700; }
+a { color: #1a1a1a; }
+
+.report-header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 1.75rem; }
+.report-meta { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; line-height: 1.5; margin-top: 0.5rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; font-family: -apple-system, sans-serif; }
+thead th { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 2px solid #333; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #555; }
+thead th.num { text-align: right; }
+tbody td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; }
+tbody td.num { text-align: right; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; }
+tbody td.label { font-weight: 600; white-space: nowrap; }
+
+.callout { padding: 0.75rem 1rem; margin: 0.75rem 0 1.25rem; border-left: 3px solid #d97706; background: #fffbeb; font-size: 0.88rem; }
+.callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
+
+.question-list { list-style: none; padding: 0; counter-reset: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
+.question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+.question-list li:last-child { border-bottom: none; }
+.question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
+
+.methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
+.methodology p { margin: 0 0 0.5rem; }
+
+.exec-summary { font-size: 1.02rem; line-height: 1.75; }
+.peer-table td.this-brand { background: #f5f7fa; }
+
+.implication {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem;
+  color: #1e40af; margin: 0.5rem 0 1rem; line-height: 1.5;
+  padding-left: 0.75rem; border-left: 2px solid #93c5fd;
+}
+.implication strong { color: #1e40af; }
+ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
+ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">NaturaLawn</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: 2025 Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: NaturaLawn of America Inc.</span>
+    <span>Report generated: 2026-03-16</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num">1</span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num">2</span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num">3</span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num">4</span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num">5</span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num">6</span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    <li><span class="toc-num">7</span> <a href="#payback">Illustrative Payback Sensitivity</a></li>
+    <li><span class="toc-num">8</span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num">9</span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num">10</span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num">11</span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num">12</span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num">13</span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
+  <h1>NaturaLawn</h1>
+  <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
+  <div class="report-meta">
+    Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
+    Legal entity: NaturaLawn of America Inc.<br>
+    Report generated: 2026-03-16 &middot; Franchise Decision Radar
+  </div>
+</div>
+
+<h2 id="executive-summary">Executive Summary</h2>
+<div class="exec-summary">
+
+<p>NaturaLawn of America is a 36-year-old, privately held lawn care franchise specializing in
+organic-based lawn care — a distinct niche positioning that commands the highest revenue per
+customer in the cohort ($810, vs. $765 for Lawn Doctor and $556 for Spring-Green). The 98-unit
+system is the smallest in the active cohort, growing modestly from 92 to 98 over 2022–2024
+before slipping to 98 (–2 net in 2024). Turnover is exceptional: 0% in 2022 and 2023, 2% in
+2024 — the lowest attrition of any brand in the lawn cohort.</p>
+
+<p>The paradox of NaturaLawn is that its headline fees appear low (9% royalty, 1% ad fund)
+while its actual fee burden is the highest in the cohort. At $300K revenue, total franchisor
+fees are $101,584 (33.9%). The driver: a mandatory $60,000–$80,000 annual marketing spend
+disclosed in Item 7, which dwarfs the 1% national advertising contribution and represents
+the single largest franchisee cost outside of labor and royalty. This marketing requirement is
+not captured in the royalty or ad fund line items — it is an Item 7 investment requirement that
+persists as an ongoing operating cost.</p>
+
+<p>The Item 19 is split between company-owned (6 locations, with gross margin data) and
+franchised (40 locations operating 5+ years, revenue and customer data only). Franchised
+average revenue is $2.19M (median $1.10M) — high numbers, but the right-skew is extreme
+(range $252K–$9.73M) and only 50% meet or exceed the average. The company-owned gross margin
+(60.7–65.2%, including labor) provides a useful benchmark but is from a sample of only 6
+locations, all in the Mid-Atlantic. Whether these margins transfer to franchised operations
+in other markets is uncertain.</p>
+
+</div>
+
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the lawn care cohort.</p>
+
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">Entry cost burden</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Lowest entry floor in cohort: $77,500–$152,650. Franchise fee ($19,500–$39,500) is well below Lawn Doctor's $124K. But $60K–$80K mandatory marketing spend is an ongoing cost disclosed in Item 7.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Ongoing fee burden</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">Highest in cohort: 33.9% at $300K (6th of 6). Driven by $60K–$80K mandatory marketing spend. Headline 9% royalty + 1% ad fund is misleading without the marketing obligation.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">System stability</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Exceptional turnover: 0%, 0%, 2% over 3 years. 98 units — small but extraordinarily stable. Not a single exit in 2 of 3 years.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Revenue disclosure</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">2-table Item 19 split between 6 company-owned (with margin) and 40 franchised (revenue only). Franchised avg $2.19M, median $1.10M. Small samples limit statistical confidence.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Disclosure quality</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Item 3 contradiction: states 'no litigation required to be disclosed' then discloses the Ford TCPA case. Gross margin data only from 6 company-owned locations. Population discrepancy in franchised data (40+7≠44).</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Downside risk profile</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Fee burden is primary risk. Organic niche may limit addressable market. Small system (98 units) means less peer support. Royalty drops to 7% on renewal only if $500K+ revenue maintained.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Buyer fit breadth</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Strong for buyers committed to organic positioning with $100K+ capital. Weaker for budget-sensitive buyers or those in markets where organic lawn care has limited demand.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Overall</td>
+      <td class="rating rating-mixed">Notable</td>
+      <td class="sc-summary">The strongest niche positioning and lowest turnover in the cohort, offset by the highest fee burden and smallest sample sizes in the Item 19. The organic premium commands higher revenue per customer but costs more to maintain through mandatory marketing. Relative cohort position does not establish absolute profitability.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+NaturaLawn is the niche specialist in this cohort — organic-based lawn care
+with the highest revenue per customer and lowest franchise turnover. The zero-attrition record
+(0% in 2 of 3 years) is extraordinary and suggests strong franchisee satisfaction. But the
+fee structure is deceptive: the 9% royalty and 1% ad fund look competitive, while the $60K–$80K
+mandatory marketing spend (disclosed in Item 7, not Item 6) pushes total fees to the highest
+in the cohort. A buyer must evaluate whether the organic niche commands enough premium pricing
+in their specific market to absorb these costs — and whether 98 units with limited Item 19
+samples provide enough evidence to build confidence.
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+
+<h3>Best fit for</h3>
+<ul class="fit-list">
+<li><strong>Buyer committed to organic/environmental positioning:</strong> If you believe organic
+lawn care is a growing market and are willing to invest in that niche, NaturaLawn offers the
+only pure-play organic franchise in the cohort. The $810 average revenue per customer is 46%
+higher than Spring-Green's $556 — organic commands premium pricing.</li>
+<li><strong>Buyer in affluent suburban markets with environmental awareness:</strong> The organic
+premium works best in markets where customers will pay more for natural alternatives. Median
+franchised revenue of $1.10M suggests strong economics in the right markets.</li>
+<li><strong>Buyer who values franchisee community:</strong> Zero turnover in 2 of 3 years means
+the franchise community is exceptionally stable. Peer support from long-tenured franchisees
+is a real advantage for new operators.</li>
+<li><strong>Buyer planning to grow past $500K:</strong> The royalty drops from 9% to 7% upon
+renewal if Gross Sales exceed $500K — a meaningful 2-point reduction that rewards scale.
+Combined with the 1% ad fund, the core franchise fees become competitive above $500K.</li>
+</ul>
+
+<h3>Weaker fit for</h3>
+<ul class="fit-list">
+<li><strong>Budget-sensitive buyer focused on fee burden:</strong> Despite the low entry cost,
+the $60K–$80K annual marketing spend makes NaturaLawn the most expensive brand to operate
+in the cohort. At $300K revenue, a third of gross goes to the franchisor.</li>
+<li><strong>Buyer in price-sensitive markets:</strong> If your local market does not support
+organic premium pricing ($810/customer average), the economics tighten rapidly. The high
+fee burden only works at premium revenue per customer.</li>
+<li><strong>Buyer who needs robust Item 19 data:</strong> The franchised sample (40 locations)
+is reasonable, but gross margin data comes from only 6 company-owned locations. If you
+need statistical confidence in the margin benchmarks, NaturaLawn's disclosure is thin.</li>
+<li><strong>Buyer seeking system scale:</strong> 98 units is small. You will have fewer peers,
+less brand recognition in many markets, and less negotiating leverage with vendors.</li>
+</ul>
+
+<h3>Proceed only if</h3>
+<ul class="fit-list">
+<li>You have verified that organic lawn care commands premium pricing in your specific market.
+The $810 average revenue per customer is a system-wide figure — your local market may differ.</li>
+<li>You have modeled the $60K–$80K annual marketing spend as a fixed cost, not a variable one.
+This obligation exists regardless of your revenue level.</li>
+<li>You understand that the 60.7–65.2% gross margin is from 6 company-owned locations in the
+Mid-Atlantic. If you are operating in a different region, this benchmark may not transfer.</li>
+</ul>
+
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
+
+<p>NaturaLawn has the highest ongoing fee burden in the lawn cohort at every revenue level: 45.8%
+at $200K, 33.9% at $300K, 24.3% at $500K. The headline rates (9% royalty, 1% ad fund) are
+mid-range, but the $60,000–$80,000 mandatory annual marketing spend — disclosed in Item 7
+rather than Item 6 — dominates the cost structure. At $300K revenue, marketing alone represents
+$73,000 (24.3% of revenue), dwarfing the royalty ($27,000) and everything else combined.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>At Revenue</th>
+      <th class="num">Royalty</th>
+      <th class="num">Marketing</th>
+      <th class="num">Tech / Other</th>
+      <th class="num">Total</th>
+      <th class="num">% of Rev</th>
+      <th class="num">Cohort Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">$200,000</td>
+      <td class="num">$18,000</td>
+      <td class="num">$72,000</td>
+      <td class="num">$1,584</td>
+      <td class="num"><strong>$91,584</strong></td>
+      <td class="num">45.8%</td>
+      <td class="num">4/4</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$300,000</td>
+      <td class="num">$27,000</td>
+      <td class="num">$73,000</td>
+      <td class="num">$1,584</td>
+      <td class="num"><strong>$101,584</strong></td>
+      <td class="num">33.9%</td>
+      <td class="num">4/4</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$400,000</td>
+      <td class="num">$36,000</td>
+      <td class="num">$74,000</td>
+      <td class="num">$1,584</td>
+      <td class="num"><strong>$111,584</strong></td>
+      <td class="num">27.9%</td>
+      <td class="num">4/4</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$500,000</td>
+      <td class="num">$45,000</td>
+      <td class="num">$75,000</td>
+      <td class="num">$1,584</td>
+      <td class="num"><strong>$121,584</strong></td>
+      <td class="num">24.3%</td>
+      <td class="num">3/4</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Weed Man</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 25.1%"></div>
+    </div>
+    <div class="fee-bar-value">8.5%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Spring-Green</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 44.5%"></div>
+    </div>
+    <div class="fee-bar-value">15.1%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Lawn Doctor</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 77.6%"></div>
+    </div>
+    <div class="fee-bar-value">26.3%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">NaturaLawn</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill this-brand" style="width: 100.0%"></div>
+    </div>
+    <div class="fee-bar-value">33.9%</div>
+  </div>
+  
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+
+
+
+<h3>Component breakdown</h3>
+<ul class="compact">
+<li><strong>Royalty (9% flat, 7% on renewal if $500K+):</strong> 9% of Gross Sales during
+initial term. Reduces to 7% upon renewal if Gross Sales exceeded $500K in the last full
+calendar year before renewal AND are maintained at $500K+. If revenue drops below $500K
+after renewal, rate reverts to 9%. (pp. 16–17)</li>
+<li><strong>Advertising fee (1% of Gross Sales):</strong> The lowest national ad fund in the
+cohort. Simple and transparent. (p. 16)</li>
+<li><strong>Mandatory marketing spend ($60,000–$80,000/year):</strong> This is the critical
+cost. Disclosed in Item 7 as an initial investment line item, but it is an ongoing annual
+obligation. The FDD notes this as the expected annual marketing investment. This spend is
+franchisee-directed (unlike Lawn Doctor's franchisor-managed program), which gives you more
+control but also more responsibility. (Item 7)</li>
+<li><strong>Technology ($132/month first user + $58–$74 additional):</strong> Real Green Service
+Assistant 5, cloud-based. First user $132/month ($1,584/year). Additional users at reduced
+rates. Modest relative to peers. (p. 17)</li>
+<li><strong>No call center fee:</strong> NaturaLawn does not charge a mandatory call center fee —
+one of only two brands in the cohort (with Weed Man) without this cost.</li>
+</ul>
+
+<div class="callout">
+<div class="callout-title">The Item 7 marketing spend is the fee in disguise</div>
+NaturaLawn's 1% ad fund is the lowest in the cohort. But the $60K–$80K annual marketing spend
+— listed as an Item 7 investment line rather than an Item 6 ongoing fee — is the highest mandatory
+marketing cost of any lawn brand. By comparison, Lawn Doctor's $30K local ad minimum is disclosed
+in Item 6 as an ongoing fee. The economic effect is the same; only the disclosure location differs.
+A buyer comparing NaturaLawn's "1% ad fund" to Lawn Doctor's "10% marketing" without reading
+Item 7 will dramatically underestimate NaturaLawn's true cost.
+</div>
+
+<div class="implication">
+<strong>What this means:</strong> At $300K revenue, NaturaLawn's $101,584 in total fees exceeds
+Lawn Doctor ($78,800) by $22,784 and Spring-Green ($45,318) by $56,266. The entire difference
+is the marketing spend. Over a 10-year term, a NaturaLawn operator sends $228K–$563K more to
+the franchisor than Spring-Green or Lawn Doctor operators at equivalent revenue. The organic
+premium ($810/customer vs. $556–$765) must justify this gap.
+</div>
+
+
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
+
+<p>NaturaLawn's Item 19 provides two tables: one for company-owned locations (gross margin + revenue)
+and one for franchised locations (revenue and customers only). The split means you get margin
+data from a very small company-owned sample and revenue data from a moderate franchised
+sample — but not both from the same population.</p>
+
+<h3>Company-owned locations (Table 1, 2024)</h3>
+<p>6 locations operating 5+ years in Damascus MD, Virginia Beach VA, Newport News VA,
+Richmond VA, Manassas VA, and Greenville SC:</p>
+<ul>
+<li><strong>Gross profit margin:</strong> 60.7%–65.2% range (includes direct labor in COGS).
+Comparable to Spring-Green's 68.1% on the same COGS basis.</li>
+<li><strong>Average revenue:</strong> $1.73M (median $1.52M). Range: $528K–$3.32M.</li>
+<li><strong>Average customers:</strong> 2,304 (median 1,971).</li>
+<li><strong>Revenue per customer:</strong> $740 (median $740). Consistent across the 6 locations.</li>
+</ul>
+
+<h3>Franchised locations (Table 2, 2024)</h3>
+<p>40 franchised locations operating 5+ years:</p>
+<ul>
+<li><strong>Average revenue:</strong> $2,192,129 (median $1,097,125). Range: $252K–$9.73M.
+Extreme right-skew — the top franchise is nearly 40× the bottom. Only 50% met or exceeded
+the average.</li>
+<li><strong>Average customers:</strong> 2,707 (median 1,716). Same right-skew pattern.</li>
+<li><strong>Revenue per customer:</strong> $810 (median $696). Range: $361–$1,386.
+The highest in the lawn cohort.</li>
+</ul>
+
+<h3>Critical limitations</h3>
+<ul>
+<li><strong>Small sample bias:</strong> 6 company-owned locations is too small for statistical
+confidence. All 6 are in the Mid-Atlantic — margins may differ in other climates and
+labor markets.</li>
+<li><strong>No franchised margin data:</strong> The 60.7–65.2% margin is from company-owned
+only. The FDD explicitly states franchised data was excluded from margin analysis "due
+to differences in accounting methodology." You cannot assume franchised margins match.</li>
+<li><strong>Population discrepancy:</strong> The FDD states 44 franchised locations total, 40
+operating 5+ years, 7 operating less than 5 years — but 40 + 7 = 47, not 44. This
+arithmetic inconsistency should be clarified with the franchisor.</li>
+<li><strong>Revenue skew:</strong> The $9.73M top franchise pulls the average to $2.19M while
+the median is only $1.10M. The median is the better benchmark for a new single-territory
+operator.</li>
+</ul>
+
+
+
+
+<h3>From gross revenue to owner economics</h3>
+<p>Using company-owned gross margin (60.7–65.2%) as a proxy for franchised operations:</p>
+
+<p><strong>For a median franchised location ($1.10M revenue):</strong></p>
+<ul>
+<li>COGS at ~37% (midpoint of 34.8–39.3%): ~$407K</li>
+<li>Gross margin (~63%): ~$693K</li>
+<li>Franchisor fees (interpolated): ~$171K (royalty $99K + ad $11K + marketing $60K + tech $1.6K)</li>
+<li>Overhead (vehicle, insurance, office): $40K–$60K</li>
+<li>Implied pre-tax owner income: $462K–$482K</li>
+</ul>
+
+<p><strong>For a conservative franchised location ($500K revenue):</strong></p>
+<ul>
+<li>COGS at ~37%: ~$185K</li>
+<li>Gross margin: ~$315K</li>
+<li>Franchisor fees: ~$117K (royalty $45K + ad $5K + marketing $65K + tech $1.6K)</li>
+<li>Overhead: $35K–$50K</li>
+<li>Implied pre-tax owner income: $148K–$163K</li>
+</ul>
+
+<div class="callout">
+<div class="callout-title">The marketing spend is fixed, not variable</div>
+The $60K–$80K marketing obligation does not scale with revenue. At $1.1M revenue, it represents
+5.5–7.3% of gross — manageable. At $500K, it jumps to 12–16% — punitive. At $300K, it is
+20–27% of revenue before royalty and ad fund. NaturaLawn's economics work at the median
+($1.1M) but deteriorate rapidly below $600K because the marketing spend does not flex downward.
+</div>
+
+<div class="implication">
+<strong>What this means:</strong> At median revenue ($1.1M), NaturaLawn appears to generate strong
+owner income ($460K+) — comparable to or exceeding peers. But the fixed marketing spend creates
+a higher breakeven threshold. A NaturaLawn operator needs to reach roughly $600K+ in revenue before
+the economics become comfortable. Below that, the fixed marketing cost consumes a disproportionate
+share of gross margin.
+</div>
+
+
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
+This is not a profitability forecast. It is an illustrative scenario exercise using NaturaLawn's
+disclosed Item 19 data. COGS is estimated using the company-owned gross margin (60.7–65.2%),
+which includes direct labor. The FDD does not disclose franchised gross margins. The $60K–$80K
+annual marketing spend is modeled as a fixed cost. Your actual results depend on your territory,
+local demand for organic lawn care, labor market, customer acquisition costs, and execution.</p>
+
+
+<table class="scenario-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="scenario-name">Conservative ($500K)</td>
+      <td class="num">$500,000</td>
+      <td class="num">$121,584 (24.3%)</td>
+      <td class="num">$185,000</td>
+      <td class="num"><strong>$193,416</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Median franchised</td>
+      <td class="num">$1,097,000</td>
+      <td class="num">$121,584 (11.1%)</td>
+      <td class="num">$405,890</td>
+      <td class="num"><strong>$569,526</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Average franchised</td>
+      <td class="num">$2,192,000</td>
+      <td class="num">$121,584 (5.5%)</td>
+      <td class="num">$811,040</td>
+      <td class="num"><strong>$1,259,376</strong></td>
+    </tr>
+    
+  </tbody>
+</table>
+<p class="assumption-note">Revenue from Item 19 Table 2 (2024, 40 franchised locations operating 5+ years). COGS estimated at 37% based on midpoint of company-owned gross margin range (60.7–65.2%), which includes direct labor — not from franchised data. 'Remaining' must cover the $60K–$80K mandatory marketing spend, overhead, owner draw, and taxes. Marketing spend is modeled separately at $65K (midpoint) because it is a fixed cost, not a variable one.</p>
+
+
+
+<!-- PAYBACK SENSITIVITY -->
+<h2 id="payback">Illustrative Payback Sensitivity</h2>
+
+
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
+
+<p>Lowest entry floor in the cohort: $77,500–$152,650. The franchise fee ($19,500–$39,500) varies
+by territory size and is 3–6× lower than Lawn Doctor's $124K. But the Item 7 also includes
+the first year of the $60,000–$80,000 mandatory marketing spend — which is an ongoing annual
+cost, not a one-time investment. The low entry cost is real, but the first-year cash burn
+is higher than the headline investment range suggests.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th class="num">Low</th>
+      <th class="num">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>Initial License Fee</td>
+      <td class="num">$19,500</td>
+      <td class="num">$39,500</td>
+    </tr>
+    
+    <tr>
+      <td>Opening Inventory</td>
+      <td class="num">$0</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Lawn Care Equipment Purchases</td>
+      <td class="num">$1,500</td>
+      <td class="num">$4,000</td>
+    </tr>
+    
+    <tr>
+      <td>Vehicle (purchase or lease, 6 months)</td>
+      <td class="num">$0</td>
+      <td class="num">$3,000</td>
+    </tr>
+    
+    <tr>
+      <td>Office Furniture & Equipment</td>
+      <td class="num">$0</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Training Expenses</td>
+      <td class="num">$0</td>
+      <td class="num">$1,150</td>
+    </tr>
+    
+    <tr>
+      <td>Computer & Technology Expenses</td>
+      <td class="num">$0</td>
+      <td class="num">$1,000</td>
+    </tr>
+    
+    <tr>
+      <td>Initial Annual Advertising and Marketing</td>
+      <td class="num">$60,000</td>
+      <td class="num">$80,000</td>
+    </tr>
+    
+    <tr>
+      <td>Licenses</td>
+      <td class="num">$250</td>
+      <td class="num">$500</td>
+    </tr>
+    
+    <tr>
+      <td>Professional Fees</td>
+      <td class="num">$1,250</td>
+      <td class="num">$2,000</td>
+    </tr>
+    
+    <tr>
+      <td>Lease Deposits</td>
+      <td class="num">$2,000</td>
+      <td class="num">$3,500</td>
+    </tr>
+    
+    <tr>
+      <td>Insurance Deposit</td>
+      <td class="num">$1,500</td>
+      <td class="num">$3,500</td>
+    </tr>
+    
+    <tr>
+      <td>Additional Funds (6 months or more)</td>
+      <td class="num">$1,500</td>
+      <td class="num">$4,500</td>
+    </tr>
+    
+    <tr style="border-top:2px solid #333">
+      <td class="label">Total</td>
+      <td class="num"><strong>$77,500</strong></td>
+      <td class="num"><strong>$152,650</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>Key line items</h3>
+<ul class="compact">
+<li><strong>Franchise fee ($19,500–$39,500):</strong> Varies by territory population. Includes
+initial training and setup support. Substantially below peers. (p. 14)</li>
+<li><strong>Marketing first year ($60,000–$80,000):</strong> This is the dominant cost. It
+is disclosed as an initial investment but persists annually. Budget it as an ongoing
+$65K/year cost from year one forward. (Item 7)</li>
+<li><strong>Equipment and vehicle ($10,000–$18,000):</strong> Spray equipment, spreader, and
+delivery vehicle. Can start with existing vehicle if suitable.</li>
+<li><strong>Working capital ($5,000–$15,000):</strong> First 3 months of operations.</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> NaturaLawn's low franchise fee makes it the cheapest to enter,
+but the mandatory marketing spend makes it the most expensive to operate. A buyer should model
+total first-year costs (investment + $65K marketing + operating costs) rather than just the
+Item 7 range. The effective first-year cash requirement is closer to $140K–$230K when marketing
+is included.
+</div>
+
+
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
+
+<p>Smallest system in the active cohort (98 units) but the most stable by turnover metrics:
+0% attrition in 2022 and 2023, 2% in 2024. Not a single franchisee exited the system for
+two consecutive years — a result that no other lawn brand (or any brand in this product's
+library) matches. Growth has been modest: +4, +4, –2 net over three years.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num">Opened</th>
+      <th class="num">Closed</th>
+      <th class="num">Net</th>
+      <th class="num">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">2022</td>
+      <td class="num">3</td>
+      <td class="num">0</td>
+      <td class="num">+3</td>
+      <td class="num">84</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2023</td>
+      <td class="num">6</td>
+      <td class="num">0</td>
+      <td class="num">+6</td>
+      <td class="num">90</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2024</td>
+      <td class="num">0</td>
+      <td class="num">2</td>
+      <td class="num">-2</td>
+      <td class="num">88</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Outlet trajectory</h3>
+<ul class="compact">
+<li><strong>2022:</strong> 92→96 (+4 net). 3 opened, 0 closed, 0 non-renewals, 0 transfers.
+Turnover 0%.</li>
+<li><strong>2023:</strong> 96→100 (+4 net). 6 opened, 0 closed, 0 non-renewals, 0 transfers.
+Turnover 0%.</li>
+<li><strong>2024:</strong> 100→98 (–2 net). 0 opened, 0 closed, 0 non-renewals, 0 transfers.
+Turnover 2% (based on derived turnover rate calculation).</li>
+</ul>
+
+<h3>Interpreting the zero-turnover years</h3>
+<p>Zero exits from a 96–100 unit system for two consecutive years is extraordinary. In most
+franchise systems, structural attrition (retirements, market exits, relocations) produces
+at least 2–5% turnover annually. Zero suggests either very high franchisee satisfaction,
+limited exit options, or both. The absence of any transfers is also notable — no franchisee
+sold their territory, which could mean the resale market is illiquid or franchisees simply
+don't want to sell.</p>
+
+<p>The 2024 result (–2 net, 0 openings) is the first year without growth. No new franchisees
+joined. Whether this reflects the franchisor's choice to pause recruitment, market saturation,
+or declining attractiveness is worth investigating during diligence.</p>
+
+<div class="implication">
+<strong>What this means:</strong> NaturaLawn's attrition data is the strongest positive signal
+in the entire lawn cohort. Existing franchisees are staying. But the 2024 stall (0 openings,
+–2 net) is a yellow flag that warrants investigation. A system that stops adding new franchisees
+may be signaling capacity constraints, market limitations, or franchisor strategic choices —
+any of which affect your outlook as a new entrant.
+</div>
+
+
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
+
+<h3>Litigation</h3>
+<p>The Item 3 disclosure contains a contradiction: it states "no litigation is required to be
+disclosed" and then immediately discloses the Ford v. NaturaLawn TCPA case — a putative class
+action alleging unsolicited marketing calls/texts in violation of the Telephone Consumer
+Protection Act. The case status and outcome should be verified during diligence. The
+contradictory disclosure framing is a minor quality flag. (pp. 12–14)</p>
+
+<h3>Entity and ownership</h3>
+<p>NaturaLawn of America, Inc. — privately held, founder-led. No parent company or PE ownership
+disclosed. The private, founder-led structure provides operational stability and alignment
+between franchisor leadership and brand mission (organic lawn care). No institutional exit
+pressure. This is the only founder-led brand in the lawn cohort.</p>
+
+<h3>Fee structure deception risk</h3>
+<p>The gap between headline fee rates (9% royalty, 1% ad fund = 10% of revenue) and actual
+total burden (33.9% at $300K) is the widest in the cohort. A buyer who evaluates NaturaLawn
+based on Item 6 alone will dramatically underestimate the true cost. The $60K–$80K marketing
+spend in Item 7 is the single largest fee and is easy to overlook if you are not reading
+Item 7 as an ongoing cost. (Item 7)</p>
+
+<h3>Niche market risk</h3>
+<p>Organic-based lawn care is a niche within a niche. If consumer preferences shift away from
+organic premium services, or if conventional competitors adopt "green" messaging without
+the cost, NaturaLawn's pricing power could erode. The $810/customer premium depends on
+customers continuing to pay more for organic positioning.</p>
+
+<h3>Renewal royalty reduction</h3>
+<p>The 7% renewal royalty (vs. 9% initial) requires maintaining $500K+ in Gross Sales. If
+revenue drops below $500K after renewal, the rate reverts to 9%. This creates a cliff
+effect at $500K that should be modeled explicitly. (pp. 16–17)</p>
+
+
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
+
+<p>NaturaLawn occupies a unique position in the lawn cohort: niche organic specialist with the
+highest revenue per customer and lowest turnover, but also the highest fee burden and smallest
+system. It is the premium play — you pay more and you bet on organic demand.</p>
+
+<p><strong>Closest comparison: Spring-Green.</strong> Both are mid-sized systems with moderate entry
+costs. But Spring-Green's total fees at $300K are $45,318 (15.1%) vs. NaturaLawn's $101,584
+(33.9%). The $56,266 annual gap is almost entirely the marketing spend obligation. NaturaLawn's
+revenue per customer is 46% higher ($810 vs. $556), which partially offsets the fee gap — but
+only if your market supports organic premium pricing.</p>
+
+<p><strong>The fee paradox: NaturaLawn vs. Lawn Doctor.</strong> Lawn Doctor (26.3% at $300K) is
+perceived as the expensive brand, but NaturaLawn (33.9%) is actually more expensive at every
+modeled revenue level. The difference is disclosure framing: Lawn Doctor's costs are in Item 6
+(easy to find), while NaturaLawn's marketing obligation is in Item 7 (easy to miss). A buyer
+comparing these two should look at total dollar outflow, not headline rates.</p>
+
+<p><strong>Versus Weed Man:</strong> The polar opposite. Weed Man's 8.5% total fees are 4× lower
+than NaturaLawn's 33.9%. Weed Man has no Item 19 and no organic positioning, but its fee structure
+leaves dramatically more revenue in the franchisee's pocket. A buyer choosing NaturaLawn over
+Weed Man is betting that organic positioning and the NaturaLawn brand generate enough additional
+revenue per customer to overcome a $76,000/year fee gap.</p>
+
+
+<table class="peer-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      
+      <th class="num">Lawn Doctor</th>
+      
+      <th class="num">NaturaLawn</th>
+      
+      <th class="num">Spring-Green</th>
+      
+      <th class="num">Weed Man</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">System size</td>
+      
+      <td class="num">653</td>
+      
+      <td class="num this-brand">88</td>
+      
+      <td class="num">126</td>
+      
+      <td class="num">121</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Investment range</td>
+      
+      <td class="num">$150K–$177K</td>
+      
+      <td class="num this-brand">$77K–$152K</td>
+      
+      <td class="num">$117K–$134K</td>
+      
+      <td class="num">$81K–$109K</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Fee burden at $300K</td>
+      
+      <td class="num">$78,800</td>
+      
+      <td class="num this-brand">$101,584</td>
+      
+      <td class="num">$45,318</td>
+      
+      <td class="num">$25,550</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">% of revenue</td>
+      
+      <td class="num">26.3%</td>
+      
+      <td class="num this-brand">33.9%</td>
+      
+      <td class="num">15.1%</td>
+      
+      <td class="num">8.5%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">3-year net growth</td>
+      
+      <td class="num">+40</td>
+      
+      <td class="num this-brand">+6</td>
+      
+      <td class="num">+4</td>
+      
+      <td class="num">+27</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Recent attrition</td>
+      
+      <td class="num">0.2%</td>
+      
+      <td class="num this-brand">2.0%</td>
+      
+      <td class="num">0.0%</td>
+      
+      <td class="num">0.0%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Royalty rate</td>
+      
+      <td class="num">10.0%</td>
+      
+      <td class="num this-brand">9.0%</td>
+      
+      <td class="num">varies</td>
+      
+      <td class="num">varies</td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Decision overlay</h3>
+<table class="decision-overlay">
+  <tbody>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<p>These questions are derived from specific findings in the NaturaLawn 2025 FDD.
+Each includes context on why it matters and what to listen for.</p>
+
+<ol class="question-list">
+  
+  <li>The $60,000–$80,000 annual marketing spend is disclosed in Item 7. What specifically does this fund, who manages it, and can it be reduced in a down year?
+    <span class="question-context">This is the single largest cost component and dominates the fee burden. Understanding its flexibility is critical.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They explain exactly where the money goes (digital, direct mail, local events), whether it is franchisor-directed or franchisee-managed, and whether there is any flexibility for new or struggling operators.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What is the average marketing cost per acquired customer, and how does it compare to the revenue per customer ($810 average)?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>The gross margin data (60.7–65.2%) comes from 6 company-owned locations, all in the Mid-Atlantic. Do you have any franchised gross margin data, even informal?
+    <span class="question-context">The FDD explicitly excludes franchised margins due to 'differences in accounting methodology.' You need to understand if company-owned margins transfer to franchised operations.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They acknowledge the limitation and provide informal benchmarks from franchisees, or they explain what accounting differences exist and how they affect margin comparisons.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What is the primary accounting difference between company-owned and franchised operations that prevents you from disclosing franchised margins?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>Average franchised revenue is $2.19M but median is $1.10M — a 2:1 ratio. What drives this extreme right-skew?
+    <span class="question-context">One franchise at $9.73M pulls the average well above the median. You want to know if the distribution reflects territory size variation, operator quality, or multi-location consolidation.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They explain the distribution — whether high-revenue franchises are multi-territory, have been operating longer, or are in premium markets. Honest about what a realistic first-5-year trajectory looks like.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What is the typical first-year and third-year revenue trajectory for a new single-territory franchisee?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>Zero openings in 2024 and 2 net losses. Why did the system stop growing?
+    <span class="question-context">After adding 3 and 6 new franchisees in 2022–2023, adding 0 in 2024 is a sharp break in pattern.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>Honest explanation — whether it was a strategic pause, recruitment difficulty, territory saturation, or operational choice. Ideally with plans for 2025–2026.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>How many franchise inquiries did you receive in 2024, and how many were qualified?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>The royalty drops from 9% to 7% on renewal if revenue exceeds $500K. How many franchisees have achieved this reduction?
+    <span class="question-context">If the median franchised revenue is $1.10M, most mature franchisees should qualify. But you want to verify this and understand what happens if revenue drops temporarily.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They provide the percentage of franchisees on the 7% renewal rate and explain the revenue maintenance requirement clearly.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Is there a grace period if revenue dips below $500K temporarily (e.g., due to weather or COVID-type events)?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>The population note says 44 franchised locations total, 40 operating 5+ years, 7 operating less than 5 years. 40 + 7 = 47, not 44. Can you explain this discrepancy?
+    <span class="question-context">Arithmetic errors in disclosure documents are worth flagging. It may be harmless, but it could indicate sloppy internal data management.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They can explain it — perhaps 3 locations closed or changed status between the reference dates. Honest about the inconsistency.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Can you provide the current unit count as of today?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>Revenue per customer is $810 on average but $696 at the median, with a range of $361–$1,386. What drives the variation? Is it geographic, service-mix, or pricing-strategy differences?
+    <span class="question-context">The revenue per customer premium is NaturaLawn's core competitive advantage. Understanding what drives it — and whether it is replicable in your market — is essential.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They explain service tiers, upsell strategies, and geographic pricing variation. They provide regional benchmarks if available.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What is the revenue per customer for franchisees in my target region?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>The Ford v. NaturaLawn TCPA class action is disclosed in Item 3 despite the heading stating no litigation needs disclosure. What is the current status and potential exposure?
+    <span class="question-context">TCPA class actions can result in significant damages ($500–$1,500 per violation). The contradictory disclosure framing is itself a quality concern.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They provide a clear update on the case status, the potential financial exposure, and whether the marketing practices that led to the suit have been changed.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Have any marketing practices changed as a result of this litigation?</dd>
+      
+    </dl>
+    
+  </li>
+  
+</ol>
+
+<div class="methodology">
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <p><strong>Source document:</strong> NaturaLawn 2025 Franchise Disclosure Document,
+  filed with the Wisconsin Department of Financial Institutions. 147-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">3a412ecdef46487a43bc1d9fc5fb6b24ae95819fe9130a8990b6b60f8fc65b89</code></p>
+  <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
+  review. Field-level provenance recorded (source year, state, page number, item reference).
+  Extraction confidence: high (3+ fields spot-checked against source).</p>
+  <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
+  fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
+  <p><strong>Peer comparison:</strong> Same methodology applied to all 4 brands in this cohort
+  (Lawn Doctor, NaturaLawn, Spring-Green, Weed Man).
+  All from 2025 FDDs filed with Wisconsin DFI.</p>
+  <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
+  recommendation to buy or avoid this franchise. It is a structured analysis of publicly
+  available regulatory filings. The buyer should read the actual FDD, consult a franchise
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
+</div>
+
+</body>
+</html>

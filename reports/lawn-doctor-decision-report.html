@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lawn Doctor — Franchise Decision Report</title>
+<style>
+@media print {
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a; background: #fff; line-height: 1.7;
+  max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem;
+}
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0 0 0.25rem; letter-spacing: -0.02em; font-family: -apple-system, sans-serif; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid #ccc; font-family: -apple-system, sans-serif; }
+h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.4rem; font-family: -apple-system, sans-serif; }
+p { margin: 0 0 0.9rem; }
+strong { font-weight: 700; }
+a { color: #1a1a1a; }
+
+.report-header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 1.75rem; }
+.report-meta { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; line-height: 1.5; margin-top: 0.5rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; font-family: -apple-system, sans-serif; }
+thead th { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 2px solid #333; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #555; }
+thead th.num { text-align: right; }
+tbody td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; }
+tbody td.num { text-align: right; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; }
+tbody td.label { font-weight: 600; white-space: nowrap; }
+
+.callout { padding: 0.75rem 1rem; margin: 0.75rem 0 1.25rem; border-left: 3px solid #d97706; background: #fffbeb; font-size: 0.88rem; }
+.callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
+
+.question-list { list-style: none; padding: 0; counter-reset: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
+.question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+.question-list li:last-child { border-bottom: none; }
+.question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
+
+.methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
+.methodology p { margin: 0 0 0.5rem; }
+
+.exec-summary { font-size: 1.02rem; line-height: 1.75; }
+.peer-table td.this-brand { background: #f5f7fa; }
+
+.implication {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem;
+  color: #1e40af; margin: 0.5rem 0 1rem; line-height: 1.5;
+  padding-left: 0.75rem; border-left: 2px solid #93c5fd;
+}
+.implication strong { color: #1e40af; }
+ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
+ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">Lawn Doctor</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: 2025 Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: Lawn Doctor, Inc.</span>
+    <span>Report generated: 2026-03-16</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num">1</span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num">2</span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num">3</span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num">4</span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num">5</span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num">6</span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    <li><span class="toc-num">7</span> <a href="#payback">Illustrative Payback Sensitivity</a></li>
+    <li><span class="toc-num">8</span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num">9</span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num">10</span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num">11</span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num">12</span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num">13</span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
+  <h1>Lawn Doctor</h1>
+  <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
+  <div class="report-meta">
+    Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
+    Legal entity: Lawn Doctor, Inc.<br>
+    Report generated: 2026-03-16 &middot; Franchise Decision Radar
+  </div>
+</div>
+
+<h2 id="executive-summary">Executive Summary</h2>
+<div class="exec-summary">
+
+<p>Lawn Doctor is the oldest and largest franchise in the lawn care cohort — 58 years of
+continuous franchising and 653 outlets as of year-end 2024. It is PE-backed (CNL Strategic
+Capital) and discloses the richest Item 19 in the lawn wedge: four tables covering revenue
+by territory count, customer metrics, gross profit margins, and a 16-year historical revenue
+trend. The 2024 system average of $1.13M per Strategic-Partner (all territories combined)
+and median of $659K sit well above most peer systems, and the 16-year trend shows consistent
+upward growth from $367K average in 2009.</p>
+
+<p>The core tension is cost. At $300K gross revenue, annual franchisor fees total $78,800
+(26.3% of revenue) — the highest among the four established brands in the cohort. The
+primary driver is a mandatory local advertising minimum of the greater of $30,000 or 10%
+of Net Revenues, paid on top of a 10% flat royalty. At $500K, the fee burden moderates to
+24.6%, but a Lawn Doctor franchisee always sends more to the franchisor than a Spring-Green
+or Weed Man operator at equivalent revenue. The franchise fee itself is also the highest:
+$124K–$127K (a bundled package including equipment leases, training, and initial supplies).</p>
+
+<p>System health is genuinely strong. The 2024 reporting year showed +23 net growth with only
+1 closure and 0 non-renewals — the cleanest year in recent history. Turnover dropped from
+6.7% (2022) to 1.6% (2024). The 85.4% average gross profit margin (Table C, 2023 data) is
+the highest in the cohort — though this figure deducts only materials, not labor, making it
+not directly comparable to Spring-Green's or NaturaLawn's margin figures which include
+direct labor in COGS. A buyer choosing Lawn Doctor is paying a premium for scale, disclosure
+depth, and system stability — the question is whether the fee structure leaves enough room
+for the economics to work in your specific territory.</p>
+
+</div>
+
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the lawn care cohort.</p>
+
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">Entry cost burden</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">Highest in cohort: $150K–$177K total investment including $124K–$127K franchise fee (bundled with equipment/training/supplies). Fee is 2–5× higher than peers.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Ongoing fee burden</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">4th of 6 in full cohort (26.3% at $300K). Among the 4 established brands: 3rd of 4. 10% flat royalty + $30K+ mandatory local ad spend drive the burden.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">System stability</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Largest system (653 outlets). Only 1 closure in 2024. Turnover dropped from 6.7% to 1.6% over 3 years. 23 net new units in 2024.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Revenue disclosure</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Richest Item 19 in lawn cohort: 4 tables with revenue by territory count, customer metrics, gross margin, and 16-year trend. System average $1.13M.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Disclosure quality</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">No litigation. Clean filing. Comprehensive Item 19 population disclosure (205 of 229 Strategic-Partners). 16-year historical trend is rare.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Downside risk profile</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">High fee burden is the primary risk. Gross margin (85.4%) deducts only materials — not labor — creating potential for margin misperception. PE ownership standard for lawn.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Buyer fit breadth</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Strong for buyers with $150K+ capital who prioritize system scale and disclosure. Weak for budget-sensitive or first-time buyers due to high entry and ongoing costs.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Overall</td>
+      <td class="rating rating-mixed">Notable</td>
+      <td class="sc-summary">The strongest combination of disclosure depth and system stability in the lawn cohort, offset by the highest entry cost and one of the highest ongoing fee burdens. Scale and transparency come at a price.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+Lawn Doctor is the scale-and-transparency play in this cohort. It offers
+the largest system (653 outlets), the deepest disclosure (4-table Item 19 with 16-year trend),
+and the lowest recent attrition (1.6%). But it is also the most expensive to enter and among
+the most expensive to operate. The fee structure — 10% royalty, $30K+ mandatory local advertising,
+$9K+ call center — takes a substantial share of revenue at every level. A buyer should treat
+Lawn Doctor's disclosure depth as an analytical advantage for due diligence, not as a guarantee
+of returns. The fee burden is the price of that transparency and system scale.
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+
+<h3>Best fit for</h3>
+<ul class="fit-list">
+<li><strong>Well-capitalized buyer seeking maximum system support and transparency:</strong>
+If you have $150K+ in capital and prioritize being part of the largest lawn care franchise
+system with the best disclosure, Lawn Doctor delivers. The 16-year revenue trend, customer
+metrics, and gross margin data give you more due diligence material than any peer.</li>
+<li><strong>Multi-territory operator:</strong> The Item 19 shows operators with 4+ territories
+averaging $2.57M in net revenues. At that scale, the fee burden dilutes and the gross margin
+(85.4%) on a materials-only COGS basis leaves room for owner income after labor costs.</li>
+<li><strong>Buyer in established markets who will acquire existing territories:</strong>
+With 653 units and consistent transfer activity (28, 22, 9 transfers across 3 years),
+resale territories are available. Buying an existing book avoids the ramp period where
+the high fee burden is most punitive.</li>
+</ul>
+
+<h3>Weaker fit for</h3>
+<ul class="fit-list">
+<li><strong>Budget-sensitive first-time buyer:</strong> The $124K–$127K franchise fee alone
+exceeds the total investment at NaturaLawn ($78K–$153K range) and Spring-Green ($118K–$134K).
+You will have the highest cash-at-signing requirement in the cohort.</li>
+<li><strong>Single-territory operator at sub-$400K revenue:</strong> At $300K revenue, $78,800
+goes to the franchisor (26.3%). After materials (estimated 14–15% based on 85.4% gross margin),
+roughly $175K remains for labor, overhead, and owner draw. In a seasonal business with
+significant labor costs, this may be tight.</li>
+<li><strong>Buyer who wants marketing autonomy:</strong> The $30K+ mandatory local advertising
+minimum is non-negotiable and is managed through the franchisor's approved channels. If you
+want to allocate your own marketing spend based on local conditions, this structure constrains you.</li>
+</ul>
+
+<h3>Proceed only if</h3>
+<ul class="fit-list">
+<li>You have modeled your territory's likely revenue against the fee structure — not just the
+system average ($1.13M) but the median for your territory count. Single-territory operators
+(1–3 territories) have a median of $380K, where the fee burden is highest.</li>
+<li>You understand that the 85.4% gross margin deducts only materials, not labor. Your actual
+margin after paying employees will be substantially lower. Ask for labor cost benchmarks
+during discovery day.</li>
+<li>You have compared the total cost of Lawn Doctor (entry + 10-year fees) against Spring-Green
+and NaturaLawn, which offer similar services at lower ongoing cost — with the trade-off of
+less system scale and disclosure depth.</li>
+</ul>
+
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
+
+<p>Lawn Doctor has the highest ongoing fee burden among the four established brands in the cohort
+at every revenue level below $500K. At $300K revenue, total franchisor fees are $78,800 (26.3%).
+The primary drivers are the 10% flat royalty ($30,000) and the mandatory local advertising
+minimum of the greater of $30,000 or 10% of Net Revenues ($30,000 at this level). At $500K,
+the fee burden remains 24.6% — nearly double Spring-Green's 13.5%.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>At Revenue</th>
+      <th class="num">Royalty</th>
+      <th class="num">Marketing</th>
+      <th class="num">Tech / Other</th>
+      <th class="num">Total</th>
+      <th class="num">% of Rev</th>
+      <th class="num">Cohort Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">$200,000</td>
+      <td class="num">$20,000</td>
+      <td class="num">$35,500</td>
+      <td class="num">$12,800</td>
+      <td class="num"><strong>$68,300</strong></td>
+      <td class="num">34.2%</td>
+      <td class="num">3/4</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$300,000</td>
+      <td class="num">$30,000</td>
+      <td class="num">$36,000</td>
+      <td class="num">$12,800</td>
+      <td class="num"><strong>$78,800</strong></td>
+      <td class="num">26.3%</td>
+      <td class="num">3/4</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$400,000</td>
+      <td class="num">$40,000</td>
+      <td class="num">$48,000</td>
+      <td class="num">$12,800</td>
+      <td class="num"><strong>$100,800</strong></td>
+      <td class="num">25.2%</td>
+      <td class="num">3/4</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$500,000</td>
+      <td class="num">$50,000</td>
+      <td class="num">$60,000</td>
+      <td class="num">$12,800</td>
+      <td class="num"><strong>$122,800</strong></td>
+      <td class="num">24.6%</td>
+      <td class="num">4/4</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Weed Man</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 25.1%"></div>
+    </div>
+    <div class="fee-bar-value">8.5%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Spring-Green</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 44.5%"></div>
+    </div>
+    <div class="fee-bar-value">15.1%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Lawn Doctor</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill this-brand" style="width: 77.6%"></div>
+    </div>
+    <div class="fee-bar-value">26.3%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">NaturaLawn</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 100.0%"></div>
+    </div>
+    <div class="fee-bar-value">33.9%</div>
+  </div>
+  
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+
+
+
+<h3>Component breakdown</h3>
+<ul class="compact">
+<li><strong>Royalty (10% flat):</strong> The highest flat royalty rate in the cohort (tied with
+Spring-Green's first tier). Unlike Spring-Green, there are no volume discounts — 10% applies
+regardless of revenue. Payable weekly. 'Net Revenues' = gross collected from customers excluding
+taxes and refunds. (p. 15)</li>
+<li><strong>Local advertising (greater of $30,000 or 10% of Net Revenues):</strong> This is the
+most aggressive local marketing requirement in the lawn cohort. At $300K revenue, the floor
+matches the percentage; at $400K+, the percentage exceeds the floor. Spent on radio, digital,
+direct mail, and other local media through approved channels. (pp. 15, 25)</li>
+<li><strong>National/regional advertising fund (currently 0%):</strong> Franchisor reserves the
+right to establish a fund of up to 2% of Net Revenues, but it is not currently active. If
+activated, this would add $6,000–$10,000/year at $300K–$500K revenue. (p. 15)</li>
+<li><strong>Technology ($150–$250/month):</strong> $150/month until cumulative Net Revenues reach
+$1M, then $250/month. Can increase to $500/month at franchisor's discretion. Relatively
+modest compared to peers. (p. 20)</li>
+<li><strong>Call center ($750/month = $9,000/year):</strong> Mandatory Lawn Doctor Answer Center.
+$750/month currently. Handles customer inquiries and scheduling. (p. 20)</li>
+<li><strong>Convention ($2,000/year):</strong> $2,000 registration fee for mandatory annual
+convention, plus travel and lodging. (p. 16)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> At $300K revenue, $78,800 goes to the franchisor — $33,500
+more than Spring-Green ($45,318) and $53,250 more than Weed Man ($25,550). Over a 10-year
+term, that gap compounds to $335,000–$532,500 of additional fees paid to Lawn Doctor vs.
+peers. The question is whether Lawn Doctor's system scale, brand recognition, call center
+infrastructure, and disclosure depth justify that premium.
+</div>
+
+<div class="callout">
+<div class="callout-title">The local ad minimum is the key differentiator</div>
+Strip out the local advertising minimum, and Lawn Doctor's fee burden falls to $48,800 at $300K
+(16.3%) — competitive with most peers. The $30,000 floor is what pushes the total to 26.3%.
+A buyer should evaluate whether the franchisor's mandatory local advertising program generates
+proportional lead volume. Ask current franchisees: does the $30K minimum translate to enough
+customers to justify the spend?
+</div>
+
+
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
+
+<p>Lawn Doctor discloses the richest Item 19 in the lawn care cohort — four tables covering
+revenue segmented by territory count, customer-level metrics, gross profit margins, and a
+16-year historical revenue trend for the system. (pp. 53–55)</p>
+
+<h3>Revenue by territory count (Table A, 2024)</h3>
+<p>205 Strategic-Partners operating 2+ full years, representing 490 of 653 total Lawn Doctor
+Businesses. Revenue is per Strategic-Partner (all their territories combined), not per territory.</p>
+<ul>
+<li><strong>1–3 territories (146 SPs):</strong> Average $682K, median $380K. Range: $35K–$3.65M.
+Only 32% met or exceeded the average — strong right-skew.</li>
+<li><strong>4–6 territories (39 SPs):</strong> Average $1.47M, median $1.38M.</li>
+<li><strong>7–9 territories (11 SPs):</strong> Average $2.57M, median $2.39M.</li>
+<li><strong>10+ territories (9 SPs):</strong> Average $5.39M, median $4.63M.</li>
+<li><strong>All SPs combined (205):</strong> Average $1.13M, median $659K. Only 29% met or
+exceeded the average.</li>
+</ul>
+
+<h3>Customer metrics (Table B, 2024)</h3>
+<ul>
+<li><strong>Average customer program value:</strong> $860 (median $648). This represents total
+revenue per customer-program, not per service visit.</li>
+<li><strong>Average customer tenure:</strong> 6.15 years (median 4.21). The high tenure suggests
+strong recurring revenue — customers stay more than 4 years at the median.</li>
+<li><strong>Annual revenue per customer:</strong> $765 (median $576).</li>
+</ul>
+
+<h3>Gross profit margin (Table C, 2023 data)</h3>
+<ul>
+<li><strong>Average: 85.4%, median: 84.5%.</strong> 130 of 205 Strategic-Partners included
+(75 excluded for insufficient data). 41.5% met or exceeded the average.</li>
+</ul>
+
+<h3>Critical comparability warning</h3>
+<p>Lawn Doctor's COGS deducts only materials (chemicals, fertilizer, supplies). It does <strong>not</strong>
+include direct labor. Spring-Green (68.1% margin) and NaturaLawn (60.7–65.2% margin) both include
+direct labor in their COGS calculations. These margins are <strong>not directly comparable</strong>.
+Lawn Doctor's 85% margin overstates the operating profit available to the franchisee relative to
+peers who show 60–68% margins with labor included.</p>
+
+<h3>16-year trend (Table D, 2009–2024)</h3>
+<p>Average net revenues grew from $367K (2009) to $1.13M (2024) — a 208% increase over 16 years.
+Median grew from $207K to $659K (218%). The trend is consistently upward with the exception of
+2020 (COVID year). This is the most comprehensive historical disclosure in the lawn cohort and
+shows a system that has compounded revenue steadily.</p>
+
+<h3>What's missing</h3>
+<ul>
+<li><strong>Per-territory revenue:</strong> Revenue is per Strategic-Partner, not per territory.
+A Strategic-Partner with 4 territories averaging $1.47M total is not making $1.47M per territory —
+likely $350K–$400K per territory. The median for 1–3 territory SPs ($380K) is the closest proxy
+for single-territory economics.</li>
+<li><strong>Labor costs:</strong> The 85.4% gross margin excludes labor entirely. Lawn care is
+labor-intensive (seasonal crews, training, equipment operation). Actual operating margin after
+labor is likely 30–50 percentage points lower. The FDD provides no labor cost benchmarks.</li>
+<li><strong>Net income or profit:</strong> No profitability data is disclosed. After fees ($78,800
+at $300K), materials (~$45K at 85% margin), labor (unknown), and overhead, the owner's income
+is uncertain.</li>
+</ul>
+
+
+
+
+<h3>From gross revenue to owner economics</h3>
+<p>The Item 19 gives revenue and materials-only COGS. Here is what we can estimate:</p>
+
+<p><strong>For a median single-territory SP ($380K revenue):</strong></p>
+<ul>
+<li>Materials at ~15% (from 85% gross margin): ~$57K</li>
+<li>After materials: ~$323K</li>
+<li>Franchisor fees at $300K (conservative proxy): ~$73K (scaled from the $78,800 at $300K model)</li>
+<li>After fees: ~$250K</li>
+<li>Estimated labor (40–50% of remaining, based on industry benchmarks for seasonal lawn care): $100K–$125K</li>
+<li>Overhead (vehicle, insurance, office, misc): $30K–$50K</li>
+<li>Implied pre-tax owner income: $75K–$120K</li>
+</ul>
+
+<p><strong>For an average single-territory SP ($682K revenue):</strong></p>
+<ul>
+<li>Materials at ~15%: ~$102K</li>
+<li>After materials: ~$580K</li>
+<li>Franchisor fees (interpolated): ~$122K</li>
+<li>After fees: ~$458K</li>
+<li>Estimated labor: $160K–$200K</li>
+<li>Overhead: $40K–$60K</li>
+<li>Implied pre-tax owner income: $198K–$258K</li>
+</ul>
+
+<div class="callout">
+<div class="callout-title">The labor gap is the critical unknown</div>
+The 85.4% gross margin looks exceptional — until you account for the fact that labor is excluded.
+In seasonal lawn care, direct labor (technicians, crew leaders, seasonal workers) typically
+represents 30–45% of revenue. At $380K revenue, that could be $114K–$171K. The "high margin"
+story depends entirely on labor efficiency, which the FDD does not disclose. Your discovery day
+should focus heavily on labor cost benchmarks from current franchisees.
+</div>
+
+<div class="implication">
+<strong>What this means:</strong> A single-territory operator at the median ($380K) likely takes
+home $75K–$120K before taxes — viable as a full-time business but not exceptional. At the average
+($682K), the math improves materially to a potential $200K+ owner draw. The fee burden matters
+more at lower revenue levels, where every dollar sent to the franchisor comes directly out of
+the owner's income. Multi-territory operators ($1.4M+) are where the Lawn Doctor economics
+become genuinely attractive.
+</div>
+
+
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
+This is not a profitability forecast. It is an illustrative scenario exercise using Lawn Doctor's
+disclosed Item 19 revenue data. The FDD does not disclose net franchisee profitability or labor
+costs. The 85.4% gross profit margin deducts only materials — not labor, vehicle costs, insurance,
+or overhead. Your actual results depend on territory size, local labor market, customer density,
+seasonal length, and execution. These scenarios use estimated COGS of 55% (materials + estimated
+labor) based on lawn care industry benchmarks. This is an assumption, not a disclosed figure.</p>
+
+
+<table class="scenario-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="scenario-name">Median single-territory SP</td>
+      <td class="num">$380,000</td>
+      <td class="num">$96,400 (25.4%)</td>
+      <td class="num">$209,000</td>
+      <td class="num"><strong>$74,600</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Average single-territory SP</td>
+      <td class="num">$682,000</td>
+      <td class="num">$122,800 (18.0%)</td>
+      <td class="num">$375,100</td>
+      <td class="num"><strong>$184,100</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Average 4–6 territory SP</td>
+      <td class="num">$1,470,000</td>
+      <td class="num">$122,800 (8.4%)</td>
+      <td class="num">$808,500</td>
+      <td class="num"><strong>$538,700</strong></td>
+    </tr>
+    
+  </tbody>
+</table>
+<p class="assumption-note">Revenue from Item 19 Table A (2024, 205 Strategic-Partners operating 2+ years). COGS estimated at 55% of revenue: ~15% materials (from disclosed 85.4% gross margin) + ~40% estimated direct labor (industry benchmark for seasonal lawn care; NOT disclosed in FDD). This COGS estimate is illustrative, not extracted. 'Remaining' must cover vehicle costs, insurance, office overhead, owner draw, and taxes.</p>
+
+
+
+<!-- PAYBACK SENSITIVITY -->
+<h2 id="payback">Illustrative Payback Sensitivity</h2>
+
+
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
+
+<p>Highest entry cost in the cohort: $150,070–$177,052 total. The franchise fee alone ($124K–$127K)
+exceeds the total investment at NaturaLawn. The fee is a bundled package including: $50,000 initial
+license fee, $70,600 initial training/supply/support fee, and $6,400 in equipment lease deposits
+(Turf Tamer applicator and power seeder). The $3K variation depends on local agronomic
+conditions affecting equipment needs.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th class="num">Low</th>
+      <th class="num">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>Initial Franchise Fee (Total)</td>
+      <td class="num">$123,950</td>
+      <td class="num">$127,000</td>
+    </tr>
+    
+    <tr>
+      <td>Service Vehicle</td>
+      <td class="num">$1,800</td>
+      <td class="num">$2,400</td>
+    </tr>
+    
+    <tr>
+      <td>Shipping of Turf Tamer Power Seeder</td>
+      <td class="num">$0</td>
+      <td class="num">$500</td>
+    </tr>
+    
+    <tr>
+      <td>Computer Software</td>
+      <td class="num">$225</td>
+      <td class="num">$500</td>
+    </tr>
+    
+    <tr>
+      <td>Computers</td>
+      <td class="num">$0</td>
+      <td class="num">$2,000</td>
+    </tr>
+    
+    <tr>
+      <td>Opening Inventory for lawn care products/materials</td>
+      <td class="num">$500</td>
+      <td class="num">$500</td>
+    </tr>
+    
+    <tr>
+      <td>Rental Space</td>
+      <td class="num">$0</td>
+      <td class="num">$3,000</td>
+    </tr>
+    
+    <tr>
+      <td>Bookkeeper</td>
+      <td class="num">$325</td>
+      <td class="num">$400</td>
+    </tr>
+    
+    <tr>
+      <td>Training Expenses (per attendee)</td>
+      <td class="num">$2,500</td>
+      <td class="num">$4,000</td>
+    </tr>
+    
+    <tr>
+      <td>Utility/Security Deposit</td>
+      <td class="num">$200</td>
+      <td class="num">$200</td>
+    </tr>
+    
+    <tr>
+      <td>Insurance</td>
+      <td class="num">$800</td>
+      <td class="num">$1,000</td>
+    </tr>
+    
+    <tr>
+      <td>Opening Holiday Lighting Inventory</td>
+      <td class="num">$6,000</td>
+      <td class="num">$14,000</td>
+    </tr>
+    
+    <tr>
+      <td>Start-Up Equipment Package for holiday lighting</td>
+      <td class="num">$2,400</td>
+      <td class="num">$2,800</td>
+    </tr>
+    
+    <tr>
+      <td>Uniforms</td>
+      <td class="num">$250</td>
+      <td class="num">$500</td>
+    </tr>
+    
+    <tr>
+      <td>Utility/Security Deposit (Holiday Lighting)</td>
+      <td class="num">$200</td>
+      <td class="num">$200</td>
+    </tr>
+    
+    <tr>
+      <td>Additional Funds - 3 Months</td>
+      <td class="num">$10,920</td>
+      <td class="num">$18,052</td>
+    </tr>
+    
+    <tr style="border-top:2px solid #333">
+      <td class="label">Total</td>
+      <td class="num"><strong>$150,070</strong></td>
+      <td class="num"><strong>$177,052</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>What the franchise fee buys</h3>
+<ul class="compact">
+<li><strong>Initial license fee ($50,000):</strong> The territory rights and brand license.
+Nonrefundable. (p. 13)</li>
+<li><strong>Training/supply/support fee ($70,600):</strong> Covers initial training program,
+initial supply of materials, equipment setup, and launch support. (p. 13)</li>
+<li><strong>Equipment lease deposits ($6,400):</strong> Turf Tamer Stand-On Applicator ($3,350)
+and Power Seeder ($3,050). These are lease deposits, not purchases. The equipment remains
+franchisor property. (p. 13)</li>
+</ul>
+
+<h3>Beyond the franchise fee</h3>
+<ul class="compact">
+<li><strong>Vehicle:</strong> $7,000–$10,000 (used truck or van). Many operators start with
+a personal vehicle.</li>
+<li><strong>Insurance:</strong> $2,000–$5,000 (general liability, workers' comp, vehicle).</li>
+<li><strong>Additional working capital:</strong> $14,000–$28,000 for first 3 months of operations.</li>
+<li><strong>Local advertising (first year):</strong> The $30,000+ minimum begins immediately.
+This is operating cost, not a one-time charge, but the initial cash impact is significant.</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> A Lawn Doctor franchise requires roughly $150K–$177K before you
+earn your first dollar. The high franchise fee reflects the bundled equipment and training package —
+you are not buying just a territory, you are buying a turnkey launch kit. But the capital
+requirement means this is not an entry-level franchise. Buyers with less than $175K in liquid
+capital should consider Spring-Green ($118K–$134K) or NaturaLawn ($78K–$153K) as alternatives
+with lower entry barriers.
+</div>
+
+
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
+
+<p>Largest and most stable system in the cohort. 653 outlets at year-end 2024, with net growth
+of +11, +6, and +23 over the three reported years. Turnover declined sharply: 6.7% (2022) to
+5.0% (2023) to 1.6% (2024). The 2024 result — only 1 closure against 24 openings — is the
+cleanest system health year any lawn cohort brand has reported.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num">Opened</th>
+      <th class="num">Closed</th>
+      <th class="num">Net</th>
+      <th class="num">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">2022</td>
+      <td class="num">24</td>
+      <td class="num">13</td>
+      <td class="num">+11</td>
+      <td class="num">624</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2023</td>
+      <td class="num">15</td>
+      <td class="num">9</td>
+      <td class="num">+6</td>
+      <td class="num">630</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2024</td>
+      <td class="num">24</td>
+      <td class="num">1</td>
+      <td class="num">+23</td>
+      <td class="num">653</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Outlet trajectory</h3>
+<ul class="compact">
+<li><strong>2022:</strong> 613→624 (+11 net). 24 opened, 13 closed. 28 transfers — healthy
+resale market. Turnover 6.7%.</li>
+<li><strong>2023:</strong> 624→630 (+6 net). 15 opened, 9 closed. 22 transfers. Turnover 5.0%.</li>
+<li><strong>2024:</strong> 630→653 (+23 net). 24 opened, 1 closed, 0 non-renewals. 9 transfers.
+Turnover 1.6%.</li>
+</ul>
+
+<h3>Transfer activity</h3>
+<p>28, 22, and 9 transfers across the three reported years. The declining transfer count could
+signal fewer franchisees wanting to exit (positive) or fewer buyers in the resale market
+(ambiguous). At this system size, transfer activity is a normal part of franchise lifecycle.</p>
+
+<h3>PE ownership context</h3>
+<p>Owned by CNL Strategic Capital. PE ownership is standard across the lawn cohort — Lawn Doctor,
+Spring-Green's corporate parent, and NaturaLawn all have institutional backing of some form.
+The PE ownership does not appear to have driven aggressive expansion or extraction behavior:
+growth has been steady, not hockey-stick, and attrition has declined.</p>
+
+<div class="implication">
+<strong>What this means:</strong> For a 58-year-old system with 653 units, 1.6% turnover is
+exceptional. Most franchise systems at this scale experience structural attrition of 3–8% annually
+just from retirements, market exits, and non-renewals. The 2024 result suggests franchisees are
+staying, which is the strongest available proxy for franchisee satisfaction. But it is one year —
+the 3-year trend is more informative, and even the 6.7% from 2022 was respectable.
+</div>
+
+
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
+
+<h3>Litigation</h3>
+<p>No litigation required to be disclosed (Item 3). No bankruptcy (Item 4). This is a clean
+legal history — uncommon for a system this size and age.</p>
+
+<h3>Entity and ownership</h3>
+<p>LD Parent, Inc., backed by CNL Strategic Capital, LLC. Straightforward entity structure.
+The franchise is operated under a "Strategic-Partner" model rather than the traditional
+"franchisee" terminology. This is a branding choice, not a legal distinction — the FDD
+is a standard franchise disclosure document.</p>
+
+<h3>Fee escalation risk</h3>
+<p>The national/regional advertising fund (up to 2% of Net Revenues) is currently at 0% but
+could be activated at any time. If implemented, this would add $6,000–$10,000/year at
+$300K–$500K revenue on top of an already-high fee burden. Technology fees can also increase
+to up to $500/month at franchisor's discretion. (pp. 15, 20)</p>
+
+<h3>Seasonal concentration</h3>
+<p>Lawn care is inherently seasonal in most markets. Revenue concentrates in the April–October
+window (varies by geography). Cash flow management during the off-season is a real operational
+challenge that the annual revenue averages in Item 19 do not surface. The FDD does not disclose
+monthly revenue patterns.</p>
+
+
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
+
+<p>Among the four established brands in this cohort, Lawn Doctor occupies a distinctive position:
+highest cost, highest transparency, most stable system. It is the premium choice — you pay more
+and you see more.</p>
+
+<p><strong>Closest comparison: Spring-Green.</strong> Similar services, similar maturity (48 vs. 58
+years), both with tiered/flat royalties near 10%. But Spring-Green's total fees at $300K are
+$45,318 (15.1%) vs. Lawn Doctor's $78,800 (26.3%). The $33,500 annual gap is almost entirely
+driven by Lawn Doctor's $30K local advertising minimum — Spring-Green has no equivalent floor.
+Spring-Green's Item 19 is solid (3 tables, $744K average for single-territory operators) but
+less deep than Lawn Doctor's 4-table, 16-year dataset.</p>
+
+<p><strong>Value alternative: NaturaLawn.</strong> Lowest entry cost ($78K–$153K) and highest
+revenue per customer ($810 vs. Lawn Doctor's $765). But NaturaLawn's fee burden at $300K
+is actually the highest in the cohort ($101,584, 33.9%) due to $60K–$80K mandatory marketing
+spend. NaturaLawn's Item 19 is limited to 6 company-owned and 40 franchised locations — far
+smaller samples than Lawn Doctor's 205 SPs.</p>
+
+<p><strong>Budget play: Weed Man.</strong> Lowest fees in the cohort by a wide margin (8.5% at
+$300K). But Weed Man declines Item 19 entirely — no revenue, no margin, no customer data.
+A buyer choosing Weed Man over Lawn Doctor is trading disclosure and system support for
+the lowest possible fee structure. This trade-off is only appropriate for operators with
+independent market knowledge who do not need FDD-based revenue benchmarks.</p>
+
+
+<table class="peer-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      
+      <th class="num">Lawn Doctor</th>
+      
+      <th class="num">NaturaLawn</th>
+      
+      <th class="num">Spring-Green</th>
+      
+      <th class="num">Weed Man</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">System size</td>
+      
+      <td class="num this-brand">653</td>
+      
+      <td class="num">88</td>
+      
+      <td class="num">126</td>
+      
+      <td class="num">121</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Investment range</td>
+      
+      <td class="num this-brand">$150K–$177K</td>
+      
+      <td class="num">$77K–$152K</td>
+      
+      <td class="num">$117K–$134K</td>
+      
+      <td class="num">$81K–$109K</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Fee burden at $300K</td>
+      
+      <td class="num this-brand">$78,800</td>
+      
+      <td class="num">$101,584</td>
+      
+      <td class="num">$45,318</td>
+      
+      <td class="num">$25,550</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">% of revenue</td>
+      
+      <td class="num this-brand">26.3%</td>
+      
+      <td class="num">33.9%</td>
+      
+      <td class="num">15.1%</td>
+      
+      <td class="num">8.5%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">3-year net growth</td>
+      
+      <td class="num this-brand">+40</td>
+      
+      <td class="num">+6</td>
+      
+      <td class="num">+4</td>
+      
+      <td class="num">+27</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Recent attrition</td>
+      
+      <td class="num this-brand">0.2%</td>
+      
+      <td class="num">2.0%</td>
+      
+      <td class="num">0.0%</td>
+      
+      <td class="num">0.0%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Royalty rate</td>
+      
+      <td class="num this-brand">10.0%</td>
+      
+      <td class="num">9.0%</td>
+      
+      <td class="num">varies</td>
+      
+      <td class="num">varies</td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Decision overlay</h3>
+<table class="decision-overlay">
+  <tbody>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<p>These questions are derived from specific findings in the Lawn Doctor 2025 FDD.
+Each includes context on why it matters and what to listen for.</p>
+
+<ol class="question-list">
+  
+  <li>What are typical annual direct labor costs for a single-territory operator in my region?
+    <span class="question-context">The 85.4% gross margin deducts only materials, not labor. You need labor cost benchmarks to build a realistic P&L.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They provide a range with regional context (e.g., '$60K–$100K for 2 seasonal technicians in the Midwest'). Even better if they reference Item 19 data to show how labor fits into the margin picture.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What percentage of net revenue should I expect to spend on direct labor in my first 3 years?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>The mandatory local advertising minimum is $30,000 or 10% of Net Revenues. What is the typical lead volume and cost per lead generated by this spend?
+    <span class="question-context">At $300K revenue, local advertising is 10% of gross — you need evidence it works.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They provide average leads per $1K spent, cost per acquired customer, or conversion rates from the local advertising program. Data from comparable markets to yours.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Can I see anonymized lead generation data for 3 Strategic-Partners in similar-sized markets?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>Table A shows the median for 1–3 territory SPs is $380K. What does a typical first-year trajectory look like in my market?
+    <span class="question-context">The median is for operators with 2+ years. First-year revenue is likely lower. You need ramp expectations.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They provide first-year revenue benchmarks or ramp curves showing expected quarters to reach median performance. Honest about seasonal startup timing.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What percentage of first-year Strategic-Partners reach $200K in their initial year?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>The national/regional advertising fund is currently at 0%. Under what circumstances would you activate it, and what would the funds be used for?
+    <span class="question-context">The FDD reserves the right to charge up to 2% for a national fund. If activated on top of the current fee structure, total fees would exceed 28% at $300K.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>Clear criteria for activation and specific planned uses. Honest about likelihood and timeline. Acknowledgment that this would increase total fees.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Is there a franchisee vote or consent mechanism before the fund is activated?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>The franchise fee is $124K–$127K including equipment leases and training. If I decide to exit after 3 years, what is the residual value of these assets?
+    <span class="question-context">The equipment (Turf Tamer applicator, power seeder) remains franchisor property via lease. The training/support fee is sunk. Understanding residual value is critical for exit planning.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They explain what assets you retain vs. what reverts to the franchisor. Honest about transfer fee structure and resale market conditions.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What was the average resale price for territories that transferred in 2024? What percentage of the original investment did sellers typically recover?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>Technology fees can increase from $150/month to $500/month at LDI's discretion. What has the historical fee increase pattern been?
+    <span class="question-context">A $350/month potential increase ($4,200/year) adds to an already-high fee burden.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They provide historical fee increase data and explain the rationale. Demonstrate that increases have been gradual and tied to service improvements.</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Has LDI ever decreased a recurring fee, or do increases only go one direction?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>75 of 205 Strategic-Partners were excluded from the gross margin data (Table C) for 'insufficient information.' What does that mean?
+    <span class="question-context">37% exclusion rate for margin data. If the excluded SPs have systematically lower margins, the 85.4% average overstates the system.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They explain the data collection process and whether the exclusions are random or correlated with performance. Ideally: 'These SPs didn't submit complete cost data, and we believe their margins are similar.'</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>Could you survey the excluded SPs to get a fuller picture of system margins?</dd>
+      
+    </dl>
+    
+  </li>
+  
+  <li>Customer tenure averages 6.15 years. What is the annual customer attrition rate, and how does it vary by territory age and geography?
+    <span class="question-context">High tenure is positive, but you need to understand the churn rate to model customer acquisition costs against the $30K+ local ad spend.</span>
+    
+    <dl class="question-sub">
+      
+      
+      <dt>Strong answer sounds like</dt>
+      <dd>They provide annual retention rates and acknowledge geographic variation (shorter tenure in competitive markets, longer in established territories).</dd>
+      
+      
+      
+      <dt>Follow-up</dt>
+      <dd>What is the typical cost to acquire a new customer through the local advertising program?</dd>
+      
+    </dl>
+    
+  </li>
+  
+</ol>
+
+<div class="methodology">
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <p><strong>Source document:</strong> Lawn Doctor 2025 Franchise Disclosure Document,
+  filed with the Wisconsin Department of Financial Institutions. 281-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">166b21cec41e10ecb70c65908db42514ee2835ca4769008f33a5d76a59a753b9</code></p>
+  <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
+  review. Field-level provenance recorded (source year, state, page number, item reference).
+  Extraction confidence: high (3+ fields spot-checked against source).</p>
+  <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
+  fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
+  <p><strong>Peer comparison:</strong> Same methodology applied to all 4 brands in this cohort
+  (Lawn Doctor, NaturaLawn, Spring-Green, Weed Man).
+  All from 2025 FDDs filed with Wisconsin DFI.</p>
+  <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
+  recommendation to buy or avoid this franchise. It is a structured analysis of publicly
+  available regulatory filings. The buyer should read the actual FDD, consult a franchise
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
+</div>
+
+</body>
+</html>

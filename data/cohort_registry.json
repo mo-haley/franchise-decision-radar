@@ -23,13 +23,15 @@
       "id": "lawn",
       "display_name": "Lawn Care",
       "short_name": "Lawn",
-      "description": "Residential lawn care, fertilization, and turf treatment franchises.",
+      "description": "Four established residential lawn care and turf treatment franchises with 30–58 years of operating history. Lawn Pride and Lawn Squad moved to watchlist (system age <3 years, insufficient franchised performance data).",
       "url_prefix": "lawn-",
       "brands": [
         "lawn-doctor",
         "weed-man",
         "spring-green",
-        "naturalawn",
+        "naturalawn"
+      ],
+      "watchlist": [
         "lawn-pride",
         "lawn-squad"
       ],

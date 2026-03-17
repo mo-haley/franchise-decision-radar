@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Maids — Franchise Decision Report</title>
+<style>
+@media print {
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a; background: #fff; line-height: 1.7;
+  max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem;
+}
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0 0 0.25rem; letter-spacing: -0.02em; font-family: -apple-system, sans-serif; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid #ccc; font-family: -apple-system, sans-serif; }
+h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.4rem; font-family: -apple-system, sans-serif; }
+p { margin: 0 0 0.9rem; }
+strong { font-weight: 700; }
+a { color: #1a1a1a; }
+
+.report-header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 1.75rem; }
+.report-meta { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; line-height: 1.5; margin-top: 0.5rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; font-family: -apple-system, sans-serif; }
+thead th { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 2px solid #333; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #555; }
+thead th.num { text-align: right; }
+tbody td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; }
+tbody td.num { text-align: right; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; }
+tbody td.label { font-weight: 600; white-space: nowrap; }
+
+.callout { padding: 0.75rem 1rem; margin: 0.75rem 0 1.25rem; border-left: 3px solid #d97706; background: #fffbeb; font-size: 0.88rem; }
+.callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
+
+.question-list { list-style: none; padding: 0; counter-reset: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
+.question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+.question-list li:last-child { border-bottom: none; }
+.question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
+
+.methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
+.methodology p { margin: 0 0 0.5rem; }
+
+.exec-summary { font-size: 1.02rem; line-height: 1.75; }
+.peer-table td.this-brand { background: #f5f7fa; }
+
+.implication {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem;
+  color: #1e40af; margin: 0.5rem 0 1rem; line-height: 1.5;
+  padding-left: 0.75rem; border-left: 2px solid #93c5fd;
+}
+.implication strong { color: #1e40af; }
+ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
+ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+.toc-list { counter-reset: toc-counter; }
+.toc-list li .toc-num-auto::before {
+  counter-increment: toc-counter;
+  content: counter(toc-counter);
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">The Maids</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: 2026 Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: The Maids International, LLC</span>
+    <span>Report generated: 2026-03-17</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num toc-num-auto"></span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    
+    <li><span class="toc-num toc-num-auto"></span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
+  <h1>The Maids</h1>
+  <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
+  <div class="report-meta">
+    Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2026<br>
+    Legal entity: The Maids International, LLC<br>
+    Report generated: 2026-03-17 &middot; Franchise Decision Radar
+  </div>
+</div>
+
+<h2 id="executive-summary">Executive Summary</h2>
+<div class="exec-summary">
+
+<p>The Maids is a 47-year-old residential cleaning franchise (The Maids International, LLC / Gladstone
+Management Corp.) with 369 total outlets — 338 franchised and 31 company-owned — as of fiscal year-end
+September 30, 2025. The system has contracted modestly (382 to 369 over 3 years, -3.4%), but franchised
+unit count stabilized at 338 in the most recent year. Turnover is declining: 5.2% to 4.1% to 3.9% —
+the lowest trajectory in the cohort.</p>
+
+<p>The Item 19 is the most analytically valuable in the cohort for one reason: it includes a full
+company-owned P&L showing 15.5% average net income margin across 6 offices. No other cleaning franchise
+in this cohort discloses net profitability data. Average per-territory revenue is $386K (median $306K),
+and the company-owned offices averaged $1.42M revenue with $220K net income ($209K median). These are
+real profitability numbers — rare in franchise disclosure.</p>
+
+<p>The trade-off is fees. The Maids has the second-highest total fee burden in the cleaning cohort (behind Two Maids)
+at every revenue level: 25.0% at $200K, 19.7% at $300K, 15.1% at $500K. The primary driver is the $2,500/month
+mandatory Local Marketing Requirement ($30,000/year), layered on top of a 2.25% marketing fund percentage
+and a weekly non-marginal royalty starting at 6.9%. The entry cost is the lowest in the cohort ($118K–$141K),
+but the ongoing fees are the highest.</p>
+
+</div>
+
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the residential cleaning cohort.</p>
+
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">Entry cost burden</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">$118K–$141K total investment. Lowest in cleaning cohort. Includes $19,900 SMART Start Package (training + equipment).</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Ongoing fee burden</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">Second-highest in cohort. 19.7% at $300K, driven by $30K/year mandatory local marketing + 6.9% royalty at that revenue level. Two Maids is higher at every level.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">System stability</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Modest contraction (-3.4% over 3 years) but franchised count stabilized in FY2025 (338→338). Turnover declining to 3.9% — lowest trend in cohort.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Revenue disclosure</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Per-territory revenue, per-clean metrics, AND company-owned P&L with 15.5% net margin. Only brand in cohort disclosing actual profitability.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Disclosure quality</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Table 3 arithmetic discrepancy (FY2025). Financial condition flagged by states. Confidentiality clauses present. But overall extraction confidence is high.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Downside risk profile</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Fee burden is the primary risk. Franchisor financial condition flagged. Liquidated damages at 9.15% of average weekly revenue × remaining weeks. Company-owned offices being sold to franchisees.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Buyer fit breadth</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Low entry cost and team-based cleaning model work for owner-operators. But high ongoing fees compress margins at all revenue levels. Multi-territory operators benefit from royalty tier and local marketing discounts.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Overall</td>
+      <td class="rating rating-mixed">Notable</td>
+      <td class="sc-summary">The only cleaning franchise disclosing actual net profitability — and the most expensive to operate on a percentage basis. The data says the model works at scale; the question is whether the fee burden leaves enough for the franchisee. Relative cohort position does not establish absolute profitability.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+The Maids is the most analytically transparent franchise in this cohort: a full
+company-owned P&L showing 15.5% net margin is data no competitor provides. The low entry cost ($118K–$141K)
+makes it the most accessible brand to enter. But the ongoing fee burden — highest in the cohort at every
+revenue level — means you are paying the most for what you get. The tension is real: the data says the model
+is profitable at scale (company-owned offices net $220K/year), but the fees compress what reaches the
+franchisee. Your diligence must focus on whether franchised operators achieve the same margins as
+company-owned — and whether the mandatory $30K/year local marketing spend generates proportional returns.
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+
+<h3>Best fit for</h3>
+<ul class="fit-list">
+<li><strong>Buyer seeking lowest entry cost in the cohort:</strong> At $118K–$141K total investment, The Maids
+has the lowest initial capital requirement. The $19,900 SMART Start Package bundles training, equipment,
+supplies, and uniforms into a single predictable cost.</li>
+<li><strong>Analytical buyer who values profitability disclosure:</strong> If you want to see actual net
+income data before you invest, The Maids is the only brand in this cohort that provides it. The company-owned
+P&L gives you a cost structure to benchmark against.</li>
+<li><strong>Multi-territory operator:</strong> The royalty structure rewards scale — multi-unit owners in
+compliance can combine weekly revenues to reach lower tier rates (6.9% down to 3.9%). Local Marketing
+Requirement also discounts for 2nd+ territories ($500/mo and $250/mo vs $2,500/mo for the first).</li>
+<li><strong>Owner-operator comfortable with team-based model:</strong> The Maids' 4-person cleaning team
+model is designed for supervised crew operations, not solo cleaning.</li>
+</ul>
+
+<h3>Weaker fit for</h3>
+<ul class="fit-list">
+<li><strong>Fee-sensitive buyer:</strong> If ongoing cost control is a priority, The Maids' fee burden is
+the highest in the cohort. At $300K revenue, $59,130 goes to the franchisor (19.7%). MaidPro at the same
+revenue retains nearly $30K more per year.</li>
+<li><strong>Single-territory buyer expecting to stay small:</strong> The 6.9% royalty applies to territories
+under ~$350K/year in weekly revenue. Multi-territory pooling is required to reach lower tiers. A single
+territory will pay the maximum royalty rate unless it grows past ~$700K in weekly billing.</li>
+<li><strong>Buyer uncomfortable with franchisor financial condition warnings:</strong> Multiple states'
+risk disclosures flag the franchisor's financial ability to provide services and support. Consolidated
+financials show net losses and related-party debt.</li>
+</ul>
+
+<h3>Proceed only if</h3>
+<ul class="fit-list">
+<li>You have compared the company-owned P&L margins (15.5% net) to what current franchisees report as their
+actual take-home. Company-owned may pay lower royalty rates — verify this directly.</li>
+<li>You have modeled the full local marketing commitment ($2,500/month for your first territory) alongside
+the 2.25% marketing fund and royalty. Total fees are not obvious from any single line item.</li>
+<li>You understand the liquidated damages clause: 9.15% of your average weekly revenue × remaining weeks
+in your agreement if terminated. On a $400K/year territory with 5 years remaining, that is ~$94K.</li>
+</ul>
+
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
+
+<p>The Maids has the second-highest ongoing fee burden in the residential cleaning cohort (behind
+Two Maids) at every modeled revenue level. At $200K, total fees reach $49,980 (25.0% of revenue) — nearly
+matching the revenue itself after COGS. At $300K, fees total $59,130 (19.7%). At $500K, fees decline to 15.1% as the fixed-dollar components
+become less punitive as a share of revenue. The primary driver is the $30,000/year mandatory Local Marketing
+Requirement, which does not scale with revenue.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>At Revenue</th>
+      <th class="num">Royalty</th>
+      <th class="num">Marketing</th>
+      <th class="num">Tech / Other</th>
+      <th class="num">Total</th>
+      <th class="num">% of Rev</th>
+      <th class="num">Cohort Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">$200,000</td>
+      <td class="num">$13,800</td>
+      <td class="num">$34,500</td>
+      <td class="num">$1,680</td>
+      <td class="num"><strong>$49,980</strong></td>
+      <td class="num">25.0%</td>
+      <td class="num">6/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$300,000</td>
+      <td class="num">$20,700</td>
+      <td class="num">$36,750</td>
+      <td class="num">$1,680</td>
+      <td class="num"><strong>$59,130</strong></td>
+      <td class="num">19.7%</td>
+      <td class="num">6/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$400,000</td>
+      <td class="num">$26,000</td>
+      <td class="num">$39,000</td>
+      <td class="num">$1,680</td>
+      <td class="num"><strong>$66,680</strong></td>
+      <td class="num">16.7%</td>
+      <td class="num">6/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$500,000</td>
+      <td class="num">$32,500</td>
+      <td class="num">$41,250</td>
+      <td class="num">$1,680</td>
+      <td class="num"><strong>$75,430</strong></td>
+      <td class="num">15.1%</td>
+      <td class="num">6/7</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">The Cleaning Authority</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 35.2%"></div>
+    </div>
+    <div class="fee-bar-value">7.6%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">MaidPro</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 46.3%"></div>
+    </div>
+    <div class="fee-bar-value">10.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Molly Maid</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 48.1%"></div>
+    </div>
+    <div class="fee-bar-value">10.4%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Merry Maids</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 50.9%"></div>
+    </div>
+    <div class="fee-bar-value">11.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Maid Right</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 78.2%"></div>
+    </div>
+    <div class="fee-bar-value">16.9%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">The Maids</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill this-brand" style="width: 91.2%"></div>
+    </div>
+    <div class="fee-bar-value">19.7%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Two Maids & A Mop</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 100.0%"></div>
+    </div>
+    <div class="fee-bar-value">21.6%</div>
+  </div>
+  
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+
+
+
+<h3>Component breakdown</h3>
+<ul class="compact">
+<li><strong>Royalty (6.9%&rarr;3.9% non-marginal weekly tiers):</strong> Unlike Molly Maid's marginal
+structure, The Maids uses a single-rate approach: your entire week's revenue is charged at one rate based
+on which bracket it falls in. At $300K/year ($5,769/week), you are in the $0–$6,730 bracket at 6.9%.
+You need $6,731+/week (~$350K/year) to reach the 6.5% tier. Multi-unit owners in compliance can combine
+weekly revenues to reach lower tiers. Minimum weekly fees apply: $150 (months 7–24), $200 (months 25–48),
+$250 (months 49+). (pp. 13, 18–19)</li>
+<li><strong>Marketing Fund Fee (2% of Gross Revenues):</strong> National brand fund. Franchisor may increase
+by up to 0.5% every 2 years with Advisory Council review. (p. 13)</li>
+<li><strong>Technology Innovation Fund Fee (0.25% of Gross Revenues):</strong> Separate from Marketing Fund.
+May be increased to max 1% with 90 days notice, capped at $15,000/franchisee/year. (p. 13)</li>
+<li><strong>Local Marketing Requirement ($2,500/month first territory):</strong> $30,000/year minimum.
+Second contiguous territory: $500/month additional. Third+: $250/month each. If not spent, franchisor may
+collect and spend on your behalf. This is the largest single fee component for most single-territory operators.
+(pp. 19–20)</li>
+<li><strong>Technology ($140/month):</strong> Lowest in the cohort. Software and Support Fee. Additional
+$85/month per additional office. May increase up to 25% annually. (p. 14)</li>
+<li><strong>National Sales Center (variable, mandatory Year 1):</strong> $60/week base + $7.50/unsold quote
++ $36/sold quote. Required for first year, optional thereafter. At 20 quotes/week with 30% close rate:
+~$60 + $105 + $216 = $381/week = $19,812/year. This is a material Year 1 cost. (pp. 14, 20)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> At $300K revenue, The Maids takes $59,130 in fees — nearly double what
+MaidPro ($30,000) or Molly Maid ($31,056) charge at the same level. The gap narrows at higher revenue
+because the $30K local marketing cost is fixed while royalty tiers drop, but it never fully closes. At
+$500K, The Maids charges $75,430 vs MaidPro's $46,000 — a $29,430/year difference. Over a 10-year term,
+that is $294,000 more in franchisor fees.
+</div>
+
+<div class="callout">
+<div class="callout-title">The fee structure has a cliff, not a slope</div>
+Because the royalty is non-marginal (your entire week is charged at one rate), crossing a tier boundary
+creates a sudden fee reduction. Going from $6,730/week to $6,731/week drops your royalty from 6.9% to 6.5%
+on the ENTIRE amount — saving $27/week ($1,400/year) for $1/week more revenue. This rewards operators
+who can consistently push weekly billing past tier thresholds, but creates odd incentives near boundaries.
+</div>
+
+
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
+
+<p>The Maids provides three Item 19 tables for the fiscal year ended September 30, 2025. The disclosure is
+analytically unusual: it includes per-clean revenue metrics, per-territory revenue, AND a full company-owned
+P&L — the only brand in this cohort to disclose actual profitability data.</p>
+
+<h3>Table I — Revenue per clean and per customer</h3>
+<ul class="compact">
+<li><strong>Average revenue per clean (Regular Maid Service):</strong> $221.39 (median $204.61). Range:
+$123–$357. The highest per-clean average in the cohort (vs Molly Maid's $173).</li>
+<li><strong>Average annual revenue per recurring customer:</strong> $4,203 (median $3,998). This implies
+~19 cleanings per customer per year (~biweekly).</li>
+<li><strong>95.1% of cleans are Regular Maid Service;</strong> 4.9% are Special Projects (one-time jobs
+averaging $862 per clean).</li>
+</ul>
+
+<h3>Table II — Total revenue per outlet and per territory</h3>
+<ul class="compact">
+<li><strong>Per outlet (97 outlets):</strong> Average $1,184,667, median $764,051. Range: $53K–$7.2M.
+Very wide range reflects varying territory counts per outlet.</li>
+<li><strong>Per territory (338 territories):</strong> Average $386,244, median $305,938. Range: $42K–$1.28M.
+This is the more comparable metric for a prospective single-territory buyer.</li>
+<li>Only 32% of outlets exceeded the average — top-heavy distribution skewed by multi-territory operators.</li>
+</ul>
+
+<h3>Table III — Company-owned P&L (the rare data)</h3>
+<p>6 company-owned offices operating in 31 territories across 6 states:</p>
+<ul class="compact">
+<li><strong>Average revenue per office: $1,424,377</strong> (median $1,195,040).</li>
+<li><strong>Cost of sales: 57.8%</strong> (direct labor 38.6%, vehicle/gas 4.0%, payment processing 2.3%,
+CLF royalty 5.4%, marketing fees 2.3%, supplies 1.1%, other 4.1%).</li>
+<li><strong>Cost of support: 12.9%</strong> (benefits 3.5%, payroll taxes 3.8%, rent/utilities 4.9%, other 0.7%).</li>
+<li><strong>Total cost of revenue: 71.0%.</strong></li>
+<li><strong>Operating expenses: 13.6%</strong> (marketing 4.0%, payroll 6.3%, depreciation 0.9%, other 2.4%).</li>
+<li><strong>Net income: $220,356 average (15.5% margin), $208,952 median.</strong></li>
+</ul>
+
+<h3>What's disclosed vs what's missing</h3>
+<ul class="compact">
+<li><strong>Disclosed:</strong> Full cost breakdown for company-owned. Direct labor at 38.6% of revenue is
+a key benchmark. The 15.5% net margin includes royalty, marketing fees, rent, and all operating expenses.</li>
+<li><strong>Company vs franchisee gap:</strong> Company-owned may pay lower CLF rates than franchisees and
+have different cost structures (higher manager salaries, different vendor pricing). The 15.5% margin is a
+ceiling, not a guarantee for franchisees.</li>
+<li><strong>Franchised cost data:</strong> Not disclosed. Only revenue metrics for franchisees.</li>
+<li><strong>11 outlets that closed during the Measurement Period ARE included</strong> — unlike Molly Maid
+and MaidPro, which exclude closures. This is a more honest representation but may depress averages.</li>
+</ul>
+
+
+
+
+<h3>From company-owned P&L to franchisee economics</h3>
+<p>The Maids' company-owned P&L provides a real cost structure — but company-owned outlets operate at different
+scale (average 5.2 territories per office) and may have different fee arrangements. Here is what we can
+estimate for a single-territory franchisee:</p>
+
+<p><strong>At per-territory median revenue ($306K):</strong></p>
+<ul class="compact">
+<li>Applying company-owned cost ratios: COGS at 57.8% = ~$177K, support costs at 12.9% = ~$39K,
+operating expenses at 13.6% = ~$42K.</li>
+<li>Total costs: ~$258K. Implied net income: ~$48K (15.7% margin).</li>
+<li>But this assumes company-owned cost ratios apply — single-territory operators likely have higher
+per-unit overhead (especially rent and G&A) and may pay higher royalty rates.</li>
+</ul>
+
+<p><strong>At per-territory average revenue ($386K):</strong></p>
+<ul class="compact">
+<li>Same ratios: total costs ~$325K. Implied net income: ~$61K.</li>
+<li>Adding the National Sales Center Fee (mandatory Year 1, ~$15K–$20K): net drops to ~$41K–$46K.</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> Even applying the most favorable cost ratios (company-owned at scale),
+a single-territory operator at the system median ($306K) would net roughly $40K–$50K before personal taxes.
+At the average ($386K), closer to $50K–$60K. These are modest owner incomes given the capital and labor
+commitment. The math improves dramatically at scale — the company-owned offices average $1.4M across
+5+ territories and net $220K. The Maids is designed as a multi-territory build, not a single-territory
+lifestyle business.
+</div>
+
+<div class="callout">
+<div class="callout-title">The labor cost benchmark</div>
+Direct labor at 38.6% of revenue (company-owned data) is the single most important cost to validate.
+If your local market has higher labor costs (minimum wage, competition for cleaning staff), this ratio
+will be worse. Ask current franchisees what percentage of gross revenue goes to direct labor — even a
+3-point difference ($386K × 3% = $11,580) materially changes the profitability picture.
+</div>
+
+
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
+This is not a profitability forecast. It uses The Maids' disclosed per-territory revenue from Table II
+and company-owned cost ratios from Table III. Company-owned offices may have different cost structures
+than franchised outlets. The scenarios below apply company-owned COGS ratios (57.8%) to franchised
+revenue levels — an approximation, not a direct disclosure. Your actual costs depend on your local labor
+market, territory size, and operational efficiency.</p>
+
+
+<table class="scenario-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="scenario-name">Per-territory median</td>
+      <td class="num">$306,000</td>
+      <td class="num">$59,583 (19.5%)</td>
+      <td class="num">$176,868</td>
+      <td class="num"><strong>$69,549</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Per-territory average</td>
+      <td class="num">$386,000</td>
+      <td class="num">$65,623 (17.0%)</td>
+      <td class="num">$223,107</td>
+      <td class="num"><strong>$97,270</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Multi-territory (2-pack median)</td>
+      <td class="num">$612,000</td>
+      <td class="num">$75,430 (12.3%)</td>
+      <td class="num">$353,736</td>
+      <td class="num"><strong>$182,834</strong></td>
+    </tr>
+    
+  </tbody>
+</table>
+<p class="assumption-note">Revenue from Item 19 Table II per-territory metrics (FY ending Sept 30, 2025, 338 territories). COGS at 57.8% from company-owned Table III (includes direct labor 38.6%, vehicle/gas 4.0%, royalty 5.4%, marketing fees 2.3%, payment processing 2.3%, supplies 1.1%, other 4.1%). 'Remaining' must cover operating expenses (13.6% at company-owned scale), personal taxes, and owner draw. Company-owned ratios are for offices averaging 5.2 territories — single-territory operators will have higher per-unit overhead. National Sales Center Fee (~$15K–$20K in Year 1) not included in COGS.</p>
+
+
+
+
+
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
+
+<p>Lowest entry cost in the cleaning cohort: $117,720–$141,200. The franchise fee ($60,000) is mid-range,
+but the SMART Start Package ($19,900) bundles training, equipment, supplies, and uniforms — eliminating
+the need to source these separately. Multi-territory pricing reduces the per-territory franchise fee
+significantly: a 3-Pack costs $145,000 ($48,333/territory) vs $60,000 for a single territory.
+VetFran discount: $1,000 off total. (pp. 12–13, 20–21)</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th class="num">Low</th>
+      <th class="num">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>Initial Franchise Fee</td>
+      <td class="num">$60,000</td>
+      <td class="num">$60,000</td>
+    </tr>
+    
+    <tr>
+      <td>SMART Start Package</td>
+      <td class="num">$19,900</td>
+      <td class="num">$19,900</td>
+    </tr>
+    
+    <tr>
+      <td>Grand Opening Marketing</td>
+      <td class="num">$5,000</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Office Security Deposit</td>
+      <td class="num">$0</td>
+      <td class="num">$2,150</td>
+    </tr>
+    
+    <tr>
+      <td>Office Fixtures, Decorating & Furniture</td>
+      <td class="num">$500</td>
+      <td class="num">$2,000</td>
+    </tr>
+    
+    <tr>
+      <td>Auto Down Payments or Lease Payments and Paint or Wrap Installation</td>
+      <td class="num">$1,800</td>
+      <td class="num">$4,500</td>
+    </tr>
+    
+    <tr>
+      <td>Telephone, Internet, and Computer Systems</td>
+      <td class="num">$900</td>
+      <td class="num">$1,800</td>
+    </tr>
+    
+    <tr>
+      <td>Insurance Deposit</td>
+      <td class="num">$2,200</td>
+      <td class="num">$3,200</td>
+    </tr>
+    
+    <tr>
+      <td>Washer and Dryer</td>
+      <td class="num">$1,000</td>
+      <td class="num">$2,000</td>
+    </tr>
+    
+    <tr>
+      <td>Start Up Professional Services</td>
+      <td class="num">$500</td>
+      <td class="num">$1,500</td>
+    </tr>
+    
+    <tr>
+      <td>Wages, Travel and Living Expenses During SMART Start Training</td>
+      <td class="num">$1,040</td>
+      <td class="num">$4,650</td>
+    </tr>
+    
+    <tr>
+      <td>Additional Funds - 3 Months</td>
+      <td class="num">$24,880</td>
+      <td class="num">$34,500</td>
+    </tr>
+    
+    <tr style="border-top:2px solid #333">
+      <td class="label">Total</td>
+      <td class="num"><strong>$117,720</strong></td>
+      <td class="num"><strong>$141,200</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>What to know about the major line items</h3>
+<ul class="compact">
+<li><strong>Franchise Fee ($60,000 single / $55K–$38K effective per territory in packs):</strong> Multi-territory
+pricing creates strong incentives for scale: 2-Pack $110K ($55K/territory), 3-Pack $145K ($48.3K), 4-Pack
+$170K ($42.5K), 5-Pack $190K ($38K). Each additional territory beyond 5 is $20K. The discount is substantial.
+(p. 12)</li>
+<li><strong>SMART Start Package ($19,900):</strong> Bundled one-time cost covering training (2 weeks at
+franchisor facility), cleaning solvents, supplies, consumables, uniforms, branded apparel, vacuums, and
+equipment. Not required for additional contiguous territories. This replaces what other franchises charge
+separately across multiple line items. (p. 20)</li>
+<li><strong>Grand Opening Marketing ($5,000):</strong> Minimum pre-opening marketing spend. In addition to
+the ongoing $2,500/month Local Marketing Requirement. Not required for additional contiguous territories.
+(p. 20)</li>
+<li><strong>Additional Funds — 3 months ($24,880–$34,500):</strong> Does not include royalty fees, marketing
+fund fees, Technology Innovation Fund fees, or franchisee compensation/personal living expenses. The low end
+is the most conservative working capital estimate in the cohort — plan for the high end. (p. 21)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> The Maids has the lowest barrier to entry in the cohort. A buyer with
+$130K in capital can get in. But the ongoing fee burden (highest in cohort) means the savings on entry are
+offset by higher operating costs over time. At $300K revenue, The Maids charges $28K more per year in fees
+than MaidPro. Over a 10-year term, that $28K/year gap more than erases the ~$15K lower entry cost. The
+Maids' entry cost is a draw, not a destination — the economics are a multi-territory build story.
+</div>
+
+
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
+
+<p>The Maids' system is modestly contracting but stabilizing. Total outlets declined from 382 to 369 over
+three fiscal years (-3.4%), with franchised outlets holding flat at 338 in the most recent year. Company-owned
+outlets shrunk more noticeably (36 to 31), with the franchisor selling some locations to franchisees and
+closing others. Turnover has improved each year: 5.2% to 4.1% to 3.9% — the best declining-turnover
+trajectory in the cohort.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num">Opened</th>
+      <th class="num">Closed</th>
+      <th class="num">Net</th>
+      <th class="num">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">2023</td>
+      <td class="num">12</td>
+      <td class="num">17</td>
+      <td class="num">-6</td>
+      <td class="num">340</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2024</td>
+      <td class="num">12</td>
+      <td class="num">8</td>
+      <td class="num">-2</td>
+      <td class="num">338</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2025</td>
+      <td class="num">9</td>
+      <td class="num">11</td>
+      <td class="num">+0</td>
+      <td class="num">338</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Exit composition</h3>
+<ul class="compact">
+<li><strong>FY2023:</strong> 17 terminations, 0 non-renewals, 1 reacquired, 5 transfers. Terminations
+dominated. Georgia lost 4 outlets to terminations.</li>
+<li><strong>FY2024:</strong> 8 terminations, 0 non-renewals, 6 reacquired, 6 transfers. Terminations halved.
+6 franchised outlets reacquired by franchisor (TX: 2, TN: 4). System held flat at 374 total.</li>
+<li><strong>FY2025:</strong> 11 terminations, 0 non-renewals, 2 reacquired, 4 transfers. System contracted
+slightly to 369 total. Franchised count held at 338. North Carolina grew by 6 (12→18). Colorado grew by
+4 (9→13). (pp. 49–55)</li>
+</ul>
+
+<h3>Company-owned portfolio is shrinking</h3>
+<p>Company-owned outlets declined from 36 to 31 — primarily due to Tennessee closures (4 outlets) and sales
+to franchisees. The franchisor is not expanding its company-owned operations; it is divesting them. This
+could indicate a strategic shift toward asset-light operations, or it could reflect financial pressure
+(the franchisor's financial condition is flagged by states).</p>
+
+<div class="implication">
+<strong>What this means:</strong> The turnover trajectory is genuinely positive — 3.9% is the lowest
+in the cohort and improving. But the system is not growing. Only 9 new franchised outlets opened in FY2025
+against 13 exits. The franchisor is selling company-owned locations and the financial condition is flagged.
+For a buyer, the question is whether the stabilizing franchised count represents a floor or a pause before
+further contraction. The declining turnover rate favors the floor interpretation.
+</div>
+
+<h3>Fiscal year note</h3>
+<p>The Maids uses a September 30 fiscal year-end — not calendar year like most competitors. All Item 20
+years refer to FY ending September 30. This means The Maids' "2025" data covers October 2024–September 2025,
+while competitors' "2024" data covers calendar year 2024. Direct year-over-year comparisons across brands
+require accounting for this offset.</p>
+
+
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
+
+<h3>Fee burden is the primary financial risk</h3>
+<p>At every revenue level, The Maids charges the second-most in total franchisor fees in the
+cleaning cohort (behind Two Maids). The $30,000/year Local Marketing Requirement is the largest single driver — it is a fixed
+cost that does not scale with revenue, making it particularly punitive for territories under $300K. Combined
+with the 6.9% royalty rate (for most single-territory operators), the fee structure requires strong revenue
+to generate meaningful owner income. (pp. 13–20)</p>
+
+<h3>Franchisor financial condition</h3>
+<p>Multiple states' special risk disclosures flag that the franchisor's financial condition "calls into question
+the Franchisor's financial ability to provide services and support." Consolidated financials show a net loss
+of $(3,857,961) for FY2025, member's deficit of $(3,548,483), and $28.56M in related-party long-term debt.
+A correction of prior-year errors added $7.25M to equity, which suggests the pre-correction financial
+position was materially worse. This does not mean the franchisor will fail, but it is a genuine risk factor
+for ongoing support quality and system investment. (p. 5)</p>
+
+<h3>Liquidated damages clause</h3>
+<p>Termination triggers liquidated damages calculated at 9.15% of average weekly revenue × remaining weeks
+in the agreement. On a $400K/year territory with 5 years remaining: ~$94,000. On a $300K territory with
+8 years remaining: ~$114,000. This creates significant exit friction and financial exposure. Due within
+15 days of termination. (pp. 17, 20)</p>
+
+<h3>Litigation: franchisor-aggressive posture</h3>
+<p>4 active lawsuits — all filed by The Maids against former franchisees for breach of contract, unpaid fees,
+trademark infringement, and non-compete violations. Damages sought range from $69K to $467K. No lawsuits
+filed against The Maids by franchisees. This pattern suggests the franchisor actively enforces its rights
+post-termination. (p. 11)</p>
+
+<h3>Confidentiality clauses</h3>
+<p>Franchisees have signed confidentiality clauses that may restrict their ability to speak openly about
+their experience — a structural obstacle to your due diligence, consistent across several brands in
+this cohort.</p>
+
+
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
+
+<p>The Maids occupies a distinctive position in the cleaning cohort: lowest entry cost, highest ongoing fees,
+and the only brand disclosing actual net profitability. It is the analytical buyer's paradox — the most
+data to work with, paired with the most expensive operating structure.</p>
+
+<p><strong>Closest comparison: Two Maids & A Mop.</strong> Similar fee burden profiles (both charge ~$30K/year
+in mandatory local marketing). Two Maids is growing rapidly (+56.5% over 3 years) while The Maids is flat.
+Two Maids' Item 19 provides gross margin data by quintile; The Maids provides a full company-owned P&L.
+If you want profitability data, The Maids is better. If you want growth momentum, Two Maids wins.</p>
+
+<p><strong>Sharpest contrast: MaidPro.</strong> MaidPro charges $30,000 at $300K revenue vs The Maids' $59,130
+— a $29,130/year difference. Over a 10-year term, that gap represents $291,000 in additional fees paid to
+The Maids' franchisor. MaidPro also discloses total revenue ($462K average). The question is whether The Maids'
+company-owned P&L data and SMART Start bundling justify nearly double the ongoing cost.</p>
+
+<p><strong>Scale consideration: The Maids' multi-territory math.</strong> The franchise fee discounts
+(5-Pack at $38K/territory) and royalty pooling across territories create a multi-unit build strategy where
+the economics improve dramatically. Company-owned offices averaging $1.4M across 5+ territories and netting
+$220K/year show what the model looks like at scale. A single territory at $306K median revenue is a different
+proposition entirely.</p>
+
+
+<table class="peer-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      
+      <th class="num">Maid Right</th>
+      
+      <th class="num">MaidPro</th>
+      
+      <th class="num">Merry Maids</th>
+      
+      <th class="num">Molly Maid</th>
+      
+      <th class="num">The Cleaning Authority</th>
+      
+      <th class="num">The Maids</th>
+      
+      <th class="num">Two Maids & A Mop</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">System size</td>
+      
+      <td class="num">35</td>
+      
+      <td class="num">237</td>
+      
+      <td class="num">802</td>
+      
+      <td class="num">448</td>
+      
+      <td class="num">233</td>
+      
+      <td class="num this-brand">338</td>
+      
+      <td class="num">144</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Investment range</td>
+      
+      <td class="num">$147K–$218K</td>
+      
+      <td class="num">$109K–$158K</td>
+      
+      <td class="num">$126K–$170K</td>
+      
+      <td class="num">$139K–$197K</td>
+      
+      <td class="num">$92K–$147K</td>
+      
+      <td class="num this-brand">$117K–$141K</td>
+      
+      <td class="num">$93K–$149K</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Fee burden at $300K</td>
+      
+      <td class="num">$50,780</td>
+      
+      <td class="num">$30,000</td>
+      
+      <td class="num">$32,988</td>
+      
+      <td class="num">$31,056</td>
+      
+      <td class="num">$22,902</td>
+      
+      <td class="num this-brand">$59,130</td>
+      
+      <td class="num">$64,800</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">% of revenue</td>
+      
+      <td class="num">16.9%</td>
+      
+      <td class="num">10.0%</td>
+      
+      <td class="num">11.0%</td>
+      
+      <td class="num">10.4%</td>
+      
+      <td class="num">7.6%</td>
+      
+      <td class="num this-brand">19.7%</td>
+      
+      <td class="num">21.6%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">3-year net growth</td>
+      
+      <td class="num">+11</td>
+      
+      <td class="num">-9</td>
+      
+      <td class="num">-187</td>
+      
+      <td class="num">-53</td>
+      
+      <td class="num">+24</td>
+      
+      <td class="num this-brand">-13</td>
+      
+      <td class="num">+52</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Recent attrition</td>
+      
+      <td class="num">34.1%</td>
+      
+      <td class="num">3.0%</td>
+      
+      <td class="num">10.2%</td>
+      
+      <td class="num">5.4%</td>
+      
+      <td class="num">1.8%</td>
+      
+      <td class="num this-brand">2.9%</td>
+      
+      <td class="num">5.1%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Royalty rate</td>
+      
+      <td class="num">6.0%</td>
+      
+      <td class="num">6.0%</td>
+      
+      <td class="num">7.0%</td>
+      
+      <td class="num">6.5–3.0%</td>
+      
+      <td class="num">6.0–4.0%</td>
+      
+      <td class="num this-brand">6.9–3.9%</td>
+      
+      <td class="num">7.0–4.0%</td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<p>These questions are derived from specific findings in the The Maids 2025 FDD.
+Each includes context on why it matters and what to listen for.</p>
+
+<ol class="question-list">
+  
+  <li>The company-owned P&L shows 15.5% net margin, but company-owned offices may pay lower Continuing License Fee rates. What CLF rate do company-owned offices actually pay, and how does it compare to what franchisees at the same revenue level pay?
+    <span class="question-context">Item 19 Table III, pp. 47–48. CLF is shown as 5.4% of revenue for company-owned. Standard franchisee CLF at the same revenue level ($1.4M/office ÷ 5.2 territories = $274K/territory/week = ~$5,269/week) would be in the 6.9% bracket.</span>
+    
+  </li>
+  
+  <li>The Local Marketing Requirement is $2,500/month ($30,000/year) for the first territory. What does a typical franchisee spend this on, and does the franchisor track the ROI of this mandatory spend?
+    <span class="question-context">Item 6, pp. 19–20. If not spent, franchisor may collect and spend on your behalf.</span>
+    
+  </li>
+  
+  <li>The franchisor's financial condition is flagged by multiple states as calling into question the ability to provide services and support. What specific steps has the franchisor taken to address this concern, and what is the current cash position?
+    <span class="question-context">FDD Special Risks, p. 5. Net loss of $(3.86M) in FY2025, member's deficit, $28.56M related-party debt.</span>
+    
+  </li>
+  
+  <li>The National Sales Center is mandatory for Year 1 and charges $60/week + $7.50/unsold quote + $36/sold quote. What does a typical new territory's Year 1 National Sales Center cost total?
+    <span class="question-context">Item 6, pp. 14, 20. Variable cost structure makes total unpredictable without quote volume data.</span>
+    
+  </li>
+  
+  <li>The per-territory median revenue is $306K (Table II) but company-owned offices average $274K per territory. Does the company-owned portfolio include territories of similar demographic and household profiles to available franchised territories?
+    <span class="question-context">Item 19, Tables II and III. 338 franchised territories, 31 company-owned territories in 6 states.</span>
+    
+  </li>
+  
+  <li>Table 3 arithmetic for FY2025 does not reconcile (338+9-11-0-2-0=334, but stated end count is 338). What accounts for the 4-unit gap?
+    <span class="question-context">Item 20, pp. 49–50. Likely includes company-to-franchisee territory sales not captured in standard columns.</span>
+    
+  </li>
+  
+</ol>
+
+<div class="methodology">
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <p><strong>Source document:</strong> The Maids 2025 Franchise Disclosure Document,
+  filed with the Wisconsin Department of Financial Institutions. 232-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">276392d5c8479c0438ad7aa6bc53151bbede6de7a8a2a80cd8850e5d64312c86</code></p>
+  <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
+  review. Field-level provenance recorded (source year, state, page number, item reference).
+  Extraction confidence: high (3+ fields spot-checked against source).</p>
+  <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
+  fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
+  <p><strong>Peer comparison:</strong> Same methodology applied to all 7 brands in this cohort
+  (Maid Right, MaidPro, Merry Maids, Molly Maid, The Cleaning Authority, The Maids, Two Maids & A Mop).
+  All from 2026 FDDs filed with Wisconsin DFI.</p>
+  <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
+  recommendation to buy or avoid this franchise. It is a structured analysis of publicly
+  available regulatory filings. The buyer should read the actual FDD, consult a franchise
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
+</div>
+
+</body>
+</html>

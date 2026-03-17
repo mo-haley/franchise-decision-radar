@@ -83,10 +83,10 @@
   analysis.
 </p>
 
-{% if stripe_payment_link or has_editorial %}
+{% if stripe_payment_link %}
 <div class="inline-cta">
   <span>Want the full {{ brand_short }} analysis &mdash; Item 19 translation, risk flags, discovery day questions?</span>
-  <a href="{{ stripe_payment_link if stripe_payment_link else 'report.html?brand=' + slug }}">Decision Report &mdash; $99 &rarr;</a>
+  <a href="{{ stripe_payment_link }}">Decision Report &mdash; $99 &rarr;</a>
 </div>
 {% endif %}
 
@@ -133,7 +133,7 @@
 </table>
 
 <p class="small muted">
-  Year 5 assumptions, single territory. See <a href="fee-burden.html">full methodology</a>.
+  Year 5 assumptions, single territory. See <a href="{% for page in nav_pages %}{% if page.label == 'Fee Burden' %}{{ page.url }}{% endif %}{% endfor %}">full methodology</a>.
 </p>
 {% endif %}
 
@@ -183,7 +183,7 @@
 <p>{{ disclosure_narrative }}</p>
 {% endif %}
 
-{% if has_editorial %}
+{% if stripe_payment_link %}
 <div class="cta-block">
   <h3>Get the {{ brand_name }} Decision Report</h3>
   <p>
@@ -192,7 +192,7 @@
     this brand from &ldquo;interesting&rdquo; to &ldquo;ready to evaluate.&rdquo;
   </p>
   <div style="margin-top:1rem">
-    <a href="{{ stripe_payment_link if stripe_payment_link else 'report.html?brand=' + slug }}" class="cta-button">Get the Decision Report &mdash; $99</a>
+    <a href="{{ stripe_payment_link }}" class="cta-button">Get the Decision Report &mdash; $99</a>
   </div>
   <p class="small muted" style="margin:0.6rem 0 0">One-time purchase &middot; Single brand &middot; Instant delivery</p>
 </div>

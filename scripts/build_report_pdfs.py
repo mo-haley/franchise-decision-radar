@@ -26,11 +26,24 @@ REPORTS_HTML = ROOT / "reports"
 REPORTS_PDF = ROOT / "site" / "reports"
 
 BRAND_SLUGS = [
+    # Mosquito
     "mosquito-authority",
     "mosquito-hunters",
     "mosquito-joe",
     "mosquito-shield",
     "mosquito-squad",
+    # Lawn
+    "lawn-doctor",
+    "spring-green",
+    "naturalawn",
+    # Cleaning
+    "cleaning-authority",
+    "two-maids",
+    "molly-maid",
+    "the-maids",
+    "merry-maids",
+    "maidpro",
+    "maid-right",
 ]
 
 

@@ -25,7 +25,7 @@
   </p>
   <div class="hero-actions">
     <a href="#categories" class="cta-button">Browse categories &rarr;</a>
-    <a href="report.html" class="cta-button-outline">Decision Reports <span class="btn-price">&mdash; $99/brand</span></a>
+    <a href="#reports" class="cta-button-outline">Decision Reports <span class="btn-price">&mdash; $99 / brand</span></a>
   </div>
   <div class="trust-badge"><span class="trust-badge-icon"></span> Regulator-source data &middot; No franchisor affiliation &middot; <a href="methodology.html" style="color:inherit; text-decoration:underline">Methodology</a></div>
 </div>
@@ -41,7 +41,7 @@
   </div>
   <div class="stat-item">
     <div class="stat-number">$99</div>
-    <div class="stat-label">Per-brand Decision Report<br>with fee modeling &amp; risk flags</div>
+    <div class="stat-label">Per-brand Decision Report<br>available for select brands</div>
   </div>
 </div>
 
@@ -68,8 +68,9 @@
     <p>
       Full fee modeling, Item 19 translation, risk flags, and
       discovery day questions for the brand you&rsquo;re evaluating.
+      Decision Reports available for select brands.
     </p>
-    <a href="report.html">See Decision Reports &rarr;</a>
+    <a href="#reports">See available reports &rarr;</a>
   </div>
 </div>
 
@@ -96,7 +97,7 @@
       {% for page in cohort.comparison_pages %}
       <a href="{{ page.url }}">{{ page.label }} &rarr;</a>
       {% endfor %}
-      <a href="{{ cohort.report_url }}">Decision Reports &rarr;</a>
+      <a href="report.html#{{ cohort.id }}">Decision Reports &rarr;</a>
     </div>
   </div>
   {% endfor %}
@@ -167,9 +168,20 @@
 {% endif %}
 {% endfor %}
 
-<div class="inline-cta">
-  <span>Narrowed to one or two brands?</span>
-  <a href="report.html">Get a Decision Report &mdash; $99/brand &rarr;</a>
+<h2 id="reports">Decision Reports &mdash; $99 / brand</h2>
+<p class="page-intro">
+  You&rsquo;ve compared the category. Now you&rsquo;re evaluating one brand.
+  Each report covers fee modeling, Item 19 translation, risk flags,
+  and discovery-day questions &mdash; built from the same regulator-source FDDs.
+</p>
+<div class="wedge-grid">
+  {% for cohort in live_cohorts %}
+  <div class="wedge-card">
+    <h3>{{ cohort.display_name }}</h3>
+    <p class="wedge-card-desc">{{ cohort.brand_count }} brands compared</p>
+    <a href="report.html#{{ cohort.id }}" class="cta-button" style="font-size:0.82rem; padding:0.5rem 1.15rem;">View reports &rarr;</a>
+  </div>
+  {% endfor %}
 </div>
 
 <h2>Why This Data Is Different</h2>

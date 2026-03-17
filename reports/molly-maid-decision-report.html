@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Molly Maid — Franchise Decision Report</title>
+<style>
+@media print {
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+  a { text-decoration: none !important; }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a; background: #fff; line-height: 1.7;
+  max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem;
+}
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0 0 0.25rem; letter-spacing: -0.02em; font-family: -apple-system, sans-serif; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid #ccc; font-family: -apple-system, sans-serif; }
+h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.4rem; font-family: -apple-system, sans-serif; }
+p { margin: 0 0 0.9rem; }
+strong { font-weight: 700; }
+a { color: #1a1a1a; }
+
+.report-header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 1.75rem; }
+.report-meta { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; line-height: 1.5; margin-top: 0.5rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; font-family: -apple-system, sans-serif; }
+thead th { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 2px solid #333; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #555; }
+thead th.num { text-align: right; }
+tbody td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; }
+tbody td.num { text-align: right; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; }
+tbody td.label { font-weight: 600; white-space: nowrap; }
+
+.callout { padding: 0.75rem 1rem; margin: 0.75rem 0 1.25rem; border-left: 3px solid #d97706; background: #fffbeb; font-size: 0.88rem; }
+.callout-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #92400e; margin-bottom: 0.3rem; font-family: -apple-system, sans-serif; }
+
+.question-list { list-style: none; padding: 0; counter-reset: q; }
+.question-list li { padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.9rem; counter-increment: q; }
+.question-list li::before { content: counter(q) "."; font-weight: 700; margin-right: 0.5rem; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+.question-list li:last-child { border-bottom: none; }
+.question-context { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.2rem; display: block; }
+.question-sub { font-size: 0.82rem; margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.6; }
+.question-sub dt { font-weight: 600; font-family: -apple-system, sans-serif; color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.35rem; }
+.question-sub dd { margin: 0.1rem 0 0; padding-left: 0; }
+
+.methodology { font-size: 0.8rem; color: #555; line-height: 1.6; border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 2rem; }
+.methodology p { margin: 0 0 0.5rem; }
+
+.exec-summary { font-size: 1.02rem; line-height: 1.75; }
+.peer-table td.this-brand { background: #f5f7fa; }
+
+.implication {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem;
+  color: #1e40af; margin: 0.5rem 0 1rem; line-height: 1.5;
+  padding-left: 0.75rem; border-left: 2px solid #93c5fd;
+}
+.implication strong { color: #1e40af; }
+ul.compact { margin: 0.3rem 0 0.9rem; padding-left: 1.25rem; }
+ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
+
+/* Scorecard */
+.scorecard { margin: 0.75rem 0 1.25rem; }
+.scorecard td { vertical-align: top; }
+.scorecard td.rating {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; width: 80px;
+}
+.scorecard td.sc-summary { font-size: 0.84rem; color: #555; }
+.rating-strong { color: #15803d; }
+.rating-mixed { color: #b45309; }
+.rating-weak { color: #dc2626; }
+
+/* Buyer-fit */
+.fit-section { margin: 0.5rem 0 1rem; }
+.fit-section h3 { font-size: 0.85rem; margin: 0.75rem 0 0.3rem; }
+.fit-list { margin: 0.2rem 0 0.75rem; padding-left: 1.25rem; }
+.fit-list li { margin: 0.15rem 0; font-size: 0.9rem; }
+
+/* Economics scenarios */
+.scenario-table thead th { font-size: 0.7rem; }
+.scenario-table tbody td { font-size: 0.82rem; }
+.scenario-table td.scenario-name { font-weight: 600; }
+.assumption-note { font-size: 0.78rem; color: #777; font-style: italic; margin: 0.25rem 0 0.75rem; }
+
+/* Decision overlay */
+.decision-overlay { margin: 0.75rem 0 1.25rem; }
+.decision-overlay td.overlay-label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; width: 40%; }
+.decision-overlay td.overlay-value { font-size: 0.85rem; }
+
+/* Cover page */
+.cover-page {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 85vh; text-align: left;
+}
+.cover-page .cover-brand {
+  font-family: -apple-system, sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 0.35rem;
+}
+.cover-page .cover-subtitle {
+  font-family: -apple-system, sans-serif; font-size: 1rem; font-weight: 400;
+  color: #555; margin: 0 0 2.5rem; letter-spacing: 0.01em;
+}
+.cover-page .cover-details {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem; color: #777;
+  line-height: 1.7; border-top: 1px solid #ccc; padding-top: 1rem;
+}
+.cover-page .cover-details span { display: block; }
+.cover-page .cover-origin {
+  font-family: -apple-system, sans-serif; font-size: 0.72rem; color: #999;
+  margin-top: 2rem; letter-spacing: 0.02em;
+}
+
+/* Table of contents */
+.toc { margin: 2rem 0; }
+.toc h2 {
+  font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem; margin-bottom: 1rem;
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem;
+  padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a { text-decoration: none; color: #1a1a1a; }
+.toc-list a:hover { color: #555; }
+.toc-num {
+  display: inline-block; width: 1.5rem; font-weight: 600;
+  font-size: 0.78rem; color: #999;
+}
+.toc-list { counter-reset: toc-counter; }
+.toc-list li .toc-num-auto::before {
+  counter-increment: toc-counter;
+  content: counter(toc-counter);
+}
+
+/* Fee burden comparison bars */
+.fee-bars { margin: 1rem 0 1.25rem; }
+.fee-bars .fee-bar-row {
+  display: flex; align-items: center; margin: 0.3rem 0;
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+}
+.fee-bars .fee-bar-label {
+  width: 130px; flex-shrink: 0; text-align: right;
+  padding-right: 0.75rem; font-size: 0.78rem; color: #555;
+}
+.fee-bars .fee-bar-track {
+  flex: 1; height: 20px; background: #f3f4f6; position: relative;
+}
+.fee-bars .fee-bar-fill {
+  height: 100%; background: #d1d5db;
+}
+.fee-bars .fee-bar-fill.this-brand { background: #1e40af; }
+.fee-bars .fee-bar-value {
+  width: 52px; flex-shrink: 0; text-align: right;
+  padding-left: 0.5rem; font-size: 0.78rem; color: #555;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-brand">Molly Maid</div>
+  <div class="cover-subtitle">Franchise Decision Report</div>
+  <div class="cover-details">
+    <span>Source: 2025 Franchise Disclosure Document</span>
+    <span>Filed with the Wisconsin Department of Financial Institutions</span>
+    <span>Legal entity: Molly Maid SPV LLC</span>
+    <span>Report generated: 2026-03-17</span>
+  </div>
+  <div class="cover-origin">Franchise Decision Radar</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc page-break">
+  <h2>Contents</h2>
+  <ol class="toc-list">
+    <li><span class="toc-num toc-num-auto"></span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    
+    <li><span class="toc-num toc-num-auto"></span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#methodology">Source &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<div class="report-header page-break">
+  <h1>Molly Maid</h1>
+  <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
+  <div class="report-meta">
+    Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
+    Legal entity: Molly Maid SPV LLC<br>
+    Report generated: 2026-03-17 &middot; Franchise Decision Radar
+  </div>
+</div>
+
+<h2 id="executive-summary">Executive Summary</h2>
+<div class="exec-summary">
+
+<p>Molly Maid is the largest residential cleaning franchise in this cohort by unit count (448 outlets as of
+year-end 2024) and the oldest by system age (franchising since 1984). It is backed by Neighborly / KKR through
+a securitization structure (Molly Maid SPV LLC). The system has contracted every year for three consecutive
+years — 501 to 448 units, a net loss of 53 (-10.6%). This is not a growing system; it is a mature brand
+in managed decline.</p>
+
+<p>The fee structure is mid-cohort: a marginal tiered royalty starting at 6.5% (declining to 3% above $2.8M),
+2% MAP contribution, and ~$463/month in technology fees. At $300K revenue, total modelable fees are $31,056
+(10.4%) — below Merry Maids, The Maids, Two Maids, and Maid Right, but above The Cleaning Authority and
+MaidPro. However, the Local Marketing Requirement (per-Target-Household, territory-size-dependent) is excluded
+from the model and adds an unknown additional cost.</p>
+
+<p>The Item 19 is unusual: it discloses per-cleaning revenue ($173 average), per-Target-Household penetration,
+recurring customer rates (91%), and same-store sales growth distributions — but does <strong>not</strong>
+disclose total gross revenue per franchisee or per territory. You cannot directly determine what a Molly Maid
+territory generates in annual revenue from this FDD alone. The operational metrics are strong (79% of franchisees
+grew YoY), but the missing revenue denominator is a meaningful gap for financial modeling.</p>
+
+</div>
+
+<!-- SCORECARD -->
+<h2 id="decision-scorecard">Decision Scorecard</h2>
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.5rem;">Quick-read assessment across key buyer decision dimensions. Ratings reflect this brand's position relative to the residential cleaning cohort.</p>
+
+<table class="scorecard">
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Rating</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">Entry cost burden</td>
+      <td class="rating rating-mixed">Moderate</td>
+      <td class="sc-summary">$140K–$197K total investment. Mid-to-high for cleaning cohort. Two-part fee (franchise + territory) averages ~$56K–$64K in initial fees.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Ongoing fee burden</td>
+      <td class="rating rating-mixed">Moderate</td>
+      <td class="sc-summary">10.4% of revenue at $300K (modelable). Marginal royalty tiers reward scale. But Local Marketing Requirement (per-TH) is excluded and adds unknown cost.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">System stability</td>
+      <td class="rating rating-weak">Weak</td>
+      <td class="sc-summary">Three consecutive years of contraction: -20, -17, -16 net units. System lost 53 units (-10.6%) over 2022–2024. Ceased operations (16–22/year) drive exits.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Revenue disclosure</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">Rich operational metrics (per-cleaning revenue, recurring rates, YoY growth). But no total revenue per franchisee or territory disclosed — the most important number for financial modeling is missing.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Disclosure quality</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Clean filing. Light litigation (2 concluded affiliate actions). Extraction confidence high across all items.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Downside risk profile</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">System contraction is the primary risk. 25 businesses closed during 2024 (excluded from Item 19 — survivorship bias). SPV/securitization structure adds entity complexity.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Buyer fit breadth</td>
+      <td class="rating rating-strong">Strong</td>
+      <td class="sc-summary">Strongest brand recognition in cleaning. Neighborly multi-brand infrastructure. Tiered royalty rewards growth. VetFran and multi-unit discounts available.</td>
+    </tr>
+    
+    <tr>
+      <td class="label">Overall</td>
+      <td class="rating rating-mixed">Mixed</td>
+      <td class="sc-summary">The safest brand name in the cohort paired with a shrinking system. Operational metrics are healthy, but the system is losing more units than it adds. Relative cohort position does not establish absolute profitability.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div class="callout">
+<div class="callout-title">Overall posture</div>
+Molly Maid offers the strongest brand recognition and longest track record in the
+residential cleaning cohort, backed by Neighborly's multi-brand franchise infrastructure. The tiered royalty
+structure genuinely rewards scale. But the system is contracting — losing 15–20 units per year net — and the
+Item 19 omits the single most important metric for a prospective buyer: total revenue per territory. You are
+buying into a mature, recognized brand with a shrinking footprint. Your diligence must focus on whether the
+contraction is pruning weak territories (healthy) or signaling systemic problems (concerning).
+</div>
+
+<!-- BUYER-FIT -->
+<h2 id="buyer-fit">Buyer-Fit Profile</h2>
+<div class="fit-section">
+
+<h3>Best fit for</h3>
+<ul class="fit-list">
+<li><strong>Brand-recognition buyer:</strong> Molly Maid is one of the most recognized names in residential
+cleaning. If local marketing leverage and consumer trust matter to you, this brand has decades of awareness
+that newer competitors cannot match.</li>
+<li><strong>Multi-brand Neighborly investor:</strong> If you already own or plan to own other Neighborly
+brands (Mr. Rooter, Mr. Electric, Mosquito Joe, etc.), the shared infrastructure, cross-selling, and
+multi-unit discount structure create genuine portfolio synergies.</li>
+<li><strong>Buyer seeking recurring revenue stability:</strong> 91% recurring customer rate is the highest
+in the cohort. Weekly customer retention is a core operational strength of this system.</li>
+<li><strong>Scale-oriented operator who will benefit from royalty tiers:</strong> The marginal royalty drops
+from 6.5% to 3% as revenue climbs through brackets. At $1M+ revenue, the blended effective rate is well
+below 6% — more favorable than most competitors' flat rates.</li>
+</ul>
+
+<h3>Weaker fit for</h3>
+<ul class="fit-list">
+<li><strong>Buyer who needs disclosed revenue benchmarks:</strong> The Item 19 does not disclose total
+revenue per franchisee or per territory. If you need disclosed revenue data to build your financial model,
+MaidPro, The Cleaning Authority, Merry Maids, or Two Maids all disclose absolute revenue figures.</li>
+<li><strong>Growth-oriented buyer seeking system momentum:</strong> The system has contracted every year
+for three years. If you want to join a franchise that is expanding, Two Maids or The Cleaning Authority
+are growing; Molly Maid is not.</li>
+<li><strong>Budget-sensitive buyer:</strong> The two-part fee structure (franchise fee + per-TH territory fee)
+means initial fees typically run $56K–$64K — higher than MaidPro ($45K) or The Cleaning Authority ($20K–$35K
+franchise fee). Total investment midpoint of $169K is above most peers.</li>
+</ul>
+
+<h3>Proceed only if</h3>
+<ul class="fit-list">
+<li>You have talked to current franchisees about their actual annual gross revenue — the FDD will not
+tell you this number.</li>
+<li>You understand why the system is contracting and whether your proposed territory is in a growth or
+decline market. Ask the franchisor for territory-specific unit history.</li>
+<li>You have calculated your Local Marketing Requirement based on your territory's Target Household count
+and incorporated it into your cost model.</li>
+</ul>
+
+</div>
+
+<!-- FEE BURDEN -->
+<h2 id="fee-burden">Fee Burden Analysis</h2>
+
+<p>Molly Maid's modelable fee burden is mid-cohort: 10.4% of revenue at $300K, dropping to 9.6% at $500K
+as the tiered royalty begins to bite. This is below Merry Maids (11.0%), significantly below The Maids (19.7%)
+and Two Maids (21.6%), but above MaidPro (10.0%) and The Cleaning Authority (7.6%, though TCA excludes its
+DHH-based Local Marketing Fee). The key caveat: Molly Maid's model also excludes the Local Marketing
+Requirement, which is per-Target-Household and territory-size-dependent.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>At Revenue</th>
+      <th class="num">Royalty</th>
+      <th class="num">Marketing</th>
+      <th class="num">Tech / Other</th>
+      <th class="num">Total</th>
+      <th class="num">% of Rev</th>
+      <th class="num">Cohort Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">$200,000</td>
+      <td class="num">$13,000</td>
+      <td class="num">$4,000</td>
+      <td class="num">$5,556</td>
+      <td class="num"><strong>$22,556</strong></td>
+      <td class="num">11.3%</td>
+      <td class="num">3/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$300,000</td>
+      <td class="num">$19,500</td>
+      <td class="num">$6,000</td>
+      <td class="num">$5,556</td>
+      <td class="num"><strong>$31,056</strong></td>
+      <td class="num">10.4%</td>
+      <td class="num">3/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$400,000</td>
+      <td class="num">$26,000</td>
+      <td class="num">$8,000</td>
+      <td class="num">$5,556</td>
+      <td class="num"><strong>$39,556</strong></td>
+      <td class="num">9.9%</td>
+      <td class="num">3/7</td>
+    </tr>
+    
+    <tr>
+      <td class="label">$500,000</td>
+      <td class="num">$32,500</td>
+      <td class="num">$10,000</td>
+      <td class="num">$5,556</td>
+      <td class="num"><strong>$48,056</strong></td>
+      <td class="num">9.6%</td>
+      <td class="num">3/7</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Cohort fee burden at $300K revenue</h3>
+<div class="fee-bars">
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">The Cleaning Authority</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 35.2%"></div>
+    </div>
+    <div class="fee-bar-value">7.6%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">MaidPro</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 46.3%"></div>
+    </div>
+    <div class="fee-bar-value">10.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Molly Maid</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill this-brand" style="width: 48.1%"></div>
+    </div>
+    <div class="fee-bar-value">10.4%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Merry Maids</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 50.9%"></div>
+    </div>
+    <div class="fee-bar-value">11.0%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Maid Right</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 78.2%"></div>
+    </div>
+    <div class="fee-bar-value">16.9%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">The Maids</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 91.2%"></div>
+    </div>
+    <div class="fee-bar-value">19.7%</div>
+  </div>
+  
+  <div class="fee-bar-row">
+    <div class="fee-bar-label">Two Maids & A Mop</div>
+    <div class="fee-bar-track">
+      <div class="fee-bar-fill" style="width: 100.0%"></div>
+    </div>
+    <div class="fee-bar-value">21.6%</div>
+  </div>
+  
+</div>
+<p style="font-size:0.78rem; color:#777; margin-top:-0.5rem;">Total annual franchisor fees as a percentage of $300K gross revenue. Includes royalty, marketing, technology, and all mandatory recurring fees.</p>
+
+
+
+<h3>Component breakdown</h3>
+<ul class="compact">
+<li><strong>Royalty (6.5%&rarr;3% marginal tiers):</strong> Progressive brackets like income tax. 6.5% on
+first $500K, 6% on $500K–$800K, 5.5% on $800K–$1.2M, continuing down to 3% above $2.8M. At $500K revenue,
+effective rate is 6.5% flat (all within first tier). At $1M, blended effective rate drops to ~6.15%. The
+tiers are genuinely franchisee-friendly at scale — but most single-territory operators will never leave the
+6.5% bracket. Roll-In franchisees get reduced Year 1 rates (3% small/medium, 2.5% large). (pp. 26, 36–37)</li>
+<li><strong>MAP Contribution (2% of Gross Sales):</strong> National brand fund. Straightforward. Subject to
+ramp-up for legacy franchisees through 2025; full 2% applies to all from 2026. (pp. 26–27)</li>
+<li><strong>Technology ($463/month):</strong> Split across two payees: $58/month to ZorWare (Qvinci, Broadly
+NPS, FranConnect, Office 365) + $405/month to ServiceTitan (CLEO business management software). Total
+$5,556/year. May increase up to 30% annually. (pp. 27–28, 35)</li>
+<li><strong>Local Marketing Requirement (per-TH — NOT modeled):</strong> $1.00 per Target Household per year
+at $0–$15K weekly Gross Sales, declining to $0.15/TH at $25K+ weekly. For a 55,000 TH territory at the
+$1.00 rate: $55,000/year in mandatory local marketing. At the $0.50 rate ($15K–$20K weekly): $27,500/year.
+If you do not spend this amount, the franchisor may collect and spend on your behalf. This is a significant
+cost excluded from the fee burden model. (pp. 34–35)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> At $300K revenue, you retain ~$269K after modelable franchisor fees.
+At MaidPro (lowest-burden at that level), you'd keep ~$270K — nearly identical. But Molly Maid's
+Local Marketing Requirement could add $15K–$55K depending on territory size, making the true gap
+between Molly Maid and cheaper competitors substantially wider than the modelable fees suggest.
+</div>
+
+<div class="callout">
+<div class="callout-title">Key Accounts fee — a hidden cost layer</div>
+Molly Maid charges up to 3% of Gross Sales on Key Account, Business Development, and call-center-dispatched
+work (p. 32). If a meaningful share of your revenue comes through franchisor-generated channels, this fee
+effectively adds to the royalty. Ask what percentage of a typical territory's revenue flows through
+Key Accounts.
+</div>
+
+
+<!-- ITEM 19 -->
+<h2 id="item-19">Item 19 Interpretation</h2>
+
+<p>Molly Maid's Item 19 is operationally rich but financially incomplete. It provides four parts covering
+197 operators (417 franchised businesses out of 448 total) for calendar year 2024. What it discloses is
+genuinely useful — per-cleaning revenue, territory penetration, recurring customer rates, and year-over-year
+growth. What it omits — total gross revenue per territory — is the single most important number for a
+prospective buyer's financial model.</p>
+
+<h3>Part I — Average gross sales per cleaning</h3>
+<ul class="compact">
+<li><strong>System average:</strong> $173.43 per cleaning. Median: $169.75.</li>
+<li><strong>Top quartile:</strong> $213.76 average ($191–$263 range).</li>
+<li><strong>Bottom quartile:</strong> $132.70 average ($90–$152 range).</li>
+<li>The $80 spread between top and bottom quartile per-cleaning revenue suggests meaningful pricing variation
+across markets — but this is a tighter distribution than revenue per territory would likely show.</li>
+</ul>
+
+<h3>Part II — Gross sales per Target Household</h3>
+<ul class="compact">
+<li><strong>System average:</strong> $16.23 per TH. Wide range: $2.59 to $88.13.</li>
+<li>Top 10% generates ~5× more revenue per TH than the system average, suggesting massive territory
+utilization variance.</li>
+<li>For a 55,000 TH territory at the system average: implied revenue of ~$893K. At the median ($15.17/TH):
+~$834K. These are rough estimates — the FDD does not validate this arithmetic.</li>
+</ul>
+
+<h3>Part III — Recurring vs. occasional customers</h3>
+<ul class="compact">
+<li><strong>91% recurring, 9% occasional</strong> (average). The highest recurring rate in the cohort.</li>
+<li>56% of operators exceed the system average recurring rate — a positive signal for business predictability.</li>
+</ul>
+
+<h3>Part IV — Same-store sales growth (2023 vs 2024)</h3>
+<ul class="compact">
+<li><strong>79% of franchisees grew year-over-year.</strong> Only 4% declined more than 10%.</li>
+<li>22% grew more than 10%. The growth distribution is healthy — but this is same-store, not same-system.
+The 25 businesses that closed during 2024 are excluded.</li>
+</ul>
+
+<h3>What's missing</h3>
+<ul class="compact">
+<li><strong>Total gross revenue per franchisee or per territory:</strong> Not disclosed. You can attempt to
+triangulate from per-cleaning revenue × estimated cleans/year, or from per-TH revenue × TH count, but
+neither calculation is validated by the FDD.</li>
+<li><strong>Any cost data:</strong> No COGS, no gross margin, no expense breakdowns. The Cleaning Authority
+and Two Maids both disclose more cost information.</li>
+<li><strong>Survivorship bias:</strong> 25 businesses that closed in 2024 are excluded. 9 that opened,
+13 mid-transfer, 2 with unreliable data, and 6 with territory changes are also excluded.</li>
+</ul>
+
+
+
+
+<h3>Estimating territory revenue from disclosed metrics</h3>
+<p>The FDD does not disclose total revenue, but we can attempt a rough triangulation:</p>
+
+<p><strong>Method 1 — Per-TH revenue × territory size:</strong></p>
+<ul class="compact">
+<li>System average: $16.23/TH. For a 55,000 TH territory: ~$893K implied revenue.</li>
+<li>Median: $15.17/TH. Same territory: ~$834K.</li>
+<li>Bottom quartile average: $8.10/TH. Same territory: ~$446K.</li>
+</ul>
+
+<p><strong>Method 2 — Per-cleaning revenue × estimated cleanings:</strong></p>
+<ul class="compact">
+<li>System average per cleaning: $173. If a territory performs 15 cleanings/day × 250 working days = 3,750
+cleanings/year: implied revenue ~$649K. At 10 cleanings/day: ~$433K.</li>
+<li>These estimates are not validated by the FDD. Actual cleans/day/territory is not disclosed.</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> Rough triangulation suggests a mid-range Molly Maid territory might
+generate $450K–$900K in gross revenue depending on territory size and utilization. But these are estimates
+built on estimates. Unlike MaidPro ($462K disclosed average), The Cleaning Authority ($1.46M disclosed
+Enterprise average), or Merry Maids ($487K Qualified Franchise average), Molly Maid gives you no confirmed
+revenue number. You must talk to current franchisees or get territory-specific data from the franchisor
+to build a credible financial model.
+</div>
+
+
+
+<!-- ECONOMICS REALITY CHECK -->
+<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+
+<p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
+This is not a profitability forecast. Molly Maid's FDD does not disclose total gross revenue per territory
+or any cost/expense data. The scenarios below use estimated revenue ranges triangulated from per-TH and
+per-cleaning metrics — these are illustrative, not FDD-sourced revenue figures. Your actual results depend
+on territory size, local pricing, route density, labor costs, and execution. No COGS data is available
+from this FDD.</p>
+
+
+<table class="scenario-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th class="num">Revenue</th>
+      <th class="num">Franchisor Fees</th>
+      <th class="num">Est. COGS</th>
+      <th class="num">Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="scenario-name">Bottom-quartile TH estimate</td>
+      <td class="num">$300,000</td>
+      <td class="num">$31,056 (10.4%)</td>
+      <td class="num">$165,000</td>
+      <td class="num"><strong>$103,944</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Median TH estimate</td>
+      <td class="num">$500,000</td>
+      <td class="num">$48,056 (9.6%)</td>
+      <td class="num">$275,000</td>
+      <td class="num"><strong>$176,944</strong></td>
+    </tr>
+    
+    <tr>
+      <td class="scenario-name">Top-quartile TH estimate</td>
+      <td class="num">$800,000</td>
+      <td class="num">$48,056 (6.0%)</td>
+      <td class="num">$440,000</td>
+      <td class="num"><strong>$311,944</strong></td>
+    </tr>
+    
+  </tbody>
+</table>
+<p class="assumption-note">Revenue estimated from per-TH metrics (Part II) applied to a hypothetical 55,000 TH territory. Bottom quartile: $8.10/TH × 55K = ~$446K, rounded to $300K as conservative. Median: $15.17/TH × 55K = ~$834K, rounded to $500K as midpoint. Top quartile: $32.60/TH × 55K = ~$1.79M, capped at $800K for single-territory realism. COGS estimated at 55% based on cleaning industry norms (no FDD cost data available). 'Remaining' must cover all operating expenses, Local Marketing Requirement, and owner draw. These are illustrative scenarios, not disclosed figures.</p>
+
+
+
+
+
+<!-- INVESTMENT -->
+<h2 id="investment">Investment Breakdown</h2>
+
+<p>Mid-to-high cohort entry cost: $139,900–$197,200. The two-part initial fee structure ($14,900 franchise
+fee + ~$45,000–$70,000 territory fee based on $1.00 per Target Household) means your upfront fees scale
+with territory size. A standard 55,000–70,000 TH territory will cost $70K–$85K in combined initial fees.
+Multiple discount programs exist: VetFran (20% off territory fee), Roll-In (5–50% based on existing
+business sales), Multi-Unit (5–20% based on tenure). (pp. 23–26)</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th class="num">Low</th>
+      <th class="num">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>Initial Franchise Fee</td>
+      <td class="num">$14,900</td>
+      <td class="num">$14,900</td>
+    </tr>
+    
+    <tr>
+      <td>Territory Fee</td>
+      <td class="num">$45,000</td>
+      <td class="num">$70,000</td>
+    </tr>
+    
+    <tr>
+      <td>Initial Startup Package</td>
+      <td class="num">$8,000</td>
+      <td class="num">$9,000</td>
+    </tr>
+    
+    <tr>
+      <td>Software Enrollment and Training Fee</td>
+      <td class="num">$1,500</td>
+      <td class="num">$1,500</td>
+    </tr>
+    
+    <tr>
+      <td>Auto Lease Deposit and Lease Expense</td>
+      <td class="num">$3,900</td>
+      <td class="num">$5,500</td>
+    </tr>
+    
+    <tr>
+      <td>Computer Hardware</td>
+      <td class="num">$2,200</td>
+      <td class="num">$4,500</td>
+    </tr>
+    
+    <tr>
+      <td>Leasehold Improvements</td>
+      <td class="num">$1,000</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Real Estate, Utility Deposits and Three Months Rent</td>
+      <td class="num">$4,000</td>
+      <td class="num">$7,000</td>
+    </tr>
+    
+    <tr>
+      <td>Furniture, Fixtures and Equipment</td>
+      <td class="num">$2,500</td>
+      <td class="num">$3,500</td>
+    </tr>
+    
+    <tr>
+      <td>Permits and Licenses</td>
+      <td class="num">$100</td>
+      <td class="num">$1,000</td>
+    </tr>
+    
+    <tr>
+      <td>Insurance Deposit and Three Months Insurance Expense</td>
+      <td class="num">$2,800</td>
+      <td class="num">$5,300</td>
+    </tr>
+    
+    <tr>
+      <td>Training Expenses for Travel, Food and Lodging</td>
+      <td class="num">$4,000</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Professional Fees</td>
+      <td class="num">$0</td>
+      <td class="num">$5,000</td>
+    </tr>
+    
+    <tr>
+      <td>Additional Funds - 3 Months</td>
+      <td class="num">$50,000</td>
+      <td class="num">$60,000</td>
+    </tr>
+    
+    <tr style="border-top:2px solid #333">
+      <td class="label">Total</td>
+      <td class="num"><strong>$139,900</strong></td>
+      <td class="num"><strong>$197,200</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>What to know about the major line items</h3>
+<ul class="compact">
+<li><strong>Territory Fee ($45,000–$70,000 standard / $30,000–$45,000 mid-size):</strong> $1.00 per Target
+Household. This is the primary variable — your territory size drives your initial cost. Average paid in 2024:
+~$56K. Franchise fee ($14,900) is waived for expansion of existing compliant franchisees. (pp. 23–25)</li>
+<li><strong>Additional Funds — 3 months ($50,000–$60,000):</strong> The largest line item. Covers payroll,
+marketing, gas, auto maintenance, internet, general business. Does not include owner salary or draw. At the
+low end, this may be tight for a territory still ramping revenue. (p. 39)</li>
+<li><strong>Auto lease + computer hardware ($6,100–$10,000):</strong> Minimum 2 vehicles required (one for
+estimates, one for team). New vehicle purchase runs $23,500–$26,500 — substantially above the lease deposit
+shown in Item 7. (p. 39)</li>
+<li><strong>Software enrollment ($1,500 one-time):</strong> Paid to ZorWare. In addition to the ongoing
+$463/month technology fees. (p. 39)</li>
+</ul>
+
+<div class="implication">
+<strong>What this means:</strong> Plan for $169K at the midpoint. The territory fee structure means
+larger territories cost proportionally more to enter — and the Local Marketing Requirement also scales
+with territory size. A buyer targeting a large 70,000 TH territory should expect $85K+ in initial fees
+alone, plus ongoing local marketing costs of $35K–$70K/year depending on revenue level. The economics
+favor territories large enough to generate scale but small enough that per-TH costs remain manageable.
+</div>
+
+
+<!-- SYSTEM HEALTH -->
+<h2 id="system-health">System Health</h2>
+
+<p>Molly Maid is the largest residential cleaning franchise in this cohort — and it is contracting. The
+system has shrunk every year for three consecutive years: 501 to 481 to 464 to 448 outlets. That is
+53 net lost units (-10.6%). New openings averaged only 7 per year (5, 7, 9) against 25–38 annual exits.
+This is a mature system that is losing more units than it replaces.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num">Opened</th>
+      <th class="num">Closed</th>
+      <th class="num">Net</th>
+      <th class="num">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">2022</td>
+      <td class="num">5</td>
+      <td class="num">25</td>
+      <td class="num">-20</td>
+      <td class="num">481</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2023</td>
+      <td class="num">7</td>
+      <td class="num">24</td>
+      <td class="num">-17</td>
+      <td class="num">464</td>
+    </tr>
+    
+    <tr>
+      <td class="label">2024</td>
+      <td class="num">9</td>
+      <td class="num">25</td>
+      <td class="num">-16</td>
+      <td class="num">448</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+<h3>Exit composition</h3>
+<p>The exit pattern shifted over the three-year window:</p>
+<ul class="compact">
+<li><strong>2022:</strong> 8 terminations, 1 non-renewal, 16 ceased operations, 20 transfers. Total exits: 45.</li>
+<li><strong>2023:</strong> 2 terminations, 0 non-renewals, 22 ceased operations, 15 transfers. Total exits: 39.</li>
+<li><strong>2024:</strong> 6 terminations, 2 non-renewals, 17 ceased operations, 13 transfers. Total exits: 38.</li>
+</ul>
+<p>Terminations declined, but "ceased operations — other reasons" has been the dominant exit category every year
+(16, 22, 17). The FDD notes that this column includes transfers to existing franchisees, territory consolidations,
+and abandonments — making it difficult to distinguish healthy portfolio management from business failures.
+(pp. 78–85)</p>
+
+<h3>Turnover rate in context</h3>
+<p>Overall turnover (all exits ÷ start-of-year count): 9.0% (2022), 8.1% (2023), 8.2% (2024). This is
+mid-range for the cleaning cohort — well below Merry Maids (14.1%) and Maid Right (38.6%), but above
+The Maids (3.9%) and Two Maids (5.1%). The concerning pattern is not the rate itself but the inability
+to offset exits with new openings. Only 21 new franchises opened across the entire three-year window.</p>
+
+<div class="implication">
+<strong>What this means:</strong> This is not a system in crisis — the turnover rate is moderate and
+same-store sales growth is healthy (79% grew YoY). But it is a system that has stopped growing. For
+a buyer, the question is whether you are buying into a mature brand with stable territories or a declining
+system that will have fewer peers, less brand momentum, and potentially less franchisor investment in
+innovation over time. The Neighborly/KKR infrastructure provides a floor — this brand is unlikely to
+be abandoned — but growth is not coming from new franchise sales.
+</div>
+
+<h3>No company-owned outlets</h3>
+<p>Zero company-owned locations. All 448 outlets are franchised. The franchisor is not competing with
+its franchisees in any market.</p>
+
+
+<!-- RISK SIGNALS -->
+<h2 id="risk-signals">Risk Signals</h2>
+
+<h3>System contraction is the primary structural risk</h3>
+<p>Three consecutive years of net unit loss with only 21 new openings across the period. The system shrank
+10.6% while same-store sales grew for 79% of franchisees. This divergence — healthy existing operators
+but no new ones joining — suggests either the franchise offering is not competitive for new buyers, or the
+franchisor is prioritizing territory consolidation over expansion. Either way, the trajectory matters for
+long-term brand investment and support resources. (pp. 78–85)</p>
+
+<h3>SPV securitization structure</h3>
+<p>Molly Maid SPV LLC is a special-purpose vehicle within the Neighborly/KKR securitization chain. All
+franchise agreements were transferred from the predecessor entity to the SPV in March 2021. This adds
+entity complexity — your franchise agreement is with a special-purpose entity, not the operating company
+directly. In practice, Neighborly manages operations, but the legal structure matters if the securitization
+is restructured or sold. (pp. 1–2)</p>
+
+<h3>Litigation: effectively clean</h3>
+<p>Two disclosed actions — both concluded, both involving predecessor or affiliate entities (Kansas consumer
+protection action against Molly Maid, Inc. in 2010, settled for $50K; California regulatory action against
+Window Genie affiliate in 2017, $5K penalty). No actions involving the current Molly Maid SPV LLC franchisor.
+Clean litigation profile. (pp. 21–22)</p>
+
+<h3>Item 19 disclosure gap</h3>
+<p>The omission of total revenue per territory is itself a risk factor — not because it suggests bad
+economics, but because it forces you to build your financial model on triangulated estimates rather than
+disclosed data. Competitors who disclose revenue (MaidPro, The Cleaning Authority, Merry Maids, Two Maids)
+give their prospective buyers a material advantage in pre-purchase analysis.</p>
+
+
+<!-- PEER CONTEXT -->
+<h2 id="peer-context">Peer Context</h2>
+
+<p>Molly Maid is the largest system in the cohort and the most recognized brand. It offers a competitive
+fee structure (10.4% modelable at $300K), a tiered royalty that rewards growth, and Neighborly's multi-brand
+infrastructure. But it is the only cohort member combining system contraction with a missing revenue disclosure —
+two features that make pre-purchase analysis harder than at most peers.</p>
+
+<p><strong>Closest comparison: Merry Maids.</strong> Similar scale (802 units), similar age (46 years),
+similar system contraction (worse — Merry Maids lost 187 units over 3 years). Merry Maids discloses
+total revenue ($487K average for Qualified Franchises) while Molly Maid does not. Merry Maids' fee burden
+is slightly higher (11.0% vs 10.4% at $300K). If revenue disclosure matters to you, Merry Maids provides
+more to work with — but its contraction is more severe.</p>
+
+<p><strong>Sharpest contrast: Two Maids & A Mop.</strong> Fastest-growing system (+56.5% over 3 years) vs
+Molly Maid's contraction (-10.6%). Two Maids charges significantly higher fees (21.6% at $300K) but provides
+the richest disclosure in the cohort. If you are choosing between brand recognition and growth momentum,
+Molly Maid and Two Maids are opposite bets.</p>
+
+<p><strong>Lower-cost alternative: MaidPro.</strong> Simpler fee structure (10.0% at $300K), lower entry
+cost ($110K–$159K), disclosed revenue ($462K average), and a stabilizing system. If Molly Maid's brand
+premium and Neighborly ecosystem do not justify the higher entry cost and missing revenue disclosure,
+MaidPro is the cleaner comparison.</p>
+
+
+<table class="peer-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      
+      <th class="num">Maid Right</th>
+      
+      <th class="num">MaidPro</th>
+      
+      <th class="num">Merry Maids</th>
+      
+      <th class="num">Molly Maid</th>
+      
+      <th class="num">The Cleaning Authority</th>
+      
+      <th class="num">The Maids</th>
+      
+      <th class="num">Two Maids & A Mop</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td class="label">System size</td>
+      
+      <td class="num">35</td>
+      
+      <td class="num">237</td>
+      
+      <td class="num">802</td>
+      
+      <td class="num this-brand">448</td>
+      
+      <td class="num">233</td>
+      
+      <td class="num">338</td>
+      
+      <td class="num">144</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Investment range</td>
+      
+      <td class="num">$147K–$218K</td>
+      
+      <td class="num">$109K–$158K</td>
+      
+      <td class="num">$126K–$170K</td>
+      
+      <td class="num this-brand">$139K–$197K</td>
+      
+      <td class="num">$92K–$147K</td>
+      
+      <td class="num">$117K–$141K</td>
+      
+      <td class="num">$93K–$149K</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Fee burden at $300K</td>
+      
+      <td class="num">$50,780</td>
+      
+      <td class="num">$30,000</td>
+      
+      <td class="num">$32,988</td>
+      
+      <td class="num this-brand">$31,056</td>
+      
+      <td class="num">$22,902</td>
+      
+      <td class="num">$59,130</td>
+      
+      <td class="num">$64,800</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">% of revenue</td>
+      
+      <td class="num">16.9%</td>
+      
+      <td class="num">10.0%</td>
+      
+      <td class="num">11.0%</td>
+      
+      <td class="num this-brand">10.4%</td>
+      
+      <td class="num">7.6%</td>
+      
+      <td class="num">19.7%</td>
+      
+      <td class="num">21.6%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">3-year net growth</td>
+      
+      <td class="num">+11</td>
+      
+      <td class="num">-9</td>
+      
+      <td class="num">-187</td>
+      
+      <td class="num this-brand">-53</td>
+      
+      <td class="num">+24</td>
+      
+      <td class="num">-13</td>
+      
+      <td class="num">+52</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Recent attrition</td>
+      
+      <td class="num">34.1%</td>
+      
+      <td class="num">3.0%</td>
+      
+      <td class="num">10.2%</td>
+      
+      <td class="num this-brand">5.4%</td>
+      
+      <td class="num">1.8%</td>
+      
+      <td class="num">2.9%</td>
+      
+      <td class="num">5.1%</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="label">Royalty rate</td>
+      
+      <td class="num">6.0%</td>
+      
+      <td class="num">6.0%</td>
+      
+      <td class="num">7.0%</td>
+      
+      <td class="num this-brand">6.5–3.0%</td>
+      
+      <td class="num">6.0–4.0%</td>
+      
+      <td class="num">6.9–3.9%</td>
+      
+      <td class="num">7.0–4.0%</td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+<!-- DISCOVERY DAY -->
+<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<p>These questions are derived from specific findings in the Molly Maid 2025 FDD.
+Each includes context on why it matters and what to listen for.</p>
+
+<ol class="question-list">
+  
+  <li>The Item 19 discloses per-cleaning revenue and per-TH metrics but not total revenue per territory. What is the average and median annual gross revenue for a single-territory Molly Maid franchisee?
+    <span class="question-context">Item 19, Parts I–IV, pp. 74–78. 197 operators, 417 businesses. No total revenue figure provided.</span>
+    
+  </li>
+  
+  <li>The system has contracted from 501 to 448 outlets over three years. What is driving the net decline — is the franchisor pruning underperforming territories, or are franchisees choosing to exit?
+    <span class="question-context">Item 20, pp. 78–85. 'Ceased operations — other reasons' is the largest exit category (16, 22, 17 per year) but includes transfers to existing franchisees and territory consolidations.</span>
+    
+  </li>
+  
+  <li>The Local Marketing Requirement scales from $1.00/TH to $0.15/TH based on weekly Gross Sales. For the territory I am considering, what is the estimated annual Local Marketing Requirement?
+    <span class="question-context">Item 6, pp. 34–35. Territory-size-dependent marketing cost excluded from fee burden model.</span>
+    
+  </li>
+  
+  <li>The Key Accounts/Management Fee is up to 3% of Gross Sales on franchisor-generated business. What percentage of a typical territory's revenue comes through Key Accounts or call-center-dispatched leads?
+    <span class="question-context">Item 6, pp. 32–33. This fee is layered on top of the royalty for franchisor-sourced revenue.</span>
+    
+  </li>
+  
+  <li>79% of franchisees grew same-store sales in 2024, but the system lost 16 net units. How do you reconcile healthy same-store performance with system contraction?
+    <span class="question-context">Item 19 Part IV (pp. 77–78) vs Item 20 (pp. 78–85).</span>
+    
+  </li>
+  
+  <li>The technology fee ($463/month) may increase up to 30% annually. What has the actual year-over-year increase been for the past 3 years?
+    <span class="question-context">Item 6, pp. 27–28, 35. $5,556/year currently, split between ZorWare and ServiceTitan.</span>
+    
+  </li>
+  
+</ol>
+
+<div class="methodology">
+  <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
+  <p><strong>Source document:</strong> Molly Maid 2025 Franchise Disclosure Document,
+  filed with the Wisconsin Department of Financial Institutions. 377-page
+  regulator-source PDF. SHA-256: <code style="font-size:0.7rem">44d5c311e25ac0883a9f3ab5b3377d7abbeef3ba87bacdea1d3bea31c00ca220</code></p>
+  <p><strong>Extraction:</strong> Structured data extraction using pdfplumber with manual
+  review. Field-level provenance recorded (source year, state, page number, item reference).
+  Extraction confidence: high (3+ fields spot-checked against source).</p>
+  <p><strong>Fee modeling:</strong> Year 5 assumptions, single territory, 1 owner + 1 technician.
+  Revenue distributed evenly across the year. All mandatory fees enforced. See
+  fee_modeling_framework.md for full methodology.</p>
+  <p><strong>Economics scenarios:</strong> Revenue estimates drawn from Item 19 data.
+  COGS ratio is brand-specific (derived from available company-owned P&amp;L data; see Economics
+  section for derivation and assumptions). Scenarios are illustrative, not predictive. Operating
+  costs beyond franchisor fees and COGS are not estimated — the buyer must validate these
+  independently.</p>
+  <p><strong>Peer comparison:</strong> Same methodology applied to all 7 brands in this cohort
+  (Maid Right, MaidPro, Merry Maids, Molly Maid, The Cleaning Authority, The Maids, Two Maids & A Mop).
+  All from 2025 FDDs filed with Wisconsin DFI.</p>
+  <p><strong>Disclaimer:</strong> This report is not legal advice, investment advice, or a
+  recommendation to buy or avoid this franchise. It is a structured analysis of publicly
+  available regulatory filings. The buyer should read the actual FDD, consult a franchise
+  attorney, and conduct their own due diligence before making any investment decision.
+  Economics scenarios are illustrative frameworks for buyer-side thinking — not profitability
+  forecasts.</p>
+</div>
+
+</body>
+</html>

@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% block title %}{{ cohort_display_name }} Franchise Decision Reports | Brand-by-Brand Analysis{% endblock %}
-{% block meta_description %}<meta name="description" content="Buy brand-specific {{ cohort_display_name | lower }} franchise decision reports with Item 19 translation, fee modeling, key risks, and discovery-day questions for serious buyers.">{% endblock %}
-{% block canonical %}<link rel="canonical" href="{{ site_base_url }}{% if cohort_id != 'mosquito' %}{{ cohort_id }}-{% endif %}report.html">{% endblock %}
+{% block title %}Franchise Decision Reports | Brand-by-Brand FDD Analysis{% endblock %}
+{% block meta_description %}<meta name="description" content="Buy brand-specific franchise decision reports with Item 19 translation, fee modeling, key risks, and discovery-day questions. Mosquito, lawn care, and residential cleaning franchises.">{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_base_url }}report.html">{% endblock %}
 
 {% block content %}
 <div class="report-hero">
-  <h1>Decision reports for {{ cohort_display_name | lower }} franchise buyers</h1>
+  <h1>Franchise decision reports</h1>
   <p class="subhead">
     You&rsquo;ve compared the category. Now you&rsquo;re evaluating one brand &mdash;
     ready for a discovery day, franchisee calls, or capital commitment. This is the
@@ -13,10 +13,11 @@
   </p>
 </div>
 
+{% set total_brands = cohort_groups | sum(attribute='total_count') %}
 <div class="tier-grid">
   <div class="tier-card tier-card-free">
     <div class="tier-label">Free Comparison Site</div>
-    <div class="tier-price">$0 <span>/ {{ cohort_brand_count }} brands</span></div>
+    <div class="tier-price">$0 <span>/ {{ total_brands }} brands</span></div>
     <ul class="tier-list">
       <li><span class="tier-check">&#x2713;</span> Fee burden at 4 revenue levels</li>
       <li><span class="tier-check">&#x2713;</span> Net growth &amp; attrition rates</li>
@@ -34,13 +35,15 @@
     <div class="tier-label">Decision Report <span class="tier-recommended">Recommended</span></div>
     <div class="tier-price">$99 <span>/ single brand</span></div>
     <ul class="tier-list">
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Full component fee modeling</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Item 19 (financial performance) translation</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Investment line-by-line breakdown</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Closure &amp; churn pattern analysis</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Litigation &amp; risk flag detail</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Discovery day questions</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Full peer positioning narrative</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Executive summary &amp; decision scorecard</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Buyer-fit profile (who should / shouldn&rsquo;t buy)</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Full fee modeling with cohort comparison visual</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Item 19 translation &amp; revenue triangulation</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Buyer-side economics reality check</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Investment breakdown &amp; payback sensitivity</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">System health, risk flags &amp; litigation</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Peer positioning with decision overlay</span></li>
+      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Discovery day diligence script (8&ndash;10 questions)</span></li>
     </ul>
     <div class="tier-cta">
       <a href="#available" class="cta-button" style="font-size:0.82rem; padding:0.55rem 1.25rem;">Choose a brand report &darr;</a>
@@ -59,27 +62,62 @@
   <div class="report-section-item">
     <span class="report-section-num">1</span>
     <div>
-      <div class="report-section-title">Fee Burden Deep Dive</div>
+      <div class="report-section-title">Executive Summary &amp; Decision Scorecard</div>
       <div class="report-section-desc">
-        Total ongoing cost modeled at 4 revenue levels with full component breakdown.
-        The actual dollar math including marketing minimums, technology fee tiers,
-        mandatory vendor costs, and year-by-year escalation triggers.
+        The headline assessment: where this brand is strong, where it&rsquo;s weak, and
+        what the overall posture looks like. A rated scorecard across 8 dimensions &mdash;
+        entry cost, ongoing fees, system stability, revenue disclosure, disclosure quality,
+        downside risk, buyer fit, and overall.
       </div>
     </div>
   </div>
   <div class="report-section-item">
     <span class="report-section-num">2</span>
     <div>
-      <div class="report-section-title">Item 19 Translation</div>
+      <div class="report-section-title">Buyer-Fit Profile</div>
       <div class="report-section-desc">
-        What the financial performance data actually tells you about likely revenue &mdash;
-        and what it conspicuously omits. Exclusion rates, population definitions, and what
-        the reported averages really mean for a new single-territory operator.
+        Who this brand is best for, who it&rsquo;s a weaker fit for, and the specific
+        conditions that should be true before you proceed. Not a sales pitch &mdash;
+        a calibration tool.
       </div>
     </div>
   </div>
   <div class="report-section-item">
     <span class="report-section-num">3</span>
+    <div>
+      <div class="report-section-title">Fee Burden Analysis</div>
+      <div class="report-section-desc">
+        Total ongoing cost modeled at 4 revenue levels with full component breakdown,
+        plus a visual comparison showing where this brand sits among its direct competitors.
+        Marketing minimums, technology fee tiers, escalation triggers, and hidden conditional fees.
+      </div>
+    </div>
+  </div>
+  <div class="report-section-item">
+    <span class="report-section-num">4</span>
+    <div>
+      <div class="report-section-title">Item 19 Translation</div>
+      <div class="report-section-desc">
+        What the financial performance data actually tells you about likely revenue &mdash;
+        and what it conspicuously omits. Exclusion rates, population definitions,
+        per-territory vs. per-franchisee distinctions, and what the reported averages
+        really mean for a new single-territory operator.
+      </div>
+    </div>
+  </div>
+  <div class="report-section-item">
+    <span class="report-section-num">5</span>
+    <div>
+      <div class="report-section-title">Economics Reality Check &amp; Payback Sensitivity</div>
+      <div class="report-section-desc">
+        Illustrative scenarios showing what revenue, fees, and costs look like at different
+        operating levels. Payback timelines under conservative, moderate, and strong assumptions.
+        Not a forecast &mdash; a framework for understanding the math before you commit.
+      </div>
+    </div>
+  </div>
+  <div class="report-section-item">
+    <span class="report-section-num">6</span>
     <div>
       <div class="report-section-title">Investment Breakdown</div>
       <div class="report-section-desc">
@@ -90,42 +128,35 @@
     </div>
   </div>
   <div class="report-section-item">
-    <span class="report-section-num">4</span>
-    <div>
-      <div class="report-section-title">System Health Narrative</div>
-      <div class="report-section-desc">
-        Unit growth trends in context. Is the turnover rate normal for this category or a
-        red flag? What do closures and transfers suggest about franchisee satisfaction?
-      </div>
-    </div>
-  </div>
-  <div class="report-section-item">
-    <span class="report-section-num">5</span>
-    <div>
-      <div class="report-section-title">Risk Flags &amp; Litigation</div>
-      <div class="report-section-desc">
-        Regulatory history, entity structure changes, ownership transitions, franchise dispute
-        outcomes &mdash; plus the cross-brand context a single-brand attorney review wouldn&rsquo;t have.
-      </div>
-    </div>
-  </div>
-  <div class="report-section-item">
-    <span class="report-section-num">6</span>
-    <div>
-      <div class="report-section-title">Discovery Day Questions</div>
-      <div class="report-section-desc">
-        Specific, data-informed questions to ask the franchisor. Not generic checklists &mdash;
-        questions derived from this brand&rsquo;s actual FDD.
-      </div>
-    </div>
-  </div>
-  <div class="report-section-item">
     <span class="report-section-num">7</span>
     <div>
-      <div class="report-section-title">Peer Positioning</div>
+      <div class="report-section-title">System Health &amp; Risk Signals</div>
       <div class="report-section-desc">
-        How this brand compares across the full category with narrative context that makes
-        the single-brand analysis actionable.
+        Unit growth trends in context. Termination patterns, transfer activity, and
+        company-owned footprint. Regulatory history, entity structure changes, litigation
+        outcomes, and the cross-brand context a single-brand attorney review wouldn&rsquo;t have.
+      </div>
+    </div>
+  </div>
+  <div class="report-section-item">
+    <span class="report-section-num">8</span>
+    <div>
+      <div class="report-section-title">Peer Context &amp; Decision Overlay</div>
+      <div class="report-section-desc">
+        How this brand compares across the full category on 7+ dimensions. Which brand
+        wins on each buyer priority &mdash; lowest cost, best disclosure, most stability,
+        best for first-time buyers &mdash; with the rationale.
+      </div>
+    </div>
+  </div>
+  <div class="report-section-item">
+    <span class="report-section-num">9</span>
+    <div>
+      <div class="report-section-title">Discovery Day Diligence Script</div>
+      <div class="report-section-desc">
+        8&ndash;10 specific questions derived from this brand&rsquo;s actual FDD &mdash;
+        each with context on why it matters, what a strong answer sounds like,
+        what evasion sounds like, and follow-up questions. Not a generic checklist.
       </div>
     </div>
   </div>
@@ -149,17 +180,26 @@
 
 <h2 id="available">Available Reports</h2>
 
+{% for group in cohort_groups %}
+<h3 id="{{ group.id }}" style="margin-top:1.75rem">{{ group.display_name }}
+  <span class="small muted" style="font-weight:400">&mdash; {{ group.paid_count }} paid report{{ 's' if group.paid_count != 1 else '' }}, {{ group.total_count }} brands total</span>
+</h3>
 <div style="max-width: 540px;">
-  {% for b in brands %}
+  {% for b in group.brands %}
   <div class="report-purchase-card">
     <div class="report-purchase-info">
       <h3>{{ b.brand_name }}{% if b.differentiator %}<span class="report-differentiator">{{ b.differentiator }}</span>{% endif %}</h3>
       <p class="small muted">{{ b.system_size }} outlets &middot; Franchising since {{ b.year_first_franchised }}</p>
     </div>
-    <a href="{{ b.stripe_payment_link if b.stripe_payment_link else b.slug + '.html' }}" class="cta-button" style="font-size:0.82rem; padding:0.5rem 1.15rem; white-space:nowrap;">{% if b.stripe_payment_link %}Get report &mdash; $99{% else %}View {{ b.brand_name.replace("Mosquito ", "") }} review &rarr;{% endif %}</a>
+    {% if b.stripe_payment_link %}
+    <a href="{{ b.stripe_payment_link }}" class="cta-button" style="font-size:0.82rem; padding:0.5rem 1.15rem; white-space:nowrap;">Get report &mdash; $99</a>
+    {% else %}
+    <a href="{{ b.slug }}.html" style="font-size:0.82rem; font-weight:600; white-space:nowrap;">Free review &rarr;</a>
+    {% endif %}
   </div>
   {% endfor %}
 </div>
+{% endfor %}
 
 <div class="methodology-compact" style="margin-top:2rem">
   <p><strong>Source:</strong> 2025 Franchise Disclosure Documents filed with the Wisconsin
