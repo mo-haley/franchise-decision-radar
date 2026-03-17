@@ -181,9 +181,14 @@
 <h2 id="available">Available Reports</h2>
 
 {% for group in cohort_groups %}
-<h3 id="{{ group.id }}" style="margin-top:1.75rem">{{ group.display_name }}
-  <span class="small muted" style="font-weight:400">&mdash; {{ group.paid_count }} paid report{{ 's' if group.paid_count != 1 else '' }}, {{ group.total_count }} brands total</span>
-</h3>
+{% if not loop.first %}<div style="height:1px; background:#e2e8f0; margin:2.5rem 0 0; max-width:540px;"></div>{% endif %}
+<div id="{{ group.id }}" style="margin-top:2rem; margin-bottom:1.25rem; max-width:540px;">
+  <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.2rem;">
+    <span style="display:inline-block; width:4px; height:1.4rem; background:#2563eb; border-radius:2px; flex-shrink:0;"></span>
+    <h3 style="margin:0; font-size:1.1rem;">{{ group.display_name }}</h3>
+  </div>
+  <p class="small muted" style="margin:0.15rem 0 0 1rem;">{{ group.paid_count }} paid report{{ 's' if group.paid_count != 1 else '' }} &middot; {{ group.total_count }} brands total</p>
+</div>
 <div style="max-width: 540px;">
   {% for b in group.brands %}
   <div class="report-purchase-card">
