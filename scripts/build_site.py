@@ -43,6 +43,15 @@ def load_registry() -> list[dict]:
 # Data loading
 # ---------------------------------------------------------------------------
 
+def all_cohort_slugs(cohort: dict) -> list[str]:
+    """Return all brand slugs for a cohort, including watchlist brands."""
+    slugs = list(cohort["brands"])
+    for s in cohort.get("watchlist", []):
+        if s not in slugs:
+            slugs.append(s)
+    return slugs
+
+
 def load_brand_data(brand_slugs: list[str]) -> dict[str, dict]:
     """Load extracted brand JSONs for a list of slugs."""
     brands: dict[str, dict] = {}
@@ -1122,6 +1131,13 @@ STRIPE_PAYMENT_LINKS: dict[str, str | None] = {
     "naturalawn": None,
     "lawn-pride": None,
     "lawn-squad": None,
+    "merry-maids": None,
+    "molly-maid": None,
+    "cleaning-authority": None,
+    "the-maids": None,
+    "maidpro": None,
+    "two-maids": None,
+    "maid-right": None,
 }
 
 # Mosquito-specific cost page editorial
@@ -1770,19 +1786,23 @@ def build_site() -> None:
     # Pre-collect brand info for all ready cohorts (needed by footer on every page)
     all_brands_by_cohort: list[dict] = []
     for cohort in ready_cohorts:
-        pre_brands = load_brand_data(cohort["brands"])
+        all_slugs = all_cohort_slugs(cohort)
+        available = [s for s in all_slugs if (DATA_EXTRACTED / f"{s}.json").exists()]
+        pre_brands = load_brand_data(available)
         all_brands_by_cohort.append({
             "id": cohort["id"],
             "display_name": cohort["display_name"],
             "short_name": cohort["short_name"],
             "brands": [
                 {"name": pre_brands[s]["brand"]["brand_name"], "slug": s}
-                for s in cohort["brands"]
+                for s in available
             ],
         })
 
     for cohort in ready_cohorts:
-        brand_slugs = cohort["brands"]
+        # Include watchlist brands that have extracted data
+        brand_slugs = all_cohort_slugs(cohort)
+        brand_slugs = [s for s in brand_slugs if (DATA_EXTRACTED / f"{s}.json").exists()]
         brands = load_brand_data(brand_slugs)
         slug_map = build_slug_map(brands)
         prefix = cohort["url_prefix"]
@@ -1866,7 +1886,7 @@ def build_site() -> None:
 
         # Brand pages — ALL brands get individual pages
         brand_ctxs = build_brand_contexts(
-            brands, brand_slugs, fee_model, slug_map, cohort,
+            brands, brand_slugs, comp_fee_model, slug_map, cohort,
         )
         brand_template = env.get_template("brand.html")
         for ctx in brand_ctxs:
@@ -1898,7 +1918,8 @@ def build_site() -> None:
     # --- Homepage (multi-cohort) ---
     live_cohorts = []
     for cohort in ready_cohorts:
-        brand_slugs = cohort["brands"]
+        brand_slugs = all_cohort_slugs(cohort)
+        brand_slugs = [s for s in brand_slugs if (DATA_EXTRACTED / f"{s}.json").exists()]
         brands = load_brand_data(brand_slugs)
         slug_map = build_slug_map(brands)
         comp_brands_hp, _ = filter_comparison_brands(brands)
@@ -1917,7 +1938,7 @@ def build_site() -> None:
             "display_name": cohort["display_name"],
             "short_name": cohort["short_name"],
             "description": cohort["description"],
-            "brand_count": len(comp_brands_hp),
+            "brand_count": len(brand_slugs),
             "brand_slugs": brand_slugs,
             "brands_data": brands,
             "brand_slug_map": slug_map,
