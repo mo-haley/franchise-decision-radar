@@ -135,6 +135,11 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
   display: inline-block; width: 1.5rem; font-weight: 600;
   font-size: 0.78rem; color: #999;
 }
+.toc-list { counter-reset: toc-counter; }
+.toc-list li .toc-num-auto::before {
+  counter-increment: toc-counter;
+  content: counter(toc-counter);
+}
 
 /* Fee burden comparison bars */
 .fee-bars { margin: 1rem 0 1.25rem; }
@@ -170,7 +175,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
     <span>Source: 2025 Franchise Disclosure Document</span>
     <span>Filed with the Wisconsin Department of Financial Institutions</span>
     <span>Legal entity: Lawn Doctor, Inc.</span>
-    <span>Report generated: 2026-03-16</span>
+    <span>Report generated: 2026-03-17</span>
   </div>
   <div class="cover-origin">Franchise Decision Radar</div>
 </div>
@@ -179,19 +184,19 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
 <div class="toc page-break">
   <h2>Contents</h2>
   <ol class="toc-list">
-    <li><span class="toc-num">1</span> <a href="#executive-summary">Executive Summary</a></li>
-    <li><span class="toc-num">2</span> <a href="#decision-scorecard">Decision Scorecard</a></li>
-    <li><span class="toc-num">3</span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
-    <li><span class="toc-num">4</span> <a href="#fee-burden">Fee Burden Analysis</a></li>
-    <li><span class="toc-num">5</span> <a href="#item-19">Item 19 Interpretation</a></li>
-    <li><span class="toc-num">6</span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
-    <li><span class="toc-num">7</span> <a href="#payback">Illustrative Payback Sensitivity</a></li>
-    <li><span class="toc-num">8</span> <a href="#investment">Investment Breakdown</a></li>
-    <li><span class="toc-num">9</span> <a href="#system-health">System Health</a></li>
-    <li><span class="toc-num">10</span> <a href="#risk-signals">Risk Signals</a></li>
-    <li><span class="toc-num">11</span> <a href="#peer-context">Peer Context</a></li>
-    <li><span class="toc-num">12</span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
-    <li><span class="toc-num">13</span> <a href="#methodology">Source &amp; Methodology</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#executive-summary">Executive Summary</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#decision-scorecard">Decision Scorecard</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#buyer-fit">Buyer-Fit Profile</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#fee-burden">Fee Burden Analysis</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#item-19">Item 19 Interpretation</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#economics">Buyer-Side Economics Reality Check</a></li>
+    
+    <li><span class="toc-num toc-num-auto"></span> <a href="#investment">Investment Breakdown</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#system-health">System Health</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#risk-signals">Risk Signals</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#peer-context">Peer Context</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#discovery-day">Discovery Day Diligence Script</a></li>
+    <li><span class="toc-num toc-num-auto"></span> <a href="#methodology">Source &amp; Methodology</a></li>
   </ol>
 </div>
 
@@ -201,7 +206,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
   <div class="report-meta">
     Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
     Legal entity: Lawn Doctor, Inc.<br>
-    Report generated: 2026-03-16 &middot; Franchise Decision Radar
+    Report generated: 2026-03-17 &middot; Franchise Decision Radar
   </div>
 </div>
 
@@ -671,8 +676,6 @@ labor) based on lawn care industry benchmarks. This is an assumption, not a disc
 
 
 
-<!-- PAYBACK SENSITIVITY -->
-<h2 id="payback">Illustrative Payback Sensitivity</h2>
 
 
 <!-- INVESTMENT -->

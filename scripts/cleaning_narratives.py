@@ -3060,6 +3060,24 @@ brand — it is a reason to analyze it transparently.</p>
             "Ask whether the territory you are considering is under a master franchise or directly with Maid Right, LLC."
         ],
     },
+    {
+        "question": "Texas accounted for 6 of 17 exits in 2024, and Florida for 4. What is driving the geographic concentration of closures, and how many active territories remain in each state?",
+        "context": "Item 20, pp. 48–51. Exit concentration suggests market-specific or regional management issues.",
+        "follow_ups": [
+            "Ask whether the Texas and Florida exits share a common cause (e.g., master franchisee issues, market conditions, or support gaps).",
+            "Ask what the franchisor has changed in those markets since the closures.",
+            "Ask how many territories remain in Texas and Florida and whether they are stable."
+        ],
+    },
+    {
+        "question": "The FDD contains confidentiality clauses that may restrict what current and former franchisees can share with prospective buyers. What specific restrictions apply, and will you provide a written waiver allowing franchisees I contact to speak freely during my diligence?",
+        "context": "Risk signals section. Confidentiality restrictions can hinder a buyer's ability to verify disclosed data through franchisee conversations.",
+        "follow_ups": [
+            "Ask whether any franchisees have been penalized for speaking with prospective buyers.",
+            "Ask for a list of current franchisees you can contact without restriction.",
+            "Ask whether former franchisees are subject to the same confidentiality provisions."
+        ],
+    },
 ],
 
 },
