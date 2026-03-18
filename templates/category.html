@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}{{ title_text }}{% endblock %}
+{% block meta_description %}<meta name="description" content="{{ meta_description }}">{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_base_url }}{{ canonical_slug }}">{% endblock %}
+
+{% block content %}
+<h1>{{ h1_text }}</h1>
+<p class="subhead">
+  {{ subhead }}
+</p>
+
+<div class="stat-strip">
+  <div class="stat-item">
+    <div class="stat-number">{{ brand_count }}</div>
+    <div class="stat-label">Brands analyzed from<br>regulator-filed FDDs</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">{{ investment_range_display }}</div>
+    <div class="stat-label">Initial investment range<br>across the category</div>
+  </div>
+  {% if fee_spread_display %}
+  <div class="stat-item">
+    <div class="stat-number">{{ fee_spread_display }}</div>
+    <div class="stat-label">Annual fee burden spread<br>at $300K revenue</div>
+  </div>
+  {% endif %}
+  <div class="stat-item">
+    <div class="stat-number">{{ system_size_range }}</div>
+    <div class="stat-label">Franchised outlets<br>smallest to largest</div>
+  </div>
+</div>
+
+<h2>The Brands</h2>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th class="num">Outlets</th>
+      <th class="num">Investment</th>
+      {% if has_fee_model %}
+      <th class="num">Annual Fees at $300K</th>
+      {% endif %}
+      <th>Notable</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for brand in brands_table %}
+    <tr>
+      <td class="brand-name"><a href="{{ brand.slug }}.html" style="color:inherit">{{ brand.name }}</a></td>
+      <td class="num">{{ brand.outlets }}</td>
+      <td class="num">{{ brand.investment }}</td>
+      {% if has_fee_model %}
+      <td class="num">{{ brand.fee_300k }}</td>
+      {% endif %}
+      <td class="small">{{ brand.differentiator }}</td>
+      <td><a href="{{ brand.slug }}.html" class="small">Review &rarr;</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% if has_fee_model %}
+<p class="small muted" style="margin-top:-0.5rem">
+  Annual fees <span class="tag tag-modeled">Modeled</span> at $300K gross revenue, Year 5, single territory.
+</p>
+{% endif %}
+
+{% if watchlist_brands %}
+<div class="callout callout-context">
+  <div class="callout-title">Watchlist</div>
+  {{ watchlist_note }}
+</div>
+{% endif %}
+
+<h2>What Separates These Brands</h2>
+{{ editorial_section }}
+
+<h2>Three Ways to Compare</h2>
+<div style="margin:0.75rem 0 1.5rem">
+  {% for comp in comparison_links %}
+  <div class="peer-row" style="margin-bottom:0.65rem">
+    <div>
+      <a href="{{ comp.url }}" style="font-weight:600">{{ comp.label }} &rarr;</a>
+      <div class="small muted" style="margin-top:0.15rem">{{ comp.description }}</div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% if paid_report_count > 0 %}
+<div class="inline-cta">
+  <span>Going deeper on one brand? {{ paid_report_count }} Decision Reports available in this category.</span>
+  <a href="report.html#{{ cohort_id }}">View reports &mdash; $99 / brand &rarr;</a>
+</div>
+{% endif %}
+
+<p class="small muted" style="margin-top:2rem">
+  All data extracted from {{ filing_year }} Franchise Disclosure Documents filed with the
+  Wisconsin Department of Financial Institutions. Modeled values use explicitly documented assumptions.
+  <a href="methodology.html">Read our methodology &rarr;</a>
+</p>
+{% endblock %}

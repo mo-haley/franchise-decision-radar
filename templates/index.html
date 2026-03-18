@@ -94,6 +94,7 @@
       {% endif %}
     </div>
     <div class="wedge-card-links">
+      <a href="{{ cohort.category_url }}" style="font-weight:600">Category overview &rarr;</a>
       {% for page in cohort.comparison_pages %}
       <a href="{{ page.url }}">{{ page.label }} &rarr;</a>
       {% endfor %}

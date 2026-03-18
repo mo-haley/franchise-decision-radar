@@ -1093,6 +1093,18 @@ BRAND_META_DESCRIPTIONS: dict[str, str] = {
     "maid-right": "Review Maid Right franchise cost, system health, regulatory history, and key buyer risks using 2025 FDD data.",
 }
 
+BRAND_SHORT_NAMES: dict[str, str] = {
+    "maid-right": "Maid Right",
+    "molly-maid": "Molly Maid",
+    "merry-maids": "Merry Maids",
+    "the-maids": "The Maids",
+    "two-maids": "Two Maids",
+    "weed-man": "Weed Man",
+    "lawn-doctor": "Lawn Doctor",
+    "lawn-pride": "Lawn Pride",
+    "lawn-squad": "Lawn Squad",
+}
+
 BRAND_DIFFERENTIATORS: dict[str, str] = {
     "mosquito-authority": "Lowest fee burden",
     "mosquito-hunters": "3-brand license",
@@ -1620,7 +1632,7 @@ def build_brand_contexts(
         ctx = {
             "active_page": "brand",
             "brand_name": brand_name,
-            "brand_short": brand_name.split(" ", 1)[-1] if " " in brand_name else brand_name,
+            "brand_short": BRAND_SHORT_NAMES.get(slug, brand_name.split(" ", 1)[-1] if " " in brand_name else brand_name),
             "slug": slug,
             "site_base_url": SITE_BASE_URL,
             "meta_description": BRAND_META_DESCRIPTIONS.get(
@@ -1658,6 +1670,13 @@ def build_brand_contexts(
             "positives": editorial["positives"] if has_editorial else [],
             "fee_caveats": editorial["fee_caveats"] if has_editorial else [],
             "health_flag": editorial["health_flag"] if has_editorial else None,
+            "og_title": f"{brand_name} Franchise Review | Fees, Cost, Risks & FDD Takeaways",
+            "og_description": BRAND_META_DESCRIPTIONS.get(
+                slug,
+                f"Review {brand_name} franchise cost, fees, and system health using "
+                f"regulator-source data from the 2025 FDD.",
+            ),
+            "og_url": f"{SITE_BASE_URL}{slug}.html",
         }
         brand_contexts.append(ctx)
 
@@ -1734,6 +1753,305 @@ def build_master_report_context(
 
 
 # ---------------------------------------------------------------------------
+# Category landing page editorial
+# ---------------------------------------------------------------------------
+
+CATEGORY_PAGE_DATA: dict[str, dict] = {
+    "mosquito": {
+        "title": "Mosquito Control Franchise Fees, Cost &amp; FDD Comparison | 7 Brands Analyzed",
+        "h1": "Mosquito control franchises: 7 brands compared from regulator-filed FDDs",
+        "canonical_slug": "mosquito-franchise.html",
+        "output_file": "mosquito-franchise.html",
+        "meta_description": (
+            "Compare 7 mosquito control franchise brands on fees, startup cost, "
+            "and system health using data extracted from regulator-filed FDDs. "
+            "Fee burden spread, investment ranges, and growth trajectories side by side."
+        ),
+        "subhead": (
+            "Side-by-side fee burden, startup cost, and system health for every major "
+            "mosquito control franchise\u200a\u2014\u200abuilt from 2025 FDDs filed with "
+            "the Wisconsin Department of Financial Institutions."
+        ),
+        "editorial_section": (
+            "<p>"
+            "The headline difference in this category is fee architecture. "
+            "Mosquito Authority charges a flat 10% royalty with no mandatory marketing fund, "
+            "producing the lowest total fee burden in the cohort. "
+            "Mosquito Joe pairs a tiered royalty (10%/7%) with $72K in mandatory first-year marketing, "
+            "making it the most expensive to operate at every revenue level. "
+            "At $300K gross revenue, the annual fee gap between the cheapest and most expensive brand "
+            "exceeds <strong>$50,000/year</strong>."
+            "</p>"
+            "<p>"
+            "System trajectories have diverged sharply. Mosquito Shield was the fastest-growing brand "
+            "but is now decelerating with high churn. Mosquito Joe, the second-largest system, "
+            "has turned net-negative on unit growth. Meanwhile, Mosquito Squad is showing recovery "
+            "after several flat years. "
+            "For a buyer, this means the brand with the most name recognition and the brand with "
+            "the healthiest growth numbers are not the same brand."
+            "</p>"
+            "<p>"
+            "Investment ranges are tighter here than in lawn care or cleaning "
+            "\u2014\u200a$54K to $220K across all seven brands "
+            "\u2014\u200abut the composition varies significantly. "
+            "Some brands front-load marketing spend in the initial investment (Joe, Shield), "
+            "while others keep startup costs low and collect more through ongoing fees (Authority, Sheriff)."
+            "</p>"
+        ),
+        "comparison_descriptions": {
+            "Fee Burden": (
+                "Marketing fees\u200a\u2014\u200anot royalties\u200a\u2014\u200adrive the biggest "
+                "cost differences in mosquito control. The fee burden comparison shows exactly where "
+                "each brand\u2019s ongoing costs come from at four revenue levels."
+            ),
+            "System Health": (
+                "Two brands are growing, two are contracting, and three are early-stage or transitional. "
+                "The system health comparison shows outlet-level openings, closings, and transfers "
+                "for each brand over three years."
+            ),
+            "Cost to Enter": (
+                "The tightest investment range of any category on the site, but reserve requirements "
+                "and mandatory marketing packages vary widely. The cost comparison breaks down where "
+                "startup capital actually goes."
+            ),
+        },
+    },
+    "lawn": {
+        "title": "Lawn Care Franchise Fees, Cost &amp; FDD Comparison | 6 Brands Analyzed",
+        "h1": "Lawn care franchises: 6 brands compared from regulator-filed FDDs",
+        "canonical_slug": "lawn-franchise.html",
+        "output_file": "lawn-franchise.html",
+        "meta_description": (
+            "Compare 6 lawn care franchise brands on fees, startup cost, "
+            "and system health using data extracted from regulator-filed FDDs. "
+            "Four established brands plus two watchlisted newcomers."
+        ),
+        "subhead": (
+            "Side-by-side fee burden, startup cost, and system health for major "
+            "lawn care franchises\u200a\u2014\u200abuilt from 2025 FDDs filed with "
+            "the Wisconsin Department of Financial Institutions."
+        ),
+        "editorial_section": (
+            "<p>"
+            "Lawn care is the most established category on the site. "
+            "All four core brands have been franchising for 30 to 58 years, "
+            "which means the FDD data reflects mature, stable systems "
+            "rather than early-stage volatility. "
+            "The fee spread is narrower than in mosquito control or cleaning "
+            "\u2014\u200aat $300K revenue, the gap between highest and lowest annual fee burden "
+            "is roughly half what it is in the mosquito cohort."
+            "</p>"
+            "<p>"
+            "Where these brands diverge most is disclosure quality and royalty structure. "
+            "Weed Man offers the lowest effective royalty in the cohort (6.5%/5.5% tiered) "
+            "but provides no Item 19 financial performance data. "
+            "Lawn Doctor charges 10% flat but sits atop the largest system (600+ outlets) "
+            "with an accelerating growth trajectory. "
+            "NaturaLawn occupies a premium organic niche with a loyalty-rewarding royalty "
+            "that drops from 9% to 7% at renewal."
+            "</p>"
+        ),
+        "comparison_descriptions": {
+            "Fee Burden": (
+                "The narrowest fee spread of any category, but royalty structures range "
+                "from flat 10% to tiered schedules that reward growth. "
+                "The fee burden comparison models total ongoing costs at four revenue levels."
+            ),
+            "System Health": (
+                "Four systems with decades of operating history. "
+                "Growth trajectories range from accelerating (Lawn Doctor) to flat (Spring-Green). "
+                "The system health comparison shows year-by-year outlet changes."
+            ),
+            "Cost to Enter": (
+                "Investment ranges vary by more than 2x, driven largely by mandatory marketing "
+                "packages and reserve requirements. "
+                "The cost comparison shows where each brand\u2019s startup capital goes."
+            ),
+        },
+        "watchlist_note": (
+            "<strong>Lawn Pride</strong> and <strong>Lawn Squad</strong> appear on brand pages "
+            "but are excluded from comparison tables. Both are backed by major franchise holding "
+            "companies (Neighborly and Authority Brands, respectively) but have fewer than three years "
+            "of franchised operating data. They are included in the brand count but not in the "
+            "fee, health, or cost analyses."
+        ),
+    },
+    "cleaning": {
+        "title": "Residential Cleaning Franchise Fees, Cost &amp; FDD Comparison | 7 Brands Analyzed",
+        "h1": "Residential cleaning franchises: 7 brands compared from regulator-filed FDDs",
+        "canonical_slug": "cleaning-franchise.html",
+        "output_file": "cleaning-franchise.html",
+        "meta_description": (
+            "Compare 7 residential cleaning franchise brands on fees, startup cost, "
+            "and system health using data extracted from regulator-filed FDDs. "
+            "Legacy giants contracting while newer brands grow."
+        ),
+        "subhead": (
+            "Side-by-side fee burden, startup cost, and system health for major "
+            "residential cleaning franchises\u200a\u2014\u200abuilt from 2025 FDDs filed with "
+            "the Wisconsin Department of Financial Institutions."
+        ),
+        "editorial_section": (
+            "<p>"
+            "Residential cleaning has the widest performance spread of any category on the site. "
+            "The two largest systems\u200a\u2014\u200aMerry Maids (1,400+ outlets) and "
+            "Molly Maid (500+ outlets)\u200a\u2014\u200aare both contracting, "
+            "losing franchised units in each of the last three reporting years. "
+            "Meanwhile, The Cleaning Authority and Two Maids are the only brands posting "
+            "consistent net growth, with Two Maids growing 57% over three years."
+            "</p>"
+            "<p>"
+            "This is also the strongest category for Item 19 disclosure. "
+            "All seven brands provide some form of financial performance representation, "
+            "though the depth varies considerably. "
+            "The Cleaning Authority reports average unit revenue and COGS ratios. "
+            "The Maids discloses company-owned P&amp;L data. "
+            "Others provide revenue distributions or medians. "
+            "No other category on the site offers this level of financial disclosure across the board."
+            "</p>"
+            "<p>"
+            "Fee structures are more varied here than in mosquito control or lawn care. "
+            "Merry Maids pairs the largest system with the lowest total fees. "
+            "Molly Maid offers a tiered royalty that rewards scale. "
+            "MaidPro has the simplest structure\u200a\u2014\u200aflat royalty, "
+            "no technology surcharges, no call center fees. "
+            "A buyer\u2019s fee exposure depends heavily on which combination of "
+            "royalty, marketing, and technology fees a given brand mandates."
+            "</p>"
+        ),
+        "comparison_descriptions": {
+            "Fee Burden": (
+                "The most varied fee structures of any category. "
+                "Royalty rates, marketing minimums, and technology surcharges combine differently "
+                "across seven brands. The fee burden comparison models total ongoing costs "
+                "at four revenue levels."
+            ),
+            "System Health": (
+                "A category split between legacy contraction and newcomer growth. "
+                "The system health comparison shows which brands are gaining outlets, "
+                "which are losing them, and how fast."
+            ),
+            "Cost to Enter": (
+                "Investment ranges span from under $100K to over $200K, "
+                "with significant variation in what\u2019s included. "
+                "The cost comparison breaks down initial fees, equipment, marketing, and reserves."
+            ),
+        },
+    },
+}
+
+
+def build_category_context(
+    cohort: dict,
+    brands: dict[str, dict],
+    brand_slugs: list[str],
+    fee_model: dict | None,
+) -> dict | None:
+    """Build context for a category landing page."""
+    cohort_id = cohort["id"]
+    cat_data = CATEGORY_PAGE_DATA.get(cohort_id)
+    if not cat_data:
+        return None
+
+    # Build brands table
+    brands_table = []
+    for slug in brand_slugs:
+        data = brands[slug]
+        name = data["brand"]["brand_name"]
+        outlets = franchised_outlet_count(data)
+        low, high, _ = normalize_item7(data)
+        inv_display = f"${low // 1000:,}K\u2013${high // 1000:,}K"
+
+        fee_300k_display = "\u2014"
+        if fee_model:
+            for r in fee_model["results"]:
+                if r["gross_revenue"] == 300000 and r["brand"] == name:
+                    fee_300k_display = (
+                        f"${r['total']:,.0f}"
+                        f'<span class="muted small"> ({r["pct_of_revenue"]}%)</span>'
+                    )
+                    break
+
+        diff = BRAND_DIFFERENTIATORS.get(slug, "")
+        brands_table.append({
+            "slug": slug,
+            "name": name,
+            "outlets": f"{outlets:,}",
+            "investment": inv_display,
+            "fee_300k": fee_300k_display,
+            "differentiator": diff,
+        })
+
+    # Compute stat-strip values
+    all_lows = []
+    all_highs = []
+    all_outlets = []
+    for slug in brand_slugs:
+        low, high, _ = normalize_item7(brands[slug])
+        all_lows.append(low)
+        all_highs.append(high)
+        all_outlets.append(franchised_outlet_count(brands[slug]))
+
+    inv_range = f"${min(all_lows) // 1000:,}K\u2013${max(all_highs) // 1000:,}K"
+    size_range = f"{min(all_outlets):,}\u2013{max(all_outlets):,}"
+
+    fee_spread = ""
+    if fee_model:
+        fees_300 = [
+            r["total"] for r in fee_model["results"]
+            if r["gross_revenue"] == 300000
+        ]
+        if fees_300:
+            spread = max(fees_300) - min(fees_300)
+            spread_rounded = round(spread / 1000) * 1000
+            fee_spread = f"${spread_rounded:,.0f}"
+
+    # Comparison links with per-category descriptions
+    prefix = cohort["url_prefix"]
+    comp_links = []
+    for page_id in cohort["comparison_pages"]:
+        label = PAGE_LABELS[page_id]
+        comp_links.append({
+            "url": f"{prefix}{page_id}.html",
+            "label": label,
+            "description": cat_data["comparison_descriptions"].get(label, ""),
+        })
+
+    # Paid report count
+    paid_count = sum(
+        1 for slug in brand_slugs
+        if STRIPE_PAYMENT_LINKS.get(slug)
+    )
+
+    # Watchlist
+    watchlist_slugs = cohort.get("watchlist", [])
+    watchlist_note = cat_data.get("watchlist_note", "")
+
+    return {
+        "title_text": cat_data["title"],
+        "h1_text": cat_data["h1"],
+        "canonical_slug": cat_data["canonical_slug"],
+        "meta_description": cat_data["meta_description"],
+        "subhead": cat_data["subhead"],
+        "brand_count": len(brand_slugs),
+        "investment_range_display": inv_range,
+        "fee_spread_display": fee_spread,
+        "system_size_range": size_range,
+        "has_fee_model": fee_model is not None,
+        "brands_table": brands_table,
+        "editorial_section": cat_data["editorial_section"],
+        "comparison_links": comp_links,
+        "paid_report_count": paid_count,
+        "watchlist_brands": watchlist_slugs,
+        "watchlist_note": watchlist_note,
+        "filing_year": "2025",
+        "og_title": cat_data["title"].replace("&amp;", "&"),
+        "og_description": cat_data["meta_description"],
+        "og_url": f"{SITE_BASE_URL}{cat_data['canonical_slug']}",
+    }
+
+
+# ---------------------------------------------------------------------------
 # Navigation helpers
 # ---------------------------------------------------------------------------
 
@@ -1772,6 +2090,268 @@ def build_all_nav(cohorts: list[dict]) -> list[dict]:
         }
         result.append(cohort_nav)
     return result
+
+
+# ---------------------------------------------------------------------------
+# VS comparison page data + builder
+# ---------------------------------------------------------------------------
+
+VS_PAGES: list[dict] = [
+    {
+        "slug_a": "mosquito-joe",
+        "slug_b": "mosquito-authority",
+        "cohort_id": "mosquito",
+        "output_file": "mosquito-joe-vs-mosquito-authority.html",
+        "canonical_slug": "mosquito-joe-vs-mosquito-authority.html",
+        "title": "Mosquito Joe vs. Mosquito Authority | Franchise Fee, Cost &amp; FDD Comparison",
+        "h1": "Mosquito Joe vs. Mosquito Authority: what the FDD data shows",
+        "meta_description": (
+            "Side-by-side comparison of Mosquito Joe and Mosquito Authority franchise "
+            "fees, startup cost, system health, and FDD data. Fee burden, growth "
+            "trajectories, and investment breakdown from regulator-filed disclosures."
+        ),
+        "subhead": (
+            "The two largest mosquito control franchises by system size, "
+            "with opposite fee structures and diverging growth trajectories. "
+            "All data from 2025 FDDs filed with the Wisconsin DFI."
+        ),
+        "fee_burden_editorial": (
+            "<p>"
+            "The fee gap between these two brands is the largest in the mosquito cohort "
+            "and it widens at higher revenue. "
+            "Mosquito Authority charges a flat 10% royalty with no mandatory marketing fund "
+            "and no technology surcharges beyond fixed weekly fees. "
+            "Mosquito Joe pairs a tiered royalty (10% on the first $500K, 7% above) "
+            "with $72K in mandatory first-year marketing and ongoing national ad fund contributions."
+            "</p>"
+            "<p>"
+            "At $300K gross revenue, Authority\u2019s annual fee burden is "
+            "$52,800 (17.6% of revenue). Joe\u2019s is $84,752 (28.3%). "
+            "That\u2019s a <strong>$31,952/year difference</strong>\u200a\u2014\u200aenough to "
+            "change the unit economics of the business. "
+            "The gap narrows at higher revenue because Joe\u2019s tiered royalty "
+            "drops to 7% above $500K, but the marketing burden keeps Joe structurally more expensive."
+            "</p>"
+        ),
+        "fee_caveats_editorial": (
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Authority fixed fees add up</div>'
+            "Mosquito Authority\u2019s fee model looks simple (flat 10% royalty), "
+            "but weekly technology ($210), accounting ($85), and contact center "
+            "($50\u2013$220, escalating) fees add $295\u2013$515/week in fixed costs "
+            "regardless of revenue. At low revenue, these fixed charges represent a "
+            "higher percentage of income than Joe\u2019s percentage-based fees."
+            "</div>"
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Joe front-loads marketing</div>'
+            "Mosquito Joe\u2019s Item 7 includes $72K in mandatory marketing "
+            "($37K DMP + $35K local). This is not optional and is due during the first year. "
+            "It\u2019s nearly half the initial investment and inflates the cost-to-enter comparison "
+            "relative to Authority."
+            "</div>"
+        ),
+        "system_health_editorial": (
+            "<p>"
+            "The growth trajectories are moving in opposite directions. "
+            "Mosquito Authority has maintained stable positive growth, adding outlets "
+            "consistently across the last three reporting years. "
+            "Mosquito Joe peaked in system size and has turned net-negative, "
+            "losing more franchised outlets than it opened in the most recent year."
+            "</p>"
+            "<p>"
+            "For a buyer, this means the brand with the most consumer recognition "
+            "(Joe has higher marketing spend) and the brand with the healthiest "
+            "franchisee growth signal (Authority) are not the same brand."
+            "</p>"
+        ),
+        "cost_editorial": (
+            "<p>"
+            "Mosquito Authority\u2019s initial investment ranges from $54K\u2013$127K, "
+            "depending on territory tier (Hometown vs. Full-Size). "
+            "Mosquito Joe\u2019s ranges from $150K\u2013$192K."
+            "</p>"
+            "<p>"
+            "The gap is driven primarily by Joe\u2019s mandatory marketing: "
+            "$37K DMP + $35K local marketing are due in Year 1 and represent the "
+            "single largest cost differentiator between the two brands. "
+            "Authority keeps startup costs lower and relies more on ongoing fees "
+            "to generate franchisor revenue."
+            "</p>"
+        ),
+        "tradeoffs_editorial": (
+            "<p>"
+            "Authority costs less to enter, costs less to operate, and has a healthier "
+            "growth trajectory. Joe has higher consumer brand recognition (driven by "
+            "Neighborly\u2019s marketing machine), a larger existing franchisee network to "
+            "learn from, and a tiered royalty that rewards scale."
+            "</p>"
+            "<p>"
+            "A buyer prioritizing low fee exposure and capital efficiency has a clearer path "
+            "with Authority. A buyer prioritizing brand recognition and national marketing "
+            "infrastructure has a rationale for Joe\u200a\u2014\u200abut should model whether "
+            "the $32,000/year fee premium generates enough incremental revenue to justify itself."
+            "</p>"
+            "<p>"
+            "Neither brand is categorically better. The right choice depends on "
+            "your revenue expectations, marketing tolerance, and how much you weight "
+            "system growth trajectory in your diligence."
+            "</p>"
+        ),
+    },
+]
+
+
+def _build_vs_pages(
+    env: Environment,
+    all_nav: list[dict],
+    all_brands_by_cohort: list[dict],
+    ready_cohorts: list[dict],
+) -> None:
+    """Build VS comparison pages from VS_PAGES config."""
+    for vs in VS_PAGES:
+        cohort = next((c for c in ready_cohorts if c["id"] == vs["cohort_id"]), None)
+        if not cohort:
+            continue
+
+        slug_a, slug_b = vs["slug_a"], vs["slug_b"]
+        brands = load_brand_data([slug_a, slug_b])
+        data_a, data_b = brands[slug_a], brands[slug_b]
+        name_a = data_a["brand"]["brand_name"]
+        name_b = data_b["brand"]["brand_name"]
+
+        # Fee model
+        fee_model = None
+        if cohort.get("has_fee_model") and cohort.get("fee_model_file"):
+            fee_model = load_fee_model(cohort["fee_model_file"])
+
+        # Fee table
+        fee_table = []
+        if fee_model:
+            for level in fee_model["revenue_levels"]:
+                row_a = next(
+                    (r for r in fee_model["results"]
+                     if r["gross_revenue"] == level and r["brand"] == name_a),
+                    None,
+                )
+                row_b = next(
+                    (r for r in fee_model["results"]
+                     if r["gross_revenue"] == level and r["brand"] == name_b),
+                    None,
+                )
+                if row_a and row_b:
+                    fee_table.append({
+                        "revenue": level,
+                        "a_total": row_a["total"],
+                        "a_pct": row_a["pct_of_revenue"],
+                        "b_total": row_b["total"],
+                        "b_pct": row_b["pct_of_revenue"],
+                        "diff": abs(row_a["total"] - row_b["total"]),
+                    })
+
+        # System health table
+        def _health_rows(data: dict) -> dict[int, dict]:
+            years = data["raw"]["item_20_outlet_summary"]["years_reported"]
+            result = {}
+            for yr in sorted(years, key=lambda y: y["year"]):
+                fran_end = yr["total_outlets_end"] - (yr.get("company_owned_end") or 0)
+                fran_start = yr["total_outlets_start"] - (yr.get("company_owned_start") or 0)
+                result[yr["year"]] = {
+                    "net": fran_end - fran_start,
+                    "end": fran_end,
+                }
+            return result
+
+        rows_a = _health_rows(data_a)
+        rows_b = _health_rows(data_b)
+        all_years = sorted(set(rows_a.keys()) | set(rows_b.keys()))
+        health_table = []
+        for yr in all_years:
+            health_table.append({
+                "year": yr,
+                "a_net": rows_a.get(yr, {}).get("net", 0),
+                "a_end": rows_a.get(yr, {}).get("end", 0),
+                "b_net": rows_b.get(yr, {}).get("net", 0),
+                "b_end": rows_b.get(yr, {}).get("end", 0),
+            })
+
+        # Brand summary data
+        def _brand_summary(slug: str, data: dict) -> dict:
+            name = data["brand"]["brand_name"]
+            outlets = franchised_outlet_count(data)
+            low, high, _ = normalize_item7(data)
+            growth_vals = {g["year"]: g["value"] for g in data["derived"]["net_unit_growth"]}
+            growth_total = sum(growth_vals.values())
+            traj = TRAJECTORY_OVERRIDES.get(name, derive_trajectory(growth_vals))[0]
+            editorial = BRAND_EDITORIAL.get(slug) or {}
+            royalty_display = editorial.get("royalty_display") or derive_royalty_display(
+                data["raw"]["item_6_other_fees"]
+            )[0]
+
+            fee_300k = ""
+            if fee_model:
+                row = next(
+                    (r for r in fee_model["results"]
+                     if r["gross_revenue"] == 300000 and r["brand"] == name),
+                    None,
+                )
+                if row:
+                    fee_300k = f"${row['total']:,.0f} ({row['pct_of_revenue']}%)"
+
+            short = BRAND_SHORT_NAMES.get(slug, name.split(" ", 1)[-1] if " " in name else name)
+
+            return {
+                "slug": slug,
+                "name": name,
+                "short_name": short,
+                "outlets": f"{outlets:,}",
+                "investment": f"${low // 1000}K\u2013${high // 1000}K",
+                "fee_300k": fee_300k,
+                "net_growth": f"{growth_total:+d} units",
+                "trajectory": traj,
+                "royalty": royalty_display,
+                "year_started": data["brand"]["year_first_franchised"],
+                "watchouts": editorial.get("watchouts", []),
+                "stripe_link": STRIPE_PAYMENT_LINKS.get(slug),
+            }
+
+        brand_a = _brand_summary(slug_a, data_a)
+        brand_b = _brand_summary(slug_b, data_b)
+
+        prefix = cohort["url_prefix"]
+        nav_pages = build_nav_pages(cohort)
+
+        ctx = {
+            "site_base_url": SITE_BASE_URL,
+            "active_page": "",
+            "all_nav": all_nav,
+            "all_brands_by_cohort": all_brands_by_cohort,
+            "nav_pages": nav_pages,
+            "cohort_id": cohort["id"],
+            "cohort_short_name": cohort["short_name"],
+            "cohort_brand_count": len(cohort["brands"]),
+            "cohort_fee_burden_url": f"{prefix}fee-burden.html",
+            "cohort_system_health_url": f"{prefix}system-health.html",
+            "cohort_cost_to_enter_url": f"{prefix}cost-to-enter.html",
+            "title_text": vs["title"],
+            "h1_text": vs["h1"],
+            "canonical_slug": vs["canonical_slug"],
+            "meta_description": vs["meta_description"],
+            "subhead": vs["subhead"],
+            "brand_a": brand_a,
+            "brand_b": brand_b,
+            "fee_table": fee_table,
+            "health_table": health_table,
+            "fee_burden_editorial": vs["fee_burden_editorial"],
+            "fee_caveats_editorial": vs["fee_caveats_editorial"],
+            "system_health_editorial": vs["system_health_editorial"],
+            "cost_editorial": vs["cost_editorial"],
+            "tradeoffs_editorial": vs["tradeoffs_editorial"],
+            "og_title": vs["title"].replace("&amp;", "&"),
+            "og_description": vs["meta_description"],
+            "og_url": f"{SITE_BASE_URL}{vs['canonical_slug']}",
+        }
+
+        render_page(env, "vs.html", vs["output_file"], ctx)
 
 
 # ---------------------------------------------------------------------------
@@ -1890,14 +2470,21 @@ def build_site() -> None:
             "cohort_short_name": cohort["short_name"],
             "cohort_brand_count": len(comp_slugs),
             "brand_slug_map": comp_slug_map,
+            "og_title": "",
+            "og_description": "",
+            "og_url": "",
         }
 
         # Fee burden — comparison-eligible brands only
         if comp_fee_model and "fee-burden" in cohort["comparison_pages"]:
             fee_ctx = build_fee_context(comp_fee_model, comp_brands)
             active = f"{prefix}fee-burden" if prefix else "fee-burden"
-            render_page(env, "fee-burden.html", f"{prefix}fee-burden.html", {
+            fb_file = f"{prefix}fee-burden.html"
+            render_page(env, "fee-burden.html", fb_file, {
                 **shared, "active_page": active, **fee_ctx,
+                "og_title": f"{cohort['display_name']} Franchise Fees Comparison",
+                "og_description": f"Compare {cohort['display_name'].lower()} franchise fee burden across major brands, including royalty structure, marketing fees, and estimated annual franchisor take at real revenue levels.",
+                "og_url": f"{SITE_BASE_URL}{fb_file}",
             })
             total_pages += 1
 
@@ -1905,8 +2492,12 @@ def build_site() -> None:
         if "system-health" in cohort["comparison_pages"]:
             health_ctx = build_health_context(comp_brands, comp_slug_map)
             active = f"{prefix}system-health" if prefix else "system-health"
-            render_page(env, "system-health.html", f"{prefix}system-health.html", {
+            sh_file = f"{prefix}system-health.html"
+            render_page(env, "system-health.html", sh_file, {
                 **shared, "active_page": active, **health_ctx,
+                "og_title": f"{cohort['short_name']} Franchise System Health Comparison",
+                "og_description": f"Compare {cohort['short_name'].lower()} franchise system health using outlet growth, closures, transfers, and other signals that may indicate brand stability or buyer risk.",
+                "og_url": f"{SITE_BASE_URL}{sh_file}",
             })
             total_pages += 1
 
@@ -1914,8 +2505,12 @@ def build_site() -> None:
         if "cost-to-enter" in cohort["comparison_pages"]:
             cost_ctx = build_cost_context(comp_brands, comp_slug_map)
             active = f"{prefix}cost-to-enter" if prefix else "cost-to-enter"
-            render_page(env, "cost-to-enter.html", f"{prefix}cost-to-enter.html", {
+            cte_file = f"{prefix}cost-to-enter.html"
+            render_page(env, "cost-to-enter.html", cte_file, {
                 **shared, "active_page": active, **cost_ctx,
+                "og_title": f"{cohort['display_name']} Franchise Startup Cost Comparison",
+                "og_description": f"Compare {cohort['display_name'].lower()} franchise startup cost and initial investment ranges across brands, using disclosure-document data.",
+                "og_url": f"{SITE_BASE_URL}{cte_file}",
             })
             total_pages += 1
 
@@ -1950,6 +2545,17 @@ def build_site() -> None:
             print(f"  Built: {output_path.relative_to(ROOT)}")
             total_pages += 1
 
+        # Category landing page — one per cohort
+        cat_ctx = build_category_context(cohort, brands, brand_slugs, fee_model)
+        if cat_ctx:
+            cat_output = CATEGORY_PAGE_DATA[cohort["id"]]["output_file"]
+            render_page(env, "category.html", cat_output, {
+                **shared,
+                "active_page": cohort["id"],
+                **cat_ctx,
+            })
+            total_pages += 1
+
     # --- Master report page (all cohorts) ---
     master_report_ctx = build_master_report_context(ready_cohorts)
     render_page(env, "report.html", "report.html", {
@@ -1959,6 +2565,9 @@ def build_site() -> None:
         "all_brands_by_cohort": all_brands_by_cohort,
         "nav_pages": [],
         "cohort_id": None,
+        "og_title": "Franchise Decision Reports | Brand-by-Brand FDD Analysis",
+        "og_description": "Buy brand-specific franchise decision reports with Item 19 translation, fee modeling, key risks, and discovery-day questions. Mosquito, lawn care, and residential cleaning franchises.",
+        "og_url": f"{SITE_BASE_URL}report.html",
         **master_report_ctx,
     })
     total_pages += 1
@@ -1981,6 +2590,9 @@ def build_site() -> None:
             low, high, _ = normalize_item7(brands[s])
             brand_investment[s] = {"low": low, "high": high}
 
+        cat_data = CATEGORY_PAGE_DATA.get(cohort["id"])
+        cat_url = cat_data["output_file"] if cat_data else f"{cohort['id']}-franchise.html"
+
         live_cohorts.append({
             "id": cohort["id"],
             "display_name": cohort["display_name"],
@@ -1993,6 +2605,7 @@ def build_site() -> None:
             "brand_investment": brand_investment,
             "has_fee_model": fee_model is not None,
             "fee_model": fee_model,
+            "category_url": cat_url,
             "comparison_pages": [
                 {"url": f"{cohort['url_prefix']}{pid}.html", "label": PAGE_LABELS[pid]}
                 for pid in cohort["comparison_pages"]
@@ -2025,6 +2638,9 @@ def build_site() -> None:
         "pending_cohorts": hp_pending_cohorts,
         "total_brands": total_brands,
         "total_categories": total_categories,
+        "og_title": "Franchise Decision Radar | Recurring Residential Service Franchise Comparison",
+        "og_description": f"Compare recurring residential service franchises using regulator-source disclosure data. Fee burden, system health, startup cost, and brand-specific risk across {total_brands} brands in {total_categories} categories.",
+        "og_url": SITE_BASE_URL,
     })
     total_pages += 1
 
@@ -2036,8 +2652,62 @@ def build_site() -> None:
         "all_brands_by_cohort": all_brands_by_cohort,
         "nav_pages": [],
         "cohort_id": None,
+        "og_title": "Methodology | Franchise Decision Radar",
+        "og_description": "How Franchise Decision Radar extracts, models, and presents franchise comparison data from regulator-filed Franchise Disclosure Documents.",
+        "og_url": f"{SITE_BASE_URL}methodology.html",
     })
     total_pages += 1
+
+    # --- How to Read an FDD guide ---
+    render_page(env, "how-to-read-fdd.html", "how-to-read-fdd.html", {
+        "site_base_url": SITE_BASE_URL,
+        "active_page": "",
+        "all_nav": all_nav,
+        "all_brands_by_cohort": all_brands_by_cohort,
+        "nav_pages": [],
+        "cohort_id": None,
+        "brand_count": total_brands,
+        "category_count": len(ready_cohorts),
+        "og_title": "How to Read a Franchise Disclosure Document | FDD Buyer's Guide",
+        "og_description": f"A buyer's guide to the five FDD items that matter most for franchise diligence, with real examples from {total_brands} franchise brands we've analyzed.",
+        "og_url": f"{SITE_BASE_URL}how-to-read-fdd.html",
+    })
+    total_pages += 1
+
+    # --- VS comparison pages ---
+    _build_vs_pages(env, all_nav, all_brands_by_cohort, ready_cohorts)
+
+    # --- Auto-generate sitemap.xml ---
+    from datetime import date
+    today = date.today().isoformat()
+    public_pages = sorted(
+        p.name for p in SITE.glob("*.html")
+        if not p.name.startswith("thank-you-")
+    )
+    sitemap_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
+    sitemap_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+    for page in public_pages:
+        sitemap_lines.append(
+            f"  <url>"
+            f"<loc>{SITE_BASE_URL}{page}</loc>"
+            f"<lastmod>{today}</lastmod>"
+            f"</url>"
+        )
+    sitemap_lines.append("</urlset>")
+    (SITE / "sitemap.xml").write_text("\n".join(sitemap_lines) + "\n")
+    print("  Built: site/sitemap.xml")
+
+    # --- Auto-generate robots.txt ---
+    thank_you_pages = sorted(
+        p.name for p in SITE.glob("thank-you-*.html")
+    )
+    robots_lines = ["User-agent: *", "Disallow: /reports/"]
+    for ty_page in thank_you_pages:
+        robots_lines.append(f"Disallow: /{ty_page}")
+    robots_lines.append("")
+    robots_lines.append(f"Sitemap: {SITE_BASE_URL}sitemap.xml")
+    (SITE / "robots.txt").write_text("\n".join(robots_lines) + "\n")
+    print("  Built: site/robots.txt")
 
     print(f"\nSite built successfully. {total_pages} pages rendered to site/.")
 

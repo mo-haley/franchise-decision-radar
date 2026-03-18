@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% block title %}{{ title_text }}{% endblock %}
+{% block meta_description %}<meta name="description" content="{{ meta_description }}">{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_base_url }}{{ canonical_slug }}">{% endblock %}
+
+{% block content %}
+<h1>{{ h1_text }}</h1>
+<p class="subhead">
+  {{ subhead }}
+</p>
+
+<h2>Side-by-Side Snapshot</h2>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>{{ brand_a.name }}</th>
+      <th>{{ brand_b.name }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="brand-name">Franchised outlets</td>
+      <td class="num">{{ brand_a.outlets }}</td>
+      <td class="num">{{ brand_b.outlets }}</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Initial investment</td>
+      <td class="num">{{ brand_a.investment }}</td>
+      <td class="num">{{ brand_b.investment }}</td>
+    </tr>
+    {% if brand_a.fee_300k %}
+    <tr>
+      <td class="brand-name">Annual fees at $300K</td>
+      <td class="num">{{ brand_a.fee_300k }}</td>
+      <td class="num">{{ brand_b.fee_300k }}</td>
+    </tr>
+    {% endif %}
+    <tr>
+      <td class="brand-name">3-year net growth</td>
+      <td class="num">{{ brand_a.net_growth }}</td>
+      <td class="num">{{ brand_b.net_growth }}</td>
+    </tr>
+    <tr>
+      <td class="brand-name">System trajectory</td>
+      <td>{{ brand_a.trajectory }}</td>
+      <td>{{ brand_b.trajectory }}</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Royalty structure</td>
+      <td>{{ brand_a.royalty }}</td>
+      <td>{{ brand_b.royalty }}</td>
+    </tr>
+    <tr>
+      <td class="brand-name">Franchising since</td>
+      <td class="num">{{ brand_a.year_started }}</td>
+      <td class="num">{{ brand_b.year_started }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p class="small muted">
+  All data from 2025 FDDs filed with the Wisconsin Department of Financial Institutions.
+  Fee burden figures <span class="tag tag-modeled">Modeled</span> at $300K gross revenue, Year 5, single territory.
+</p>
+
+<h2>Fee Burden</h2>
+{{ fee_burden_editorial }}
+
+{% if fee_table %}
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Revenue Level</th>
+      <th class="num">{{ brand_a.name }}</th>
+      <th class="num">{{ brand_b.name }}</th>
+      <th class="num">Difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in fee_table %}
+    <tr>
+      <td>${{ "{:,}".format(row.revenue) }}</td>
+      <td class="num">${{ "{:,.0f}".format(row.a_total) }} <span class="muted small">({{ row.a_pct }}%)</span></td>
+      <td class="num">${{ "{:,.0f}".format(row.b_total) }} <span class="muted small">({{ row.b_pct }}%)</span></td>
+      <td class="num">${{ "{:,.0f}".format(row.diff) }}/yr</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+
+{{ fee_caveats_editorial }}
+
+<h2>System Health</h2>
+{{ system_health_editorial }}
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="num" colspan="2">{{ brand_a.short_name }}</th>
+      <th class="num" colspan="2">{{ brand_b.short_name }}</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th class="num small">Net Change</th>
+      <th class="num small">End Count</th>
+      <th class="num small">Net Change</th>
+      <th class="num small">End Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in health_table %}
+    <tr>
+      <td><strong>{{ row.year }}</strong></td>
+      <td class="num">{{ "%+d"|format(row.a_net) }}</td>
+      <td class="num">{{ row.a_end }}</td>
+      <td class="num">{{ "%+d"|format(row.b_net) }}</td>
+      <td class="num">{{ row.b_end }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h2>Cost to Enter</h2>
+{{ cost_editorial }}
+
+<h2>Key Watchouts</h2>
+
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:0.75rem 0 1.5rem">
+  <div>
+    <h3 style="margin-top:0">{{ brand_a.name }}</h3>
+    <ul class="signal-list">
+      {% for w in brand_a.watchouts %}
+      <li><span class="signal-icon">&#x25B3;</span> {{ w }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h3 style="margin-top:0">{{ brand_b.name }}</h3>
+    <ul class="signal-list">
+      {% for w in brand_b.watchouts %}
+      <li><span class="signal-icon">&#x25B3;</span> {{ w }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<h2>Where the Tradeoffs Land</h2>
+{{ tradeoffs_editorial }}
+
+<h2>Go Deeper</h2>
+<div style="display:flex; flex-wrap:wrap; gap:1.25rem; margin:0.75rem 0 1.5rem">
+  <div>
+    <a href="{{ brand_a.slug }}.html" style="font-weight:600">{{ brand_a.name }} review &rarr;</a>
+    {% if brand_a.stripe_link %}
+    <div class="small" style="margin-top:0.3rem"><a href="{{ brand_a.stripe_link }}">Decision Report &mdash; $99</a></div>
+    {% endif %}
+  </div>
+  <div>
+    <a href="{{ brand_b.slug }}.html" style="font-weight:600">{{ brand_b.name }} review &rarr;</a>
+    {% if brand_b.stripe_link %}
+    <div class="small" style="margin-top:0.3rem"><a href="{{ brand_b.stripe_link }}">Decision Report &mdash; $99</a></div>
+    {% endif %}
+  </div>
+</div>
+<p class="small muted">
+  See the full <a href="{{ cohort_fee_burden_url }}">fee burden</a>,
+  <a href="{{ cohort_system_health_url }}">system health</a>, and
+  <a href="{{ cohort_cost_to_enter_url }}">cost-to-enter</a> comparisons
+  across all {{ cohort_brand_count }} {{ cohort_short_name | lower }} brands.
+</p>
+{% endblock %}
