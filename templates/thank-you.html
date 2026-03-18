@@ -98,3 +98,15 @@
 
 </div>
 {% endblock %}
+
+{% block scripts %}
+<script>
+if (typeof gtag === 'function') {
+  gtag('event', 'purchase_complete', {
+    report_name: '{{ slug }}',
+    page_type: 'thank_you',
+    completion_method: 'thank_you_page'
+  });
+}
+</script>
+{% endblock %}

@@ -197,7 +197,7 @@
       <h3>{{ b.brand_name }}{% if b.differentiator %}<span class="report-differentiator">{{ b.differentiator }}</span>{% endif %}</h3>
       <p class="small muted">{{ b.system_size }} outlets &middot; Franchising since {{ b.year_first_franchised }}</p>
     </div>
-    <a href="{{ b.stripe_payment_link }}" class="cta-button" style="font-size:0.82rem; padding:0.5rem 1.15rem; white-space:nowrap;">Get report &mdash; $99</a>
+    <a href="{{ b.stripe_payment_link }}" class="cta-button" style="font-size:0.82rem; padding:0.5rem 1.15rem; white-space:nowrap;" onclick="if(typeof gtag==='function')gtag('event','purchase_click',{report_name:'{{ b.slug }}',page_type:'report_index',source_page:'report',destination_type:'stripe'})">Get report &mdash; $99</a>
   </div>
   {% endif %}
   {% endfor %}
