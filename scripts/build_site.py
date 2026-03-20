@@ -2683,6 +2683,7 @@ def build_site() -> None:
     public_pages = sorted(
         p.name for p in SITE.glob("*.html")
         if not p.name.startswith("thank-you-")
+        and not p.name.startswith("google")
     )
     sitemap_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
     sitemap_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
