@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon-48.png" sizes="48x48">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -59,8 +60,9 @@ header {
 }
 header .site-name {
   font-family: "Inter", sans-serif; font-size: 1.05rem; font-weight: 700; color: #1e293b;
-  letter-spacing: -0.02em; white-space: nowrap;
+  letter-spacing: -0.02em; white-space: nowrap; text-decoration: none;
 }
+header a.site-name:hover { color: #1e293b; text-decoration: none; }
 header .site-mark {
   display: inline-block; width: 8px; height: 8px; background: #2563eb;
   border-radius: 2px; margin-right: 0.45rem; vertical-align: 1px;
@@ -99,7 +101,9 @@ nav#main-nav > a.active { color: #1e293b; border-bottom: 2px solid #2563eb; }
 .nav-menu-heading {
   display: block; padding: 0.45rem 1rem 0.2rem; font-size: 0.65rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8;
+  cursor: pointer;
 }
+a.nav-menu-heading:hover { color: #64748b; text-decoration: none; }
 .nav-dropdown-menu a {
   display: block; padding: 0.35rem 1rem 0.35rem 1.25rem; font-size: 0.82rem;
   color: #64748b; font-weight: 500; white-space: nowrap;
@@ -602,7 +606,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 <body>
 
 <header>
-  <span class="site-name"><span class="site-mark"></span>Franchise Decision Radar</span>
+  <a href="index.html" class="site-name"><span class="site-mark"></span>Franchise Decision Radar</a>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
   <nav id="main-nav">
     <a href="index.html">Home</a>
@@ -613,7 +617,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
       <div class="nav-dropdown-menu">
         
         <div class="nav-menu-group">
-          <span class="nav-menu-heading">Mosquito</span>
+          <a href="mosquito-franchise.html" class="nav-menu-heading">Mosquito</a>
           
           <a href="fee-burden.html">Fee Burden</a>
           
@@ -624,7 +628,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
         </div>
         
         <div class="nav-menu-group">
-          <span class="nav-menu-heading">Lawn</span>
+          <a href="lawn-franchise.html" class="nav-menu-heading">Lawn</a>
           
           <a href="lawn-fee-burden.html" class="active">Fee Burden</a>
           
@@ -635,7 +639,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
         </div>
         
         <div class="nav-menu-group">
-          <span class="nav-menu-heading">Cleaning</span>
+          <a href="cleaning-franchise.html" class="nav-menu-heading">Cleaning</a>
           
           <a href="cleaning-fee-burden.html">Fee Burden</a>
           
