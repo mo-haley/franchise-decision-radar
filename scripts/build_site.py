@@ -2083,9 +2083,12 @@ def build_all_nav(cohorts: list[dict]) -> list[dict]:
         pages = build_nav_pages(cohort)
         if not pages:
             continue
+        cat_data = CATEGORY_PAGE_DATA.get(cohort["id"])
+        overview_url = cat_data["output_file"] if cat_data else f"{cohort['id']}-franchise.html"
         cohort_nav = {
             "id": cohort["id"],
             "short_name": cohort["short_name"],
+            "overview_url": overview_url,
             "pages": pages,
         }
         result.append(cohort_nav)

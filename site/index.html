@@ -110,11 +110,16 @@ nav#main-nav > a.active { color: #1e293b; border-bottom: 2px solid #2563eb; }
 .nav-menu-group { padding: 0.25rem 0; }
 .nav-menu-group + .nav-menu-group { border-top: 1px solid #f1f5f9; }
 .nav-menu-heading {
-  display: block; padding: 0.45rem 1rem 0.2rem; font-size: 0.65rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8;
-  cursor: pointer;
+  display: flex; align-items: center; gap: 0.4rem;
+  padding: 0.5rem 1rem 0.35rem; font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em; color: #475569;
+  background: #f8fafc; cursor: pointer;
 }
-a.nav-menu-heading:hover { color: #64748b; text-decoration: none; }
+.nav-menu-heading::before {
+  content: ""; display: inline-block; width: 6px; height: 6px;
+  background: #2563eb; border-radius: 1.5px; flex-shrink: 0;
+}
+a.nav-menu-heading:hover { color: #1e293b; text-decoration: none; background: #f1f5f9; }
 .nav-dropdown-menu a {
   display: block; padding: 0.35rem 1rem 0.35rem 1.25rem; font-size: 0.82rem;
   color: #64748b; font-weight: 500; white-space: nowrap;
