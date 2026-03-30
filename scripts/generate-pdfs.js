@@ -30,7 +30,7 @@ async function generatePDF(browser, htmlFile) {
       path: outputPath,
       format: 'Letter',
       printBackground: true,
-      margin: { top: '0', right: '0', bottom: '0', left: '0' },
+      margin: { top: '0.75in', right: '0.75in', bottom: '0.75in', left: '0.75in' },
     });
     const { size } = fs.statSync(outputPath);
     console.log(`  ✓  ${outputFile}  (${(size / 1024).toFixed(0)} KB)`);
