@@ -5,14 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mosquito Joe — Franchise Decision Report</title>
 <style>
+@page { margin: 0.75in; }
 @media print {
-  body { font-size: 11pt; }
+  body { font-size: 11pt; padding: 0; }
   .page-break { page-break-before: always; }
   h2 { page-break-after: avoid; }
   table, .callout { page-break-inside: avoid; }
   .cover-page { page-break-after: always; }
   .toc { page-break-after: always; }
   a { text-decoration: none !important; }
+  /* Ensure content fits the printable area */
+  tbody td.label { white-space: normal; }
+  thead th { white-space: normal; }
+  table { font-size: 0.75rem; }
+  .peer-table { font-size: 0.65rem; }
+  .peer-table thead th { font-size: 0.6rem; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -597,8 +604,7 @@ error in the filed FDD, not a data integrity issue.</p>
 
 <div class="implication">
 <strong>What this means:</strong> A reasonable revenue expectation for a single-territory
-operator in the first 5 years is likely in the $200K–$290K range (between the average and
-median). Mature operators reach $340K–$430K. The high performers ($850K–$1.9M) almost certainly
+operator in the first 5 years is likely in the $215K–$290K range (between the average of ~$215K and median of ~$288K). Mature operators reach $340K–$430K. The high performers ($850K–$1.9M) almost certainly
 operate multiple territories. Plan around the median, not the average or the high — and validate
 the per-territory assumption with current franchisees.
 </div>
