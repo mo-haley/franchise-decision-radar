@@ -3,182 +3,304 @@
 {% block meta_description %}<meta name="description" content="Buy brand-specific franchise decision reports with Item 19 translation, fee modeling, key risks, and discovery-day questions. Mosquito, lawn care, and residential cleaning franchises.">{% endblock %}
 {% block canonical %}<link rel="canonical" href="{{ site_base_url }}report.html">{% endblock %}
 
+{% block head %}
+<style>
+/* ── Report page additions ── */
+.report-trust-strip {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.25rem 0 2rem;
+}
+.report-trust-strip span {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.04em; color: #64748b; background: #f8fafc;
+  border: 1px solid #e2e8f0; padding: 0.3rem 0.65rem; border-radius: 4px;
+  white-space: nowrap;
+}
+.report-trust-strip .trust-dot {
+  width: 5px; height: 5px; background: #059669; border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Preview mockup ── */
+.preview-frame {
+  border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem 1.75rem;
+  background: #fff; margin: 1.5rem 0 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.preview-label {
+  font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; color: #94a3b8; margin-bottom: 1rem;
+}
+.preview-scorecard {
+  display: grid; grid-template-columns: 1fr; gap: 0;
+  font-size: 0.82rem;
+}
+.preview-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9;
+}
+.preview-row:last-child { border-bottom: none; }
+.preview-dim { color: #374151; font-weight: 500; }
+.preview-rating {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.03em; padding: 0.15rem 0.5rem; border-radius: 3px;
+}
+.preview-rating-strong { background: #dcfce7; color: #166534; }
+.preview-rating-mixed { background: #fef3c7; color: #92400e; }
+.preview-rating-weak { background: #fee2e2; color: #991b1b; }
+.preview-rating-redacted {
+  background: #f1f5f9; color: #cbd5e1; user-select: none;
+}
+.preview-bar-row {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 0; border-bottom: 1px solid #f1f5f9;
+}
+.preview-bar-label { font-size: 0.72rem; color: #94a3b8; min-width: 70px; }
+.preview-bar-track {
+  flex: 1; height: 14px; background: #f1f5f9; border-radius: 3px;
+  overflow: hidden; display: flex;
+}
+.preview-bar-fill { height: 100%; border-radius: 3px 0 0 3px; }
+.preview-question {
+  padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9;
+  font-size: 0.82rem; color: #374151;
+}
+.preview-question:last-child { border-bottom: none; }
+.preview-question .q-num {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.72rem; color: #94a3b8; margin-right: 0.4rem; font-weight: 500;
+}
+.preview-question .q-context {
+  display: block; font-size: 0.72rem; color: #94a3b8;
+  font-style: italic; margin-top: 0.15rem;
+}
+.preview-sections {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+  margin-top: 1rem;
+}
+@media (max-width: 639px) { .preview-sections { grid-template-columns: 1fr; } }
+.preview-section-label {
+  font-size: 0.72rem; font-weight: 600; color: #94a3b8;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+/* ── Highlight features ── */
+.feature-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  margin: 1rem 0 1.75rem;
+}
+@media (max-width: 639px) { .feature-grid { grid-template-columns: 1fr; } }
+.feature-item {
+  padding: 1rem 1.15rem; border: 1px solid #f1f5f9; border-radius: 8px;
+  background: #fff;
+}
+.feature-item-title {
+  font-size: 0.82rem; font-weight: 600; color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+.feature-item-desc {
+  font-size: 0.78rem; color: #64748b; line-height: 1.45; margin: 0;
+}
+
+/* ── Pre-CTA reassurance ── */
+.pre-cta-reassurance {
+  display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem;
+  font-size: 0.72rem; color: #64748b; margin: 1.5rem 0 0.75rem;
+  padding: 0.85rem 1.15rem; background: #f8fafc;
+  border: 1px solid #e2e8f0; border-radius: 8px;
+}
+.pre-cta-reassurance span {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+}
+.pre-cta-reassurance .check {
+  color: #059669; font-size: 0.68rem; flex-shrink: 0;
+}
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="report-hero">
-  <h1>Franchise decision reports</h1>
+  <h1>Know what the FDD means before you commit</h1>
   <p class="subhead">
-    You&rsquo;ve compared the category. Now you&rsquo;re evaluating one brand &mdash;
-    ready for a discovery day, franchisee calls, or capital commitment. This is the
-    analysis that lives inside the 250-page disclosure document but doesn&rsquo;t surface in a comparison table.
+    The disclosure document is 250+ pages of legal text, fee schedules, and
+    buried footnotes. The Decision Report translates it into the analysis
+    a prospective buyer actually needs &mdash; fee modeling, revenue
+    context, system health, risk signals, and the questions to ask on
+    discovery day.
   </p>
 </div>
 
-{% set total_brands = cohort_groups | sum(attribute='total_count') %}
-<div class="tier-grid">
-  <div class="tier-card tier-card-free">
-    <div class="tier-label">Free Comparison Site</div>
-    <div class="tier-price">$0 <span>/ {{ total_brands }} brands</span></div>
-    <ul class="tier-list">
-      <li><span class="tier-check">&#x2713;</span> Fee burden at 4 revenue levels</li>
-      <li><span class="tier-check">&#x2713;</span> Net growth &amp; attrition rates</li>
-      <li><span class="tier-check">&#x2713;</span> Investment ranges &amp; midpoints</li>
-      <li><span class="tier-check">&#x2713;</span> Royalty &amp; marketing structure</li>
-      <li><span class="tier-check">&#x2713;</span> Disclosure quality ratings</li>
-      <li><span class="tier-check">&#x2713;</span> Key watchout flags</li>
-    </ul>
-    <p class="small muted" style="margin:1rem 0 0">
-      You&rsquo;re using it now.
-      Shows <em>what</em> differs.
-    </p>
-  </div>
-  <div class="tier-card tier-card-paid">
-    <div class="tier-label">Decision Report <span class="tier-recommended">Recommended</span></div>
-    <div class="tier-price">$99 <span>/ single brand</span></div>
-    <ul class="tier-list">
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Executive summary &amp; decision scorecard</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Buyer-fit profile (who should / shouldn&rsquo;t buy)</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Full fee modeling with cohort comparison visual</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Item 19 translation &amp; revenue triangulation</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Buyer-side economics reality check</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Investment breakdown &amp; payback sensitivity</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">System health, risk flags &amp; litigation</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Peer positioning with decision overlay</span></li>
-      <li><span class="tier-check">&#x2713;</span> <span class="tier-extra">Discovery day diligence script (8&ndash;10 questions)</span></li>
-    </ul>
-    <div class="tier-cta">
-      <a href="#available" class="cta-button" style="font-size:0.82rem; padding:0.55rem 1.25rem;">Choose a brand report &darr;</a>
-      <span class="small muted" style="margin-left:0.5rem">One-time purchase</span>
-    </div>
-  </div>
+<div class="report-trust-strip">
+  <span><span class="trust-dot"></span>Built from regulator-source FDDs</span>
+  <span><span class="trust-dot"></span>Structured buyer-side analysis</span>
+  <span><span class="trust-dot"></span>Not affiliated with any franchisor</span>
+  <span><span class="trust-dot"></span>One-time purchase &mdash; $99</span>
 </div>
 
-<p class="small muted" style="margin-top:-0.5rem">
-  Free pages show <em>what</em> differs. The report explains <em>so what</em> and <em>what to ask about it</em>.
-</p>
-
-<h2>What&rsquo;s in a Decision Report</h2>
-
-<div class="report-sections">
-  <div class="report-section-item">
-    <span class="report-section-num">1</span>
-    <div>
-      <div class="report-section-title">Executive Summary &amp; Decision Scorecard</div>
-      <div class="report-section-desc">
-        The headline assessment: where this brand is strong, where it&rsquo;s weak, and
-        what the overall posture looks like. A rated scorecard across 8 dimensions &mdash;
-        entry cost, ongoing fees, system stability, revenue disclosure, disclosure quality,
-        downside risk, buyer fit, and overall.
-      </div>
-    </div>
-  </div>
-  <div class="report-section-item">
-    <span class="report-section-num">2</span>
-    <div>
-      <div class="report-section-title">Buyer-Fit Profile</div>
-      <div class="report-section-desc">
-        Who this brand is best for, who it&rsquo;s a weaker fit for, and the specific
-        conditions that should be true before you proceed. Not a sales pitch &mdash;
-        a calibration tool.
-      </div>
-    </div>
-  </div>
-  <div class="report-section-item">
-    <span class="report-section-num">3</span>
-    <div>
-      <div class="report-section-title">Fee Burden Analysis</div>
-      <div class="report-section-desc">
-        Total ongoing cost modeled at 4 revenue levels with full component breakdown,
-        plus a visual comparison showing where this brand sits among its direct competitors.
-        Marketing minimums, technology fee tiers, escalation triggers, and hidden conditional fees.
-      </div>
-    </div>
-  </div>
-  <div class="report-section-item">
-    <span class="report-section-num">4</span>
-    <div>
-      <div class="report-section-title">Item 19 Translation</div>
-      <div class="report-section-desc">
-        What the financial performance data actually tells you about likely revenue &mdash;
-        and what it conspicuously omits. Exclusion rates, population definitions,
-        per-territory vs. per-franchisee distinctions, and what the reported averages
-        really mean for a new single-territory operator.
-      </div>
-    </div>
-  </div>
-  <div class="report-section-item">
-    <span class="report-section-num">5</span>
-    <div>
-      <div class="report-section-title">Economics Reality Check &amp; Payback Sensitivity</div>
-      <div class="report-section-desc">
-        Illustrative scenarios showing what revenue, fees, and costs look like at different
-        operating levels. Payback timelines under conservative, moderate, and strong assumptions.
-        Not a forecast &mdash; a framework for understanding the math before you commit.
-      </div>
-    </div>
-  </div>
-  <div class="report-section-item">
-    <span class="report-section-num">6</span>
-    <div>
-      <div class="report-section-title">Investment Breakdown</div>
-      <div class="report-section-desc">
-        Where the initial investment actually goes. What&rsquo;s negotiable vs. fixed. What
-        the FDD buries in footnotes about working capital, mandatory vendor programs, and
-        pre-opening marketing obligations.
-      </div>
-    </div>
-  </div>
-  <div class="report-section-item">
-    <span class="report-section-num">7</span>
-    <div>
-      <div class="report-section-title">System Health &amp; Risk Signals</div>
-      <div class="report-section-desc">
-        Unit growth trends in context. Termination patterns, transfer activity, and
-        company-owned footprint. Regulatory history, entity structure changes, litigation
-        outcomes, and the cross-brand context a single-brand attorney review wouldn&rsquo;t have.
-      </div>
-    </div>
-  </div>
-  <div class="report-section-item">
-    <span class="report-section-num">8</span>
-    <div>
-      <div class="report-section-title">Peer Context &amp; Decision Overlay</div>
-      <div class="report-section-desc">
-        How this brand compares across the full category on 7+ dimensions. Which brand
-        wins on each buyer priority &mdash; lowest cost, best disclosure, most stability,
-        best for first-time buyers &mdash; with the rationale.
-      </div>
-    </div>
-  </div>
-  <div class="report-section-item">
-    <span class="report-section-num">9</span>
-    <div>
-      <div class="report-section-title">Discovery Day Diligence Script</div>
-      <div class="report-section-desc">
-        8&ndash;10 specific questions derived from this brand&rsquo;s actual FDD &mdash;
-        each with context on why it matters, what a strong answer sounds like,
-        what evasion sounds like, and follow-up questions. Not a generic checklist.
-      </div>
-    </div>
-  </div>
-</div>
-
+<!-- ── Who this is for (moved up as qualifier) ── -->
 <h2>Who this is for</h2>
 <p>
-  You&rsquo;ve narrowed to one or two brands. You&rsquo;re past browsing and into evaluating.
-  You want to walk into your FDD review and attorney conversation already knowing
-  the fee structure, system health trends, and how this brand compares to its
-  direct competitors &mdash; so you ask better questions and spot what matters.
+  You&rsquo;ve narrowed to one or two brands. You&rsquo;re past browsing.
+  You want to walk into your attorney conversation and discovery day already
+  knowing the fee structure, revenue context, system trajectory, and how this
+  brand compares to its direct competitors &mdash; so you ask sharper questions
+  and catch what matters.
 </p>
 
-<p class="small" style="color:#94a3b8">
-  Not legal advice. Not a franchise valuation. Not a recommendation to buy or avoid.
-  The report gives you structured, data-driven analysis so you can make the decision
-  with your eyes open.
+<!-- ── Report preview mockup ── -->
+<h2>What a report looks like</h2>
+<p class="small muted" style="margin-top:-0.5rem; margin-bottom:0.75rem;">
+  Actual reports are brand-specific. This shows the structure and format, not a live analysis.
+</p>
+
+<div class="preview-frame">
+  <div class="preview-label">Sample &mdash; Decision Scorecard</div>
+  <div class="preview-scorecard">
+    <div class="preview-row">
+      <span class="preview-dim">Entry cost</span>
+      <span class="preview-rating preview-rating-redacted">&#9608;&#9608;&#9608;&#9608;</span>
+    </div>
+    <div class="preview-row">
+      <span class="preview-dim">Ongoing fee burden</span>
+      <span class="preview-rating preview-rating-redacted">&#9608;&#9608;&#9608;&#9608;</span>
+    </div>
+    <div class="preview-row">
+      <span class="preview-dim">System stability</span>
+      <span class="preview-rating preview-rating-redacted">&#9608;&#9608;&#9608;&#9608;</span>
+    </div>
+    <div class="preview-row">
+      <span class="preview-dim">Revenue disclosure quality</span>
+      <span class="preview-rating preview-rating-redacted">&#9608;&#9608;&#9608;&#9608;</span>
+    </div>
+    <div class="preview-row">
+      <span class="preview-dim">Downside risk</span>
+      <span class="preview-rating preview-rating-redacted">&#9608;&#9608;&#9608;&#9608;</span>
+    </div>
+    <div class="preview-row">
+      <span class="preview-dim">Buyer fit</span>
+      <span class="preview-rating preview-rating-redacted">&#9608;&#9608;&#9608;&#9608;</span>
+    </div>
+    <div class="preview-row" style="border-top: 2px solid #e2e8f0; padding-top:0.65rem;">
+      <span class="preview-dim" style="font-weight:600;">Overall</span>
+      <span class="preview-rating preview-rating-redacted">&#9608;&#9608;&#9608;&#9608;</span>
+    </div>
+  </div>
+
+  <div class="preview-sections">
+    <div>
+      <div class="preview-section-label" style="margin-top:1rem;">Fee Comparison</div>
+      <div class="preview-bar-row">
+        <span class="preview-bar-label">Brand A</span>
+        <div class="preview-bar-track">
+          <div class="preview-bar-fill" style="width:62%; background:#6366f1;"></div>
+          <div class="preview-bar-fill" style="width:14%; background:#f59e0b;"></div>
+          <div class="preview-bar-fill" style="width:6%; background:#94a3b8;"></div>
+        </div>
+      </div>
+      <div class="preview-bar-row">
+        <span class="preview-bar-label">Brand B</span>
+        <div class="preview-bar-track">
+          <div class="preview-bar-fill" style="width:48%; background:#6366f1;"></div>
+          <div class="preview-bar-fill" style="width:22%; background:#f59e0b;"></div>
+          <div class="preview-bar-fill" style="width:8%; background:#94a3b8;"></div>
+        </div>
+      </div>
+      <div class="preview-bar-row">
+        <span class="preview-bar-label">Brand C</span>
+        <div class="preview-bar-track">
+          <div class="preview-bar-fill" style="width:55%; background:#6366f1;"></div>
+          <div class="preview-bar-fill" style="width:10%; background:#f59e0b;"></div>
+          <div class="preview-bar-fill" style="width:12%; background:#94a3b8;"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="preview-section-label" style="margin-top:1rem;">Discovery Day Questions</div>
+      <div class="preview-question">
+        <span class="q-num">1.</span> [Question derived from this brand&rsquo;s FDD]
+        <span class="q-context">Why it matters &middot; What a strong answer sounds like &middot; Follow-ups</span>
+      </div>
+      <div class="preview-question">
+        <span class="q-num">2.</span> [Question about fee structure or escalation triggers]
+        <span class="q-context">Why it matters &middot; What evasion sounds like &middot; Follow-ups</span>
+      </div>
+      <div class="preview-question">
+        <span class="q-num">3.</span> [Question about system health or territory policy]
+        <span class="q-context">Why it matters &middot; What to watch for &middot; Follow-ups</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── What you get (compressed) ── -->
+<h2>What&rsquo;s inside</h2>
+
+<div class="feature-grid">
+  <div class="feature-item">
+    <div class="feature-item-title">Decision Scorecard</div>
+    <p class="feature-item-desc">
+      Rated assessment across 8 dimensions &mdash; entry cost, ongoing fees,
+      system stability, revenue disclosure, downside risk, buyer fit, and overall.
+    </p>
+  </div>
+  <div class="feature-item">
+    <div class="feature-item-title">Fee Modeling &amp; Comparison</div>
+    <p class="feature-item-desc">
+      Total ongoing cost at 4 revenue levels with component breakdown.
+      Visual comparison against direct competitors. Hidden fees, escalation
+      triggers, conditional minimums.
+    </p>
+  </div>
+  <div class="feature-item">
+    <div class="feature-item-title">Item 19 Translation</div>
+    <p class="feature-item-desc">
+      What the financial performance data tells you &mdash; and what it omits.
+      Exclusion rates, population definitions, and what reported averages mean
+      for a new single-territory operator.
+    </p>
+  </div>
+  <div class="feature-item">
+    <div class="feature-item-title">Economics &amp; Payback Sensitivity</div>
+    <p class="feature-item-desc">
+      Illustrative scenarios at different operating levels. Payback timelines
+      under conservative, moderate, and strong assumptions. A framework, not
+      a forecast.
+    </p>
+  </div>
+  <div class="feature-item">
+    <div class="feature-item-title">System Health &amp; Risk Signals</div>
+    <p class="feature-item-desc">
+      Unit growth trends, termination patterns, transfer activity, litigation
+      outcomes, and cross-brand context a single-brand attorney review wouldn&rsquo;t have.
+    </p>
+  </div>
+  <div class="feature-item">
+    <div class="feature-item-title">Discovery Day Diligence Script</div>
+    <p class="feature-item-desc">
+      8&ndash;10 questions derived from this brand&rsquo;s actual FDD &mdash;
+      with context on why each matters, what a strong answer sounds like, and
+      what evasion sounds like.
+    </p>
+  </div>
+</div>
+
+<p class="small muted">
+  Also includes: buyer-fit profile, investment breakdown, peer positioning
+  with decision overlay. Every claim traceable to a specific FDD page.
 </p>
 
 <hr>
 
+<!-- ── Available Reports ── -->
 <h2 id="available">Available Reports</h2>
+
+<div class="pre-cta-reassurance">
+  <span><span class="check">&#x2713;</span> Regulator-source FDDs, not third-party summaries</span>
+  <span><span class="check">&#x2713;</span> One-time purchase, instant PDF delivery</span>
+  <span><span class="check">&#x2713;</span> Not legal, accounting, or investment advice</span>
+</div>
 
 {% for group in cohort_groups %}
 {% if not loop.first %}<div style="height:1px; background:#e2e8f0; margin:2.5rem 0 0; max-width:540px;"></div>{% endif %}
@@ -210,4 +332,9 @@
   <p><strong>Method:</strong> Structured extraction with field-level provenance. Modeled values
   use explicitly documented assumptions. Every claim is traceable to a specific page in the FDD.</p>
 </div>
+
+<p class="small" style="color:#94a3b8; margin-top:0.5rem;">
+  Not legal advice. Not a franchise valuation. Not a recommendation to buy or avoid any franchise.
+  The report provides structured, data-driven analysis to support your own due diligence.
+</p>
 {% endblock %}
