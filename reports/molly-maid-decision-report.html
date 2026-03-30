@@ -10,21 +10,40 @@
   body { font-size: 11pt; padding: 0; orphans: 3; widows: 3; }
   .page-break { page-break-before: always; break-before: always; }
 
-  /* Keep headings with the content that follows them */
+  /* Reduce top margin so headings at page tops don't create excessive whitespace */
+  h2 { margin-top: 0.75rem; }
+  h3 { margin-top: 0.5rem; }
+
+  /* Headings never orphaned — always keep with next element */
   h1, h2, h3, h4, h5, h6 {
     page-break-after: avoid; break-after: avoid;
     page-break-inside: avoid; break-inside: avoid;
   }
 
+  /* Chain: heading → intro paragraph → content all stay together.
+     Without this, the <p> after an <h2> can separate from the table or list
+     below it, stranding heading+paragraph at the top of a page with a gap. */
+  h2 + p, h3 + p, h4 + p {
+    page-break-after: avoid; break-after: avoid;
+  }
+
   p { orphans: 3; widows: 3; }
 
-  /* Keep content blocks from splitting across pages */
-  table, .callout, .implication, .scorecard,
-  .fee-bars, .decision-overlay, .fit-section,
-  .question-list li {
-    page-break-inside: avoid;
-    break-inside: avoid;
+  /* Small self-contained blocks: keep intact on one page */
+  .callout, .implication {
+    page-break-inside: avoid; break-inside: avoid;
   }
+
+  /* Discovery Day: each question has sub-parts (why/strong/weak/follow-up);
+     keep each question together as a unit */
+  .question-list li {
+    page-break-inside: avoid; break-inside: avoid;
+  }
+
+  /* NOTE: Large elements (tables, .scorecard, .fee-bars, .decision-overlay,
+     .fit-section) intentionally NOT given page-break-inside: avoid.
+     That constraint pushes large blocks wholesale to the next page, creating
+     a visible gap. Natural flow is better. */
 
   .cover-page { page-break-after: always; break-after: always; }
   .toc { page-break-after: always; break-after: always; }
