@@ -102,16 +102,23 @@
   color: #94a3b8; min-width: 1.4rem; font-weight: 500;
 }
 
-/* Executive summary prose */
-.pv-exec {
+/* Executive summary framework */
+.pv-exec-grid {
+  display: grid; grid-template-columns: auto 1fr; gap: 0.1rem 0.75rem;
+  font-size: 0.8rem; margin: 0;
+}
+.pv-exec-label {
+  font-family: -apple-system, sans-serif; font-weight: 600;
+  font-size: 0.68rem; color: #64748b; text-transform: uppercase;
+  letter-spacing: 0.04em; padding: 0.4rem 0; white-space: nowrap;
+}
+.pv-exec-value {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.85rem; color: #374151; line-height: 1.7;
-  margin: 0; max-width: 580px;
+  color: #374151; line-height: 1.55; padding: 0.4rem 0;
+  border-bottom: 1px solid #f1f5f9;
 }
-.pv-exec .redacted {
-  background: #e2e8f0; color: #e2e8f0; border-radius: 2px;
-  padding: 0 0.25rem; user-select: none;
-}
+.pv-exec-grid .pv-exec-value:last-child { border-bottom: none; }
+.pv-exec-label:last-of-type + .pv-exec-value { border-bottom: none; }
 
 /* Scorecard */
 .sc-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 0 0 0.25rem; }
@@ -148,10 +155,6 @@
 .pv-fit li {
   padding: 0.15rem 0; font-family: Georgia, serif;
   font-size: 0.8rem; color: #374151; line-height: 1.5;
-}
-.pv-fit li .redacted {
-  background: #e2e8f0; color: #e2e8f0; border-radius: 2px;
-  padding: 0 0.25rem; user-select: none;
 }
 
 /* Fee comparison bars */
@@ -396,23 +399,18 @@
 
     {# ── Executive Summary ── #}
     <div class="pv-h2">1. Executive Summary</div>
-    <p class="pv-exec">
-      <span class="redacted">Brand Name</span> is a
-      <span class="redacted">segment position</span> franchise in the
-      <span class="redacted">category</span> space, with
-      <span class="redacted">XXX</span> franchised outlets as of the 2025 FDD.
-      Entry costs are <span class="redacted">position relative to cohort</span>,
-      ongoing fee burden is <span class="redacted">characterization</span>,
-      and the system has <span class="redacted">growth/stability trajectory</span>
-      over the most recent three-year period.
-    </p>
-    <p class="pv-exec" style="margin-top:0.5rem;">
-      The principal risk for a prospective buyer is
-      <span class="redacted">primary risk factor identified from FDD analysis</span>.
-      The principal advantage is
-      <span class="redacted">primary structural advantage</span>.
-      The report that follows assesses both in detail.
-    </p>
+    <div class="pv-exec-grid">
+      <span class="pv-exec-label">Category position</span>
+      <span class="pv-exec-value">Where this brand sits within its category by system size, growth trajectory, and operating model</span>
+      <span class="pv-exec-label">Primary advantage</span>
+      <span class="pv-exec-value">The structural strength most relevant to a prospective buyer &mdash; e.g., fee position, system stability, or disclosure quality</span>
+      <span class="pv-exec-label">Primary limitation</span>
+      <span class="pv-exec-value">The most material constraint or gap identified from the FDD &mdash; e.g., disclosure omissions, latent fees, or growth risk</span>
+      <span class="pv-exec-label">Key economic question</span>
+      <span class="pv-exec-value">The revenue assumption or cost variable a buyer should stress-test before committing</span>
+      <span class="pv-exec-label">Bottom-line posture</span>
+      <span class="pv-exec-value">One-sentence characterization of the overall risk/reward profile for a first-time franchise buyer</span>
+    </div>
 
     {# ── Decision Scorecard ── #}
     <div class="pv-h2">2. Decision Scorecard</div>
@@ -486,19 +484,18 @@
     <div class="pv-fit">
       <div class="pv-fit-head">Best fit for</div>
       <ul>
-        <li><span class="redacted">Buyer profile characteristic that aligns with this brand</span></li>
-        <li><span class="redacted">Operating style or financial posture that matches</span></li>
-        <li><span class="redacted">Risk tolerance or market condition alignment</span></li>
+        <li>Owner-operators willing to manage a seasonal ramp and hands-on first year</li>
+        <li>Buyers with 12+ months of reserve capital beyond the initial investment</li>
       </ul>
       <div class="pv-fit-head">Weaker fit for</div>
       <ul>
-        <li><span class="redacted">Buyer profile where this brand's structure is a mismatch</span></li>
-        <li><span class="redacted">Expectation or assumption that the FDD doesn't support</span></li>
+        <li>Passive or semi-absentee investors expecting immediate cash flow</li>
+        <li>Buyers whose revenue expectations depend on Item 19 averages applying to a new territory</li>
       </ul>
       <div class="pv-fit-head">Proceed only if</div>
       <ul>
-        <li><span class="redacted">Specific precondition that should be true before signing</span></li>
-        <li><span class="redacted">Due diligence step that must happen to validate the thesis</span></li>
+        <li>You have validated the territory demand assumptions with local franchisees, not just the franchisor</li>
+        <li>Your attorney has reviewed the fee escalation and renewal terms in detail</li>
       </ul>
     </div>
 
@@ -606,23 +603,15 @@
             <dd>Concrete criteria for evaluating the response</dd>
             <dt>Evasion sounds like</dt>
             <dd>Warning signs in how the question is deflected</dd>
-          </dl>
-        </div>
-      </li>
-      <li>
-        <div class="dq-text">
-          [Question about territory protection and encroachment policy]
-          <dl class="dq-sub">
-            <dt>Why it matters</dt>
-            <dd>Context derived from this brand&rsquo;s disclosure language</dd>
-            <dt>Strong answer sounds like</dt>
-            <dd>What specificity and transparency look like here</dd>
             <dt>Follow-up</dt>
-            <dd>What to ask next if the initial answer is vague</dd>
+            <dd>What to ask next depending on their answer</dd>
           </dl>
         </div>
       </li>
     </ol>
+    <p style="font-size:0.72rem; color:#94a3b8; margin:0.25rem 0 0; font-style:italic; font-family:-apple-system, sans-serif;">
+      8&ndash;10 questions per report, each with this structure. Derived from brand-specific FDD findings.
+    </p>
 
     <div class="preview-fade">
       <div class="preview-fade-text">
