@@ -7,14 +7,30 @@
 <style>
 @page { margin: 0.75in; }
 @media print {
-  body { font-size: 11pt; padding: 0; }
-  .page-break { page-break-before: always; }
-  h2 { page-break-after: avoid; }
-  table, .callout { page-break-inside: avoid; }
-  .cover-page { page-break-after: always; }
-  .toc { page-break-after: always; }
+  body { font-size: 11pt; padding: 0; orphans: 3; widows: 3; }
+  .page-break { page-break-before: always; break-before: always; }
+
+  /* Keep headings with the content that follows them */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid; break-after: avoid;
+    page-break-inside: avoid; break-inside: avoid;
+  }
+
+  p { orphans: 3; widows: 3; }
+
+  /* Keep content blocks from splitting across pages */
+  table, .callout, .implication, .scorecard,
+  .fee-bars, .decision-overlay, .fit-section,
+  .question-list li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .cover-page { page-break-after: always; break-after: always; }
+  .toc { page-break-after: always; break-after: always; }
   a { text-decoration: none !important; }
-  /* Ensure content fits the printable area */
+
+  /* Ensure content fits within the printable area */
   tbody td.label { white-space: normal; }
   thead th { white-space: normal; }
   table { font-size: 0.75rem; }
