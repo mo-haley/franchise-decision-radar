@@ -20,18 +20,13 @@
   width: 5px; height: 5px; background: #059669; border-radius: 50%;
   flex-shrink: 0;
 }
-
-/* ── Hero actions ── */
 .report-hero-actions {
   display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;
   margin: 1.25rem 0 0;
 }
 
-/* ── "Why buy" value props ── */
-.value-props {
-  display: grid; grid-template-columns: 1fr; gap: 0;
-  margin: 0.5rem 0 2rem;
-}
+/* ── Value props ── */
+.value-props { display: grid; grid-template-columns: 1fr; gap: 0; margin: 0.5rem 0 2rem; }
 .value-prop {
   display: flex; gap: 0.85rem; padding: 0.75rem 0;
   border-bottom: 1px solid #f1f5f9; font-size: 0.88rem;
@@ -47,7 +42,7 @@
 .value-prop-title { font-weight: 600; color: #1e293b; margin-bottom: 0.1rem; }
 .value-prop-desc { font-size: 0.78rem; color: #64748b; line-height: 1.45; }
 
-/* ── Who-this-is-for panel ── */
+/* ── Qualifier panel ── */
 .qualifier-panel {
   background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px;
   padding: 1.35rem 1.65rem; margin: 0.75rem 0 2rem;
@@ -56,9 +51,7 @@
   font-size: 0.92rem; font-weight: 600; color: #1e293b;
   margin: 0 0 0.65rem; line-height: 1.4;
 }
-.qualifier-list {
-  list-style: none; padding: 0; margin: 0;
-}
+.qualifier-list { list-style: none; padding: 0; margin: 0; }
 .qualifier-list li {
   padding: 0.35rem 0; font-size: 0.82rem; color: #374151;
   display: flex; align-items: baseline; gap: 0.5rem; line-height: 1.45;
@@ -85,67 +78,124 @@
   font-size: 0.7rem; color: #94a3b8; font-family: -apple-system, sans-serif;
 }
 .preview-artifact-body { padding: 1.5rem 1.75rem; }
-.preview-section-head {
-  font-family: -apple-system, sans-serif; font-size: 0.72rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.05em; color: #64748b;
-  margin: 0 0 0.65rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0;
-}
-.preview-section-head:not(:first-child) { margin-top: 1.5rem; }
 
-/* Scorecard rows */
-.sc-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 0 0 0.25rem; }
-.sc-table td { padding: 0.45rem 0; border-bottom: 1px solid #f1f5f9; }
-.sc-table tr:last-child td { border-bottom: none; }
-.sc-table .sc-dim { color: #374151; font-weight: 500; width: 55%; }
-.sc-table .sc-bar { width: 30%; padding-right: 0.5rem; }
-.sc-table .sc-label { width: 15%; text-align: right; }
-.sc-bar-track {
-  height: 8px; background: #f1f5f9; border-radius: 4px; overflow: hidden;
+/* Section headers inside preview */
+.pv-h2 {
+  font-family: -apple-system, sans-serif; font-size: 0.88rem; font-weight: 700;
+  color: #1e293b; margin: 0 0 0.5rem; padding-bottom: 0.35rem;
+  border-bottom: 1px solid #ccc;
 }
+.pv-h2:not(:first-child) { margin-top: 1.75rem; }
+
+/* Table of contents */
+.pv-toc {
+  columns: 2; column-gap: 2rem; list-style: none; padding: 0; margin: 0 0 0.5rem;
+  font-size: 0.78rem; font-family: -apple-system, sans-serif;
+}
+@media (max-width: 639px) { .pv-toc { columns: 1; } }
+.pv-toc li {
+  padding: 0.25rem 0; color: #374151; break-inside: avoid;
+  display: flex; gap: 0.4rem;
+}
+.pv-toc-num {
+  font-family: "SF Mono", "Fira Code", monospace; font-size: 0.7rem;
+  color: #94a3b8; min-width: 1.4rem; font-weight: 500;
+}
+
+/* Executive summary prose */
+.pv-exec {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.85rem; color: #374151; line-height: 1.7;
+  margin: 0; max-width: 580px;
+}
+.pv-exec .redacted {
+  background: #e2e8f0; color: #e2e8f0; border-radius: 2px;
+  padding: 0 0.25rem; user-select: none;
+}
+
+/* Scorecard */
+.sc-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 0 0 0.25rem; }
+.sc-table td { padding: 0.45rem 0; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+.sc-table tr:last-child td { border-bottom: none; }
+.sc-table .sc-dim { color: #374151; font-weight: 600; width: 25%; font-family: -apple-system, sans-serif; font-size: 0.78rem; }
+.sc-table .sc-summary { color: #64748b; font-size: 0.75rem; line-height: 1.4; width: 48%; font-family: Georgia, serif; }
+.sc-table .sc-bar { width: 15%; padding: 0 0.5rem; }
+.sc-table .sc-label { width: 12%; text-align: right; }
+.sc-bar-track { height: 8px; background: #f1f5f9; border-radius: 4px; overflow: hidden; margin-top: 0.35rem; }
 .sc-bar-fill { height: 100%; border-radius: 4px; }
 .sc-bar-fill-strong { background: #22c55e; }
 .sc-bar-fill-mixed { background: #f59e0b; }
 .sc-bar-fill-weak { background: #ef4444; }
 .sc-rating {
-  font-family: "SF Mono", "Fira Code", monospace;
-  font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.03em; padding: 0.12rem 0.45rem; border-radius: 3px;
-  white-space: nowrap;
+  font-family: "SF Mono", "Fira Code", monospace; font-size: 0.65rem;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
+  padding: 0.12rem 0.45rem; border-radius: 3px; white-space: nowrap;
 }
 .sc-rating-strong { background: #dcfce7; color: #166534; }
 .sc-rating-mixed { background: #fef3c7; color: #92400e; }
 .sc-rating-weak { background: #fee2e2; color: #991b1b; }
-.sc-overall td {
-  border-top: 2px solid #e2e8f0; padding-top: 0.6rem; font-weight: 600;
+.sc-overall td { border-top: 2px solid #e2e8f0; padding-top: 0.6rem; }
+
+/* Buyer-fit preview */
+.pv-fit { font-size: 0.8rem; }
+.pv-fit-head {
+  font-family: -apple-system, sans-serif; font-weight: 700;
+  font-size: 0.72rem; color: #475569; text-transform: uppercase;
+  letter-spacing: 0.04em; margin: 0.75rem 0 0.3rem;
+}
+.pv-fit-head:first-child { margin-top: 0; }
+.pv-fit ul { margin: 0; padding-left: 1.15rem; }
+.pv-fit li {
+  padding: 0.15rem 0; font-family: Georgia, serif;
+  font-size: 0.8rem; color: #374151; line-height: 1.5;
+}
+.pv-fit li .redacted {
+  background: #e2e8f0; color: #e2e8f0; border-radius: 2px;
+  padding: 0 0.25rem; user-select: none;
 }
 
 /* Fee comparison bars */
-.fc-row {
-  display: flex; align-items: center; gap: 0.5rem;
-  padding: 0.45rem 0; font-size: 0.78rem;
-}
-.fc-label { min-width: 72px; color: #374151; font-weight: 500; }
+.fc-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0; font-size: 0.78rem; }
+.fc-label { min-width: 80px; color: #374151; font-weight: 500; font-family: -apple-system, sans-serif; font-size: 0.75rem; }
 .fc-label-this { color: #2563eb; font-weight: 600; }
-.fc-bar-track {
-  flex: 1; height: 18px; background: #f1f5f9; border-radius: 3px;
-  overflow: hidden; display: flex;
-}
+.fc-bar-track { flex: 1; height: 18px; background: #f1f5f9; border-radius: 3px; overflow: hidden; display: flex; }
 .fc-bar-fill { height: 100%; }
 .fc-amount {
   min-width: 52px; text-align: right;
-  font-family: "SF Mono", "Fira Code", monospace; font-size: 0.72rem;
-  color: #64748b;
+  font-family: "SF Mono", "Fira Code", monospace; font-size: 0.72rem; color: #64748b;
 }
-.fc-legend {
-  display: flex; gap: 1rem; margin: 0.5rem 0 0; font-size: 0.68rem; color: #94a3b8;
-}
+.fc-legend { display: flex; gap: 1rem; margin: 0.5rem 0 0; font-size: 0.68rem; color: #94a3b8; }
 .fc-legend span { display: flex; align-items: center; gap: 0.25rem; }
 .fc-legend-swatch { width: 10px; height: 10px; border-radius: 2px; }
 
-/* Questions */
+/* Implication callout */
+.pv-implication {
+  font-family: -apple-system, sans-serif; font-size: 0.8rem;
+  color: #1e40af; margin: 0.75rem 0 0; line-height: 1.5;
+  padding: 0.65rem 0.9rem; border-left: 3px solid #93c5fd;
+  background: #eff6ff; border-radius: 0 4px 4px 0;
+}
+.pv-implication strong { color: #1e40af; }
+
+/* Economics scenario table */
+.pv-scenario { width: 100%; border-collapse: collapse; font-size: 0.78rem; margin: 0.5rem 0 0.25rem; font-family: -apple-system, sans-serif; }
+.pv-scenario th {
+  text-align: left; padding: 0.35rem 0.6rem; border-bottom: 2px solid #ccc;
+  font-weight: 600; font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.04em; color: #64748b;
+}
+.pv-scenario th.num { text-align: right; }
+.pv-scenario td { padding: 0.35rem 0.6rem; border-bottom: 1px solid #f1f5f9; }
+.pv-scenario td.num {
+  text-align: right; font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.75rem; color: #64748b;
+}
+.pv-scenario td.label { font-weight: 600; white-space: nowrap; color: #374151; }
+
+/* Discovery questions */
 .dq-list { list-style: none; padding: 0; margin: 0; counter-reset: dq; }
 .dq-list li {
-  padding: 0.55rem 0; border-bottom: 1px solid #f1f5f9;
+  padding: 0.65rem 0; border-bottom: 1px solid #f1f5f9;
   font-size: 0.82rem; color: #374151; counter-increment: dq;
   display: flex; gap: 0.5rem;
 }
@@ -156,25 +206,27 @@
   min-width: 1.25rem; padding-top: 0.1rem;
 }
 .dq-text { flex: 1; }
-.dq-context {
-  display: block; font-size: 0.7rem; color: #94a3b8;
-  font-style: italic; margin-top: 0.15rem; line-height: 1.4;
+.dq-sub {
+  font-size: 0.72rem; margin-top: 0.3rem; line-height: 1.45;
+  font-family: -apple-system, sans-serif;
 }
+.dq-sub dt {
+  font-weight: 600; color: #64748b; text-transform: uppercase;
+  letter-spacing: 0.03em; font-size: 0.65rem; margin-top: 0.25rem;
+}
+.dq-sub dd { margin: 0.05rem 0 0; padding-left: 0; color: #94a3b8; font-style: italic; }
 
-/* Blur overlay */
+/* Fade overlay */
 .preview-fade {
-  position: relative; margin-top: -2rem; padding-top: 3rem;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1) 70%);
-  text-align: center; padding-bottom: 0.5rem;
+  position: relative; margin-top: -1.5rem; padding-top: 2.5rem;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1) 65%);
+  text-align: center; padding-bottom: 0.25rem;
 }
-.preview-fade-text {
-  font-size: 0.78rem; color: #64748b; font-weight: 500;
-}
+.preview-fade-text { font-size: 0.78rem; color: #64748b; font-weight: 500; line-height: 1.5; }
 
 /* ── Feature grid ── */
 .feature-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-  margin: 1rem 0 1.75rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 1.75rem;
 }
 @media (max-width: 639px) { .feature-grid { grid-template-columns: 1fr; } }
 .feature-item {
@@ -182,18 +234,15 @@
   background: #fff; border-left: 3px solid #e2e8f0;
 }
 .feature-item:nth-child(1) { border-left-color: #2563eb; }
-.feature-item:nth-child(2) { border-left-color: #6366f1; }
-.feature-item:nth-child(3) { border-left-color: #059669; }
+.feature-item:nth-child(2) { border-left-color: #059669; }
+.feature-item:nth-child(3) { border-left-color: #6366f1; }
 .feature-item:nth-child(4) { border-left-color: #d97706; }
 .feature-item:nth-child(5) { border-left-color: #dc2626; }
 .feature-item:nth-child(6) { border-left-color: #0891b2; }
-.feature-item-title {
-  font-size: 0.82rem; font-weight: 600; color: #1e293b;
-  margin-bottom: 0.25rem;
-}
-.feature-item-desc {
-  font-size: 0.78rem; color: #64748b; line-height: 1.45; margin: 0;
-}
+.feature-item:nth-child(7) { border-left-color: #7c3aed; }
+.feature-item:nth-child(8) { border-left-color: #475569; }
+.feature-item-title { font-size: 0.82rem; font-weight: 600; color: #1e293b; margin-bottom: 0.25rem; }
+.feature-item-desc { font-size: 0.78rem; color: #64748b; line-height: 1.45; margin: 0; }
 
 /* ── Pre-CTA reassurance ── */
 .pre-cta-reassurance {
@@ -202,16 +251,20 @@
   padding: 0.85rem 1.15rem; background: #f8fafc;
   border: 1px solid #e2e8f0; border-radius: 8px;
 }
-.pre-cta-reassurance span {
-  display: inline-flex; align-items: center; gap: 0.3rem;
-}
-.pre-cta-reassurance .check {
-  color: #059669; font-size: 0.68rem; flex-shrink: 0;
-}
+.pre-cta-reassurance span { display: inline-flex; align-items: center; gap: 0.3rem; }
+.pre-cta-reassurance .check { color: #059669; font-size: 0.68rem; flex-shrink: 0; }
 
-/* ── Report purchase cards (enhanced) ── */
+/* ── Report purchase cards ── */
 .report-purchase-card .report-purchase-micro {
   font-size: 0.72rem; color: #94a3b8; margin: 0.15rem 0 0; line-height: 1.35;
+}
+
+/* ── Report length note ── */
+.report-length-note {
+  font-size: 0.78rem; color: #64748b; line-height: 1.5;
+  padding: 0.65rem 1rem; background: #f8fafc;
+  border: 1px solid #e2e8f0; border-radius: 6px;
+  margin: 1rem 0 0; display: inline-block;
 }
 </style>
 {% endblock %}
@@ -246,8 +299,8 @@
       <div class="value-prop-title">Single-brand decision memo</div>
       <div class="value-prop-desc">
         The free site compares. The report goes deep on one brand &mdash;
-        synthesizing the FDD into a structured buyer-side assessment with
-        a rated scorecard across 8&nbsp;dimensions.
+        executive summary, rated scorecard, buyer-fit profile, and
+        a structured assessment across 13&nbsp;sections.
       </div>
     </div>
   </div>
@@ -256,20 +309,20 @@
     <div class="value-prop-text">
       <div class="value-prop-title">Item 19 translated into decision use</div>
       <div class="value-prop-desc">
-        Exclusion rates, population definitions, what the averages
-        actually mean for a new single-territory operator &mdash; the context
-        the raw table doesn&rsquo;t give you.
+        Exclusion rates, population definitions, per-territory vs.
+        per-franchisee distinctions, and what the reported averages actually
+        mean for a new single-territory operator.
       </div>
     </div>
   </div>
   <div class="value-prop">
     <div class="value-prop-icon">3</div>
     <div class="value-prop-text">
-      <div class="value-prop-title">Fee burden modeled with full context</div>
+      <div class="value-prop-title">Economics modeled, not just fees listed</div>
       <div class="value-prop-desc">
-        Ongoing costs at 4 revenue levels with component breakdown,
-        escalation triggers, conditional minimums, and visual peer
-        comparison &mdash; not just the headline royalty rate.
+        Illustrative operating scenarios with revenue, fees, COGS, and
+        remaining margin at multiple levels. Payback sensitivity under
+        different assumptions. A framework for the math, not a forecast.
       </div>
     </div>
   </div>
@@ -278,20 +331,20 @@
     <div class="value-prop-text">
       <div class="value-prop-title">Discovery day questions prepared for you</div>
       <div class="value-prop-desc">
-        8&ndash;10 questions derived from this brand&rsquo;s actual FDD, each with
-        context on why it matters, what a strong answer sounds like, and
-        what evasion sounds like.
+        8&ndash;10 questions derived from this brand&rsquo;s actual FDD. Each
+        includes why it matters, what a strong answer sounds like, what
+        evasion sounds like, and follow-up questions.
       </div>
     </div>
   </div>
   <div class="value-prop">
     <div class="value-prop-icon">5</div>
     <div class="value-prop-text">
-      <div class="value-prop-title">Downside risk and system context in one place</div>
+      <div class="value-prop-title">Risk signals and system health in context</div>
       <div class="value-prop-desc">
-        Termination patterns, transfer activity, litigation history,
-        entity structure &mdash; the signals that determine whether this
-        brand is growing or unwinding.
+        Termination patterns, transfer activity, litigation history, entity
+        structure changes, and peer comparison &mdash; the cross-brand context
+        a single-brand attorney review wouldn&rsquo;t have.
       </div>
     </div>
   </div>
@@ -323,51 +376,134 @@
   </div>
   <div class="preview-artifact-body">
 
-    <div class="preview-section-head">Decision Scorecard</div>
+    {# ── TOC ── #}
+    <div class="pv-h2">Contents</div>
+    <ol class="pv-toc">
+      <li><span class="pv-toc-num">1.</span> Executive Summary</li>
+      <li><span class="pv-toc-num">2.</span> Decision Scorecard</li>
+      <li><span class="pv-toc-num">3.</span> Buyer-Fit Profile</li>
+      <li><span class="pv-toc-num">4.</span> Fee Burden Analysis</li>
+      <li><span class="pv-toc-num">5.</span> Item 19 Interpretation</li>
+      <li><span class="pv-toc-num">6.</span> Buyer-Side Economics</li>
+      <li><span class="pv-toc-num">7.</span> Payback Sensitivity</li>
+      <li><span class="pv-toc-num">8.</span> Investment Breakdown</li>
+      <li><span class="pv-toc-num">9.</span> System Health</li>
+      <li><span class="pv-toc-num">10.</span> Risk Signals</li>
+      <li><span class="pv-toc-num">11.</span> Peer Context</li>
+      <li><span class="pv-toc-num">12.</span> Discovery Day Script</li>
+      <li><span class="pv-toc-num">13.</span> Source &amp; Methodology</li>
+    </ol>
+
+    {# ── Executive Summary ── #}
+    <div class="pv-h2">1. Executive Summary</div>
+    <p class="pv-exec">
+      <span class="redacted">Brand Name</span> is a
+      <span class="redacted">segment position</span> franchise in the
+      <span class="redacted">category</span> space, with
+      <span class="redacted">XXX</span> franchised outlets as of the 2025 FDD.
+      Entry costs are <span class="redacted">position relative to cohort</span>,
+      ongoing fee burden is <span class="redacted">characterization</span>,
+      and the system has <span class="redacted">growth/stability trajectory</span>
+      over the most recent three-year period.
+    </p>
+    <p class="pv-exec" style="margin-top:0.5rem;">
+      The principal risk for a prospective buyer is
+      <span class="redacted">primary risk factor identified from FDD analysis</span>.
+      The principal advantage is
+      <span class="redacted">primary structural advantage</span>.
+      The report that follows assesses both in detail.
+    </p>
+
+    {# ── Decision Scorecard ── #}
+    <div class="pv-h2">2. Decision Scorecard</div>
     <table class="sc-table">
       <tr>
         <td class="sc-dim">Entry cost</td>
+        <td class="sc-summary">
+          <span class="redacted">Assessment of initial investment range relative to cohort</span>
+        </td>
         <td class="sc-bar"><div class="sc-bar-track"><div class="sc-bar-fill sc-bar-fill-strong" style="width:72%"></div></div></td>
         <td class="sc-label"><span class="sc-rating sc-rating-strong">Strong</span></td>
       </tr>
       <tr>
-        <td class="sc-dim">Ongoing fee burden</td>
+        <td class="sc-dim">Ongoing fees</td>
+        <td class="sc-summary">
+          <span class="redacted">Fee burden characterization at operating revenue levels</span>
+        </td>
         <td class="sc-bar"><div class="sc-bar-track"><div class="sc-bar-fill sc-bar-fill-mixed" style="width:48%"></div></div></td>
         <td class="sc-label"><span class="sc-rating sc-rating-mixed">Mixed</span></td>
       </tr>
       <tr>
         <td class="sc-dim">System stability</td>
+        <td class="sc-summary">
+          <span class="redacted">Growth, attrition, and termination pattern assessment</span>
+        </td>
         <td class="sc-bar"><div class="sc-bar-track"><div class="sc-bar-fill sc-bar-fill-strong" style="width:80%"></div></div></td>
         <td class="sc-label"><span class="sc-rating sc-rating-strong">Strong</span></td>
       </tr>
       <tr>
         <td class="sc-dim">Revenue disclosure</td>
+        <td class="sc-summary">
+          <span class="redacted">Item 19 completeness and usefulness for buyer decisions</span>
+        </td>
         <td class="sc-bar"><div class="sc-bar-track"><div class="sc-bar-fill sc-bar-fill-weak" style="width:30%"></div></div></td>
         <td class="sc-label"><span class="sc-rating sc-rating-weak">Weak</span></td>
       </tr>
       <tr>
         <td class="sc-dim">Disclosure quality</td>
+        <td class="sc-summary">
+          <span class="redacted">FDD document completeness, accuracy, and transparency</span>
+        </td>
         <td class="sc-bar"><div class="sc-bar-track"><div class="sc-bar-fill sc-bar-fill-mixed" style="width:55%"></div></div></td>
         <td class="sc-label"><span class="sc-rating sc-rating-mixed">Mixed</span></td>
       </tr>
       <tr>
         <td class="sc-dim">Downside risk</td>
+        <td class="sc-summary">
+          <span class="redacted">Litigation, regulatory history, and structural risk factors</span>
+        </td>
         <td class="sc-bar"><div class="sc-bar-track"><div class="sc-bar-fill sc-bar-fill-strong" style="width:68%"></div></div></td>
         <td class="sc-label"><span class="sc-rating sc-rating-strong">Strong</span></td>
       </tr>
       <tr>
         <td class="sc-dim">Buyer fit</td>
+        <td class="sc-summary">
+          <span class="redacted">Match quality for typical first-time franchise buyer profile</span>
+        </td>
         <td class="sc-bar"><div class="sc-bar-track"><div class="sc-bar-fill sc-bar-fill-mixed" style="width:52%"></div></div></td>
         <td class="sc-label"><span class="sc-rating sc-rating-mixed">Mixed</span></td>
       </tr>
       <tr class="sc-overall">
-        <td class="sc-dim">Overall</td>
+        <td class="sc-dim" style="font-weight:700;">Overall</td>
+        <td class="sc-summary"></td>
         <td class="sc-bar"><div class="sc-bar-track"><div class="sc-bar-fill sc-bar-fill-mixed" style="width:58%"></div></div></td>
         <td class="sc-label"><span class="sc-rating sc-rating-mixed">Mixed</span></td>
       </tr>
     </table>
 
-    <div class="preview-section-head">Fee Burden Comparison &mdash; at $300K Revenue</div>
+    {# ── Buyer-Fit Profile ── #}
+    <div class="pv-h2">3. Buyer-Fit Profile</div>
+    <div class="pv-fit">
+      <div class="pv-fit-head">Best fit for</div>
+      <ul>
+        <li><span class="redacted">Buyer profile characteristic that aligns with this brand</span></li>
+        <li><span class="redacted">Operating style or financial posture that matches</span></li>
+        <li><span class="redacted">Risk tolerance or market condition alignment</span></li>
+      </ul>
+      <div class="pv-fit-head">Weaker fit for</div>
+      <ul>
+        <li><span class="redacted">Buyer profile where this brand's structure is a mismatch</span></li>
+        <li><span class="redacted">Expectation or assumption that the FDD doesn't support</span></li>
+      </ul>
+      <div class="pv-fit-head">Proceed only if</div>
+      <ul>
+        <li><span class="redacted">Specific precondition that should be true before signing</span></li>
+        <li><span class="redacted">Due diligence step that must happen to validate the thesis</span></li>
+      </ul>
+    </div>
+
+    {# ── Fee Burden ── #}
+    <div class="pv-h2">4. Fee Burden Analysis</div>
     <div class="fc-row">
       <span class="fc-label fc-label-this">[This brand]</span>
       <div class="fc-bar-track">
@@ -409,33 +545,90 @@
       <span><span class="fc-legend-swatch" style="background:#f59e0b;"></span> Marketing</span>
       <span><span class="fc-legend-swatch" style="background:#94a3b8;"></span> Technology &amp; other</span>
     </div>
+    <div class="pv-implication">
+      <strong>Implication:</strong> <span class="redacted">Interpretation of what the fee comparison means for a buyer evaluating this brand against its direct competitors, including any latent fees or conditional charges identified in the FDD.</span>
+    </div>
 
-    <div class="preview-section-head">Discovery Day Diligence Questions</div>
+    {# ── Economics ── #}
+    <div class="pv-h2">6. Buyer-Side Economics</div>
+    <table class="pv-scenario">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="num">Conservative</th>
+          <th class="num">Moderate</th>
+          <th class="num">Strong</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label">Revenue</td>
+          <td class="num">$XXX,XXX</td>
+          <td class="num">$XXX,XXX</td>
+          <td class="num">$XXX,XXX</td>
+        </tr>
+        <tr>
+          <td class="label">Total fees</td>
+          <td class="num">$XX,XXX</td>
+          <td class="num">$XX,XXX</td>
+          <td class="num">$XX,XXX</td>
+        </tr>
+        <tr>
+          <td class="label">Est. COGS</td>
+          <td class="num">$XX,XXX</td>
+          <td class="num">$XX,XXX</td>
+          <td class="num">$XX,XXX</td>
+        </tr>
+        <tr style="border-top:2px solid #e2e8f0;">
+          <td class="label">Remaining margin</td>
+          <td class="num">$XX,XXX</td>
+          <td class="num">$XX,XXX</td>
+          <td class="num">$XX,XXX</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pv-implication">
+      <strong>Note:</strong> These are illustrative scenarios, not forecasts. &ldquo;Remaining margin&rdquo;
+      is before owner draw, taxes, vehicle costs, insurance, and other operator-level expenses.
+      Revenue is seasonal in most service franchises.
+    </div>
+
+    {# ── Discovery Day ── #}
+    <div class="pv-h2">12. Discovery Day Diligence Script</div>
     <ol class="dq-list">
       <li>
         <div class="dq-text">
           [Question about fee escalation triggers specific to this brand&rsquo;s FDD]
-          <span class="dq-context">Why it matters &middot; What a strong answer sounds like &middot; What evasion sounds like</span>
+          <dl class="dq-sub">
+            <dt>Why it matters</dt>
+            <dd>Specific context from the FDD that makes this question important</dd>
+            <dt>Strong answer sounds like</dt>
+            <dd>Concrete criteria for evaluating the response</dd>
+            <dt>Evasion sounds like</dt>
+            <dd>Warning signs in how the question is deflected</dd>
+          </dl>
         </div>
       </li>
       <li>
         <div class="dq-text">
           [Question about territory protection and encroachment policy]
-          <span class="dq-context">Why it matters &middot; Red-line language to look for &middot; Follow-up if vague</span>
-        </div>
-      </li>
-      <li>
-        <div class="dq-text">
-          [Question about termination patterns and franchisee turnover]
-          <span class="dq-context">Why it matters &middot; What the FDD shows vs. what they&rsquo;ll say &middot; Follow-up</span>
+          <dl class="dq-sub">
+            <dt>Why it matters</dt>
+            <dd>Context derived from this brand&rsquo;s disclosure language</dd>
+            <dt>Strong answer sounds like</dt>
+            <dd>What specificity and transparency look like here</dd>
+            <dt>Follow-up</dt>
+            <dd>What to ask next if the initial answer is vague</dd>
+          </dl>
         </div>
       </li>
     </ol>
 
     <div class="preview-fade">
       <div class="preview-fade-text">
-        Full report continues &mdash; economics reality check, investment
-        breakdown, system health narrative, peer positioning, and more.
+        Full report continues with payback sensitivity, investment line-item<br>
+        breakdown, system health narrative, risk signals, peer context<br>
+        table, and source methodology. Typically 15&ndash;25 pages.
       </div>
     </div>
   </div>
@@ -446,70 +639,90 @@
 
 <div class="feature-grid">
   <div class="feature-item">
-    <div class="feature-item-title">Decision Scorecard</div>
+    <div class="feature-item-title">Executive Summary &amp; Decision Scorecard</div>
     <p class="feature-item-desc">
-      Rated assessment across 8 dimensions &mdash; entry cost, ongoing fees,
-      system stability, revenue disclosure, downside risk, buyer fit, and overall.
+      Where this brand sits within its category. A rated scorecard across
+      8&nbsp;dimensions with a one-line assessment per dimension &mdash; then
+      the headline risks and advantages in plain language.
     </p>
   </div>
   <div class="feature-item">
-    <div class="feature-item-title">Fee Modeling &amp; Peer Comparison</div>
+    <div class="feature-item-title">Buyer-Fit Profile</div>
     <p class="feature-item-desc">
-      Total ongoing cost at 4 revenue levels with component breakdown.
-      Visual peer comparison. Escalation triggers, conditional minimums,
-      hidden fees.
+      Who this brand is best for, who it&rsquo;s a weaker fit for, and the
+      specific conditions that should be true before you proceed. A
+      calibration tool, not a sales pitch.
     </p>
   </div>
   <div class="feature-item">
-    <div class="feature-item-title">Item 19 Translation</div>
+    <div class="feature-item-title">Fee Burden Analysis</div>
     <p class="feature-item-desc">
-      What the financial performance data tells you &mdash; and what it omits.
-      Exclusion rates, population definitions, and what averages mean
-      for a new single-territory operator.
+      Total ongoing cost at 4 revenue levels with component breakdown and
+      visual peer comparison. Latent fees, escalation triggers, conditional
+      minimums, and marketing fund obligations.
+    </p>
+  </div>
+  <div class="feature-item">
+    <div class="feature-item-title">Item 19 Interpretation</div>
+    <p class="feature-item-desc">
+      What the financial performance data tells you &mdash; and what it
+      conspicuously omits. Exclusion rates, population definitions,
+      per-territory triangulation, and what the reported numbers actually
+      mean for a new operator.
     </p>
   </div>
   <div class="feature-item">
     <div class="feature-item-title">Economics &amp; Payback Sensitivity</div>
     <p class="feature-item-desc">
-      Illustrative scenarios at different operating levels. Payback timelines
-      under conservative, moderate, and strong assumptions. A framework, not
-      a forecast.
+      Illustrative scenarios showing revenue, fees, COGS, and remaining
+      margin at three operating levels. Payback timelines under multiple
+      assumptions. A framework for the math, not a forecast.
+    </p>
+  </div>
+  <div class="feature-item">
+    <div class="feature-item-title">Investment Breakdown</div>
+    <p class="feature-item-desc">
+      Where the initial capital actually goes. Line-item breakdown with
+      what&rsquo;s negotiable vs. fixed, what the FDD buries in footnotes,
+      and what working capital assumptions really mean.
     </p>
   </div>
   <div class="feature-item">
     <div class="feature-item-title">System Health &amp; Risk Signals</div>
     <p class="feature-item-desc">
-      Unit growth trends, termination patterns, transfer activity, litigation
-      outcomes, and cross-brand context a single-brand attorney review wouldn&rsquo;t have.
+      Unit growth trends, termination patterns, transfer activity, entity
+      structure changes, regulatory history, and litigation outcomes.
+      Separate sections for health trajectory and risk factors.
     </p>
   </div>
   <div class="feature-item">
-    <div class="feature-item-title">Discovery Day Script</div>
+    <div class="feature-item-title">Peer Context &amp; Discovery Day Script</div>
     <p class="feature-item-desc">
-      8&ndash;10 questions derived from this brand&rsquo;s actual FDD &mdash;
-      with context on why each matters, what good and bad answers sound like,
-      and follow-ups.
+      Full-category comparison across 7+ dimensions with a decision
+      overlay. Plus 8&ndash;10 FDD-specific questions with structured guidance
+      on what strong and weak answers sound like.
     </p>
   </div>
 </div>
 
-<p class="small muted">
-  Also includes: buyer-fit profile, investment breakdown, peer positioning
-  with decision overlay. Every claim traceable to a specific FDD page.
-</p>
+<div class="report-length-note">
+  Typical report length: 15&ndash;25 pages depending on disclosure depth and peer context.
+  Every claim traceable to a specific page in the FDD.
+</div>
 
 <hr>
 
 {# ── AVAILABLE REPORTS ── #}
 <h2 id="available">Available Reports</h2>
 <p class="page-intro" style="margin-bottom:0.75rem;">
-  Each report is a self-contained decision memo for one brand.
-  Delivered as a PDF immediately after purchase.
+  Each report is a self-contained decision memo for one brand &mdash;
+  13&nbsp;sections of structured analysis delivered as a PDF immediately
+  after purchase.
 </p>
 
 <div class="pre-cta-reassurance">
   <span><span class="check">&#x2713;</span> Regulator-source FDDs, not third-party summaries</span>
-  <span><span class="check">&#x2713;</span> One-time $99 purchase &middot; instant PDF delivery</span>
+  <span><span class="check">&#x2713;</span> One-time $99 purchase &middot; instant PDF</span>
   <span><span class="check">&#x2713;</span> Not legal, accounting, or investment advice</span>
 </div>
 
@@ -529,7 +742,7 @@
     <div class="report-purchase-info">
       <h3>{{ b.brand_name }}{% if b.differentiator %}<span class="report-differentiator">{{ b.differentiator }}</span>{% endif %}</h3>
       <p class="small muted" style="margin-bottom:0;">{{ b.system_size }} outlets &middot; Franchising since {{ b.year_first_franchised }}</p>
-      <p class="report-purchase-micro">Decision scorecard &middot; fee modeling &middot; Item 19 translation &middot; diligence script</p>
+      <p class="report-purchase-micro">13 sections &middot; scorecard &middot; fee modeling &middot; Item 19 &middot; economics &middot; diligence script</p>
     </div>
     <a href="{{ b.stripe_payment_link }}" class="cta-button" style="font-size:0.82rem; padding:0.5rem 1.15rem; white-space:nowrap;" onclick="if(typeof gtag==='function')gtag('event','purchase_click',{report_name:'{{ b.slug }}',page_type:'report_index',source_page:'report',destination_type:'stripe'})">Get report &mdash; $99</a>
   </div>
