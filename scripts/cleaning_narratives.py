@@ -813,7 +813,7 @@ a more complete picture of unit economics than any competitor.</p>
 
 <p><strong>Closest comparison: The Maids.</strong> Similar fee burden profiles (both have
 $30K/year in mandatory local advertising). The Maids has a larger, more mature system
-(~200 territories) but is shrinking, not growing. Two Maids is adding 25–30 units/year.
+(~338 territories) but is shrinking, not growing. Two Maids is adding 25–30 units/year.
 If you are choosing between high-fee-burden brands, Two Maids' growth momentum and Item 19
 transparency give it a clear edge.</p>
 

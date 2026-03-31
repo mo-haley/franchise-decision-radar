@@ -417,8 +417,8 @@ independent market knowledge who do not need FDD-based revenue benchmarks.</p>
     {"priority": "Best revenue disclosure", "best_brand": "Lawn Doctor", "note": "4-table Item 19 with 16-year trend. Most data to work with in diligence."},
     {"priority": "Lowest entry cost", "best_brand": "NaturaLawn", "note": "$78K–$153K total. But ongoing fee burden is the highest in the cohort."},
     {"priority": "Best balance of cost vs. data", "best_brand": "Spring-Green", "note": "15.1% fee burden at $300K with solid 3-table Item 19. The middle ground."},
-    {"priority": "Lowest turnover", "best_brand": "Lawn Doctor / NaturaLawn", "note": "Both under 2% in 2024. NaturaLawn at 0% for 2 of 3 years (but 98-unit system)."},
-    {"priority": "First-time buyer", "best_brand": "Spring-Green", "note": "Moderate cost, clean disclosure, manageable fee burden, stable 156-unit system."},
+    {"priority": "Lowest turnover", "best_brand": "Lawn Doctor / NaturaLawn", "note": "Both under 2% in 2024. NaturaLawn at 0% for 2 of 3 years (but 88-unit system)."},
+    {"priority": "First-time buyer", "best_brand": "Spring-Green", "note": "Moderate cost, clean disclosure, manageable fee burden, stable 126-unit system."},
 ],
 
 "discovery_questions": [
@@ -471,7 +471,7 @@ independent market knowledge who do not need FDD-based revenue benchmarks.</p>
 
 "executive_summary": """
 <p>Spring-Green is a 48-year-old, privately held lawn care and tree/shrub treatment franchise
-with 156 outlets as of year-end 2024 — a mid-sized system that has been remarkably stable
+with 126 outlets as of year-end 2024 — a mid-sized system that has been remarkably stable
 (+2, –2, +4 net units over three years). It occupies the middle ground of the lawn care cohort:
 lower fees than Lawn Doctor and NaturaLawn, better disclosure than Weed Man, and a balanced
 fee structure that does not punish low-revenue operators as severely as its higher-cost peers.</p>
@@ -483,8 +483,8 @@ franchisees more marketing autonomy than any peer. The Item 19 discloses 3 table
 structure, revenue, and marketing effectiveness for 71 franchised businesses — with the unique
 addition of revenue-per-production-vehicle metrics and customer acquisition data.</p>
 
-<p>The main limitations are scale and growth trajectory. At 156 units, Spring-Green is the
-second-smallest active cohort brand (behind NaturaLawn's 98). Net growth has been flat — the
+<p>The main limitations are scale and growth trajectory. At 126 units, Spring-Green is the
+second-smallest active cohort brand (behind NaturaLawn's 88). Net growth has been flat — the
 system is not expanding or contracting. For a buyer who values stability over growth momentum,
 this is neutral. For a buyer who wants to join a system with accelerating expansion, it is a
 constraint. Turnover is moderate (2.0%, 5.2%, 4.6%) with the 2023 and 2024 years reflecting
@@ -497,7 +497,7 @@ a handful of exits from a small base.</p>
     {"dimension": "Ongoing fee burden", "rating": "Strong", "color": "strong",
      "summary": "2nd lowest in full cohort: 15.1% at $300K. Only Weed Man (8.5%) is lower. No mandatory local advertising minimum — significant advantage over Lawn Doctor and NaturaLawn."},
     {"dimension": "System stability", "rating": "Mixed", "color": "mixed",
-     "summary": "Stable but flat: +2, –2, +4 net over 3 years. 156 units. Turnover moderate at 2–5%. No rapid growth, no contraction. Not exciting, but not concerning."},
+     "summary": "Stable but flat: +2, –4, +2 net over 3 years. 126 units. Turnover moderate at 2–5%. No rapid growth, no contraction. Not exciting, but not concerning."},
     {"dimension": "Revenue disclosure", "rating": "Strong", "color": "strong",
      "summary": "3-table Item 19 with cost structure, revenue by territory type, and marketing metrics. Average $744K single-territory, $1.55M multi-territory. Revenue per vehicle and customer acquisition data are unique."},
     {"dimension": "Disclosure quality", "rating": "Strong", "color": "strong",
@@ -513,7 +513,7 @@ a handful of exits from a small base.</p>
 "scorecard_posture": """Spring-Green is the balanced choice in the lawn care cohort. It offers the
 second-lowest ongoing fee burden, the most useful gross margin disclosure (including labor in COGS),
 no mandatory local advertising minimum, and a clean litigation history. The trade-off is a flat growth
-trajectory and a mid-sized system (156 units) that lacks the scale of Lawn Doctor or the hyper-local
+trajectory and a mid-sized system (126 units) that lacks the scale of Lawn Doctor or the hyper-local
 niche identity of NaturaLawn. For a buyer who wants good data, manageable costs, and marketing
 autonomy — without paying Lawn Doctor's premium or accepting Weed Man's disclosure blackout —
 Spring-Green is the most natural fit.""",
@@ -546,7 +546,7 @@ franchisee additions, Spring-Green's trajectory may disappoint.</li>
 local ad program means you are responsible for your own marketing. If you prefer a turnkey
 marketing solution (like Lawn Doctor's mandatory program), Spring-Green's model requires
 more initiative.</li>
-<li><strong>Buyer in a market with no existing Spring-Green presence:</strong> With 156 units,
+<li><strong>Buyer in a market with no existing Spring-Green presence:</strong> With 126 units,
 geographic coverage is thinner than Lawn Doctor's 653. You may be the only franchisee in
 your region, with limited peer support and less local brand recognition.</li>
 </ul>
@@ -749,8 +749,8 @@ goes into working capital and equipment rather than upfront fees.
 """,
 
 "system_health_narrative": """
-<p>Stable and unremarkable — which is not a criticism. Spring-Green's 156-unit system has been
-essentially flat for three years: +2, –2, +4 net. Turnover is moderate (2.0%, 5.2%, 4.6%).
+<p>Stable and unremarkable — which is not a criticism. Spring-Green's 126-unit system has been
+essentially flat for three years: +2, –4, +2 net. Turnover is moderate (2.0%, 5.2%, 4.6%).
 For a 48-year-old system, this suggests maturity rather than decline — the brand is holding
 its position without aggressive expansion or concerning contraction.</p>
 """,
@@ -758,15 +758,15 @@ its position without aggressive expansion or concerning contraction.</p>
 "system_health_detail": """
 <h3>Outlet trajectory</h3>
 <ul class="compact">
-<li><strong>2022:</strong> 152→154 (+2 net). 2 opened, 0 closed. 3 transfers. Turnover 2.0%.</li>
-<li><strong>2023:</strong> 154→152 (–2 net). 2 opened, 2 closed, 2 non-renewals. 2 transfers.
+<li><strong>2022:</strong> 126→128 (+2 net). 2 opened, 0 closed. 3 transfers. Turnover 2.0%.</li>
+<li><strong>2023:</strong> 128→124 (–4 net). 2 opened, 4 closed, 2 non-renewals. 2 transfers.
 Turnover 5.2%.</li>
-<li><strong>2024:</strong> 152→156 (+4 net). 4 opened, 0 closed. 5 transfers. Turnover 4.6%.</li>
+<li><strong>2024:</strong> 124→126 (+2 net). 4 opened, 0 closed. 5 transfers. Turnover 4.6%.</li>
 </ul>
 
 <h3>Context on size</h3>
-<p>At 156 units, small absolute numbers can create large percentage swings. The 5.2% turnover
-in 2023 represents just 8 exits from a 154-unit base — hardly a systemic problem. The 5 transfers
+<p>At 126 units, small absolute numbers can create large percentage swings. The 5.2% turnover
+in 2023 represents just 8 exits from a 128-unit base — hardly a systemic problem. The 5 transfers
 in 2024 suggest a healthy resale market proportional to system size.</p>
 
 <div class="implication">
@@ -808,7 +808,7 @@ blackout, and does not want NaturaLawn's paradoxically high fee burden despite a
 royalty.</p>
 
 <p><strong>Key comparison: Lawn Doctor.</strong> Lawn Doctor offers more data (4 tables vs. 3),
-a larger system (653 vs. 156 units), and lower turnover. But it costs $33,500/year more in
+a larger system (653 vs. 126 units), and lower turnover. But it costs $33,500/year more in
 fees at $300K revenue and $55,000/year more at $500K. Over 10 years, that gap is $335K–$550K.
 Spring-Green's 68.1% gross margin (including labor) is also more useful for financial modeling
 than Lawn Doctor's 85.4% (materials only).</p>
@@ -886,9 +886,9 @@ it is risky.</p>
 "executive_summary": """
 <p>NaturaLawn of America is a 36-year-old, privately held lawn care franchise specializing in
 organic-based lawn care — a distinct niche positioning that commands the highest revenue per
-customer in the cohort ($810, vs. $765 for Lawn Doctor and $556 for Spring-Green). The 98-unit
-system is the smallest in the active cohort, growing modestly from 92 to 98 over 2022–2024
-before slipping to 98 (–2 net in 2024). Turnover is exceptional: 0% in 2022 and 2023, 2% in
+customer in the cohort ($810, vs. $765 for Lawn Doctor and $556 for Spring-Green). The 88-unit
+system is the smallest in the active cohort, growing from 81 to 90 over 2022–2023
+before slipping to 88 (–2 net in 2024). Turnover is exceptional: 0% in 2022 and 2023, 2% in
 2024 — the lowest attrition of any brand in the lawn cohort.</p>
 
 <p>The paradox of NaturaLawn is that its headline fees appear low (9% royalty, 1% ad fund)
@@ -914,13 +914,13 @@ in other markets is uncertain.</p>
     {"dimension": "Ongoing fee burden", "rating": "Weak", "color": "weak",
      "summary": "Highest in cohort: 33.9% at $300K (6th of 6). Driven by $60K–$80K mandatory marketing spend. Headline 9% royalty + 1% ad fund is misleading without the marketing obligation."},
     {"dimension": "System stability", "rating": "Strong", "color": "strong",
-     "summary": "Exceptional turnover: 0%, 0%, 2% over 3 years. 98 units — small but extraordinarily stable. Not a single exit in 2 of 3 years."},
+     "summary": "Exceptional turnover: 0%, 0%, 2% over 3 years. 88 units — small but extraordinarily stable. Not a single exit in 2 of 3 years."},
     {"dimension": "Revenue disclosure", "rating": "Mixed", "color": "mixed",
      "summary": "2-table Item 19 split between 6 company-owned (with margin) and 40 franchised (revenue only). Franchised avg $2.19M, median $1.10M. Small samples limit statistical confidence."},
     {"dimension": "Disclosure quality", "rating": "Mixed", "color": "mixed",
      "summary": "Item 3 contradiction: states 'no litigation required to be disclosed' then discloses the Ford TCPA case. Gross margin data only from 6 company-owned locations. Population discrepancy in franchised data (40+7≠44)."},
     {"dimension": "Downside risk profile", "rating": "Mixed", "color": "mixed",
-     "summary": "Fee burden is primary risk. Organic niche may limit addressable market. Small system (98 units) means less peer support. Royalty drops to 7% on renewal only if $500K+ revenue maintained."},
+     "summary": "Fee burden is primary risk. Organic niche may limit addressable market. Small system (88 units) means less peer support. Royalty drops to 7% on renewal only if $500K+ revenue maintained."},
     {"dimension": "Buyer fit breadth", "rating": "Mixed", "color": "mixed",
      "summary": "Strong for buyers committed to organic positioning with $100K+ capital. Weaker for budget-sensitive buyers or those in markets where organic lawn care has limited demand."},
     {"dimension": "Overall", "rating": "Notable", "color": "mixed",
@@ -933,7 +933,7 @@ with the highest revenue per customer and lowest franchise turnover. The zero-at
 fee structure is misleading at first glance: the 9% royalty and 1% ad fund look competitive, but the $60K–$80K
 mandatory marketing spend (disclosed in Item 7, not Item 6) pushes total fees to the highest
 in the cohort. A buyer must evaluate whether the organic niche commands enough premium pricing
-in their specific market to absorb these costs — and whether 98 units with limited Item 19
+in their specific market to absorb these costs — and whether 88 units with limited Item 19
 samples provide enough evidence to build confidence.""",
 
 "buyer_fit_narrative": """
@@ -965,7 +965,7 @@ fee burden only works at premium revenue per customer.</li>
 <li><strong>Buyer who needs robust Item 19 data:</strong> The franchised sample (40 locations)
 is reasonable, but gross margin data comes from only 6 company-owned locations. If you
 need statistical confidence in the margin benchmarks, NaturaLawn's disclosure is thin.</li>
-<li><strong>Buyer seeking system scale:</strong> 98 units is small. You will have fewer peers,
+<li><strong>Buyer seeking system scale:</strong> 88 units is small. You will have fewer peers,
 less brand recognition in many markets, and less negotiating leverage with vendors.</li>
 </ul>
 
@@ -1166,25 +1166,25 @@ is included.
 """,
 
 "system_health_narrative": """
-<p>Smallest system in the active cohort (98 units) but the most stable by turnover metrics:
+<p>Smallest system in the active cohort (88 units) but the most stable by turnover metrics:
 0% attrition in 2022 and 2023, 2% in 2024. Not a single franchisee exited the system for
 two consecutive years — a result that no other lawn brand (or any brand in this product's
-library) matches. Growth has been modest: +4, +4, –2 net over three years.</p>
+library) matches. Growth has been modest: +3, +6, –2 net over three years.</p>
 """,
 
 "system_health_detail": """
 <h3>Outlet trajectory</h3>
 <ul class="compact">
-<li><strong>2022:</strong> 92→96 (+4 net). 3 opened, 0 closed, 0 non-renewals, 0 transfers.
+<li><strong>2022:</strong> 81→84 (+3 net). 3 opened, 0 closed, 0 non-renewals, 0 transfers.
 Turnover 0%.</li>
-<li><strong>2023:</strong> 96→100 (+4 net). 6 opened, 0 closed, 0 non-renewals, 0 transfers.
+<li><strong>2023:</strong> 84→90 (+6 net). 6 opened, 0 closed, 0 non-renewals, 0 transfers.
 Turnover 0%.</li>
-<li><strong>2024:</strong> 100→98 (–2 net). 0 opened, 0 closed, 0 non-renewals, 0 transfers.
+<li><strong>2024:</strong> 90→88 (–2 net). 0 opened, 2 closed, 0 non-renewals, 0 transfers.
 Turnover 2% (based on derived turnover rate calculation).</li>
 </ul>
 
 <h3>Interpreting the zero-turnover years</h3>
-<p>Zero exits from a 96–100 unit system for two consecutive years is extraordinary. In most
+<p>Zero exits from an 84–90 unit system for two consecutive years is extraordinary. In most
 franchise systems, structural attrition (retirements, market exits, relocations) produces
 at least 2–5% turnover annually. Zero suggests either very high franchisee satisfaction,
 limited exit options, or both. The absence of any transfers is also notable — no franchisee

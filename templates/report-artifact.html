@@ -204,7 +204,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
   <h1>{{ brand_name }}</h1>
   <div style="font-family:-apple-system,sans-serif; font-size:0.95rem; color:#555; margin-top:0.15rem;">Franchise Decision Report</div>
   <div class="report-meta">
-    Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: {{ filing_year }}<br>
+    Source: {{ filing_year }} FDD filed with Wisconsin DFI &middot; Filing year: {{ filing_year }}<br>
     Legal entity: {{ legal_entity }}<br>
     Report generated: {{ report_date }} &middot; Franchise Decision Radar
   </div>
@@ -446,7 +446,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
 
 <!-- DISCOVERY DAY -->
 <h2 id="discovery-day">Discovery Day Diligence Script</h2>
-<p>These questions are derived from specific findings in the {{ brand_name }} 2025 FDD.
+<p>These questions are derived from specific findings in the {{ brand_name }} {{ filing_year }} FDD.
 Each includes context on why it matters and what to listen for.</p>
 
 <ol class="question-list">

@@ -774,8 +774,7 @@ error in the filed FDD, not a data integrity issue.</p>
 
 <div class="implication">
 <strong>What this means:</strong> A reasonable revenue expectation for a single-territory
-operator in the first 5 years is likely in the $200K–$290K range (between the average and
-median). Mature operators reach $340K–$430K. The high performers ($850K–$1.9M) almost certainly
+operator in the first 5 years is likely in the $215K–$290K range (between the average of ~$215K and median of ~$288K). Mature operators reach $340K–$430K. The high performers ($850K–$1.9M) almost certainly
 operate multiple territories. Plan around the median, not the average or the high — and validate
 the per-territory assumption with current franchisees.
 </div>
