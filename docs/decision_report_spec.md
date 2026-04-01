@@ -170,21 +170,23 @@ cohort-level comparison, not brand-specific).
 
 ## PDF Formatting Rules
 
-### Page breaks
+### Page breaks — the minimal approach
 - **Cover page** and **Table of Contents**: `page-break-after: always`
-- **Major sections with tables** (Fee Burden, Item 19, Economics, Investment,
-  System Health, Peer Context, Discovery Day, Methodology): start on new page
-  via `class="section-break"`
-- **Flowing sections** (Decision Scorecard, Buyer-Fit, Payback, Risk Signals):
-  do NOT force new page — let content flow naturally to avoid orphaned tails
-- `h2` and `h3`: `break-after: avoid` to stay with following content
+- **Source & Methodology** (final section): `section-break` (starts on new page)
+- **All other sections**: flow naturally — do NOT force page breaks
+
+The key insight: `section-break` on content sections creates orphaned tail
+pages (a section's last paragraph spills to a new page, then the next
+section-break forces yet another new page, leaving a near-empty page).
+The fix is to let all content sections flow naturally and rely only on
+`h2 { break-after: avoid }` to keep headings with their content.
 
 ### Page break avoidance
 - Small tables: `page-break-inside: avoid`
-- Callouts, fee-bars, decision-overlay: `page-break-inside: avoid`
+- Callouts, fee-bars: `page-break-inside: avoid`
 - Individual discovery questions: `page-break-inside: avoid`
-- **Large tables** (`.peer-table`, `.scorecard`): `page-break-inside: auto` —
-  these are too large to force onto a single page without creating blank gaps
+- **Large/variable tables** (`.peer-table`, `.scorecard`, `.decision-overlay`):
+  `page-break-inside: auto` — too large to force onto a single page
 - **Variable-length content** (`.fit-section`, `.methodology`): let flow
   naturally — do NOT use `page-break-inside: avoid`
 
@@ -196,13 +198,16 @@ cohort-level comparison, not brand-specific).
 ### Common formatting errors to avoid
 1. **Orphaned tails**: A section-break forces the next section to a new page,
    but the previous section's last paragraph barely overflows, creating a
-   page with only 1–2 lines. Fix: remove section-break from short sections.
+   page with only 1–2 lines. Fix: do not use section-break on content sections.
 2. **Heading-only pages**: A section heading + intro appear on a page but
    the table gets pushed to the next page by `page-break-inside: avoid`.
-   Fix: let large tables flow naturally.
+   Fix: let large tables flow naturally with `page-break-inside: auto`.
 3. **Blank gaps**: `page-break-inside: avoid` on a large element pushes it
    to the next page, leaving a visible gap. Fix: override with
    `page-break-inside: auto` for elements that may exceed half a page.
+4. **Inconsistent formatting**: All reports must use the same template
+   (`report-artifact.html`). Never hand-edit individual report HTML files —
+   always regenerate from the template via `generate_report.py --all`.
 
 ---
 
