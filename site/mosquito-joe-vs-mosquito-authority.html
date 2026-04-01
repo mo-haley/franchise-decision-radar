@@ -610,6 +610,12 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 }
 </style>
 
+<style>
+.vs-snapshot th:not(:first-child),
+.vs-snapshot td:not(:first-child) { text-align: center; }
+.vs-snapshot td.brand-name { text-align: left; }
+</style>
+
 </head>
 <body>
 
@@ -674,7 +680,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 <h2>Side-by-Side Snapshot</h2>
 
 <div class="table-wrap">
-<table>
+<table class="vs-snapshot">
   <thead>
     <tr>
       <th></th>
@@ -685,29 +691,29 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
   <tbody>
     <tr>
       <td class="brand-name">Franchised outlets</td>
-      <td class="num">415</td>
-      <td class="num">546</td>
+      <td>415</td>
+      <td>546</td>
     </tr>
     <tr>
       <td class="brand-name">Initial investment</td>
-      <td class="num">$150K–$192K</td>
-      <td class="num">$54K–$127K</td>
+      <td>$150K–$192K</td>
+      <td>$54K–$127K</td>
     </tr>
     
     <tr>
       <td class="brand-name">Annual fees at $300K</td>
-      <td class="num">$84,752 (28.3%)</td>
-      <td class="num">$52,800 (17.6%)</td>
+      <td>$84,752 (28.3%)</td>
+      <td>$52,800 (17.6%)</td>
     </tr>
     
     <tr>
       <td class="brand-name">3-year net growth</td>
-      <td class="num">+43 units</td>
-      <td class="num">+22 units</td>
+      <td>+43 units</td>
+      <td>+22 units</td>
     </tr>
     <tr>
       <td class="brand-name">System trajectory</td>
-      <td>Deteriorating</td>
+      <td>First contraction (2024)</td>
       <td>Stable positive</td>
     </tr>
     <tr>
@@ -717,8 +723,8 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
     </tr>
     <tr>
       <td class="brand-name">Franchising since</td>
-      <td class="num">2012</td>
-      <td class="num">2009</td>
+      <td>2012</td>
+      <td>2009</td>
     </tr>
   </tbody>
 </table>
@@ -780,7 +786,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 <div class="callout callout-caveat"><div class="callout-title">Authority fixed fees add up</div>Mosquito Authority’s fee model looks simple (flat 10% royalty), but weekly technology ($210), accounting ($85), and contact center ($50–$220, escalating) fees add $295–$515/week in fixed costs regardless of revenue. At low revenue, these fixed charges represent a higher percentage of income than Joe’s percentage-based fees.</div><div class="callout callout-caveat"><div class="callout-title">Joe front-loads marketing</div>Mosquito Joe’s Item 7 includes $72K in mandatory marketing ($37K DMP + $35K local). This is not optional and is due during the first year. It’s nearly half the initial investment and inflates the cost-to-enter comparison relative to Authority.</div>
 
 <h2>System Health</h2>
-<p>The growth trajectories are moving in opposite directions. Mosquito Authority has maintained stable positive growth, adding outlets consistently across the last three reporting years. Mosquito Joe peaked in system size and has turned net-negative, losing more franchised outlets than it opened in the most recent year.</p><p>For a buyer, this means the brand with the most consumer recognition (Joe has higher marketing spend) and the brand with the healthiest franchisee growth signal (Authority) are not the same brand.</p>
+<p>The growth trajectories diverged in the most recent reporting year. Mosquito Authority has maintained stable positive growth, adding outlets consistently across all three reporting years. Mosquito Joe grew steadily through 2023 but posted its first net-negative year in 2024, losing more franchised outlets than it opened.</p><p>For a buyer, this creates a tension: the brand with the most consumer recognition (Joe has higher marketing spend) and the brand with the most consistent franchisee growth signal (Authority) are not the same brand. One year of contraction does not establish a trend, but it warrants attention.</p>
 
 <div class="table-wrap">
 <table>
@@ -875,12 +881,14 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
     <a href="mosquito-joe.html" style="font-weight:600">Mosquito Joe review &rarr;</a>
     
     <div class="small" style="margin-top:0.3rem"><a href="https://buy.stripe.com/dRm4gBfADbqy9Qc0sMawo03">Decision Report &mdash; $99</a></div>
+    <div class="small muted" style="margin-top:0.15rem">Fee modeling, Item 19 translation, risk flags, discovery-day questions</div>
     
   </div>
   <div>
     <a href="mosquito-authority.html" style="font-weight:600">Mosquito Authority review &rarr;</a>
     
     <div class="small" style="margin-top:0.3rem"><a href="https://buy.stripe.com/dRmbJ3ewz1PY6E0ejCawo01">Decision Report &mdash; $99</a></div>
+    <div class="small muted" style="margin-top:0.15rem">Fee modeling, Item 19 translation, risk flags, discovery-day questions</div>
     
   </div>
 </div>

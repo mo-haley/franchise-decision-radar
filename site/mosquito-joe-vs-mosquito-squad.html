@@ -610,6 +610,12 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 }
 </style>
 
+<style>
+.vs-snapshot th:not(:first-child),
+.vs-snapshot td:not(:first-child) { text-align: center; }
+.vs-snapshot td.brand-name { text-align: left; }
+</style>
+
 </head>
 <body>
 
@@ -674,7 +680,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 <h2>Side-by-Side Snapshot</h2>
 
 <div class="table-wrap">
-<table>
+<table class="vs-snapshot">
   <thead>
     <tr>
       <th></th>
@@ -685,29 +691,29 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
   <tbody>
     <tr>
       <td class="brand-name">Franchised outlets</td>
-      <td class="num">415</td>
-      <td class="num">226</td>
+      <td>415</td>
+      <td>226</td>
     </tr>
     <tr>
       <td class="brand-name">Initial investment</td>
-      <td class="num">$150K–$192K</td>
-      <td class="num">$162K–$220K</td>
+      <td>$150K–$192K</td>
+      <td>$162K–$220K</td>
     </tr>
     
     <tr>
       <td class="brand-name">Annual fees at $300K</td>
-      <td class="num">$84,752 (28.3%)</td>
-      <td class="num">$77,880 (26.0%)</td>
+      <td>$84,752 (28.3%)</td>
+      <td>$77,880 (26.0%)</td>
     </tr>
     
     <tr>
       <td class="brand-name">3-year net growth</td>
-      <td class="num">+43 units</td>
-      <td class="num">+3 units</td>
+      <td>+43 units</td>
+      <td>+3 units</td>
     </tr>
     <tr>
       <td class="brand-name">System trajectory</td>
-      <td>Deteriorating</td>
+      <td>First contraction (2024)</td>
       <td>Recovering</td>
     </tr>
     <tr>
@@ -717,8 +723,8 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
     </tr>
     <tr>
       <td class="brand-name">Franchising since</td>
-      <td class="num">2012</td>
-      <td class="num">2009</td>
+      <td>2012</td>
+      <td>2009</td>
     </tr>
   </tbody>
 </table>
@@ -780,7 +786,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 <div class="callout callout-caveat"><div class="callout-title">Joe’s marketing is non-negotiable</div>Mosquito Joe’s $37K DMP + $35K local marketing are mandatory and due during Year 1. The franchisor litigated a franchisee over DMP non-payment and prevailed — signaling these fees are enforced.</div><div class="callout callout-caveat"><div class="callout-title">Squad’s minimum royalty escalates</div>Mosquito Squad’s minimum royalty reaches $3,000/month at Year 9+ ($36,000/year). At $200K revenue, this exceeds the percentage-based royalty and adds approximately $16,000 to annual burden.</div>
 
 <h2>System Health</h2>
-<p>Mosquito Squad contracted in 2022 (−10 net units) but has since recovered: +4 in 2023 and +9 in 2024 with zero terminations in the most recent year. Mosquito Joe was stable through 2023 (+22 net each year) but contracted for the first time in 2024 (−1 net units), driven by a spike to 24 terminations — up from 5 the prior year.</p><p>The trajectories are crossing: Squad is stabilizing while Joe is showing early signs of system stress. For a buyer, this raises a question about whether Joe’s brand recognition advantage is translating into franchisee health.</p>
+<p>Mosquito Squad contracted in 2022 (−10 net units) but has since recovered: +4 in 2023 and +9 in 2024 with zero terminations in the most recent year. Mosquito Joe was stable through 2023 (+22 net each year) but contracted for the first time in 2024 (−1 net units), driven by a spike to 24 terminations — up from 5 the prior year.</p><p>The trajectories moved in opposite directions in 2024: Squad continued its recovery while Joe posted its first net-negative year. One year is not a trend, but the divergence is worth monitoring — particularly given Joe’s unexplained termination spike.</p>
 
 <div class="table-wrap">
 <table>
@@ -869,7 +875,7 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
 </div>
 
 <h2>Where the Tradeoffs Land</h2>
-<p>Mosquito Squad has the strongest disclosure in the cohort: average revenue of $484,506 per territory, a full company-owned P&L at 25.9% net margin, close rates, renewal rates, and same-store growth data. Joe’s disclosure is useful (tenure-split revenue, retention metrics) but thinner.</p><p>Joe has stronger brand recognition (KKR/Neighborly portfolio) and a larger system (415 vs. 226 outlets). Squad has higher average revenue per territory, better disclosure quality, and a recovering growth trajectory.</p><p>A buyer who prioritizes transparency and unit economics has a stronger data foundation with Squad. A buyer who values brand scale and consumer recognition has a rationale for Joe — but should stress-test whether the ~$7,000/year fee premium and 2024 termination spike change the calculus.</p>
+<p>Mosquito Squad has the strongest disclosure in the cohort: average revenue of $484,506 per territory, a full company-owned P&L at 25.9% net margin, close rates, renewal rates, and same-store growth data. Joe’s disclosure is useful (tenure-split revenue, retention metrics) but thinner.</p><p>Joe has stronger brand recognition (KKR/Neighborly portfolio) and a larger system (415 vs. 226 outlets). Squad has higher average revenue per territory, better disclosure quality, and a recovering growth trajectory.</p><p>A buyer who prioritizes transparency and unit economics has a stronger data foundation with Squad. A buyer who values brand scale and consumer recognition has a rationale for Joe — but should evaluate whether the ~$7,000/year fee premium is justified by incremental revenue, and what the 2024 termination spike signals about system direction.</p>
 
 <h2>Go Deeper</h2>
 <div style="display:flex; flex-wrap:wrap; gap:1.25rem; margin:0.75rem 0 1.5rem">
@@ -877,12 +883,14 @@ tbody tr.row-caveat td.brand-name { color: #1e293b; }
     <a href="mosquito-joe.html" style="font-weight:600">Mosquito Joe review &rarr;</a>
     
     <div class="small" style="margin-top:0.3rem"><a href="https://buy.stripe.com/dRm4gBfADbqy9Qc0sMawo03">Decision Report &mdash; $99</a></div>
+    <div class="small muted" style="margin-top:0.15rem">Fee modeling, Item 19 translation, risk flags, discovery-day questions</div>
     
   </div>
   <div>
     <a href="mosquito-squad.html" style="font-weight:600">Mosquito Squad review &rarr;</a>
     
     <div class="small" style="margin-top:0.3rem"><a href="https://buy.stripe.com/7sYbJ39cfcuC3rOejCawo05">Decision Report &mdash; $99</a></div>
+    <div class="small muted" style="margin-top:0.15rem">Fee modeling, Item 19 translation, risk flags, discovery-day questions</div>
     
   </div>
 </div>

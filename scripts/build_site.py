@@ -181,8 +181,8 @@ def derive_royalty_display(item6: dict) -> tuple[str, str]:
 TRAJECTORY_OVERRIDES: dict[str, tuple[str, str]] = {
     "Mosquito Authority": ("Stable positive", "positive"),
     "Mosquito Hunters": ("Turnaround", "caution"),
-    "Mosquito Joe": ("Deteriorating", "negative"),
-    "Mosquito Shield": ("Decelerating + high churn", "negative"),
+    "Mosquito Joe": ("First contraction (2024)", "negative"),
+    "Mosquito Shield": ("Rapid growth, elevated churn", "caution"),
     "Mosquito Squad": ("Recovering", "positive"),
     "Mosquito Sheriff": ("Early-stage launch", "caution"),
     "MosquitoNix": ("Launch year", "caution"),
@@ -192,7 +192,7 @@ TRAJECTORY_OVERRIDES: dict[str, tuple[str, str]] = {
     "NaturaLawn": ("Stable niche", "positive"),
     "Lawn Pride": ("Explosive launch", "positive"),
     "Lawn Squad": ("Launch year", "caution"),
-    "Merry Maids": ("Accelerating contraction", "negative"),
+    "Merry Maids": ("Contracting (accelerating)", "negative"),
     "Molly Maid": ("Steady contraction", "negative"),
     "The Cleaning Authority": ("Stable positive", "positive"),
     "The Maids": ("Mild contraction", "caution"),
@@ -2174,16 +2174,17 @@ VS_PAGES: list[dict] = [
         ),
         "system_health_editorial": (
             "<p>"
-            "The growth trajectories are moving in opposite directions. "
+            "The growth trajectories diverged in the most recent reporting year. "
             "Mosquito Authority has maintained stable positive growth, adding outlets "
-            "consistently across the last three reporting years. "
-            "Mosquito Joe peaked in system size and has turned net-negative, "
-            "losing more franchised outlets than it opened in the most recent year."
+            "consistently across all three reporting years. "
+            "Mosquito Joe grew steadily through 2023 but posted its first net-negative year "
+            "in 2024, losing more franchised outlets than it opened."
             "</p>"
             "<p>"
-            "For a buyer, this means the brand with the most consumer recognition "
-            "(Joe has higher marketing spend) and the brand with the healthiest "
-            "franchisee growth signal (Authority) are not the same brand."
+            "For a buyer, this creates a tension: the brand with the most consumer recognition "
+            "(Joe has higher marketing spend) and the brand with the most consistent "
+            "franchisee growth signal (Authority) are not the same brand. "
+            "One year of contraction does not establish a trend, but it warrants attention."
             "</p>"
         ),
         "cost_editorial": (
@@ -2278,9 +2279,10 @@ VS_PAGES: list[dict] = [
             "\u2014\u200aup from 5 the prior year."
             "</p>"
             "<p>"
-            "The trajectories are crossing: Squad is stabilizing while Joe is showing "
-            "early signs of system stress. For a buyer, this raises a question about whether "
-            "Joe\u2019s brand recognition advantage is translating into franchisee health."
+            "The trajectories moved in opposite directions in 2024: Squad continued its "
+            "recovery while Joe posted its first net-negative year. One year is not a trend, "
+            "but the divergence is worth monitoring\u200a\u2014\u200aparticularly given Joe\u2019s "
+            "unexplained termination spike."
             "</p>"
         ),
         "cost_editorial": (
@@ -2313,8 +2315,9 @@ VS_PAGES: list[dict] = [
             "<p>"
             "A buyer who prioritizes transparency and unit economics has a stronger data "
             "foundation with Squad. A buyer who values brand scale and consumer recognition "
-            "has a rationale for Joe\u200a\u2014\u200abut should stress-test whether the "
-            "~$7,000/year fee premium and 2024 termination spike change the calculus."
+            "has a rationale for Joe\u200a\u2014\u200abut should evaluate whether the "
+            "~$7,000/year fee premium is justified by incremental revenue, and what the "
+            "2024 termination spike signals about system direction."
             "</p>"
         ),
     },
@@ -2409,11 +2412,12 @@ VS_PAGES: list[dict] = [
             "Authority\u2019s company-owned data)."
             "</p>"
             "<p>"
-            "The core question for a buyer is whether Shield\u2019s growth rate "
-            "reflects a better market opportunity or a churn-and-replace model. "
+            "The core question for a buyer is what Shield\u2019s growth rate means "
+            "in context of its turnover. Rapid expansion with high churn can reflect "
+            "aggressive market capture, operational growing pains, or both. "
             "The termination data (65 in 2023, 44 in 2024) and the 21% Item 19 "
-            "exclusion rate for \u201cnon-conforming\u201d outlets raise questions "
-            "that a buyer should explore during due diligence."
+            "exclusion rate for \u201cnon-conforming\u201d outlets are data points "
+            "worth exploring during due diligence."
             "</p>"
             "<p>"
             "A capital-efficient buyer focused on unit economics has a stronger "
@@ -2476,7 +2480,7 @@ VS_PAGES: list[dict] = [
         ),
         "system_health_editorial": (
             "<p>"
-            "Both systems are contracting, but the severity differs dramatically. "
+            "Both systems are contracting, but at meaningfully different rates. "
             "Merry Maids lost 187 units over 3 years (989 \u2192 802, \u221218.9%), "
             "with losses accelerating each year: \u221243, \u221262, \u221282. "
             "73 units ceased operations in 2024 alone. Wisconsin\u2019s risk disclosure "
@@ -2485,7 +2489,7 @@ VS_PAGES: list[dict] = [
             "<p>"
             "Molly Maid lost 53 units over the same period (501 \u2192 448, \u221210.6%), "
             "with losses slowing slightly: \u221220, \u221217, \u221216. "
-            "The contraction is real but stabilizing."
+            "The contraction is consistent but the rate has slowed each year."
             "</p>"
             "<p>"
             "For a buyer, both brands carry system health risk. But Merry Maids\u2019 "
