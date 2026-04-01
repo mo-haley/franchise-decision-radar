@@ -2531,6 +2531,229 @@ VS_PAGES: list[dict] = [
             "</p>"
         ),
     },
+    {
+        "slug_a": "mosquito-hunters",
+        "slug_b": "mosquito-joe",
+        "cohort_id": "mosquito",
+        "output_file": "mosquito-hunters-vs-mosquito-joe.html",
+        "canonical_slug": "mosquito-hunters-vs-mosquito-joe.html",
+        "title": "Mosquito Hunters vs. Mosquito Joe | Franchise Fee, Cost &amp; FDD Comparison",
+        "h1": "Mosquito Hunters vs. Mosquito Joe: what the FDD data shows",
+        "meta_description": (
+            "Side-by-side comparison of Mosquito Hunters and Mosquito Joe franchise "
+            "fees, startup cost, system health, and FDD data. A smaller multi-service "
+            "franchise vs. the category\u2019s largest brand."
+        ),
+        "subhead": (
+            "The smallest mature system in the mosquito cohort against the largest. "
+            "Different scale, different cost structures, and a multi-service license "
+            "that changes the comparison. "
+            "All data from 2025 FDDs filed with the Wisconsin DFI."
+        ),
+        "fee_burden_editorial": (
+            "<p>"
+            "Both brands charge a 10% royalty on gross revenue, but the marketing "
+            "structures diverge sharply. Mosquito Joe\u2019s mandatory marketing totals "
+            "~$75,000+/year ($37K DMP + $35K local + 2% MAP + $325/mo SEO). "
+            "Mosquito Hunters\u2019 marketing floor is $37,500/year or 10% of net "
+            "revenues, whichever is greater\u200a\u2014\u200asplit across local advertising, "
+            "a centrally managed media fund, and a tools/programs fund."
+            "</p>"
+            "<p>"
+            "At $300K revenue, Joe\u2019s total fee burden is $84,752 (28.3%). "
+            "Hunters\u2019 is $80,300 (26.8%). "
+            "The <strong>$4,452/year difference</strong> is modest at this revenue level. "
+            "At lower revenue ($200K), the gap is narrower: $72,752 vs. $70,300. "
+            "At higher revenue ($500K), Joe\u2019s tiered royalty kicks in and brings its "
+            "burden down to $97,752 (19.6%) while Hunters\u2019 remains at $112,800 (22.6%)"
+            "\u200a\u2014\u200areversing the advantage."
+            "</p>"
+        ),
+        "fee_caveats_editorial": (
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Hunters\u2019 fee advantage reverses at scale</div>'
+            "Hunters charges a flat 10% royalty at all revenue levels. "
+            "Joe\u2019s royalty drops to 7% above $500K. For operators who expect to "
+            "scale past $500K, Joe\u2019s fee structure becomes more favorable despite "
+            "the higher marketing overhead."
+            "</div>"
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Hunters\u2019 franchise fee is the highest in the cohort</div>'
+            "Mosquito Hunters\u2019 initial fee is $107,000 ($50K license + $57K mandatory "
+            "training/supply)\u200a\u2014\u200athe highest in the mosquito cohort. "
+            "By comparison, Joe\u2019s franchise fee is $42,500. The additional $64,500 "
+            "reflects Hunters\u2019 bundled training and supply package, which includes "
+            "the multi-brand license."
+            "</div>"
+        ),
+        "system_health_editorial": (
+            "<p>"
+            "Mosquito Hunters posted a significant turnaround in 2024: zero terminations "
+            "(down from 17 in 2022 and 11 in 2023) and +13 net unit growth, the strongest "
+            "single year in the brand\u2019s history. The system grew from 122 to 135 "
+            "franchised outlets."
+            "</p>"
+            "<p>"
+            "Mosquito Joe grew steadily through 2023 (+22 net each year) but posted its "
+            "first net-negative year in 2024 (\u22121 net units), driven by 24 terminations"
+            "\u200a\u2014\u200aup from 5 the prior year."
+            "</p>"
+            "<p>"
+            "The scale difference is significant: Joe has 415 outlets to Hunters\u2019 135. "
+            "A larger system naturally generates more absolute churn. But Joe\u2019s 2024 "
+            "termination rate (5.8%) exceeded Hunters\u2019 (0%) by a wide margin, and the "
+            "year-over-year spike is notable regardless of system size."
+            "</p>"
+        ),
+        "cost_editorial": (
+            "<p>"
+            "Mosquito Hunters\u2019 initial investment ranges from $141K\u2013$171K. "
+            "Mosquito Joe\u2019s ranges from $150K\u2013$192K. The ranges overlap "
+            "significantly."
+            "</p>"
+            "<p>"
+            "The composition differs: Hunters\u2019 $107K franchise fee (the highest "
+            "in the cohort) dominates its startup cost, while Joe\u2019s $72K in "
+            "mandatory Year 1 marketing ($37K DMP + $35K local) is the largest "
+            "single component of its investment. Hunters\u2019 franchise fee buys "
+            "a 3-brand license (Mosquito Hunters, Pest Hunters, Humbug Holiday "
+            "Lighting); Joe\u2019s marketing spend buys customer acquisition."
+            "</p>"
+        ),
+        "tradeoffs_editorial": (
+            "<p>"
+            "The distinctive feature of Mosquito Hunters is its 3-brand combination "
+            "license: mosquito control, general pest, and holiday lighting. "
+            "Holiday lighting data from 26 participating franchisees shows average "
+            "revenue of $64,727 per operator\u200a\u2014\u200aa meaningful off-season "
+            "revenue stream that no other mosquito brand offers."
+            "</p>"
+            "<p>"
+            "Joe has 3\u00d7 the system size (415 vs. 135 outlets), stronger brand recognition "
+            "(KKR/Neighborly portfolio), and a tiered royalty that rewards scale. "
+            "Hunters has a cleaner 2024 system health signal, multiple revenue streams, "
+            "and a lower fee burden at sub-$500K revenue."
+            "</p>"
+            "<p>"
+            "A buyer who values multi-service revenue diversification and is comfortable "
+            "with a smaller system has a clear rationale for Hunters. A buyer who "
+            "prioritizes brand scale, consumer recognition, and lower fees at high "
+            "revenue has a rationale for Joe. Hunters\u2019 Item 19 does not disclose "
+            "total revenue per franchise unit, which limits direct income comparison"
+            "\u200a\u2014\u200aa gap worth noting during diligence."
+            "</p>"
+        ),
+    },
+    {
+        "slug_a": "mosquito-shield",
+        "slug_b": "mosquito-squad",
+        "cohort_id": "mosquito",
+        "output_file": "mosquito-shield-vs-mosquito-squad.html",
+        "canonical_slug": "mosquito-shield-vs-mosquito-squad.html",
+        "title": "Mosquito Shield vs. Mosquito Squad | Franchise Fee, Cost &amp; FDD Comparison",
+        "h1": "Mosquito Shield vs. Mosquito Squad: what the FDD data shows",
+        "meta_description": (
+            "Side-by-side comparison of Mosquito Shield and Mosquito Squad franchise "
+            "fees, startup cost, system health, and FDD data. Two mid-range mosquito "
+            "franchises with different growth profiles and disclosure quality."
+        ),
+        "subhead": (
+            "Two mid-range mosquito franchises with similar fee burdens at moderate revenue "
+            "but different growth profiles, disclosure quality, and system health signals. "
+            "All data from 2025 FDDs filed with the Wisconsin DFI."
+        ),
+        "fee_burden_editorial": (
+            "<p>"
+            "Shield charges the lowest royalty rate in the cohort (8% flat) but pairs it "
+            "with the highest local advertising minimum ($50,000/year or 10% of gross "
+            "revenues, whichever is greater) plus a 2% brand fund. "
+            "Squad uses a triple-tiered royalty (10% on the first $250K, 9% on "
+            "$250K\u2013$500K, 8% above $500K) with a local marketing cap of $50,000 "
+            "and a flat brand fund of $150\u2013$450/month."
+            "</p>"
+            "<p>"
+            "At $300K revenue, Shield\u2019s total fee burden is $86,000 (28.7%). "
+            "Squad\u2019s is $77,880 (26.0%). "
+            "The <strong>$8,120/year difference</strong> favors Squad at this level. "
+            "At $500K revenue, the gap reverses: Shield drops to $106,000 (21.2%) "
+            "while Squad rises to $110,880 (22.2%), because Shield\u2019s lower "
+            "royalty rate and Squad\u2019s escalating minimum royalty both take effect."
+            "</p>"
+        ),
+        "fee_caveats_editorial": (
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Shield\u2019s minimum gross sales penalty</div>'
+            "Mosquito Shield requires Minimum Gross Sales of $283,500 by Year 5. "
+            "If a franchisee falls short, the franchisor may collect 7% of the "
+            "difference between actual revenue and the required minimum. "
+            "This effectively penalizes underperformance."
+            "</div>"
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Squad\u2019s minimum royalty escalates with tenure</div>'
+            "Mosquito Squad\u2019s minimum royalty reaches $3,000/month at Year 9+ "
+            "($36,000/year). At low revenue, this can exceed the percentage-based "
+            "royalty. Both brands have mechanisms that create fee floors "
+            "independent of revenue."
+            "</div>"
+        ),
+        "system_health_editorial": (
+            "<p>"
+            "Mosquito Shield has the fastest absolute growth in the cohort: +140 net "
+            "units over 3 years (295 \u2192 435). But this growth comes with the highest "
+            "termination counts: 65 in 2023 and 44 in 2024. The system added outlets "
+            "rapidly while also losing them at an elevated rate (11\u201325% annual churn)."
+            "</p>"
+            "<p>"
+            "Mosquito Squad contracted in 2022 (\u221210 net units) but has since "
+            "stabilized: +4 in 2023 and +9 in 2024, with zero terminations in the "
+            "most recent year. Squad\u2019s growth is slower but cleaner."
+            "</p>"
+            "<p>"
+            "For a buyer, the question is whether Shield\u2019s rapid expansion "
+            "reflects strong market demand or whether the elevated churn suggests "
+            "operational challenges for a meaningful share of franchisees. "
+            "Squad\u2019s recovery from its 2022 contraction, capped by zero "
+            "terminations in 2024, is a more conservative but more consistent signal."
+            "</p>"
+        ),
+        "cost_editorial": (
+            "<p>"
+            "Mosquito Shield\u2019s initial investment ranges from $120K\u2013$158K. "
+            "Mosquito Squad\u2019s ranges from $162K\u2013$220K\u200a\u2014\u200a"
+            "meaningfully higher at headline."
+            "</p>"
+            "<p>"
+            "However, $84K\u2013$117K of Squad\u2019s range consists of 12-month working "
+            "capital reserves (most brands use 3-month reserves). Adjusting for "
+            "equivalent reserve periods, the gap narrows substantially. "
+            "Shield\u2019s franchise fee ($54,500 first territory) is comparable to "
+            "Squad\u2019s ($50,000 standard territory)."
+            "</p>"
+        ),
+        "tradeoffs_editorial": (
+            "<p>"
+            "Squad offers substantially better disclosure: average revenue of $484,506 "
+            "per territory, a full company-owned P&L at 25.9% net margin, close rates, "
+            "renewal rates, and same-store growth data. Shield\u2019s Item 19 covers only "
+            "81 of 125 outlets (65%), excludes 21% as \u201cnon-conforming\u201d (undefined), "
+            "and reports average gross sales of $285,839 vs. a median of $134,918"
+            "\u200a\u2014\u200aheavy right skew that suggests a few high performers "
+            "pull the average up."
+            "</p>"
+            "<p>"
+            "Shield has lower entry cost, a lower royalty rate (8% vs. 10%/9%/8%), "
+            "and faster system growth. Squad has higher average revenue per territory, "
+            "more transparent data, and a stabilizing system health trajectory."
+            "</p>"
+            "<p>"
+            "A buyer who can evaluate the churn data and is comfortable with Shield\u2019s "
+            "growth-with-turnover profile may find the lower royalty rate and entry cost "
+            "attractive. A buyer who prioritizes data transparency and proven unit "
+            "economics has a clearer picture with Squad. The disclosure quality gap "
+            "between these two brands is among the largest in the cohort."
+            "</p>"
+        ),
+    },
 ]
 
 
