@@ -7,23 +7,11 @@
 <style>
 @media print {
   body { font-size: 11pt; }
-  .page-break { page-break-before: always; break-before: page; }
-  /* Each major section starts on a fresh page */
-  .section-break { page-break-before: always; break-before: page; }
-  h2 { page-break-after: avoid; break-after: avoid; }
-  h3 { page-break-after: avoid; break-after: avoid; }
-  /* Keep small elements together; let large/variable-length content flow */
-  table { page-break-inside: avoid; break-inside: avoid; }
-  .peer-table { page-break-inside: auto; break-inside: auto; }
-  .scorecard { page-break-inside: auto; break-inside: auto; }
-  .callout { page-break-inside: avoid; break-inside: avoid; }
-  .fee-bars { page-break-inside: avoid; break-inside: avoid; }
-  /* Decision overlay flows with peer table — no forced avoidance */
-  .decision-overlay { page-break-inside: auto; break-inside: auto; }
-  .question-list li { page-break-inside: avoid; break-inside: avoid; }
-  /* fit-section and methodology are often multi-page — let them flow */
-  .cover-page { page-break-after: always; break-after: page; }
-  .toc { page-break-after: always; break-after: page; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
   a { text-decoration: none !important; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -187,7 +175,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
     <span>Source: 2025 Franchise Disclosure Document</span>
     <span>Filed with the Wisconsin Department of Financial Institutions</span>
     <span>Legal entity: Mosquito Joe SPV LLC</span>
-    <span>Report generated: 2026-03-31</span>
+    <span>Report generated: 2026-03-17</span>
   </div>
   <div class="cover-origin">Franchise Decision Radar</div>
 </div>
@@ -218,7 +206,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
   <div class="report-meta">
     Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
     Legal entity: Mosquito Joe SPV LLC<br>
-    Report generated: 2026-03-31 &middot; Franchise Decision Radar
+    Report generated: 2026-03-17 &middot; Franchise Decision Radar
   </div>
 </div>
 
@@ -609,7 +597,8 @@ error in the filed FDD, not a data integrity issue.</p>
 
 <div class="implication">
 <strong>What this means:</strong> A reasonable revenue expectation for a single-territory
-operator in the first 5 years is likely in the $215K–$290K range (between the average of ~$215K and median of ~$288K). Mature operators reach $340K–$430K. The high performers ($850K–$1.9M) almost certainly
+operator in the first 5 years is likely in the $200K–$290K range (between the average and
+median). Mature operators reach $340K–$430K. The high performers ($850K–$1.9M) almost certainly
 operate multiple territories. Plan around the median, not the average or the high — and validate
 the per-territory assumption with current franchisees.
 </div>
@@ -1535,7 +1524,7 @@ Each includes context on why it matters and what to listen for.</p>
   
 </ol>
 
-<div class="methodology section-break">
+<div class="methodology">
   <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
   <p><strong>Source document:</strong> Mosquito Joe 2025 Franchise Disclosure Document,
   filed with the Wisconsin Department of Financial Institutions. ~230-page

@@ -7,23 +7,11 @@
 <style>
 @media print {
   body { font-size: 11pt; }
-  .page-break { page-break-before: always; break-before: page; }
-  /* Each major section starts on a fresh page */
-  .section-break { page-break-before: always; break-before: page; }
-  h2 { page-break-after: avoid; break-after: avoid; }
-  h3 { page-break-after: avoid; break-after: avoid; }
-  /* Keep small elements together; let large/variable-length content flow */
-  table { page-break-inside: avoid; break-inside: avoid; }
-  .peer-table { page-break-inside: auto; break-inside: auto; }
-  .scorecard { page-break-inside: auto; break-inside: auto; }
-  .callout { page-break-inside: avoid; break-inside: avoid; }
-  .fee-bars { page-break-inside: avoid; break-inside: avoid; }
-  /* Decision overlay flows with peer table — no forced avoidance */
-  .decision-overlay { page-break-inside: auto; break-inside: auto; }
-  .question-list li { page-break-inside: avoid; break-inside: avoid; }
-  /* fit-section and methodology are often multi-page — let them flow */
-  .cover-page { page-break-after: always; break-after: page; }
-  .toc { page-break-after: always; break-after: page; }
+  .page-break { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  table, .callout { page-break-inside: avoid; }
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
   a { text-decoration: none !important; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -187,7 +175,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
     <span>Source: 2025 Franchise Disclosure Document</span>
     <span>Filed with the Wisconsin Department of Financial Institutions</span>
     <span>Legal entity: Lawn Doctor, Inc.</span>
-    <span>Report generated: 2026-03-31</span>
+    <span>Report generated: 2026-03-17</span>
   </div>
   <div class="cover-origin">Franchise Decision Radar</div>
 </div>
@@ -218,7 +206,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
   <div class="report-meta">
     Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
     Legal entity: Lawn Doctor, Inc.<br>
-    Report generated: 2026-03-31 &middot; Franchise Decision Radar
+    Report generated: 2026-03-17 &middot; Franchise Decision Radar
   </div>
 </div>
 
@@ -1094,33 +1082,33 @@ independent market knowledge who do not need FDD-based revenue benchmarks.</p>
   <tbody>
     
     <tr>
-      <td class="overlay-label">Lowest ongoing fee burden</td>
-      <td class="overlay-value">Weed Man — 8.5% at $300K, but no Item 19 disclosure — you are flying blind on revenue benchmarks.</td>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
     </tr>
     
     <tr>
-      <td class="overlay-label">Best revenue disclosure</td>
-      <td class="overlay-value">Lawn Doctor — 4-table Item 19 with 16-year trend. Most data to work with in diligence.</td>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
     </tr>
     
     <tr>
-      <td class="overlay-label">Lowest entry cost</td>
-      <td class="overlay-value">NaturaLawn — $78K–$153K total. But ongoing fee burden is the highest in the cohort.</td>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
     </tr>
     
     <tr>
-      <td class="overlay-label">Best balance of cost vs. data</td>
-      <td class="overlay-value">Spring-Green — 15.1% fee burden at $300K with solid 3-table Item 19. The middle ground.</td>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
     </tr>
     
     <tr>
-      <td class="overlay-label">Lowest turnover</td>
-      <td class="overlay-value">Lawn Doctor / NaturaLawn — Both under 2% in 2024. NaturaLawn at 0% for 2 of 3 years (but 88-unit system).</td>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
     </tr>
     
     <tr>
-      <td class="overlay-label">First-time buyer</td>
-      <td class="overlay-value">Spring-Green — Moderate cost, clean disclosure, manageable fee burden, stable 126-unit system.</td>
+      <td class="overlay-label"></td>
+      <td class="overlay-value"> — </td>
     </tr>
     
   </tbody>
@@ -1280,7 +1268,7 @@ Each includes context on why it matters and what to listen for.</p>
   
 </ol>
 
-<div class="methodology section-break">
+<div class="methodology">
   <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
   <p><strong>Source document:</strong> Lawn Doctor 2025 Franchise Disclosure Document,
   filed with the Wisconsin Department of Financial Institutions. 281-page
