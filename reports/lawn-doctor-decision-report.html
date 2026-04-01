@@ -5,56 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lawn Doctor — Franchise Decision Report</title>
 <style>
-@page { margin: 0.75in; }
 @media print {
-  body { font-size: 11pt; padding: 0; orphans: 3; widows: 3; }
-  .page-break { page-break-before: always; break-before: always; }
-
-  /* Reduce top margin so headings at page tops don't create excessive whitespace */
-  h2 { margin-top: 0.75rem; }
-  h3 { margin-top: 0.5rem; }
-
-  /* Headings never orphaned — always keep with next element */
-  h1, h2, h3, h4, h5, h6 {
-    page-break-after: avoid; break-after: avoid;
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* Chain: heading → intro paragraph → content all stay together.
-     Without this, the <p> after an <h2> can separate from the table or list
-     below it, stranding heading+paragraph at the top of a page with a gap. */
-  h2 + p, h3 + p, h4 + p {
-    page-break-after: avoid; break-after: avoid;
-  }
-
-  p { orphans: 3; widows: 3; }
-
-  /* Small self-contained blocks: keep intact on one page */
-  .callout, .implication {
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* Discovery Day: each question has sub-parts (why/strong/weak/follow-up);
-     keep each question together as a unit */
-  .question-list li {
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* NOTE: Large elements (tables, .scorecard, .fee-bars, .decision-overlay,
-     .fit-section) intentionally NOT given page-break-inside: avoid.
-     That constraint pushes large blocks wholesale to the next page, creating
-     a visible gap. Natural flow is better. */
-
-  .cover-page { page-break-after: always; break-after: always; }
-  .toc { page-break-after: always; break-after: always; }
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; break-before: page; }
+  /* Each major section starts on a fresh page */
+  .section-break { page-break-before: always; break-before: page; }
+  h2 { page-break-after: avoid; break-after: avoid; }
+  /* Keep h3 with following content */
+  h3 { page-break-after: avoid; break-after: avoid; }
+  /* Keep small elements together; let large/variable-length content flow */
+  table { page-break-inside: avoid; break-inside: avoid; }
+  .peer-table { page-break-inside: auto; break-inside: auto; }
+  .scorecard { page-break-inside: auto; break-inside: auto; }
+  .callout { page-break-inside: avoid; break-inside: avoid; }
+  .fee-bars { page-break-inside: avoid; break-inside: avoid; }
+  .decision-overlay { page-break-inside: avoid; break-inside: avoid; }
+  .question-list li { page-break-inside: avoid; break-inside: avoid; }
+  /* fit-section and methodology are often multi-page — let them flow */
+  .cover-page { page-break-after: always; break-after: page; }
+  .toc { page-break-after: always; break-after: page; }
   a { text-decoration: none !important; }
-
-  /* Ensure content fits within the printable area */
-  tbody td.label { white-space: normal; }
-  thead th { white-space: normal; }
-  table { font-size: 0.75rem; }
-  .peer-table { font-size: 0.65rem; }
-  .peer-table thead th { font-size: 0.6rem; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -217,7 +187,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
     <span>Source: 2025 Franchise Disclosure Document</span>
     <span>Filed with the Wisconsin Department of Financial Institutions</span>
     <span>Legal entity: Lawn Doctor, Inc.</span>
-    <span>Report generated: 2026-03-17</span>
+    <span>Report generated: 2026-03-31</span>
   </div>
   <div class="cover-origin">Franchise Decision Radar</div>
 </div>
@@ -248,7 +218,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
   <div class="report-meta">
     Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
     Legal entity: Lawn Doctor, Inc.<br>
-    Report generated: 2026-03-17 &middot; Franchise Decision Radar
+    Report generated: 2026-03-31 &middot; Franchise Decision Radar
   </div>
 </div>
 
@@ -340,7 +310,7 @@ for the economics to work in your specific territory.</p>
     
     <tr>
       <td class="label">Overall</td>
-      <td class="rating rating-mixed">Mixed</td>
+      <td class="rating rating-mixed">Notable</td>
       <td class="sc-summary">The strongest combination of disclosure depth and system stability in the lawn cohort, offset by the highest entry cost and one of the highest ongoing fee burdens. Scale and transparency come at a price.</td>
     </tr>
     
@@ -407,7 +377,7 @@ less system scale and disclosure depth.</li>
 </div>
 
 <!-- FEE BURDEN -->
-<h2 id="fee-burden">Fee Burden Analysis</h2>
+<h2 id="fee-burden" class="section-break">Fee Burden Analysis</h2>
 
 <p>Lawn Doctor has the highest ongoing fee burden among the four established brands in the cohort
 at every revenue level below $500K. At $300K revenue, total franchisor fees are $78,800 (26.3%).
@@ -555,7 +525,7 @@ customers to justify the spend?
 
 
 <!-- ITEM 19 -->
-<h2 id="item-19">Item 19 Interpretation</h2>
+<h2 id="item-19" class="section-break">Item 19 Interpretation</h2>
 
 <p>Lawn Doctor discloses the richest Item 19 in the lawn care cohort — four tables covering
 revenue segmented by territory count, customer-level metrics, gross profit margins, and a
@@ -665,7 +635,7 @@ become genuinely attractive.
 
 
 <!-- ECONOMICS REALITY CHECK -->
-<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+<h2 id="economics" class="section-break">Buyer-Side Economics Reality Check</h2>
 
 <p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
 This is not a profitability forecast. It is an illustrative scenario exercise using Lawn Doctor's
@@ -699,29 +669,29 @@ labor) based on lawn care industry benchmarks. This is an assumption, not a disc
     <tr>
       <td class="scenario-name">Average single-territory SP</td>
       <td class="num">$682,000</td>
-      <td class="num">$162,840 (23.9%)</td>
+      <td class="num">$122,800 (18.0%)</td>
       <td class="num">$375,100</td>
-      <td class="num"><strong>$144,060</strong></td>
+      <td class="num"><strong>$184,100</strong></td>
     </tr>
-
+    
     <tr>
       <td class="scenario-name">Average 4–6 territory SP</td>
       <td class="num">$1,470,000</td>
-      <td class="num">$336,200 (22.9%)</td>
+      <td class="num">$122,800 (8.4%)</td>
       <td class="num">$808,500</td>
-      <td class="num"><strong>$325,300</strong></td>
+      <td class="num"><strong>$538,700</strong></td>
     </tr>
     
   </tbody>
 </table>
-<p class="assumption-note">Revenue from Item 19 Table A (2024, 205 Strategic-Partners operating 2+ years). COGS estimated at 55% of revenue: ~15% materials (from disclosed 85.4% gross margin) + ~40% estimated direct labor (industry benchmark for seasonal lawn care; NOT disclosed in FDD). This COGS estimate is illustrative, not extracted. Franchisor fees computed at each scenario's revenue level using the brand's flat royalty (10%), mandatory local advertising (greater of $30,000 or 10% of Net Revenues), modeled national advertising (2%), and fixed fees (technology, call center, convention — $12,800/year). 'Remaining' must cover vehicle costs, insurance, office overhead, owner draw, and taxes.</p>
+<p class="assumption-note">Revenue from Item 19 Table A (2024, 205 Strategic-Partners operating 2+ years). COGS estimated at 55% of revenue: ~15% materials (from disclosed 85.4% gross margin) + ~40% estimated direct labor (industry benchmark for seasonal lawn care; NOT disclosed in FDD). This COGS estimate is illustrative, not extracted. 'Remaining' must cover vehicle costs, insurance, office overhead, owner draw, and taxes.</p>
 
 
 
 
 
 <!-- INVESTMENT -->
-<h2 id="investment">Investment Breakdown</h2>
+<h2 id="investment" class="section-break">Investment Breakdown</h2>
 
 <p>Highest entry cost in the cohort: $150,070–$177,052 total. The franchise fee alone ($124K–$127K)
 exceeds the total investment at NaturaLawn. The fee is a bundled package including: $50,000 initial
@@ -877,7 +847,7 @@ with lower entry barriers.
 
 
 <!-- SYSTEM HEALTH -->
-<h2 id="system-health">System Health</h2>
+<h2 id="system-health" class="section-break">System Health</h2>
 
 <p>Largest and most stable system in the cohort. 653 outlets at year-end 2024, with net growth
 of +11, +6, and +23 over the three reported years. Turnover declined sharply: 6.7% (2022) to
@@ -981,7 +951,7 @@ monthly revenue patterns.</p>
 
 
 <!-- PEER CONTEXT -->
-<h2 id="peer-context">Peer Context</h2>
+<h2 id="peer-context" class="section-break">Peer Context</h2>
 
 <p>Among the four established brands in this cohort, Lawn Doctor occupies a distinctive position:
 highest cost, highest transparency, most stable system. It is the premium choice — you pay more
@@ -1124,33 +1094,33 @@ independent market knowledge who do not need FDD-based revenue benchmarks.</p>
   <tbody>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">Lowest ongoing fee burden</td>
+      <td class="overlay-value">Weed Man — 8.5% at $300K, but no Item 19 disclosure — you are flying blind on revenue benchmarks.</td>
     </tr>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">Best revenue disclosure</td>
+      <td class="overlay-value">Lawn Doctor — 4-table Item 19 with 16-year trend. Most data to work with in diligence.</td>
     </tr>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">Lowest entry cost</td>
+      <td class="overlay-value">NaturaLawn — $78K–$153K total. But ongoing fee burden is the highest in the cohort.</td>
     </tr>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">Best balance of cost vs. data</td>
+      <td class="overlay-value">Spring-Green — 15.1% fee burden at $300K with solid 3-table Item 19. The middle ground.</td>
     </tr>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">Lowest turnover</td>
+      <td class="overlay-value">Lawn Doctor / NaturaLawn — Both under 2% in 2024. NaturaLawn at 0% for 2 of 3 years (but 88-unit system).</td>
     </tr>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">First-time buyer</td>
+      <td class="overlay-value">Spring-Green — Moderate cost, clean disclosure, manageable fee burden, stable 126-unit system.</td>
     </tr>
     
   </tbody>
@@ -1158,7 +1128,7 @@ independent market knowledge who do not need FDD-based revenue benchmarks.</p>
 
 
 <!-- DISCOVERY DAY -->
-<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<h2 id="discovery-day" class="section-break">Discovery Day Diligence Script</h2>
 <p>These questions are derived from specific findings in the Lawn Doctor 2025 FDD.
 Each includes context on why it matters and what to listen for.</p>
 
@@ -1310,7 +1280,7 @@ Each includes context on why it matters and what to listen for.</p>
   
 </ol>
 
-<div class="methodology">
+<div class="methodology section-break">
   <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
   <p><strong>Source document:</strong> Lawn Doctor 2025 Franchise Disclosure Document,
   filed with the Wisconsin Department of Financial Institutions. 281-page

@@ -5,56 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NaturaLawn — Franchise Decision Report</title>
 <style>
-@page { margin: 0.75in; }
 @media print {
-  body { font-size: 11pt; padding: 0; orphans: 3; widows: 3; }
-  .page-break { page-break-before: always; break-before: always; }
-
-  /* Reduce top margin so headings at page tops don't create excessive whitespace */
-  h2 { margin-top: 0.75rem; }
-  h3 { margin-top: 0.5rem; }
-
-  /* Headings never orphaned — always keep with next element */
-  h1, h2, h3, h4, h5, h6 {
-    page-break-after: avoid; break-after: avoid;
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* Chain: heading → intro paragraph → content all stay together.
-     Without this, the <p> after an <h2> can separate from the table or list
-     below it, stranding heading+paragraph at the top of a page with a gap. */
-  h2 + p, h3 + p, h4 + p {
-    page-break-after: avoid; break-after: avoid;
-  }
-
-  p { orphans: 3; widows: 3; }
-
-  /* Small self-contained blocks: keep intact on one page */
-  .callout, .implication {
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* Discovery Day: each question has sub-parts (why/strong/weak/follow-up);
-     keep each question together as a unit */
-  .question-list li {
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* NOTE: Large elements (tables, .scorecard, .fee-bars, .decision-overlay,
-     .fit-section) intentionally NOT given page-break-inside: avoid.
-     That constraint pushes large blocks wholesale to the next page, creating
-     a visible gap. Natural flow is better. */
-
-  .cover-page { page-break-after: always; break-after: always; }
-  .toc { page-break-after: always; break-after: always; }
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; break-before: page; }
+  /* Each major section starts on a fresh page */
+  .section-break { page-break-before: always; break-before: page; }
+  h2 { page-break-after: avoid; break-after: avoid; }
+  /* Keep h3 with following content */
+  h3 { page-break-after: avoid; break-after: avoid; }
+  /* Keep small elements together; let large/variable-length content flow */
+  table { page-break-inside: avoid; break-inside: avoid; }
+  .peer-table { page-break-inside: auto; break-inside: auto; }
+  .scorecard { page-break-inside: auto; break-inside: auto; }
+  .callout { page-break-inside: avoid; break-inside: avoid; }
+  .fee-bars { page-break-inside: avoid; break-inside: avoid; }
+  .decision-overlay { page-break-inside: avoid; break-inside: avoid; }
+  .question-list li { page-break-inside: avoid; break-inside: avoid; }
+  /* fit-section and methodology are often multi-page — let them flow */
+  .cover-page { page-break-after: always; break-after: page; }
+  .toc { page-break-after: always; break-after: page; }
   a { text-decoration: none !important; }
-
-  /* Ensure content fits within the printable area */
-  tbody td.label { white-space: normal; }
-  thead th { white-space: normal; }
-  table { font-size: 0.75rem; }
-  .peer-table { font-size: 0.65rem; }
-  .peer-table thead th { font-size: 0.6rem; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -217,7 +187,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
     <span>Source: 2025 Franchise Disclosure Document</span>
     <span>Filed with the Wisconsin Department of Financial Institutions</span>
     <span>Legal entity: NaturaLawn of America Inc.</span>
-    <span>Report generated: 2026-03-17</span>
+    <span>Report generated: 2026-03-31</span>
   </div>
   <div class="cover-origin">Franchise Decision Radar</div>
 </div>
@@ -248,7 +218,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
   <div class="report-meta">
     Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
     Legal entity: NaturaLawn of America Inc.<br>
-    Report generated: 2026-03-17 &middot; Franchise Decision Radar
+    Report generated: 2026-03-31 &middot; Franchise Decision Radar
   </div>
 </div>
 
@@ -338,7 +308,7 @@ in other markets is uncertain.</p>
     
     <tr>
       <td class="label">Overall</td>
-      <td class="rating rating-mixed">Mixed</td>
+      <td class="rating rating-mixed">Notable</td>
       <td class="sc-summary">The strongest niche positioning and lowest turnover in the cohort, offset by the highest fee burden and smallest sample sizes in the Item 19. The organic premium commands higher revenue per customer but costs more to maintain through mandatory marketing. Relative cohort position does not establish absolute profitability.</td>
     </tr>
     
@@ -406,7 +376,7 @@ Mid-Atlantic. If you are operating in a different region, this benchmark may not
 </div>
 
 <!-- FEE BURDEN -->
-<h2 id="fee-burden">Fee Burden Analysis</h2>
+<h2 id="fee-burden" class="section-break">Fee Burden Analysis</h2>
 
 <p>NaturaLawn has the highest ongoing fee burden in the lawn cohort at every revenue level: 45.8%
 at $200K, 33.9% at $300K, 24.3% at $500K. The headline rates (9% royalty, 1% ad fund) are
@@ -553,7 +523,7 @@ premium ($810/customer vs. $556–$765) must justify this gap.
 
 
 <!-- ITEM 19 -->
-<h2 id="item-19">Item 19 Interpretation</h2>
+<h2 id="item-19" class="section-break">Item 19 Interpretation</h2>
 
 <p>NaturaLawn's Item 19 provides two tables: one for company-owned locations (gross margin + revenue)
 and one for franchised locations (revenue and customers only). The split means you get margin
@@ -641,7 +611,7 @@ share of gross margin.
 
 
 <!-- ECONOMICS REALITY CHECK -->
-<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+<h2 id="economics" class="section-break">Buyer-Side Economics Reality Check</h2>
 
 <p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
 This is not a profitability forecast. It is an illustrative scenario exercise using NaturaLawn's
@@ -674,29 +644,29 @@ local demand for organic lawn care, labor market, customer acquisition costs, an
     <tr>
       <td class="scenario-name">Median franchised</td>
       <td class="num">$1,097,000</td>
-      <td class="num">$181,284 (16.5%)</td>
+      <td class="num">$121,584 (11.1%)</td>
       <td class="num">$405,890</td>
-      <td class="num"><strong>$509,826</strong></td>
+      <td class="num"><strong>$569,526</strong></td>
     </tr>
-
+    
     <tr>
       <td class="scenario-name">Average franchised</td>
       <td class="num">$2,192,000</td>
-      <td class="num">$290,784 (13.3%)</td>
+      <td class="num">$121,584 (5.5%)</td>
       <td class="num">$811,040</td>
-      <td class="num"><strong>$1,090,176</strong></td>
+      <td class="num"><strong>$1,259,376</strong></td>
     </tr>
     
   </tbody>
 </table>
-<p class="assumption-note">Revenue from Item 19 Table 2 (2024, 40 franchised locations operating 5+ years). COGS estimated at 37% based on midpoint of company-owned gross margin range (60.7–65.2%), which includes direct labor — not from franchised data. Franchisor fees computed at each scenario's revenue level using the brand's royalty structure (9% flat), ad fund (1%), mandatory marketing spend ($70K fixed midpoint of $60K–$80K range), and technology fee ($1,584/year). 'Remaining' must cover overhead, owner draw, and taxes.</p>
+<p class="assumption-note">Revenue from Item 19 Table 2 (2024, 40 franchised locations operating 5+ years). COGS estimated at 37% based on midpoint of company-owned gross margin range (60.7–65.2%), which includes direct labor — not from franchised data. 'Remaining' must cover the $60K–$80K mandatory marketing spend, overhead, owner draw, and taxes. Marketing spend is modeled separately at $65K (midpoint) because it is a fixed cost, not a variable one.</p>
 
 
 
 
 
 <!-- INVESTMENT -->
-<h2 id="investment">Investment Breakdown</h2>
+<h2 id="investment" class="section-break">Investment Breakdown</h2>
 
 <p>Lowest entry floor in the cohort: $77,500–$152,650. The franchise fee ($19,500–$39,500) varies
 by territory size and is 3–6× lower than Lawn Doctor's $124K. But the Item 7 also includes
@@ -824,7 +794,7 @@ is included.
 
 
 <!-- SYSTEM HEALTH -->
-<h2 id="system-health">System Health</h2>
+<h2 id="system-health" class="section-break">System Health</h2>
 
 <p>Smallest system in the active cohort (88 units) but the most stable by turnover metrics:
 0% attrition in 2022 and 2023, 2% in 2024. Not a single franchisee exited the system for
@@ -939,7 +909,7 @@ effect at $500K that should be modeled explicitly. (pp. 16–17)</p>
 
 
 <!-- PEER CONTEXT -->
-<h2 id="peer-context">Peer Context</h2>
+<h2 id="peer-context" class="section-break">Peer Context</h2>
 
 <p>NaturaLawn occupies a unique position in the lawn cohort: niche organic specialist with the
 highest revenue per customer and lowest turnover, but also the highest fee burden and smallest
@@ -1081,33 +1051,33 @@ revenue per customer to overcome a $76,000/year fee gap.</p>
   <tbody>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">Organic/environmental niche</td>
+      <td class="overlay-value">NaturaLawn — Only organic-first brand in the cohort. $810/customer vs. $556–$765 for peers.</td>
     </tr>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">Lowest franchise turnover</td>
+      <td class="overlay-value">NaturaLawn — 0% turnover in 2 of 3 years. Extraordinary franchisee retention.</td>
     </tr>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">Lowest entry cost</td>
+      <td class="overlay-value">NaturaLawn — $78K–$153K total — but ongoing costs are the highest due to mandatory marketing spend.</td>
     </tr>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">Lowest ongoing fees</td>
+      <td class="overlay-value">Weed Man (no Item 19) / Spring-Green (with Item 19) — NaturaLawn is the most expensive to operate at every revenue level.</td>
     </tr>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">Best revenue disclosure</td>
+      <td class="overlay-value">Lawn Doctor — NaturaLawn's Item 19 is limited to 6 company-owned + 40 franchised vs. Lawn Doctor's 205 SPs with 16-year trend.</td>
     </tr>
     
     <tr>
-      <td class="overlay-label"></td>
-      <td class="overlay-value"> — </td>
+      <td class="overlay-label">Founder-led stability</td>
+      <td class="overlay-value">NaturaLawn — Only founder-led brand. No PE exit pressure. Aligned incentives between franchisor and mission.</td>
     </tr>
     
   </tbody>
@@ -1115,7 +1085,7 @@ revenue per customer to overcome a $76,000/year fee gap.</p>
 
 
 <!-- DISCOVERY DAY -->
-<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<h2 id="discovery-day" class="section-break">Discovery Day Diligence Script</h2>
 <p>These questions are derived from specific findings in the NaturaLawn 2025 FDD.
 Each includes context on why it matters and what to listen for.</p>
 
@@ -1267,7 +1237,7 @@ Each includes context on why it matters and what to listen for.</p>
   
 </ol>
 
-<div class="methodology">
+<div class="methodology section-break">
   <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
   <p><strong>Source document:</strong> NaturaLawn 2025 Franchise Disclosure Document,
   filed with the Wisconsin Department of Financial Institutions. 147-page

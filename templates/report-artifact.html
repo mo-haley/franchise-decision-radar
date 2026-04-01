@@ -7,11 +7,23 @@
 <style>
 @media print {
   body { font-size: 11pt; }
-  .page-break { page-break-before: always; }
-  h2 { page-break-after: avoid; }
-  table, .callout { page-break-inside: avoid; }
-  .cover-page { page-break-after: always; }
-  .toc { page-break-after: always; }
+  .page-break { page-break-before: always; break-before: page; }
+  /* Each major section starts on a fresh page */
+  .section-break { page-break-before: always; break-before: page; }
+  h2 { page-break-after: avoid; break-after: avoid; }
+  /* Keep h3 with following content */
+  h3 { page-break-after: avoid; break-after: avoid; }
+  /* Keep small elements together; let large/variable-length content flow */
+  table { page-break-inside: avoid; break-inside: avoid; }
+  .peer-table { page-break-inside: auto; break-inside: auto; }
+  .scorecard { page-break-inside: auto; break-inside: auto; }
+  .callout { page-break-inside: avoid; break-inside: avoid; }
+  .fee-bars { page-break-inside: avoid; break-inside: avoid; }
+  .decision-overlay { page-break-inside: avoid; break-inside: avoid; }
+  .question-list li { page-break-inside: avoid; break-inside: avoid; }
+  /* fit-section and methodology are often multi-page — let them flow */
+  .cover-page { page-break-after: always; break-after: page; }
+  .toc { page-break-after: always; break-after: page; }
   a { text-decoration: none !important; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -250,7 +262,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
 </div>
 
 <!-- FEE BURDEN -->
-<h2 id="fee-burden">Fee Burden Analysis</h2>
+<h2 id="fee-burden" class="section-break">Fee Burden Analysis</h2>
 {{ fee_burden_narrative }}
 
 <table>
@@ -299,7 +311,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
 {{ fee_burden_detail }}
 
 <!-- ITEM 19 -->
-<h2 id="item-19">Item 19 Interpretation</h2>
+<h2 id="item-19" class="section-break">Item 19 Interpretation</h2>
 {{ item19_narrative }}
 
 {% if item19_triangulation %}
@@ -307,7 +319,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
 {% endif %}
 
 <!-- ECONOMICS REALITY CHECK -->
-<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+<h2 id="economics" class="section-break">Buyer-Side Economics Reality Check</h2>
 {{ economics_preamble }}
 
 <table class="scenario-table">
@@ -343,7 +355,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
 {% endif %}
 
 <!-- INVESTMENT -->
-<h2 id="investment">Investment Breakdown</h2>
+<h2 id="investment" class="section-break">Investment Breakdown</h2>
 {{ investment_narrative }}
 
 <table>
@@ -373,7 +385,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
 {{ investment_detail }}
 
 <!-- SYSTEM HEALTH -->
-<h2 id="system-health">System Health</h2>
+<h2 id="system-health" class="section-break">System Health</h2>
 {{ system_health_narrative }}
 
 <table>
@@ -406,7 +418,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
 {{ risk_narrative }}
 
 <!-- PEER CONTEXT -->
-<h2 id="peer-context">Peer Context</h2>
+<h2 id="peer-context" class="section-break">Peer Context</h2>
 {{ peer_narrative }}
 
 <table class="peer-table">
@@ -445,7 +457,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
 {% endif %}
 
 <!-- DISCOVERY DAY -->
-<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<h2 id="discovery-day" class="section-break">Discovery Day Diligence Script</h2>
 <p>These questions are derived from specific findings in the {{ brand_name }} {{ filing_year }} FDD.
 Each includes context on why it matters and what to listen for.</p>
 
@@ -477,7 +489,7 @@ Each includes context on why it matters and what to listen for.</p>
   {% endfor %}
 </ol>
 
-<div class="methodology">
+<div class="methodology section-break">
   <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
   <p><strong>Source document:</strong> {{ brand_name }} 2025 Franchise Disclosure Document,
   filed with the Wisconsin Department of Financial Institutions. {{ page_count }}-page

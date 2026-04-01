@@ -25,6 +25,25 @@ ROOT = Path(__file__).resolve().parent.parent
 REPORTS_HTML = ROOT / "reports"
 REPORTS_PDF = ROOT / "site" / "reports"
 
+# Must stay in sync with PDF_TOKENS in build_site.py
+PDF_TOKENS: dict[str, str] = {
+    "mosquito-authority": "67951af91d92",
+    "mosquito-hunters": "0282031c5464",
+    "mosquito-joe": "305b54c8d68e",
+    "mosquito-shield": "cab728a38e88",
+    "mosquito-squad": "650687ba7092",
+    "lawn-doctor": "26b857676f46",
+    "spring-green": "18f0b7ec9fd1",
+    "naturalawn": "35baa1a22a8f",
+    "cleaning-authority": "ec7fe8faeb02",
+    "two-maids": "3075f3ec1829",
+    "molly-maid": "732768ef2571",
+    "the-maids": "868de7c0f67e",
+    "merry-maids": "04c86de4ccd0",
+    "maidpro": "7e1cc4a53938",
+    "maid-right": "0056b5989dca",
+}
+
 BRAND_SLUGS = [
     # Mosquito
     "mosquito-authority",
@@ -61,7 +80,19 @@ def build_pdfs(slugs: list[str]) -> None:
                 print(f"  SKIP: {html_path.name} (not found — run generate_report.py first)")
                 continue
 
-            pdf_path = REPORTS_PDF / f"{slug}-decision-report.pdf"
+            # Remove old un-tokenized PDF if it exists
+            old_pdf = REPORTS_PDF / f"{slug}-decision-report.pdf"
+            if old_pdf.exists():
+                old_pdf.unlink()
+                print(f"    Removed old: {old_pdf.name}")
+
+            token = PDF_TOKENS.get(slug, "")
+            pdf_name = (
+                f"{slug}-decision-report-{token}.pdf"
+                if token
+                else f"{slug}-decision-report.pdf"
+            )
+            pdf_path = REPORTS_PDF / pdf_name
             file_url = html_path.resolve().as_uri()
 
             print(f"  Converting: {html_path.name}")
@@ -69,8 +100,15 @@ def build_pdfs(slugs: list[str]) -> None:
             page.pdf(
                 path=str(pdf_path),
                 format="Letter",
-                margin={"top": "0.75in", "bottom": "0.75in", "left": "0.75in", "right": "0.75in"},
+                margin={"top": "0.75in", "bottom": "0.9in", "left": "0.75in", "right": "0.75in"},
                 print_background=True,
+                display_header_footer=True,
+                header_template="<span></span>",
+                footer_template=(
+                    '<div style="width:100%; text-align:center; font-size:8px;'
+                    ' font-family:-apple-system,Helvetica,sans-serif; color:#999;">'
+                    '<span class="pageNumber"></span></div>'
+                ),
             )
             size_kb = pdf_path.stat().st_size / 1024
             print(f"    → {pdf_path.relative_to(ROOT)} ({size_kb:.0f} KB)")

@@ -5,56 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mosquito Squad — Franchise Decision Report</title>
 <style>
-@page { margin: 0.75in; }
 @media print {
-  body { font-size: 11pt; padding: 0; orphans: 3; widows: 3; }
-  .page-break { page-break-before: always; break-before: always; }
-
-  /* Reduce top margin so headings at page tops don't create excessive whitespace */
-  h2 { margin-top: 0.75rem; }
-  h3 { margin-top: 0.5rem; }
-
-  /* Headings never orphaned — always keep with next element */
-  h1, h2, h3, h4, h5, h6 {
-    page-break-after: avoid; break-after: avoid;
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* Chain: heading → intro paragraph → content all stay together.
-     Without this, the <p> after an <h2> can separate from the table or list
-     below it, stranding heading+paragraph at the top of a page with a gap. */
-  h2 + p, h3 + p, h4 + p {
-    page-break-after: avoid; break-after: avoid;
-  }
-
-  p { orphans: 3; widows: 3; }
-
-  /* Small self-contained blocks: keep intact on one page */
-  .callout, .implication {
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* Discovery Day: each question has sub-parts (why/strong/weak/follow-up);
-     keep each question together as a unit */
-  .question-list li {
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* NOTE: Large elements (tables, .scorecard, .fee-bars, .decision-overlay,
-     .fit-section) intentionally NOT given page-break-inside: avoid.
-     That constraint pushes large blocks wholesale to the next page, creating
-     a visible gap. Natural flow is better. */
-
-  .cover-page { page-break-after: always; break-after: always; }
-  .toc { page-break-after: always; break-after: always; }
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; break-before: page; }
+  /* Each major section starts on a fresh page */
+  .section-break { page-break-before: always; break-before: page; }
+  h2 { page-break-after: avoid; break-after: avoid; }
+  /* Keep h3 with following content */
+  h3 { page-break-after: avoid; break-after: avoid; }
+  /* Keep small elements together; let large/variable-length content flow */
+  table { page-break-inside: avoid; break-inside: avoid; }
+  .peer-table { page-break-inside: auto; break-inside: auto; }
+  .scorecard { page-break-inside: auto; break-inside: auto; }
+  .callout { page-break-inside: avoid; break-inside: avoid; }
+  .fee-bars { page-break-inside: avoid; break-inside: avoid; }
+  .decision-overlay { page-break-inside: avoid; break-inside: avoid; }
+  .question-list li { page-break-inside: avoid; break-inside: avoid; }
+  /* fit-section and methodology are often multi-page — let them flow */
+  .cover-page { page-break-after: always; break-after: page; }
+  .toc { page-break-after: always; break-after: page; }
   a { text-decoration: none !important; }
-
-  /* Ensure content fits within the printable area */
-  tbody td.label { white-space: normal; }
-  thead th { white-space: normal; }
-  table { font-size: 0.75rem; }
-  .peer-table { font-size: 0.65rem; }
-  .peer-table thead th { font-size: 0.6rem; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -217,7 +187,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
     <span>Source: 2025 Franchise Disclosure Document</span>
     <span>Filed with the Wisconsin Department of Financial Institutions</span>
     <span>Legal entity: Mosquito Squad Franchising SPE LLC</span>
-    <span>Report generated: 2026-03-17</span>
+    <span>Report generated: 2026-03-31</span>
   </div>
   <div class="cover-origin">Franchise Decision Radar</div>
 </div>
@@ -248,7 +218,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
   <div class="report-meta">
     Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
     Legal entity: Mosquito Squad Franchising SPE LLC<br>
-    Report generated: 2026-03-17 &middot; Franchise Decision Radar
+    Report generated: 2026-03-31 &middot; Franchise Decision Radar
   </div>
 </div>
 
@@ -395,7 +365,7 @@ franchisees — not just Q1/Q2 operators.</li>
 </div>
 
 <!-- FEE BURDEN -->
-<h2 id="fee-burden">Fee Burden Analysis</h2>
+<h2 id="fee-burden" class="section-break">Fee Burden Analysis</h2>
 
 <p>Mosquito Squad sits in the middle of the cohort on fee burden — second-lowest at $200K–$300K
 revenue, but third at higher levels where the graduated royalty tiers provide less relief than
@@ -563,7 +533,7 @@ increasingly as revenue grows.
 
 
 <!-- ITEM 19 -->
-<h2 id="item-19">Item 19 Interpretation</h2>
+<h2 id="item-19" class="section-break">Item 19 Interpretation</h2>
 
 <p>Mosquito Squad's Item 19 is the most comprehensive in the cohort — seven tables covering
 every dimension a buyer needs: per-territory revenue by quartile, operational conversion
@@ -707,7 +677,7 @@ business grows modestly with tenure, not just with new territory openings.</p>
 
 
 <!-- ECONOMICS REALITY CHECK -->
-<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+<h2 id="economics" class="section-break">Buyer-Side Economics Reality Check</h2>
 
 <p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
 This is not a profitability forecast. It is an illustrative scenario exercise using Mosquito
@@ -860,7 +830,7 @@ minimal income are the period where your personal reserves matter most.
 
 
 <!-- INVESTMENT -->
-<h2 id="investment">Investment Breakdown</h2>
+<h2 id="investment" class="section-break">Investment Breakdown</h2>
 
 <p>The headline range ($162K–$220K) is the highest in the cohort, but it is misleading. Squad
 includes 12 months of working capital in Item 7 ($84K–$117K), while most competitors include
@@ -1000,7 +970,7 @@ footnotes. The honest Item 7 is a feature, not a bug.
 
 
 <!-- SYSTEM HEALTH -->
-<h2 id="system-health">System Health</h2>
+<h2 id="system-health" class="section-break">System Health</h2>
 
 <p>Squad's system health tells a recovery story. The franchise contracted by 10 units in 2022
 (12 terminations, 3 non-renewals, only 5 openings) — the worst single year in the cohort.
@@ -1115,7 +1085,7 @@ expansion is planned and whether territory protections are sufficient.</p>
 
 
 <!-- PEER CONTEXT -->
-<h2 id="peer-context">Peer Context</h2>
+<h2 id="peer-context" class="section-break">Peer Context</h2>
 
 <p>Mosquito Squad occupies a distinctive position: mid-cost fees, the richest disclosure in the
 category, and a system that is recovering from a rough 2022. It's not the cheapest (Authority),
@@ -1345,7 +1315,7 @@ before committing, this is the most useful raw material in the category.</p>
 
 
 <!-- DISCOVERY DAY -->
-<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<h2 id="discovery-day" class="section-break">Discovery Day Diligence Script</h2>
 <p>These questions are derived from specific findings in the Mosquito Squad 2025 FDD.
 Each includes context on why it matters and what to listen for.</p>
 
@@ -1593,7 +1563,7 @@ Each includes context on why it matters and what to listen for.</p>
   
 </ol>
 
-<div class="methodology">
+<div class="methodology section-break">
   <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
   <p><strong>Source document:</strong> Mosquito Squad 2025 Franchise Disclosure Document,
   filed with the Wisconsin Department of Financial Institutions. ~230-page

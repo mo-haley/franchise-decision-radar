@@ -390,6 +390,16 @@ you are willing to accept a simpler system with less disclosed performance data,
 alternative — literally and figuratively.</p>
 """,
 
+"peer_decision_overlay": [
+    {"label": "Lowest modelable fee burden", "brand": "MaidPro", "rationale": "10.0% at $300K with the simplest structure in the cohort: flat 6% royalty + 2% Brand Fund + $500/mo tech. No territory-size-dependent fees."},
+    {"label": "Richest revenue disclosure", "brand": "The Cleaning Authority", "rationale": "Per-territory gross revenue ($1.46M average Enterprise), COGS breakdown, price per clean, and customer metrics. Most data for financial modeling."},
+    {"label": "Best profitability disclosure", "brand": "The Maids", "rationale": "Only brand disclosing company-owned net margin (15.5%). 97 company-owned offices with $1.18M system-wide average."},
+    {"label": "Strongest growth trajectory", "brand": "Two Maids", "rationale": "56.5% system growth over 3 years (+7, +19, +26 net units). Only brand with sustained, accelerating expansion."},
+    {"label": "Lowest franchise turnover", "brand": "The Cleaning Authority", "rationale": "4.1% in 2024, down from 10.6%. Zero terminations in 2024 across 236-outlet system."},
+    {"label": "Strongest brand recognition", "brand": "Molly Maid", "rationale": "448 outlets, franchising since 1980. Longest track record and Neighborly multi-brand ecosystem."},
+    {"label": "Highest regulatory risk", "brand": "Maid Right", "rationale": "CEO barred in California, 6 state regulatory actions, 38.6% turnover, financial condition warnings. Smallest system (35 units)."},
+],
+
 "discovery_questions": [
     {
         "question": "What is the actual Local Marketing Fee for the specific territory I am considering, expressed as a weekly and annual dollar amount?",
@@ -831,6 +841,16 @@ Two Maids (10–11% of revenue), but its Item 19 is less detailed. Molly Maid is
 lower-cost choice for buyers who prioritize brand recognition over growth momentum.</p>
 """,
 
+"peer_decision_overlay": [
+    {"label": "Lowest modelable fee burden", "brand": "MaidPro", "rationale": "10.0% at $300K with the simplest structure in the cohort: flat 6% royalty + 2% Brand Fund + $500/mo tech. No territory-size-dependent fees."},
+    {"label": "Richest revenue disclosure", "brand": "The Cleaning Authority", "rationale": "Per-territory gross revenue ($1.46M average Enterprise), COGS breakdown, price per clean, and customer metrics. Most data for financial modeling."},
+    {"label": "Best profitability disclosure", "brand": "The Maids", "rationale": "Only brand disclosing company-owned net margin (15.5%). 97 company-owned offices with $1.18M system-wide average."},
+    {"label": "Strongest growth trajectory", "brand": "Two Maids", "rationale": "56.5% system growth over 3 years (+7, +19, +26 net units). Only brand with sustained, accelerating expansion."},
+    {"label": "Lowest franchise turnover", "brand": "The Cleaning Authority", "rationale": "4.1% in 2024, down from 10.6%. Zero terminations in 2024 across 236-outlet system."},
+    {"label": "Strongest brand recognition", "brand": "Molly Maid", "rationale": "448 outlets, franchising since 1980. Longest track record and Neighborly multi-brand ecosystem."},
+    {"label": "Highest regulatory risk", "brand": "Maid Right", "rationale": "CEO barred in California, 6 state regulatory actions, 38.6% turnover, financial condition warnings. Smallest system (35 units)."},
+],
+
 "discovery_questions": [
     {
         "question": "The Local Advertising Services Program Fee is $2,500/month and franchisor-directed. What specific channels does the spend go to, and what lead attribution data can you show me for a territory similar to mine?",
@@ -1257,6 +1277,16 @@ cost ($110K–$159K), disclosed revenue ($462K average), and a stabilizing syste
 premium and Neighborly ecosystem do not justify the higher entry cost and missing revenue disclosure,
 MaidPro is the cleaner comparison.</p>
 """,
+
+"peer_decision_overlay": [
+    {"label": "Lowest modelable fee burden", "brand": "MaidPro", "rationale": "10.0% at $300K with the simplest structure in the cohort: flat 6% royalty + 2% Brand Fund + $500/mo tech. No territory-size-dependent fees."},
+    {"label": "Richest revenue disclosure", "brand": "The Cleaning Authority", "rationale": "Per-territory gross revenue ($1.46M average Enterprise), COGS breakdown, price per clean, and customer metrics. Most data for financial modeling."},
+    {"label": "Best profitability disclosure", "brand": "The Maids", "rationale": "Only brand disclosing company-owned net margin (15.5%). 97 company-owned offices with $1.18M system-wide average."},
+    {"label": "Strongest growth trajectory", "brand": "Two Maids", "rationale": "56.5% system growth over 3 years (+7, +19, +26 net units). Only brand with sustained, accelerating expansion."},
+    {"label": "Lowest franchise turnover", "brand": "The Cleaning Authority", "rationale": "4.1% in 2024, down from 10.6%. Zero terminations in 2024 across 236-outlet system."},
+    {"label": "Strongest brand recognition", "brand": "Molly Maid", "rationale": "448 outlets, franchising since 1980. Longest track record and Neighborly multi-brand ecosystem."},
+    {"label": "Highest regulatory risk", "brand": "Maid Right", "rationale": "CEO barred in California, 6 state regulatory actions, 38.6% turnover, financial condition warnings. Smallest system (35 units)."},
+],
 
 "discovery_questions": [
     {
@@ -1691,6 +1721,16 @@ $220K/year show what the model looks like at scale. A single territory at $306K 
 proposition entirely.</p>
 """,
 
+"peer_decision_overlay": [
+    {"label": "Lowest modelable fee burden", "brand": "MaidPro", "rationale": "10.0% at $300K with the simplest structure in the cohort: flat 6% royalty + 2% Brand Fund + $500/mo tech. No territory-size-dependent fees."},
+    {"label": "Richest revenue disclosure", "brand": "The Cleaning Authority", "rationale": "Per-territory gross revenue ($1.46M average Enterprise), COGS breakdown, price per clean, and customer metrics. Most data for financial modeling."},
+    {"label": "Best profitability disclosure", "brand": "The Maids", "rationale": "Only brand disclosing company-owned net margin (15.5%). 97 company-owned offices with $1.18M system-wide average."},
+    {"label": "Strongest growth trajectory", "brand": "Two Maids", "rationale": "56.5% system growth over 3 years (+7, +19, +26 net units). Only brand with sustained, accelerating expansion."},
+    {"label": "Lowest franchise turnover", "brand": "The Cleaning Authority", "rationale": "4.1% in 2024, down from 10.6%. Zero terminations in 2024 across 236-outlet system."},
+    {"label": "Strongest brand recognition", "brand": "Molly Maid", "rationale": "448 outlets, franchising since 1980. Longest track record and Neighborly multi-brand ecosystem."},
+    {"label": "Highest regulatory risk", "brand": "Maid Right", "rationale": "CEO barred in California, 6 state regulatory actions, 38.6% turnover, financial condition warnings. Smallest system (35 units)."},
+],
+
 "discovery_questions": [
     {
         "question": "The company-owned P&L shows 15.5% net margin, but company-owned offices may pay lower Continuing License Fee rates. What CLF rate do company-owned offices actually pay, and how does it compare to what franchisees at the same revenue level pay?",
@@ -2115,6 +2155,16 @@ average), stabilizing system (237 units, net zero change in 2024), and declining
 Maids' brand recognition is not worth the contraction risk, MaidPro is the less dramatic option.</p>
 """,
 
+"peer_decision_overlay": [
+    {"label": "Lowest modelable fee burden", "brand": "MaidPro", "rationale": "10.0% at $300K with the simplest structure in the cohort: flat 6% royalty + 2% Brand Fund + $500/mo tech. No territory-size-dependent fees."},
+    {"label": "Richest revenue disclosure", "brand": "The Cleaning Authority", "rationale": "Per-territory gross revenue ($1.46M average Enterprise), COGS breakdown, price per clean, and customer metrics. Most data for financial modeling."},
+    {"label": "Best profitability disclosure", "brand": "The Maids", "rationale": "Only brand disclosing company-owned net margin (15.5%). 97 company-owned offices with $1.18M system-wide average."},
+    {"label": "Strongest growth trajectory", "brand": "Two Maids", "rationale": "56.5% system growth over 3 years (+7, +19, +26 net units). Only brand with sustained, accelerating expansion."},
+    {"label": "Lowest franchise turnover", "brand": "The Cleaning Authority", "rationale": "4.1% in 2024, down from 10.6%. Zero terminations in 2024 across 236-outlet system."},
+    {"label": "Strongest brand recognition", "brand": "Molly Maid", "rationale": "448 outlets, franchising since 1980. Longest track record and Neighborly multi-brand ecosystem."},
+    {"label": "Highest regulatory risk", "brand": "Maid Right", "rationale": "CEO barred in California, 6 state regulatory actions, 38.6% turnover, financial condition warnings. Smallest system (35 units)."},
+],
+
 "discovery_questions": [
     {
         "question": "73 businesses ceased operations in 2024 — the largest single-year exit in the cohort. What were the primary reasons these operators exited, and how many were Legacy vs Qualified Franchises?",
@@ -2537,6 +2587,16 @@ and provides franchisor-managed marketing, Two Maids is the opposite end of the 
 of revenue at $300K (vs MaidPro's 10.0%) but get managed advertising, richer disclosure, and system
 momentum. MaidPro is the DIY bet; Two Maids is the managed bet.</p>
 """,
+
+"peer_decision_overlay": [
+    {"label": "Lowest modelable fee burden", "brand": "MaidPro", "rationale": "10.0% at $300K with the simplest structure in the cohort: flat 6% royalty + 2% Brand Fund + $500/mo tech. No territory-size-dependent fees."},
+    {"label": "Richest revenue disclosure", "brand": "The Cleaning Authority", "rationale": "Per-territory gross revenue ($1.46M average Enterprise), COGS breakdown, price per clean, and customer metrics. Most data for financial modeling."},
+    {"label": "Best profitability disclosure", "brand": "The Maids", "rationale": "Only brand disclosing company-owned net margin (15.5%). 97 company-owned offices with $1.18M system-wide average."},
+    {"label": "Strongest growth trajectory", "brand": "Two Maids", "rationale": "56.5% system growth over 3 years (+7, +19, +26 net units). Only brand with sustained, accelerating expansion."},
+    {"label": "Lowest franchise turnover", "brand": "The Cleaning Authority", "rationale": "4.1% in 2024, down from 10.6%. Zero terminations in 2024 across 236-outlet system."},
+    {"label": "Strongest brand recognition", "brand": "Molly Maid", "rationale": "448 outlets, franchising since 1980. Longest track record and Neighborly multi-brand ecosystem."},
+    {"label": "Highest regulatory risk", "brand": "Maid Right", "rationale": "CEO barred in California, 6 state regulatory actions, 38.6% turnover, financial condition warnings. Smallest system (35 units)."},
+],
 
 "discovery_questions": [
     {
@@ -3004,6 +3064,16 @@ would create a distorted peer set. Buyers who encounter Maid Right in the market
 analysis available for every other cleaning franchise. The elevated risk profile is not a reason to omit the
 brand — it is a reason to analyze it transparently.</p>
 """,
+
+"peer_decision_overlay": [
+    {"label": "Lowest modelable fee burden", "brand": "MaidPro", "rationale": "10.0% at $300K with the simplest structure in the cohort: flat 6% royalty + 2% Brand Fund + $500/mo tech. No territory-size-dependent fees."},
+    {"label": "Richest revenue disclosure", "brand": "The Cleaning Authority", "rationale": "Per-territory gross revenue ($1.46M average Enterprise), COGS breakdown, price per clean, and customer metrics. Most data for financial modeling."},
+    {"label": "Best profitability disclosure", "brand": "The Maids", "rationale": "Only brand disclosing company-owned net margin (15.5%). 97 company-owned offices with $1.18M system-wide average."},
+    {"label": "Strongest growth trajectory", "brand": "Two Maids", "rationale": "56.5% system growth over 3 years (+7, +19, +26 net units). Only brand with sustained, accelerating expansion."},
+    {"label": "Lowest franchise turnover", "brand": "The Cleaning Authority", "rationale": "4.1% in 2024, down from 10.6%. Zero terminations in 2024 across 236-outlet system."},
+    {"label": "Strongest brand recognition", "brand": "Molly Maid", "rationale": "448 outlets, franchising since 1980. Longest track record and Neighborly multi-brand ecosystem."},
+    {"label": "Highest regulatory risk", "brand": "Maid Right", "rationale": "CEO barred in California, 6 state regulatory actions, 38.6% turnover, financial condition warnings. Smallest system (35 units)."},
+],
 
 "discovery_questions": [
     {

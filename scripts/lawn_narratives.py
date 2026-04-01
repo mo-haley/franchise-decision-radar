@@ -413,12 +413,12 @@ independent market knowledge who do not need FDD-based revenue benchmarks.</p>
 """,
 
 "peer_decision_overlay": [
-    {"priority": "Lowest ongoing fee burden", "best_brand": "Weed Man", "note": "8.5% at $300K, but no Item 19 disclosure — you are flying blind on revenue benchmarks."},
-    {"priority": "Best revenue disclosure", "best_brand": "Lawn Doctor", "note": "4-table Item 19 with 16-year trend. Most data to work with in diligence."},
-    {"priority": "Lowest entry cost", "best_brand": "NaturaLawn", "note": "$78K–$153K total. But ongoing fee burden is the highest in the cohort."},
-    {"priority": "Best balance of cost vs. data", "best_brand": "Spring-Green", "note": "15.1% fee burden at $300K with solid 3-table Item 19. The middle ground."},
-    {"priority": "Lowest turnover", "best_brand": "Lawn Doctor / NaturaLawn", "note": "Both under 2% in 2024. NaturaLawn at 0% for 2 of 3 years (but 88-unit system)."},
-    {"priority": "First-time buyer", "best_brand": "Spring-Green", "note": "Moderate cost, clean disclosure, manageable fee burden, stable 126-unit system."},
+    {"label": "Lowest ongoing fee burden", "brand": "Weed Man", "rationale": "8.5% at $300K, but no Item 19 disclosure — you are flying blind on revenue benchmarks."},
+    {"label": "Best revenue disclosure", "brand": "Lawn Doctor", "rationale": "4-table Item 19 with 16-year trend. Most data to work with in diligence."},
+    {"label": "Lowest entry cost", "brand": "NaturaLawn", "rationale": "$78K–$153K total. But ongoing fee burden is the highest in the cohort."},
+    {"label": "Best balance of cost vs. data", "brand": "Spring-Green", "rationale": "15.1% fee burden at $300K with solid 3-table Item 19. The middle ground."},
+    {"label": "Lowest turnover", "brand": "Lawn Doctor / NaturaLawn", "rationale": "Both under 2% in 2024. NaturaLawn at 0% for 2 of 3 years (but 88-unit system)."},
+    {"label": "First-time buyer", "brand": "Spring-Green", "rationale": "Moderate cost, clean disclosure, manageable fee burden, stable 126-unit system."},
 ],
 
 "discovery_questions": [
@@ -827,12 +827,12 @@ it is risky.</p>
 """,
 
 "peer_decision_overlay": [
-    {"priority": "Lowest ongoing fee burden (with Item 19)", "best_brand": "Spring-Green", "note": "15.1% at $300K. Weed Man is cheaper but has no Item 19."},
-    {"priority": "Marketing autonomy", "best_brand": "Spring-Green", "note": "No mandatory local advertising minimum. You control your own marketing budget."},
-    {"priority": "Most useful gross margin data", "best_brand": "Spring-Green", "note": "68.1% margin includes direct labor — more realistic than Lawn Doctor's materials-only 85.4%."},
-    {"priority": "Largest system", "best_brand": "Lawn Doctor", "note": "653 units vs. Spring-Green's 156. Scale has operational advantages."},
-    {"priority": "Highest revenue per customer", "best_brand": "NaturaLawn", "note": "$810/customer vs. Spring-Green's $556. Organic positioning commands premium pricing."},
-    {"priority": "Budget-conscious buyer", "best_brand": "Weed Man or Spring-Green", "note": "Weed Man: lowest fees, no data. Spring-Green: moderate fees, solid data. Depends on your risk tolerance."},
+    {"label": "Lowest ongoing fee burden (with Item 19)", "brand": "Spring-Green", "rationale": "15.1% at $300K. Weed Man is cheaper but has no Item 19."},
+    {"label": "Marketing autonomy", "brand": "Spring-Green", "rationale": "No mandatory local advertising minimum. You control your own marketing budget."},
+    {"label": "Most useful gross margin data", "brand": "Spring-Green", "rationale": "68.1% margin includes direct labor — more realistic than Lawn Doctor's materials-only 85.4%."},
+    {"label": "Largest system", "brand": "Lawn Doctor", "rationale": "653 units vs. Spring-Green's 156. Scale has operational advantages."},
+    {"label": "Highest revenue per customer", "brand": "NaturaLawn", "rationale": "$810/customer vs. Spring-Green's $556. Organic positioning commands premium pricing."},
+    {"label": "Budget-conscious buyer", "brand": "Weed Man or Spring-Green", "rationale": "Weed Man: lowest fees, no data. Spring-Green: moderate fees, solid data. Depends on your risk tolerance."},
 ],
 
 "discovery_questions": [
@@ -1262,12 +1262,12 @@ revenue per customer to overcome a $76,000/year fee gap.</p>
 """,
 
 "peer_decision_overlay": [
-    {"priority": "Organic/environmental niche", "best_brand": "NaturaLawn", "note": "Only organic-first brand in the cohort. $810/customer vs. $556–$765 for peers."},
-    {"priority": "Lowest franchise turnover", "best_brand": "NaturaLawn", "note": "0% turnover in 2 of 3 years. Extraordinary franchisee retention."},
-    {"priority": "Lowest entry cost", "best_brand": "NaturaLawn", "note": "$78K–$153K total — but ongoing costs are the highest due to mandatory marketing spend."},
-    {"priority": "Lowest ongoing fees", "best_brand": "Weed Man (no Item 19) / Spring-Green (with Item 19)", "note": "NaturaLawn is the most expensive to operate at every revenue level."},
-    {"priority": "Best revenue disclosure", "best_brand": "Lawn Doctor", "note": "NaturaLawn's Item 19 is limited to 6 company-owned + 40 franchised vs. Lawn Doctor's 205 SPs with 16-year trend."},
-    {"priority": "Founder-led stability", "best_brand": "NaturaLawn", "note": "Only founder-led brand. No PE exit pressure. Aligned incentives between franchisor and mission."},
+    {"label": "Organic/environmental niche", "brand": "NaturaLawn", "rationale": "Only organic-first brand in the cohort. $810/customer vs. $556–$765 for peers."},
+    {"label": "Lowest franchise turnover", "brand": "NaturaLawn", "rationale": "0% turnover in 2 of 3 years. Extraordinary franchisee retention."},
+    {"label": "Lowest entry cost", "brand": "NaturaLawn", "rationale": "$78K–$153K total — but ongoing costs are the highest due to mandatory marketing spend."},
+    {"label": "Lowest ongoing fees", "brand": "Weed Man (no Item 19) / Spring-Green (with Item 19)", "rationale": "NaturaLawn is the most expensive to operate at every revenue level."},
+    {"label": "Best revenue disclosure", "brand": "Lawn Doctor", "rationale": "NaturaLawn's Item 19 is limited to 6 company-owned + 40 franchised vs. Lawn Doctor's 205 SPs with 16-year trend."},
+    {"label": "Founder-led stability", "brand": "NaturaLawn", "rationale": "Only founder-led brand. No PE exit pressure. Aligned incentives between franchisor and mission."},
 ],
 
 "discovery_questions": [

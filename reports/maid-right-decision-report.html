@@ -5,56 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Maid Right — Franchise Decision Report</title>
 <style>
-@page { margin: 0.75in; }
 @media print {
-  body { font-size: 11pt; padding: 0; orphans: 3; widows: 3; }
-  .page-break { page-break-before: always; break-before: always; }
-
-  /* Reduce top margin so headings at page tops don't create excessive whitespace */
-  h2 { margin-top: 0.75rem; }
-  h3 { margin-top: 0.5rem; }
-
-  /* Headings never orphaned — always keep with next element */
-  h1, h2, h3, h4, h5, h6 {
-    page-break-after: avoid; break-after: avoid;
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* Chain: heading → intro paragraph → content all stay together.
-     Without this, the <p> after an <h2> can separate from the table or list
-     below it, stranding heading+paragraph at the top of a page with a gap. */
-  h2 + p, h3 + p, h4 + p {
-    page-break-after: avoid; break-after: avoid;
-  }
-
-  p { orphans: 3; widows: 3; }
-
-  /* Small self-contained blocks: keep intact on one page */
-  .callout, .implication {
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* Discovery Day: each question has sub-parts (why/strong/weak/follow-up);
-     keep each question together as a unit */
-  .question-list li {
-    page-break-inside: avoid; break-inside: avoid;
-  }
-
-  /* NOTE: Large elements (tables, .scorecard, .fee-bars, .decision-overlay,
-     .fit-section) intentionally NOT given page-break-inside: avoid.
-     That constraint pushes large blocks wholesale to the next page, creating
-     a visible gap. Natural flow is better. */
-
-  .cover-page { page-break-after: always; break-after: always; }
-  .toc { page-break-after: always; break-after: always; }
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; break-before: page; }
+  /* Each major section starts on a fresh page */
+  .section-break { page-break-before: always; break-before: page; }
+  h2 { page-break-after: avoid; break-after: avoid; }
+  /* Keep h3 with following content */
+  h3 { page-break-after: avoid; break-after: avoid; }
+  /* Keep small elements together; let large/variable-length content flow */
+  table { page-break-inside: avoid; break-inside: avoid; }
+  .peer-table { page-break-inside: auto; break-inside: auto; }
+  .scorecard { page-break-inside: auto; break-inside: auto; }
+  .callout { page-break-inside: avoid; break-inside: avoid; }
+  .fee-bars { page-break-inside: avoid; break-inside: avoid; }
+  .decision-overlay { page-break-inside: avoid; break-inside: avoid; }
+  .question-list li { page-break-inside: avoid; break-inside: avoid; }
+  /* fit-section and methodology are often multi-page — let them flow */
+  .cover-page { page-break-after: always; break-after: page; }
+  .toc { page-break-after: always; break-after: page; }
   a { text-decoration: none !important; }
-
-  /* Ensure content fits within the printable area */
-  tbody td.label { white-space: normal; }
-  thead th { white-space: normal; }
-  table { font-size: 0.75rem; }
-  .peer-table { font-size: 0.65rem; }
-  .peer-table thead th { font-size: 0.6rem; }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -217,7 +187,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
     <span>Source: 2025 Franchise Disclosure Document</span>
     <span>Filed with the Wisconsin Department of Financial Institutions</span>
     <span>Legal entity: Maid Right, LLC</span>
-    <span>Report generated: 2026-03-17</span>
+    <span>Report generated: 2026-03-31</span>
   </div>
   <div class="cover-origin">Franchise Decision Radar</div>
 </div>
@@ -248,7 +218,7 @@ ul.compact li { margin: 0.2rem 0; font-size: 0.92rem; }
   <div class="report-meta">
     Source: 2025 FDD filed with Wisconsin DFI &middot; Filing year: 2025<br>
     Legal entity: Maid Right, LLC<br>
-    Report generated: 2026-03-17 &middot; Franchise Decision Radar
+    Report generated: 2026-03-31 &middot; Franchise Decision Radar
   </div>
 </div>
 
@@ -409,7 +379,7 @@ means many recent exits exist.</li>
 </div>
 
 <!-- FEE BURDEN -->
-<h2 id="fee-burden">Fee Burden Analysis</h2>
+<h2 id="fee-burden" class="section-break">Fee Burden Analysis</h2>
 
 <p>Maid Right's fee burden is third-highest in the cohort: 21.4% at $200K, 16.9% at $300K, 13.4% at $500K.
 The headline royalty (6%) and marketing (2%) rates are competitive — matching MaidPro. But the mandatory
@@ -580,7 +550,7 @@ is fundamental to comparing these systems.
 
 
 <!-- ITEM 19 -->
-<h2 id="item-19">Item 19 Interpretation</h2>
+<h2 id="item-19" class="section-break">Item 19 Interpretation</h2>
 
 <p>Maid Right's Item 19 provides four tables covering fiscal year 2024 for 18 franchisees operating
 20 Franchised Businesses. The data is detailed — consolidated revenue, quartile breakdowns, tenure
@@ -673,7 +643,7 @@ for the entire system — including excluded operators generating unknown revenu
 
 
 <!-- ECONOMICS REALITY CHECK -->
-<h2 id="economics">Buyer-Side Economics Reality Check</h2>
+<h2 id="economics" class="section-break">Buyer-Side Economics Reality Check</h2>
 
 <p style="font-size:0.88rem; color:#555; margin-bottom:0.25rem;"><strong>Important framing:</strong>
 This is not a profitability forecast. It uses Maid Right's disclosed Item 19 revenue for 20 franchised
@@ -730,7 +700,7 @@ are meant to cover.</p>
 
 
 <!-- INVESTMENT -->
-<h2 id="investment">Investment Breakdown</h2>
+<h2 id="investment" class="section-break">Investment Breakdown</h2>
 
 <p>Highest entry cost in the cleaning cohort: $147,100–$218,500. The $65,000 standard franchise fee is
 the highest single fee in the cohort, with a $5,000 one-time technology fee on top. Military/first
@@ -871,7 +841,7 @@ exited in a single year.
 
 
 <!-- SYSTEM HEALTH -->
-<h2 id="system-health">System Health</h2>
+<h2 id="system-health" class="section-break">System Health</h2>
 
 <p>Maid Right is the smallest and most volatile system in the residential cleaning cohort. The unit count
 tells a boom-and-bust story: 24 outlets at start of 2022, rapid growth to 44 by end of 2023 (17 and 21
@@ -1004,7 +974,7 @@ are penalized more for absence than presence. (p. 19)</li>
 
 
 <!-- PEER CONTEXT -->
-<h2 id="peer-context">Peer Context</h2>
+<h2 id="peer-context" class="section-break">Peer Context</h2>
 
 <p>Maid Right occupies a unique — and isolated — position in the residential cleaning cohort. It is the
 smallest system (35 units vs 237–802 for peers), the only founder-led brand, the only one with a
@@ -1190,9 +1160,51 @@ brand — it is a reason to analyze it transparently.</p>
 </table>
 
 
+<h3>Decision overlay</h3>
+<table class="decision-overlay">
+  <tbody>
+    
+    <tr>
+      <td class="overlay-label">Lowest modelable fee burden</td>
+      <td class="overlay-value">MaidPro — 10.0% at $300K with the simplest structure in the cohort: flat 6% royalty + 2% Brand Fund + $500/mo tech. No territory-size-dependent fees.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Richest revenue disclosure</td>
+      <td class="overlay-value">The Cleaning Authority — Per-territory gross revenue ($1.46M average Enterprise), COGS breakdown, price per clean, and customer metrics. Most data for financial modeling.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Best profitability disclosure</td>
+      <td class="overlay-value">The Maids — Only brand disclosing company-owned net margin (15.5%). 97 company-owned offices with $1.18M system-wide average.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Strongest growth trajectory</td>
+      <td class="overlay-value">Two Maids — 56.5% system growth over 3 years (+7, +19, +26 net units). Only brand with sustained, accelerating expansion.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Lowest franchise turnover</td>
+      <td class="overlay-value">The Cleaning Authority — 4.1% in 2024, down from 10.6%. Zero terminations in 2024 across 236-outlet system.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Strongest brand recognition</td>
+      <td class="overlay-value">Molly Maid — 448 outlets, franchising since 1980. Longest track record and Neighborly multi-brand ecosystem.</td>
+    </tr>
+    
+    <tr>
+      <td class="overlay-label">Highest regulatory risk</td>
+      <td class="overlay-value">Maid Right — CEO barred in California, 6 state regulatory actions, 38.6% turnover, financial condition warnings. Smallest system (35 units).</td>
+    </tr>
+    
+  </tbody>
+</table>
+
 
 <!-- DISCOVERY DAY -->
-<h2 id="discovery-day">Discovery Day Diligence Script</h2>
+<h2 id="discovery-day" class="section-break">Discovery Day Diligence Script</h2>
 <p>These questions are derived from specific findings in the Maid Right 2025 FDD.
 Each includes context on why it matters and what to listen for.</p>
 
@@ -1240,7 +1252,7 @@ Each includes context on why it matters and what to listen for.</p>
   
 </ol>
 
-<div class="methodology">
+<div class="methodology section-break">
   <h2 id="methodology" style="font-size:0.85rem; border-bottom:none; padding-bottom:0; margin-top:0;">Source &amp; Methodology</h2>
   <p><strong>Source document:</strong> Maid Right 2025 Franchise Disclosure Document,
   filed with the Wisconsin Department of Financial Institutions. 203-page
