@@ -2534,6 +2534,30 @@ VS_PAGES: list[dict] = [
 ]
 
 
+def vs_pages_for_cohort(cohort_id: str, brands: dict[str, dict]) -> list[dict]:
+    """Return display-ready VS page links for a given cohort.
+
+    Used by category landing pages and comparison pages to link to
+    available head-to-head comparisons. Extensible: adding an entry
+    to VS_PAGES automatically surfaces it everywhere this is called.
+    """
+    result = []
+    for vs in VS_PAGES:
+        if vs["cohort_id"] != cohort_id:
+            continue
+        name_a = brands[vs["slug_a"]]["brand"]["brand_name"] if vs["slug_a"] in brands else vs["slug_a"]
+        name_b = brands[vs["slug_b"]]["brand"]["brand_name"] if vs["slug_b"] in brands else vs["slug_b"]
+        result.append({
+            "url": vs["output_file"],
+            "name_a": name_a,
+            "name_b": name_b,
+            "slug_a": vs["slug_a"],
+            "slug_b": vs["slug_b"],
+            "label": f"{name_a} vs. {name_b}",
+        })
+    return result
+
+
 def _build_vs_pages(
     env: Environment,
     all_nav: list[dict],
@@ -2793,6 +2817,9 @@ def build_site() -> None:
 
         nav_pages = build_nav_pages(cohort)
 
+        # VS pages for this cohort (used by category and comparison pages)
+        cohort_vs_links = vs_pages_for_cohort(cohort["id"], brands)
+
         shared = {
             "site_base_url": SITE_BASE_URL,
             "nav_pages": nav_pages,
@@ -2803,6 +2830,7 @@ def build_site() -> None:
             "cohort_short_name": cohort["short_name"],
             "cohort_brand_count": len(comp_slugs),
             "brand_slug_map": comp_slug_map,
+            "vs_links": cohort_vs_links,
             "og_title": "",
             "og_description": "",
             "og_url": "",

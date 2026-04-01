@@ -90,6 +90,18 @@
   {% endfor %}
 </div>
 
+{% if vs_links %}
+<h2>Head-to-Head Comparisons</h2>
+<p class="small muted">Side-by-side FDD comparisons between specific {{ cohort_short_name | lower }} brands.</p>
+<div style="margin:0.75rem 0 1.5rem">
+  {% for vs in vs_links %}
+  <div class="peer-row" style="margin-bottom:0.65rem">
+    <a href="{{ vs.url }}" style="font-weight:600">{{ vs.label }} &rarr;</a>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
 {% if paid_report_count > 0 %}
 <div class="inline-cta">
   <span>Going deeper on one brand? {{ paid_report_count }} Decision Reports available in this category.</span>
