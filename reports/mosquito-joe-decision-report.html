@@ -18,8 +18,11 @@
   .scorecard { page-break-inside: auto; break-inside: auto; }
   .callout { page-break-inside: avoid; break-inside: avoid; }
   .fee-bars { page-break-inside: avoid; break-inside: avoid; }
-  /* Decision overlay flows with peer table — no forced avoidance */
+  /* Decision overlay: table can break between rows, but each row stays whole */
   .decision-overlay { page-break-inside: auto; break-inside: auto; }
+  .decision-overlay tr { page-break-inside: avoid; break-inside: avoid; }
+  /* Peer table rows stay whole too */
+  .peer-table tr { page-break-inside: avoid; break-inside: avoid; }
   .question-list li { page-break-inside: avoid; break-inside: avoid; }
   /* fit-section and methodology are often multi-page — let them flow */
   .cover-page { page-break-after: always; break-after: page; }
