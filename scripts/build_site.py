@@ -2754,6 +2754,338 @@ VS_PAGES: list[dict] = [
             "</p>"
         ),
     },
+    {
+        "slug_a": "lawn-doctor",
+        "slug_b": "naturalawn",
+        "cohort_id": "lawn",
+        "output_file": "lawn-doctor-vs-naturalawn.html",
+        "canonical_slug": "lawn-doctor-vs-naturalawn.html",
+        "title": "Lawn Doctor vs. NaturaLawn | Franchise Fee, Cost &amp; FDD Comparison",
+        "h1": "Lawn Doctor vs. NaturaLawn: what the FDD data shows",
+        "meta_description": (
+            "Side-by-side comparison of Lawn Doctor and NaturaLawn franchise fees, "
+            "startup cost, system health, and FDD data. The largest conventional "
+            "lawn franchise vs. the only organic-based system in the category."
+        ),
+        "subhead": (
+            "The largest system in the lawn cohort against the only organic-based brand. "
+            "Different market positioning, different cost structures, and very different "
+            "fee burdens at low revenue. "
+            "All data from 2025 FDDs filed with the Wisconsin DFI."
+        ),
+        "fee_burden_editorial": (
+            "<p>"
+            "Both brands carry high ongoing fee burdens relative to the rest of the lawn "
+            "cohort, but for different reasons. Lawn Doctor charges 10% royalty plus a "
+            "local advertising minimum of $30,000/year (or 10% of Net Revenues, whichever "
+            "is greater) plus a national fund. NaturaLawn charges 9% royalty (reducing to "
+            "7% on renewal at $500K+) plus a mandatory annual marketing spend of "
+            "$60,000\u2013$80,000\u200a\u2014\u200athe highest in the cohort."
+            "</p>"
+            "<p>"
+            "At $300K revenue, Lawn Doctor\u2019s total fee burden is $78,800 (26.3%). "
+            "NaturaLawn\u2019s is $101,584 (33.9%). "
+            "That\u2019s a <strong>$22,784/year difference</strong>, driven almost entirely "
+            "by NaturaLawn\u2019s higher marketing spend requirement. "
+            "At $500K revenue, the gap narrows but persists: Lawn Doctor at $122,800 (24.6%) "
+            "vs. NaturaLawn at $121,584 (24.3%)\u200a\u2014\u200anearly even, because "
+            "NaturaLawn\u2019s marketing spend is fixed while Lawn Doctor\u2019s scales "
+            "with revenue."
+            "</p>"
+        ),
+        "fee_caveats_editorial": (
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">NaturaLawn\u2019s marketing is a spend requirement, not a fee</div>'
+            "NaturaLawn\u2019s $60K\u2013$80K annual marketing spend goes to third-party vendors, "
+            "not the franchisor. But it is mandatory and contractually enforced. At low revenue, "
+            "it creates the highest fee burden in the lawn cohort (45.8% at $200K)."
+            "</div>"
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Lawn Doctor requires mandatory equipment leases</div>'
+            "Lawn Doctor franchisees must lease a Turf Tamer Applicator ($335/month) and "
+            "Power Seeder ($306/month)\u200a\u2014\u200a$641/month in ongoing equipment cost "
+            "that is not captured in the fee burden model but adds $7,692/year to operating expenses."
+            "</div>"
+        ),
+        "system_health_editorial": (
+            "<p>"
+            "Lawn Doctor has the strongest recent growth signal in the lawn cohort: "
+            "+23 net units in 2024 (up from +6 in 2023), with terminations dropping "
+            "to just 1 in the most recent year. The system grew from 630 to 653 outlets."
+            "</p>"
+            "<p>"
+            "NaturaLawn grew +4 units in both 2022 and 2023 but posted its first "
+            "contraction in 2024 (\u22122 net units). Zero transfers across all three years "
+            "is a distinctive signal\u200a\u2014\u200aunique in the lawn cohort\u200a\u2014\u200a"
+            "suggesting franchisees who stay tend to hold rather than resell."
+            "</p>"
+            "<p>"
+            "The scale difference is large: Lawn Doctor operates 653 outlets across 229 "
+            "Strategic Partners, while NaturaLawn has 88 franchised and 10 company-owned "
+            "locations. NaturaLawn\u2019s smaller system means each unit\u2019s gain or loss "
+            "has a larger proportional impact."
+            "</p>"
+        ),
+        "cost_editorial": (
+            "<p>"
+            "Lawn Doctor\u2019s initial investment ranges from $150K\u2013$177K, with a "
+            "$127,000 franchise fee (the highest in the lawn cohort, comprising "
+            "$50K license + $70.6K training/supply + $6.4K equipment deposits). "
+            "NaturaLawn\u2019s ranges from $77K\u2013$153K, with a $39,500 franchise fee."
+            "</p>"
+            "<p>"
+            "NaturaLawn is cheaper to enter at the low end, but requires access to a "
+            "$150,000\u2013$250,000 line of credit in addition to the cash investment"
+            "\u200a\u2014\u200athe only brand in the cohort with this requirement. "
+            "Total capital exposure for NaturaLawn is therefore higher than the "
+            "headline investment range suggests."
+            "</p>"
+        ),
+        "tradeoffs_editorial": (
+            "<p>"
+            "Lawn Doctor has the scale advantage (653 outlets, 58 years of franchising), "
+            "the strongest disclosure (4 Item 19 tables, 16-year revenue trend showing "
+            "average franchisee revenue growing from $367K to $1.13M), and accelerating "
+            "system growth. Its average customer tenure of 6.15 years signals strong "
+            "retention."
+            "</p>"
+            "<p>"
+            "NaturaLawn has a differentiated market position: organic-based lawn care "
+            "commands the highest revenue per customer in the cohort ($810 average), "
+            "founder-operated ownership with no PE layers, and franchisees who outperform "
+            "company-owned locations ($2.19M avg vs. $1.73M). A buyer who believes in the "
+            "organic premium has a genuine competitive moat with NaturaLawn."
+            "</p>"
+            "<p>"
+            "The decision hinges on positioning: Lawn Doctor offers a proven conventional "
+            "model with more data, more scale, and improving unit economics. NaturaLawn "
+            "offers a premium niche with higher revenue per customer but a heavier fee "
+            "burden at lower revenue levels and a smaller support network. Both have "
+            "$99 Decision Reports available."
+            "</p>"
+        ),
+    },
+    {
+        "slug_a": "two-maids",
+        "slug_b": "cleaning-authority",
+        "cohort_id": "cleaning",
+        "output_file": "two-maids-vs-cleaning-authority.html",
+        "canonical_slug": "two-maids-vs-cleaning-authority.html",
+        "title": "Two Maids vs. The Cleaning Authority | Franchise Fee, Cost &amp; FDD Comparison",
+        "h1": "Two Maids vs. The Cleaning Authority: what the FDD data shows",
+        "meta_description": (
+            "Side-by-side comparison of Two Maids & A Mop and The Cleaning Authority "
+            "franchise fees, startup cost, system health, and FDD data. The two "
+            "fastest-growing residential cleaning franchises, compared."
+        ),
+        "subhead": (
+            "The two fastest-growing residential cleaning franchises in the cohort, "
+            "both PE-backed, with very different fee structures and disclosure approaches. "
+            "All data from 2025 FDDs filed with the Wisconsin DFI."
+        ),
+        "fee_burden_editorial": (
+            "<p>"
+            "The fee gap between these two brands is the largest in the cleaning cohort. "
+            "The Cleaning Authority charges a tiered royalty (6%/5%/4% for Enterprise "
+            "markets) with a brand fund capped at $200/week and DHH-based local marketing. "
+            "Two Maids charges a marginal royalty (7% on first $30K/month, declining to 4% "
+            "above $90K/month) plus 2% national ad fund, $2,500\u2013$3,000/month in "
+            "franchisor-directed local advertising, and a $650/month technology fee."
+            "</p>"
+            "<p>"
+            "At $300K revenue, Cleaning Authority\u2019s total fee burden is $22,902 (7.6%). "
+            "Two Maids\u2019 is $64,800 (21.6%). "
+            "That\u2019s a <strong>$41,898/year difference</strong>\u200a\u2014\u200athe widest "
+            "fee spread between any two brands in the cleaning cohort. "
+            "The gap persists at every revenue level because Two Maids\u2019 mandatory "
+            "local advertising ($30K\u2013$36K/year) and technology fee ($7,800/year) "
+            "are fixed costs that Cleaning Authority does not have."
+            "</p>"
+        ),
+        "fee_caveats_editorial": (
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Two Maids\u2019 local advertising is franchisor-directed</div>'
+            "The $2,500\u2013$3,000/month local advertising spend is managed by the franchisor, "
+            "not discretionary. A franchisee pays for advertising they do not control. "
+            "Combined with the 2% national fund, total marketing costs are $32K\u2013$42K/year "
+            "at any revenue level."
+            "</div>"
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Cleaning Authority\u2019s local marketing is DHH-based</div>'
+            "Cleaning Authority\u2019s local marketing fee is tied to Designated Household "
+            "count, not revenue. This means the cost varies by territory size rather than "
+            "business performance\u200a\u2014\u200apredictable but not revenue-responsive. "
+            "The fee model may understate actual costs in larger territories."
+            "</div>"
+        ),
+        "system_health_editorial": (
+            "<p>"
+            "Both brands are growing, which distinguishes them from most cleaning "
+            "franchises in the cohort (Merry Maids, Molly Maid, The Maids, and MaidPro "
+            "are all contracting or flat). Two Maids grew by +52 units over 3 years "
+            "(+7, +19, +26)\u200a\u2014\u200aaccelerating growth with 32 openings in 2024 "
+            "alone. The Cleaning Authority grew by +24 units (+9, +3, +12) with "
+            "improving churn: turnover dropped from 10.6% in 2023 to 4.1% in 2024."
+            "</p>"
+            "<p>"
+            "Two Maids\u2019 growth rate is faster in absolute terms, but the system is "
+            "younger (founded 2013 vs. franchising since 1996 for Cleaning Authority) "
+            "and smaller (144 vs. 236 outlets). Cleaning Authority\u2019s growth is "
+            "steadier and accompanied by declining churn\u200a\u2014\u200aa more mature "
+            "growth signal."
+            "</p>"
+        ),
+        "cost_editorial": (
+            "<p>"
+            "Two Maids\u2019 initial investment ranges from $93K\u2013$150K. "
+            "The Cleaning Authority\u2019s Enterprise Market ranges from $93K\u2013$147K "
+            "(Hometown Market: $77K\u2013$120K). The entry cost ranges are nearly identical."
+            "</p>"
+            "<p>"
+            "Two Maids\u2019 franchise fee structure is $19,950 (initial) + $40,000 "
+            "(territory fee) = $59,950 total. Cleaning Authority\u2019s Enterprise fee "
+            "is $20,000 + $0.75 per Designated Household, typically $22,500\u2013$45,000. "
+            "Both brands keep entry costs moderate relative to the cleaning cohort."
+            "</p>"
+        ),
+        "tradeoffs_editorial": (
+            "<p>"
+            "The Cleaning Authority has the lowest fee burden in the cleaning cohort "
+            "(7.4\u20138.0% across all revenue levels), the richest Item 19 disclosure "
+            "(revenue by thirds, COGS percentages, price-per-clean data for 206 Enterprise "
+            "territories), and a growing system with declining churn. Top-third Enterprise "
+            "territories average $2.45M gross revenue."
+            "</p>"
+            "<p>"
+            "Two Maids has the fastest growth trajectory in the cohort (+56.5% over 3 years), "
+            "the most detailed Item 19 analysis (quintile breakdowns across 86 territories, "
+            "multi-unit owner data, gross margin by tier), and a tiered royalty that rewards "
+            "scale. Top-quintile territories average $1.17M with 52% gross margin."
+            "</p>"
+            "<p>"
+            "A buyer focused on unit economics and ongoing cost efficiency has a clearer "
+            "path with Cleaning Authority\u200a\u2014\u200aits fee burden is less than half "
+            "of Two Maids\u2019 at every revenue level. A buyer focused on growth trajectory "
+            "and a younger, faster-scaling system has a rationale for Two Maids\u200a\u2014\u200a"
+            "but should model whether the $42K/year fee premium is offset by Two Maids\u2019 "
+            "franchisor-managed marketing and support infrastructure. The TCAF lawsuit "
+            "against Cleaning Authority (alleging marketing fund opacity) is a factor "
+            "worth monitoring during diligence."
+            "</p>"
+        ),
+    },
+    {
+        "slug_a": "lawn-doctor",
+        "slug_b": "spring-green",
+        "cohort_id": "lawn",
+        "output_file": "lawn-doctor-vs-spring-green.html",
+        "canonical_slug": "lawn-doctor-vs-spring-green.html",
+        "title": "Lawn Doctor vs. Spring-Green | Franchise Fee, Cost &amp; FDD Comparison",
+        "h1": "Lawn Doctor vs. Spring-Green: what the FDD data shows",
+        "meta_description": (
+            "Side-by-side comparison of Lawn Doctor and Spring-Green franchise fees, "
+            "startup cost, system health, and FDD data. Two established lawn care "
+            "franchises with 50+ years of history and different ownership structures."
+        ),
+        "subhead": (
+            "Two of the longest-running lawn care franchises in the U.S., "
+            "with different ownership structures, fee models, and growth trajectories. "
+            "All data from 2025 FDDs filed with the Wisconsin DFI."
+        ),
+        "fee_burden_editorial": (
+            "<p>"
+            "Both brands charge a tiered royalty, but Spring-Green\u2019s total fee "
+            "burden is substantially lower at every modeled revenue level. "
+            "Lawn Doctor charges 10% flat royalty plus a local advertising minimum of "
+            "$30,000/year (or 10% of Net Revenues) plus a national fund. "
+            "Spring-Green charges a triple-tiered royalty (10%/9%/8%) with a national "
+            "fund of 2% and a lower local marketing threshold."
+            "</p>"
+            "<p>"
+            "At $300K revenue, Lawn Doctor\u2019s total fee burden is $78,800 (26.3%). "
+            "Spring-Green\u2019s is $45,318 (15.1%). "
+            "That\u2019s a <strong>$33,482/year difference</strong>\u200a\u2014\u200adriven "
+            "primarily by Lawn Doctor\u2019s higher marketing requirements and flat "
+            "10% royalty vs. Spring-Green\u2019s tiered structure that drops to 8% "
+            "above $500K."
+            "</p>"
+        ),
+        "fee_caveats_editorial": (
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Lawn Doctor\u2019s out-of-territory surcharge</div>'
+            "Lawn Doctor charges a 15% royalty surcharge on revenue earned outside the "
+            "franchisee\u2019s territory (25% total: 10% base + 15% surcharge). "
+            "This structurally discourages geographic expansion beyond assigned boundaries."
+            "</div>"
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Spring-Green\u2019s upfront marketing cost</div>'
+            "Spring-Green charges a $35,000 Initial Marketing Campaign Fee + $16,500 "
+            "Property Data Fee at signing ($51,500 total beyond the franchise fee). "
+            "These are one-time costs, not ongoing, but they increase the true "
+            "entry cost above the headline franchise fee."
+            "</div>"
+        ),
+        "system_health_editorial": (
+            "<p>"
+            "Lawn Doctor\u2019s system health trajectory is accelerating: +11, +6, +23 "
+            "net units over three years, with terminations dropping from 13 (2022) to "
+            "1 (2024). The system grew to 653 outlets, the largest in the lawn cohort."
+            "</p>"
+            "<p>"
+            "Spring-Green\u2019s trajectory is flat: +2, \u22122, +4 over the same period. "
+            "The system has hovered around 152\u2013156 outlets. Affiliate Superior Lawns "
+            "reacquired 4 franchised territories over 2023\u20132024\u200a\u2014\u200acompany "
+            "buying back territories is a mixed signal that could indicate either "
+            "strategic consolidation or franchisee exit."
+            "</p>"
+            "<p>"
+            "The scale difference is significant: Lawn Doctor has 4\u00d7 the outlets. "
+            "Spring-Green\u2019s smaller system and flat growth mean less network effect "
+            "for brand recognition and peer learning, but also less intra-brand competition "
+            "for territory."
+            "</p>"
+        ),
+        "cost_editorial": (
+            "<p>"
+            "Lawn Doctor\u2019s initial investment ranges from $150K\u2013$177K, anchored "
+            "by its $127,000 franchise fee (the highest in the lawn cohort). "
+            "Spring-Green\u2019s ranges from $118K\u2013$134K, with a $45,000 franchise fee "
+            "plus $51,500 in mandatory upfront marketing and data fees."
+            "</p>"
+            "<p>"
+            "Spring-Green is $32K\u2013$43K cheaper to enter. However, buyers should "
+            "note that Spring-Green\u2019s $51,500 in upfront marketing and data fees "
+            "is not a one-time franchise fee\u200a\u2014\u200ait is additional required "
+            "spending that makes the true cost closer to $96,500 before any other "
+            "startup expenses."
+            "</p>"
+        ),
+        "tradeoffs_editorial": (
+            "<p>"
+            "Lawn Doctor has scale (653 outlets), the deepest Item 19 in the cohort "
+            "(16-year revenue trend, customer tenure data, gross profit margins), "
+            "and accelerating growth. Average franchisee revenue of $1.13M with "
+            "85.4% gross margin (materials only) and 6.15-year average customer tenure. "
+            "The brand has demonstrated long-term revenue growth: from $367K average "
+            "in 2009 to $1.13M in 2024."
+            "</p>"
+            "<p>"
+            "Spring-Green is privately held (no PE layers), costs less to enter, "
+            "and costs substantially less to operate ($33K/year less in fees at $300K "
+            "revenue). Its Item 19 shows average gross sales of $1.09M with 81.3% "
+            "customer retention and a marketing ROI of $2.62 per dollar invested. "
+            "It also offers pest control as an add-on service."
+            "</p>"
+            "<p>"
+            "A buyer who prioritizes lower ongoing costs, private ownership, and a "
+            "pest-control add-on has a rationale for Spring-Green. A buyer who "
+            "prioritizes scale, data depth, and a system with accelerating momentum "
+            "has a rationale for Lawn Doctor\u200a\u2014\u200abut should model whether "
+            "the $33K/year fee premium is justified by the incremental revenue "
+            "opportunity. Both have $99 Decision Reports available."
+            "</p>"
+        ),
+    },
 ]
 
 
