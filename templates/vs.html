@@ -185,6 +185,6 @@
   See the full <a href="{{ cohort_fee_burden_url }}">fee burden</a>,
   <a href="{{ cohort_system_health_url }}">system health</a>, and
   <a href="{{ cohort_cost_to_enter_url }}">cost-to-enter</a> comparisons
-  across all {{ cohort_brand_count }} {{ cohort_short_name | lower }} brands.
+  across all {{ cohort_brand_count }} {{ cohort_short_name | lower }} brands{% if cohort_brand_count != cohort_comparison_count %} ({{ cohort_comparison_count }} in the primary comparison set){% endif %}.
 </p>
 {% endblock %}

@@ -1853,10 +1853,13 @@ CATEGORY_PAGE_DATA: dict[str, dict] = {
         "editorial_section": (
             "<p>"
             "Lawn care is the most established category on the site. "
-            "All four core brands have been franchising for 30 to 58 years, "
-            "which means the FDD data reflects mature, stable systems "
-            "rather than early-stage volatility. "
-            "The fee spread is narrower than in mosquito control or cleaning "
+            "Six brands are covered: four mature systems with 30 to 58 years of "
+            "franchising history form the primary comparison set, while two "
+            "watchlist brands (Lawn Pride and Lawn Squad) have individual brand pages "
+            "but are excluded from comparison tables due to limited franchised "
+            "operating history. "
+            "The fee spread among the four mature brands is narrower than in "
+            "mosquito control or cleaning "
             "\u2014\u200aat $300K revenue, the gap between highest and lowest annual fee burden "
             "is roughly half what it is in the mosquito cohort."
             "</p>"
@@ -1877,7 +1880,7 @@ CATEGORY_PAGE_DATA: dict[str, dict] = {
                 "The fee burden comparison models total ongoing costs at four revenue levels."
             ),
             "System Health": (
-                "Four systems with decades of operating history. "
+                "Four mature systems with decades of operating history in the primary comparison set. "
                 "Growth trajectories range from accelerating (Lawn Doctor) to flat (Spring-Green). "
                 "The system health comparison shows year-by-year outlet changes."
             ),
@@ -1888,11 +1891,12 @@ CATEGORY_PAGE_DATA: dict[str, dict] = {
             ),
         },
         "watchlist_note": (
-            "<strong>Lawn Pride</strong> and <strong>Lawn Squad</strong> appear on brand pages "
-            "but are excluded from comparison tables. Both are backed by major franchise holding "
-            "companies (Neighborly and Authority Brands, respectively) but have fewer than three years "
-            "of franchised operating data. They are included in the brand count but not in the "
-            "fee, health, or cost analyses."
+            "<strong>Lawn Pride</strong> and <strong>Lawn Squad</strong> are watchlist brands: "
+            "they have individual brand pages but are excluded from the fee burden, system health, "
+            "and cost-to-enter comparison tables. Both are backed by major franchise holding "
+            "companies (Neighborly and Authority Brands, respectively) but have insufficient "
+            "franchised performance history for meaningful peer comparison. "
+            "The primary comparison set includes the 4 mature brands with established track records."
         ),
     },
     "cleaning": {
@@ -3240,7 +3244,8 @@ def _build_vs_pages(
             "nav_pages": nav_pages,
             "cohort_id": cohort["id"],
             "cohort_short_name": cohort["short_name"],
-            "cohort_brand_count": len(cohort["brands"]),
+            "cohort_brand_count": len(all_cohort_slugs(cohort)),
+            "cohort_comparison_count": len(all_cohort_slugs(cohort)),
             "cohort_fee_burden_url": f"{prefix}fee-burden.html",
             "cohort_system_health_url": f"{prefix}system-health.html",
             "cohort_cost_to_enter_url": f"{prefix}cost-to-enter.html",
@@ -3383,7 +3388,8 @@ def build_site() -> None:
             "cohort_id": cohort["id"],
             "cohort_display_name": cohort["display_name"],
             "cohort_short_name": cohort["short_name"],
-            "cohort_brand_count": len(comp_slugs),
+            "cohort_brand_count": len(brand_slugs),
+            "cohort_comparison_count": len(comp_slugs),
             "brand_slug_map": comp_slug_map,
             "vs_links": cohort_vs_links,
             "og_title": "",
@@ -3614,6 +3620,32 @@ def build_site() -> None:
         "og_url": f"{SITE_BASE_URL}how-to-read-fdd.html",
     })
     total_pages += 1
+
+    # --- Commercial trust pages (About, Contact, Privacy, Terms, FAQ) ---
+    trust_page_shared = {
+        "site_base_url": SITE_BASE_URL,
+        "all_nav": all_nav,
+        "all_brands_by_cohort": all_brands_by_cohort,
+        "nav_pages": [],
+        "cohort_id": None,
+        "total_brands": total_brands,
+        "total_categories": total_categories,
+    }
+    for tpl, out, page_id in [
+        ("about.html", "about.html", "about"),
+        ("contact.html", "contact.html", "contact"),
+        ("privacy.html", "privacy.html", "privacy"),
+        ("terms.html", "terms.html", "terms"),
+        ("faq.html", "faq.html", "faq"),
+    ]:
+        render_page(env, tpl, out, {
+            **trust_page_shared,
+            "active_page": page_id,
+            "og_title": "",
+            "og_description": "",
+            "og_url": f"{SITE_BASE_URL}{out}",
+        })
+        total_pages += 1
 
     # --- VS comparison pages ---
     _build_vs_pages(env, all_nav, all_brands_by_cohort, ready_cohorts)

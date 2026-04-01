@@ -29,7 +29,7 @@
   <div class="metric-item">
     <div class="metric-value">{{ fee_burden_300k }}</div>
     <div class="metric-label">Annual Fees at $300K</div>
-    <div class="metric-context">{{ fee_rank_300k }} of {{ cohort_brand_count }} in cohort</div>
+    <div class="metric-context">{{ fee_rank_300k }} of {{ cohort_comparison_count }} compared</div>
   </div>
   {% endif %}
   <div class="metric-item">
@@ -46,7 +46,7 @@
   <div class="peer-row">
     <span class="peer-label">Fee burden (at $300K)</span>
     <span class="peer-value">{{ fee_burden_300k }}/yr</span>
-    <span class="peer-rank">{{ fee_rank_300k }} of {{ cohort_brand_count }}</span>
+    <span class="peer-rank">{{ fee_rank_300k }} of {{ cohort_comparison_count }}</span>
   </div>
   {% endif %}
   <div class="peer-row">
@@ -126,7 +126,7 @@
       <td>${{ "{:,}".format(row.revenue) }}</td>
       <td class="num"><strong>${{ "{:,.0f}".format(row.total) }}</strong></td>
       <td class="num">{{ row.pct }}%</td>
-      <td class="num">{{ row.rank }} of {{ cohort_brand_count }}</td>
+      <td class="num">{{ row.rank }} of {{ cohort_comparison_count }}</td>
     </tr>
     {% endfor %}
   </tbody>

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Privacy Policy | Franchise Decision Radar{% endblock %}
+{% block meta_description %}<meta name="description" content="Privacy policy for Franchise Decision Radar. What data we collect, how we use it, and your rights.">{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_base_url }}privacy.html">{% endblock %}
+
+{% block content %}
+<h1>Privacy Policy</h1>
+<p class="subhead">Last updated: April 2026</p>
+
+<h2>What we collect</h2>
+<p>
+  Franchise Decision Radar is a static website. We do not require account creation,
+  do not store passwords, and do not maintain a user database.
+</p>
+<p>We collect limited data through the following:</p>
+<ul style="line-height:1.7; margin-bottom:1.5rem;">
+  <li>
+    <strong>Google Analytics</strong> &mdash; anonymous page-view and interaction data
+    (pages visited, time on site, referral source, device type). We use this to
+    understand which content is useful and improve the site. No personally
+    identifiable information is collected through Analytics.
+  </li>
+  <li>
+    <strong>Stripe</strong> &mdash; when you purchase a Decision Report, payment is
+    processed by <a href="https://stripe.com/privacy" style="color:inherit; text-decoration:underline">Stripe</a>.
+    Stripe collects your payment information (card number, billing address, email)
+    under their own privacy policy. We receive your email and purchase confirmation
+    from Stripe but do not store or see your full card details.
+  </li>
+</ul>
+
+<h2>How we use your information</h2>
+<ul style="line-height:1.7; margin-bottom:1.5rem;">
+  <li>To deliver the report you purchased</li>
+  <li>To respond if you contact us with a support request</li>
+  <li>To understand aggregate site usage and improve content</li>
+</ul>
+<p>We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+
+<h2>Cookies</h2>
+<p>
+  Google Analytics sets cookies to distinguish unique visitors and sessions.
+  Stripe may set cookies during the payment process.
+  We do not set any first-party tracking cookies beyond what these services require.
+</p>
+
+<h2>Your rights</h2>
+<p>
+  If you would like to know what data we hold about you, request deletion,
+  or have any privacy-related questions, contact us at
+  <a href="mailto:support@franchisedecisionradar.com">support@franchisedecisionradar.com</a>.
+</p>
+
+<h2>Changes</h2>
+<p>
+  We may update this policy as the site evolves. Material changes will be noted
+  with an updated date at the top of this page.
+</p>
+{% endblock %}
