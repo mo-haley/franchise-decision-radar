@@ -1128,6 +1128,25 @@ BRAND_DIFFERENTIATORS: dict[str, str] = {
     "maid-right": "Highest recurring revenue %",
 }
 
+# PDF download tokens — opaque suffixes so report URLs aren't guessable from slug.
+PDF_TOKENS: dict[str, str] = {
+    "mosquito-authority": "67951af91d92",
+    "mosquito-hunters": "0282031c5464",
+    "mosquito-joe": "305b54c8d68e",
+    "mosquito-shield": "cab728a38e88",
+    "mosquito-squad": "650687ba7092",
+    "lawn-doctor": "26b857676f46",
+    "spring-green": "18f0b7ec9fd1",
+    "naturalawn": "35baa1a22a8f",
+    "cleaning-authority": "ec7fe8faeb02",
+    "two-maids": "3075f3ec1829",
+    "molly-maid": "732768ef2571",
+    "the-maids": "868de7c0f67e",
+    "merry-maids": "04c86de4ccd0",
+    "maidpro": "7e1cc4a53938",
+    "maid-right": "0056b5989dca",
+}
+
 # Stripe Payment Links — add real URLs as reports go live.
 STRIPE_PAYMENT_LINKS: dict[str, str | None] = {
     "mosquito-authority": "https://buy.stripe.com/dRmbJ3ewz1PY6E0ejCawo01",
@@ -2201,6 +2220,313 @@ VS_PAGES: list[dict] = [
             "</p>"
         ),
     },
+    {
+        "slug_a": "mosquito-joe",
+        "slug_b": "mosquito-squad",
+        "cohort_id": "mosquito",
+        "output_file": "mosquito-joe-vs-mosquito-squad.html",
+        "canonical_slug": "mosquito-joe-vs-mosquito-squad.html",
+        "title": "Mosquito Joe vs. Mosquito Squad | Franchise Fee, Cost &amp; FDD Comparison",
+        "h1": "Mosquito Joe vs. Mosquito Squad: what the FDD data shows",
+        "meta_description": (
+            "Side-by-side comparison of Mosquito Joe and Mosquito Squad franchise "
+            "fees, startup cost, system health, and FDD data. Two PE-backed brands "
+            "with different fee structures, revenue profiles, and growth trajectories."
+        ),
+        "subhead": (
+            "The two largest mosquito control franchises by revenue, "
+            "both PE-backed, with different fee architectures and diverging system health signals. "
+            "All data from 2025 FDDs filed with the Wisconsin DFI."
+        ),
+        "fee_burden_editorial": (
+            "<p>"
+            "Both brands charge a tiered royalty, but the structures differ meaningfully. "
+            "Mosquito Joe charges 10% on the first $500K and 7% above. "
+            "Mosquito Squad uses a triple tier: 10% on the first $250K, 9% on $250K\u2013$500K, "
+            "and 8% above $500K. Squad\u2019s tiers kick in earlier but stay higher at scale."
+            "</p>"
+            "<p>"
+            "The real gap is marketing. Joe\u2019s mandatory marketing spend totals ~$75,000+/year "
+            "(DMP, local marketing, MAP, SEO). Squad\u2019s marketing is capped at $50,000/year "
+            "for local spend, with a flat brand fund of $150\u2013$450/month. "
+            "At $300K revenue, Joe\u2019s total fee burden is $84,752 (28.3%) vs. Squad\u2019s "
+            "$77,880 (26.0%)\u200a\u2014\u200aa <strong>$6,872/year difference</strong>. "
+            "The gap narrows at higher revenue as Joe\u2019s royalty drops to 7%, but Joe remains "
+            "more expensive at every modeled level."
+            "</p>"
+        ),
+        "fee_caveats_editorial": (
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Joe\u2019s marketing is non-negotiable</div>'
+            "Mosquito Joe\u2019s $37K DMP + $35K local marketing are mandatory and due "
+            "during Year 1. The franchisor litigated a franchisee over DMP non-payment "
+            "and prevailed\u200a\u2014\u200asignaling these fees are enforced."
+            "</div>"
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Squad\u2019s minimum royalty escalates</div>'
+            "Mosquito Squad\u2019s minimum royalty reaches $3,000/month at Year 9+ ($36,000/year). "
+            "At $200K revenue, this exceeds the percentage-based royalty and adds approximately "
+            "$16,000 to annual burden."
+            "</div>"
+        ),
+        "system_health_editorial": (
+            "<p>"
+            "Mosquito Squad contracted in 2022 (\u221210 net units) but has since recovered: "
+            "+4 in 2023 and +9 in 2024 with zero terminations in the most recent year. "
+            "Mosquito Joe was stable through 2023 (+22 net each year) but contracted for the "
+            "first time in 2024 (\u22121 net units), driven by a spike to 24 terminations\u200a"
+            "\u2014\u200aup from 5 the prior year."
+            "</p>"
+            "<p>"
+            "The trajectories are crossing: Squad is stabilizing while Joe is showing "
+            "early signs of system stress. For a buyer, this raises a question about whether "
+            "Joe\u2019s brand recognition advantage is translating into franchisee health."
+            "</p>"
+        ),
+        "cost_editorial": (
+            "<p>"
+            "Mosquito Joe\u2019s initial investment is $150K\u2013$192K. "
+            "Mosquito Squad\u2019s is $162K\u2013$220K\u200a\u2014\u200ahigher at headline, "
+            "but $84K\u2013$117K of Squad\u2019s range is 12-month working capital reserves "
+            "(vs. 3 months for Joe). Adjusting for equivalent reserve periods, the "
+            "actual startup cost is comparable."
+            "</p>"
+            "<p>"
+            "Joe\u2019s initial cost is dominated by mandatory marketing: $37K DMP + $35K local "
+            "marketing represents nearly half the total investment. "
+            "Squad\u2019s higher headline includes $50K franchise fee (standard territory) "
+            "plus $15,500 in pre-opening outfitting and onboarding fees."
+            "</p>"
+        ),
+        "tradeoffs_editorial": (
+            "<p>"
+            "Mosquito Squad has the strongest disclosure in the cohort: "
+            "average revenue of $484,506 per territory, a full company-owned P&L at 25.9% "
+            "net margin, close rates, renewal rates, and same-store growth data. Joe\u2019s "
+            "disclosure is useful (tenure-split revenue, retention metrics) but thinner."
+            "</p>"
+            "<p>"
+            "Joe has stronger brand recognition (KKR/Neighborly portfolio) and a larger system "
+            "(415 vs. 226 outlets). Squad has higher average revenue per territory, "
+            "better disclosure quality, and a recovering growth trajectory."
+            "</p>"
+            "<p>"
+            "A buyer who prioritizes transparency and unit economics has a stronger data "
+            "foundation with Squad. A buyer who values brand scale and consumer recognition "
+            "has a rationale for Joe\u200a\u2014\u200abut should stress-test whether the "
+            "~$7,000/year fee premium and 2024 termination spike change the calculus."
+            "</p>"
+        ),
+    },
+    {
+        "slug_a": "mosquito-authority",
+        "slug_b": "mosquito-shield",
+        "cohort_id": "mosquito",
+        "output_file": "mosquito-authority-vs-mosquito-shield.html",
+        "canonical_slug": "mosquito-authority-vs-mosquito-shield.html",
+        "title": "Mosquito Authority vs. Mosquito Shield | Franchise Fee, Cost &amp; FDD Comparison",
+        "h1": "Mosquito Authority vs. Mosquito Shield: what the FDD data shows",
+        "meta_description": (
+            "Side-by-side comparison of Mosquito Authority and Mosquito Shield franchise "
+            "fees, startup cost, system health, and FDD data. Two lower-cost mosquito "
+            "franchises with very different fee structures and growth profiles."
+        ),
+        "subhead": (
+            "Both positioned as lower-cost alternatives to Mosquito Joe and Mosquito Squad, "
+            "but with dramatically different fee burdens, growth rates, and system health signals. "
+            "All data from 2025 FDDs filed with the Wisconsin DFI."
+        ),
+        "fee_burden_editorial": (
+            "<p>"
+            "The fee gap between these two brands is substantial and consistent across all "
+            "revenue levels. Mosquito Authority charges a flat 10% royalty with a minimal "
+            "marketing floor ($5,500/year or 5% of gross sales, whichever is greater). "
+            "Mosquito Shield charges 8% royalty\u200a\u2014\u200athe lowest rate in the cohort"
+            "\u200a\u2014\u200abut pairs it with a $50,000/year local advertising minimum "
+            "(the highest marketing floor in the cohort) plus a 2% brand fund."
+            "</p>"
+            "<p>"
+            "At $300K revenue, Authority\u2019s total fee burden is $52,800 (17.6%). "
+            "Shield\u2019s is $86,000 (28.7%). "
+            "That\u2019s a <strong>$33,200/year difference</strong>\u200a\u2014\u200athe "
+            "largest fee gap between any two brands in the mosquito cohort. "
+            "Shield\u2019s lower royalty rate is more than offset by its marketing requirements."
+            "</p>"
+        ),
+        "fee_caveats_editorial": (
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Authority has a latent national fee</div>'
+            "Mosquito Authority reserves the right to implement a national marketing fee "
+            "of up to 3% of gross revenues. It has not been activated, but if it were, "
+            "Authority\u2019s burden at $300K would rise from $52,800 to ~$61,800. "
+            "Still substantially lower than Shield, but the gap would narrow."
+            "</div>"
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Shield\u2019s minimum gross sales are punitive</div>'
+            "Mosquito Shield requires Minimum Gross Sales of $283,500 by Year 5. "
+            "If a franchisee falls short, the franchisor may collect 7% of the difference "
+            "between actual revenue and the required minimum\u200a\u2014\u200aeffectively "
+            "a penalty for underperformance."
+            "</div>"
+        ),
+        "system_health_editorial": (
+            "<p>"
+            "Mosquito Authority has the cleanest system health in the cohort: "
+            "zero terminations across all three reporting years (2022\u20132024), "
+            "consistent positive growth (+5, +10, +7), and the largest system "
+            "(546 franchised outlets)."
+            "</p>"
+            "<p>"
+            "Mosquito Shield has the fastest absolute growth (+140 units over 3 years) "
+            "but also the highest termination counts: 65 in 2023 and 44 in 2024. "
+            "The system churned at 11\u201325% per year. Net growth looks positive "
+            "only because openings outpaced losses."
+            "</p>"
+            "<p>"
+            "For a buyer evaluating risk: Authority demonstrates steady, low-churn growth. "
+            "Shield demonstrates aggressive expansion with significant franchisee turnover."
+            "</p>"
+        ),
+        "cost_editorial": (
+            "<p>"
+            "Mosquito Authority\u2019s initial investment ranges from $54K\u2013$127K, "
+            "depending on territory tier (Hometown vs. Full-Size). "
+            "Mosquito Shield\u2019s ranges from $120K\u2013$158K."
+            "</p>"
+            "<p>"
+            "Authority\u2019s lower cost floor ($54K for a Hometown territory) makes it "
+            "the most accessible entry point in the mosquito cohort. "
+            "A buyer evaluating both should understand that Authority\u2019s Hometown "
+            "tier is a smaller territory with a lower fee, while the Full-Size tier "
+            "($89K\u2013$127K) is a closer comparison to Shield\u2019s range."
+            "</p>"
+        ),
+        "tradeoffs_editorial": (
+            "<p>"
+            "Authority costs less to enter, costs less to operate, and has a cleaner "
+            "system health trajectory. Shield has faster absolute growth, a lower "
+            "royalty rate (8% vs. 10%), and higher customer retention (85% vs. "
+            "Authority\u2019s company-owned data)."
+            "</p>"
+            "<p>"
+            "The core question for a buyer is whether Shield\u2019s growth rate "
+            "reflects a better market opportunity or a churn-and-replace model. "
+            "The termination data (65 in 2023, 44 in 2024) and the 21% Item 19 "
+            "exclusion rate for \u201cnon-conforming\u201d outlets raise questions "
+            "that a buyer should explore during due diligence."
+            "</p>"
+            "<p>"
+            "A capital-efficient buyer focused on unit economics has a stronger "
+            "foundation with Authority. A buyer willing to pay more for faster "
+            "growth and a lower royalty rate has a rationale for Shield\u200a"
+            "\u2014\u200abut should investigate the churn data closely."
+            "</p>"
+        ),
+    },
+    {
+        "slug_a": "molly-maid",
+        "slug_b": "merry-maids",
+        "cohort_id": "cleaning",
+        "output_file": "molly-maid-vs-merry-maids.html",
+        "canonical_slug": "molly-maid-vs-merry-maids.html",
+        "title": "Molly Maid vs. Merry Maids | Franchise Fee, Cost &amp; FDD Comparison",
+        "h1": "Molly Maid vs. Merry Maids: what the FDD data shows",
+        "meta_description": (
+            "Side-by-side comparison of Molly Maid and Merry Maids franchise fees, "
+            "startup cost, system health, and FDD data. The two most recognized "
+            "residential cleaning franchise brands, both contracting, with different "
+            "royalty structures and disclosure profiles."
+        ),
+        "subhead": (
+            "The two most recognized residential cleaning franchise names in the U.S., "
+            "both PE-backed, both contracting\u200a\u2014\u200abut at very different rates "
+            "and with different fee structures. "
+            "All data from 2025 FDDs filed with the Wisconsin DFI."
+        ),
+        "fee_burden_editorial": (
+            "<p>"
+            "Molly Maid and Merry Maids have the lowest fee burdens in the cleaning cohort, "
+            "but for different reasons. Merry Maids charges a flat 7% royalty with a simple "
+            "2% total marketing contribution (1.3% ad fund + 0.7% local). "
+            "Molly Maid charges a tiered marginal royalty starting at 6.5% on the first $500K "
+            "and declining to 3% above $2.8M, paired with a 2% MAP fee."
+            "</p>"
+            "<p>"
+            "At $300K revenue, Merry Maids\u2019 total fee burden is $32,988 (11.0%). "
+            "Molly Maid\u2019s is $31,056 (10.4%). "
+            "The <strong>$1,932/year difference</strong> is the narrowest gap in this analysis. "
+            "At higher revenue, Molly Maid\u2019s tiered royalty creates a widening advantage: "
+            "at $500K, the gap grows to $1,932 in Molly Maid\u2019s favor, and continues to "
+            "widen at scale as the royalty drops through successive tiers."
+            "</p>"
+        ),
+        "fee_caveats_editorial": (
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Merry Maids incentive tiers are discretionary</div>'
+            "Merry Maids offers reduced royalty rates (6% at $400K+, 5% at $500K+) as "
+            "incentive programs\u200a\u2014\u200abut the franchisor can discontinue them at any "
+            "time. The base rate is 7%. The fee model uses the base rate."
+            "</div>"
+            '<div class="callout callout-caveat">'
+            '<div class="callout-title">Molly Maid has a local marketing floor</div>'
+            "Molly Maid\u2019s local marketing obligation is based on target households (TH) "
+            "in the territory. This per-TH cost is not captured in the fee model and likely "
+            "adds $5,000\u2013$15,000+ annually depending on territory size."
+            "</div>"
+        ),
+        "system_health_editorial": (
+            "<p>"
+            "Both systems are contracting, but the severity differs dramatically. "
+            "Merry Maids lost 187 units over 3 years (989 \u2192 802, \u221218.9%), "
+            "with losses accelerating each year: \u221243, \u221262, \u221282. "
+            "73 units ceased operations in 2024 alone. Wisconsin\u2019s risk disclosure "
+            "explicitly flags the turnover rate as a buyer risk."
+            "</p>"
+            "<p>"
+            "Molly Maid lost 53 units over the same period (501 \u2192 448, \u221210.6%), "
+            "with losses slowing slightly: \u221220, \u221217, \u221216. "
+            "The contraction is real but stabilizing."
+            "</p>"
+            "<p>"
+            "For a buyer, both brands carry system health risk. But Merry Maids\u2019 "
+            "accelerating contraction is a materially different signal than Molly Maid\u2019s "
+            "steady but decelerating decline."
+            "</p>"
+        ),
+        "cost_editorial": (
+            "<p>"
+            "Merry Maids\u2019 initial investment ranges from $127K\u2013$170K. "
+            "Molly Maid\u2019s ranges from $140K\u2013$197K."
+            "</p>"
+            "<p>"
+            "Merry Maids has a lower cost floor and a $55K flat franchise fee. "
+            "Molly Maid\u2019s franchise fee is variable ($38K\u2013$64K). "
+            "At the low end, Merry Maids is approximately $13K cheaper to enter. "
+            "At the high end, Molly Maid is $27K more expensive."
+            "</p>"
+        ),
+        "tradeoffs_editorial": (
+            "<p>"
+            "Merry Maids has the larger system (802 vs. 448 outlets), lower entry cost, "
+            "and a simpler fee structure. But it is contracting at nearly twice the rate "
+            "of Molly Maid, with 73 unit cessations in the most recent year and a "
+            "Wisconsin risk disclosure flagging turnover."
+            "</p>"
+            "<p>"
+            "Molly Maid has a royalty structure that rewards scale (declining to 3% at $2.8M+), "
+            "stronger customer metrics (91% recurring customer rate, 79% grew YoY), and a "
+            "stabilizing contraction trend. Its disclosure does not provide absolute revenue "
+            "per franchisee, which limits direct income comparison."
+            "</p>"
+            "<p>"
+            "A buyer evaluating these two brands should weigh: Merry Maids\u2019 larger network "
+            "and simpler fees against its accelerating contraction; Molly Maid\u2019s better "
+            "growth trajectory and scale-friendly royalty against its higher entry cost and "
+            "less transparent revenue disclosure. In both cases, the contraction trend "
+            "makes franchisee reference calls (Item 20 contact lists) unusually important."
+            "</p>"
+        ),
+    },
 ]
 
 
@@ -2521,26 +2847,51 @@ def build_site() -> None:
         brand_ctxs = build_brand_contexts(
             brands, brand_slugs, comp_fee_model, slug_map, cohort,
         )
+
+        # Build VS page lookup: slug → list of VS pages featuring that brand
+        vs_lookup: dict[str, list[dict]] = {}
+        for vs in VS_PAGES:
+            if vs["cohort_id"] != cohort["id"]:
+                continue
+            for side in ("slug_a", "slug_b"):
+                other_side = "slug_b" if side == "slug_a" else "slug_a"
+                s = vs[side]
+                other_slug = vs[other_side]
+                other_name = brands[other_slug]["brand"]["brand_name"] if other_slug in brands else other_slug
+                vs_lookup.setdefault(s, []).append({
+                    "url": vs["output_file"],
+                    "other_name": other_name,
+                })
+
         brand_template = env.get_template("brand.html")
         for ctx in brand_ctxs:
+            ctx["vs_pages"] = vs_lookup.get(ctx["slug"], [])
             html = brand_template.render(**{**shared, **ctx})
             output_path = SITE / f"{ctx['slug']}.html"
             output_path.write_text(html)
             print(f"  Built: {output_path.relative_to(ROOT)}")
             total_pages += 1
 
-        # Thank-you pages — generate for all brands with paid reports
-        # (ready for Stripe fulfillment even before links are live)
+        # Thank-you pages — only for brands with PDF tokens (actual reports)
         thank_you_template = env.get_template("thank-you.html")
         for s_slug in brand_slugs:
             if s_slug not in brands:
                 continue
+            if s_slug not in PDF_TOKENS:
+                continue
             bname = brands[s_slug]["brand"]["brand_name"]
+            pdf_token = PDF_TOKENS.get(s_slug, "")
+            pdf_filename = (
+                f"{s_slug}-decision-report-{pdf_token}.pdf"
+                if pdf_token
+                else f"{s_slug}-decision-report.pdf"
+            )
             ty_ctx = {
                 **shared,
                 "active_page": "",
                 "brand_name": bname,
                 "slug": s_slug,
+                "pdf_filename": pdf_filename,
             }
             html = thank_you_template.render(**ty_ctx)
             output_path = SITE / f"thank-you-{s_slug}.html"
@@ -2664,7 +3015,7 @@ def build_site() -> None:
     # --- How to Read an FDD guide ---
     render_page(env, "how-to-read-fdd.html", "how-to-read-fdd.html", {
         "site_base_url": SITE_BASE_URL,
-        "active_page": "",
+        "active_page": "fdd-guide",
         "all_nav": all_nav,
         "all_brands_by_cohort": all_brands_by_cohort,
         "nav_pages": [],

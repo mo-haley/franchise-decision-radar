@@ -2,8 +2,6 @@ User-agent: *
 Disallow: /reports/
 Disallow: /thank-you-cleaning-authority.html
 Disallow: /thank-you-lawn-doctor.html
-Disallow: /thank-you-lawn-pride.html
-Disallow: /thank-you-lawn-squad.html
 Disallow: /thank-you-maid-right.html
 Disallow: /thank-you-maidpro.html
 Disallow: /thank-you-merry-maids.html
@@ -11,14 +9,11 @@ Disallow: /thank-you-molly-maid.html
 Disallow: /thank-you-mosquito-authority.html
 Disallow: /thank-you-mosquito-hunters.html
 Disallow: /thank-you-mosquito-joe.html
-Disallow: /thank-you-mosquito-sheriff.html
 Disallow: /thank-you-mosquito-shield.html
 Disallow: /thank-you-mosquito-squad.html
-Disallow: /thank-you-mosquitonix.html
 Disallow: /thank-you-naturalawn.html
 Disallow: /thank-you-spring-green.html
 Disallow: /thank-you-the-maids.html
 Disallow: /thank-you-two-maids.html
-Disallow: /thank-you-weed-man.html
 
 Sitemap: https://franchisedecisionradar.com/sitemap.xml
