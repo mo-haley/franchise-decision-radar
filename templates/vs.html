@@ -165,19 +165,29 @@
 {{ tradeoffs_editorial }}
 
 <h2>Go Deeper</h2>
+<p class="small muted" style="margin-top:-0.5rem; margin-bottom:0.75rem;">
+  Free brand pages cover system health, fee burden, and watchouts.
+  Decision Reports go deeper on one brand: Item&nbsp;19 interpretation, buyer-side economics,
+  payback sensitivity, risk signals, and 8&ndash;10 FDD-specific discovery-day questions.
+  Built from regulator-filed FDDs &mdash; not affiliated with either franchisor.
+</p>
 <div style="display:flex; flex-wrap:wrap; gap:1.25rem; margin:0.75rem 0 1.5rem">
-  <div>
-    <a href="{{ brand_a.slug }}.html" style="font-weight:600">{{ brand_a.name }} review &rarr;</a>
+  <div style="border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.25rem; background:#f8fafc; min-width:200px;">
+    <a href="{{ brand_a.slug }}.html" style="font-weight:600; font-size:0.9rem;">{{ brand_a.name }} full review &rarr;</a>
     {% if brand_a.stripe_link %}
-    <div class="small" style="margin-top:0.3rem"><a href="{{ brand_a.stripe_link }}">Decision Report &mdash; $99</a></div>
-    <div class="small muted" style="margin-top:0.15rem">Fee modeling, Item 19 translation, risk flags, discovery-day questions</div>
+    <div style="margin-top:0.6rem; padding-top:0.6rem; border-top:1px solid #e2e8f0;">
+      <a href="{{ brand_a.stripe_link }}" style="font-weight:600; font-size:0.85rem;">Decision Report &mdash; $99 &rarr;</a>
+      <div class="small muted" style="margin-top:0.2rem; line-height:1.4;">15&ndash;25 pages &middot; built from 2025 FDD &middot; instant PDF</div>
+    </div>
     {% endif %}
   </div>
-  <div>
-    <a href="{{ brand_b.slug }}.html" style="font-weight:600">{{ brand_b.name }} review &rarr;</a>
+  <div style="border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.25rem; background:#f8fafc; min-width:200px;">
+    <a href="{{ brand_b.slug }}.html" style="font-weight:600; font-size:0.9rem;">{{ brand_b.name }} full review &rarr;</a>
     {% if brand_b.stripe_link %}
-    <div class="small" style="margin-top:0.3rem"><a href="{{ brand_b.stripe_link }}">Decision Report &mdash; $99</a></div>
-    <div class="small muted" style="margin-top:0.15rem">Fee modeling, Item 19 translation, risk flags, discovery-day questions</div>
+    <div style="margin-top:0.6rem; padding-top:0.6rem; border-top:1px solid #e2e8f0;">
+      <a href="{{ brand_b.stripe_link }}" style="font-weight:600; font-size:0.85rem;">Decision Report &mdash; $99 &rarr;</a>
+      <div class="small muted" style="margin-top:0.2rem; line-height:1.4;">15&ndash;25 pages &middot; built from 2025 FDD &middot; instant PDF</div>
+    </div>
     {% endif %}
   </div>
 </div>

@@ -85,8 +85,11 @@
 
 {% if stripe_payment_link %}
 <div class="inline-cta">
-  <span>Want the full {{ brand_short }} analysis &mdash; Item 19 translation, risk flags, discovery day questions?</span>
-  <a href="{{ stripe_payment_link }}" onclick="if(typeof gtag==='function')gtag('event','purchase_click',{report_name:'{{ slug }}',page_type:'brand',source_page:'{{ slug }}',destination_type:'stripe'})">Decision Report &mdash; $99 &rarr;</a>
+  <span>Want the full {{ brand_short }} analysis &mdash; Item&nbsp;19 interpretation, buyer-side economics, risk flags, and discovery-day questions?</span>
+  <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.2rem; flex-shrink:0;">
+    <a href="{{ stripe_payment_link }}" onclick="if(typeof gtag==='function')gtag('event','purchase_click',{report_name:'{{ slug }}',page_type:'brand',source_page:'{{ slug }}',destination_type:'stripe'})">Decision Report &mdash; $99 &rarr;</a>
+    <span style="font-size:0.68rem; color:#94a3b8; white-space:nowrap;">15&ndash;25 pages &middot; instant PDF &middot; buyer-side only</span>
+  </div>
 </div>
 {% endif %}
 
@@ -187,14 +190,19 @@
 <div class="cta-block">
   <h3>Get the {{ brand_name }} Decision Report</h3>
   <p>
-    Full fee burden modeling, Item 19 translation, risk flags, investment breakdown
-    analysis, and specific discovery day questions &mdash; the analysis that takes
-    this brand from &ldquo;interesting&rdquo; to &ldquo;ready to evaluate.&rdquo;
+    A 15&ndash;25 page single-brand memo built from the 2025 regulator-filed FDD &mdash;
+    not a summary, not AI-generated, not franchisor marketing.
+    Fee modeling at 4 revenue levels, Item&nbsp;19 interpretation, buyer-side economics,
+    risk signals, and 8&ndash;10 discovery-day questions specific to this brand.
   </p>
-  <div style="margin-top:1rem">
-    <a href="{{ stripe_payment_link }}" class="cta-button" onclick="if(typeof gtag==='function')gtag('event','purchase_click',{report_name:'{{ slug }}',page_type:'brand',source_page:'{{ slug }}',destination_type:'stripe'})">Get the Decision Report &mdash; $99</a>
+  <div style="display:flex; flex-wrap:wrap; gap:0.4rem 1.25rem; margin:0.85rem 0 1rem; font-size:0.72rem; color:#64748b;">
+    <span>&#x2713;&ensp;Built from regulator-filed FDD</span>
+    <span>&#x2713;&ensp;No franchisor affiliation</span>
+    <span>&#x2713;&ensp;Every claim FDD-traceable</span>
+    <span>&#x2713;&ensp;One-time $99 &middot; instant PDF</span>
   </div>
-  <p class="small muted" style="margin:0.6rem 0 0">One-time purchase &middot; Single brand &middot; Instant delivery</p>
+  <a href="{{ stripe_payment_link }}" class="cta-button" onclick="if(typeof gtag==='function')gtag('event','purchase_click',{report_name:'{{ slug }}',page_type:'brand',source_page:'{{ slug }}',destination_type:'stripe'})">Get the Decision Report &mdash; $99</a>
+  <p class="small muted" style="margin:0.5rem 0 0">Not legal, accounting, or investment advice. Structured analysis to support your own due diligence.</p>
 </div>
 
 <h3>What&rsquo;s in the report</h3>
